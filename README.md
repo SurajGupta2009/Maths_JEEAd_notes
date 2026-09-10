@@ -14,6 +14,7 @@ file per chapter.
 | **PnC** · Permutations & Combinations | ✅ complete | 6 | 47 (P1–P8 per chapter) | 40 (A–G + stretch) | [pnc-mindmap.html](PnC/pnc-mindmap.html) | [index.html](PnC/index.html) |
 | **Complex Numbers** | ✅ complete | 6 | 50 (P1–P51, continuous) | 38 (A–H) | [cn-mindmap.html](Complex%20Numbers/cn-mindmap.html) | [index.html](Complex%20Numbers/index.html) |
 | **Binomial Theorem** | ✅ complete | 6 | 47 (P1–P47, continuous) | 38 (A–H) | [binomial-theorem-mindmap.html](Binomial-Theorem/binomial-theorem-mindmap.html) | [index.html](Binomial-Theorem/index.html) |
+| **Conic Sections** | ✅ complete | 6 | 48 (P1–P48, continuous) | 38 (A–H) | [conic-sections-mindmap.html](Conic-Sections/conic-sections-mindmap.html) | [index.html](Conic-Sections/index.html) |
 
 Each module ships: a chapter-per-file course (`01-…`–`06-…`), an
 Olympiad-level paper with per-question answer pills, a full worked-solutions
