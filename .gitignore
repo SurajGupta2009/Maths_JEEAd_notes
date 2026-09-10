@@ -1,0 +1,11 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+
+# Python
+.venv/
+__pycache__/
+
+# Node (this repo needs none — listed for hygiene)
+node_modules/

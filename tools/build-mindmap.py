@@ -2,62 +2,112 @@
 """Build single-file recursive mind maps from the note pages of a module.
 
 Usage:
-  python3 PnC/build-mindmap.py [pnc|cn|all]
+  python3 tools/build-mindmap.py <module|all>
 
-Regenerates:
-  PnC/pnc-mindmap.html          (all PnC pages)
-  Complex Numbers/cn-mindmap.html  (all Complex Numbers pages)
+  <module>  module folder name — case-insensitive, spaces and hyphens
+            interchangeable (`Complex Numbers`, `complex-numbers`, ...);
+            CLI aliases (e.g. `cn`) may be pinned in
+            tools/mindmap-overrides.json
+  all       every module found in the repo
+
+A "module" is any top-level repo folder that contains an index.html.
+The mind map node list is auto-discovered from the folder:
+
+  index.html                     -> (house)  Course map, usage & roadmap
+  NN-slug.html  (chapter files)  ->    N     Ch N · <chapter <h1> text>
+  olympiad-paper.html            ->  (Sigma)  Olympiad Paper · K questions  (K counted)
+  olympiad-paper-solutions.html  ->  (pen)    Olympiad Paper · Solutions & marking guide
+
+Exact chapter labels can be pinned per module in tools/mindmap-overrides.json
+(this is how the two golden modules keep their hand-tuned labels).
+
+Output file: the module folder's existing `*-mindmap.html` is regenerated in
+place (so re-running is idempotent); a brand-new module gets
+`<folder-slug>-mindmap.html`, where the slug is the folder name lowercased
+with runs of spaces/hyphens collapsed to a single hyphen
+(`Quadratic-Equations` -> `quadratic-equations-mindmap.html`).
+
+Never hand-edit a generated mind map — edit the source pages and rebuild.
 """
-import os, re, sys, html as H
+import json, os, re, sys, html as H
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repo root
-
-MODULES = {
-    'pnc': {
-        'base': os.path.join(ROOT, 'PnC'),
-        'out': os.path.join(ROOT, 'PnC', 'pnc-mindmap.html'),
-        'css': os.path.join(ROOT, 'PnC', 'assets', 'notes.css'),
-        'title': 'PnC · Complete Course — single-file mind map',
-        'brand': 'PnC · Complete Course',
-        'skip': 'href="01-counting-basics.html"',
-        'back': ('index.html', 'index.html'),
-        'nodes': [
-            ('🏠', 'index.html', 'Course map, usage & roadmap'),
-            ('1', '01-counting-basics.html', 'Ch 1 · Counting Basics'),
-            ('2', '02-permutations.html', 'Ch 2 · Permutations'),
-            ('3', '03-combinations.html', 'Ch 3 · Combinations'),
-            ('4', '04-binomial-and-identities.html', 'Ch 4 · Binomial Coefficients & Identities'),
-            ('5', '05-advanced-methods.html', 'Ch 5 · Advanced Methods'),
-            ('6', '06-olympiad-theory.html', 'Ch 6 · Olympiad Theory'),
-            ('Σ', 'olympiad-paper.html', 'Olympiad Paper · 40 questions'),
-            ('✎', 'olympiad-paper-solutions.html', 'Olympiad Paper · Solutions & marking guide'),
-        ],
-    },
-    'cn': {
-        'base': os.path.join(ROOT, 'Complex Numbers'),
-        'out': os.path.join(ROOT, 'Complex Numbers', 'cn-mindmap.html'),
-        'css': os.path.join(ROOT, 'Complex Numbers', 'assets', 'notes.css'),
-        'title': 'Complex Numbers · Complete Course — single-file mind map',
-        'brand': 'Complex Numbers · Complete Course',
-        'skip': 'href="01-foundations.html"',
-        'back': ('index.html', 'index.html'),
-        'nodes': [
-            ('🏠', 'index.html', 'Course map, usage & roadmap'),
-            ('1', '01-foundations.html', 'Ch 1 · Foundations — Algebra & the Plane'),
-            ('2', '02-polar-and-de-moivre.html', 'Ch 2 · Polar Form & De Moivre'),
-            ('3', '03-roots-of-unity.html', 'Ch 3 · Roots of Unity'),
-            ('4', '04-jee-advanced-core.html', 'Ch 4 · JEE Advanced Core'),
-            ('5', '05-geometry-via-complex-numbers.html', 'Ch 5 · Geometry via Complex Numbers'),
-            ('6', '06-synthesis.html', 'Ch 6 · Synthesis'),
-            ('Σ', 'olympiad-paper.html', 'Olympiad Paper · 38 questions'),
-            ('✎', 'olympiad-paper-solutions.html', 'Olympiad Paper · Solutions & marking guide'),
-        ],
-    },
-}
+TOOLS = os.path.dirname(os.path.abspath(__file__))          # repo/tools
+ROOT = os.path.dirname(TOOLS)                                # repo root
+OVERRIDES_PATH = os.path.join(TOOLS, 'mindmap-overrides.json')
 
 def read(p):
     with open(p, encoding='utf-8') as f:
         return f.read()
+
+def slug(name):
+    """Normalize a folder/CLI name: lowercase, spaces/hyphens -> single hyphen."""
+    return re.sub(r'[\s_-]+', '-', name.strip().lower()).strip('-')
+
+# ---------------------------------------------------------------- discovery
+
+CHAPTER_RE = re.compile(r'^(\d+)-[^/\\]+\.html$')
+
+def find_modules():
+    """Every top-level repo folder that contains an index.html."""
+    out = []
+    for d in sorted(os.listdir(ROOT)):
+        p = os.path.join(ROOT, d)
+        if d.startswith('.'):
+            continue
+        if os.path.isdir(p) and os.path.isfile(os.path.join(p, 'index.html')):
+            out.append(d)
+    return out
+
+def load_overrides():
+    if os.path.exists(OVERRIDES_PATH):
+        with open(OVERRIDES_PATH, encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+def module_config(folder):
+    """Auto-discover a module folder; optional pins from mindmap-overrides.json."""
+    base = os.path.join(ROOT, folder)
+    if not os.path.isfile(os.path.join(base, 'index.html')):
+        raise SystemExit(f'error: {folder}/ has no index.html — not a module')
+    css = os.path.join(base, 'assets', 'notes.css')
+    if not os.path.isfile(css):
+        raise SystemExit(f'error: {folder}/assets/notes.css missing — copy it from an existing module')
+
+    ov = {}
+    for k, v in load_overrides().items():
+        if slug(k) == slug(folder):
+            ov = v
+    labels = ov.get('labels', {})
+
+    chapters = sorted(f for f in os.listdir(base) if CHAPTER_RE.match(f))
+    nodes = [('🏠', 'index.html', labels.get('index.html', 'Course map, usage & roadmap'))]
+    for f in chapters:
+        n = int(CHAPTER_RE.match(f).group(1))
+        m = re.search(r'<h1[^>]*>(.*?)</h1>', read(os.path.join(base, f)), re.S)
+        fallback = f'Ch {n} · {text_of(m.group(1))}' if m else f'Ch {n} · {f}'
+        nodes.append((str(n), f, labels.get(f, fallback)))
+    if os.path.isfile(os.path.join(base, 'olympiad-paper.html')):
+        nq = len(re.findall(r'<span class="q-id">Q\d+', read(os.path.join(base, 'olympiad-paper.html'))))
+        nodes.append(('Σ', 'olympiad-paper.html',
+                      labels.get('olympiad-paper.html', f'Olympiad Paper · {nq} questions')))
+    if os.path.isfile(os.path.join(base, 'olympiad-paper-solutions.html')):
+        nodes.append(('✎', 'olympiad-paper-solutions.html',
+                      labels.get('olympiad-paper-solutions.html', 'Olympiad Paper · Solutions & marking guide')))
+
+    existing = [f for f in sorted(os.listdir(base)) if f.endswith('-mindmap.html')]
+    derived = slug(folder) + '-mindmap.html'
+    out_name = derived if derived in existing else (existing[0] if existing else derived)
+
+    return {
+        'base': base,
+        'out': os.path.join(base, out_name),
+        'css': css,
+        'title': ov.get('title', f'{folder} · Complete Course — single-file mind map'),
+        'brand': ov.get('brand', f'{folder} · Complete Course'),
+        'skip': f'href="{chapters[0]}"' if chapters else None,
+        'back': ('index.html', 'index.html'),
+        'nodes': nodes,
+    }
 
 VOID = {'meta', 'link', 'br', 'img', 'hr', 'input'}
 TAG_RE = re.compile(r'<(/?)([a-zA-Z][a-zA-Z0-9]*)((?:[^>"\'/]|"[^"]*"|\'[^\']*\')*)(/?)>')
@@ -331,10 +381,11 @@ JS = """
 """
 
 def build(name):
-    cfg = MODULES[name]
+    cfg = module_config(name)
     base = cfg['base']
     css = read(cfg['css'])
-    first = read(os.path.join(base, cfg['nodes'][1][1]))
+    mjsrc = cfg['nodes'][1][1] if len(cfg['nodes']) > 1 else 'index.html'
+    first = read(os.path.join(base, mjsrc))
     mj_cfg = re.search(r'<script>\s*window\.MathJax.*?</script>', first, re.S).group(0)
     mj_cdn = re.search(r'<script async src="https://cdn\.jsdelivr[^"]*"></script>', first).group(0)
 
@@ -392,8 +443,17 @@ def build(name):
 
 if __name__ == '__main__':
     which = sys.argv[1] if len(sys.argv) > 1 else 'all'
-    for name in (['pnc', 'cn'] if which == 'all' else [which]):
-        if os.path.isdir(MODULES[name]['base']):
-            build(name)
-        else:
-            print(f"[{name}] module folder not found — skipped")
+    mods = find_modules()
+    if which.lower() == 'all':
+        targets = mods
+    else:
+        aliases = {}
+        for k, v in load_overrides().get('aliases', {}).items():
+            aliases[slug(k)] = v
+        want = aliases.get(slug(which), which)
+        targets = [m for m in mods if slug(m) == slug(want)]
+        if not targets:
+            raise SystemExit(f'no module folder matching {which!r}; found: '
+                             + (', '.join(mods) if mods else '(none)'))
+    for name in targets:
+        build(name)
