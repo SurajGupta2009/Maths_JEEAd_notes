@@ -1,0 +1,148 @@
+<!-- USAGE — chapter page template (ONE big HTML file per chapter — never split one
+     chapter across files).
+     1. Copy to <Module-Folder>/NN-slug.html (e.g. 03-complex-numbers.html).
+     2. Replace every {{PLACEHOLDER}}; delete this comment when done.
+     3. Keep the <head> block exactly (stylesheet + MathJax config + jsdelivr tag).
+     4. In the topnav, the CURRENT page is a highlighted <span>, not a link —
+        see the {{CHN_FILE}} slot below.
+     5. Practice questions are numbered continuously per module (P1…Pn, unique
+        across all chapters), woven BETWEEN theory sections, not dumped at the end.
+        Worked examples use S1…Sn. Each question block shown below is the pattern —
+        duplicate as often as the chapter needs.
+     When finished: python3 tools/verify-math.py <Module-Folder>/NN-slug.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch {{N}} · {{CHAPTER_SHORT}} — {{MODULE}} Notes</title>
+<link rel="stylesheet" href="assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <span class="brand">{{MODULE}} · Notes</span>
+    <a href="index.html">Home</a><span class="sep">|</span>
+    <a href="{{CH1_FILE}}">1 · {{CH1_SHORT}}</a>
+    <a href="{{CH2_FILE}}">2 · {{CH2_SHORT}}</a>
+    <span style="color:var(--teal);font-weight:700;">{{N}} · {{CHAPTER_SHORT}}</span>
+    <a href="{{CH4_FILE}}">4 · {{CH4_SHORT}}</a>
+    <a href="{{CH5_FILE}}">5 · {{CH5_SHORT}}</a>
+    <a href="{{CH6_FILE}}">6 · {{CH6_SHORT}}</a>
+    <a href="olympiad-paper.html" style="color:var(--violet);font-weight:700;">Olympiad Paper</a>
+    <a href="olympiad-paper-solutions.html" style="color:var(--violet);">Solutions</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <header class="ch-head">
+    <div class="ch-kicker">Chapter {{N}} of 6</div>
+    <h1>{{CHAPTER_TITLE}}</h1>
+    <p class="ch-sub">{{CHAPTER_SUB — 2–4 sentences: what this chapter builds, and why the
+    payoff at JEE Advanced / Olympiad level is worth it. Inline math goes in \( \) delimiters.
+    (The older golden chapters use div.banner with .chips instead — for new pages, this
+    header.ch-head shape is the convention.)}}</p>
+  </header>
+
+  <!-- ================= intro ================= -->
+  <div class="card">
+    <h2><span class="no">{{N}}.0</span> What you will be able to do</h2>
+    <p>{{INTRO — 1 paragraph connecting this chapter to the previous one and naming the
+    one idea everything below hangs from.}}</p>
+    <ul>
+      <li>{{OBJECTIVE_1}}</li>
+      <li>{{OBJECTIVE_2}}</li>
+      <li>{{OBJECTIVE_3}}</li>
+    </ul>
+  </div>
+
+  <!-- ================= {{N}}.1 ================= -->
+  <div class="card">
+    <h2><span class="no">{{N}}.1</span> {{SECTION_1_TITLE}}</h2>
+
+    <p>{{Open with the problem the section solves — derive, don't declare. Real math uses
+    MathJax delimiters only: inline \( a^2 + b^2 = c^2 \), never Unicode look-alikes.}}</p>
+
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — why it is true</div>
+      <p>{{The actual reasoning a mathematician uses. This box is mandatory in spirit for
+      every core result: if you cannot derive it, do not move on.}}</p>
+    </div>
+
+    <p>The headline result, in a display block:</p>
+    <div class="formula"><span class="label">{{RESULT_NAME}}</span>
+      \[ \sum_{k=0}^{n} \binom{n}{k} = 2^{n} \]</div>
+
+    <h3>{{Sub-heading — sub-slices, cases, or the first application}}</h3>
+    <p>{{Body of the sub-topic.}}</p>
+
+    <div class="box box-warn">
+      <div class="box-title">⚠ Common Trap — {{TRAP_TITLE}}</div>
+      <p>{{The classic mistake, stated exactly, with the sentence that prevents it.}}</p>
+    </div>
+  </div>
+
+  <!-- ================= worked example (S-numbered) ================= -->
+  <div class="card">
+    <h2><span class="no">{{N}}.2</span> Worked example</h2>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S{{S_ID}}</span><span class="badge b-adv">JEE Adv</span><span class="badge b-solved">solved</span><span class="badge b-concept">{{METHOD_TAG}}</span></div>
+      <p>{{The problem statement, in context of §{{N}}.1.}}</p>
+      <div class="solution">
+        <div class="sol-title">Solution &amp; reasoning</div>
+        <p>{{Name the move first, then execute it. Every step earns the next step.}}</p>
+        <p>Total: \( 2^{10} = \) <span class="answer-pill">1024</span></p>
+        <p class="small"><strong>Small-case sanity check:</strong> {{VERIFY A TINY INSTANCE BY HAND}} ✓</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= {{N}}.3 ================= -->
+  <div class="card">
+    <h2><span class="no">{{N}}.3</span> {{SECTION_2_TITLE}}</h2>
+
+    <p>{{Second theory block — build on §{{N}}.1.}}</p>
+
+    <div class="box box-idea">
+      <div class="box-title">💡 Key Idea — {{IDEA_TITLE}}</div>
+      <p>{{The one-sentence takeaway the student should carry into the exam.}}</p>
+    </div>
+
+    <div class="box box-olymp">
+      <div class="box-title">★ Olympiad Extension — {{OLYMP_TITLE}}</div>
+      <p>{{The frontier version: the theorem as olympiad solvers meet it, with the proof
+      sketch. Optional per section, required at least once per chapter.}}</p>
+    </div>
+
+    <h3>Practice set — everything above</h3>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P{{P_ID}}</span><span class="badge b-adv">JEE Adv</span><span class="badge b-pract">practice</span><span class="badge b-concept">{{METHOD_TAG}}</span></div>
+      <p>{{The problem. Difficulty badge is one of b-main / b-adv / b-olymp; the concept tag
+      names the method without spoiling it.}}</p>
+      <details class="ans"><summary>Answer + reasoning</summary><div class="ans-body">
+        <p><strong>Method: {{METHOD_NAME}}.</strong> {{Worked derivation, then a check.}}</p>
+        <p>Answer: <strong>{{FINAL_ANSWER}}</strong>. ({{Small-case or reverse check.}})</p>
+      </div></details>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>{{MODULE}} · Chapter {{N}}</span>
+    <span><a href="index.html">← Home</a> · <a href="{{CH_PREV_FILE}}">← Ch {{N-1}}</a> · <a href="{{CH_NEXT_FILE}}">Ch {{N+1}} →</a></span>
+  </div>
+
+</div>
+</body>
+</html>

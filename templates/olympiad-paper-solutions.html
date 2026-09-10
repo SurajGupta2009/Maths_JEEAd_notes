@@ -1,0 +1,88 @@
+<!-- USAGE — Olympiad paper SOLUTIONS template. One file per module:
+     olympiad-paper-solutions.html. It mirrors olympiad-paper.html exactly:
+     same cards, same sections, same Q-ids — only here each question gets a
+     <details class="ans"> worked solution.
+     Format rules for every solution (see the solved block below):
+       • <strong>Method first</strong> — name the approach before computing.
+       • full derivation with real MathJax delimiters, then the answer in
+         <p class="answer-pill">, then a check (small case / substitution / reverse step).
+       • Where a question has two standard methods, give BOTH — the exam rewards the
+         choice, so show the fork.
+       • Every numeric answer here must have been verified with a pure-Python script
+         BEFORE this file was written (no numpy, no sympy).
+     Duplicate the section card and solved question for every Q; then run
+     python3 tools/verify-math.py <Module-Folder>/olympiad-paper-solutions.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{MODULE}} — Paper Solutions ({{PAPER_Q_COUNT}} Q)</title>
+<link rel="stylesheet" href="assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <span class="brand">{{MODULE}} · Solutions</span>
+    <a href="index.html">Home</a><span class="sep">|</span>
+    <a href="{{CH1_FILE}}">Ch 1</a>
+    <a href="{{CH2_FILE}}">Ch 2</a>
+    <a href="{{CH3_FILE}}">Ch 3</a>
+    <a href="{{CH4_FILE}}">Ch 4</a>
+    <a href="{{CH5_FILE}}">Ch 5</a>
+    <a href="{{CH6_FILE}}">Ch 6</a>
+    <a href="olympiad-paper.html">Paper</a>
+    <span style="color:var(--teal);font-weight:700;">Solutions</span>
+  </div>
+</nav>
+
+<div class="page">
+
+  <header class="ch-head">
+    <div class="ch-kicker">Companion to the {{PAPER_Q_COUNT}}-question paper</div>
+    <h1>Full Worked Solutions</h1>
+    <p class="ch-sub">Every solution shows the <em>method name</em> first, then the
+    computation, then a check. Where a problem has two standard methods, both are given —
+    the exam rewards the ability to choose, and the notes are built on the same principle.</p>
+  </header>
+
+  <!-- ================= A ================= -->
+  <div class="card">
+    <h2>A · {{SECTION_A_NAME}} (Q1–Q{{A_LAST}})</h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q{{Q_ID}}</span><span class="badge b-main">JEE Main</span></div>
+      <p>{{Repeat the question text verbatim from olympiad-paper.html — e.g.
+      solve \(x^2 - 5x + 6 = 0\).}}</p>
+      <details class="ans"><summary>Solution</summary><div class="ans-body">
+        <p><strong>Method 1: factor by roots.</strong> The roots sum to \(5\) and multiply to
+        \(6\), so they are \(2\) and \(3\):
+        \[x^2 - 5x + 6 = (x-2)(x-3) = 0 \;\Longrightarrow\; x \in \{2, 3\}.\]</p>
+        <p><strong>Method 2: quadratic formula.</strong>
+        \[x = \frac{5 \pm \sqrt{25-24}}{2} = \frac{5 \pm 1}{2} \in \{2, 3\}.\]</p>
+        <p class="answer-pill">Answer: \(x = 2,\ 3\)</p>
+        <p class="small">Check: \(2+3 = 5\) ✓ and \(2 \\cdot 3 = 6\) ✓ — and both satisfy the
+        original equation. (Both methods agree, which is the point of showing two.)</p>
+      </div></details>
+    </div>
+    <!-- Duplicate the solved-question block for every Q in this section (same Q-ids as
+         the paper), and duplicate the whole card for sections B…H. -->
+  </div>
+
+  <div class="foot">
+    <a href="olympiad-paper.html">← The paper</a>
+    <a href="index.html">Module home</a>
+  </div>
+
+</div>
+</body>
+</html>
