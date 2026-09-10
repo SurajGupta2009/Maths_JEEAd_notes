@@ -1,0 +1,530 @@
+&lt;!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3 · Combinations — PnC Notes</title>
+<link rel="stylesheet" href="assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <span class="brand">PnC · Notes</span>
+    <a href="index.html">Home</a><span class="sep">|</span>
+    <a href="01-counting-basics.html">1 · Basics</a>
+    <a href="02-permutations.html">2 · Permutations</a>
+    <a href="03-combinations.html">3 · Combinations</a>
+    <a href="04-binomial-and-identities.html">4 · Binomial</a>
+    <a href="05-advanced-methods.html">5 · IE · PH · Recurrences</a>
+    <a href="06-olympiad-theory.html">6 · Olympiad Theory</a>
+    <a href="olympiad-paper.html" style="color:var(--violet);font-weight:700;">Olympiad Paper</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="banner">
+    <div class="kicker">Chapter 3 · Order Irrelevant</div>
+    <h1>Combinations</h1>
+    <p class="sub">Selections: why dividing by \(r!\) is legitimate, Pascal's triangle from set
+    theory, restricted selections, and the stars-and-bars bijection that turns "identical objects into
+    boxes" into a one-line count. Plus compositions, multinomials, and a first look at partitions.</p>
+    <div class="chips"><span class="chip">\(\binom nr\)</span><span class="chip">Pascal</span><span class="chip">stars &amp; bars</span><span class="chip">compositions</span><span class="chip">multinomial</span><span class="chip">partitions (intro)</span></div>
+  </div>
+
+  <!-- ============ 3.1 ============ -->
+  <div class="card">
+    <h2><span class="no">3.1</span> From permutations to combinations — why divide by \(r!\)</h2>
+
+    <p><strong>Definition.</strong> A <strong>combination</strong> (an \(r\)-subset) of a set of \(n\)
+    elements is a selection of \(r\) elements <em>without regard to order</em>. The number is
+    \(\binom{n}{r}\).</p>
+
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — the exact-symmetry division, justified</div>
+      <p>Order the \(r\) chosen elements: every \(r\)-subset generates exactly \(r!\) permutations
+      (all orderings of its \(r\) distinct members), and every such ordering comes from exactly one
+      subset. So the set of all \(P(n,r) = \frac{n!}{(n-r)!}\) ordered selections partitions into
+      fibers of size exactly \(r!\), one per subset:
+      \[
+      \binom{n}{r} = \frac{P(n,r)}{r!} = \frac{n!}{r!\,(n-r)!}.
+      \]
+      This division is <em>exact</em> (every fiber the same size) — unlike the "divide by symmetry"
+      moves that can fail with identical objects. Notice the definition has now become
+      <strong>computational</strong>: \(\binom{n}{r}\) is a ratio of factorials because an
+      \(r\)-subset is an orbit of the symmetric group \(S_r\) acting on ordered selections.
+      (Group actions reappear in full force in the Burnside chapter.)</p>
+    </div>
+
+    <h3>The mirror symmetry</h3>
+    <p>\(\binom{n}{r} = \binom{n}{n-r}\). The <em>reason</em> is a bijection, not an algebraic trick:
+    <strong>complementation</strong> — \(S \mapsto [n]\setminus S\) maps \(r\)-subsets bijectively to
+    \((n-r)\)-subsets. Choosing which \(r\) to <em>keep</em> is the same information as choosing which
+    \(n-r\) to <em>discard</em>.</p>
+
+    <div class="box box-idea">
+      <div class="box-title">💡 Key Idea — the boundary between Ch. 2 and Ch. 3</div>
+      <p>Every problem begins with a question: <strong>do the objects I'm building come with labels or
+      positions?</strong> "Arrange, schedule, line up, first/second/third" → permutations.
+      "Choose, select, team, committee, how many subsets" → combinations. Mixed problems
+      ("choose 3 of 10 and arrange them in a row") are compositions of both, in that order.</p>
+    </div>
+  </div>
+
+  <!-- ============ 3.2 ============ -->
+  <div class="card">
+    <h2><span class="no">3.2</span> Pascal's identity and the triangle</h2>
+
+    <p><strong>Pascal's identity:</strong> \(\binom{n}{r} = \binom{n-1}{r} + \binom{n-1}{r-1}\).</p>
+
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — the proof is a two-case split on one element</div>
+      <p>Count the \(r\)-subsets of \([n]\). Split by whether the element \(n\) is included
+      (<strong>disjoint and exhaustive</strong> — the sum rule):</p>
+      <ul>
+        <li>\(n \notin S\): choose an \(r\)-subset of \([n-1]\): \(\binom{n-1}{r}\) ways.</li>
+        <li>\(n \in S\): choose the other \(r-1\) members from \([n-1]\): \(\binom{n-1}{r-1}\) ways.</li>
+      </ul>
+      <p>Add: \(\binom{n}{r} = \binom{n-1}{r} + \binom{n-1}{r-1}\). <strong>This is the same "split on a
+      distinguished element" move that produced the Fibonacci recurrence, the subsets count, and the
+      Bell recurrence</strong> — one reflex, many theorems.</p>
+    </div>
+
+    <div class="figure">
+      <div class="fig-box">
+      <svg viewBox="0 0 640 240" width="640" role="img" aria-label="Pascal's triangle with the hockey-stick diagonal highlighted">
+        <style>
+          .pv { font: 600 13px "Segoe UI", sans-serif; fill: #2a3550; }
+          .ph { font: 700 13px "Segoe UI", sans-serif; fill: #fff; }
+          .pa { stroke: #6d3fd4; stroke-width: 2; fill: none; }
+          .pl { font: 600 11px "Segoe UI", sans-serif; fill: #6d3fd4; }
+        </style>
+        <!-- triangle entries: row n, entry r -->
+        <!-- n=0 -->
+        <text class="pv" x="310" y="30" text-anchor="middle">1</text>
+        <!-- n=1 -->
+        <text class="pv" x="270" y="62" text-anchor="middle">1</text>
+        <text class="pv" x="350" y="62" text-anchor="middle">1</text>
+        <!-- n=2 -->
+        <text class="pv" x="230" y="94" text-anchor="middle">1</text>
+        <text class="pv" x="310" y="94" text-anchor="middle">2</text>
+        <text class="pv" x="390" y="94" text-anchor="middle">1</text>
+        <!-- n=3 -->
+        <text class="pv" x="190" y="126" text-anchor="middle">1</text>
+        <text class="pv" x="270" y="126" text-anchor="middle">3</text>
+        <text class="pv" x="350" y="126" text-anchor="middle">3</text>
+        <text class="pv" x="430" y="126" text-anchor="middle">1</text>
+        <!-- n=4 -->
+        <text class="pv" x="150" y="158" text-anchor="middle">1</text>
+        <text class="pv" x="230" y="158" text-anchor="middle">4</text>
+        <text class="pv" x="310" y="158" text-anchor="middle">6</text>
+        <text class="pv" x="390" y="158" text-anchor="middle">4</text>
+        <text class="pv" x="470" y="158" text-anchor="middle">1</text>
+        <!-- n=5 -->
+        <text class="pv" x="110" y="190" text-anchor="middle">1</text>
+        <text class="pv" x="190" y="190" text-anchor="middle">5</text>
+        <text class="pv" x="270" y="190" text-anchor="middle">10</text>
+        <text class="pv" x="350" y="190" text-anchor="middle">10</text>
+        <text class="pv" x="430" y="190" text-anchor="middle">5</text>
+        <text class="pv" x="510" y="190" text-anchor="middle">1</text>
+        <!-- n=6 -->
+        <text class="pv" x="70" y="222" text-anchor="middle">1</text>
+        <text class="pv" x="150" y="222" text-anchor="middle">6</text>
+        <text class="pv" x="230" y="222" text-anchor="middle">15</text>
+        <text class="pv" x="310" y="222" text-anchor="middle">20</text>
+        <text class="pv" x="390" y="222" text-anchor="middle">15</text>
+        <text class="pv" x="470" y="222" text-anchor="middle">6</text>
+        <text class="pv" x="550" y="222" text-anchor="middle">1</text>
+        <!-- diagonal arrows (hockey stick: sum of C(1,1)+C(2,1)+C(3,1)+C(4,1) = 10 = C(5,2)) -->
+        <path class="pa" d="M 238 86 L 238 164" marker-end="url(#arrP)"/>
+        <path class="pa" d="M 238 164 L 262 184" marker-end="url(#arrP)"/>
+        <text class="pl" x="500" y="80">diagonal sums:</text>
+        <text class="pl" x="500" y="100">1+2+3+4 = 10 = C(5,2)</text>
+        <defs>
+          <marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#6d3fd4"/>
+          </marker>
+        </defs>
+      </svg>
+      </div>
+      <div class="cap">Fig 3.1 — Pascal's triangle: each entry is the sum of the two above it (Pascal's identity).
+      The slanted arrows trace the <em>hockey-stick identity</em> \(\sum_{i=r}^{n}\binom{i}{r} = \binom{n+1}{r+1}\).</div>
+    </div>
+
+    <h3>The hockey-stick identity</h3>
+    <p>\(\displaystyle\sum_{i=r}^{n} \binom{i}{r} = \binom{n+1}{r+1}\).</p>
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — proof by looking at the maximum element</div>
+      <p>Count the \((r+1)\)-subsets of \([n+1]\). Split by the <strong>largest element</strong> of the
+      subset: if the largest is \(i+1\) (so \(r \le i \le n\)), the other \(r\) members are an
+      \(r\)-subset of \([i]\): \(\binom{i}{r}\) ways. Summing over \(i\):
+      \(\sum_{i=r}^{n}\binom{i}{r}\). But the total is \(\binom{n+1}{r+1}\). Done.
+      (Same engine as Pascal's identity: <em>split by a distinguished element's value</em>.)</p>
+    </div>
+    <p class="small">A diagonal of Pascal's triangle is literally the hockey stick:
+    \(\binom{1}{1}+\binom{2}{1}+\binom{3}{1}+\binom{4}{1} = 1+2+3+4 = 10 = \binom{5}{2}\) —
+    which, by the way, re-proves the sum \(1+2+\cdots+n = \binom{n+1}{2}\) from Chapter 1.</p>
+  </div>
+
+  <!-- ============ 3.3 ============ -->
+  <div class="card">
+    <h2><span class="no">3.3</span> Restricted selections</h2>
+
+    <p>Real problems never ask for a bare \(\binom{n}{r}\). The standard patterns:</p>
+    <table class="data">
+      <tr><th style="text-align:left">Condition</th><th style="text-align:left">Tool</th></tr>
+      <tr><td>"must include X" / "must exclude X"</td><td>fix X (or not), choose the rest: \(\binom{n-1}{r-1}\) / \(\binom{n-1}{r}\)</td></tr>
+      <tr><td>"at least m from group A"</td><td>complement (count &lt; m) or direct case split</td></tr>
+      <tr><td>"exactly a from A and b from B"</td><td>product: \(\binom{|A|}{a}\binom{|B|}{b}\)</td></tr>
+      <tr><td>"from groups A, B, C with lower bounds"</td><td>sum over valid (a,b,c) triples of products</td></tr>
+      <tr><td>"all of some kind present" (e.g. every suit)</td><td>inclusion–exclusion (Chapter 5)</td></tr>
+    </table>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S1</span><span class="badge b-adv">JEE Adv</span><span class="badge b-solved">solved</span><span class="badge b-concept">complement</span></div>
+      <p>A library has 20 different books, 4 of them are volumes of a specific series.
+      In how many ways can you choose 5 books so that <strong>at least one</strong> of the 4
+      series volumes is included?</p>
+      <div class="solution">
+        <div class="sol-title">Solution &amp; reasoning</div>
+        <p>Total: \(\binom{20}{5} = 15504\). None of the series: choose all 5 from the other 16:
+        \(\binom{16}{5} = 4368\). Answer \(= 15504 - 4368 = \) <span class="answer-pill">11,136</span></p>
+        <p class="small">"At least one" is the canonical complement trigger (Chapter 1). The direct
+        case split \(1 + 2 + 3 + 4\) series volumes works too but is four terms of arithmetic.</p>
+      </div>
+    </div>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S2</span><span class="badge b-adv">JEE Adv</span><span class="badge b-solved">solved</span><span class="badge b-concept">case split + products</span></div>
+      <p>A cricket team of 11 is to be selected from 7 batsmen, 5 bowlers and 3 all-rounders, with
+      <strong>at least 3 batsmen and at least 2 bowlers</strong>. How many teams?</p>
+      <div class="solution">
+        <div class="sol-title">Solution &amp; reasoning</div>
+        <p>Write the team as \((b, w, a)\) with \(b+w+a = 11\), \(3\le b\le 7\), \(2\le w\le 5\),
+        \(0\le a\le 3\). All-rounders cap at 3, so enumerate by \(a\):</p>
+        <table class="data">
+          <tr><th>\(a\)</th><th>valid \((b,w)\)</th><th>count</th></tr>
+          <tr><td>0</td><td>(6,5), (7,4)</td><td>\(\binom76\binom55 + \binom77\binom54 = 7 + 5 = 12\)</td></tr>
+          <tr><td>1</td><td>(5,5), (6,4), (7,3)</td><td>\(21 + 35 + 10 = 66\)</td></tr>
+          <tr><td>2</td><td>(4,5), (5,4), (6,3), (7,2)</td><td>\(35 + 105 + 70 + 10 = 220\)</td></tr>
+          <tr><td>3</td><td>(3,5), (4,4), (5,3), (6,2)</td><td>\(35 + 175 + 210 + 70 = 490\)</td></tr>
+        </table>
+        <p>Total: \(12 + 66 + 220 + 490 = \) <span class="answer-pill">788</span></p>
+        <p class="small">This is the <strong>multinomial-case-split template</strong>: one free variable
+        (here \(a\)) plus bounds makes a finite table. JEE Advanced loves this exact shape;
+        the error pattern it catches is missing boundary triples like \((7,3)\) or \((7,2)\) —
+        <em>always check that the bounds really exclude nothing you need</em>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 3.4 ============ -->
+  <div class="card">
+    <h2><span class="no">3.4</span> Stars and bars — the master bijection</h2>
+
+    <p><strong>Problem A.</strong> In how many ways can \(n\) <em>identical</em> balls be distributed
+    into \(k\) <em>distinct</em> boxes, empty boxes allowed?</p>
+    <div class="formula"><span class="label">stars and bars (non-negative form)</span>
+      $$\binom{n+k-1}{k-1}$$
+    </div>
+    <p><strong>Problem B (positive).</strong> Same, but every box gets at least one ball:
+    \(\binom{n-1}{k-1}\) (put one ball in each box first, then apply Problem A to the remaining
+    \(n-k\) balls).</p>
+
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — why a line of symbols is a distribution</div>
+      <p>A distribution is the same data as the \(k\)-tuple of counts
+      \((x_1, x_2, \dots, x_k)\) with \(x_1+\cdots+x_k = n\) (and \(x_i \ge 0\) in Problem A).
+      Now the bijection: write \(x_1\) stars, a bar, \(x_2\) stars, a bar, …, \(x_k\) stars:
+      \[
+      (x_1,\dots,x_k) \;\longleftrightarrow\; \underbrace{*\cdots *}_{x_1}\,\bar{\,}\,
+      \underbrace{*\cdots *}_{x_2}\,\bar{\,}\, \cdots \bar{\,}\, \underbrace{*\cdots *}_{x_k}.
+      \]
+      Every choice of positions for the \(k-1\) bars among the \(n + k - 1\) symbols gives a valid
+      word — <em>unlike compositions</em> (below), no extra restriction is needed, because consecutive
+      bars and empty ends are perfectly legal (they just mean an empty box). Hence the number of words,
+      and the number of distributions, is \(\binom{n+k-1}{k-1}\). The "reasoning" is one sentence:
+      <strong>counts-tuples and stars-with-bars words are the same object written two ways.</strong></p>
+    </div>
+
+    <div class="figure">
+      <div class="fig-box">
+      <svg viewBox="0 0 620 150" width="620" role="img" aria-label="Stars and bars example: 5 balls, 3 boxes">
+        <style>
+          .sw { font: 700 26px "Segoe UI", sans-serif; fill: #0b8f7a; }
+          .sb { stroke: #c2255c; stroke-width: 4; }
+          .sl { font: 600 12px "Segoe UI", sans-serif; fill: #46506a; }
+        </style>
+        <text class="sw" x="30" y="60">* * * | * | * * * * * * * * *</text>
+        <line class="sb" x1="185" y1="30" x2="185" y2="66"/>
+        <line class="sb" x1="240" y1="30" x2="240" y2="66"/>
+        <rect x="10" y="80" width="235" height="34" rx="8" fill="#e7f6f3" stroke="#b7e4dc"/>
+        <text class="sl" x="127" y="102" text-anchor="middle">box 1: 3 balls</text>
+        <rect x="253" y="80" width="120" height="34" rx="8" fill="#e7f6f3" stroke="#b7e4dc"/>
+        <text class="sl" x="313" y="102" text-anchor="middle">box 2: 1</text>
+        <rect x="372" y="80" width="200" height="34" rx="8" fill="#e7f6f3" stroke="#b7e4dc"/>
+        <text class="sl" x="472" y="102" text-anchor="middle">box 3: 6   (total 10 ✓)</text>
+        <text class="sl" x="310" y="140" text-anchor="middle">Each placement of the 2 bars among the 12 symbols = one distribution.</text>
+      </svg>
+      </div>
+      <div class="cap">Fig 3.2 — 10 identical balls, 3 distinct boxes: \(\binom{10+3-1}{3-1} = \binom{12}{2} = 66\) distributions.
+      The example shows \((3, 1, 6)\).</div>
+    </div>
+
+    <h3>The three-way distinction that ends most confusion</h3>
+    <table class="data">
+      <tr>
+        <th style="text-align:left">Object</th><th style="text-align:left">Order?</th><th style="text-align:left">Repetition?</th><th>Example: "4 from {1,2,3,4}"</th>
+      </tr>
+      <tr>
+        <td><strong>Composition</strong> of \(n\) into \(k\) parts</td>
+        <td>ordered</td><td>parts are values (repeats ok)</td>
+        <td>\(2+1+1\), \(1+2+1\), … are different; count \(\binom{n-1}{k-1}\)</td>
+      </tr>
+      <tr>
+        <td><strong>Partition</strong> of \(n\) into \(k\) parts</td>
+        <td>unordered</td><td>repeats ok</td>
+        <td>\(2+1+1\) and \(1+2+1\) are the same; count \(p_k(n)\) (no closed form!)</td>
+      </tr>
+      <tr>
+        <td><strong>Multiset</strong> of size \(k\) from \(n\) types</td>
+        <td>unordered</td><td>repeats ok</td>
+        <td>choosing 4 objects where objects come in \(n\) kinds; count \(\binom{n+k-1}{k}\)</td>
+      </tr>
+    </table>
+    <p class="small">Compositions and multisets are counted by stars-and-bars (they are dual: a
+    composition of \(n\) into \(k\) parts ↔ a multiset count \((x_1,\dots,x_n)\) with
+    \(\sum x_i = n\)… precisely: compositions = positive stars-and-bars; multisets of size \(k\)
+    from \(n\) types = non-negative solutions of \(x_1+\cdots+x_n = k\) = \(\binom{n+k-1}{k}\)).
+    Partitions are the wild one — see §3.6 and Chapter 6.</p>
+
+    <h3>Integer compositions — ordered sums</h3>
+    <p>A <strong>composition</strong> of \(n\) into \(k\) (positive) parts is an ordered
+    \(k\)-tuple \((a_1,\dots,a_k)\) of positive integers with sum \(n\). Positive stars-and-bars gives
+    \(\boxed{\binom{n-1}{k-1}}\): place \(k-1\) separators in the \(n-1\) gaps between the \(n\) unit
+    blocks. (Here the separators <em>must</em> go between units — that positivity constraint is
+    exactly what makes compositions use \(\binom{n-1}{k-1}\) while box-counts use \(\binom{n+k-1}{k-1}\).)</p>
+    <p>Any number of parts: \(\sum_{k=1}^{n}\binom{n-1}{k-1} = 2^{n-1}\) — and there is a one-line
+    bijection: a composition of \(n\) ↔ a choice of which of the \(n-1\) gaps between \(1,1,\dots,1\)
+    ( \(n\) ones) get a separator.</p>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S3</span><span class="badge b-main">JEE Main</span><span class="badge b-solved">solved</span><span class="badge b-concept">stars &amp; bars</span></div>
+      <p>How many <strong>non-negative</strong> integer solutions does \(x + y + z = 15\) have?
+      How many <strong>positive</strong> ones?</p>
+      <div class="solution">
+        <div class="sol-title">Solution &amp; reasoning</div>
+        <p>Non-negative: \(\binom{15+3-1}{3-1} = \binom{17}{2} = \) <span class="answer-pill">136</span>.
+        Positive: \(\binom{15-1}{3-1} = \binom{14}{2} = \) <span class="answer-pill">91</span>.</p>
+        <p class="small"><strong>Complement check (small-case discipline):</strong> solutions of
+        \(x+y+z=15\) with at least one zero: exactly one zero: \(3\cdot 14 = 42\) (e.g. \(x=0\),
+        \(y,z\ge 1\), \(y+z=15\): 14 pairs); exactly two zeros: 3 (e.g. \(x=y=0\), \(z=15\));
+        three zeros: 0. Total \(45 = 136 - 91\) ✓.</p>
+      </div>
+    </div>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S4</span><span class="badge b-adv">JEE Adv</span><span class="badge b-solved">solved</span><span class="badge b-concept">multiset / stars &amp; bars</span></div>
+      <p>You buy 12 fruits from a stall selling <strong>5 varieties</strong> (unlimited stock, only the
+      counts matter). How many purchase tickets are possible?</p>
+      <div class="solution">
+        <div class="sol-title">Solution &amp; reasoning</div>
+        <p>A ticket = \((x_1,\dots,x_5) \ge 0\), \(\sum x_i = 12\) = multiset of size 12 from 5 types:
+        \(\binom{12+5-1}{5-1} = \binom{16}{4} = \) <span class="answer-pill">1,820</span></p>
+      </div>
+    </div>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S5</span><span class="badge b-adv">JEE Adv</span><span class="badge b-solved">solved</span><span class="badge b-concept">compositions + shift</span></div>
+      <p>In how many <strong>ordered</strong> ways can 10 be written as a sum of positive integers,
+      <strong>each at least 2</strong>?</p>
+      <div class="solution">
+        <div class="sol-title">Solution &amp; reasoning</div>
+        <p>Let the \(k\) parts be \(a_i \ge 2\). Shift: \(b_i = a_i - 1 \ge 1\), \(\sum b_i = 10 - k\),
+        a composition of \(10-k\) into \(k\) parts: \(\binom{9-k}{k-1}\) ways (needs \(10 - k \ge k\),
+        i.e. \(k \le 5\)):
+        \(k=2: \binom{7}{1} = 7\); \(k=3: \binom{6}{2} = 15\); \(k=4: \binom{5}{3} = 10\);
+        \(k=5: \binom{4}{4} = 1\). Total \(= \) <span class="answer-pill">33</span></p>
+        <p class="small">Pattern: <strong>constraints on parts → shift the variables → apply the
+        standard form → sum over the (now bounded) number of parts.</strong> The same three-beat
+        sequence solves nearly every composition problem in JEE Advanced.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 3.5 ============ -->
+  <div class="card">
+    <h2><span class="no">3.5</span> Multinomial coefficients</h2>
+
+    <p>Arranging a multiset with \(n_1, \dots, n_k\) identical copies of \(k\) types
+    (Chapter 2) gives \(\dfrac{n!}{n_1!\cdots n_k!}\). This number is the <strong>multinomial
+    coefficient</strong> \(\dbinom{n}{n_1, \dots, n_k}\), and it counts something bigger:</p>
+
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — the two faces of the multinomial</div>
+      <p><strong>Face 1 (arrangements).</strong> Words in an alphabet of \(k\) letters with letter
+      \(i\) used exactly \(n_i\) times — the Ch. 2 count.</p>
+      <p><strong>Face 2 (partitioning labeled objects).</strong> Dividing \(n\) <em>labeled</em> people
+      into \(k\) groups of sizes \(n_1, \dots, n_k\): choose group 1: \(\binom{n}{n_1}\); group 2 from
+      the rest: \(\binom{n-n_1}{n_2}\); … . The product
+      \(\binom{n}{n_1}\binom{n-n_1}{n_2}\cdots = \dfrac{n!}{n_1!\cdots n_k!}\) telescopes to the same
+      number. If the groups themselves are <em>unlabeled</em> (and of distinct sizes… beware equal
+      sizes), divide by the appropriate symmetry — the exact-symmetry warning of Ch. 2 applies.</p>
+      <p><strong>Face 3 (the identity).</strong> \(\sum \dbinom{n}{n_1,\dots,n_k} = k^n\) over all
+      compositions of \(n\) into \(k\) parts (zeros allowed): the multinomial counts colorings of
+      \(n\) labeled balls with \(k\) colors, grouped by how many got each color. This is the seed of
+      the multinomial theorem — Chapter 4.</p>
+    </div>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S6</span><span class="badge b-adv">JEE Adv</span><span class="badge b-solved">solved</span><span class="badge b-concept">double counting preview</span></div>
+      <p>Prove \(\dbinom{2n}{n} = \sum_{k=0}^{n} \binom{n}{k}^2\).</p>
+      <div class="solution">
+        <div class="sol-title">Solution &amp; reasoning (a double-counting preview)</div>
+        <p>Let \(A, B\) be two labeled sets of size \(n\). Count the \(n\)-subsets of \(A \cup B\).
+        <strong>Directly:</strong> \(\binom{2n}{n}\). <strong>By the part from \(A\):</strong> an
+        \(n\)-subset uses \(k\) elements of \(A\) (hence \(n-k\) of \(B\)): \(\binom{n}{k}\binom{n}{n-k}\)
+        ways for each \(k\); sum over \(k\). Since \(\binom{n}{n-k} = \binom{n}{k}\),
+        \(\binom{2n}{n} = \sum_k \binom{n}{k}^2\). \(\square\)</p>
+        <p class="small">This is Vandermonde's identity in the symmetric case — Chapter 4 generalizes
+        the method and collects the whole identity toolkit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 3.6 ============ -->
+  <div class="card">
+    <h2><span class="no">3.6</span> First look: integer partitions</h2>
+
+    <p>A <strong>partition</strong> of \(n\) is a way of writing \(n\) as a sum of <em>positive
+    integers, order ignored</em>. Denote the count by \(p(n)\):</p>
+    <table class="data">
+      <tr><th>\(n\)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+      <tr><th>\(p(n)\)</th><td>1</td><td>2</td><td>3</td><td>5</td><td>7</td><td>11</td><td>15</td><td>22</td><td>30</td><td class="hl">42</td></tr>
+    </table>
+    <p class="small">For \(n = 4\): \(4;\ 3+1;\ 2+2;\ 2+1+1;\ 1+1+1+1\) — 5 partitions, versus
+    \(2^{3} = 8\) compositions. Order is everything (and nothing): the same numbers, two different
+    mathematical worlds.</p>
+
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — why partitions are hard (and interesting)</div>
+      <p>Compositions and multisets have bijections to words (stars and bars) — that's why they have
+      closed forms. Partitions have <em>no such word model</em>: there is no known simple bijection
+      between partitions of \(n\) and any object with a known count. Instead the subject lives on
+      <strong>generating functions</strong>: \(p(n)\) is the coefficient of \(x^n\) in
+      \(\prod_{k=1}^{\infty}\frac{1}{1-x^k}\) (each part-size \(k\) can be used any number of times —
+      the geometric series). The deepest theorems (Euler's pentagonal number theorem,
+      partitions-into-distinct = partitions-into-odd) are theorems <em>about this infinite product</em>.
+      Chapter 6 develops the machinery and proves Euler's theorem; for now, note the shape:
+      <strong>when no bijection exists, the coefficient of a generating function becomes the count.</strong></p>
+    </div>
+
+    <div class="box box-olymp">
+      <div class="box-title">🏛 Olympiad Extension — the first surprising partition fact</div>
+      <p>Already provable at this level: the number of partitions of \(n\) <strong>into distinct parts</strong>
+      equals the number <strong>into odd parts</strong> (Euler, 1748). The proof (Chapter 6) is a single
+      line of generating functions: \(\prod (1+x^k) = \prod_{\text{odd } m}\frac{1}{1-x^m}\).
+      Keep it in mind when you meet "distinct" vs "odd" in problems — it is not a coincidence,
+      it is a theorem.</p>
+    </div>
+  </div>
+
+  <!-- ============ practice ============ -->
+  <div class="card">
+    <h2><span class="no">3.7</span> Practice set</h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P1</span><span class="badge b-main">JEE Main</span><span class="badge b-pract">practice</span><span class="badge b-concept">product of choices</span></div>
+      <p>From 6 boys and 5 girls, form a 4-member committee with exactly 2 boys and 2 girls.</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>\(\binom62\binom52 = 15\cdot 10 = \) <strong>150</strong>.</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P2</span><span class="badge b-olymp">Olympiad</span><span class="badge b-pract">practice</span><span class="badge b-concept">IE (Ch. 5)</span></div>
+      <p>From a 52-card deck, how many 6-card hands contain <strong>all four suits</strong>?</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>IE on the missing suits:
+        \(\binom{52}{6} - 4\binom{39}{6} + 6\binom{26}{6} - 4\binom{13}{6}
+        = 20{,}358{,}520 - 13{,}050{,}492 + 1{,}381{,}380 - 6{,}864 = \)
+        <strong>8,682,544</strong>.</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P3</span><span class="badge b-adv">JEE Adv</span><span class="badge b-pract">practice</span><span class="badge b-concept">stars &amp; bars + bound</span></div>
+      <p>Non-negative solutions of \(x_1 + x_2 + x_3 + x_4 = 20\) with \(x_1 \le 5\).</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>Total \(\binom{23}{3} = 1771\). Bad (\(x_1 \ge 6\)): shift \(x_1' = x_1 - 6 \ge 0\):
+        \(x_1' + x_2 + x_3 + x_4 = 14\): \(\binom{17}{3} = 680\).
+        Answer \(1771 - 680 = \) <strong>1,091</strong>.</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P4</span><span class="badge b-main">JEE Main</span><span class="badge b-pract">practice</span><span class="badge b-concept">stars &amp; bars + bound</span></div>
+      <p>Non-negative solutions of \(a + b + c = 20\) with \(a \le 7\).</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>\(\binom{22}{2} - \binom{14}{2} = 231 - 91 = \) <strong>140</strong>.</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P5</span><span class="badge b-adv">JEE Adv</span><span class="badge b-pract">practice</span><span class="badge b-concept">multiset arrangement</span></div>
+      <p>Arrange in a row: 5 identical red, 4 identical blue, 2 identical green, 2 identical white balls.</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>\(\dfrac{13!}{5!\,4!\,2!\,2!} = \dfrac{6{,}227{,}020{,}800}{120\cdot 24 \cdot 4} = \)
+        <strong>540,540</strong>.</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P6</span><span class="badge b-olymp">Olympiad</span><span class="badge b-pract">practice</span><span class="badge b-concept">Vandermonde</span></div>
+      <p>Prove \(\displaystyle\sum_{k} \binom{n}{k}\binom{n}{k+1} = \binom{2n}{n+1}\).</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>Vandermonde: \(\sum_k \binom{n}{k}\binom{n}{m-k} = \binom{2n}{m}\) with \(m = n+1\):
+        \(\binom{n}{m-k} = \binom{n}{n+1-k} = \binom{n}{k-1}\), so LHS becomes
+        \(\sum_k \binom{n}{k}\binom{n}{k-1} = \binom{2n}{n+1}\) after the index shift \(k\mapsto k+1\). ✓
+        (Committee story: \((n+1)\)-subsets of a \((2n)\)-set split into two \(n\)-halves.)</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P7</span><span class="badge b-main">JEE Main</span><span class="badge b-pract">practice</span><span class="badge b-concept">multiset</span></div>
+      <p>Choose 10 objects from 7 types, repetition allowed, order irrelevant.</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>\(\binom{10+7-1}{7-1} = \binom{16}{6} = \) <strong>8,008</strong>.</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P8</span><span class="badge b-olymp">Olympiad</span><span class="badge b-pract">practice</span><span class="badge b-concept">compositions + IE</span></div>
+      <p>Compositions of 12 into exactly 4 positive parts, <strong>each part at most 5</strong>.</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>Total positive compositions: \(\binom{11}{3} = 165\). A part \(\ge 6\): shift it down by 6
+        (say \(x_1 = x_1' + 6\), \(x_1' \ge 0\)): \(x_1' + x_2 + x_3 + x_4 = 6\) with \(x_2,x_3,x_4 \ge 1\)
+        → make all non-negative: sum \(3\) in 4 variables: \(\binom{6}{3} = 20\) per part, \(4 \cdot 20 = 80\).
+        Two parts \(\ge 6\) would force the other two positive to sum to \(-2\): impossible.
+        Answer \(165 - 80 = \) <strong>85</strong>.</p>
+      </div></details>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <span>Chapter 3 · Combinations</span>
+    <span><a href="02-permutations.html">← Ch 2</a> · <a href="index.html">Home</a> · <a href="04-binomial-and-identities.html">Next → Ch 4: Binomial &amp; Identities</a></span>
+  </div>
+
+</div>
+</body>
+</html>

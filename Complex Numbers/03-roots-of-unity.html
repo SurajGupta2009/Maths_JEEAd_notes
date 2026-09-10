@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3 · Roots of Unity — Complex Numbers Notes</title>
+<link rel="stylesheet" href="assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <span class="brand">CN · Notes</span>
+    <a href="index.html">Home</a>
+    <span class="sep">|</span>
+    <a href="01-foundations.html">Ch 1</a>
+    <a href="02-polar-and-de-moivre.html">Ch 2</a>
+    <span style="color:#0b8f7a;font-weight:700;">Ch 3 · Roots of Unity</span>
+    <span style="color:#8a93b5;font-size:12px;">Ch 4–6 (planned)</span>
+    <span style="margin-left:auto;font-size:12px;color:#8a93b5;">JEE Advanced · Olympiad</span>
+  </div>
+</nav>
+
+<div class="page">
+
+  <header class="ch-head">
+    <div class="ch-kicker">Chapter 3 of 6</div>
+    <h1>Roots of Unity</h1>
+    <p class="ch-sub">The most special numbers in the whole subject: the solutions of
+    \(z^n = 1\). One definition buys you a whole family of identities — sums that vanish,
+    products that collapse to \(n\), trigonometric products with clean answers, and the
+    "roots-of-unity filter," a JEE-Advanced/Olympiad workhorse for binomial sums with
+    \(k \equiv r \pmod n\). Master this chapter and a whole class of "magical" answers
+    stops being magical.</p>
+  </header>
+
+  <!-- ================= 3.1 ================= -->
+  <div class="card">
+    <h2>3.1 &nbsp;The cube roots of unity — one number, five identities</h2>
+
+    <p>The equation \(z^3 = 1\) has exactly three solutions (Ch 2, §2.4):
+    \[1,\qquad \omega = e^{2\pi i/3} = -\frac12 + i\frac{\sqrt3}{2},\qquad
+    \omega^2 = e^{4\pi i/3} = -\frac12 - i\frac{\sqrt3}{2}.\]
+    By universal convention, <strong>\(\omega\) denotes a non-real cube root of unity</strong>,
+    so \(\omega^3 = 1\) and \(\omega \ne 1\). Everything below is either a one-line
+    computation from that, or a direct read-off from the plane. Learn the five identities;
+    they appear in JEE questions at least once a year.</p>
+
+    <div class="box box-identity">
+      <div class="box-title">📦 The five \(\omega\)-identities (with proofs — no memorizing without reasons)</div>
+      <p><strong>(i) &nbsp;\(1 + \omega + \omega^2 = 0\).</strong> Since \(\omega \ne 1\) is a root of
+      \(x^3 - 1 = (x-1)(x^2 + x + 1)\), we have \(\omega^2 + \omega + 1 = 0\).
+      (Equivalent view: geometric series \(\frac{1-\omega^3}{1-\omega} = 0\), valid because \(\omega \ne 1\).)
+      <br><strong>(ii) &nbsp;\(\bar\omega = \omega^2\).</strong> Conjugation reflects in the real axis:
+      \(\bar\omega = e^{-2\pi i/3} = e^{4\pi i/3} = \omega^2\). Geometrically, \(\omega\) and \(\omega^2\)
+      are mirror images — both sit at \(\pm 120^\circ\).
+      <br><strong>(iii) &nbsp;\((1-\omega)(1-\omega^2) = 3\).</strong> Expand:
+      \(1 - \omega - \omega^2 + \omega\omega^2 = 1 - (\omega + \omega^2) + \omega^3 = 1 - (-1) + 1 = 3\),
+      using (i) and \(\omega^3 = 1\).
+      <br><strong>(iv) &nbsp;\(1 + \omega = e^{i\pi/3}\).</strong> Algebra: \(1 + \omega = 1 - \frac12 + i\frac{\sqrt3}{2}
+      = \frac12 + i\frac{\sqrt3}{2} = \cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\).
+      So \(1+\omega\) has modulus \(1\) and argument \(60^\circ\). (Useful consequence:
+      \(1+\omega = -\omega^2\), from (i).)
+      <br><strong>(v) &nbsp;\(1 - \omega = \sqrt3\, e^{-i\pi/6}\).</strong> \(1 - \omega = \frac32 - i\frac{\sqrt3}{2}
+      = \sqrt3\left(\frac{\sqrt3}{2} - \frac{i}{2}\right) = \sqrt3\left(\cos\frac{-\pi}{6} + i\sin\frac{-\pi}{6}\right)\).
+      So \(|1-\omega| = \sqrt3\) — the side length of the equilateral triangle \(\{1, \omega, \omega^2\}\) —
+      and its argument is \(-30^\circ\).</p>
+    </div>
+
+    <p class="why">Why does this triangle matter? \(1, \omega, \omega^2\) are equally spaced
+    (\(120^\circ\) apart) on the unit circle, so they form an <em>equilateral triangle</em>.
+    Every identity above is either "plug in the geometry" or "expand and use \(1+\omega+\omega^2=0\)".
+    When a JEE question says "let \(\omega\) be a cube root of unity," your first move is always:
+    rewrite everything in terms of \(\omega + \omega^2 = -1\) and \(\omega^3 = 1\).</p>
+
+    <p><strong>Worked — evaluate \((1+\omega)(1+\omega^2)\) two ways.</strong>
+    Algebra: expand and use \(1+\omega+\omega^2 = 0\), \(\omega^3 = 1\):
+    \[(1+\omega)(1+\omega^2) = 1 + (\omega+\omega^2) + \omega\omega^2 = 1 + (-1) + 1 = 1.\]
+    Polar: use identities (iv)–(v), \(1+\omega = e^{i\pi/3}\), \(1+\omega^2 = \overline{1+\omega} = e^{-i\pi/3}\):
+    \[(1+\omega)(1+\omega^2) = e^{i\pi/3} \cdot e^{-i\pi/3} = 1.\]
+    The two methods agree — and they should, which is a useful habit: when one method
+    feels shaky, run the other one. Here the polar version is also a preview of a
+    general principle: \(1+\omega\) and \(1+\omega^2\) are conjugates, so their product
+    is \(|1+\omega|^2 = 1\), real and positive, in one step.</p>
+
+    <div class="box box-warn">
+      <div class="box-title">⚠️ Watch out — the classic sign slip</div>
+      <p>\((1+\omega)(1+\omega^2) = 1\), and <strong>not</strong> 2. The slip is treating
+      \(\omega + \omega^2\) as \(+1\). Drill: \(\omega + \omega^2 = -1\), \(\omega\omega^2 = 1\),
+      \(\omega^3 = 1\). If you ever write "2" here, one of those three is wrong in your head.</p>
+    </div>
+  </div>
+
+  <!-- ================= 3.2 ================= -->
+  <div class="card">
+    <h2>3.2 &nbsp;The \(n\)-th roots of unity and the vanishing sum</h2>
+
+    <p>Generalize to \(z^n = 1\). By Ch 2, the exactly-\(n\) solutions are</p>
+    \[\zeta_k = e^{2\pi i k/n} = \cos\frac{2\pi k}{n} + i\sin\frac{2\pi k}{n},
+    \qquad k = 0, 1, \dots, n-1,\]
+    equally spaced on the unit circle, forming a regular \(n\)-gon. (For \(n = 3\) this is
+    \(\{1, \omega, \omega^2\}\); for \(n = 2\), \(\{1, -1\}\).) Let \(\zeta = e^{2\pi i/n}\) be
+    the <em>primitive</em> root, so the set is \(\{1, \zeta, \zeta^2, \dots, \zeta^{n-1}\}\).
+
+    <div class="box box-identity">
+      <div class="box-title">📦 The vanishing-sum identity</div>
+      <p>For any integer \(m\):
+      \[\sum_{k=0}^{n-1} \zeta^{mk} = \begin{cases} n, & n \mid m,\\ 0, & n \nmid m. \end{cases}\]
+      <strong>Proof.</strong> This is a geometric series with ratio \(\zeta^m\). If \(n \mid m\),
+      then \(\zeta^m = 1\) and all \(n\) terms are \(1\). Otherwise \(\zeta^m \ne 1\) and
+      \[\sum_{k=0}^{n-1} (\zeta^m)^k = \frac{(\zeta^m)^n - 1}{\zeta^m - 1} = \frac{(\zeta^n)^m - 1}{\zeta^m - 1} = 0.\]
+      Two lines. This is the engine behind every "sum of roots" problem you will meet.</p>
+    </div>
+
+    <p><strong>Worked — \(\sum_{k=0}^{5} e^{i\pi k/3}\).</strong> The terms are
+    \(e^{0}, e^{i\pi/3}, e^{i2\pi/3}, e^{i\pi}, e^{i4\pi/3}, e^{i5\pi/3}\) — precisely the six
+    sixth-roots of unity \(\eta, \eta^2, \dots\) with \(\eta = e^{i\pi/3}\). By the identity with
+    \(n = 6, m = 1\): <strong>sum \(= 0\)</strong>. (Read geometrically: the six vectors are the
+    six sides' worth of a closed regular hexagon — they cancel.)</p>
+
+    <figure class="fig">
+      <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="150" x2="320" y2="150" stroke="#c9cfe0" stroke-width="1"/>
+        <line x1="170" y1="15" x2="170" y2="285" stroke="#c9cfe0" stroke-width="1"/>
+        <circle cx="170" cy="150" r="110" fill="none" stroke="#8a93b5" stroke-width="1.5"/>
+        <polygon points="280,150 225,54.7 115,54.7 60,150 115,245.3 225,245.3"
+                 fill="rgba(11,143,122,0.10)" stroke="#0b8f7a" stroke-width="2"/>
+        <g fill="#0b8f7a">
+          <circle cx="280" cy="150" r="4.5"/><circle cx="225" cy="54.7" r="4.5"/>
+          <circle cx="115" cy="54.7" r="4.5"/><circle cx="60" cy="150" r="4.5"/>
+          <circle cx="115" cy="245.3" r="4.5"/><circle cx="225" cy="245.3" r="4.5"/>
+        </g>
+        <g font-size="13" fill="#3a4160" font-family="Georgia, serif">
+          <text x="288" y="154">1</text>
+          <text x="228" y="44">ζ</text>
+          <text x="98" y="44">ζ²</text>
+          <text x="38" y="154">−1</text>
+          <text x="94" y="264">ζ⁴</text>
+          <text x="230" y="264">ζ⁵</text>
+        </g>
+        <text x="176" y="146" font-size="11" fill="#8a93b5">O</text>
+      </svg>
+      <figcaption>The six sixth-roots of unity, \(\zeta^k = e^{2\pi i k/6}\), form a regular hexagon.
+      Their sum is \(0\) — the vectors close the hexagon.</figcaption>
+    </figure>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P25</span><span class="badge b-main">JEE Main</span><span class="badge b-concept">roots of unity</span></div>
+      <p>Evaluate \(\displaystyle\sum_{k=0}^{5} e^{i\pi k/3}\).</p>
+      <details class="ans"><summary>Answer + reasoning</summary><div class="ans-body">
+        <p>The six terms are the sixth-roots of unity (in order). Either invoke
+        \(\sum_{k=0}^{5}\eta^k = \frac{1-\eta^6}{1-\eta} = 0\) with \(\eta = e^{i\pi/3}\), or read the
+        hexagon: opposite vertices cancel in pairs \((1 + (-1)) = 0\),
+        \((e^{i\pi/3} + e^{i4\pi/3}) = 0\), \((e^{i2\pi/3} + e^{i5\pi/3}) = 0\).</p>
+        <p class="answer-pill">Answer: \(0\)</p>
+      </div></details>
+    </div>
+  </div>
+
+  <!-- ================= 3.3 ================= -->
+  <div class="card">
+    <h2>3.3 &nbsp;Two product formulas — where the number \(n\) hides</h2>
+
+    <p>Sums of roots vanish; <em>products</em> of distances from \(1\) to the roots produce
+    exactly \(n\). This is one of the most beautiful one-line applications of
+    \(z^n - 1\) in all of algebra.</p>
+
+    <div class="box box-identity">
+      <div class="box-title">📦 Product formula — \(\displaystyle\prod_{k=1}^{n-1}(1-\zeta_k) = n\)</div>
+      <p><strong>Proof.</strong> Factor completely over \(\mathbb{C}\):
+      \[x^n - 1 = \prod_{k=0}^{n-1}(x - \zeta_k) = (x-1)\prod_{k=1}^{n-1}(x-\zeta_k).\]
+      Divide by \(x-1\) and take the limit \(x \to 1\) (equivalently, compare derivatives at \(x=1\)):
+      \[\prod_{k=1}^{n-1}(1-\zeta_k) = \lim_{x\to 1}\frac{x^n-1}{x-1} = \left.\frac{d}{dx}x^n\right|_{x=1} = n.\]
+      The limit is just the definition of the derivative of \(x^n\) at \(x = 1\).
+      Two-line proof, olympiad-grade content.</p>
+    </div>
+
+    <div class="box box-identity">
+      <div class="box-title">📦 Trigonometric cousin — \(\displaystyle\prod_{k=1}^{n-1}\sin\frac{\pi k}{n} = \frac{n}{2^{n-1}}\)</div>
+      <p><strong>Derivation.</strong> Compute \(|1-\zeta_k|\) directly:
+      \[|1-e^{2\pi i k/n}| = \left|e^{\pi i k/n}(e^{-\pi i k/n} - e^{\pi i k/n})\right|
+      = |{-2i\sin(\pi k/n)}| = 2\sin\frac{\pi k}{n}\]
+      (positive for \(1 \le k \le n-1\), since \(0 < \pi k/n < \pi\)). Taking moduli in the
+      product formula:
+      \[n = \prod_{k=1}^{n-1}|1-\zeta_k| = \prod_{k=1}^{n-1} 2\sin\frac{\pi k}{n}
+      = 2^{n-1}\prod_{k=1}^{n-1}\sin\frac{\pi k}{n}.\]
+      <strong>Check, \(n = 6\):</strong>
+      \(\sin\frac{\pi}{6}\sin\frac{\pi}{3}\sin\frac{\pi}{2}\sin\frac{2\pi}{3}\sin\frac{5\pi}{6}
+      = \frac12\cdot\frac{\sqrt3}{2}\cdot1\cdot\frac{\sqrt3}{2}\cdot\frac12 = \frac{3}{16}\),
+      and the formula gives \(\frac{6}{2^5} = \frac{3}{16}\) ✓.</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P23</span><span class="badge b-adv">JEE Advanced</span><span class="badge b-concept">product formula</span></div>
+      <p>Evaluate \(\displaystyle\prod_{k=1}^{5}\left(1 - e^{2\pi i k/5}\right)\).</p>
+      <details class="ans"><summary>Answer + reasoning</summary><div class="ans-body">
+        <p>Immediate from the product formula with \(n = 5\): the product is \(5\).
+        (You could also note the factors come in conjugate pairs, so the product is real and
+        positive — the formula gives its value for free.)</p>
+        <p class="answer-pill">Answer: \(5\)</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P24</span><span class="badge b-oly">Olympiad</span><span class="badge b-concept">trig product</span></div>
+      <p>Evaluate \(\displaystyle\sin\frac{\pi}{5}\sin\frac{2\pi}{5}\sin\frac{3\pi}{5}\sin\frac{4\pi}{5}\).</p>
+      <details class="ans"><summary>Answer + reasoning</summary><div class="ans-body">
+        <p>By the trigonometric product formula with \(n = 5\):
+        \(\prod_{k=1}^{4}\sin\frac{\pi k}{5} = \frac{5}{2^4} = \frac{5}{16}\).
+        (Sanity: each sine is between \(0\) and \(1\), product \(\approx 0.31\) — plausible.)</p>
+        <p class="answer-pill">Answer: \(\dfrac{5}{16}\)</p>
+      </div></details>
+    </div>
+  </div>
+
+  <!-- ================= 3.4 ================= -->
+  <div class="card">
+    <h2>3.4 &nbsp;The roots-of-unity filter — binomial sums with \(k \equiv r \pmod n\)</h2>
+
+    <p><strong>The problem type.</strong> "Find \(\sum_{k \equiv 0 \pmod 3} \binom{9}{k}\)" —
+    i.e., add only the binomial coefficients whose index lands in one residue class.
+    Direct counting is ugly; the <em>roots-of-unity filter</em> makes it a two-line computation.</p>
+
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — where the filter comes from</div>
+      <p>We want a function that is \(1\) when \(k \equiv r \pmod n\) and \(0\) otherwise.
+      Consider \(\zeta = e^{2\pi i/n}\). The average
+      \[\frac1n\sum_{j=0}^{n-1} \zeta^{j(k-r)} = \begin{cases}1, & n \mid (k-r),\\ 0, & \text{otherwise},\end{cases}\]
+      is exactly that indicator — it is the vanishing-sum identity applied to \(m = k - r\)!
+      So for \(P(x) = \sum_k c_k x^k\):
+      \[\sum_{k \equiv r \pmod n} c_k = \frac1n\sum_{j=0}^{n-1} \zeta^{-rj}\, P(\zeta^j).\]
+      For \(P(x) = (1+x)^N\) this gives the binomial version:
+      \[\boxed{\ \sum_{k \equiv r \pmod n} \binom{N}{k} = \frac1n\sum_{j=0}^{n-1} e^{-2\pi i r j/n}
+      \left(1 + e^{2\pi i j/n}\right)^{N}\ }\]
+      One sum to evaluate — and for \(n = 3\), \(1 + e^{2\pi i j/3}\) has a clean polar form
+      for each \(j\), so the whole thing is trigonometry plus De Moivre.</p>
+    </div>
+
+    <p><strong>Worked — \(\sum_{k \equiv 0 \pmod 3} \binom{9}{k}\) (JEE Advanced pattern).</strong>
+    Let \(\omega = e^{2\pi i/3}\). The filter with \(n = 3, r = 0\):
+    \[\sum_{k \equiv 0(3)} \binom{9}{k} = \frac13\left[(1+1)^9 + (1+\omega)^9 + (1+\omega^2)^9\right].\]
+    Now \((1+\omega)^9 = \left(e^{i\pi/3}\right)^9 = e^{i3\pi} = -1\), and
+    \((1+\omega^2)^9 = \left(e^{-i\pi/3}\right)^9 = e^{-i3\pi} = -1\). Hence
+    \[\frac13\left(512 - 1 - 1\right) = \frac{510}{3} = 170.\]
+    Direct verification: \(\binom{9}{0} + \binom{9}{3} + \binom{9}{6} + \binom{9}{9}
+    = 1 + 84 + 84 + 1 = 170\) ✓.</p>
+
+    <p><strong>The sibling classes.</strong> For \(r = 1\):
+    \(\frac13\left[2^9 + \omega^{-1}(1+\omega)^9 + \omega^{-2}(1+\omega^2)^9\right]
+    = \frac13\left[512 + \omega^2(-1) + \omega(-1)\right] = \frac13\left[512 - (\omega + \omega^2)\right]
+    = \frac13(512 + 1) = 171\).
+    And \(r = 2\) gives \(171\) by the conjugate symmetry. Check: \(170 + 171 + 171 = 512 = 2^9\) ✓ —
+    the three residue classes partition the \(2^9\) subsets of a 9-set.</p>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P26</span><span class="badge b-adv">JEE Advanced</span><span class="badge b-concept">filter</span></div>
+      <p>Find \(\displaystyle\sum_{k \equiv 0 \pmod 3} \binom{9}{k}\).</p>
+      <details class="ans"><summary>Answer + reasoning</summary><div class="ans-body">
+        <p>Filter: \(\frac13\left[2^9 + (1+\omega)^9 + (1+\omega^2)^9\right] = \frac13(512 - 1 - 1) = 170\).
+        Direct: \(1 + 84 + 84 + 1 = 170\).</p>
+        <p class="answer-pill">Answer: \(170\)</p>
+        <p class="small">Bonus (same method): the \(r = 1\) and \(r = 2\) classes each sum to \(171\).</p>
+      </div></details>
+    </div>
+  </div>
+
+  <!-- ================= 3.5 ================= -->
+  <div class="card">
+    <h2>3.5 &nbsp;Practice set — \(\omega\) under pressure</h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P21</span><span class="badge b-main">JEE Main</span><span class="badge b-concept">\(\omega\) identities</span></div>
+      <p>If \(\omega\) is a non-real cube root of unity, find \((1+\omega)(1+\omega^2)\).</p>
+      <details class="ans"><summary>Answer + reasoning</summary><div class="ans-body">
+        <p>\((1+\omega)(1+\omega^2) = 1 + (\omega+\omega^2) + \omega^3 = 1 - 1 + 1 = 1\).
+        Polar shortcut: \((e^{i\pi/3})(e^{-i\pi/3}) = 1\).</p>
+        <p class="answer-pill">Answer: \(1\)</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P22</span><span class="badge b-main">JEE Main</span><span class="badge b-concept">periodic sums</span></div>
+      <p>Evaluate \(\displaystyle\sum_{k=0}^{2023} \omega^k\).</p>
+      <details class="ans"><summary>Answer + reasoning</summary><div class="ans-body">
+        <p>The sum is \(3\cdot 674 + 2\) terms. Each block of three sums to \(1+\omega+\omega^2 = 0\),
+        so only the last two terms survive: \(\omega^{2022} + \omega^{2023} = \omega^0 + \omega^1 = 1 + \omega = -\omega^2\).</p>
+        <p class="answer-pill">Answer: \(-\omega^2\)</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P27</span><span class="badge b-main">JEE Main</span><span class="badge b-concept">\(\omega\) identities</span></div>
+      <p>If \(\omega^3 = 1\) and \(\omega \ne 1\), find \((\omega + \omega^2)^3 + 3(\omega + \omega^2) + 1\).</p>
+      <details class="ans"><summary>Answer + reasoning</summary><div class="ans-body">
+        <p>\(\omega + \omega^2 = -1\), so the expression is \((-1)^3 + 3(-1) + 1 = -1 - 3 + 1 = -3\).</p>
+        <p class="answer-pill">Answer: \(-3\)</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P28</span><span class="badge b-adv">JEE Advanced</span><span class="badge b-concept">\(\omega\) + polar</span></div>
+      <p>If \(\omega\) is a non-real cube root of unity, evaluate \(|1-\omega|^2\) and \(\arg(1-\omega)\).</p>
+      <details class="ans"><summary>Answer + reasoning</summary><div class="ans-body">
+        <p>From identity (v): \(1-\omega = \sqrt3\, e^{-i\pi/6}\). So \(|1-\omega|^2 = 3\) (the squared
+        side of the equilateral triangle on the unit circle) and \(\arg(1-\omega) = -\pi/6\).
+        Pure-algebra check: \(|1-\omega|^2 = (1-\omega)(1-\omega^2) = 3\) (identity iii).</p>
+        <p class="answer-pill">Answer: \(3\), \(-\dfrac{\pi}{6}\)</p>
+      </div></details>
+    </div>
+
+    <div class="box box-check">
+      <div class="box-title">✅ Chapter checklist</div>
+      <ul>
+        <li>Five \(\omega\)-identities, each with its one-line proof — and the sign-slip warning.</li>
+        <li>Vanishing sum: \(\sum_{k=0}^{n-1}\zeta^{mk} = 0\) unless \(n \mid m\).</li>
+        <li>Product formula: \(\prod_{k=1}^{n-1}(1-\zeta_k) = n\) (derivative of \(x^n - 1\) at \(1\)).</li>
+        <li>Trig cousin: \(\prod_{k=1}^{n-1}\sin\frac{\pi k}{n} = \frac{n}{2^{n-1}}\).</li>
+        <li>Roots-of-unity filter for \(\sum_{k \equiv r \pmod n} \binom{N}{k}\), worked for \(N = 9, n = 3\).</li>
+      </ul>
+    </div>
+
+    <div class="box box-bridge">
+      <div class="box-title">🌉 Bridge to Ch 4 — JEE Advanced core: loci & optimization</div>
+      <p>Chapters 1–3 are the toolkit: algebra (Ch 1), polar/De Moivre (Ch 2), roots of unity (Ch 3).
+      Chapter 4 is where JEE Advanced becomes JEE Advanced — equations mixing \(z\) and \(\bar z\),
+      loci defined by modulus/argument conditions, and minimizing \(|z - a|\) subject to constraints.
+      Every tool in this chapter gets used there at least once.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <a href="02-polar-and-de-moivre.html">← Ch 2 · Polar &amp; De Moivre</a>
+    <a href="index.html">Module home</a>
+    <span class="small">Ch 4 · JEE Advanced Core — next</span>
+  </div>
+
+</div>
+</body>
+</html>
