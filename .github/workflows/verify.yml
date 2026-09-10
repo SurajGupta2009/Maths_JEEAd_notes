@@ -1,0 +1,33 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    name: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify every HTML file (tag + MathJax delimiter balance)
+        run: python3 tools/verify-math.py
+
+      - name: Verify mind maps match their source pages
+        run: python3 tools/verify-mindmap.py all
+
+      - name: Mind maps must be generated, not hand-edited (regeneration is a no-op)
+        run: |
+          python3 tools/build-mindmap.py all
+          if ! git diff --quiet -- '*-mindmap.html'; then
+            echo '::error::mind maps are out of date — run `python3 tools/build-mindmap.py all` and commit the result'
+            git diff --stat -- '*-mindmap.html'
+            exit 1
+          fi
