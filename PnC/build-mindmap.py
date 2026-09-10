@@ -1,0 +1,399 @@
+#!/usr/bin/env python3
+"""Build single-file recursive mind maps from the note pages of a module.
+
+Usage:
+  python3 PnC/build-mindmap.py [pnc|cn|all]
+
+Regenerates:
+  PnC/pnc-mindmap.html          (all PnC pages)
+  Complex Numbers/cn-mindmap.html  (all Complex Numbers pages)
+"""
+import os, re, sys, html as H
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repo root
+
+MODULES = {
+    'pnc': {
+        'base': os.path.join(ROOT, 'PnC'),
+        'out': os.path.join(ROOT, 'PnC', 'pnc-mindmap.html'),
+        'css': os.path.join(ROOT, 'PnC', 'assets', 'notes.css'),
+        'title': 'PnC · Complete Course — single-file mind map',
+        'brand': 'PnC · Complete Course',
+        'skip': 'href="01-counting-basics.html"',
+        'back': ('index.html', 'index.html'),
+        'nodes': [
+            ('🏠', 'index.html', 'Course map, usage & roadmap'),
+            ('1', '01-counting-basics.html', 'Ch 1 · Counting Basics'),
+            ('2', '02-permutations.html', 'Ch 2 · Permutations'),
+            ('3', '03-combinations.html', 'Ch 3 · Combinations'),
+            ('4', '04-binomial-and-identities.html', 'Ch 4 · Binomial Coefficients & Identities'),
+            ('5', '05-advanced-methods.html', 'Ch 5 · Advanced Methods'),
+            ('6', '06-olympiad-theory.html', 'Ch 6 · Olympiad Theory'),
+            ('Σ', 'olympiad-paper.html', 'Olympiad Paper · 40 questions'),
+            ('✎', 'olympiad-paper-solutions.html', 'Olympiad Paper · Solutions & marking guide'),
+        ],
+    },
+    'cn': {
+        'base': os.path.join(ROOT, 'Complex Numbers'),
+        'out': os.path.join(ROOT, 'Complex Numbers', 'cn-mindmap.html'),
+        'css': os.path.join(ROOT, 'Complex Numbers', 'assets', 'notes.css'),
+        'title': 'Complex Numbers · Complete Course — single-file mind map',
+        'brand': 'Complex Numbers · Complete Course',
+        'skip': 'href="01-foundations.html"',
+        'back': ('index.html', 'index.html'),
+        'nodes': [
+            ('🏠', 'index.html', 'Course map, usage & roadmap'),
+            ('1', '01-foundations.html', 'Ch 1 · Foundations — Algebra & the Plane'),
+            ('2', '02-polar-and-de-moivre.html', 'Ch 2 · Polar Form & De Moivre'),
+            ('3', '03-roots-of-unity.html', 'Ch 3 · Roots of Unity'),
+            ('4', '04-jee-advanced-core.html', 'Ch 4 · JEE Advanced Core'),
+            ('5', '05-geometry-via-complex-numbers.html', 'Ch 5 · Geometry via Complex Numbers'),
+            ('6', '06-synthesis.html', 'Ch 6 · Synthesis'),
+            ('Σ', 'olympiad-paper.html', 'Olympiad Paper · 38 questions'),
+            ('✎', 'olympiad-paper-solutions.html', 'Olympiad Paper · Solutions & marking guide'),
+        ],
+    },
+}
+
+def read(p):
+    with open(p, encoding='utf-8') as f:
+        return f.read()
+
+VOID = {'meta', 'link', 'br', 'img', 'hr', 'input'}
+TAG_RE = re.compile(r'<(/?)([a-zA-Z][a-zA-Z0-9]*)((?:[^>"\'/]|"[^"]*"|\'[^\']*\')*)(/?)>')
+
+def get_class(attrs):
+    m = re.search(r'class="([^"]*)"', attrs or '')
+    return m.group(1) if m else ''
+
+def text_of(h):
+    t = re.sub(r'<[^>]+>', ' ', h)
+    t = H.unescape(t)
+    return re.sub(r'\s+', ' ', t).strip()
+
+def strip_outer(html, tag):
+    m = re.match(rf'<{tag}\b[^>]*>(.*)</{tag}>\s*$', html, re.S)
+    if not m:
+        raise ValueError(f'cannot strip outer <{tag}>: {html[:80]!r}')
+    return m.group(1)
+
+def direct_children(s):
+    """Split inner html into direct child elements -> [(html, name, attrs)].
+    Assumes well-formed html (all note files pass a strict balance check)."""
+    out = []
+    i, n = 0, len(s)
+    while i < n:
+        j = s.find('<', i)
+        if j == -1:
+            break
+        if s.startswith('<!--', j):
+            k = s.find('-->', j)
+            i = (k + 3) if k != -1 else n
+            continue
+        m = TAG_RE.match(s, j)
+        if not m:
+            i = j + 1
+            continue
+        close, name, attrs, selfc = m.groups()
+        if close or name in VOID or selfc:
+            i = m.end()
+            continue
+        depth, k = 1, m.end()
+        while k < n and depth:
+            j2 = s.find('<', k)
+            if j2 == -1:
+                break
+            if s.startswith('<!--', j2):
+                k2 = s.find('-->', j2)
+                k = (k2 + 3) if k2 != -1 else n
+                continue
+            m2 = TAG_RE.match(s, j2)
+            if not m2:
+                k = j2 + 1
+                continue
+            c2, n2, a2, sc2 = m2.groups()
+            if not (n2 in VOID or sc2):
+                if c2:
+                    depth -= 1
+                else:
+                    depth += 1
+            k = m2.end()
+        out.append((s[j:k], name, attrs))
+        i = k
+    return out
+
+def esc(t):
+    return H.escape(t, quote=False)
+
+# ---------------------------------------------------------------- rendering
+
+def _attrs_of(el_html):
+    m = re.match(r'<[a-zA-Z][^>]*>', el_html)
+    return m.group(0) if m else ''
+
+def render_q(q_html):
+    cls = get_class(_attrs_of(q_html))
+    inner = strip_outer(q_html, 'div')
+    kids = direct_children(inner)
+    qhead, body = None, []
+    for h, name, attrs in kids:
+        if name == 'div' and get_class(attrs).split() == ['q-head']:
+            qhead = h
+        else:
+            body.append(h)
+    qid = re.search(r'<span class="q-id">(.*?)</span>', qhead)
+    qid = text_of(qid.group(1)) if qid else 'Q'
+    badges = re.findall(r'<span class="badge[^"]*">.*?</span>', qhead)
+    preview = ''
+    for h, name, attrs in kids:  # first content child after q-head?
+        if name == 'div' and get_class(attrs).split() == ['q-head']:
+            continue
+        if name == 'div':
+            break  # solution wrapper follows: no problem text to preview
+        if name == 'p':
+            preview = text_of(h)
+            break
+    preview = re.sub(r'\\\(.*?\\\)', ' ', preview)   # drop inline math from the hint
+    preview = re.sub(r'\\\[.*?\\\]', ' ', preview)   # drop display math too
+    preview = re.sub(r'\$\$.*?\$\$', ' ', preview)   # and $$...$$
+    preview = re.sub(r'\s+', ' ', preview).strip()
+    preview = (preview[:78] + '…') if len(preview) > 78 else preview
+    summary = (f'<span class="q-id">{esc(qid)}</span>{"".join(badges)}'
+               f'<span class="mm-preview">{esc(preview)}</span>')
+    return (f'<details class="{cls} mm-node"><summary class="q-head">{summary}</summary>'
+            f'{" ".join(body)}</details>')
+
+def render_box(box_html):
+    cls = get_class(_attrs_of(box_html))
+    inner = strip_outer(box_html, 'div')
+    kids = direct_children(inner)
+    title, body = None, []
+    for h, name, attrs in kids:
+        if name == 'div' and get_class(attrs).split() == ['box-title']:
+            title = h
+        else:
+            body.append(h)
+    return (f'<details class="{cls} mm-node">'
+            f'<summary class="box-title">{title}</summary>'
+            f'{" ".join(body)}</details>')
+
+def render_section(card_html):
+    inner = strip_outer(card_html, 'div')
+    kids = direct_children(inner)
+    h2 = kids[0][0]
+    m = re.search(r'<span class="no">(.*?)</span>', h2)
+    no = m.group(1) if m else ''
+    rest = re.sub(r'<span class="no">.*?</span>', '', h2, flags=re.S)
+    rest = re.sub(r'<span class="q-meta">.*?</span>', '', rest, flags=re.S)
+    title = text_of(rest)
+    qm = re.search(r'<span class="q-meta">(.*?)</span>', h2)
+    meta_bits = []
+    if qm:
+        meta_bits.append(text_of(qm.group(1)))
+
+    items, current, current_title = [], [], None
+    def flush():
+        nonlocal current, current_title
+        if current_title is None:
+            if any(x.strip() for x in current):
+                items.append(''.join(current))
+        else:
+            items.append(
+                f'<details class="mm-sub"><summary class="mm-sum2">{current_title}</summary>'
+                f'<div class="mm-body">{" ".join(current)}</div></details>')
+        current, current_title = [], None
+
+    for h, name, attrs in kids[1:]:
+        cls = get_class(attrs).split()
+        if name == 'h3':
+            flush()
+            current_title = h[3:-4]
+        elif name == 'div' and cls and cls[0] == 'q':
+            current.append(render_q(h))
+        elif name == 'div' and cls and cls[0] == 'box':
+            current.append(render_box(h))
+        else:
+            current.append(h)
+    flush()
+
+    n_sub = sum(1 for it in items if it.startswith('<details class="mm-sub"'))
+    n_q = len(re.findall(r'<div class="q( |")', card_html))
+    if n_sub or n_q:
+        meta_bits.append(f'{n_sub} subtopics · {n_q} questions' if n_sub else f'{n_q} questions')
+    meta = ' · '.join(meta_bits)
+    return (f'<details class="mm-sec mm-node"><summary class="mm-sum">'
+            f'<span class="mm-no">{esc(no)}</span><span class="mm-t">{esc(title)}</span>'
+            f'<span class="mm-meta">{esc(meta)}</span></summary>'
+            f'<div class="mm-body">{"".join(items)}</div></details>')
+
+def page_parts(src):
+    """Return (banner_html, [card_html...]) for a note page."""
+    m = re.search(r'<div class="page"[^>]*>(.*)</div>\s*</body>\s*</html>\s*$', src, re.S)
+    if not m:
+        m = re.search(r'<div class="page"[^>]*>(.*)</div>\s*</body>', src, re.S)
+    if not m:
+        raise ValueError('page div not found')
+    page = m.group(1)
+    kids = direct_children(page)
+    banner, cards = '', []
+    for h, name, attrs in kids:
+        cls = get_class(attrs).split()
+        if cls and cls[0] == 'banner':
+            banner = h
+        elif cls and cls[0] == 'card':
+            cards.append(h)
+    return banner, cards
+
+def chapter_node(base, icon, file, label, skip_marker):
+    src = read(os.path.join(base, file))
+    banner, cards = page_parts(src)
+    if banner:
+        banner = banner.replace('class="banner"', 'class="banner mm-banner"', 1)
+    kept = [c for c in cards if skip_marker is None or skip_marker not in c]
+    n_q = src.count('class="q"') + src.count('class="q solved"')
+    meta = f'{len(kept)} sections · {n_q} questions'
+    return (f'<details class="mm-ch mm-node"><summary class="mm-sum">'
+            f'<span class="mm-ico">{icon}</span><span class="mm-t">{esc(label)}</span>'
+            f'<span class="mm-meta">{esc(meta)}</span></summary>'
+            f'<div class="mm-body">{banner}{"".join(render_section(c) for c in kept)}</div></details>')
+
+# ---------------------------------------------------------------- assemble
+
+EXTRA_CSS = """
+/* ===== single-file mind map ===== */
+.mm-topbar { position: sticky; top: 0; z-index: 60; background: rgba(250,251,254,.93);
+  backdrop-filter: blur(8px); border-bottom: 1px solid #e3e6f0; }
+.mm-topbar .inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center;
+  gap: 12px; padding: 10px 20px; flex-wrap: wrap; }
+.mm-topbar .brand { font-weight: 800; color: #2a3550; font-size: 15px; }
+.mm-topbar .brand small { font-weight: 600; color: #8a93b5; margin-left: 8px; }
+.mm-topbar .btns { margin-left: auto; display: flex; gap: 6px; }
+.mm-topbar button { border: 1px solid #cdd4e8; background: #fff; color: #2a3550;
+  border-radius: 8px; padding: 5px 11px; font-size: 12.5px; cursor: pointer; font-weight: 700; }
+.mm-topbar button:hover { background: #f2f4fa; border-color: #b9c2e0; }
+.mm-app { max-width: 1100px; margin: 0 auto; padding: 22px 20px 90px; }
+.mm-hint { font-size: 13px; color: #7a83a5; margin: 2px 2px 16px; line-height: 1.5; }
+
+.mm-ch, .mm-sec, .mm-sub { background: #fff; border: 1px solid #e2e6f2; border-radius: 13px;
+  box-shadow: 0 1px 2px rgba(30,40,90,.04); }
+.mm-ch { margin: 16px 0; border-color: #d9ccf8; }
+.mm-sec { margin: 12px 0; }
+.mm-sub { margin: 12px 0; border-left: 3px solid #c9d2f0; }
+
+.mm-node > summary { cursor: pointer; list-style: none; display: flex; align-items: center;
+  gap: 10px; padding: 12px 16px; user-select: none; }
+.mm-node > summary::-webkit-details-marker { display: none; }
+.mm-node > summary::before { content: "▸"; flex: none; color: #8a93b5; font-size: 13px;
+  transition: transform .15s ease; }
+.mm-node[open] > summary::before { transform: rotate(90deg); }
+.mm-node[open] > summary { border-bottom: 1px dashed #e2e6f2; }
+.mm-node > summary:hover { background: #f7f8fd; }
+.mm-ch > summary { padding: 15px 18px; }
+.mm-ch[open] > summary { border-bottom-color: #d9ccf8; }
+
+.mm-ch > summary .mm-t { font-size: 1.22rem; font-weight: 800; color: #2a3550; }
+.mm-sec > summary .mm-t { font-size: 1.05rem; font-weight: 700; color: #2a3550; }
+.mm-sub > summary .mm-sum2 { font-size: .98rem; font-weight: 700; color: #3a4468; flex: 1 1 auto; }
+.mm-ico { flex: none; font-size: 1.05rem; }
+.mm-no { flex: none; font: 700 11.5px ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #6d3fd4; background: #f3efff; border: 1px solid #d9ccf8; border-radius: 6px;
+  padding: 2px 7px; white-space: nowrap; }
+.mm-t { flex: 1 1 auto; min-width: 0; }
+.mm-meta { flex: none; font-size: 11.5px; color: #8a93b5; font-weight: 600; white-space: nowrap; }
+.mm-preview { flex: 0 1 auto; min-width: 0; font-weight: 400; font-size: 12.5px;
+  color: #7a83a5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.mm-ch > .mm-body, .mm-sec > .mm-body, .mm-sub > .mm-body { padding: 14px 18px 16px; }
+.mm-sec > .mm-body > .mm-sub { margin-left: 8px; }
+.mm-banner { margin: 0 0 14px; }
+.mm-banner h1 { font-size: 1.45rem; }
+.mm-banner .sub { font-size: .92rem; }
+.mm-node .q, .mm-node .box { margin: 12px 0; }
+.mm-node .q > summary.q-head, .mm-node .box > summary.box-title { padding: 11px 14px; }
+.mm-node details.ans > summary { cursor: pointer; }
+@media (max-width: 640px) { .mm-meta { display: none; } .mm-preview { display: none; } }
+"""
+
+JS = """
+(function () {
+  function each(f) { document.querySelectorAll('details').forEach(f); }
+  function depthOf(d) { var n = 0, e = d.parentElement; while (e) { if (e.tagName === 'DETAILS') n++; e = e.parentElement; } return n; }
+  var map = { all: 99, l3: 3, l2: 2, l1: 1, none: 0 };
+  document.querySelectorAll('.mm-topbar button[data-lv]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var lv = map[b.getAttribute('data-lv')];
+      each(function (d) { d.open = depthOf(d) < lv; });
+    });
+  });
+  var first = document.querySelector('.mm-ch');
+  if (first) first.open = true;
+})();
+"""
+
+def build(name):
+    cfg = MODULES[name]
+    base = cfg['base']
+    css = read(cfg['css'])
+    first = read(os.path.join(base, cfg['nodes'][1][1]))
+    mj_cfg = re.search(r'<script>\s*window\.MathJax.*?</script>', first, re.S).group(0)
+    mj_cdn = re.search(r'<script async src="https://cdn\.jsdelivr[^"]*"></script>', first).group(0)
+
+    parts = []
+    for icon, file, label in cfg['nodes']:
+        skip = cfg['skip'] if file == 'index.html' else None
+        parts.append(chapter_node(base, icon, file, label, skip))
+
+    srcs = [os.path.join(base, f) for _, f, _ in cfg['nodes']]
+    src_kb = sum(os.path.getsize(f) for f in srcs if os.path.exists(f)) // 1024
+
+    out = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{cfg['title']}</title>
+<style>
+{css}
+{EXTRA_CSS}
+</style>
+{mj_cfg}
+{mj_cdn}
+</head>
+<body>
+<nav class="topbar mm-topbar">
+  <div class="inner">
+    <span class="brand">{cfg['brand']} <small>one file · recursive mind map · {src_kb} KB of source notes</small></span>
+    <span class="btns">
+      <button data-lv="all">Expand all</button>
+      <button data-lv="l3">To subtopics</button>
+      <button data-lv="l2">To sections</button>
+      <button data-lv="l1">Top only</button>
+      <button data-lv="none">Collapse</button>
+    </span>
+  </div>
+</nav>
+<main class="mm-app">
+  <p class="mm-hint">Click any line to expand it. The tree goes <strong>course → chapter → section → subtopic → question → answer</strong> —
+  every node that shows a ▸ marker has children. Equations are typeset by MathJax on load (jsdelivr CDN).</p>
+{chr(10).join('  ' + p for p in parts)}
+</main>
+<footer class="foot mm-foot" style="max-width:1100px;margin:0 auto;padding:0 20px 40px;color:#8a93b5;font-size:12.5px;">
+  Generated from the note pages by <code>build-mindmap.py</code> — the paginated originals remain in this folder (see <a href="{cfg['back'][0]}">{cfg['back'][1]}</a>).
+</footer>
+<script>
+{JS}
+</script>
+</body>
+</html>
+"""
+    with open(cfg['out'], 'w', encoding='utf-8') as f:
+        f.write(out)
+    print(f"[{name}] wrote {os.path.relpath(cfg['out'], ROOT)} ({len(out):,} bytes, {len(parts)} top nodes)")
+
+if __name__ == '__main__':
+    which = sys.argv[1] if len(sys.argv) > 1 else 'all'
+    for name in (['pnc', 'cn'] if which == 'all' else [which]):
+        if os.path.isdir(MODULES[name]['base']):
+            build(name)
+        else:
+            print(f"[{name}] module folder not found — skipped")

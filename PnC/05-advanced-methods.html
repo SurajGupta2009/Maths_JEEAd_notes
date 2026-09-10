@@ -1,0 +1,494 @@
+&lt;!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5 · IE, Pigeonhole &amp; Recurrences — PnC Notes</title>
+<link rel="stylesheet" href="assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <span class="brand">PnC · Notes</span>
+    <a href="index.html">Home</a><span class="sep">|</span>
+    <a href="01-counting-basics.html">1 · Basics</a>
+    <a href="02-permutations.html">2 · Permutations</a>
+    <a href="03-combinations.html">3 · Combinations</a>
+    <a href="04-binomial-and-identities.html">4 · Binomial</a>
+    <a href="05-advanced-methods.html">5 · IE · PH · Recurrences</a>
+    <a href="06-olympiad-theory.html">6 · Olympiad Theory</a>
+    <a href="olympiad-paper.html" style="color:var(--violet);font-weight:700;">Olympiad Paper</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="banner">
+    <div class="kicker">Chapter 5 · JEE Advanced Weapons</div>
+    <h1>Inclusion–Exclusion, Pigeonhole &amp; Recurrences</h1>
+    <p class="sub">The three engines behind nearly every "at least one", "no two", "must exist"
+    problem. Inclusion–exclusion is bookkeeping for overlaps; the pigeonhole principle is the
+    existence engine; recurrences turn "count size n" into "count smaller sizes".</p>
+    <div class="chips"><span class="chip">inclusion–exclusion</span><span class="chip">rook polynomials</span><span class="chip">pigeonhole</span><span class="chip">van der Waerden (taste)</span><span class="chip">recurrence methods</span><span class="chip">Fibonacci everywhere</span></div>
+  </div>
+
+  <!-- ============ 5.1 ============ -->
+  <div class="card">
+    <h2><span class="no">5.1</span> Inclusion–Exclusion (IE)</h2>
+
+    <h3>Two sets — the Venn diagram logic</h3>
+    <div class="figure">
+      <div class="fig-box">
+      <svg viewBox="0 0 560 210" width="560" role="img" aria-label="Two-set inclusion-exclusion Venn diagram">
+        <style>
+          .vn { font: 700 13px "Segoe UI", sans-serif; }
+          .va { font: 600 12px "Segoe UI", sans-serif; }
+        </style>
+        <circle cx="200" cy="100" r="80" fill="#364fc7" opacity="0.25"/>
+        <circle cx="340" cy="100" r="80" fill="#c2255c" opacity="0.22"/>
+        <text class="vn" x="145" y="55" fill="#364fc7">|A|</text>
+        <text class="vn" x="390" y="55" fill="#c2255c">|B|</text>
+        <text class="va" x="268" y="105" text-anchor="middle" fill="#1c2333">|A∩B|</text>
+        <text class="va" x="280" y="195" text-anchor="middle" fill="#2a3550">|A ∪ B| = |A| + |B| − |A ∩ B| : the overlap was added twice</text>
+      </svg>
+      </div>
+      <div class="cap">Fig 5.1 — Two sets: add, subtract the double-counted intersection.</div>
+    </div>
+
+    <h3>The general principle</h3>
+    <p><strong>Theorem.</strong> For sets \(A_1, \dots, A_n\) (inside a universe \(X\)),</p>
+    <div class="formula"><span class="label">inclusion–exclusion</span>
+      $$\left|\bigcup_{i=1}^{n} A_i\right|
+      = \sum_i |A_i| - \sum_{i&lt;j}|A_i\cap A_j|
+      + \sum_{i&lt;j&lt;\ell}|A_i\cap A_j\cap A_\ell| - \cdots + (-1)^{n+1}\left|\bigcap_i A_i\right|$$
+      and therefore
+      $$\left|X \setminus \bigcup_i A_i\right|
+      = \sum_{S \subseteq [n]} (-1)^{|S|}\left|\bigcap_{i\in S} A_i\right|,
+      \quad \text{with }\bigcap_{i\in\varnothing} A_i = X.$$
+    </div>
+
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — the proof counts how many times one element is seen</div>
+      <p>Track a single element \(x \in X\) that lies in exactly \(t\) of the sets (say \(A_1, \dots, A_t\)).
+      How many times does the alternating sum "see" \(x\)? Once for each non-empty \(S \subseteq \{1, \dots, t\}\),
+      with sign \((-1)^{|S|+1}\) on the union side. The number of such sightings is
+      \[
+      \sum_{j=1}^{t} (-1)^{j+1}\binom{t}{j} \;=\; -\sum_{j=0}^{t}(-1)^j\binom{t}{j} + 1 \;=\; 1,
+      \]
+      using \(\sum_{j=0}^{t}(-1)^j\binom{t}{j} = 0\) for \(t \ge 1\) (the \(x = 1, y = -1\) binomial
+      identity, Ch. 4). So <strong>every element in the union is counted exactly once</strong>, whatever \(t\ge 1\);
+      every element outside the union is counted 0 times. The formula is forced. \(\square\)</p>
+      <p>This proof reveals the whole philosophy: <em>IE is the unique linear combination of
+      intersection counts that gives each element of the union weight exactly 1.</em> The same
+      bookkeeping, applied to "avoid all \(A_i\)", gives the complement formula. Every application
+      below is this one proof with a concrete definition of the events \(A_i\).</p>
+    </div>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S1</span><span class="badge b-adv">JEE Adv</span><span class="badge b-solved">solved</span><span class="badge b-concept">IE · divisibility</span></div>
+      <p>How many integers from 1 to 1000 are divisible by <strong>2, 3, or 5</strong>?</p>
+      <div class="solution">
+        <div class="sol-title">Solution &amp; reasoning</div>
+        <p>Events \(A_2 =\) divisible by 2, etc. \(|A_2| = 500, |A_3| = 333, |A_5| = 200\);
+        \(|A_2\cap A_3| = 166, |A_2\cap A_5| = 100, |A_3\cap A_5| = 66\);
+        \(|A_2\cap A_3\cap A_5| = 33\). (Each count is \(\lfloor 1000/m \rfloor\) for the lcm \(m\).)
+        IE: \(500 + 333 + 200 - 166 - 100 - 66 + 33 = \) <span class="answer-pill">734</span></p>
+        <p class="small">The "why" to internalize: an integer divisible by exactly two of them (say 2 and 3)
+        is added in \(|A_2|, |A_3|\) (twice) and removed in \(|A_2 \cap A_3|\) (once) → net 1 ✓.
+        Divisible by all three: added 3 times, removed 3 times, added once → net 1 ✓.
+        <em>Run this trace on every IE answer — it catches sign errors instantly.</em></p>
+      </div>
+    </div>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S2</span><span class="badge b-main">JEE Main</span><span class="badge b-solved">solved</span><span class="badge b-concept">IE · derangements</span></div>
+      <p>Permutations of \([6]\) with \(\sigma(1)\ne 1\), \(\sigma(2)\ne 2\), \(\sigma(3)\ne 3\)
+      (positions 4, 5, 6 unrestricted).</p>
+      <div class="solution">
+        <div class="sol-title">Solution</div>
+        <p>IE on the three forbidden events \(E_i = \{\sigma(i) = i\}\):
+        \(6! - 3\cdot 5! + 3\cdot 4! - 3\cdot 3! = 720 - 360 + 72 - 18 = \)
+        <span class="answer-pill">414</span></p>
+        <p class="small">Partial derangements: "fix exactly which positions are forbidden, derange those"
+        generalizes to \(\sum_k (-1)^k \binom{n}{k}(n-k)!\) with \(n\) replaced by the forbidden count —
+        the same engine as Ch. 2's derangements.</p>
+      </div>
+    </div>
+
+    <h3>Rook polynomials — IE for "forbidden positions"</h3>
+    <p>Suppose we want permutations of \([n]\) that avoid a set \(B\) of forbidden board positions
+    (position \(i\) may not send to value \(j\) for \((i,j) \in B\)). Let \(r_k\) = number of ways to
+    place \(k\) non-attacking rooks on the forbidden squares \(B\) (attacking = sharing a row or column).
+    Then</p>
+    <div class="formula"><span class="label">rook + IE</span>
+      $$\#\{\sigma : (\sigma(i), i) \notin B\} = \sum_{k=0}^{n} (-1)^k\, r_k\, (n-k)!$$
+    </div>
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — why this is plain IE in disguise</div>
+      <p>Event \(E_{(i,j)}\) = "rook lands on forbidden square \((i,j)\)". The number of permutations
+      containing a <em>specified</em> set of \(k\) forbidden squares (in distinct rows and columns —
+      otherwise 0) is \((n-k)!\). IE over the forbidden squares groups by "how many of them occur",
+      and the number of \(k\)-sets of forbidden squares in distinct rows/columns is exactly the rook
+      number \(r_k\). Done. Derangements = \(B\) is the diagonal: \(r_k = \binom{n}{k}\),
+      recovering \(D_n = \sum (-1)^k\binom{n}{k}(n-k)!\). The rook formalism matters when \(B\) is a
+      <em>weird board</em> (L-shapes, staircases) where \(r_k\) is easy but the events are not "symmetric".</p>
+    </div>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S3</span><span class="badge b-olymp">Olympiad</span><span class="badge b-solved">solved</span><span class="badge b-concept">rook board</span></div>
+      <p>Count the permutations \(\sigma\) of \([4]\) with \(\sigma(1)\ne 2\), \(\sigma(2)\ne 1\),
+      \(\sigma(3)\ne 4\), \(\sigma(4)\ne 3\).</p>
+      <div class="solution">
+        <div class="sol-title">Solution</div>
+        <p>Forbidden board: 4 squares — two disjoint "anti-diagonal pairs". Rook numbers:
+        \(r_0 = 1\); \(r_1 = 4\); \(r_2 = \binom42 = 6\) (any two of the 4 squares are in distinct
+        rows and columns — check: rows 1,2,3,4 and columns 2,1,4,3, all distinct ✓);
+        \(r_3 = 4\); \(r_4 = 1\) (all 4 use distinct rows/columns ✓).
+        Answer: \(4! - 4\cdot 3! + 6\cdot 2! - 4\cdot 1! + 1\cdot 0! = 24 - 24 + 12 - 4 + 1 = \)
+        <span class="answer-pill">9</span></p>
+      </div>
+    </div>
+
+    <div class="box box-idea">
+      <div class="box-title">💡 Key Idea — the universal IE recipe</div>
+      <ol>
+        <li>Define the <strong>bad events</strong> \(A_i\) ("property \(i\) occurs").</li>
+        <li>Compute \(|\bigcap_{i\in S} A_i|\) for a generic \(S\) of size \(k\) — usually \(\binom{n}{k} \times\) (something free).</li>
+        <li>Write \(\sum_k (-1)^k \binom{n}{k} \times (\text{something free})\).</li>
+      </ol>
+      <p class="small">Everything you've seen so far — derangements, bounded stars-and-bars (Ch. 4),
+      "all suits present" (Ch. 3), "at least one 0" (Ch. 1) — is this recipe with a different \(A_i\).</p>
+    </div>
+  </div>
+
+  <!-- ============ 5.2 ============ -->
+  <div class="card">
+    <h2><span class="no">5.2</span> The Pigeonhole Principle</h2>
+
+    <div class="figure">
+      <div class="fig-box">
+      <svg viewBox="0 0 600 190" width="600" role="img" aria-label="Pigeonhole principle illustration">
+        <style>
+          .ph { font: 700 13px "Segoe UI", sans-serif; fill:#2a3550; }
+          .pt { font: 600 11px "Segoe UI", sans-serif; fill:#6b7690; }
+        </style>
+        <!-- boxes -->
+        <rect x="30" y="60" width="120" height="90" rx="10" fill="#fff" stroke="#364fc7" stroke-width="2"/>
+        <rect x="170" y="60" width="120" height="90" rx="10" fill="#fff" stroke="#364fc7" stroke-width="2"/>
+        <rect x="310" y="60" width="120" height="90" rx="10" fill="#fff" stroke="#364fc7" stroke-width="2"/>
+        <text class="pt" x="90" y="168" text-anchor="middle">box 1</text>
+        <text class="pt" x="230" y="168" text-anchor="middle">box 2</text>
+        <text class="pt" x="370" y="168" text-anchor="middle">box 3</text>
+        <!-- pigeons -->
+        <circle cx="60" cy="105" r="12" fill="#0b8f7a"/><circle cx="90" cy="120" r="12" fill="#0b8f7a"/>
+        <circle cx="115" cy="100" r="12" fill="#0b8f7a"/>
+        <circle cx="200" cy="110" r="12" fill="#0b8f7a"/>
+        <circle cx="400" cy="105" r="12" fill="#0b8f7a"/>
+        <text class="ph" x="480" y="90">7 objects,</text>
+        <text class="ph" x="480" y="110">3 boxes →</text>
+        <text class="ph" x="480" y="130" fill="#c2255c">some box ≥ ⌈7/3⌉ = 3</text>
+        <text class="pt" x="480" y="152">(the left box realizes it)</text>
+      </svg>
+      </div>
+      <div class="cap">Fig 5.2 — If \(n+1\) objects enter \(n\) boxes, one box holds \(\ge 2\).
+      The average is \(>1\), so some box beats the average.</div>
+    </div>
+
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — two forms, one averaging argument</div>
+      <p><strong>Weak form.</strong> \(n+1\) objects, \(n\) boxes \(\Rightarrow\) some box has \(\ge 2\).
+      Proof: if every box had \(\le 1\), total \(\le n &lt; n+1\). Contradiction.</p>
+      <p><strong>Strong form.</strong> Objects distributed into boxes with capacities
+      \(m_1, \dots, m_n\): if total \(> \sum m_i\), some box exceeds its capacity.
+      (Same contradiction: total \(\le \sum m_i\).)</p>
+      <p>The <em>reasoning</em> behind every application: <strong>build the boxes deliberately</strong>.
+      The theorem is trivial; the art is choosing a function \(\text{object} \to \text{box}\) (a
+      "pigeonhole map") such that (a) the number of boxes is smaller than the number of objects,
+      and (b) "two objects in the same box" implies the conclusion you need.
+      Standard box constructions: residues mod \(m\); the <em>odd part</em> of an integer;
+      months/quarters for dates; grid subsquares for geometry; initial segments for sequences.</p>
+    </div>
+
+    <h3>Classic applications — each teaches one box construction</h3>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S4</span><span class="badge b-adv">JEE Adv</span><span class="badge b-solved">solved</span><span class="badge b-concept">pigeonhole · odd part</span></div>
+      <p>Prove: from any \(n+1\) integers chosen from \(\{1, 2, \dots, 2n\}\), two exist such that
+      <strong>one divides the other</strong>.</p>
+      <div class="solution">
+        <div class="sol-title">Proof (the odd-part construction)</div>
+        <p>Write each chosen integer uniquely as \(2^a \cdot m\) with \(m\) <em>odd</em>.
+        The odd part \(m\) lies in \(\{1, 3, 5, \dots, 2n-1\}\) — exactly \(n\) possible values
+        (the boxes). We chose \(n+1\) integers (the pigeons), so two, say \(x = 2^a m\) and
+        \(y = 2^b m\), share the same odd part. If \(a &lt; b\) then \(x \mid y\) (indeed
+        \(y/x = 2^{b-a}\) is an integer). Done. \(\square\)</p>
+        <p class="small">Note the box map: \(x \mapsto\) odd part of \(x\). "Same box ⇒ one divides the other"
+        is exactly what the odd-part factorization guarantees. <em>Refinement &amp; sharpness:</em> the same
+        argument shows any 11 integers from \(\{1,\dots,20\}\) contain such a pair (only 10 odd parts
+        \(\le 20\) exist) — and 11 is best possible: \(\{11,12,\dots,20\}\) is a 10-element subset with
+        <em>no</em> dividing pair, since twice any element of it already exceeds 20.</p>
+      </div>
+    </div>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S5</span><span class="badge b-olymp">Olympiad</span><span class="badge b-solved">solved</span><span class="badge b-concept">pigeonhole · geometry</span></div>
+      <p>Given <strong>5 points</strong> in a unit square, prove that two are within distance
+      \(\le \dfrac{\sqrt2}{2}\).</p>
+      <div class="solution">
+        <div class="sol-title">Proof</div>
+        <p>Split the square into 4 equal subsquares of side \(1/2\) (the boxes). By the pigeonhole
+        principle (5 points, 4 boxes), some subsquare contains at least 2 points. Two points in a
+        \(1/2 \times 1/2\) square are at distance at most its diagonal,
+        \(\frac{\sqrt{1/2}}{1} = \frac{\sqrt2}{2}\). Done. \(\square\)</p>
+        <p class="small">General shape: \(2n+1\) points in a unit square \(\Rightarrow\) 2 within distance
+        \(\le \sqrt2/2\). And the bound is sharp: the 4 corner points of the subsquares (plus center)…
+        the extremal configuration is the 4 subsquare centers (mutual distance \(\sqrt2/2\)).</p>
+      </div>
+    </div>
+
+    <div class="box box-olymp">
+      <div class="box-title">🏛 Olympiad Extension — van der Waerden's theorem, first case</div>
+      <p><strong>Van der Waerden \(W(r, k)\):</strong> the least \(N\) such that every \(r\)-coloring of
+      \(\{1, \dots, N\}\) contains a <em>monochromatic \(k\)-term arithmetic progression</em>.
+      \(W(2, 3) = 9\): any red/blue coloring of \([9]\) has a monochromatic \(\{a, a+d, a+2d\}\).
+      (It is a theorem that \(W(r,k)\) is finite for <em>all</em> \(r, k\) — one of the founding
+      results of Ramsey theory; the proof of finiteness is deep, but the small cases are excellent
+      pigeonhole practice.)</p>
+      <p><strong>Proof that \(W(2,3) \le 9\).</strong> Suppose a coloring avoids a monochromatic
+      3-AP. WLOG \(1 = R\). <em>(i) If \(3 = R\):</em> then \(2 = B\) (else \(1,2,3\)); \(5 = B\)
+      (else \(1,3,5\)). If \(7 = R\): \(4 = B\) (from \(1,4,7\)), \(6 = R\) (from \(2,4,6\)),
+      \(9 = B\) (from \(3,6,9\)), \(8 = B\) (from \(6,7,8\)) — but then \(2,5,8\) are all \(B\),
+      contradiction. So \(7 = B\) — but then \(3,5,7\) are all \(B\), contradiction.
+      Hence \(3 = B\). <em>(ii) If \(5 = B\):</em> \(4 = R\) (from \(3,4,5\)), \(7 = B\) (from \(1,4,7\)),
+      \(9 = R\) (from \(5,7,9\)), \(6 = R\) (from \(5,6,7\)), \(8 = B\) (from \(4,6,8\)),
+      \(2 = B\) (from \(2,5,8\)) — but then \(2,5,8\) are all \(B\), contradiction.
+      Hence \(5 = R\). <em>(iii) Now \(1 = R, 3 = B, 5 = R\):</em> \(9 = B\) (from \(1,5,9\)).
+      If \(7 = R\): \(4 = B\) (from \(1,4,7\)), \(6 = B\) (from \(5,6,7\)), \(2 = R\) (from \(2,4,6\)),
+      \(8 = B\) (from \(2,5,8\)) — but \(4,6,8\) are all \(B\), contradiction.
+      If \(7 = B\): \(8 = R\) (from \(7,8,9\)), \(2 = B\) (from \(2,5,8\)). If \(4 = R\): \(6 = B\)
+      (from \(4,6,8\)) — but \(3,6,9\) all \(B\), contradiction. If \(4 = B\): \(6 = R\) (from \(2,4,6\))
+      — but \(2,3,4\) all \(B\), contradiction. All branches die; no such coloring exists.
+      Hence \(W(2,3) \le 9\). And \(W(2,3) > 8\): the coloring
+      \(R, B, B, R, R, B, B, R\) of \([8]\) has no monochromatic 3-AP (check the list
+      \((1,2,3),(2,3,4),\dots,(6,7,8),(1,3,5),\dots,(2,5,8),(1,4,7)\) — none monochromatic).
+      So \(W(2,3) = 9\). \(\square\)</p>
+      <p class="small">This case-split style — "assume the opposite, follow the forced colors until
+      a clash" — is the standard method for small Ramsey-type statements.</p>
+    </div>
+  </div>
+
+  <!-- ============ 5.3 ============ -->
+  <div class="card">
+    <h2><span class="no">5.3</span> Recurrence methods — counting by structure</h2>
+
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — the last-step decomposition</div>
+      <p>Many families of objects of "size \(n\)" decompose <strong>uniquely</strong> by their
+      last building block: a tiling ends with a vertical domino or two horizontal ones;
+      a binary string ends in 0 or in …10; a composition ends with a part of size \(1, 2, 3\).
+      If "ending with block \(b_i\)" leaves a smaller instance of the <em>same problem</em>
+      (of size \(n - |b_i|\)) and the cases are disjoint and exhaustive, then
+      \[
+      a_n = a_{n - |b_1|} + a_{n - |b_2|} + \cdots,
+      \]
+      with base cases from the smallest sizes. The method is the sum rule applied <em>recursively</em>.
+      Its two failure modes: (a) the last-block cases overlap or miss configurations
+      (→ introduce auxiliary "state" sequences, below); (b) the recurrence is right but you can't
+      solve it (→ generating functions, Chapter 6, or just compute the needed \(n\)).</p>
+    </div>
+
+    <h3>Worked — domino tilings of a \(2 \times n\) board</h3>
+    <div class="figure">
+      <div class="fig-box">
+      <svg viewBox="0 0 620 170" width="620" role="img" aria-label="Two cases for the last part of a 2×n domino tiling">
+        <style>
+          .db { stroke: #364fc7; stroke-width: 1.6; fill: none; }
+          .df { fill: #eef1fd; }
+          .dt { font: 700 12.5px "Segoe UI", sans-serif; fill: #2a3550; }
+        </style>
+        <!-- board 1: last column vertical -->
+        <g transform="translate(30,25)">
+          <rect class="db df" x="0" y="0" width="180" height="30"/>
+          <rect class="db df" x="0" y="30" width="180" height="30"/>
+          <rect class="db" x="150" y="0" width="30" height="60" fill="#0b8f7a" opacity="0.55"/>
+          <line class="db" x1="150" y1="0" x2="150" y2="60"/>
+          <text class="dt" x="90" y="80" text-anchor="middle">ends with a vertical domino</text>
+          <text class="dt" x="90" y="98" text-anchor="middle">→ leaves a 2×(n−1) board</text>
+        </g>
+        <!-- board 2: last two columns horizontal -->
+        <g transform="translate(330,25)">
+          <rect class="db df" x="0" y="0" width="180" height="30"/>
+          <rect class="db df" x="0" y="30" width="180" height="30"/>
+          <rect class="db" x="120" y="0" width="60" height="30" fill="#c2255c" opacity="0.5"/>
+          <rect class="db" x="120" y="30" width="60" height="30" fill="#c2255c" opacity="0.5"/>
+          <line class="db" x1="120" y1="0" x2="120" y2="60"/>
+          <text class="dt" x="90" y="80" text-anchor="middle">ends with two horizontal dominoes</text>
+          <text class="dt" x="90" y="98" text-anchor="middle">→ leaves a 2×(n−2) board</text>
+        </g>
+        <text class="dt" x="310" y="160" text-anchor="middle" style="font-size:14px">aₙ = aₙ₋₁ + aₙ₋₂ ,   a₀ = 1, a₁ = 1   →   aₙ = Fₙ₊₁</text>
+      </svg>
+      </div>
+      <div class="cap">Fig 5.3 — The last-step decomposition: \(2\times n\) domino tilings satisfy
+      \(a_n = a_{n-1} + a_{n-2}\), so \(a_n = F_{n+1}\). For \(n = 10\): \(F_{11} = 89\).</div>
+    </div>
+
+    <h3>The recurrence zoo (all solved by the same engine)</h3>
+    <table class="data">
+      <tr><th style="text-align:left">Object counted by \(a_n\)</th><th style="text-align:left">Last block</th><th>Recurrence</th></tr>
+      <tr><td>\(2\times n\) domino tilings</td><td>vertical (1) / two horizontal (2)</td><td>\(a_n = a_{n-1} + a_{n-2}\), \(a_0=1,a_1=1\) → \(F_{n+1}\)</td></tr>
+      <tr><td>binary strings of length \(n\), no consecutive 1s</td><td>ends in 0 / ends in 10</td><td>\(a_n = a_{n-1} + a_{n-2}\) → \(F_{n+2}\)</td></tr>
+      <tr><td>subsets of \([n]\) with no two consecutive</td><td>\(n \notin S\) / \(n \in S\) (then \(n{-}1\notin S\))</td><td>\(a_n = a_{n-1} + a_{n-2}\) → \(F_{n+2}\)</td></tr>
+      <tr><td>compositions of \(n\) with parts in \(\{1,2,3\}\)</td><td>last part 1 / 2 / 3</td><td>\(a_n = a_{n-1}+a_{n-2}+a_{n-3}\) (tribonacci)</td></tr>
+      <tr><td>compositions of \(n\) into odd parts</td><td>GF: \((1-x^2)/(1-x-x^2)\) (§4.4)</td><td>\(a_n = F_n\) (Ch. 6/§4.4)</td></tr>
+      <tr><td>\(3\times n\) domino tilings (\(n\) even)</td><td>needs auxiliary state</td><td>\(a_n = 4a_{n-2} - a_{n-4}\)</td></tr>
+    </table>
+    <div class="box box-idea">
+      <div class="box-title">💡 Key Idea — the state method (when "last block" is not enough)</div>
+      <p>If the last block leaves a <em>different</em> smaller problem (e.g. a \(3\times n\) board
+      ending in a notched shape), introduce a companion sequence \(b_n\) for the "notched" family and
+      write the joint system:
+      \(a_n = a_{n-2} + b_{n-1}\), \(b_n = a_{n-1} + b_{n-2}\)… eliminating \(b\) gives a single
+      recurrence (for \(3\times n\): \(a_n = 4a_{n-2} - a_{n-4}\), \(a_0 = a_2 = 3\)).
+      The general recipe: <strong>state = the "interface" the remaining part sees</strong>;
+      the number of states is the number of interface shapes.</p>
+    </div>
+
+    <h3>Fibonacci inside Pascal's triangle — the "same recurrence" proof technique</h3>
+    <p><strong>Identity:</strong> \(\displaystyle\sum_{k\ge 0} \binom{n-k}{k} = F_{n+1}\)
+    (the \(k\)-th superdiagonal sum).</p>
+    <div class="box box-first">
+      <div class="box-title">⛁ First Principles — verify the recurrence, match the initials</div>
+      <p>Let \(D_n = \sum_k \binom{n-k}{k}\). By Pascal's identity on the <em>top</em> index,
+      \(\binom{n-k}{k} = \binom{n-k-1}{k} + \binom{n-k-1}{k-1}\); shifting the second sum
+      (\(k\mapsto k+1\)): \(D_n = D_{n-1} + D_{n-2}\). The Fibonacci numbers satisfy the same
+      recurrence, and \(D_0 = 1 = F_1, D_1 = 1 = F_2\). Same recurrence + same initials ⇒
+      \(D_n = F_{n+1}\). This "match recurrence and base cases" technique is how you prove
+      <em>any</em> closed form for a recursively defined sequence — and it connects Pascal's
+      triangle to tiling counts without a bijection (though one exists: tilings of a \(1\times n\)
+      board, vertical tile ↔ part 1, horizontal pair ↔ part 2… i.e. compositions into \(\{1,2\}\)).</p>
+    </div>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S6</span><span class="badge b-adv">JEE Adv</span><span class="badge b-solved">solved</span><span class="badge b-concept">recurrence</span></div>
+      <p>In how many ways can 6 people sit in a row so that no two of A, B, C sit together?
+      (i.e. A, B, C pairwise non-adjacent — the gap method, Ch. 2, now framed as a decomposition).</p>
+      <div class="solution">
+        <div class="sol-title">Solution</div>
+        <p>Gap method: arrange the other 3 people: \(3! = 6\); choose 3 of the 4 gaps: \(\binom43 = 4\);
+        order A, B, C: \(3! = 6\). Total \(6 \cdot 4 \cdot 6 = \) <span class="answer-pill">144</span></p>
+      </div>
+    </div>
+
+    <div class="q solved">
+      <div class="q-head"><span class="q-id">S7</span><span class="badge b-main">JEE Main</span><span class="badge b-solved">solved</span><span class="badge b-concept">recurrence</span></div>
+      <p>A stair has 10 steps. Each move is 1 or 2 steps. How many ways to climb? (Ch. 1's P6
+      with a part-3 removed.)</p>
+      <div class="solution">
+        <div class="sol-title">Solution</div>
+        <p>\(a_n = a_{n-1} + a_{n-2}\), \(a_0 = 1, a_1 = 1\): \(1,1,2,3,5,8,13,21,34,55,89\).
+        \(a_{10} = \) <span class="answer-pill">89</span> (it is \(F_{11}\)).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ practice ============ -->
+  <div class="card">
+    <h2><span class="no">5.4</span> Practice set</h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P1</span><span class="badge b-main">JEE Main</span><span class="badge b-pract">practice</span><span class="badge b-concept">IE</span></div>
+      <p>How many integers from 1 to 100 are divisible by 2 or 3?</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>\(50 + 33 - 16 = \) <strong>67</strong>.</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P2</span><span class="badge b-adv">JEE Adv</span><span class="badge b-pract">practice</span><span class="badge b-concept">pigeonhole (generalization)</span></div>
+      <p>Prove: from any 101 integers chosen from \(\{1, \dots, 200\}\), two exist with one dividing the other.</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>Odd-part construction with \(n = 100\): 101 integers, 100 odd parts \(\le 200\) → two
+        share an odd part → divisibility. (This is exactly S4 with \(n = 100\); stating it as a
+        general \(n\) is the lesson: <em>prove the general form, not the instance.</em>)</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P3</span><span class="badge b-main">JEE Main</span><span class="badge b-pract">practice</span><span class="badge b-concept">complement + IE</span></div>
+      <p>How many integers from 1 to 1000 are divisible by <strong>none</strong> of 2, 3, 5?</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>\(1000 - 734 = \) <strong>266</strong> (from S1).</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P4</span><span class="badge b-main">JEE Main</span><span class="badge b-pract">practice</span><span class="badge b-concept">recurrence</span></div>
+      <p>Domino tilings of a \(2 \times 5\) board.</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>\(F_6 = \) <strong>8</strong>.</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P5</span><span class="badge b-adv">JEE Adv</span><span class="badge b-pract">practice</span><span class="badge b-concept">recurrence + state</span></div>
+      <p>Binary strings of length 6 that <strong>start with 1</strong> and have no consecutive 1s.</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>Start with 1 ⇒ second symbol 0 ⇒ remaining 4 symbols: any no-consecutive-1s string of
+        length 4: \(F_6 = 8\). Answer <strong>8</strong>.</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P6</span><span class="badge b-olymp">Olympiad</span><span class="badge b-pract">practice</span><span class="badge b-concept">same-recurrence proof</span></div>
+      <p>Prove \(\displaystyle\sum_{k\ge 0}\binom{n-k}{k} = F_{n+1}\) (define \(F_1 = F_2 = 1\)).</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>Shown in §5.3: \(D_n = D_{n-1} + D_{n-2}\) by Pascal, \(D_0 = D_1 = 1 = F_1, F_2\).
+        Bonus bijection: the summand \(\binom{n-k}{k}\) counts tilings of a \(1\times n\) board with
+        exactly \(k\) horizontal dominoes… (check: a tiling with \(k\) horizontals uses \(k+2k = 3k\)
+        cells? no — \(k\) horizontals cover \(2k\) cells, and \(n - 2k\) verticals cover \(n - 2k\),
+        total \(n\) ✓, and the number of such tilings is \(\binom{n-k}{k}\) (choose positions of the
+        \(k\) horizontals among the \(n-k\) tiles). So the sum is "all tilings" \(= F_{n+1}\) —
+        the identity has a <em>direct</em> tiling reading too.)</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P7</span><span class="badge b-olymp">Olympiad</span><span class="badge b-pract">practice</span><span class="badge b-concept">van der Waerden W(2,3)</span></div>
+      <p>Prove: any red/blue coloring of \(\{1,\dots,9\}\) contains a monochromatic 3-term arithmetic
+      progression, and the statement fails for \(\{1,\dots,8\}\).</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>The upper bound is the full case analysis of §5.2 (follow it line by line — each branch
+        is forced, not guessed). For the lower bound, exhibit the coloring
+        \(R\, B\, B\, R\, R\, B\, B\, R\) of \([8]\) and check the 15 three-term progressions of
+        \([8]\): six of gap 1, four of gap 2, three of gap 3, two of gap 4 — none monochromatic
+        (each contains both colors by direct inspection). Hence \(W(2,3) = 9\).</p>
+      </div></details>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">P8</span><span class="badge b-adv">JEE Adv</span><span class="badge b-pract">practice</span><span class="badge b-concept">IE + bounded</span></div>
+      <p>Non-negative solutions of \(x + y + z = 20\) with \(x \le 7\).</p>
+      <details class="ans"><summary>Answer</summary><div class="ans-body">
+        <p>\(\binom{22}{2} - \binom{14}{2} = 231 - 91 = \) <strong>140</strong>
+        (total minus \(x \ge 8\), shifted to a non-negative equation of sum 12 in 3 variables).</p>
+      </div></details>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <span>Chapter 5 · IE · Pigeonhole · Recurrences</span>
+    <span><a href="04-binomial-and-identities.html">← Ch 4</a> · <a href="index.html">Home</a> · <a href="06-olympiad-theory.html">Next → Ch 6: Olympiad Theory</a></span>
+  </div>
+
+</div>
+</body>
+</html>

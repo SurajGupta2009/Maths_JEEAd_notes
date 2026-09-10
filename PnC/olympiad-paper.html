@@ -1,0 +1,408 @@
+&lt;!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Olympiad Paper · PnC (40 Questions)</title>
+<link rel="stylesheet" href="assets/notes.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="inner">
+    <span class="brand">PnC · Notes</span>
+    <a href="index.html">Home</a><span class="sep">|</span>
+    <a href="01-counting-basics.html">1</a>
+    <a href="02-permutations.html">2</a>
+    <a href="03-combinations.html">3</a>
+    <a href="04-binomial-and-identities.html">4</a>
+    <a href="05-advanced-methods.html">5</a>
+    <a href="06-olympiad-theory.html">6</a>
+    <a href="olympiad-paper.html" style="color:var(--violet);font-weight:700;">Olympiad Paper</a>
+    <a href="olympiad-paper-solutions.html" style="color:var(--violet);">Solutions</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="banner">
+    <div class="kicker">Assessment · The Whole Course</div>
+    <h1>The PnC Olympiad Paper</h1>
+    <p class="sub">40 questions covering every concept of the six chapters, from arrangement
+    mechanics to Burnside, partitions and synthesis proofs. Questions 1–38 are the core paper
+    (sections A–G); 39–40 are stretch. Suggested time: 4–5 hours. No calculator needed;
+    "exact number" questions expect a fully reduced integer.</p>
+    <div class="chips">
+      <span class="chip">A · Arrangements (8)</span><span class="chip">B · Stars &amp; Bars (4)</span>
+      <span class="chip">C · Binomial / Double Counting (5)</span><span class="chip">D · Inclusion–Exclusion (5)</span>
+      <span class="chip">E · Pigeonhole (6)</span><span class="chip">F · Lattice Paths (4)</span>
+      <span class="chip">G · Synthesis (6)</span><span class="chip">+2 stretch</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <p><strong>Instructions.</strong> Each question is tagged with the concepts it uses and a
+    difficulty: <span class="badge b-hard">Hard</span> <span class="badge b-olymp">Olympiad</span>.
+    Answer questions as numbered. For "prove" questions, a clean argument with every step
+    justified earns full marks — a claim with no proof earns none. The answer key is at the
+    bottom (collapsed); <em>full solutions with reasoning</em> are in
+    <a href="olympiad-paper-solutions.html">the solutions file</a>.</p>
+  </div>
+
+  <!-- ================= A ================= -->
+  <div class="card">
+    <h2><span class="no">A</span> Arrangements <span class="q-meta">Q1–Q8 · Ch 2, 3, 4, 5</span></h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q1</span><span class="badge b-concept">gaps &amp; repeats</span><span class="badge b-hard">Hard</span></div>
+      <p>How many arrangements of the letters of the word
+      \(\text{PERMUTATION}\) have no two vowels adjacent?</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q2</span><span class="badge b-concept">onto · IE</span><span class="badge b-hard">Hard</span></div>
+      <p>Let \(f : [5] \to [3]\) be <em>onto</em>. How many such \(f\) satisfy
+      \(f(1) \ne f(2)\)?</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q3</span><span class="badge b-concept">gaps</span><span class="badge b-mod">Moderate</span></div>
+      <p>Four men and four women are to be arranged in a row. How many arrangements have no two
+      women adjacent?</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q4</span><span class="badge b-concept">circular · gaps</span><span class="badge b-hard">Hard</span></div>
+      <p>Twelve people, among them \(A, B, C\), sit around a round table. How many seatings have
+      \(A, B, C\) <em>pairwise</em> non-adjacent?</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q5</span><span class="badge b-concept">derangements · IE</span><span class="badge b-hard">Hard</span></div>
+      <p>Six distinct letters are posted into six correctly addressed envelopes. In how many
+      arrangements is <em>no</em> letter in its own envelope, and letter \(A\) is <em>not</em> in
+      envelope \(B\)?</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q6</span><span class="badge b-concept">choice · order</span><span class="badge b-mod">Moderate</span></div>
+      <p>From a group of 12 people, a committee of 5 is formed and a chairman is chosen from among
+      the 5 committee members. In how many ways can this be done?</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q7</span><span class="badge b-concept">couples</span><span class="badge b-mod">Moderate</span></div>
+      <p>From 8 married couples, 4 people are to be chosen for a dinner, no two from the same
+      couple. How many choices are possible?</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q8</span><span class="badge b-concept">alternating · slots</span><span class="badge b-hard">Hard</span></div>
+      <p>Five men and five women are arranged in a row, alternating by gender. If man \(A\) and
+      woman \(B\) must be adjacent, how many arrangements are possible?</p>
+    </div>
+  </div>
+
+  <!-- ================= B ================= -->
+  <div class="card">
+    <h2><span class="no">B</span> Stars &amp; Bars <span class="q-meta">Q9–Q12 · Ch 3, 4, 6</span></h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q9</span><span class="badge b-concept">bounded IE</span><span class="badge b-hard">Hard</span></div>
+      <p>Find the number of solutions in positive integers of
+      \(x + y + z + w = 20\) with \(x, y, z, w \le 8\).</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q10</span><span class="badge b-concept">bounded IE</span><span class="badge b-hard">Hard</span></div>
+      <p>Find the number of solutions in non-negative integers of
+      \(x_1 + x_2 + x_3 = 15\) with \(x_1, x_2, x_3 \le 6\).</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q11</span><span class="badge b-concept">digits · stars</span><span class="badge b-mod">Moderate</span></div>
+      <p>How many 4-digit positive integers have digit sum \(9\)?</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q12</span><span class="badge b-concept">GF · Fibonacci</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>Let \(a_n\) be the number of compositions of \(n\) into <em>odd</em> parts (\(n \ge 1\)).
+      Prove that \(a_n = F_n\), where \(F_1 = F_2 = 1\), \(F_{n} = F_{n-1} + F_{n-2}\).
+      (Hint: the generating function \(\frac{1 - x^2}{1 - x - x^2}\) and the Fibonacci GF.)</p>
+    </div>
+  </div>
+
+  <!-- ================= C ================= -->
+  <div class="card">
+    <h2><span class="no">C</span> Binomial Coefficients &amp; Double Counting <span class="q-meta">Q13–Q17 · Ch 4</span></h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q13</span><span class="badge b-concept">bounded GF</span><span class="badge b-hard">Hard</span></div>
+      <p>Find the coefficient of \(x^{10}\) in \((1 + x + x^2 + x^3 + x^4)^5\).</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q14</span><span class="badge b-concept">Vandermonde</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>Prove that for all \(n \ge 1\):
+      \[\sum_{k=0}^{2n} (-1)^k \binom{2n}{k}^2 = (-1)^n \binom{2n}{n}.\]
+      (Both a generating-function proof and a double-counting interpretation are welcome.)</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q15</span><span class="badge b-concept">Vandermonde</span><span class="badge b-hard">Hard</span></div>
+      <p>Prove that \(\displaystyle\sum_{k} \binom{n}{k}\binom{n}{k+1} = \binom{2n}{n+1}\).</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q16</span><span class="badge b-concept">Vandermonde</span><span class="badge b-hard">Hard</span></div>
+      <p>Prove that \(\displaystyle\sum_{k} \binom{n}{k}\binom{n+1}{k+1} = \binom{2n+1}{n}\),
+      and interpret it as a committee problem with two pools of people.</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q17</span><span class="badge b-concept">symmetry · GF</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>(a) Let \(k\) be <em>odd</em>, \(1 \le k \le 2n-1\). Prove that exactly
+      \(\frac{1}{2}\binom{2n}{k}\) of the \(k\)-subsets of \([2n] = \{1, \dots, 2n\}\) have
+      <em>odd</em> sum of elements. (Hint: cyclically shift a subset by \(1\) modulo \(2n\).)
+      <br>(b) What is the exact count when \(k\) is <em>even</em>? Express it using
+      \(\binom{2n}{k}\) and \(\binom{n}{k/2}\), and verify your formula for \(n = 3, k = 2\).</p>
+    </div>
+  </div>
+
+  <!-- ================= D ================= -->
+  <div class="card">
+    <h2><span class="no">D</span> Inclusion–Exclusion &amp; Rooks <span class="q-meta">Q18–Q22 · Ch 4, 5</span></h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q18</span><span class="badge b-concept">rook · derangement</span><span class="badge b-hard">Hard</span></div>
+      <p>In how many ways can 5 non-attacking rooks be placed on a \(5 \times 5\) board so that
+      none stands on the main diagonal? (Compute with the rook polynomial of the forbidden board,
+      and note the relation to derangements.)</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q19</span><span class="badge b-concept">repeats · IE</span><span class="badge b-hard">Hard</span></div>
+      <p>How many arrangements of the letters of \(\text{AABBC}\) have no two \(A\)'s adjacent?</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q20</span><span class="badge b-concept">bounded IE</span><span class="badge b-hard">Hard</span></div>
+      <p>Find the number of solutions in positive integers of
+      \(x_1 + x_2 + x_3 + x_4 + x_5 = 30\) with each \(x_i \le 7\).</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q21</span><span class="badge b-concept">partial IE</span><span class="badge b-hard">Hard</span></div>
+      <p>How many permutations \(\sigma\) of \([5]\) satisfy
+      \(\sigma(1) \ne 2,\ \sigma(2) \ne 1,\ \sigma(3) \ne 3\)?</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q22</span><span class="badge b-concept">rook</span><span class="badge b-hard">Hard</span></div>
+      <p>In how many ways can 3 non-attacking rooks be placed on a \(4 \times 4\) board, none on
+      the main diagonal? (Remark: compare the answer with Q18 — same number, different story.
+      Why is that <em>not</em> a coincidence waiting to be exploited?)</p>
+    </div>
+  </div>
+
+  <!-- ================= E ================= -->
+  <div class="card">
+    <h2><span class="no">E</span> Pigeonhole &amp; Extremal <span class="q-meta">Q23–Q28 · Ch 5</span></h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q23</span><span class="badge b-concept">residues</span><span class="badge b-hard">Hard</span></div>
+      <p>Given any \(2n + 1\) integers, prove that some non-empty subset of them has sum
+      divisible by \(2n + 1\). (In fact, show a <em>consecutive block</em> in the given order
+      suffices.)</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q24</span><span class="badge b-concept">Ramsey R(3,3)</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>Prove that \(R(3,3) = 6\):
+      <br>(a) every red/blue coloring of the edges of \(K_6\) contains a monochromatic triangle
+      (argue from one vertex: its 5 incident edges, a pigeonhole step, then look at the triangle
+      on the three same-colored neighbors);
+      <br>(b) a red/blue coloring of \(K_5\) with <em>no</em> monochromatic triangle exists —
+      construct one and verify it.
+      (Comment: the lower bound can also be obtained by the probabilistic method; explain why the
+      first-moment estimate \(\mathbb{E} = \binom{5}{3}/4\) does <em>not</em> prove (b).)</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q25</span><span class="badge b-concept">van der Waerden</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>Prove that every red/blue coloring of \(\{1, 2, \dots, 9\}\) contains a monochromatic
+      3-term arithmetic progression \((x, y, z)\) with \(x + y = 2z\), and that 9 is best
+      possible: give a coloring of \(\{1, \dots, 8\}\) with none. (This is
+      \(W(2,3) = 9\); the case analysis is in Ch 5, §5.2 — you may cite it for the upper bound
+      and must supply the extremal coloring yourself.)</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q26</span><span class="badge b-concept">geometry PH</span><span class="badge b-hard">Hard</span></div>
+      <p>Given any 5 points in a unit square, prove that two of them are at distance at most
+      \(\frac{\sqrt 2}{2}\) of each other.</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q27</span><span class="badge b-concept">residue pairs</span><span class="badge b-hard">Hard</span></div>
+      <p>Let \(n\) be odd. Prove that among any \(\frac{n+3}{2}\) integers there are two whose
+      sum is divisible by \(n\). Explain why the argument needs the parity of \(n\).</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q28</span><span class="badge b-concept">construction</span><span class="badge b-hard">Hard</span></div>
+      <p>Prove that there exist 100 consecutive composite positive integers. (Generalize: for
+      every \(m \ge 1\), how long can a block of consecutive composites be guaranteed to be?
+      Use factorial, not primality testing.)</p>
+    </div>
+  </div>
+
+  <!-- ================= F ================= -->
+  <div class="card">
+    <h2><span class="no">F</span> Lattice Paths &amp; Catalan <span class="q-meta">Q29–Q32 · Ch 6</span></h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q29</span><span class="badge b-concept">reflection</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>Prove, using the reflection principle as a bijection (state and prove the bijection),
+      that the number of monotone lattice paths from \((0,0)\) to \((n,n)\) that never go
+      strictly above the diagonal \(y = x\) is
+      \(C_n = \binom{2n}{n} - \binom{2n}{n+1} = \frac{1}{n+1}\binom{2n}{n}\).</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q30</span><span class="badge b-concept">Dvoretzky–Motzkin</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>For \(a \ge b \ge 0\), prove that the number of monotone paths from \((0,0)\) to
+      \((a,b)\) that never go strictly above the diagonal is
+      \(\frac{a-b+1}{a+1}\binom{a+b}{b}\), and check that it specializes to the Catalan number
+      at \(a = b = n\).</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q31</span><span class="badge b-concept">ballot</span><span class="badge b-hard">Hard</span></div>
+      <p>In an election, candidate A receives 5 votes and candidate B receives 3. In how many
+      orders of counting is A strictly ahead of B after every vote that is cast (from the first
+      vote onward)?</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q32</span><span class="badge b-concept">paths · reflection</span><span class="badge b-hard">Hard</span></div>
+      <p>(a) How many monotone paths from \((0,0)\) to \((5,5)\) stay <em>strictly below</em> the
+      diagonal \(y = x\) at every interior point? (Equivalently: first step \(R\), last step
+      \(U\), and \(y &lt; x\) in between.)
+      <br>(b) How many monotone paths from \((0,0)\) to \((4,4)\) pass through the point
+      \((1,3)\)? How many <em>avoid</em> it?</p>
+    </div>
+  </div>
+
+  <!-- ================= G ================= -->
+  <div class="card">
+    <h2><span class="no">G</span> Synthesis — the whole course <span class="q-meta">Q33–Q38 · Ch 5, 6</span></h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q33</span><span class="badge b-concept">Burnside · dihedral</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>The vertices of a regular hexagon are colored with 2 colors. Count the colorings up to
+      the full symmetry group of the hexagon (rotations and reflections), showing the
+      \(\mathrm{Fix}(g)\) count for each of the 12 symmetries.</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q34</span><span class="badge b-concept">partitions</span><span class="badge b-hard">Hard</span></div>
+      <p>(a) Compute \(p(10)\) (the number of integer partitions of 10) — enumerate, or verify
+      with Euler's pentagonal recurrence from the known values \(p(0), \dots, p(9)\).
+      <br>(b) Prove Euler's theorem: the number of partitions of \(n\) into <em>distinct</em>
+      parts equals the number of partitions of \(n\) into <em>odd</em> parts. Then compute both
+      for \(n = 10\) and confirm they agree.</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q35</span><span class="badge b-concept">GF · Fibonacci</span><span class="badge b-hard">Hard</span></div>
+      <p>Let \(b_n\) be the number of subsets of \([n]\) that contain no two consecutive
+      integers. Show that \(b_n = F_{n+2}\) (with \(F_1 = F_2 = 1\)), both by a recurrence
+      argument and by finding the generating function \(B(x)\) and recognizing it.</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q36</span><span class="badge b-concept">Stirling</span><span class="badge b-hard">Hard</span></div>
+      <p>(a) Compute \(S(6,3)\) (Stirling numbers of the second kind) using both the recurrence
+      \(S(n,k) = k\,S(n-1,k) + S(n-1,k-1)\) and the closed form
+      \(\frac{1}{k!}\sum_j (-1)^j \binom{k}{j}(k-j)^n\).
+      <br>(b) Six people are divided into 3 unlabeled pairs for a doubles tournament. How many
+      divisions? (Explain why this is <em>not</em> \(S(6,3)\).)</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q37</span><span class="badge b-concept">linearity · parity</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>How many \(n \times n\) \(0\)-\(1\) matrices have all row sums even <em>and</em> all
+      column sums even? (Hint: how many entries are free? Prove the corner is forced
+      consistently.)</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q38</span><span class="badge b-concept">involution · parity</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>Prove that exactly \(\frac{n!}{2}\) of the permutations of \([n]\) (for \(n \ge 2\))
+      have an <em>even</em> number of cycles in their disjoint-cycle decomposition.
+      (Hint: left-composition by the fixed involution \((1\;2)\) is a fixed-point-free pairing
+      that toggles the parity of the cycle count. Why does it toggle it? Use the sign of a
+      permutation.)</p>
+    </div>
+  </div>
+
+  <!-- ================= stretch ================= -->
+  <div class="card">
+    <h2><span class="no">+</span> Stretch <span class="q-meta">Q39–Q40 · Ch 6</span></h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q39</span><span class="badge b-concept">Burnside · 3D</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>The 8 vertices of a cube are colored with 2 colors. Count the colorings up to
+      <em>rotation</em> of the cube (the 24-element rotation group). Classify the 24 rotations by
+      their cycle structure on the vertices, compute each \(\mathrm{Fix}(g)\), and finish with
+      Burnside.</p>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-id">Q40</span><span class="badge b-concept">Erdős–Szekeres</span><span class="badge b-olymp">Olympiad</span></div>
+      <p>Prove the Erdős–Szekeres theorem: every sequence of \((r-1)(s-1) + 1\) distinct real
+      numbers contains an increasing subsequence of length \(r\) or a decreasing one of length
+      \(s\) (use the \((I_i, D_i)\) label argument). Deduce: any 101 distinct real numbers
+      contain a monotone subsequence of length 11. Give an example of 100 distinct reals with
+      <em>no</em> monotone subsequence of length 11, and verify it.</p>
+    </div>
+  </div>
+
+  <!-- ================= key ================= -->
+  <div class="card">
+    <h2><span class="no">✎</span> Answer Key</h2>
+    <details class="ans"><summary>Reveal answers (numerical questions)</summary>
+    <div class="ans-body">
+      <table class="data">
+        <tr><th>Q</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+        <tr><th>ans</th><td>907,200</td><td>114</td><td>2,880</td><td>20,321,280</td><td>212</td><td>3,960</td><td>1,120</td><td>10,368</td></tr>
+        <tr><th>Q</th><td>9</td><td>10</td><td>11</td><td>13</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
+        <tr><th>ans</th><td>315</td><td>10</td><td>165</td><td>381</td><td>44</td><td>18</td><td>126</td><td>64</td><td>44</td></tr>
+        <tr><th>Q</th><td>31</td><td>32a</td><td>32b</td><td>33</td><td>34a</td><td>34b</td><td>36a</td><td>36b</td><td>39</td></tr>
+        <tr><th>ans</th><td>14</td><td>14</td><td>54</td><td>13</td><td>42</td><td>10</td><td>90</td><td>15</td><td>23</td></tr>
+      </table>
+      <p class="small">Formula answers — Q12: \(a_n = F_n\); Q14–Q17: as stated (Q17a:
+      \(\frac12\binom{2n}{k}\) for odd \(k\); Q17b: \(\frac{1}{2}\left(\binom{2n}{k} +
+      (-1)^{k/2+1}\binom{n}{k/2}\right)\)); Q29: \(\frac{1}{n+1}\binom{2n}{n}\);
+      Q30: \(\frac{a-b+1}{a+1}\binom{a+b}{b}\); Q35: \(F_{n+2}\); Q37: \(2^{(n-1)^2}\);
+      Q38: \(n!/2\). Proof questions (Q12, Q14–Q17, Q23–Q29, Q30, Q34b, Q35, Q36a, Q37, Q38,
+      Q40) require full arguments — see the solutions file.</p>
+    </div></details>
+  </div>
+
+  <div class="foot">
+    <span>The PnC Olympiad Paper · 40 questions</span>
+    <span><a href="06-olympiad-theory.html">← Ch 6</a> · <a href="index.html">Home</a> · <a href="olympiad-paper-solutions.html">Next → Full Solutions</a></span>
+  </div>
+
+</div>
+</body>
+</html>
