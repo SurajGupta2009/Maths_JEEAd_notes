@@ -20,10 +20,10 @@ jobs:
       - name: Verify every HTML file (tag + MathJax delimiter balance)
         run: python3 tools/verify-math.py
 
-      - name: Verify mind maps match their source pages
+      - name: Verify complete or published standalone mind maps
         run: python3 tools/verify-mindmap.py all
 
-      - name: Mind maps must be generated, not hand-edited (regeneration is a no-op)
+      - name: Mind maps must be generated (source-less maps are safe no-ops)
         run: |
           python3 tools/build-mindmap.py all
           if ! git diff --quiet -- '*-mindmap.html'; then

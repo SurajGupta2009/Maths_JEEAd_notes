@@ -48,15 +48,21 @@ only fixes the order. `templates/` holds every skeleton you need.
    `quadratic-equations-mindmap.html`); re-running after any content change
    keeps it in sync. Pin fancier labels via `tools/mindmap-overrides.json` if wanted.
 
-8. **Run the verifiers on every file of the module:**
+8. **Run the verifiers on every file of the source-backed module:**
    ```bash
    python3 tools/verify-math.py Quadratic-Equations/*.html      # every line must end PASS
-   python3 tools/verify-mindmap.py Quadratic-Equations          # must end PASS
+   python3 tools/verify-mindmap.py Quadratic-Equations          # source counts + PASS
    ```
-   (CI runs both repo-wide, plus a mind-map freshness check.)
+   Review every expandable level, question/answer, symbol and figure before
+   proceeding. (CI runs both repo-wide, plus a mind-map freshness check.)
 
-9. **Update `README.md`:** add the module row to the modules table — chapters /
-   practice Qs / paper Qs counts and links.
+9. **Publish one standalone file:** after the source-backed checks pass, remove
+   the module's source HTML pages (`index.html`, six chapters, paper and
+   solutions), leaving exactly one `*-mindmap.html` and `assets/notes.css`.
+   Rerun `tools/verify-math.py`, `tools/verify-mindmap.py all`, and
+   `tools/build-mindmap.py all`; the source-less checks must pass.
 
-10. **Open a PR** (do not push to `main`): one module = one branch
-    `add-<module>` → PR. Paste the two verifier outputs into the PR description.
+10. **Update `README.md` and open a PR** (do not push to `main`): add the
+    standalone map link and content counts, then open one branch/PR for the
+    module. Paste both pre-publication and post-publication verifier outputs
+    into the PR description.

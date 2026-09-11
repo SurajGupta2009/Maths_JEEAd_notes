@@ -2,23 +2,29 @@
 
 Hand-crafted, self-contained HTML study notes that walk a JEE aspirant from
 board-level basics to JEE Advanced and Olympiad mathematics — every formula
-*derived from reasoning*, every answer numerically verified, one single HTML
-file per chapter.
+*derived from reasoning*, every answer numerically verified. Each published
+module is delivered as one standalone, expandable mindmap HTML containing its
+complete theory, worked examples, practice questions, paper, solutions and
+diagrams.
 
 [![verify](https://img.shields.io/github/actions/workflow/status/SurajGupta2009/Maths_JEEAd_notes/verify.yml?branch=main&style=flat-square&label=verify)](https://github.com/SurajGupta2009/Maths_JEEAd_notes/actions/workflows/verify.yml)
 
 ## Modules
 
-| Module | Status | Chapters | Practice Qs | Paper Qs | Mind map | Open |
-|---|---|---|---|---|---|---|
-| **PnC** · Permutations & Combinations | ✅ complete | 6 | 47 (P1–P8 per chapter) | 40 (A–G + stretch) | [pnc-mindmap.html](PnC/pnc-mindmap.html) | [index.html](PnC/index.html) |
-| **Complex Numbers** | ✅ complete | 6 | 50 (P1–P51, continuous) | 38 (A–H) | [cn-mindmap.html](Complex%20Numbers/cn-mindmap.html) | [index.html](Complex%20Numbers/index.html) |
-| **Binomial Theorem** | ✅ complete | 6 | 47 (P1–P47, continuous) | 38 (A–H) | [binomial-theorem-mindmap.html](Binomial-Theorem/binomial-theorem-mindmap.html) | [index.html](Binomial-Theorem/index.html) |
-| **Conic Sections** | ✅ complete | 6 | 48 (P1–P48, continuous) | 38 (A–H) | [conic-sections-mindmap.html](Conic-Sections/conic-sections-mindmap.html) | [index.html](Conic-Sections/index.html) |
+| Module | Status | Chapters | Practice Qs | Paper Qs | Standalone mindmap |
+|---|---|---|---|---|---|
+| **PnC** · Permutations & Combinations | ✅ complete | 6 | 47 (P1–P8 per chapter) | 40 (A–G + stretch) | [open map](PnC/pnc-mindmap.html) |
+| **Complex Numbers** | ✅ complete | 6 | 50 (P1–P51, continuous) | 38 (A–H) | [open map](Complex%20Numbers/cn-mindmap.html) |
+| **Binomial Theorem** | ✅ complete | 6 | 47 (P1–P47, continuous) | 38 (A–H) | [open map](Binomial-Theorem/binomial-theorem-mindmap.html) |
+| **Conic Sections** | ✅ complete | 6 | 48 (P1–P48, continuous) | 38 (A–H) | [open map](Conic-Sections/conic-sections-mindmap.html) |
 
-Each module ships: a chapter-per-file course (`01-…`–`06-…`), an
-Olympiad-level paper with per-question answer pills, a full worked-solutions
-file, and a generated single-file recursive mind map.
+Each module’s published folder now contains only its final `*-mindmap.html`
+deliverable (plus the local stylesheet kept for the generator’s source-backed
+workflow). The map is lossless for course content: chapter introductions,
+sections, subtopics, theory, diagrams, worked examples, every practice/paper
+question, answer pills and full solutions are embedded as expandable nodes.
+The reusable HTML templates remain in `templates/` for future modules; they are
+not part of the published course folders.
 
 ## Planned modules (roadmap)
 
@@ -45,10 +51,12 @@ Proposed folder slugs follow the naming rule (see [CONTRIBUTING.md](CONTRIBUTING
 
 ## Quick start
 
-No build step, no dependencies — just open a module home in a browser:
+No build step, no dependencies — open a final mindmap directly in a browser:
 
-- `PnC/index.html`
-- `Complex Numbers/index.html`
+- `PnC/pnc-mindmap.html`
+- `Complex Numbers/cn-mindmap.html`
+- `Binomial-Theorem/binomial-theorem-mindmap.html`
+- `Conic-Sections/conic-sections-mindmap.html`
 
 Internet **is** required for the MathJax CDN (formulas render via jsdelivr;
 everything else works offline). To check tooling: Python 3, stdlib only.
@@ -57,51 +65,48 @@ everything else works offline). To check tooling: Python 3, stdlib only.
 
 ```
 Maths_JEEAd_notes/
-├── .github/workflows/verify.yml    CI: runs the verifier over every *.html + mind-map checks
-├── PnC/                            module: Permutations & Combinations (golden reference)
-│   ├── index.html                  module home: banner, chips, roadmap SVG, chapter TOC
-│   ├── 01-counting-basics.html       one big file per chapter (01…06)
-│   ├── … 02-permutations.html … 06-olympiad-theory.html
-│   ├── olympiad-paper.html         40 Q, sections A–H, answer pills
-│   ├── olympiad-paper-solutions.html  full worked solutions (method-first)
-│   ├── pnc-mindmap.html            GENERATED — single-file recursive mind map
-│   └── assets/notes.css            shared stylesheet (copied per module)
-├── Complex Numbers/                module: same shape (folder keeps its space — intentional)
-│   ├── …
-│   └── cn-mindmap.html             GENERATED
-├── templates/                      skeletons for new modules
-│   ├── module-index.html           module home (chips, roadmap SVG, chapter cards)
-│   ├── chapter.html                chapter page (topnav → ch-head → cards → q → foot)
-│   ├── olympiad-paper.html         paper page (section card, Q + answer pill, technique box)
-│   ├── olympiad-paper-solutions.html  method-first solved-question page
-│   └── CHECKLIST.md                the ordered 10-step procedure for a new module
+├── .github/workflows/verify.yml    CI: MathJax/HTML + standalone mindmap checks
+├── PnC/                            final Permutations & Combinations deliverable
+│   ├── pnc-mindmap.html            one standalone expandable course file
+│   └── assets/notes.css            local stylesheet retained for source-backed builds
+├── Complex Numbers/                final Complex Numbers deliverable
+│   ├── cn-mindmap.html             one standalone expandable course file
+│   └── assets/notes.css
+├── Binomial-Theorem/               final Binomial Theorem deliverable
+│   ├── binomial-theorem-mindmap.html
+│   └── assets/notes.css
+├── Conic-Sections/                 final Conic Sections deliverable
+│   ├── conic-sections-mindmap.html
+│   └── assets/notes.css
+├── templates/                      reusable skeletons for future source-backed modules
 ├── tools/
-│   ├── build-mindmap.py            mind-map builder (auto-discovers any module folder)
-│   ├── verify-mindmap.py           mind map ↔ source completeness check
-│   ├── verify-math.py              quality gate: HTML tag + MathJax delimiter balance
+│   ├── build-mindmap.py            builder + safe no-op for published source-less maps
+│   ├── verify-mindmap.py           completeness/source-less standalone-map checks
+│   ├── verify-math.py              HTML tag + MathJax delimiter quality gate
 │   └── mindmap-overrides.json      per-module label pins & CLI aliases
-├── README.md · CONTRIBUTING.md · AGENTS.md · .gitignore
+└── README.md · CONTRIBUTING.md · AGENTS.md · .gitignore
 ```
 
 ## Tooling
 
 ```bash
-# regenerate the mind map for one module, or every module (idempotent):
+# source-backed builds (or safe no-op after publishing the final maps):
 python3 tools/build-mindmap.py PnC
 python3 tools/build-mindmap.py cn          # alias for 'Complex Numbers'
 python3 tools/build-mindmap.py all
 
 # quality gate — HTML tag balance + MathJax delimiter balance, every file must PASS:
-python3 tools/verify-math.py                       # all *.html in the repo
-python3 tools/verify-math.py PnC/01-counting-basics.html "Complex Numbers/index.html"
+python3 tools/verify-math.py
 
-# mind-map completeness (q/box/section/answer counts match the source pages):
+# source-backed completeness, or standalone-map integrity after source removal:
 python3 tools/verify-mindmap.py all
 ```
 
-Mind maps are **generated artifacts**: never hand-edit them — the CI checks
-that a rebuild is a no-op. New chapters need no builder config: any top-level
-folder containing an `index.html` is auto-discovered.
+Mind maps are generated from the source pages before publication and are then
+self-contained: CSS is embedded, SVG IDs are namespaced, page links become
+in-map anchors, all chapter/page headers are preserved, and the final folder
+has no links to deleted source pages. The builder refuses to overwrite a
+source-less final map, so `build-mindmap.py all` remains idempotent.
 
 ## Contributing
 

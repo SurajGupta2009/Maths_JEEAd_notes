@@ -1,19 +1,25 @@
 # Contributing
 
-This repo is hand-crafted HTML notes (JEE Advanced → Olympiad). Two modules —
-`PnC/` and `Complex Numbers/` — are **golden references**: when in doubt, copy
-what they do. Everything here exists to keep new files consistent with them.
+This repo is hand-crafted HTML notes (JEE Advanced → Olympiad). The four
+published folders contain standalone mindmaps; `templates/` plus the existing
+maps are the references for authoring a future source-backed module. Everything
+here exists to keep new files consistent with that workflow.
 
 ## File layout rules
 
-- **One chapter = one single large HTML file**, named `NN-slug.html`
-  (`03-combinations.html`). **Never** bifurcate a chapter into multiple files.
-- A module folder holds exactly: `index.html`, chapters `01-…`…`06-…`,
-  `olympiad-paper.html`, `olympiad-paper-solutions.html`,
-  the generated `*-mindmap.html`, and `assets/notes.css`.
+- During authoring, **one chapter = one single large HTML file**, named
+  `NN-slug.html` (`03-combinations.html`). **Never** bifurcate a chapter into
+  multiple files.
+- A published module folder holds exactly one generated standalone
+  `*-mindmap.html` and `assets/notes.css`. The map embeds the former
+  `index.html`, chapters `01-…`…`06-…`, `olympiad-paper.html`, and
+  `olympiad-paper-solutions.html`; those source HTML pages are removed after
+  the completeness and visual audit.
 - `assets/notes.css` is a per-module copy (no cross-folder links; folders must
   open standalone from disk).
 - Mind maps are **generated** by `tools/build-mindmap.py` — never hand-written.
+  Once a module is source-less, the builder intentionally leaves its only map
+  unchanged as a safe no-op.
 
 ## Naming
 
@@ -28,7 +34,8 @@ what they do. Everything here exists to keep new files consistent with them.
 
 ## Math rendering (exact head)
 
-Every page carries this `<head>` (only `<title>` varies):
+Every source page carries this `<head>` (only `<title>` varies); the published
+mindmap embeds the stylesheet and the same MathJax configuration:
 
 ```html
 <meta charset="UTF-8">
@@ -45,7 +52,9 @@ window.MathJax = {
 ```
 
 Real math only: inline `\( … \)`, display `\[ … \]` or `$$ … $$`. **Never**
-fake math with Unicode glyphs (`x²`, `√`, `≤`) — MathJax or nothing.
+fake prose math with Unicode glyphs (`x²`, `√`, `≤`) — MathJax or nothing.
+Literal SVG drawing labels may use readable glyphs because MathJax does not
+render inside SVG `<text>` nodes.
 
 ## Page skeleton
 
@@ -154,29 +163,37 @@ The paper file ends with a `box-warn` "📝 Exam technique notes" card.
   A–H, difficulty ramping Main → Advanced → Olympiad. Aim 38–40 questions
   (minimum 30). The solutions file reuses the same Q-ids verbatim.
 
-## Verify before you commit
+## Verify before you publish or commit
 
 ```bash
-python3 tools/verify-math.py PnC/*.html "Complex Numbers/"*.html templates/*.html
-python3 tools/verify-mindmap.py all          # after any mind-map rebuild
-python3 tools/build-mindmap.py all           # mind maps must regenerate unchanged
+python3 tools/verify-math.py                    # every remaining HTML file
+python3 tools/verify-mindmap.py all             # source-backed or standalone checks
+python3 tools/build-mindmap.py all              # source-less maps are safe no-ops
 ```
 
-Every paper answer must be verified **numerically in pure Python** (stdlib
-only) before the solutions file is written — keep the throwaway script out of
-the repo, keep its verdict in the PR description.
+Before removing source pages, the mindmap verifier must report matching counts
+for questions, answers, figures, tables and formulas. After removal, it must
+report standalone link closure, SVG-ID namespacing and embedded audit counts.
+Every paper answer must be verified **numerically in pure Python** (stdlib only)
+before the solutions file is written — keep the throwaway script out of the
+repo, keep its verdict in the PR description.
 
 ## Hard rules
 
-1. One chapter = one HTML file; never split.
-2. Real MathJax delimiters only (`\(…\)`, `\[…\]`, `$$…$$`); never Unicode math.
+1. During authoring, one chapter = one HTML file; never split.
+2. Real MathJax delimiters only (`\(…\)`, `\[…\]`, `$$…$$`) in prose; use
+   readable literal text for SVG labels where MathJax cannot run.
 3. No new dependencies: pure stdlib Python, no build system, no images unless
    the maintainer asks.
-4. Do not alter existing note files in `PnC/` or `Complex Numbers/`; the only
-   permitted change there is tooling moves, and only with byte-identical mind
-   maps and PASS verification afterwards.
-5. `tools/verify-math.py` must report PASS for every HTML file — CI enforces it.
-6. Mind maps: generate, never hand-edit.
+4. Do not alter curated note content casually; requested corrections must be
+   regenerated into the map and pass both completeness and math gates before
+   the source pages are removed.
+5. `tools/verify-math.py` must report PASS for every remaining HTML file — CI
+   enforces it.
+6. Mind maps: generate, never hand-edit. A source-less final map is retained
+   unchanged by the builder.
+7. Each published module must retain exactly one standalone mindmap HTML and
+   no source-page links.
 
 Adding a whole module? Follow [templates/CHECKLIST.md](templates/CHECKLIST.md)
 end to end, then open a PR — do not push to `main`.
