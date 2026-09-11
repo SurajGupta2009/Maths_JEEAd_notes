@@ -25,9 +25,12 @@ Output file: the module folder's existing `*-mindmap.html` is regenerated in
 place (so re-running is idempotent); a brand-new module gets
 `<folder-slug>-mindmap.html`, where the slug is the folder name lowercased
 with runs of spaces/hyphens collapsed to a single hyphen
-(`Quadratic-Equations` -> `quadratic-equations-mindmap.html`).
+(`Quadratic-Equations` -> `quadratic-equations-mindmap.html`). If the source
+pages have been removed after publication, the existing standalone map is
+validated elsewhere and deliberately retained as a safe no-op.
 
-Never hand-edit a generated mind map — edit the source pages and rebuild.
+Never hand-edit a generated mind map — edit the source pages and rebuild before
+publishing.
 """
 import json, os, re, sys, html as H
 
@@ -48,15 +51,42 @@ def slug(name):
 CHAPTER_RE = re.compile(r'^(\d+)-[^/\\]+\.html$')
 
 def find_modules():
-    """Every top-level repo folder that contains an index.html."""
+    """Every top-level course folder.
+
+    A checkout can be in either of the two supported states:
+
+    * source-backed: ``index.html`` plus the chapter/paper pages; or
+    * final: the source pages have been folded into the standalone mind map and
+      only ``*-mindmap.html`` remains.
+
+    The second form is deliberately discovered too, so the normal ``all``
+    commands remain useful after publishing the compact final distribution.
+    """
     out = []
     for d in sorted(os.listdir(ROOT)):
         p = os.path.join(ROOT, d)
-        if d.startswith('.'):
+        if d.startswith('.') or not os.path.isdir(p):
             continue
-        if os.path.isdir(p) and os.path.isfile(os.path.join(p, 'index.html')):
+        has_sources = os.path.isfile(os.path.join(p, 'index.html'))
+        has_map = any(f.endswith('-mindmap.html') for f in os.listdir(p))
+        if has_sources or has_map:
             out.append(d)
     return out
+
+def is_standalone(folder):
+    """Whether *folder* contains the published map but no source index."""
+    base = os.path.join(ROOT, folder)
+    return (not os.path.isfile(os.path.join(base, 'index.html'))
+            and any(f.endswith('-mindmap.html') for f in os.listdir(base)))
+
+def standalone_map(folder):
+    """Return the only published map in a source-less module folder."""
+    base = os.path.join(ROOT, folder)
+    maps = sorted(f for f in os.listdir(base) if f.endswith('-mindmap.html'))
+    if len(maps) != 1:
+        raise SystemExit(f'error: {folder}/ must contain exactly one *-mindmap.html '
+                         f'after source pages are removed (found {len(maps)})')
+    return os.path.join(base, maps[0])
 
 def load_overrides():
     if os.path.exists(OVERRIDES_PATH):
@@ -104,7 +134,9 @@ def module_config(folder):
         'css': css,
         'title': ov.get('title', f'{folder} · Complete Course — single-file mind map'),
         'brand': ov.get('brand', f'{folder} · Complete Course'),
-        'skip': f'href="{chapters[0]}"' if chapters else None,
+        # Keep the complete module index. The chapter TOC is useful in the
+        # standalone file; its links are rewritten to the in-document nodes.
+        'skip': None,
         'back': ('index.html', 'index.html'),
         'nodes': nodes,
     }
@@ -175,6 +207,59 @@ def direct_children(s):
 def esc(t):
     return H.escape(t, quote=False)
 
+def file_slug(filename):
+    """A safe, deterministic token for IDs copied out of one source page."""
+    return re.sub(r'[^a-z0-9]+', '-', filename.lower()).strip('-')
+
+def prefix_fragment_ids(fragment, prefix):
+    """Namespace IDs and local SVG/HTML references in a copied fragment.
+
+    Several source pages intentionally use short SVG marker IDs such as
+    ``arr``. Once pages are concatenated, those IDs become document-global and
+    a later diagram can accidentally use the first diagram's marker. Prefixing
+    every ID *and its local references* keeps every diagram independent.
+    """
+    ids = set(re.findall(r'\bid="([^"]+)"', fragment))
+    if not ids:
+        return fragment
+    for old in sorted(ids, key=len, reverse=True):
+        new = f'{prefix}{old}'
+        fragment = re.sub(rf'(\bid=")' + re.escape(old) + r'(")',
+                          rf'\g<1>{new}\g<2>', fragment)
+        fragment = re.sub(rf'(url\(#)' + re.escape(old) + r'(\))',
+                          rf'\g<1>{new}\g<2>', fragment)
+        fragment = re.sub(rf'(href="#)' + re.escape(old) + r'(")',
+                          rf'\g<1>{new}\g<2>', fragment)
+        fragment = re.sub(rf'(xlink:href="#)' + re.escape(old) + r'(")',
+                          rf'\g<1>{new}\g<2>', fragment)
+    return fragment
+
+def rewrite_internal_links(fragment, links):
+    """Point copied source-page links at nodes inside the standalone map."""
+    for filename, anchor in sorted(links.items(), key=lambda item: len(item[0]), reverse=True):
+        fragment = re.sub(r'(href=")' + re.escape(filename) + r'(")',
+                          rf'\g<1>#{anchor}\g<2>', fragment)
+    return fragment
+
+def prepare_fragment(fragment, folder, filename, links):
+    """Make one copied page fragment safe and self-contained."""
+    prefix = f'mm-{file_slug(folder)}-{file_slug(filename)}-'
+    return rewrite_internal_links(prefix_fragment_ids(fragment, prefix), links)
+
+def hero_for_map(hero):
+    """Give both banner conventions the same visible treatment in the map."""
+    if not hero:
+        return ''
+    if re.search(r'class="banner(?:\s|\")', hero):
+        return hero.replace('class="banner"', 'class="banner mm-banner"', 1)
+    if re.search(r'class="ch-head(?:\s|\")', hero):
+        hero = re.sub(r'<header\b', '<div', hero, count=1)
+        hero = re.sub(r'</header>', '</div>', hero, count=1)
+        hero = hero.replace('class="ch-head"', 'class="banner mm-banner"', 1)
+        hero = hero.replace('ch-kicker', 'kicker').replace('ch-sub', 'sub')
+        return hero
+    return hero
+
 # ---------------------------------------------------------------- rendering
 
 def _attrs_of(el_html):
@@ -203,9 +288,11 @@ def render_q(q_html):
         if name == 'p':
             preview = text_of(h)
             break
-    preview = re.sub(r'\\\(.*?\\\)', ' ', preview)   # drop inline math from the hint
-    preview = re.sub(r'\\\[.*?\\\]', ' ', preview)   # drop display math too
-    preview = re.sub(r'\$\$.*?\$\$', ' ', preview)   # and $$...$$
+    # Keep a readable marker where TeX was removed; otherwise a question such
+    # as "coefficient of ... in ..." becomes an unhelpful sentence fragment.
+    preview = re.sub(r'\\\(.*?\\\)', ' [formula] ', preview)   # inline math
+    preview = re.sub(r'\\\[.*?\\\]', ' [formula] ', preview)   # display math
+    preview = re.sub(r'\$\$.*?\$\$', ' [formula] ', preview)   # $$...$$
     preview = re.sub(r'\s+', ' ', preview).strip()
     preview = (preview[:78] + '…') if len(preview) > 78 else preview
     summary = (f'<span class="q-id">{esc(qid)}</span>{"".join(badges)}'
@@ -223,19 +310,44 @@ def render_box(box_html):
             title = h
         else:
             body.append(h)
+    # The source title is a block <div>. A <summary> already supplies the
+    # block and interaction, so keep only its contents; nested box-title divs
+    # made the combined map needlessly invalid-looking and double-styled.
+    title_inner = title
+    if title:
+        try:
+            title_inner = strip_outer(title, 'div')
+        except ValueError:
+            pass
     return (f'<details class="{cls} mm-node">'
-            f'<summary class="box-title">{title}</summary>'
+            f'<summary class="box-title">{title_inner or "Callout"}</summary>'
             f'{" ".join(body)}</details>')
 
 def render_section(card_html):
     inner = strip_outer(card_html, 'div')
     kids = direct_children(inner)
-    h2 = kids[0][0]
+    # Most cards begin with h2, but the paper/solutions pages also use a final
+    # card containing only a technique box. Do not silently discard that first
+    # child: use its box title as the section label and render every child.
+    h2_index = next((i for i, (_, name, _) in enumerate(kids) if name == 'h2'), None)
+    h2 = kids[h2_index][0] if h2_index is not None else ''
+    content_kids = [item for i, item in enumerate(kids) if i != h2_index]
     m = re.search(r'<span class="no">(.*?)</span>', h2)
     no = m.group(1) if m else ''
     rest = re.sub(r'<span class="no">.*?</span>', '', h2, flags=re.S)
     rest = re.sub(r'<span class="q-meta">.*?</span>', '', rest, flags=re.S)
-    title = text_of(rest)
+    if h2:
+        title = text_of(rest)
+    else:
+        box_title = None
+        for child, name, attrs in content_kids:
+            if name == 'div' and 'box' in get_class(attrs).split():
+                title_match = re.search(r'<div class="box-title"[^>]*>(.*?)</div>',
+                                        child, re.S)
+                if title_match:
+                    box_title = title_match.group(1)
+                    break
+        title = text_of(box_title) if box_title else 'Supplementary notes'
     qm = re.search(r'<span class="q-meta">(.*?)</span>', h2)
     meta_bits = []
     if qm:
@@ -253,11 +365,11 @@ def render_section(card_html):
                 f'<div class="mm-body">{" ".join(current)}</div></details>')
         current, current_title = [], None
 
-    for h, name, attrs in kids[1:]:
+    for h, name, attrs in content_kids:
         cls = get_class(attrs).split()
         if name == 'h3':
             flush()
-            current_title = h[3:-4]
+            current_title = strip_outer(h, 'h3')
         elif name == 'div' and cls and cls[0] == 'q':
             current.append(render_q(h))
         elif name == 'div' and cls and cls[0] == 'box':
@@ -277,7 +389,12 @@ def render_section(card_html):
             f'<div class="mm-body">{"".join(items)}</div></details>')
 
 def page_parts(src):
-    """Return (banner_html, [card_html...]) for a note page."""
+    """Return (hero_html, [card_html...]) for a note page.
+
+    Older pages use ``div.banner`` while newer pages use ``header.ch-head``.
+    Both are course content: dropping the latter loses the chapter's complete
+    introduction when pages are folded into the standalone map.
+    """
     m = re.search(r'<div class="page"[^>]*>(.*)</div>\s*</body>\s*</html>\s*$', src, re.S)
     if not m:
         m = re.search(r'<div class="page"[^>]*>(.*)</div>\s*</body>', src, re.S)
@@ -285,27 +402,29 @@ def page_parts(src):
         raise ValueError('page div not found')
     page = m.group(1)
     kids = direct_children(page)
-    banner, cards = '', []
+    hero, cards = '', []
     for h, name, attrs in kids:
         cls = get_class(attrs).split()
-        if cls and cls[0] == 'banner':
-            banner = h
+        if cls and cls[0] in ('banner', 'ch-head'):
+            hero = h
         elif cls and cls[0] == 'card':
             cards.append(h)
-    return banner, cards
+    return hero, cards
 
-def chapter_node(base, icon, file, label, skip_marker):
+def chapter_node(base, icon, file, label, skip_marker, folder, links, anchor):
     src = read(os.path.join(base, file))
-    banner, cards = page_parts(src)
-    if banner:
-        banner = banner.replace('class="banner"', 'class="banner mm-banner"', 1)
+    hero, cards = page_parts(src)
     kept = [c for c in cards if skip_marker is None or skip_marker not in c]
+    hero = hero_for_map(prepare_fragment(hero, folder, file, links)) if hero else ''
+    rendered_cards = []
+    for card in kept:
+        rendered_cards.append(render_section(prepare_fragment(card, folder, file, links)))
     n_q = src.count('class="q"') + src.count('class="q solved"')
     meta = f'{len(kept)} sections · {n_q} questions'
-    return (f'<details class="mm-ch mm-node"><summary class="mm-sum">'
+    return (f'<details id="{esc(anchor)}" class="mm-ch mm-node"><summary class="mm-sum">'
             f'<span class="mm-ico">{icon}</span><span class="mm-t">{esc(label)}</span>'
             f'<span class="mm-meta">{esc(meta)}</span></summary>'
-            f'<div class="mm-body">{banner}{"".join(render_section(c) for c in kept)}</div></details>')
+            f'<div class="mm-body">{hero}{"".join(rendered_cards)}</div></details>')
 
 # ---------------------------------------------------------------- assemble
 
@@ -358,6 +477,15 @@ EXTRA_CSS = """
 .mm-banner { margin: 0 0 14px; }
 .mm-banner h1 { font-size: 1.45rem; }
 .mm-banner .sub { font-size: .92rem; }
+/* Newer source pages use header.ch-head rather than div.banner. The builder
+   normalizes it to .mm-banner, but these rules keep the compact header legible
+   even when a future source page carries an extra class. */
+.mm-banner .kicker { text-transform: uppercase; letter-spacing: .16em; font-size: .72rem;
+  font-weight: 700; opacity: .85; }
+.mm-banner .sub { margin: 0; max-width: 72ch; opacity: .93; }
+.mm-banner:not(.banner) { margin: 0 0 14px; padding: 1.35rem 1.5rem; border-radius: 13px;
+  color: #fff; background: linear-gradient(120deg, #2b3a8f 0%, #364fc7 45%, #4c6ef5 100%);
+  box-shadow: 0 1px 3px rgba(28,35,51,.07), 0 8px 24px -12px rgba(28,35,51,.12); }
 .mm-node .q, .mm-node .box { margin: 12px 0; }
 .mm-node .q > summary.q-head, .mm-node .box > summary.box-title { padding: 11px 14px; }
 .mm-node details.ans > summary { cursor: pointer; }
@@ -380,7 +508,23 @@ JS = """
 })();
 """
 
+def node_anchor(file, chapters):
+    """Stable in-document target for a source page."""
+    if file == 'index.html':
+        return 'course-map'
+    if file == 'olympiad-paper.html':
+        return 'olympiad-paper'
+    if file == 'olympiad-paper-solutions.html':
+        return 'solutions'
+    m = CHAPTER_RE.match(file)
+    return f'chapter-{int(m.group(1))}' if m else f'page-{file_slug(file)}'
+
 def build(name):
+    if is_standalone(name):
+        # The published distribution is intentionally source-less. Its map is
+        # already complete and self-contained, so rebuilding is a safe no-op.
+        print(f'[{name}] standalone mindmap retained (source HTML pages are not present)')
+        return
     cfg = module_config(name)
     base = cfg['base']
     css = read(cfg['css'])
@@ -389,15 +533,34 @@ def build(name):
     mj_cfg = re.search(r'<script>\s*window\.MathJax.*?</script>', first, re.S).group(0)
     mj_cdn = re.search(r'<script async src="https://cdn\.jsdelivr[^"]*"></script>', first).group(0)
 
+    chapters = [f for _, f, _ in cfg['nodes'] if CHAPTER_RE.match(f)]
+    links = {f: node_anchor(f, chapters) for _, f, _ in cfg['nodes']}
+    links[os.path.basename(cfg['out'])] = 'course-map'
+
     parts = []
     for icon, file, label in cfg['nodes']:
         skip = cfg['skip'] if file == 'index.html' else None
-        parts.append(chapter_node(base, icon, file, label, skip))
+        parts.append(chapter_node(base, icon, file, label, skip, name, links,
+                                  node_anchor(file, chapters)))
 
     srcs = [os.path.join(base, f) for _, f, _ in cfg['nodes']]
+    source_text = '\n'.join(read(f) for f in srcs)
     src_kb = sum(os.path.getsize(f) for f in srcs if os.path.exists(f)) // 1024
+    audit = {
+        'questions': len(re.findall(r'<div class="q(?: |")', source_text)),
+        'answers': source_text.count('<details class="ans"'),
+        'paper_answers': source_text.count('class="answer-pill"'),
+        'figures': len(re.findall(r'<div class="figure"(?:\s|>)|<figure\b', source_text)),
+        'tables': source_text.count('<table'),
+        'formulas': source_text.count('<div class="formula"'),
+        'sections': source_text.count('<div class="card"'),
+        'subtopics': len(re.findall(r'<h3(?: |>)', source_text)),
+    }
+    audit_comment = '<!-- embedded source audit: ' + ' '.join(
+        f'{key}={value}' for key, value in audit.items()) + ' -->'
 
     out = f"""<!DOCTYPE html>
+{audit_comment}
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -413,7 +576,7 @@ def build(name):
 <body>
 <nav class="topbar mm-topbar">
   <div class="inner">
-    <span class="brand">{cfg['brand']} <small>one file · recursive mind map · {src_kb} KB of source notes</small></span>
+    <span class="brand">{cfg['brand']} <small>one standalone file · recursive mind map · {src_kb} KB embedded notes</small></span>
     <span class="btns">
       <button data-lv="all">Expand all</button>
       <button data-lv="l3">To subtopics</button>
@@ -429,7 +592,8 @@ def build(name):
 {chr(10).join('  ' + p for p in parts)}
 </main>
 <footer class="foot mm-foot" style="max-width:1100px;margin:0 auto;padding:0 20px 40px;color:#8a93b5;font-size:12.5px;">
-  Generated from the note pages by <code>build-mindmap.py</code> — the paginated originals remain in this folder (see <a href="{cfg['back'][0]}">{cfg['back'][1]}</a>).
+  Standalone final course map · theory, worked examples, practice questions, paper questions,
+  answer keys, solutions and diagrams are embedded in this file.
 </footer>
 <script>
 {JS}
