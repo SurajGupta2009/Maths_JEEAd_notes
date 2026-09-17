@@ -1,0 +1,12 @@
+<svg viewBox="0 0 560 210" width="560" role="img" aria-label="Two-set inclusion-exclusion Venn diagram">
+        <style>
+          .vn { font: 700 13px "Segoe UI", sans-serif; }
+          .va { font: 600 12px "Segoe UI", sans-serif; }
+        </style>
+        <circle cx="200" cy="100" r="80" fill="#364fc7" opacity="0.25"/>
+        <circle cx="340" cy="100" r="80" fill="#c2255c" opacity="0.22"/>
+        <text class="vn" x="145" y="55" fill="#364fc7">|A|</text>
+        <text class="vn" x="390" y="55" fill="#c2255c">|B|</text>
+        <text class="va" x="268" y="105" text-anchor="middle" fill="#1c2333">|A∩B|</text>
+        <text class="va" x="280" y="195" text-anchor="middle" fill="#2a3550">|A ∪ B| = |A| + |B| − |A ∩ B| : the overlap was added twice</text>
+      </svg>

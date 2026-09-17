@@ -1,0 +1,46 @@
+<svg viewBox="0 0 860 300" width="860" role="img" aria-label="Roadmap of the Binomial Theorem module">
+        <defs>
+          <marker id="mm-binomial-theorem-index-html-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#364fc7"/>
+          </marker>
+        </defs>
+        <style>
+          .rc { font: 600 14px "Segoe UI", sans-serif; fill: #fff; }
+          .rt { font: 600 12.5px "Segoe UI", sans-serif; fill: #2a3550; }
+          .rd { font: 400 10.5px "Segoe UI", sans-serif; fill: #6b7690; }
+          .el { stroke: #364fc7; stroke-width: 1.6; fill: none; }
+        </style>
+        <!-- row 1: chapters 1–4 -->
+        <rect x="10" y="16" width="180" height="58" rx="12" fill="#0b8f7a"/>
+        <text class="rc" x="100" y="40" text-anchor="middle">01 · Counting Roots</text>
+        <text class="rc" x="100" y="58" text-anchor="middle" style="font-size:11px;">why C(n,k) counts</text>
+        <rect x="220" y="16" width="180" height="58" rx="12" fill="#364fc7"/>
+        <text class="rc" x="310" y="40" text-anchor="middle">02 · Coefficient Machinery</text>
+        <text class="rc" x="310" y="58" text-anchor="middle" style="font-size:11px;">general term, multinomial</text>
+        <rect x="430" y="16" width="180" height="58" rx="12" fill="#364fc7"/>
+        <text class="rc" x="520" y="40" text-anchor="middle">03 · Identity Engines</text>
+        <text class="rc" x="520" y="58" text-anchor="middle" style="font-size:11px;">substitute · calculus · vaults</text>
+        <rect x="640" y="16" width="180" height="58" rx="12" fill="#364fc7"/>
+        <text class="rc" x="730" y="40" text-anchor="middle">04 · Infinite Expansions</text>
+        <text class="rc" x="730" y="58" text-anchor="middle" style="font-size:11px;">any exponent, radius |x| &lt; 1</text>
+        <!-- row 2: chapters 5–6 -->
+        <rect x="155" y="120" width="190" height="58" rx="12" fill="#6d3fd4"/>
+        <text class="rc" x="250" y="144" text-anchor="middle">05 · Size &amp; Extremes</text>
+        <text class="rc" x="250" y="162" text-anchor="middle" style="font-size:11px;">Bernoulli · greatest term</text>
+        <rect x="515" y="120" width="190" height="58" rx="12" fill="#6d3fd4"/>
+        <text class="rc" x="610" y="144" text-anchor="middle">06 · Divisibility &amp; Primes</text>
+        <text class="rc" x="610" y="162" text-anchor="middle" style="font-size:11px;">Lucas · Kummer · Wolstenholme</text>
+        <!-- arrows -->
+        <line class="el" x1="190" y1="45" x2="220" y2="45" marker-end="url(#mm-binomial-theorem-index-html-arr)"/>
+        <line class="el" x1="400" y1="45" x2="430" y2="45" marker-end="url(#mm-binomial-theorem-index-html-arr)"/>
+        <line class="el" x1="610" y1="45" x2="640" y2="45" marker-end="url(#mm-binomial-theorem-index-html-arr)"/>
+        <path class="el" d="M 310 74 C 310 100, 300 100, 295 120" marker-end="url(#mm-binomial-theorem-index-html-arr)"/>
+        <path class="el" d="M 730 74 C 730 100, 660 100, 640 120" marker-end="url(#mm-binomial-theorem-index-html-arr)"/>
+        <!-- paper -->
+        <rect x="300" y="228" width="260" height="54" rx="12" fill="#c2255c"/>
+        <text class="rc" x="430" y="250" text-anchor="middle">Olympiad Paper · 38 questions</text>
+        <text class="rc" x="430" y="268" text-anchor="middle" style="font-size:11px;">covers every concept of the module</text>
+        <path class="el" d="M 250 178 C 250 210, 340 205, 385 228" marker-end="url(#mm-binomial-theorem-index-html-arr)"/>
+        <path class="el" d="M 610 178 C 610 210, 520 205, 475 228" marker-end="url(#mm-binomial-theorem-index-html-arr)"/>
+        <text class="rd" x="845" y="290" text-anchor="end">census → machinery → engines → series → size → primes</text>
+      </svg>
