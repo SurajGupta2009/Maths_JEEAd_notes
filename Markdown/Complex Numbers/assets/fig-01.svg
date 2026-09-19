@@ -1,0 +1,39 @@
+<svg viewBox="0 0 760 300" width="760" role="img" aria-label="Complex numbers chapter roadmap">
+        <defs>
+          <marker id="mm-complex-numbers-index-html-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#364fc7"/>
+          </marker>
+        </defs>
+        <style>
+          .rn { font: 600 13px "Segoe UI", sans-serif; fill: #2a3550; }
+          .rs { font: 500 11px "Segoe UI", sans-serif; fill: #7a83a5; }
+          .el { stroke: #94a3b8; stroke-width: 1.6; fill: none; }
+        </style>
+        <!-- row 1 -->
+        <rect x="20" y="24" width="200" height="58" rx="10" fill="#e8f6f3" stroke="#0b8f7a" stroke-width="1.6"/>
+        <text class="rn" x="120" y="47" text-anchor="middle">1 · Foundations</text>
+        <text class="rs" x="120" y="66" text-anchor="middle">algebra · conjugate · modulus · plane</text>
+        <rect x="280" y="24" width="200" height="58" rx="10" fill="#fff" stroke="#d7deec" stroke-dasharray="5 4"/>
+        <text class="rn" x="380" y="47" text-anchor="middle">2 · Polar form &amp; De Moivre</text>
+        <text class="rs" x="380" y="66" text-anchor="middle">trig form · powers · roots</text>
+        <rect x="540" y="24" width="200" height="58" rx="10" fill="#fff" stroke="#d7deec" stroke-dasharray="5 4"/>
+        <text class="rn" x="640" y="47" text-anchor="middle">3 · Roots of unity</text>
+        <text class="rs" x="640" y="66" text-anchor="middle">ω · sums · factorizations</text>
+        <!-- row 2 -->
+        <rect x="20" y="150" width="200" height="58" rx="10" fill="#fff" stroke="#d7deec" stroke-dasharray="5 4"/>
+        <text class="rn" x="120" y="173" text-anchor="middle">6 · Synthesis &amp; Olympiad</text>
+        <text class="rs" x="120" y="192" text-anchor="middle">practice paper + solutions</text>
+        <rect x="280" y="150" width="200" height="58" rx="10" fill="#fff" stroke="#d7deec" stroke-dasharray="5 4"/>
+        <text class="rn" x="380" y="173" text-anchor="middle">5 · Geometry via complex</text>
+        <text class="rs" x="380" y="192" text-anchor="middle">Ptolemy · van Aubel · polygons</text>
+        <rect x="540" y="150" width="200" height="58" rx="10" fill="#fff" stroke="#d7deec" stroke-dasharray="5 4"/>
+        <text class="rn" x="640" y="173" text-anchor="middle">4 · JEE Advanced core</text>
+        <text class="rs" x="640" y="192" text-anchor="middle">equations · loci · arg · |z|</text>
+        <!-- arrows -->
+        <path class="el" d="M 220 53 L 278 53" marker-end="url(#mm-complex-numbers-index-html-arr)"/>
+        <path class="el" d="M 480 53 L 538 53" marker-end="url(#mm-complex-numbers-index-html-arr)"/>
+        <path class="el" d="M 640 82 C 640 115, 380 115, 380 148" marker-end="url(#mm-complex-numbers-index-html-arr)"/>
+        <path class="el" d="M 540 179 L 482 179" marker-end="url(#mm-complex-numbers-index-html-arr)"/>
+        <path class="el" d="M 280 179 L 222 179" marker-end="url(#mm-complex-numbers-index-html-arr)"/>
+        <text class="rs" x="380" y="248" text-anchor="middle">all six chapters built — each ends with in-context questions (P1–P51), as in the P&amp;N module</text>
+      </svg>

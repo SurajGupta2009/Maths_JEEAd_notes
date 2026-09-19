@@ -61,6 +61,33 @@ No build step, no dependencies — open a final mindmap directly in a browser:
 Internet **is** required for the MathJax CDN (formulas render via jsdelivr;
 everything else works offline). To check tooling: Python 3, stdlib only.
 
+## Markdown notes (JEE Advanced + Olympiad, well-ordered)
+
+All HTML mindmaps are also converted to **well-ordered Markdown** with proper formatting and diagrams:
+
+```bash
+python3 tools/convert_to_md.py all
+```
+
+Output in `Markdown/`:
+
+- `Markdown/README.md` — index with coverage matrix
+- `Markdown/ROADMAP.md` — basics → JEE Main → JEE Advanced → Olympiad roadmap with Mermaid diagrams
+- `Markdown/FORMATTING-GUIDE.md` — conversion pipeline, math handling, diagram handling (SVG + Mermaid)
+- `Markdown/DIAGRAMS.md` — 20+ diagrams catalog (decision tree, circular, Pascal, stars & bars, reflection, Young, Burnside, complex plane, conic reflection, etc.)
+- `Markdown/JEE-ADVANCED-OLYMPIAD-COVERAGE.md` — detailed checklist proving coverage for every chapter
+- `Markdown/<Module>/01-ch-1-...md` … `06-ch-6-...md` — 6 chapters per module, properly ordered
+- `Markdown/<Module>/assets/fig-XX.svg` — preserved SVG diagrams
+- `Markdown/<Module>/olympiad-paper.md` + `olympiad-paper-solutions.md` — 40 Q paper
+- `Markdown/<Module>/*-complete.md` — single-file complete notes
+
+Each markdown file uses:
+- **Math**: `$...$` inline, `$$...$$` display (GitHub native MathJax)
+- **Diagrams**: SVG `![](assets/fig-XX.svg)` + Mermaid ````mermaid` flowcharts
+- **Callouts**: `> **⛁ First Principles**`, `> **💡 Key Idea**`, `> **⚠ Common Trap**`, `> **★ Olympiad Extension**`
+- **Questions**: `#### **S1**[JEE Main][solved]` with collapsible `<details><summary>Answer + Reasoning</summary>`
+- **Ordering**: Foundations → tools → applications → frontier, with dependencies respected, small-case verification, two-language translation (algebra ↔ geometry)
+
 ## Repo structure
 
 ```
