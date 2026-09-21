@@ -10,7 +10,7 @@
   ],
 
   "aliases": {
-    "cn": "Complex Numbers"
+    "cn": "Complex-Numbers"
   },
 
   "PnC": {
@@ -24,7 +24,7 @@
     }
   },
 
-  "Complex Numbers": {
+  "Complex-Numbers": {
     "labels": {
       "01-foundations.html": "Ch 1 · Foundations — Algebra & the Plane",
       "02-polar-and-de-moivre.html": "Ch 2 · Polar Form & De Moivre",

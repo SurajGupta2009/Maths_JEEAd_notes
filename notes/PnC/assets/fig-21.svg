@@ -1,0 +1,27 @@
+<svg viewBox="0 0 560 190" width="560" role="img" aria-label="Conjugation of a Young diagram">
+        <style>
+          .yc { fill: #eef1fd; stroke: #364fc7; stroke-width: 1.4; }
+          .yt { font: 600 12px "Segoe UI", sans-serif; fill: #2a3550; }
+        </style>
+        <!-- partition 5+3+2+1: rows of boxes 5,3,2,1 -->
+        <g transform="translate(40,20)">
+          <rect class="yc" x="0" y="0" width="30" height="30"/><rect class="yc" x="30" y="0" width="30" height="30"/><rect class="yc" x="60" y="0" width="30" height="30"/><rect class="yc" x="90" y="0" width="30" height="30"/><rect class="yc" x="120" y="0" width="30" height="30"/>
+          <rect class="yc" x="0" y="30" width="30" height="30"/><rect class="yc" x="30" y="30" width="30" height="30"/><rect class="yc" x="60" y="30" width="30" height="30"/>
+          <rect class="yc" x="0" y="60" width="30" height="30"/><rect class="yc" x="30" y="60" width="30" height="30"/>
+          <rect class="yc" x="0" y="90" width="30" height="30"/>
+          <text class="yt" x="165" y="40">5 + 3 + 2 + 1</text>
+          <text class="yt" x="75" y="140" text-anchor="middle">4 parts, largest part 5</text>
+        </g>
+        <text x="255" y="95" text-anchor="middle" style="font:700 26px 'Segoe UI',sans-serif; fill:#c2255c;">⇄</text>
+        <!-- conjugate: columns of the original become rows: 5,4,3,2,1 -->
+        <g transform="translate(300,20)">
+          <rect class="yc" x="0" y="0" width="30" height="30"/><rect class="yc" x="30" y="0" width="30" height="30"/><rect class="yc" x="60" y="0" width="30" height="30"/><rect class="yc" x="90" y="0" width="30" height="30"/><rect class="yc" x="120" y="0" width="30" height="30"/>
+          <rect class="yc" x="0" y="30" width="30" height="30"/><rect class="yc" x="30" y="30" width="30" height="30"/><rect class="yc" x="60" y="30" width="30" height="30"/><rect class="yc" x="90" y="30" width="30" height="30"/>
+          <rect class="yc" x="0" y="60" width="30" height="30"/><rect class="yc" x="30" y="60" width="30" height="30"/><rect class="yc" x="60" y="60" width="30" height="30"/>
+          <rect class="yc" x="0" y="90" width="30" height="30"/><rect class="yc" x="30" y="90" width="30" height="30"/>
+          <rect class="yc" x="0" y="120" width="30" height="30"/>
+          <text class="yt" x="175" y="40">5 + 4 + 3 + 2 + 1</text>
+          <text class="yt" x="75" y="140" text-anchor="middle">5 parts, largest part 5</text>
+        </g>
+        <text class="yt" x="280" y="175" text-anchor="middle">transpose the diagram: rows ↔ columns</text>
+      </svg>

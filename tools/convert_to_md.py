@@ -1,14 +1,20 @@
 #!/usr/bin/env python3
 """
-Convert standalone mindmap HTML notes into well-ordered Markdown
+Convert standalone mindmap HTML notes (published/) into well-ordered Markdown
 with proper formatting, math, and diagrams.
 
-- Parses each *-mindmap.html
+- Parses each published/<Module>/*-mindmap.html
 - Extracts course map, chapters, sections, subtopics, boxes, questions, figures
 - Saves diagrams as SVG files
 - Generates Markdown with Mermaid where possible
-- Outputs to Markdown/<Module>/ folder with chapter-wise files + combined file
-- Also generates top-level Markdown/README.md index
+- Outputs to notes/<Module>/ — ONE FOLDER PER CHAPTER
+  (notes/<Module>/NN-<chapter-slug>/README.md holds the whole chapter),
+  plus paper, solutions, assets and the module README
+- Also generates the top-level notes/README.md index
+
+The per-chapter folders are the canonical note layout; after conversion the
+files are hand-owned. Re-run this tool only to re-export a published map.
+The single-file <slug>-complete.md snapshot is built by tools/build-complete.py.
 
 Usage: python3 tools/convert_to_md.py all
        python3 tools/convert_to_md.py PnC
@@ -18,7 +24,8 @@ from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOOLS = os.path.join(ROOT, "tools")
-MARKDOWN_ROOT = os.path.join(ROOT, "Markdown")
+PUBLISHED_DIR = os.path.join(ROOT, "published")
+NOTES_ROOT = os.path.join(ROOT, "notes")
 
 # Reuse parsing logic from build-mindmap.py
 VOID = {'meta', 'link', 'br', 'img', 'hr', 'input'}
@@ -30,6 +37,18 @@ def read(p):
 
 def slug(name):
     return re.sub(r'[\s_-]+', '-', name.strip().lower()).strip('-')
+
+def display(name):
+    """Human-readable module title from a kebab-case folder name."""
+    return name.replace('-', ' ')
+
+def chapter_folder_slug(title):
+    """One folder per chapter, named after the chapter:
+    'Ch 1 · What (a+b)^n Counts' -> 'what-a-b-n-counts'."""
+    t = re.sub(r'^ch\s*\d+\s*[·:.\-]?\s*', '', title.strip(), flags=re.I)
+    t = t.replace('&', ' and ')
+    t = re.sub(r'[^a-z0-9]+', '-', t.lower()).strip('-')
+    return t
 
 def text_of(h):
     t = re.sub(r'<[^>]+>', ' ', h)
@@ -95,8 +114,8 @@ def direct_children(s):
 
 def find_modules():
     out = []
-    for d in sorted(os.listdir(ROOT)):
-        p = os.path.join(ROOT, d)
+    for d in sorted(os.listdir(PUBLISHED_DIR)):
+        p = os.path.join(PUBLISHED_DIR, d)
         if d.startswith('.') or not os.path.isdir(p):
             continue
         has_map = any(f.endswith('-mindmap.html') for f in os.listdir(p))
@@ -541,7 +560,7 @@ def extract_summary_info(details_html):
 
 def convert_module(module_folder):
     print(f"Converting {module_folder} ...")
-    base_path = os.path.join(ROOT, module_folder)
+    base_path = os.path.join(PUBLISHED_DIR, module_folder)
     # Find mindmap html
     maps = [f for f in os.listdir(base_path) if f.endswith('-mindmap.html')]
     if not maps:
@@ -554,7 +573,7 @@ def convert_module(module_folder):
 
     # Prepare output directory
     module_slug = slug(module_folder)
-    out_dir = os.path.join(MARKDOWN_ROOT, module_folder)
+    out_dir = os.path.join(NOTES_ROOT, module_folder)
     os.makedirs(out_dir, exist_ok=True)
     assets_dir = os.path.join(out_dir, "assets")
     os.makedirs(assets_dir, exist_ok=True)
@@ -605,21 +624,22 @@ def convert_module(module_folder):
     with open(os.path.join(out_dir, "README.md"), 'w', encoding='utf-8') as f:
         f.write(index_md)
 
-    # Generate per-chapter files
-    combined_md = index_md + "\n---\n\n"
-
+    # Generate one folder per chapter:
+    #   notes/<Module>/NN-<chapter-slug>/README.md
+    # The folder is the chapter's home — all of its content lives in it.
     for ch in chapters:
-        ch_md = f"# Chapter {ch['no']} — {ch['title']}\n\n"
+        # Mindmap titles carry a "Ch N · " prefix; the H1 adds its own.
+        ch_title = re.sub(r'^ch\s*\d+\s*·\s*', '', ch['title'].strip(), flags=re.I)
+        ch_md = f"# Chapter {ch['no']} — {ch_title}\n\n"
         ch_md += f"*{ch['meta']}*\n\n"
         ch_md += body_to_md(ch['body'])
-        # Add navigation
         ch_md += "\n---\n\n"
-        # File name
-        safe_title = slug(ch['title'])[:50]
-        fname = f"{int(ch['no']):02d}-{safe_title}.md"
-        with open(os.path.join(out_dir, fname), 'w', encoding='utf-8') as f:
+        # Chapter files sit one level below the module assets/ directory.
+        ch_md = ch_md.replace('](assets/', '](../assets/')
+        ch_dir = os.path.join(out_dir, f"{int(ch['no']):02d}-{chapter_folder_slug(ch['title'])}")
+        os.makedirs(ch_dir, exist_ok=True)
+        with open(os.path.join(ch_dir, 'README.md'), 'w', encoding='utf-8') as f:
             f.write(ch_md)
-        combined_md += f"\n# Chapter {ch['no']} — {ch['title']}\n\n{body_to_md(ch['body'])}\n\n---\n\n"
 
     # Paper
     if paper:
@@ -627,24 +647,17 @@ def convert_module(module_folder):
         paper_md += body_to_md(paper['body'])
         with open(os.path.join(out_dir, "olympiad-paper.md"), 'w', encoding='utf-8') as f:
             f.write(paper_md)
-        combined_md += f"\n# Olympiad Paper\n\n{body_to_md(paper['body'])}\n\n---\n\n"
 
     if solutions:
         sol_md = f"# {solutions['title']}\n\n"
         sol_md += body_to_md(solutions['body'])
         with open(os.path.join(out_dir, "olympiad-paper-solutions.md"), 'w', encoding='utf-8') as f:
             f.write(sol_md)
-        combined_md += f"\n# Solutions\n\n{body_to_md(solutions['body'])}\n"
 
-    # Combined file
-    with open(os.path.join(out_dir, f"{module_slug}-complete.md"), 'w', encoding='utf-8') as f:
-        f.write(combined_md)
+    # The single-file <slug>-complete.md snapshot is generated from the
+    # canonical Markdown by tools/build-complete.py — not here.
 
-    # Also create a single-file at Markdown root for easy access
-    with open(os.path.join(MARKDOWN_ROOT, f"{module_folder}.md"), 'w', encoding='utf-8') as f:
-        f.write(combined_md)
-
-    print(f"  -> Generated {len(chapters)} chapters + paper + solutions in {out_dir}")
+    print(f"  -> Generated {len(chapters)} chapter folders + paper + solutions in {out_dir}")
 
 def main():
     args = sys.argv[1:]
@@ -656,15 +669,15 @@ def main():
         modules = []
         for a in args:
             # normalize: find folder matching slug
-            for d in os.listdir(ROOT):
-                if os.path.isdir(os.path.join(ROOT, d)) and slug(d) == slug(a):
+            for d in os.listdir(PUBLISHED_DIR):
+                if os.path.isdir(os.path.join(PUBLISHED_DIR, d)) and slug(d) == slug(a):
                     modules.append(d)
                     break
             else:
                 # direct name
-                if os.path.isdir(os.path.join(ROOT, a)):
+                if os.path.isdir(os.path.join(PUBLISHED_DIR, a)):
                     modules.append(a)
-    os.makedirs(MARKDOWN_ROOT, exist_ok=True)
+    os.makedirs(NOTES_ROOT, exist_ok=True)
     for mod in modules:
         try:
             convert_module(mod)
@@ -674,23 +687,32 @@ def main():
             traceback.print_exc()
 
     # Generate master README
-    master_path = os.path.join(MARKDOWN_ROOT, "README.md")
+    master_path = os.path.join(NOTES_ROOT, "README.md")
     with open(master_path, 'w', encoding='utf-8') as f:
         f.write("# Maths JEE Advanced + Olympiad — Markdown Notes\n\n")
-        f.write("Converted from the standalone HTML mindmaps with proper formatting, math, and diagrams.\n\n")
+        f.write("The canonical, hand-owned notes: one folder per chapter under each module. "
+                "Re-exported from the standalone HTML mindmaps in `published/` with proper formatting, math, and diagrams.\n\n")
         f.write("All theory is ordered from **board-level basics → JEE Main → JEE Advanced → Olympiad**.\n\n")
         f.write("## Modules\n\n")
         for mod in find_modules():
-            f.write(f"### {mod}\n")
+            f.write(f"### {display(mod)}\n")
             f.write(f"- [Overview & Roadmap]({mod}/README.md)\n")
             f.write(f"- [Complete Single File]({mod}/{slug(mod)}-complete.md) — all chapters + paper + solutions\n")
-            f.write(f"- [Full Markdown (root)](./{mod}.md)\n")
-            # List chapter files
-            out_dir = os.path.join(MARKDOWN_ROOT, mod)
+            # List chapter folders
+            out_dir = os.path.join(NOTES_ROOT, mod)
             if os.path.isdir(out_dir):
-                ch_files = sorted([x for x in os.listdir(out_dir) if re.match(r'\d\d-.*\.md', x)])
-                for cf in ch_files:
-                    f.write(f"  - [{cf}]({mod}/{cf})\n")
+                ch_dirs = sorted(d for d in os.listdir(out_dir)
+                                 if re.match(r'\d\d-', d) and os.path.isdir(os.path.join(out_dir, d)))
+                for cd in ch_dirs:
+                    label = cd
+                    try:
+                        with open(os.path.join(out_dir, cd, 'README.md'), encoding='utf-8') as cf:
+                            first = cf.readline().strip()
+                        if first.startswith('#'):
+                            label = first.lstrip('#').strip()
+                    except OSError:
+                        pass
+                    f.write(f"  - [{label}]({mod}/{cd}/)\n")
             f.write(f"- [Olympiad Paper]({mod}/olympiad-paper.md) | [Solutions]({mod}/olympiad-paper-solutions.md)\n\n")
         f.write("\n## Formatting Conventions\n\n")
         f.write("- **Math**: inline `$...$`, display `$$...$$` (MathJax compatible)\n")

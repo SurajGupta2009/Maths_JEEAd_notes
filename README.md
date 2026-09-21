@@ -1,143 +1,155 @@
 # Maths_JEEAd_notes
 
-Hand-crafted, self-contained HTML study notes that walk a JEE aspirant from
-board-level basics to JEE Advanced and Olympiad mathematics — every formula
-*derived from reasoning*, every answer numerically verified. Each published
-module is delivered as one standalone, expandable mindmap HTML containing its
-complete theory, worked examples, practice questions, paper, solutions and
-diagrams.
+Hand-crafted, well-ordered math study notes — authored in **Markdown** — that
+walk a student from board-level basics to **JEE Advanced and Olympiad
+mathematics**: every formula *derived from reasoning*, every answer
+numerically verified.
+
+Each module is one folder under `notes/` with **one chapter folder per
+chapter** (all of a chapter's content inside), an Olympiad paper with full
+solutions, diagrams, and a one-page well-ordered theory reference. The four
+existing modules additionally ship a frozen standalone HTML mindmap in
+`published/` (the legacy one-file distribution).
 
 [![verify](https://img.shields.io/github/actions/workflow/status/SurajGupta2009/Maths_JEEAd_notes/verify.yml?branch=main&style=flat-square&label=verify)](https://github.com/SurajGupta2009/Maths_JEEAd_notes/actions/workflows/verify.yml)
 
 ## Modules
 
-| Module | Status | Chapters | Practice Qs | Paper Qs | Standalone mindmap |
-|---|---|---|---|---|---|
-| **PnC** · Permutations & Combinations | ✅ complete | 6 | 47 (P1–P8 per chapter) | 40 (A–G + stretch) | [open map](PnC/pnc-mindmap.html) |
-| **Complex Numbers** | ✅ complete | 6 | 50 (P1–P51, continuous) | 38 (A–H) | [open map](Complex%20Numbers/cn-mindmap.html) |
-| **Binomial Theorem** | ✅ complete | 6 | 47 (P1–P47, continuous) | 38 (A–H) | [open map](Binomial-Theorem/binomial-theorem-mindmap.html) |
-| **Conic Sections** | ✅ complete | 6 | 48 (P1–P48, continuous) | 38 (A–H) | [open map](Conic-Sections/conic-sections-mindmap.html) |
-
-Each module’s published folder now contains only its final `*-mindmap.html`
-deliverable (plus the local stylesheet kept for the generator’s source-backed
-workflow). The map is lossless for course content: chapter introductions,
-sections, subtopics, theory, diagrams, worked examples, every practice/paper
-question, answer pills and full solutions are embedded as expandable nodes.
-The reusable HTML templates remain in `templates/` for future modules; they are
-not part of the published course folders.
-
-## Planned modules (roadmap)
-
-Ordered draft — **curation of the final list and order is on hold for review**.
-Proposed folder slugs follow the naming rule (see [CONTRIBUTING.md](CONTRIBUTING.md)).
-
-| # | Module | Proposed folder |
-|---|---|---|
-| 1 | Quadratic Equations | `Quadratic-Equations/` |
-| 2 | Inequalities | `Inequalities/` |
-| 3 | Trigonometry | `Trigonometry/` |
-| 4 | Sequences & Series | `Sequences-and-Series/` |
-| 5 | Limits & Continuity | `Limits-and-Continuity/` |
-| 6 | Differentiation | `Differentiation/` |
-| 7 | Applications of Derivatives | `Applications-of-Derivatives/` |
-| 8 | Integration | `Integration/` |
-| 9 | Differential Equations | `Differential-Equations/` |
-| 10 | Coordinate Geometry — Lines & Circles | `Coordinate-Geometry-Lines-and-Circles/` |
-| 11 | Conic Sections | `Conic-Sections/` |
-| 12 | 3D Geometry | `3D-Geometry/` |
-| 13 | Vectors | `Vectors/` |
-| 14 | Matrices & Determinants | `Matrices-and-Determinants/` |
-| 15 | Probability | `Probability/` |
-
-## Quick start
-
-No build step, no dependencies — open a final mindmap directly in a browser:
-
-- `PnC/pnc-mindmap.html`
-- `Complex Numbers/cn-mindmap.html`
-- `Binomial-Theorem/binomial-theorem-mindmap.html`
-- `Conic-Sections/conic-sections-mindmap.html`
-
-Internet **is** required for the MathJax CDN (formulas render via jsdelivr;
-everything else works offline). To check tooling: Python 3, stdlib only.
-
-## Markdown notes (JEE Advanced + Olympiad, well-ordered)
-
-All HTML mindmaps are also converted to **well-ordered Markdown** with proper formatting and diagrams:
-
-```bash
-python3 tools/convert_to_md.py all
-```
-
-Output in `Markdown/`:
-
-- `Markdown/README.md` — index with coverage matrix
-- `Markdown/ROADMAP.md` — basics → JEE Main → JEE Advanced → Olympiad roadmap with Mermaid diagrams
-- `Markdown/FORMATTING-GUIDE.md` — conversion pipeline, math handling, diagram handling (SVG + Mermaid)
-- `Markdown/DIAGRAMS.md` — 20+ diagrams catalog (decision tree, circular, Pascal, stars & bars, reflection, Young, Burnside, complex plane, conic reflection, etc.)
-- `Markdown/JEE-ADVANCED-OLYMPIAD-COVERAGE.md` — detailed checklist proving coverage for every chapter
-- `Markdown/<Module>/01-ch-1-...md` … `06-ch-6-...md` — 6 chapters per module, properly ordered
-- `Markdown/<Module>/assets/fig-XX.svg` — preserved SVG diagrams
-- `Markdown/<Module>/olympiad-paper.md` + `olympiad-paper-solutions.md` — 40 Q paper
-- `Markdown/<Module>/*-complete.md` — single-file complete notes
-
-Each markdown file uses:
-- **Math**: `$...$` inline, `$$...$$` display (GitHub native MathJax)
-- **Diagrams**: SVG `![](assets/fig-XX.svg)` + Mermaid ````mermaid` flowcharts
-- **Callouts**: `> **⛁ First Principles**`, `> **💡 Key Idea**`, `> **⚠ Common Trap**`, `> **★ Olympiad Extension**`
-- **Questions**: `#### **S1**[JEE Main][solved]` with collapsible `<details><summary>Answer + Reasoning</summary>`
-- **Ordering**: Foundations → tools → applications → frontier, with dependencies respected, small-case verification, two-language translation (algebra ↔ geometry)
+| Module | Status | Chapters | Practice Qs | Paper Qs | Notes | One-file HTML |
+|---|---|---|---|---|---|---|
+| **PnC** · Permutations & Combinations | ✅ complete | 6 | 47 (P1–P8 per chapter) | 40 (A–G + stretch) | [notes](notes/PnC/README.md) | [open map](published/PnC/pnc-mindmap.html) |
+| **Complex Numbers** | ✅ complete | 6 | 50 (P1–P51, continuous) | 38 (A–H) | [notes](notes/Complex-Numbers/README.md) | [open map](published/Complex-Numbers/complex-numbers-mindmap.html) |
+| **Binomial Theorem** | ✅ complete | 6 | 47 (P1–P47, continuous) | 38 (A–H) | [notes](notes/Binomial-Theorem/README.md) | [open map](published/Binomial-Theorem/binomial-theorem-mindmap.html) |
+| **Conic Sections** | ✅ complete | 6 | 48 (P1–P48, continuous) | 38 (A–H) | [notes](notes/Conic-Sections/README.md) | [open map](published/Conic-Sections/conic-sections-mindmap.html) |
 
 ## Repo structure
 
 ```
 Maths_JEEAd_notes/
-├── .github/workflows/verify.yml    CI: MathJax/HTML + standalone mindmap checks
-├── PnC/                            final Permutations & Combinations deliverable
-│   ├── pnc-mindmap.html            one standalone expandable course file
-│   └── assets/notes.css            local stylesheet retained for source-backed builds
-├── Complex Numbers/                final Complex Numbers deliverable
-│   ├── cn-mindmap.html             one standalone expandable course file
-│   └── assets/notes.css
-├── Binomial-Theorem/               final Binomial Theorem deliverable
-│   ├── binomial-theorem-mindmap.html
-│   └── assets/notes.css
-├── Conic-Sections/                 final Conic Sections deliverable
-│   ├── conic-sections-mindmap.html
-│   └── assets/notes.css
-├── templates/                      reusable skeletons for future source-backed modules
+├── notes/                     # ★ canonical Markdown notes — one folder per module
+│   ├── README.md              # index of all modules
+│   └── <Module-Slug>/
+│       ├── README.md                  # module index / course map
+│       ├── 00-WELL-ORDERED-THEORY.md  # one-page theory reference (hand-written)
+│       ├── 01-<chapter-slug>/         # one folder per chapter —
+│       │   └── README.md              #   ALL of the chapter's content lives here
+│       ├── … 02-… 03-… 04-… 05-… 06-…
+│       ├── olympiad-paper.md          # 30+ Q, sections A–H, answer lines
+│       ├── olympiad-paper-solutions.md
+│       ├── <slug>-complete.md         # GENERATED single-file snapshot (never edit)
+│       └── assets/fig-XX.svg          # the module's diagrams
+├── published/                 # legacy standalone HTML mindmaps (frozen)
+│   └── <Module-Slug>/
+│       ├── <slug>-mindmap.html        # one standalone expandable course file
+│       └── assets/notes.css
+├── docs/                      # course reference docs
+│   ├── ROADMAP.md                            # basics → JEE Main → JEE Adv → Olympiad
+│   ├── JEE-ADVANCED-OLYMPIAD-COVERAGE.md     # per-topic coverage checklist
+│   ├── FORMATTING-GUIDE.md                   # formatting & pipeline conventions
+│   └── DIAGRAMS.md                           # SVG + Mermaid diagram catalog
+├── templates/
+│   ├── CHECKLIST.md               # the 10-step new-module procedure
+│   ├── markdown/                  # skeletons for module index, chapter, paper, …
+│   └── html/                      # legacy HTML skeletons (reference only)
 ├── tools/
-│   ├── build-mindmap.py            builder + safe no-op for published source-less maps
-│   ├── verify-mindmap.py           completeness/source-less standalone-map checks
-│   ├── verify-math.py              HTML tag + MathJax delimiter quality gate
-│   └── mindmap-overrides.json      per-module label pins & CLI aliases
-└── README.md · CONTRIBUTING.md · AGENTS.md · .gitignore
+│   ├── verify-md.py               # Markdown quality gate (math, blocks, image links)
+│   ├── build-complete.py          # notes/ → <slug>-complete.md snapshots
+│   ├── convert_to_md.py           # legacy re-export: published/ → notes/
+│   ├── build-mindmap.py           # legacy: source HTML → published/ mindmaps
+│   ├── verify-math.py             # HTML tag + MathJax delimiter quality gate
+│   ├── verify-mindmap.py          # published-map integrity checks
+│   └── mindmap-overrides.json     # per-module label pins & CLI aliases
+└── README.md · CONTRIBUTING.md (the notes standard) · AGENTS.md · .gitignore
 ```
+
+## Quick start
+
+- **Read a module (Markdown, canonical):** open
+  `notes/<Module>/README.md` — the chapter folders, paper and solutions are
+  linked from there. Everything renders natively on GitHub (MathJax + Mermaid).
+- **One-file offline mode (legacy HTML):** open a map from `published/` in a
+  browser — e.g. `published/PnC/pnc-mindmap.html`. Internet is required for
+  the MathJax CDN (everything else works offline).
+- To check tooling: Python 3, stdlib only.
+
+## The notes standard (how notes are written)
+
+The rules for writing and maintaining JEE Advanced + Olympiad notes are
+defined in [CONTRIBUTING.md](CONTRIBUTING.md) — in short:
+
+- **Scope ladder** — every module is well-ordered
+  *board basics → JEE Main → JEE Advanced → Olympiad frontier* in the same
+  six-chapter arc (foundations → machinery → core → applications → frontier
+  → synthesis).
+- **First principles** — every formula is derived, never memorized; every
+  counting claim carries a small-case check ($n=3,4$); both languages are
+  given where a topic has two (algebra ↔ geometry).
+- **Fixed vocabularies** — callout taxonomy (⛁ First Principles · 💡 Key Idea
+  · ⚠ Common Trap · ★ Olympiad Extension · …), question formats
+  (`S#`/`P#`/`Q#` with difficulty tags), continuous per-module numbering.
+- **Correctness** — real TeX math only (`$…$`, `$$…$$`); every paper answer
+  numerically verified in pure Python before solutions are written; balanced
+  delimiters and resolving image links (gated by CI).
+
+## Reference docs
+
+- [docs/ROADMAP.md](docs/ROADMAP.md) — the full theory roadmap per module,
+  with Mermaid diagrams
+- [docs/JEE-ADVANCED-OLYMPIAD-COVERAGE.md](docs/JEE-ADVANCED-OLYMPIAD-COVERAGE.md) —
+  detailed checklist proving coverage for every chapter
+- [docs/FORMATTING-GUIDE.md](docs/FORMATTING-GUIDE.md) — formatting and
+  pipeline conventions
+- [docs/DIAGRAMS.md](docs/DIAGRAMS.md) — diagram catalog (decision tree,
+  circular, Pascal, stars & bars, reflection, Young, Burnside, complex plane,
+  conic reflection, …)
 
 ## Tooling
 
 ```bash
-# source-backed builds (or safe no-op after publishing the final maps):
-python3 tools/build-mindmap.py PnC
-python3 tools/build-mindmap.py cn          # alias for 'Complex Numbers'
-python3 tools/build-mindmap.py all
+# Markdown notes — the daily gates:
+python3 tools/verify-md.py                  # every notes/**/*.md must PASS
+python3 tools/build-complete.py all         # regenerate <slug>-complete.md snapshots
+git diff --exit-code -- 'notes/*-complete.md'
 
-# quality gate — HTML tag balance + MathJax delimiter balance, every file must PASS:
-python3 tools/verify-math.py
-
-# source-backed completeness, or standalone-map integrity after source removal:
-python3 tools/verify-mindmap.py all
+# legacy published maps — must never drift:
+python3 tools/verify-math.py                # every *.html — all PASS
+python3 tools/verify-mindmap.py all         # published-map integrity
+python3 tools/build-mindmap.py all          # source-less maps are safe no-ops
 ```
 
-Mind maps are generated from the source pages before publication and are then
-self-contained: CSS is embedded, SVG IDs are namespaced, page links become
-in-map anchors, all chapter/page headers are preserved, and the final folder
-has no links to deleted source pages. The builder refuses to overwrite a
-source-less final map, so `build-mindmap.py all` remains idempotent.
+`<slug>-complete.md` is the single-file snapshot of a module (course map →
+chapters → paper → solutions); CI regenerates it and fails if it is stale.
+The standalone maps in `published/` are frozen: CSS embedded, SVG IDs
+namespaced, every node expandable, no links to deleted source pages.
+
+## Planned modules (roadmap)
+
+Ordered draft — **curation of the final list and order is on hold for review**.
+Proposed folder slugs follow the naming rule in the notes standard
+(kebab-case under `notes/`).
+
+| # | Module | Proposed folder |
+|---|---|---|
+| 1 | Quadratic Equations | `notes/Quadratic-Equations/` |
+| 2 | Inequalities | `notes/Inequalities/` |
+| 3 | Trigonometry | `notes/Trigonometry/` |
+| 4 | Sequences & Series | `notes/Sequences-and-Series/` |
+| 5 | Limits & Continuity | `notes/Limits-and-Continuity/` |
+| 6 | Differentiation | `notes/Differentiation/` |
+| 7 | Applications of Derivatives | `notes/Applications-of-Derivatives/` |
+| 8 | Integration | `notes/Integration/` |
+| 9 | Differential Equations | `notes/Differential-Equations/` |
+| 10 | Coordinate Geometry — Lines & Circles | `notes/Coordinate-Geometry-Lines-and-Circles/` |
+| 11 | Conic Sections | `notes/Conic-Sections/` |
+| 12 | 3D Geometry | `notes/3D-Geometry/` |
+| 13 | Vectors | `notes/Vectors/` |
+| 14 | Matrices & Determinants | `notes/Matrices-and-Determinants/` |
+| 15 | Probability | `notes/Probability/` |
 
 ## Contributing
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) (humans) or [AGENTS.md](AGENTS.md)
-(AI agents) — both state the file-layout rules, the exact MathJax head, the
-question/box markup, the numbering rules, and the verify commands. Follow
-[templates/CHECKLIST.md](templates/CHECKLIST.md) when adding a module.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) (the notes standard) — module anatomy,
+the scope ladder, callout/question/numbering rules, correctness and verify
+commands. AI agents: read [AGENTS.md](AGENTS.md). When adding a module, follow
+[templates/CHECKLIST.md](templates/CHECKLIST.md) end to end and open a PR —
+do not push to `main`.

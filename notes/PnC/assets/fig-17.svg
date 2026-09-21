@@ -1,0 +1,27 @@
+<svg viewBox="0 0 620 170" width="620" role="img" aria-label="Two cases for the last part of a 2×n domino tiling">
+        <style>
+          .db { stroke: #364fc7; stroke-width: 1.6; fill: none; }
+          .df { fill: #eef1fd; }
+          .dt { font: 700 12.5px "Segoe UI", sans-serif; fill: #2a3550; }
+        </style>
+        <!-- board 1: last column vertical -->
+        <g transform="translate(30,25)">
+          <rect class="db df" x="0" y="0" width="180" height="30"/>
+          <rect class="db df" x="0" y="30" width="180" height="30"/>
+          <rect class="db" x="150" y="0" width="30" height="60" fill="#0b8f7a" opacity="0.55"/>
+          <line class="db" x1="150" y1="0" x2="150" y2="60"/>
+          <text class="dt" x="90" y="80" text-anchor="middle">ends with a vertical domino</text>
+          <text class="dt" x="90" y="98" text-anchor="middle">→ leaves a 2×(n−1) board</text>
+        </g>
+        <!-- board 2: last two columns horizontal -->
+        <g transform="translate(330,25)">
+          <rect class="db df" x="0" y="0" width="180" height="30"/>
+          <rect class="db df" x="0" y="30" width="180" height="30"/>
+          <rect class="db" x="120" y="0" width="60" height="30" fill="#c2255c" opacity="0.5"/>
+          <rect class="db" x="120" y="30" width="60" height="30" fill="#c2255c" opacity="0.5"/>
+          <line class="db" x1="120" y1="0" x2="120" y2="60"/>
+          <text class="dt" x="90" y="80" text-anchor="middle">ends with two horizontal dominoes</text>
+          <text class="dt" x="90" y="98" text-anchor="middle">→ leaves a 2×(n−2) board</text>
+        </g>
+        <text class="dt" x="310" y="160" text-anchor="middle" style="font-size:14px">aₙ = aₙ₋₁ + aₙ₋₂ ,   a₀ = 1, a₁ = 1   →   aₙ = Fₙ₊₁</text>
+      </svg>

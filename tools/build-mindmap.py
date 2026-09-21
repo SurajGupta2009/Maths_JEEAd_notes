@@ -4,13 +4,13 @@
 Usage:
   python3 tools/build-mindmap.py <module|all>
 
-  <module>  module folder name — case-insensitive, spaces and hyphens
-            interchangeable (`Complex Numbers`, `complex-numbers`, ...);
+  <module>  module folder name under published/ — case-insensitive, spaces
+            and hyphens interchangeable (`Complex-Numbers`, `complex numbers`, ...);
             CLI aliases (e.g. `cn`) may be pinned in
             tools/mindmap-overrides.json
-  all       every module found in the repo
+  all       every module found under published/
 
-A "module" is any top-level repo folder that contains an index.html.
+A "module" is any folder under published/ that contains an index.html.
 The mind map node list is auto-discovered from the folder:
 
   index.html                     -> (house)  Course map, usage & roadmap
@@ -36,6 +36,7 @@ import json, os, re, sys, html as H
 
 TOOLS = os.path.dirname(os.path.abspath(__file__))          # repo/tools
 ROOT = os.path.dirname(TOOLS)                                # repo root
+PUBLISHED_DIR = os.path.join(ROOT, 'published')              # one folder per module
 OVERRIDES_PATH = os.path.join(TOOLS, 'mindmap-overrides.json')
 
 def read(p):
@@ -51,7 +52,7 @@ def slug(name):
 CHAPTER_RE = re.compile(r'^(\d+)-[^/\\]+\.html$')
 
 def find_modules():
-    """Every top-level course folder.
+    """Every course folder under published/.
 
     A checkout can be in either of the two supported states:
 
@@ -63,8 +64,8 @@ def find_modules():
     commands remain useful after publishing the compact final distribution.
     """
     out = []
-    for d in sorted(os.listdir(ROOT)):
-        p = os.path.join(ROOT, d)
+    for d in sorted(os.listdir(PUBLISHED_DIR)):
+        p = os.path.join(PUBLISHED_DIR, d)
         if d.startswith('.') or not os.path.isdir(p):
             continue
         has_sources = os.path.isfile(os.path.join(p, 'index.html'))
@@ -75,13 +76,13 @@ def find_modules():
 
 def is_standalone(folder):
     """Whether *folder* contains the published map but no source index."""
-    base = os.path.join(ROOT, folder)
+    base = os.path.join(PUBLISHED_DIR, folder)
     return (not os.path.isfile(os.path.join(base, 'index.html'))
             and any(f.endswith('-mindmap.html') for f in os.listdir(base)))
 
 def standalone_map(folder):
     """Return the only published map in a source-less module folder."""
-    base = os.path.join(ROOT, folder)
+    base = os.path.join(PUBLISHED_DIR, folder)
     maps = sorted(f for f in os.listdir(base) if f.endswith('-mindmap.html'))
     if len(maps) != 1:
         raise SystemExit(f'error: {folder}/ must contain exactly one *-mindmap.html '
@@ -96,7 +97,7 @@ def load_overrides():
 
 def module_config(folder):
     """Auto-discover a module folder; optional pins from mindmap-overrides.json."""
-    base = os.path.join(ROOT, folder)
+    base = os.path.join(PUBLISHED_DIR, folder)
     if not os.path.isfile(os.path.join(base, 'index.html')):
         raise SystemExit(f'error: {folder}/ has no index.html — not a module')
     css = os.path.join(base, 'assets', 'notes.css')
