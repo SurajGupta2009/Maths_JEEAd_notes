@@ -43,6 +43,7 @@ is *derived*, never memorised; every paper answer is *numerically verified*.
 | **Differentiation & Methods** | `notes/Differentiation-and-Methods` | 6 | [[Differentiation-and-Methods]] |
 | **Applications of Derivatives** | `notes/Applications-of-Derivatives` | 6 | [[Applications-of-Derivatives]] |
 | **Integration** | `notes/Integration` | 6 | [[Integration]] |
+| **Differential Equations** | `notes/Differential-Equations` | 6 | [[Differential-Equations]] |
 
 Jump to any module's [[PnC — Paper|Olympiad papers]] and
 [[PnC — Solutions|solution keys]].

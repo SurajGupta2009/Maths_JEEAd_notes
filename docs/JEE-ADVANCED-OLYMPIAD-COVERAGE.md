@@ -194,6 +194,19 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 
 ---
 
+## Differential Equations — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 Formation & terminology | Order and degree, solution vs general vs particular solution, IVP, forming a DE from a one-parameter family of curves | Degree undefined for non-polynomial derivative forms, two-parameter families | Forming DEs from families with parameters hidden in transcendental form |
+| 2 Variables separable | $y'=f(x)g(y)$, separate and integrate, $rac{dy}{dx}=rac xy$, $e^{x-y}$ | Separability disguised by algebra, absolute values in $\ln$ | Separable equations needing a domain split, implicit solutions |
+| 3 Homogeneous | Recognising equal-degree $M,N$, the $y=vx$ substitution, $rac{x+y}{x}$ | $rac{x^2+y^2}{xy}$, blow-up and domain of validity | Homogeneous after a change of variables, reduction to separable |
+| 4 Linear first-order & Bernoulli | $y'+Py=Q$, integrating factor, $\sinh x$ and $2x-1+2e^{-2x}$ solutions | $P=rac1x$ giving $\mu=x$, by parts inside the IF, Bernoulli $u=y^{1-n}$ | Bernoulli with $n=2$ solved by substitution, linear DEs with a parameter |
+| 5 Exact & orthogonal trajectories | Orthogonality as slope $-rac1{y'}$, ellipses from $y=cx^2$ | Exactness test $M_y=N_x$, potentials, level-curve solutions | Orthogonal families in polar form, self-inverse substitutions |
+| 6 Higher-order & frontier | $y''+y=0$, characteristic roots, exponential growth, Newton's cooling | Repeated roots and the $xe^{rx}$ companion, Cauchy–Euler $y=x^r$, $y'+y=\sin x$ | Clairaut $y=xp+f(p)$ and singular (envelope) solutions, order reduction $yy''=(y')^2$, forming DEs from general solutions |
+
+---
+
 ## Verification
 
 ### Markdown notes — PASS
