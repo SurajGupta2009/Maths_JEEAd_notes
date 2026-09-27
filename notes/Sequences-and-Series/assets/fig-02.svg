@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 250" width="470" height="250" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="470" height="250" fill="#ffffff"/>
+  <!-- title -->
+  <text x="30" y="30" font-size="13" fill="#0f172a">Telescoping:  1/(k(k+1)) = 1/k − 1/(k+1)</text>
+  <!-- the expanded sum -->
+  <text x="30" y="62" font-size="12.5" fill="#0ea5e9">1/1</text>
+  <text x="66" y="62" font-size="12.5" fill="#475569">−</text>
+  <text x="82" y="62" font-size="12.5" fill="#0ea5e9">1/2</text>
+  <text x="116" y="62" font-size="12.5" fill="#475569">+</text>
+  <text x="132" y="62" font-size="12.5" fill="#0ea5e9">1/2</text>
+  <text x="166" y="62" font-size="12.5" fill="#475569">−</text>
+  <text x="182" y="62" font-size="12.5" fill="#0ea5e9">1/3</text>
+  <text x="216" y="62" font-size="12.5" fill="#475569">+</text>
+  <text x="232" y="62" font-size="12.5" fill="#0ea5e9">1/3</text>
+  <text x="266" y="62" font-size="12.5" fill="#475569">−</text>
+  <text x="282" y="62" font-size="12.5" fill="#0ea5e9">1/4</text>
+  <text x="316" y="62" font-size="12.5" fill="#475569">+</text>
+  <text x="332" y="62" font-size="12.5" fill="#dc2626">⋯</text>
+  <!-- cancellation arcs -->
+  <path d="M78,68 Q99,90 120,68" fill="none" stroke="#dc2626" stroke-width="1.3"/>
+  <path d="M128,68 Q149,90 170,68" fill="none" stroke="#dc2626" stroke-width="1.3"/>
+  <path d="M178,68 Q199,90 220,68" fill="none" stroke="#dc2626" stroke-width="1.3"/>
+  <path d="M228,68 Q249,90 270,68" fill="none" stroke="#dc2626" stroke-width="1.3"/>
+  <path d="M278,68 Q299,90 320,68" fill="none" stroke="#dc2626" stroke-width="1.3"/>
+  <text x="150" y="104" font-size="11" fill="#b91c1c">each pair cancels</text>
+  <!-- survivors -->
+  <line x1="30" y1="130" x2="440" y2="130" stroke="#334155" stroke-width="1"/>
+  <text x="30" y="156" font-size="13" fill="#16a34a">1/1</text>
+  <text x="72" y="156" font-size="13" fill="#475569">−</text>
+  <text x="92" y="156" font-size="13" fill="#16a34a">1/(n+1)</text>
+  <text x="30" y="182" font-size="12" fill="#0f172a">only the FIRST and the LAST survive</text>
+  <!-- rule box -->
+  <text x="30" y="212" font-size="11.5" fill="#475569">Σ f(k) − f(k+1) = f(1) − f(n+1)</text>
+  <text x="30" y="230" font-size="11.5" fill="#475569">The art is finding the splitting — look for a product of AP terms below.</text>
+  <text x="30" y="246" font-size="11.5" fill="#475569">Σ 1/(k(k+m)) = (1/m)(H-ish) — only the first m and last m terms remain.</text>
+</svg>

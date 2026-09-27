@@ -32,10 +32,10 @@ basics to Olympiad level.
 
 | # | Module | Folder | Status |
 |---|---|---|---|
-| 1 | Quadratic Equations | `notes/Quadratic-Equations/` | ⬜ to do |
-| 2 | Inequalities | `notes/Inequalities/` | ⬜ to do |
-| 3 | Trigonometry | `notes/Trigonometry/` | ⬜ to do |
-| 4 | Sequences & Series | `notes/Sequences-and-Series/` | ⬜ to do |
+| 1 | Quadratic Equations | `notes/Quadratic-Equations/` | ✅ done |
+| 2 | Inequalities | `notes/Inequalities/` | ✅ done |
+| 3 | Trigonometry | `notes/Trigonometry/` | ✅ done |
+| 4 | Sequences & Series | `notes/Sequences-and-Series/` | ✅ done |
 | 5 | Limits & Continuity | `notes/Limits-and-Continuity/` | ✅ done |
 | 6 | Differentiation & Methods | `notes/Differentiation-and-Methods/` | ✅ done |
 | 7 | Applications of Derivatives | `notes/Applications-of-Derivatives/` | ✅ done |
