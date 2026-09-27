@@ -168,6 +168,19 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 
 ---
 
+## Applications of Derivatives — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 Rates of change | Average vs instantaneous rate, chain rule in time, circle/cube/sphere related rates | Ladder and cone problems, rates with implicit relations, sign interpretation | Related rates where the constraint itself is implicit or parametric |
+| 2 Tangents, normals & differentials | Tangent/normal equations, linear approximation, $\sqrt{25.4}$, $(1.01)^{10}$ | Angle between curves, orthogonality, subtangent/subnormal/normal lengths | Tangent/normal at points defined implicitly, envelope as a locus of tangents |
+| 3 Monotonicity | $f'>0$ increasing, sign chart, intervals of increase/decrease | $f'\ge0$ and strict monotonicity, $\ln x\le x-1$, counting roots via monotonicity + IVT | Strict monotone from $f'\ge0$ vanishing on no subinterval, injectivity arguments |
+| 4 Maxima & minima | Critical points, first derivative test, local extrema of polynomials | Second derivative test, inconclusive case, absolute extrema on a closed interval | Higher-order derivative test, extrema of piecewise and series-defined functions |
+| 5 Convexity & sketching | Convex/concave meaning, inflection, number of turning points | $f''$ sign change for inflection, the $x^4$ counterexample, full sketching recipe | Asymptote computation, sketching functions with essential singularities |
+| 6 Optimisation & frontier | Two-numbers-sum problem, open box, $x+\frac1x\ge2$ | Symmetric optimisation ($xyz$ with $x+y+z=1$), inscribed rectangle in an ellipse, feasibility check | Jensen/AM–GM from calculus, Lagrange multipliers, envelopes, symmetric inequality proofs |
+
+---
+
 ## Verification
 
 ### Markdown notes — PASS

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 250" width="470" height="250" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="470" height="250" fill="#ffffff"/>
+  <!-- axes -->
+  <line x1="35" y1="125" x2="445" y2="125" stroke="#334155" stroke-width="1.4"/>
+  <line x1="235" y1="20" x2="235" y2="225" stroke="#334155" stroke-width="1.4"/>
+  <polygon points="445,125 435,121 435,129" fill="#334155"/>
+  <polygon points="235,20 231,30 239,30" fill="#334155"/>
+  <text x="448" y="129" font-size="12" fill="#334155">x</text>
+  <text x="240" y="30" font-size="12" fill="#334155">y</text>
+  <!-- y = x^3 - 3x : local max at x=-1, local min at x=+1 -->
+  <path d="M155,164 L164,119 L176,75 L189,58 L197,58 L210,71 L222,95 L235,125 L248,155 L260,179 L273,192 L281,192 L294,175 L306,131 L315,86"
+        fill="none" stroke="#0ea5e9" stroke-width="2.2"/>
+  <!-- horizontal tangents at the extrema -->
+  <line x1="150" y1="58" x2="245" y2="58" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 3"/>
+  <line x1="225" y1="192" x2="320" y2="192" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 3"/>
+  <circle cx="193" cy="58" r="4" fill="#0f172a"/>
+  <circle cx="277" cy="192" r="4" fill="#0f172a"/>
+  <text x="196" y="52" font-size="12" fill="#0f172a">local max</text>
+  <text x="280" y="186" font-size="12" fill="#0f172a">local min</text>
+  <text x="140" y="46" font-size="11" fill="#16a34a">f′=0</text>
+  <text x="320" y="205" font-size="11" fill="#16a34a">f′=0</text>
+  <!-- sign of f' -->
+  <text x="120" y="118" font-size="11" fill="#16a34a">f′ &gt; 0 rising</text>
+  <text x="215" y="140" font-size="11" fill="#dc2626">f′ &lt; 0 falling</text>
+  <text x="330" y="110" font-size="11" fill="#16a34a">f′ &gt; 0 rising</text>
+  <text x="60" y="240" font-size="11" fill="#475569">y = x³ − 3x: f′ changes + → − at a local max, − → + at a local min.</text>
+</svg>
