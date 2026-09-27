@@ -1,0 +1,44 @@
+/* Maths_JEEAd_notes — vault styling tweaks (optional)
+   Enable at: Settings → Appearance → CSS snippets → Maths vault */
+
+/* Give the First-Principles callout a calm blue tone */
+.callout[data-callout="abstract"] {
+  --callout-color: 40, 110, 200;
+  --callout-icon: lucide-compass;
+}
+
+/* Olympiad extensions get a gold/purple accent */
+.callout[data-callout="example"] {
+  --callout-color: 176, 128, 20;
+  --callout-icon: lucide-trophy;
+}
+
+/* Common traps stand out in red */
+.callout[data-callout="warning"] {
+  --callout-color: 210, 60, 60;
+  --callout-icon: lucide-alert-triangle;
+}
+
+/* Key ideas in green */
+.callout[data-callout="tip"] {
+  --callout-color: 40, 160, 90;
+  --callout-icon: lucide-lightbulb;
+}
+
+/* Formula / identity boxes */
+.callout[data-callout="info"] {
+  --callout-icon: lucide-package;
+}
+.callout[data-callout="quote"] {
+  --callout-color: 120, 90, 200;
+  --callout-icon: lucide-sigma;
+}
+
+/* Comfortable reading width and cleaner tables */
+.markdown-source-view.is-readable-line-width .cm-content,
+.markdown-preview-section {
+  max-width: 900px;
+}
+table {
+  font-size: 0.92em;
+}

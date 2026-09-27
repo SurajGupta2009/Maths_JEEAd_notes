@@ -1,16 +1,29 @@
+---
+title: "Chapter {{N}} — {{CHAPTER TITLE}}"
+aliases: ["{{CHAPTER TITLE}}", "Ch {{N}} — {{CHAPTER TITLE}}"]
+module: "{{MODULE}}"
+module_title: "{{MODULE TITLE}}"
+chapter: {{N}}
+level: {{LEVEL}}
+tags: [{{module-slug}}, chapter, {{LEVEL}}]
+created: {{date:YYYY-MM-DD}}
+---
+
+> [!info] Navigation
+> 📖 [[{{MODULE}}|{{MODULE TITLE}}]] · ⬅ [[{{PREV-NOTE}}|Chapter {{N-1}}]] · [[{{NEXT-NOTE}}|Chapter {{N+1}}]] ➡ · 📝 [[{{MODULE}} — Paper|Olympiad Paper]] · ✅ [[{{MODULE}} — Solutions|Solutions]]
+
 # Chapter {{N}} — {{CHAPTER TITLE}}
 
-*{{level tag, e.g. "Foundations"}}, {{k}} sections, {{m}} questions*
+*{{level}}, {{k}} sections, {{m}} questions*
 
-> <Two to four sentences of motivation: what this chapter establishes and why
-> the order matters.>
+<Two to four sentences of motivation: what this chapter establishes and why the
+order matters.>
 
 ---
 
 ## 1.1 {{Section title}}
 
-> **⛁ First Principles — why it is true**
->
+> [!abstract] First Principles — why it is true
 > The actual reasoning, derived from the definition — not a statement to
 > memorize. Every formula in this course is earned here first.
 
@@ -18,16 +31,10 @@
 
 $$ \text{<display formula>} $$
 
-> **💡 Key Idea — <takeaway technique>**
->
+> [!tip] Key Idea — <takeaway technique>
 > The one-line technique that carries into the problems below.
 
-<Prose that connects the statement to the technique. Inline math in $…$,
-display math in $$…$$.>
-
-### 1.1.1 {{Optional subtopic}}
-
-More prose, then the questions that exercise exactly this technique.
+<Prose connecting statement to technique. Inline math in $…$, display in $$…$$.>
 
 #### **S1**[JEE Main][solved][{{technique}}]{{One-line preview of the problem}}
 
@@ -36,9 +43,9 @@ More prose, then the questions that exercise exactly this technique.
 <details>
 <summary>Answer + Reasoning</summary>
 
-<strong>Method: {{method name}}.</strong> {{Full derivation, step by step…}}
+**Method: {{method name}}.** {{Full derivation, step by step…}}
 
-Answer: <strong>{{answer}}</strong>. (Small-case check: {{e.g. n=3 listing}} ✓.)
+**Answer:** {{answer}}. (Small-case check: {{e.g. n=3 listing}} ✓.)
 
 </details>
 
@@ -49,18 +56,16 @@ Answer: <strong>{{answer}}</strong>. (Small-case check: {{e.g. n=3 listing}} ✓
 <details>
 <summary>Answer + Reasoning</summary>
 
-<strong>Method: {{method name}}.</strong> {{Derivation…}}
+**Method: {{method name}}.** {{Derivation…}}
 
-Answer: <strong>{{answer}}</strong>. (Small-case check: {{…}} ✓.)
+**Answer:** {{answer}}. (Small-case check: {{…}} ✓.)
 
 </details>
 
-> **⚠ Common Trap — {{the classic mistake}}**
->
+> [!warning] Common Trap — {{the classic mistake}}
 > {{What goes wrong and how the small-case check catches it.}}
 
-> **★ Olympiad Extension — {{frontier version}}**
->
+> [!example] Olympiad Extension — {{frontier version}}
 > {{The frontier statement / generalization, and the first hint of the proof.}}
 
 ---
@@ -71,4 +76,7 @@ Answer: <strong>{{answer}}</strong>. (Small-case check: {{…}} ✓.)
      Weave P#/S# BETWEEN sections — never dump them at the chapter end.
      Numbering (module-wide, continuous):
        P1…Pn  practice, unique across all six chapters
-       S1…Sn  worked examples, continuous per module -->
+       S1…Sn  worked examples, continuous per module
+     Use Obsidian callout types: [!abstract] First Principles · [!tip] Key Idea ·
+     [!warning] Common Trap · [!example] Olympiad Extension · [!info] formula box ·
+     [!quote] named result · [!success] checklist. -->

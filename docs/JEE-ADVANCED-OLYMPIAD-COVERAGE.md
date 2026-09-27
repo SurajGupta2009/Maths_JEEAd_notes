@@ -3,7 +3,7 @@
 > This document proves that theory **up to JEE Advanced and Olympiad** is covered and well-ordered in the Markdown notes.
 
 > File paths below are relative to `notes/<Module>/` (e.g.
-> `01-counting-basics/` = the folder `notes/PnC/01-counting-basics/`).
+> `01-counting-basics` = the note `notes/PnC/01-counting-basics.md`).
 
 ## How Theory Is Organized
 
@@ -144,33 +144,20 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 
 ## Verification
 
-### Math Delimiters — PASS
+### Markdown notes — PASS
 
 ```bash
-python3 tools/verify-math.py
-# PnC: balance OK | math D40/bad0 I2337/bad0 $$17/bad0 -> PASS
-# Complex-Numbers: D146/bad0 I2102/bad0 $$2/bad0 -> PASS
-# Binomial-Theorem: D28/bad0 I1753/bad0 $$0/bad0 -> PASS
-# Conic-Sections: D42/bad0 I2187/bad0 $$0/bad0 -> PASS
+python3 tools/verify-md.py
+# every notes/**.md: frontmatter present, $$ and inline $ balanced,
+# <details>/<summary> balanced, every ![](assets/…) resolves -> all PASS
 ```
 
-### Mindmap Completeness — PASS
+### Vault structure — PASS
 
 ```bash
-python3 tools/verify-mindmap.py all
-# All modules PASS: top nodes 9, heroes 9, q nodes 139/159 etc., visuals, audit counts, no source cards, box summaries, links, SVG ids, tag balance, math delimiters
-```
-
-### Markdown Generation
-
-```bash
-python3 tools/convert_to_md.py all
-# Generated 6 chapters + paper + solutions per module
-# PnC: 6 ch + 10 figs
-# Complex-Numbers: 6 ch + 7 figs
-# Binomial-Theorem: 6 ch + 1 fig
-# Conic-Sections: 6 ch + 1 fig
-# Combined *-complete.md per module
+python3 tools/verify-structure.py
+# every module has 6 chapter notes (01..06) + index/paper/solutions/theory,
+# note basenames unique across the vault, P/S numbering reported -> PASS
 ```
 
 ---
@@ -185,4 +172,4 @@ python3 tools/convert_to_md.py all
 
 ---
 
-*This checklist is generated from the HTML mindmaps and the Markdown conversion — see `docs/ROADMAP.md` for the visual roadmap and `docs/DIAGRAMS.md` for all diagrams.*
+*This checklist covers the Obsidian vault notes — see [ROADMAP.md](ROADMAP.md) for the visual roadmap and progress, and [DIAGRAMS.md](DIAGRAMS.md) for all diagrams.*

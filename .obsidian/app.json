@@ -1,0 +1,10 @@
+{
+  "attachmentFolderPath": "notes",
+  "useMarkdownLinks": false,
+  "newLinkFormat": "shortest",
+  "showUnsupportedFiles": true,
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "notes",
+  "showFrontmatter": true
+}

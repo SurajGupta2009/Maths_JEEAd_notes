@@ -1,6 +1,16 @@
+---
+title: "Diagrams — SVG + Mermaid Catalog"
+aliases: ["Diagrams", "Figures"]
+module: "docs"
+type: catalog
+tags: [diagrams, svg, mermaid]
+created: 2026-09-27
+---
+
 # Diagrams — SVG + Mermaid Catalog
 
-> All diagrams from HTML mindmaps are preserved as SVG in `assets/` and augmented with Mermaid for GitHub rendering.
+> Every diagram lives as an SVG in the module's `notes/<Module>/assets/fig-XX.svg`
+> and is augmented with a Mermaid flowchart for native GitHub/Obsidian rendering.
 
 ## PnC — Permutations & Combinations
 
@@ -339,4 +349,4 @@ flowchart TD
 
 ---
 
-*All figures are extracted via `tools/convert_to_md.py` — see `FORMATTING-GUIDE.md` for pipeline details.*
+*All figures are stored as `notes/<Module>/assets/fig-XX.svg`; see [FORMATTING-GUIDE.md](FORMATTING-GUIDE.md) for how they are referenced.*

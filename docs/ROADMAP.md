@@ -1,10 +1,58 @@
+---
+title: "ROADMAP — Full Theory Roadmap & Progress"
+aliases: ["Roadmap", "Syllabus", "Progress"]
+module: "docs"
+type: roadmap
+tags: [roadmap, planning, progress]
+created: 2026-09-27
+---
+
 # JEE Advanced + Olympiad — Complete Theory Roadmap
 
 > **Well-ordered from board-level basics → JEE Main → JEE Advanced → Olympiad frontier**
 
 This roadmap shows how each module builds from first principles to Olympiad-level mathematics. Every formula is **derived from reasoning**, never memorized.
 
+## 📊 Progress — how many chapters remain
+
+Each module is **6 chapters**. The target syllabus is the **15-module JEE
+roadmap** below (90 chapters). **Conic Sections** is done from that list; the 3
+extras already built (PnC, Complex Numbers, Binomial Theorem) sit *beyond* the
+roadmap.
+
+```dataview
+TABLE length(rows) AS "Chapters built"
+FROM "notes"
+WHERE chapter
+GROUP BY module
+```
+
+**➡ 14 of the 15 roadmap modules remain → 84 chapters still to write** from
+basics to Olympiad level.
+
+| # | Module | Folder | Status |
+|---|---|---|---|
+| 1 | Quadratic Equations | `notes/Quadratic-Equations/` | ⬜ to do |
+| 2 | Inequalities | `notes/Inequalities/` | ⬜ to do |
+| 3 | Trigonometry | `notes/Trigonometry/` | ⬜ to do |
+| 4 | Sequences & Series | `notes/Sequences-and-Series/` | ⬜ to do |
+| 5 | Limits & Continuity | `notes/Limits-and-Continuity/` | ⬜ to do |
+| 6 | Differentiation | `notes/Differentiation/` | ⬜ to do |
+| 7 | Applications of Derivatives | `notes/Applications-of-Derivatives/` | ⬜ to do |
+| 8 | Integration | `notes/Integration/` | ⬜ to do |
+| 9 | Differential Equations | `notes/Differential-Equations/` | ⬜ to do |
+| 10 | Coordinate Geometry — Lines & Circles | `notes/Coordinate-Geometry-Lines-and-Circles/` | ⬜ to do |
+| 11 | Conic Sections | `notes/Conic-Sections/` | ✅ done |
+| 12 | 3D Geometry | `notes/3D-Geometry/` | ⬜ to do |
+| 13 | Vectors | `notes/Vectors/` | ⬜ to do |
+| 14 | Matrices & Determinants | `notes/Matrices-and-Determinants/` | ⬜ to do |
+| 15 | Probability | `notes/Probability/` | ⬜ to do |
+| — | PnC · Permutations & Combinations *(bonus)* | `notes/PnC/` | ✅ done |
+| — | Complex Numbers *(bonus)* | `notes/Complex-Numbers/` | ✅ done |
+| — | Binomial Theorem *(bonus)* | `notes/Binomial-Theorem/` | ✅ done |
+
 ---
+
 
 ## 1. Permutations & Combinations (PnC)
 
@@ -238,4 +286,4 @@ flowchart TD
 
 ---
 
-*Generated from standalone HTML mindmaps via `tools/convert_to_md.py` — math preserved as $...$ and $$...$$, diagrams as SVG + Mermaid, questions as collapsible details.*
+*Roadmap for the Obsidian vault. Diagrams live in `notes/<Module>/assets/fig-XX.svg`; see `docs/DIAGRAMS.md` for the full catalog and `docs/JEE-ADVANCED-OLYMPIAD-COVERAGE.md` for the per-topic proof.*
