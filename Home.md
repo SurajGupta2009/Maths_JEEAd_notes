@@ -44,6 +44,7 @@ is *derived*, never memorised; every paper answer is *numerically verified*.
 | **Applications of Derivatives** | `notes/Applications-of-Derivatives` | 6 | [[Applications-of-Derivatives]] |
 | **Integration** | `notes/Integration` | 6 | [[Integration]] |
 | **Differential Equations** | `notes/Differential-Equations` | 6 | [[Differential-Equations]] |
+| **Coordinate Geometry — Lines & Circles** | `notes/Coordinate-Geometry-Lines-and-Circles` | 6 | [[Coordinate-Geometry-Lines-and-Circles]] |
 
 Jump to any module's [[PnC — Paper|Olympiad papers]] and
 [[PnC — Solutions|solution keys]].

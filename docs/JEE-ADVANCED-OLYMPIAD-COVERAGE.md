@@ -207,6 +207,19 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 
 ---
 
+## Coordinate Geometry — Lines & Circles — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 Coordinates & locus | Distance, midpoint, section, centroid, area by determinant, collinearity, simple loci | Loci requiring squaring a condition, equidistant loci reducing to circles | Loci with ratios (Apollonius-type), locus of a midpoint under motion |
+| 2 The straight line | Slope, all six forms, angle between lines, parallel/perpendicular tests, point–line distance | Foot of the perpendicular, intercept and normal forms, distance in optimisation | Distance extremal problems, families of lines and their envelopes |
+| 3 Pairs of lines | Homogeneous pair factored into two lines, perpendicularity test $a+b=0$ | Angle between a pair from $	an	heta=\left\lvertrac{2\sqrt{h^2-ab}}{a+b}ightvert$, normalised angle bisectors | Angle bisectors as a pair of lines, joint equation of two given lines |
+| 4 The circle | Standard and general form, centre/radius, circle through three points, diameter form | $g^2+f^2<c$ (no real circle), completing the square, tangent/normal by $T=0$ | Diameter form derived from the right angle, circles through constrained triples |
+| 5 Circle–line interaction | Tangent $T=0$, normal through the centre, tangent length, chord length, power of a point | Chord of contact, radical axis by subtraction, common chord, radical centre of three circles | Power as a signed quantity, coaxal reasoning, orthogonality of circles |
+| 6 Coaxal & inversion | Position test via $d$ vs $r_1+r_2$, $\lvert r_1-r_2vert$ | Shortest distance to a circle, Apollonius circle, coaxal system $S_1+\lambda S_2$ | Inversion in a circle (lines ↔ circles through the origin, conformality), limiting points, radical centre computations |
+
+---
+
 ## Verification
 
 ### Markdown notes — PASS
