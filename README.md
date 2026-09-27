@@ -52,6 +52,7 @@ Each module is **three notes**. The complete-notes file holds **six chapters**
 | **Complex Numbers** | `notes/Complex-Numbers` | 6 | 38 | [[Complex-Numbers]] |
 | **Binomial Theorem** | `notes/Binomial-Theorem` | 6 | 38 | [[Binomial-Theorem]] |
 | **Conic Sections** | `notes/Conic-Sections` | 6 | 38 | [[Conic-Sections]] |
+| **Limits & Continuity** | `notes/Limits-and-Continuity` | 6 | 32 | [[Limits-and-Continuity]] |
 
 ## The notes standard (short version)
 
@@ -84,8 +85,8 @@ chapter-folder layout into this vault (kept for provenance).
 
 ## What's next
 
-[[ROADMAP]] lists the full syllabus and tracks progress. **14 of the 15 planned
-modules remain → 84 chapters** still to write from basics to Olympiad level (the
+[[ROADMAP]] lists the full syllabus and tracks progress. **13 of the 15 planned
+modules remain → 78 chapters** still to write from basics to Olympiad level (the
 3 already-built extras — PnC, Complex Numbers, Binomial Theorem — sit beyond
 that roadmap).
 
