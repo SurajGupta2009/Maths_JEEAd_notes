@@ -142,6 +142,32 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 
 ---
 
+## Limits & Continuity — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 What a limit is | $\varepsilon$–$\delta$ language, $\lim_{x\to a}(f+g)$, squeeze, standard limits, one-sided limits | Two-sided vs one-sided, $\lim$ exists iff both one-sided agree, $\lim_{x\to0}\frac{\sin x}{x}=1$ derivation | Squeeze with $n$, $\lim_{x\to0}x\sin(1/x)=0$, non-existent limit proofs |
+| 2 Computing limits | Factor/cancel, rationalise, standard $\frac{\sin ax}{bx}$, $\frac{e^x-1}{x}$, $\frac{\ln(1+x)}{x}$, L'Hôpital as shortcut | Indeterminate $0/0,\infty/\infty$, algebraic reduction before L'Hôpital, $1^\infty$ via $\ln$ | Series expansions, $\lim$ via substitution, asymptotics, non-trivial $0\cdot\infty$ |
+| 3 Continuity | $f(a)$ defined, $\lim_{x\to a}=f(a)$, continuity of polynomials/trig/exp/ln | IVT (bisection), continuity of compositions, removable vs jump vs infinite discontinuity | Continuous nowhere-differentiable flavour, fixed-point arguments, topological IVT |
+| 4 Differentiability & continuity tools | Differentiability $\Rightarrow$ continuity, derivative as limit, sign of $f'$ vs monotonicity | One-sided derivatives, $f$ differentiable with $f'$ discontinuous, chain of implications | Derivative Darboux property, derivatives with no antiderivative-in-elementary-form |
+| 5 Olympiad techniques | Sandwich sequences, recurrence limits, limit of a sum $\to$ integral | Limits of series/sequences, $\lim_{n\to\infty}$ vs $\lim_{x\to\infty}$, Stolz–Cesàro, limit of nested radicals | Stolz–Cesàro, limit of nested radicals/iterations, limits of functional forms |
+| 6 Synthesis | Mixed problems, graph sketching from limits | Differentiating under the integral (intro), optimisation via limits | Full frontier: squeeze+series+FE combinations, L'Hôpital on olympiad forms |
+
+---
+
+## Differentiation & Methods — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 Derivative from first principles | $f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}$, derivative as slope, polynomial/power rule | Differentiability $\Rightarrow$ continuity, one-sided derivatives, corner vs cusp vs vertical tangent | Differentiability of piecewise-defined and series-defined functions, $f'$ unbounded near a point |
+| 2 Algebra of derivatives | Sum, constant multiple, product, quotient rules, power rule for integers | Deriving the power rule from the quotient rule, all four rules from first principles | Derivative of a quotient of products, log-derivative of $u^v$ edge cases |
+| 3 Chain rule & standard functions | $\frac{d}{dx}f(g(x))=f'(g)g'$, trig/exp/ln derivatives, inverse-function rule | Composition of 3+ functions, inverse-function rule derivation, $\arcsin$, $\arctan$, $\operatorname{arccot}$ | Derivatives of implicitly-defined inverses, derivatives of series-defined functions |
+| 4 Methods of differentiation | Implicit ($x^2+y^2$), logarithmic ($x^x$), parametric ($x=t^2,y=t^3$), higher-order | Second derivative for parametric curves, $\frac{d^2y}{dx^2}$ from $\frac{dy/dt}{dx/dt}$, mixed methods | Tangent/normal to curves given implicitly or parametrically at special points |
+| 5 Olympiad techniques | Nth derivative of $e^{ax}$, $\sin ax$, $\frac1{1-x}$, chain patterns | Leibniz's rule $(fg)^{(n)}$, nth derivative of $x^2e^x$, $\ln(1\pm x)$, functional equations $f(x+y)=f(x)f(y)$ | Derivative-as-limit tricks, nth derivative via complex form $e^x\cos x$, FE systems |
+| 6 Synthesis — the frontier | Rolle's theorem, MVT, tangent/normal geometry | Derivative-based inequalities ($\sin x<x$), monotonicity via $f'$ sign, Lagrange MVT applications | Cauchy MVT, differentiability forcing continuity in olympiad FEs, extremal-via-derivative proofs |
+
+---
+
 ## Verification
 
 ### Markdown notes — PASS
@@ -156,8 +182,9 @@ python3 tools/verify-md.py
 
 ```bash
 python3 tools/verify-structure.py
-# every module has 6 chapter notes (01..06) + index/paper/solutions/theory,
-# note basenames unique across the vault, P/S numbering reported -> PASS
+# every module is 3 notes: <Module>.md (course map + 6 chapters + appendix) +
+# <Module> — Paper.md + <Module> — Solutions.md, note basenames unique across
+# the vault, paper↔solutions question ids matched -> PASS
 ```
 
 ---

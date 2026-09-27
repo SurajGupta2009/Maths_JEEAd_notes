@@ -40,6 +40,7 @@ is *derived*, never memorised; every paper answer is *numerically verified*.
 | **Binomial Theorem** | `notes/Binomial-Theorem` | 6 | [[Binomial-Theorem]] |
 | **Conic Sections** | `notes/Conic-Sections` | 6 | [[Conic-Sections]] |
 | **Limits & Continuity** | `notes/Limits-and-Continuity` | 6 | [[Limits-and-Continuity]] |
+| **Differentiation & Methods** | `notes/Differentiation-and-Methods` | 6 | [[Differentiation-and-Methods]] |
 
 Jump to any module's [[PnC — Paper|Olympiad papers]] and
 [[PnC — Solutions|solution keys]].

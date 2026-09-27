@@ -27,7 +27,7 @@ WHERE type = "notes"
 SORT file.name ASC
 ```
 
-**➡ 13 of the 15 roadmap modules remain → 78 chapters still to write** from
+**➡ 12 of the 15 roadmap modules remain → 72 chapters still to write** from
 basics to Olympiad level.
 
 | # | Module | Folder | Status |
@@ -37,7 +37,7 @@ basics to Olympiad level.
 | 3 | Trigonometry | `notes/Trigonometry/` | ⬜ to do |
 | 4 | Sequences & Series | `notes/Sequences-and-Series/` | ⬜ to do |
 | 5 | Limits & Continuity | `notes/Limits-and-Continuity/` | ✅ done |
-| 6 | Differentiation | `notes/Differentiation/` | ⬜ to do |
+| 6 | Differentiation & Methods | `notes/Differentiation-and-Methods/` | ✅ done |
 | 7 | Applications of Derivatives | `notes/Applications-of-Derivatives/` | ⬜ to do |
 | 8 | Integration | `notes/Integration/` | ⬜ to do |
 | 9 | Differential Equations | `notes/Differential-Equations/` | ⬜ to do |
