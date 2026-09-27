@@ -25,7 +25,7 @@ Every solution shows the *method name* first, then the computation, then a check
 
 ### A · Foundations (Q1–Q6)
 
-#### **Q1**[JEE Main]Find the principal argument of [formula] .
+#### **Q1**[JEE Main]Find the principal argument of $1 - i\sqrt3$.
 
 Find the principal argument of $1 - i\sqrt3$.
 
@@ -42,7 +42,7 @@ Check in polar form: $|z| = \sqrt{1+3} = 2$, and $2(\cos(-\pi/3) + i\sin(-\pi/3)
 
 </details>
 
-#### **Q2**[JEE Main]For [formula] , find [formula] and [formula] .
+#### **Q2**[JEE Main]For $z = -1 + i$, find $|z|$ and $\operatorname{Arg} z$.
 
 For $z = -1 + i$, find $|z|$ and $\operatorname{Arg} z$.
 
@@ -56,7 +56,7 @@ Answer: $\sqrt2,\ \dfrac{3\pi}{4}$
 
 </details>
 
-#### **Q3**[JEE Main]Evaluate [formula] .
+#### **Q3**[JEE Main]Evaluate $(1+i)^{10}$.
 
 Evaluate $(1+i)^{10}$.
 
@@ -76,7 +76,7 @@ Shortcut check: $(1+i)^2 = 2i$, so $(1+i)^{10} = (2i)^5
 
 </details>
 
-#### **Q4**[JEE Advanced]If [formula] and [formula] , find all possible values of [formula] .
+#### **Q4**[JEE Advanced]If $z^4 = 1$ and $z \ne 1$, find all possible values of $z + \dfrac{1}{z}$.
 
 If $z^4 = 1$ and $z \ne 1$, find all possible values of $z + \dfrac{1}{z}$.
 
@@ -98,7 +98,7 @@ Answer: $\{0,\ -2\}$
 
 </details>
 
-#### **Q5**[JEE Advanced]Prove [formula] using De Moivre, and deduce [formula] for [formula] .
+#### **Q5**[JEE Advanced]Prove $\cos 3\theta = 4\cos^3\theta - 3\cos\theta$ using De Moivre, and deduce…
 
 Prove $\cos 3\theta = 4\cos^3\theta - 3\cos\theta$ using De Moivre, and deduce $\operatorname{Re}(z^3 + z^{-3})$ for $|z| = 1$.
 
@@ -121,7 +121,7 @@ Answer: proof; $8\cos^3\theta - 6\cos\theta$
 
 </details>
 
-#### **Q6**[JEE Main]Find all fourth roots of [formula] .
+#### **Q6**[JEE Main]Find all fourth roots of $16$.
 
 Find all fourth roots of $16$.
 
@@ -140,7 +140,7 @@ Answer: $\pm 2,\ \pm 2i$
 
 ### B · Roots of Unity (Q7–Q12)
 
-#### **Q7**[JEE Main]If [formula] is a non-real cube root of unity, evaluate [formula] .
+#### **Q7**[JEE Main]If $\omega$ is a non-real cube root of unity, evaluate $(1-\omega)(1-\omega^2)$.
 
 If $\omega$ is a non-real cube root of unity, evaluate $(1-\omega)(1-\omega^2)$.
 
@@ -156,7 +156,7 @@ Answer: $3$
 
 </details>
 
-#### **Q8**[JEE Advanced]For [formula] , let [formula] . Show [formula] for even [formula] , and find […
+#### **Q8**[JEE Advanced]For $n \ge 4$, let $S_n = \sum_{k=0}^{n-1} (-1)^k e^{2\pi i k/n}$. Show $S_n = 0$ for even…
 
 For $n \ge 4$, let $S_n = \sum_{k=0}^{n-1} (-1)^k e^{2\pi i k/n}$. Show $S_n = 0$ for even $n$, and find $S_n$ for odd $n$.
 
@@ -178,7 +178,7 @@ Answer: $0$ (even); $\dfrac{2}{1+e^{2\pi i/n}} =
 
 </details>
 
-#### **Q9**[JEE Main]If [formula] and [formula] , evaluate [formula] .
+#### **Q9**[JEE Main]If $\omega^3 = 1$ and $\omega \ne 1$, evaluate $\sum_{k=0}^{101} \omega^k$.
 
 If $\omega^3 = 1$ and $\omega \ne 1$, evaluate $\sum_{k=0}^{101} \omega^k$.
 
@@ -194,7 +194,7 @@ Answer: $0$
 
 </details>
 
-#### **Q10**[JEE Advanced]Find [formula] .
+#### **Q10**[JEE Advanced]Find $\sum_{k \equiv 1 \pmod 3} \binom{9}{k}$.
 
 Find $\sum_{k \equiv 1 \pmod 3} \binom{9}{k}$.
 
@@ -213,7 +213,7 @@ Direct check: $\binom91 + \binom94 + \binom97 = 9 + 126 + 36 = 171$ ✓. (The $k
 
 </details>
 
-#### **Q11**[JEE Advanced]Evaluate [formula] .
+#### **Q11**[JEE Advanced]Evaluate $\prod_{k=1}^{5}\left(1 - e^{2\pi i k/5}\right)$.
 
 Evaluate $\prod_{k=1}^{5}\left(1 - e^{2\pi i k/5}\right)$.
 
@@ -227,7 +227,7 @@ Answer: $5$
 
 </details>
 
-#### **Q12**[Olympiad]Evaluate [formula] .
+#### **Q12**[Olympiad]Evaluate $\prod_{k=1}^{5} \sin\dfrac{\pi k}{5}$.
 
 Evaluate $\prod_{k=1}^{5} \sin\dfrac{\pi k}{5}$.
 
@@ -245,7 +245,7 @@ Answer: $\dfrac{5}{16}$
 
 ### C · Loci & Optimization (Q13–Q18)
 
-#### **Q13**[JEE Main]Find the locus of [formula] satisfying [formula] .
+#### **Q13**[JEE Main]Find the locus of $z$ satisfying $|z - 1| = |z - i|$.
 
 Find the locus of $z$ satisfying $|z - 1| = |z - i|$.
 
@@ -261,7 +261,7 @@ Answer: the line $y = x$
 
 </details>
 
-#### **Q14**[JEE Advanced]If [formula] , find the range of [formula] .
+#### **Q14**[JEE Advanced]If $|z| = 1$, find the range of $\left|z + \dfrac{1}{z} + 2i\right|$.
 
 If $|z| = 1$, find the range of $\left|z + \dfrac{1}{z} + 2i\right|$.
 
@@ -277,7 +277,7 @@ Answer: $[2,\ 2\sqrt2]$
 
 </details>
 
-#### **Q15**[JEE Advanced]If [formula] , find [formula] and the [formula] where it occurs.
+#### **Q15**[JEE Advanced]If $|z| = 1$, find $\min |z - (1-2i)|$ and the $z$ where it occurs.
 
 If $|z| = 1$, find $\min |z - (1-2i)|$ and the $z$ where it occurs.
 
@@ -293,7 +293,7 @@ Answer: $\sqrt5 - 1$, at $z = \dfrac{1-2i}{\sqrt5}$
 
 </details>
 
-#### **Q16**[JEE Advanced]If [formula] and [formula] , find [formula] .
+#### **Q16**[JEE Advanced]If $|z| = |w| = 1$ and $z\bar w = i$, find $|z - w|$.
 
 If $|z| = |w| = 1$ and $z\bar w = i$, find $|z - w|$.
 
@@ -309,7 +309,7 @@ Answer: $\sqrt2$
 
 </details>
 
-#### **Q17**[JEE Advanced]Find the locus of [formula] with [formula] . Verify a point.
+#### **Q17**[JEE Advanced]Find the locus of $z$ with $\arg\dfrac{z-1}{z+1} = \dfrac{\pi}{4}$. Verify a point.
 
 Find the locus of $z$ with $\arg\dfrac{z-1}{z+1} = \dfrac{\pi}{4}$. Verify a point.
 
@@ -323,7 +323,7 @@ Answer: arc of $x^2 + (y-1)^2 = 2$, $y &gt; 0$, excluding $\pm 1$
 
 </details>
 
-#### **Q18**[JEE Advanced]If [formula] and [formula] , find the range of [formula] .
+#### **Q18**[JEE Advanced]If $\operatorname{Re} z &gt; 0$ and $|z - 1| &lt; 1$, find the range of $|z|$.
 
 If $\operatorname{Re} z &gt; 0$ and $|z - 1| &lt; 1$, find the range of $|z|$.
 
@@ -340,7 +340,7 @@ Answer: $(0,\ 2)$
 
 ### D · Regions & Conics (Q19–Q23)
 
-#### **Q19**[JEE Main]If [formula] , find the range of [formula] .
+#### **Q19**[JEE Main]If $|z + 2| \le 3$, find the range of $|z|$.
 
 If $|z + 2| \le 3$, find the range of $|z|$.
 
@@ -355,7 +355,7 @@ Answer: $[0,\ 5]$
 
 </details>
 
-#### **Q20**[JEE Advanced]If [formula] , find [formula] .
+#### **Q20**[JEE Advanced]If $|z - 1| + |z + 1| = 6$, find $\max \operatorname{Im} z$.
 
 If $|z - 1| + |z + 1| = 6$, find $\max \operatorname{Im} z$.
 
@@ -369,7 +369,7 @@ Answer: $2\sqrt2$
 
 </details>
 
-#### **Q21**[JEE Advanced]Find the locus of [formula] and [formula] on it.
+#### **Q21**[JEE Advanced]Find the locus of $|z|^2 = z + \bar z$ and $\max|z|$ on it.
 
 Find the locus of $|z|^2 = z + \bar z$ and $\max|z|$ on it.
 
@@ -383,7 +383,7 @@ Answer: circle, center $(1,0)$, radius $1$; $\max|z| = 2$
 
 </details>
 
-#### **Q22**[JEE Advanced]Find [formula] with [formula] and [formula] .
+#### **Q22**[JEE Advanced]Find $z$ with $\arg z = \dfrac{\pi}{3}$ and $|z - 4| = 4$.
 
 Find $z$ with $\arg z = \dfrac{\pi}{3}$ and $|z - 4| = 4$.
 
@@ -400,7 +400,7 @@ Answer: $2 + 2\sqrt3\, i$
 
 </details>
 
-#### **Q23**[JEE Advanced]Let [formula] , [formula] . Find [formula] and where it is attained.
+#### **Q23**[JEE Advanced]Let $z = t(1+i)$, $t \in \mathbb{R}$. Find $\min |z - 1|$ and where it is attained.
 
 Let $z = t(1+i)$, $t \in \mathbb{R}$. Find $\min |z - 1|$ and where it is attained.
 
@@ -419,7 +419,7 @@ Answer: $\dfrac{\sqrt2}{2}$, at $z = \dfrac{1+i}{2}$
 
 ### E · Algebraic Core (Q24–Q27)
 
-#### **Q24**[JEE Advanced]Solve [formula] .
+#### **Q24**[JEE Advanced]Solve $2z + i\bar z = 5 + 2i$.
 
 Solve $2z + i\bar z = 5 + 2i$.
 
@@ -436,7 +436,7 @@ Answer: $z = \dfrac{8}{3} - \dfrac{1}{3} i$
 
 </details>
 
-#### **Q25**[JEE Advanced]Find the roots of [formula] .
+#### **Q25**[JEE Advanced]Find the roots of $z^2 - (2+6i)z + (-7+6i) = 0$.
 
 Find the roots of $z^2 - (2+6i)z + (-7+6i) = 0$.
 
@@ -455,7 +455,7 @@ Answer: $\{1+2i,\ 1+4i\}$
 
 </details>
 
-#### **Q26**[JEE Advanced]Find the locus of [formula] .
+#### **Q26**[JEE Advanced]Find the locus of $\arg\dfrac{z}{z-4i} = \dfrac{\pi}{2}$.
 
 Find the locus of $\arg\dfrac{z}{z-4i} = \dfrac{\pi}{2}$.
 
@@ -476,7 +476,7 @@ Answer: the half of the circle (center $2i$, radius $2$) with $\operatorname{Re}
 
 </details>
 
-#### **Q27**[JEE Advanced]Find the locus of [formula] purely imaginary and non-zero.
+#### **Q27**[JEE Advanced]Find the locus of $\dfrac{z+1}{z-1}$ purely imaginary and non-zero.
 
 Find the locus of $\dfrac{z+1}{z-1}$ purely imaginary and non-zero.
 
@@ -496,7 +496,7 @@ Answer: the unit circle, excluding $z = \pm 1$
 
 ### F · Geometry Proofs (Q28–Q32)
 
-#### **Q28**[JEE Advanced]Prove: CCW triangle [formula] equilateral [formula] .
+#### **Q28**[JEE Advanced]Prove: CCW triangle $(a,b,c)$ equilateral $\iff a + \omega b + \omega^2 c = 0$.
 
 Prove: CCW triangle $(a,b,c)$ equilateral $\iff a + \omega b + \omega^2 c = 0$.
 
@@ -519,7 +519,7 @@ Answer: proof complete
 
 </details>
 
-#### **Q29**[JEE Advanced]From [formula] , prove Ptolemy's inequality; show equality iff cyclic (in orde…
+#### **Q29**[JEE Advanced]From $(a-c)(b-d) = (a-b)(c-d) + (b-c)(a-d)$, prove Ptolemy's inequality; show equality iff…
 
 From $(a-c)(b-d) = (a-b)(c-d) + (b-c)(a-d)$, prove Ptolemy's inequality; show equality iff cyclic (in order); check the unit square.
 
@@ -587,7 +587,7 @@ Numerical check, triangle $(0,0), (4,0), (1,3)$: centers $(2, -1.1547), (3.366, 
 
 </details>
 
-#### **Q32**[JEE Advanced]Regular hexagon, circumradius [formula] , center [formula] ; [formula] . Find …
+#### **Q32**[JEE Advanced]Regular hexagon, circumradius $2$, center $O$; $|P - O| = 1$. Find…
 
 Regular hexagon, circumradius $2$, center $O$; $|P - O| = 1$. Find $\sum_{k=1}^{6} |P - v_k|^2$.
 
@@ -606,7 +606,7 @@ Answer: $30$
 
 ### G · Synthesis (Q33–Q36)
 
-#### **Q33**[Olympiad][formula] , [formula] : prove rectangle; with [formula] , describe [formula] .
+#### **Q33**[Olympiad] $|z_k| = 1$, $\sum z_k = 0$: prove rectangle; with $z_1 = 1$, describe $\{z_2, z_3, z_4\}$.
 
 $|z_k| = 1$, $\sum z_k = 0$: prove rectangle; with $z_1 = 1$, describe $\{z_2, z_3, z_4\}$.
 
@@ -623,7 +623,7 @@ Answer: proof; $\{-1,\ e^{i\theta},\ -e^{i\theta}\}$, $\theta \not\equiv 0, \pi$
 
 </details>
 
-#### **Q34**[JEE Advanced]Regular hexagon on the unit circle; product of distances from [formula] to the…
+#### **Q34**[JEE Advanced]Regular hexagon on the unit circle; product of distances from $3$ to the six vertices.
 
 Regular hexagon on the unit circle; product of distances from $3$ to the six vertices.
 
@@ -639,7 +639,7 @@ Answer: $728$
 
 </details>
 
-#### **Q35**[JEE Advanced]Locus of [formula] as [formula] varies.
+#### **Q35**[JEE Advanced]Locus of $w = z + \dfrac{1}{z} + 2i$ as $|z| = 1$ varies.
 
 Locus of $w = z + \dfrac{1}{z} + 2i$ as $|z| = 1$ varies.
 
@@ -654,7 +654,7 @@ Answer: the segment $[{-2+2i},\ 2+2i]$
 
 </details>
 
-#### **Q36**[JEE Main]Area of the triangle with vertices [formula] , [formula] , [formula] .
+#### **Q36**[JEE Main]Area of the triangle with vertices $2$, $4i$, $-1+3i$.
 
 Area of the triangle with vertices $2$, $4i$, $-1+3i$.
 
@@ -674,7 +674,7 @@ Answer: $3$
 
 ### H · Stretch (Q37–Q38)
 
-#### **Q37**[Olympiad][formula] , [formula] : prove (i) [formula] apart, (ii) [formula] , (iii) [for…
+#### **Q37**[Olympiad] $|z_k| = 1$, $z_1+z_2+z_3 = 0$: prove (i) $120^\circ$ apart, (ii)…
 
 $|z_k| = 1$, $z_1+z_2+z_3 = 0$: prove (i) $120^\circ$ apart, (ii) $z_1^2 + z_2^2 + z_3^2 = 0$, (iii) $\{\pm z_k\}$ is a regular hexagon.
 
@@ -692,7 +692,7 @@ Answer: proof complete (three claims)
 
 </details>
 
-#### **Q38**[Olympiad]Rectangle [formula] : (a) check the British Flag identity at [formula] ; (b) p…
+#### **Q38**[Olympiad]Rectangle $0, 2, 2+3i, 3i$: (a) check the British Flag identity at $e = 1+i$; (b) prove it…
 
 Rectangle $0, 2, 2+3i, 3i$: (a) check the British Flag identity at $e = 1+i$; (b) prove it for all $e$.
 

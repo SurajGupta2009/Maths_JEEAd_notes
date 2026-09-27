@@ -25,7 +25,7 @@ Every solution shows the *method name* first, then the computation, then a check
 
 ### A · First Principles & Eccentricity (Q1–Q5)
 
-#### **Q1**[JEE Main]Find the equation of the parabola with focus [formula] and directrix [formula]…
+#### **Q1**[JEE Main]Find the equation of the parabola with focus $(0, -3)$ and directrix $y = 3$.
 
 Find the equation of the parabola with focus $(0, -3)$ and directrix $y = 3$.
 
@@ -42,7 +42,7 @@ Check: $(4, -\tfrac43)$ is on it ($16 = -12\cdot(-\tfrac43)$); distance to focus
 
 </details>
 
-#### **Q2**[JEE Main]A point moves so that its distance from [formula] is half its distance from th…
+#### **Q2**[JEE Main]A point moves so that its distance from $(3, 0)$ is half its distance from the line…
 
 A point moves so that its distance from $(3, 0)$ is half its distance from the line $x = 12$.
 
@@ -62,7 +62,7 @@ Check: $(6, 0)$: distance to $(3,0)$ is $3$; to the line is $6 = 2\cdot3$ ✓.
 
 </details>
 
-#### **Q3**[JEE Main]Find the eccentricity and the foci of [formula] .
+#### **Q3**[JEE Main]Find the eccentricity and the foci of $\dfrac{x^2}{25} + \dfrac{y^2}{9} = 1$.
 
 Find the eccentricity and the foci of $\dfrac{x^2}{25} + \dfrac{y^2}{9} = 1$.
 
@@ -79,7 +79,7 @@ Check: $c^2 = a^2 - b^2 = 16$ ✓ (the hyperbola formula $c^2 = a^2 + b^2$ would
 
 </details>
 
-#### **Q4**[JEE Adv]For [formula] , find [formula] , the foci and the directrices.
+#### **Q4**[JEE Adv]For $\dfrac{x^2}{16} - \dfrac{y^2}{9} = 1$, find $e$, the foci and the directrices.
 
 For $\dfrac{x^2}{16} - \dfrac{y^2}{9} = 1$, find $e$, the foci and the directrices.
 
@@ -96,7 +96,7 @@ Check: $\tfrac{16}{5} \lt 4$: the directrices sit between centre and vertices, a
 
 </details>
 
-#### **Q5**[Olympiad]The focus-directrix definition with focus [formula] , directrix [formula] , [f…
+#### **Q5**[Olympiad]The focus-directrix definition with focus $(0,0)$, directrix $x = 0$, $e = 1$.
 
 The focus-directrix definition with focus $(0,0)$, directrix $x = 0$, $e = 1$.
 
@@ -116,7 +116,7 @@ Check: for $e = 1$ with focus *not* on the directrix (P6 of Chapter 1) the same 
 
 ### B · Parabola Machinery (Q6–Q11)
 
-#### **Q6**[JEE Main]Focal distance of [formula] on [formula] .
+#### **Q6**[JEE Main]Focal distance of $(4, 4)$ on $y^2 = 4x$.
 
 Focal distance of $(4, 4)$ on $y^2 = 4x$.
 
@@ -133,7 +133,7 @@ Check (both methods): direct distance $\sqrt{(4-1)^2 + 16} = \sqrt{25} = 5$ ✓.
 
 </details>
 
-#### **Q7**[JEE Adv]Focal chord of [formula] with one end [formula] : other end and length.
+#### **Q7**[JEE Adv]Focal chord of $y^2 = 8x$ with one end $t = 3$: other end and length.
 
 Focal chord of $y^2 = 8x$ with one end $t = 3$: other end and length.
 
@@ -153,7 +153,7 @@ Check: harmonic mean of the parts $= \tfrac{2}{\tfrac{1}{20} + \tfrac{9}{20}} = 
 
 </details>
 
-#### **Q8**[JEE Adv]Chord of [formula] bisected at [formula] .
+#### **Q8**[JEE Adv]Chord of $y^2 = 4x$ bisected at $\left(\tfrac{13}{4}, 3\right)$.
 
 Chord of $y^2 = 4x$ bisected at $\left(\tfrac{13}{4}, 3\right)$.
 
@@ -175,7 +175,7 @@ Check (Vieta): substituting $y = \tfrac{4x+5}{6}$ into $y^2 = 4x$: $16x^2 - 104x
 
 </details>
 
-#### **Q9**[JEE Adv]Normals from [formula] to [formula] .
+#### **Q9**[JEE Adv]Normals from $(9, 6)$ to $y^2 = 4x$.
 
 Normals from $(9, 6)$ to $y^2 = 4x$.
 
@@ -195,7 +195,7 @@ Check: the normal of slope $m$ is $y = -tx + 2t + t^3$ with $t = -m$: for $m=1$ 
 
 </details>
 
-#### **Q10**[JEE Adv]Normal at [formula] on [formula] meets the axis at [formula] .
+#### **Q10**[JEE Adv]Normal at $t = 2$ on $y^2 = 4x$ meets the axis at $N$.
 
 Normal at $t = 2$ on $y^2 = 4x$ meets the axis at $N$.
 
@@ -212,7 +212,7 @@ Check: this is exactly the reflection property of Chapter 2 — the normal makes
 
 </details>
 
-#### **Q11**[Olympiad]Foot of the perpendicular from the focus to any tangent of [formula] .
+#### **Q11**[Olympiad]Foot of the perpendicular from the focus to any tangent of $y^2 = 4ax$.
 
 Foot of the perpendicular from the focus to any tangent of $y^2 = 4ax$.
 
@@ -240,7 +240,7 @@ Check $(a=1, t=2)$: tangent $2y = x + 4$; the perpendicular from $(1,0)$ has slo
 
 ### C · The Ellipse (Q12–Q17)
 
-#### **Q12**[JEE Main]Eccentricity and latus rectum of [formula] .
+#### **Q12**[JEE Main]Eccentricity and latus rectum of $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
 Eccentricity and latus rectum of $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
@@ -257,7 +257,7 @@ Check: $c = ae = \sqrt7$, $c^2 = 7 = 16 - 9$ ✓.
 
 </details>
 
-#### **Q13**[JEE Main]Tangents of slope [formula] to [formula] .
+#### **Q13**[JEE Main]Tangents of slope $1$ to $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
 Tangents of slope $1$ to $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
@@ -277,7 +277,7 @@ Check: the double root $x = -\tfrac{16}{5}$ gives the contact point $\left(-\tfr
 
 </details>
 
-#### **Q14**[JEE Adv][formula] , foci [formula] .
+#### **Q14**[JEE Adv] $|PF_1| + |PF_2| = 10$, foci $(\mp 4, 0)$.
 
 $|PF_1| + |PF_2| = 10$, foci $(\mp 4, 0)$.
 
@@ -297,7 +297,7 @@ Check: $\tfrac{16}{25} + \tfrac{81}{225} = \tfrac{16 + 9}{25} = 1$ ✓; the semi
 
 </details>
 
-#### **Q15**[JEE Adv]Director circle of [formula] .
+#### **Q15**[JEE Adv]Director circle of $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
 Director circle of $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
@@ -317,7 +317,7 @@ Check: $5 = \sqrt{16 + 9}$ ✓.
 
 </details>
 
-#### **Q16**[JEE Adv]Chord of contact from [formula] to [formula] .
+#### **Q16**[JEE Adv]Chord of contact from $(5, 3)$ to $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
 Chord of contact from $(5, 3)$ to $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
@@ -337,7 +337,7 @@ Check: $\tfrac{(160/41)^2}{16} + \tfrac{(27/41)^2}{9} = \tfrac{1600 + 81}{1681} 
 
 </details>
 
-#### **Q17**[Olympiad]Reflection angles at [formula] of [formula] .
+#### **Q17**[Olympiad]Reflection angles at $P = \left(4, \tfrac95\right)$ of…
 
 Reflection angles at $P = \left(4, \tfrac95\right)$ of $\dfrac{x^2}{25} + \dfrac{y^2}{9} = 1$.
 
@@ -360,7 +360,7 @@ Check: $38.66 + 51.34 = 90$: the two acute angles the tangent makes with the axe
 
 ### D · Hyperbola & Rectangular Hyperbola (Q18–Q23)
 
-#### **Q18**[JEE Main][formula] : anatomy.
+#### **Q18**[JEE Main] $9x^2 - 16y^2 = 144$: anatomy.
 
 $9x^2 - 16y^2 = 144$: anatomy.
 
@@ -377,7 +377,7 @@ Check: $b^2 = c^2 - a^2 = 25 - 16 = 9$ ✓ (the $3\text{-}4\text{-}5$ hyperbola,
 
 </details>
 
-#### **Q19**[JEE Main]Asymptotes of [formula] and the angle between them.
+#### **Q19**[JEE Main]Asymptotes of $\dfrac{x^2}{4} - \dfrac{y^2}{9} = 1$ and the angle between them.
 
 Asymptotes of $\dfrac{x^2}{4} - \dfrac{y^2}{9} = 1$ and the angle between them.
 
@@ -394,7 +394,7 @@ Answer: $y = \pm\tfrac32x$; $2\arctan\tfrac32 \approx 112.62^\circ$
 
 </details>
 
-#### **Q20**[JEE Adv]Asymptote angle [formula] around the transverse axis: find [formula] .
+#### **Q20**[JEE Adv]Asymptote angle $60^\circ$ around the transverse axis: find $e$.
 
 Asymptote angle $60^\circ$ around the transverse axis: find $e$.
 
@@ -414,7 +414,7 @@ Check: $e = 1.1547 \gt 1$, and between the rectangular value $\sqrt2$ and the de
 
 </details>
 
-#### **Q21**[JEE Adv]Conjugate hyperbola of [formula] and the eccentricity identity.
+#### **Q21**[JEE Adv]Conjugate hyperbola of $\dfrac{x^2}{16} - \dfrac{y^2}{9} = 1$ and the eccentricity identity.
 
 Conjugate hyperbola of $\dfrac{x^2}{16} - \dfrac{y^2}{9} = 1$ and the eccentricity identity.
 
@@ -434,7 +434,7 @@ Check: neither is $\sqrt2$ — a hyperbola and its conjugate share the rectangul
 
 </details>
 
-#### **Q22**[JEE Adv][formula] : tangent and normal at [formula] .
+#### **Q22**[JEE Adv] $xy = 9$: tangent and normal at $t = 3$.
 
 $xy = 9$: tangent and normal at $t = 3$.
 
@@ -451,7 +451,7 @@ Check: both pass $(9, 1)$: $9 + 9 = 18$ ✓; $81 - 80 = 1$ ✓; implicit differe
 
 </details>
 
-#### **Q23**[Olympiad]No real perpendicular tangents to [formula] .
+#### **Q23**[Olympiad]No real perpendicular tangents to $x^2 - y^2 = a^2$.
 
 No real perpendicular tangents to $x^2 - y^2 = a^2$.
 
@@ -471,7 +471,7 @@ Check: this is the director circle $x^2 + y^2 = a^2 - b^2$ with $a = b$ — dege
 
 ### E · Tangents, Chords & Polars (Q24–Q28)
 
-#### **Q24**[JEE Main]Tangent of slope [formula] to [formula] .
+#### **Q24**[JEE Main]Tangent of slope $2$ to $y^2 = 4x$.
 
 Tangent of slope $2$ to $y^2 = 4x$.
 
@@ -489,7 +489,7 @@ Check: $\left(2x + \tfrac12\right)^2 = 4x \Rightarrow 4x^2 - 2x + \tfrac14 = 0
 
 </details>
 
-#### **Q25**[JEE Adv]Pair of tangents from [formula] to [formula] .
+#### **Q25**[JEE Adv]Pair of tangents from $(1, 3)$ to $y^2 = 4x$.
 
 Pair of tangents from $(1, 3)$ to $y^2 = 4x$.
 
@@ -514,7 +514,7 @@ Check: the joint equation vanishes at $(1,3)$: $1 + 9 - 9 + 7 - 9 + 1 = 0$ ✓.
 
 </details>
 
-#### **Q26**[JEE Adv]Chord of contact from [formula] to [formula] .
+#### **Q26**[JEE Adv]Chord of contact from $(1, 3)$ to $y^2 = 4x$.
 
 Chord of contact from $(1, 3)$ to $y^2 = 4x$.
 
@@ -534,7 +534,7 @@ Check: real contacts are guaranteed anyway because $(1,3)$ is outside ($S_1 = 5 
 
 </details>
 
-#### **Q27**[JEE Adv]Pole of [formula] w.r.t. [formula] .
+#### **Q27**[JEE Adv]Pole of $3x - 4y + 7 = 0$ w.r.t. $y^2 = 4x$.
 
 Pole of $3x - 4y + 7 = 0$ w.r.t. $y^2 = 4x$.
 
@@ -574,7 +574,7 @@ Check: by La Hire, the pole of the directrix is the focus — the dictionary run
 
 ### F · Normals & Parametric Geometry (Q29–Q32)
 
-#### **Q29**[JEE Main]Point with eccentric angle [formula] on [formula] .
+#### **Q29**[JEE Main]Point with eccentric angle $60^\circ$ on $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
 Point with eccentric angle $60^\circ$ on $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
@@ -611,7 +611,7 @@ Check: both pass $\left(2, \tfrac{3\sqrt3}{2}\right)$: $6 + 18 = 24$ ✓; $16\sq
 
 </details>
 
-#### **Q31**[JEE Adv]Points where the normal to [formula] has slope [formula] .
+#### **Q31**[JEE Adv]Points where the normal to $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$ has slope $1$.
 
 Points where the normal to $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$ has slope $1$.
 
@@ -628,7 +628,7 @@ Check: on the curve: $\tfrac{256/25}{16} + \tfrac{81/25}{9} = \tfrac{16}{25} + \
 
 </details>
 
-#### **Q32**[Olympiad]Normals at the ends of a focal chord of [formula] are perpendicular.
+#### **Q32**[Olympiad]Normals at the ends of a focal chord of $y^2 = 4ax$ are perpendicular.
 
 Normals at the ends of a focal chord of $y^2 = 4ax$ are perpendicular.
 
@@ -651,7 +651,7 @@ Check: $(4,4)$ on $y = -2x+12$: $4 = 4$ ✓; $(\tfrac14, -1)$ on $y = \tfrac{x}{
 
 ### G · Reflection, Confocals & Triangles (Q33–Q36)
 
-#### **Q33**[JEE Adv]Whispering gallery [formula] .
+#### **Q33**[JEE Adv]Whispering gallery $\dfrac{x^2}{100} + \dfrac{y^2}{36} = 1$.
 
 Whispering gallery $\dfrac{x^2}{100} + \dfrac{y^2}{36} = 1$.
 
@@ -668,7 +668,7 @@ Check: $c^2 = 100 - 36 = 64$ ✓.
 
 </details>
 
-#### **Q34**[Olympiad]Tangent bisects the focal angle at [formula] on [formula] .
+#### **Q34**[Olympiad]Tangent bisects the focal angle at $\left(5, \tfrac94\right)$ on…
 
 Tangent bisects the focal angle at $\left(5, \tfrac94\right)$ on $\dfrac{x^2}{16} - \dfrac{y^2}{9} = 1$.
 
@@ -688,7 +688,7 @@ Check: the two ray directions $90^\circ$ and $12.68^\circ$ have exact bisector $
 
 </details>
 
-#### **Q35**[Olympiad]Orthocentre of [formula] and the hyperbola [formula] .
+#### **Q35**[Olympiad]Orthocentre of $(0,4), (6,4), (2,0)$ and the hyperbola $xy - 4x - 2y + 8 = 0$.
 
 Orthocentre of $(0,4), (6,4), (2,0)$ and the hyperbola $xy - 4x - 2y + 8 = 0$.
 
@@ -708,7 +708,7 @@ Check: this is the orthocentre theorem of Chapter 6 — a rectangular hyperbola 
 
 </details>
 
-#### **Q36**[Olympiad]Confocal hyperbola through [formula] for [formula] .
+#### **Q36**[Olympiad]Confocal hyperbola through $\left(4, \tfrac{12}{5}\right)$ for…
 
 Confocal hyperbola through $\left(4, \tfrac{12}{5}\right)$ for $\dfrac{x^2}{25} + \dfrac{y^2}{16} = 1$.
 
@@ -731,7 +731,7 @@ Check: $P$ on the hyperbola: $\tfrac{25\cdot16}{144} - \tfrac{25\cdot(144/25)}{8
 
 ### H · Synthesis & Stretch (Q37–Q38)
 
-#### **Q37**[Olympiad]Midpoints of focal chords of [formula] .
+#### **Q37**[Olympiad]Midpoints of focal chords of $y^2 = 4ax$.
 
 Midpoints of focal chords of $y^2 = 4ax$.
 

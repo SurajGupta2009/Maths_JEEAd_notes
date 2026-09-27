@@ -31,35 +31,35 @@ created: 2026-09-27
 
 ### A · First Principles & Eccentricity (Q1–Q5)
 
-#### **Q1**[JEE Main]Find the equation of the parabola with focus [formula] and directrix [formula]…
+#### **Q1**[JEE Main]Find the equation of the parabola with focus $(0, -3)$ and directrix $y = 3$.
 
 Find the equation of the parabola with focus $(0, -3)$ and directrix $y = 3$.
 
 
 Answer: $x^2 = -12y$
 
-#### **Q2**[JEE Main]A point moves so that its distance from [formula] is half its distance from th…
+#### **Q2**[JEE Main]A point moves so that its distance from $(3, 0)$ is half its distance from the line…
 
 A point moves so that its distance from $(3, 0)$ is half its distance from the line $x = 12$. Identify the conic and give its equation and eccentricity.
 
 
 Answer: ellipse $\dfrac{x^2}{36} + \dfrac{y^2}{27} = 1$, $e = \tfrac12$
 
-#### **Q3**[JEE Main]Find the eccentricity and the foci of [formula] .
+#### **Q3**[JEE Main]Find the eccentricity and the foci of $\dfrac{x^2}{25} + \dfrac{y^2}{9} = 1$.
 
 Find the eccentricity and the foci of $\dfrac{x^2}{25} + \dfrac{y^2}{9} = 1$.
 
 
 Answer: $e = \tfrac45$; foci $(\pm 4, 0)$
 
-#### **Q4**[JEE Adv]For [formula] , find the eccentricity, the foci and the directrices.
+#### **Q4**[JEE Adv]For $\dfrac{x^2}{16} - \dfrac{y^2}{9} = 1$, find the eccentricity, the foci and the…
 
 For $\dfrac{x^2}{16} - \dfrac{y^2}{9} = 1$, find the eccentricity, the foci and the directrices.
 
 
 Answer: $e = \tfrac54$; foci $(\pm 5, 0)$; directrices $x = \pm\tfrac{16}{5}$
 
-#### **Q5**[Olympiad]Show that the focus-directrix definition with focus [formula] , directrix [for…
+#### **Q5**[Olympiad]Show that the focus-directrix definition with focus $(0,0)$, directrix $x = 0$ and $e = 1$…
 
 Show that the focus-directrix definition with focus $(0,0)$, directrix $x = 0$ and $e = 1$ produces a degenerate locus, and identify it.
 
@@ -69,42 +69,42 @@ Answer: the doubled line $y = 0$ (the axis itself)
 
 ### B · Parabola Machinery (Q6–Q11)
 
-#### **Q6**[JEE Main]Find the focal distance of the point [formula] on the parabola [formula] .
+#### **Q6**[JEE Main]Find the focal distance of the point $(4, 4)$ on the parabola $y^2 = 4x$.
 
 Find the focal distance of the point $(4, 4)$ on the parabola $y^2 = 4x$.
 
 
 Answer: $x + a = 4 + 1 = 5$
 
-#### **Q7**[JEE Adv]One end of a focal chord of [formula] has parameter [formula] . Find the other…
+#### **Q7**[JEE Adv]One end of a focal chord of $y^2 = 8x$ has parameter $t = 3$. Find the other end and the…
 
 One end of a focal chord of $y^2 = 8x$ has parameter $t = 3$. Find the other end and the length of the chord.
 
 
 Answer: $\left(\tfrac29, -\tfrac43\right)$; length $\tfrac{200}{9}$
 
-#### **Q8**[JEE Adv]Find the equation of the chord of [formula] bisected at [formula] .
+#### **Q8**[JEE Adv]Find the equation of the chord of $y^2 = 4x$ bisected at $\left(\tfrac{13}{4}, 3\right)$.
 
 Find the equation of the chord of $y^2 = 4x$ bisected at $\left(\tfrac{13}{4}, 3\right)$.
 
 
 Answer: $4x - 6y + 5 = 0$
 
-#### **Q9**[JEE Adv]How many normals can be drawn from [formula] to [formula] ? Find their slopes …
+#### **Q9**[JEE Adv]How many normals can be drawn from $(9, 6)$ to $y^2 = 4x$? Find their slopes and their…
 
 How many normals can be drawn from $(9, 6)$ to $y^2 = 4x$? Find their slopes and their feet, and verify the sum of the slopes.
 
 
 Answer: three; slopes $1, 2, -3$ (sum $0$); feet $(1,-2), (4,-4), (9,6)$
 
-#### **Q10**[JEE Adv]The normal at the point with [formula] on [formula] meets the axis at [formula…
+#### **Q10**[JEE Adv]The normal at the point with $t = 2$ on $y^2 = 4x$ meets the axis at $N$. Compute $N$…
 
 The normal at the point with $t = 2$ on $y^2 = 4x$ meets the axis at $N$. Compute $N$, $|SP|$ and $|SN|$, and name the property these lengths exhibit.
 
 
 Answer: $N = (6, 0)$; $|SP| = |SN| = 5$ — the isosceles triangle $SPN$
 
-#### **Q11**[Olympiad]Prove that the foot of the perpendicular from the focus of [formula] to any ta…
+#### **Q11**[Olympiad]Prove that the foot of the perpendicular from the focus of $y^2 = 4ax$ to any tangent lies…
 
 Prove that the foot of the perpendicular from the focus of $y^2 = 4ax$ to any tangent lies on the tangent at the vertex, and compute that foot for the tangent at $t = 2$ when $a = 1$.
 
@@ -114,42 +114,42 @@ Answer: foot $= (0, at) = (0, 2)$ — always on $x = 0$
 
 ### C · The Ellipse (Q12–Q17)
 
-#### **Q12**[JEE Main]Find the eccentricity and the latus rectum of [formula] .
+#### **Q12**[JEE Main]Find the eccentricity and the latus rectum of $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
 Find the eccentricity and the latus rectum of $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.
 
 
 Answer: $e = \tfrac{\sqrt7}{4}$; LR $= \tfrac92$
 
-#### **Q13**[JEE Main]Write all tangent lines of slope [formula] to [formula] , and verify one of th…
+#### **Q13**[JEE Main]Write all tangent lines of slope $1$ to $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$, and verify…
 
 Write all tangent lines of slope $1$ to $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$, and verify one of them is genuinely tangent by the discriminant test.
 
 
 Answer: $y = x \pm 5$; $25x^2 + 160x + 256 = (5x+16)^2$, a double root
 
-#### **Q14**[JEE Adv]A point moves with [formula] , [formula] . Find the ellipse, the length of its…
+#### **Q14**[JEE Adv]A point moves with $|PF_1| + |PF_2| = 10$, $F_{1,2} = (\mp 4, 0)$. Find the ellipse, the…
 
 A point moves with $|PF_1| + |PF_2| = 10$, $F_{1,2} = (\mp 4, 0)$. Find the ellipse, the length of its latus rectum, and the ends of the latus rectum through $(4, 0)$.
 
 
 Answer: $\dfrac{x^2}{25} + \dfrac{y^2}{9} = 1$; LR $= \tfrac{18}{5}$; ends $\left(4, \pm\tfrac95\right)$
 
-#### **Q15**[JEE Adv]Find the director circle of [formula] and its four axis intercepts.
+#### **Q15**[JEE Adv]Find the director circle of $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$ and its four axis…
 
 Find the director circle of $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$ and its four axis intercepts.
 
 
 Answer: $x^2 + y^2 = 25$; $(\pm 5, 0)$, $(0, \pm 5)$
 
-#### **Q16**[JEE Adv]Find the chord of contact from [formula] to [formula] , and show it meets the …
+#### **Q16**[JEE Adv]Find the chord of contact from $(5, 3)$ to $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$, and show…
 
 Find the chord of contact from $(5, 3)$ to $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$, and show it meets the ellipse in two real points.
 
 
 Answer: $15x + 16y = 48$; contacts $(0, 3)$ and $\left(\tfrac{160}{41}, -\tfrac{27}{41}\right)$
 
-#### **Q17**[Olympiad]At the latus-rectum end [formula] of [formula] , compute the angles the tangen…
+#### **Q17**[Olympiad]At the latus-rectum end $P = \left(4, \tfrac95\right)$ of…
 
 At the latus-rectum end $P = \left(4, \tfrac95\right)$ of $\dfrac{x^2}{25}+\dfrac{y^2}{9}=1$, compute the angles the tangent makes with the two focal segments and confirm the reflection property.
 
@@ -159,35 +159,35 @@ Answer: both angles $\approx 51.34^\circ$ — equal, so a ray from one focus ref
 
 ### D · Hyperbola & Rectangular Hyperbola (Q18–Q23)
 
-#### **Q18**[JEE Main]For [formula] , find [formula] , the foci and the latus rectum.
+#### **Q18**[JEE Main]For $9x^2 - 16y^2 = 144$, find $e$, the foci and the latus rectum.
 
 For $9x^2 - 16y^2 = 144$, find $e$, the foci and the latus rectum.
 
 
 Answer: $e = \tfrac54$; foci $(\pm 5, 0)$; LR $= \tfrac92$
 
-#### **Q19**[JEE Main]Find the asymptotes of [formula] and the angle between them (around the transv…
+#### **Q19**[JEE Main]Find the asymptotes of $\dfrac{x^2}{4} - \dfrac{y^2}{9} = 1$ and the angle between them…
 
 Find the asymptotes of $\dfrac{x^2}{4} - \dfrac{y^2}{9} = 1$ and the angle between them (around the transverse axis).
 
 
 Answer: $y = \pm\tfrac32 x$; $2\arctan\tfrac32 \approx 112.62^\circ$
 
-#### **Q20**[JEE Adv]The asymptotes of a hyperbola make [formula] around the transverse axis. Find …
+#### **Q20**[JEE Adv]The asymptotes of a hyperbola make $60^\circ$ around the transverse axis. Find the…
 
 The asymptotes of a hyperbola make $60^\circ$ around the transverse axis. Find the eccentricity.
 
 
 Answer: $e = \dfrac{2}{\sqrt3}$
 
-#### **Q21**[JEE Adv]Write the conjugate hyperbola of [formula] , compute both eccentricities, and …
+#### **Q21**[JEE Adv]Write the conjugate hyperbola of $\dfrac{x^2}{16} - \dfrac{y^2}{9} = 1$, compute both…
 
 Write the conjugate hyperbola of $\dfrac{x^2}{16} - \dfrac{y^2}{9} = 1$, compute both eccentricities, and verify $\dfrac{1}{e^2} + \dfrac{1}{e'^2} = 1$.
 
 
 Answer: $\dfrac{y^2}{9} - \dfrac{x^2}{16} = 1$; $e = \tfrac54$, $e' = \tfrac53$; $\tfrac{16}{25} + \tfrac{9}{25} = 1$
 
-#### **Q22**[JEE Adv]For the rectangular hyperbola [formula] , find the tangent and normal at [form…
+#### **Q22**[JEE Adv]For the rectangular hyperbola $xy = 9$, find the tangent and normal at $t = 3$, and verify…
 
 For the rectangular hyperbola $xy = 9$, find the tangent and normal at $t = 3$, and verify perpendicularity via slopes.
 
@@ -204,28 +204,28 @@ Answer: perpendicular slopes force $|m| = 1$, $c = 0$ — the asymptotes; direct
 
 ### E · Tangents, Chords & Polars (Q24–Q28)
 
-#### **Q24**[JEE Main]Find the tangent of slope [formula] to [formula] and its contact point.
+#### **Q24**[JEE Main]Find the tangent of slope $2$ to $y^2 = 4x$ and its contact point.
 
 Find the tangent of slope $2$ to $y^2 = 4x$ and its contact point.
 
 
 Answer: $y = 2x + \tfrac12$; contact $\left(\tfrac14, 1\right)$
 
-#### **Q25**[JEE Adv]Find the joint equation of the pair of tangents from [formula] to [formula] , …
+#### **Q25**[JEE Adv]Find the joint equation of the pair of tangents from $(1, 3)$ to $y^2 = 4x$, and the two…
 
 Find the joint equation of the pair of tangents from $(1, 3)$ to $y^2 = 4x$, and the two tangent slopes.
 
 
 Answer: $x^2 + y^2 - 3xy + 7x - 3y + 1 = 0$; slopes $\tfrac{3 \pm \sqrt5}{2}$
 
-#### **Q26**[JEE Adv]Find the chord of contact from [formula] to [formula] and show its two contact…
+#### **Q26**[JEE Adv]Find the chord of contact from $(1, 3)$ to $y^2 = 4x$ and show its two contact points are…
 
 Find the chord of contact from $(1, 3)$ to $y^2 = 4x$ and show its two contact points are real.
 
 
 Answer: $2x - 3y + 2 = 0$; contact $x$-coordinates $\tfrac{7 \pm 3\sqrt5}{2}$, real
 
-#### **Q27**[JEE Adv]Find the pole of the line [formula] with respect to [formula] , and verify by …
+#### **Q27**[JEE Adv]Find the pole of the line $3x - 4y + 7 = 0$ with respect to $y^2 = 4x$, and verify by…
 
 Find the pole of the line $3x - 4y + 7 = 0$ with respect to $y^2 = 4x$, and verify by recomputing its polar.
 
@@ -242,7 +242,7 @@ Answer: polar of $(4, 0)$ is $x = \tfrac{25}{4} = \tfrac{a}{e}$ — the directri
 
 ### F · Normals & Parametric Geometry (Q29–Q32)
 
-#### **Q29**[JEE Main]Find the point on [formula] with eccentric angle [formula] , and verify it lie…
+#### **Q29**[JEE Main]Find the point on $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$ with eccentric angle $60^\circ$…
 
 Find the point on $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$ with eccentric angle $60^\circ$, and verify it lies on the curve.
 
@@ -256,14 +256,14 @@ Find the tangent and the normal at the point of Q29, and verify they are perpend
 
 Answer: tangent $3x + 4\sqrt3\,y = 24$; normal $8\sqrt3\,x - 6y = 7\sqrt3$; slopes $-\tfrac{3}{4\sqrt3}$ and $\tfrac{4\sqrt3}{3}$
 
-#### **Q31**[JEE Adv]Find the points on [formula] at which the normal has slope [formula] .
+#### **Q31**[JEE Adv]Find the points on $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$ at which the normal has slope $1$.
 
 Find the points on $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$ at which the normal has slope $1$.
 
 
 Answer: $\pm\left(\tfrac{16}{5}, \tfrac95\right)$
 
-#### **Q32**[Olympiad]Prove that the normals at the ends of any focal chord of [formula] are perpend…
+#### **Q32**[Olympiad]Prove that the normals at the ends of any focal chord of $y^2 = 4ax$ are perpendicular, and…
 
 Prove that the normals at the ends of any focal chord of $y^2 = 4ax$ are perpendicular, and verify for $a = 1$, $t = 2$.
 
@@ -273,28 +273,28 @@ Answer: slopes $-t$ and $\tfrac1t$, product $-1$; normals $y = -2x + 12$ and $y 
 
 ### G · Reflection, Confocals & Triangles (Q33–Q36)
 
-#### **Q33**[JEE Adv]A whispering gallery has ceiling profile [formula] (meters). How far apart are…
+#### **Q33**[JEE Adv]A whispering gallery has ceiling profile $\dfrac{x^2}{100} + \dfrac{y^2}{36} = 1$ (meters)…
 
 A whispering gallery has ceiling profile $\dfrac{x^2}{100} + \dfrac{y^2}{36} = 1$ (meters). How far apart are the foci — the two "whisper spots"?
 
 
 Answer: $2c = 2\sqrt{100 - 36} = 16$ m
 
-#### **Q34**[Olympiad]Verify numerically that at [formula] on [formula] , the tangent bisects the an…
+#### **Q34**[Olympiad]Verify numerically that at $P = \left(5, \tfrac94\right)$ on…
 
 Verify numerically that at $P = \left(5, \tfrac94\right)$ on $\dfrac{x^2}{16} - \dfrac{y^2}{9} = 1$, the tangent bisects the angle between the two focal segments.
 
 
 Answer: both angles $\approx 38.66^\circ$ — tangent is the internal bisector
 
-#### **Q35**[Olympiad]Find the orthocentre of the triangle [formula] , [formula] , [formula] ; show …
+#### **Q35**[Olympiad]Find the orthocentre of the triangle $(0, 4)$, $(6, 4)$, $(2, 0)$; show that the…
 
 Find the orthocentre of the triangle $(0, 4)$, $(6, 4)$, $(2, 0)$; show that the rectangular hyperbola $xy - 4x - 2y + 8 = 0$ passes through all three vertices and the orthocentre.
 
 
 Answer: $H = (2, 2)$; $H$ and all vertices satisfy the hyperbola
 
-#### **Q36**[Olympiad]Find the hyperbola confocal with [formula] that passes through [formula] , and…
+#### **Q36**[Olympiad]Find the hyperbola confocal with $\dfrac{x^2}{25} + \dfrac{y^2}{16} = 1$ that passes…
 
 Find the hyperbola confocal with $\dfrac{x^2}{25} + \dfrac{y^2}{16} = 1$ that passes through $\left(4, \tfrac{12}{5}\right)$, and verify the two curves meet at right angles there.
 
@@ -304,14 +304,14 @@ Answer: $\dfrac{25x^2}{144} - \dfrac{25y^2}{81} = 1$; slopes $-\tfrac{16}{15}$ a
 
 ### H · Synthesis & Stretch (Q37–Q38)
 
-#### **Q37**[Olympiad]Show that the midpoints of all focal chords of [formula] lie on a parabola; fi…
+#### **Q37**[Olympiad]Show that the midpoints of all focal chords of $y^2 = 4ax$ lie on a parabola; find it and…
 
 Show that the midpoints of all focal chords of $y^2 = 4ax$ lie on a parabola; find it and its latus rectum, and check with the chord whose ends are $t = 2$ and $t = -\tfrac12$ for $a = 1$.
 
 
 Answer: locus $y^2 = 2a(x - a)$; LR $= 2a$; midpoint $\left(\tfrac{17}{8}, \tfrac32\right)$ satisfies it
 
-#### **Q38**[Olympiad]Prove that for any tangent to [formula] , the product of the perpendicular dis…
+#### **Q38**[Olympiad]Prove that for any tangent to $\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$, the product of the…
 
 Prove that for any tangent to $\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$, the product of the perpendicular distances of the two foci from the tangent equals $b^2$, and verify at the tangent with eccentric angle $60^\circ$ for $a = 4$, $b = 3$.
 

@@ -15,9 +15,6 @@ created: 2026-09-27
 > [!info] Navigation
 > 📖 [[Home|Vault home]] · 📝 [[Complex-Numbers — Paper|Olympiad Paper]] · ✅ [[Complex-Numbers — Solutions|Solutions]]
 
-# Complex-Numbers — Complete Course Notes
-
-
 *Module · Complex Numbers*
 
 # Complex Numbers
@@ -34,7 +31,6 @@ From the equation that has no answer — $x^2 = -1$ — to a geometric language 
 >
 > Algebraic: $z = a + bi$, conjugate $\bar z$, modulus $|z|$, division via $\bar z$. Geometric: $z$ is a point/vector in the plane; $|z-w|$ is a distance; $|zw| = |z||w|$ says multiplication stretches; $\times i$ is a quarter-turn. **One object, two faces — problems are solved at the interface.**
 
-
 ### ▣ The roadmap
 
 **Diagram**
@@ -50,7 +46,6 @@ From the equation that has no answer — $x^2 = -1$ — to a geometric language 
 | 5 · Olympiad geometry | geometry collapses to algebra | Ptolemy as $\|z_1z_3+w_1w_3\|=\|z_1z_2\|\|w_2w_3\|$-style identities, van Aubel, regular $n$-gons |
 | 6 · Synthesis | the whole toolkit | 38-question paper + full solutions |
 
-
 ### ! One-page mindset
 
 Three habits separate people who "know complex numbers" from people who can solve olympiad problems with them:
@@ -58,8 +53,6 @@ Three habits separate people who "know complex numbers" from people who can solv
 - **Distance, not coordinates.** The moment you see $|z-a|$, stop computing: it is the distance from $a$. Loci problems are geometry problems wearing algebra clothes.
 - **Conjugate = reflection.** $\bar z$ mirrors across the real axis; $\frac{z_1}{z_2}$ is the "shape" (rotation + scale) that takes $z_2$ to $z_1$. Perpendicularity, collinearity and similarity all become one-line statements.
 - **Verify small cases first.** Before trusting an identity in $n$ roots of unity, test $n=2,3,4$ by hand — the arithmetic either clicks or it doesn't.
-
-
 
 ## Roadmap
 
@@ -91,7 +84,7 @@ Three habits separate people who "know complex numbers" from people who can solv
 
 *Chapter 1 · Foundations*
 
-# Complex Numbers: Algebra & the Plane
+**Complex Numbers: Algebra & the Plane**
 
 From the equation $x^2 = -1$ that has no answer, to a two-dimensional algebra where *multiplication is rotation*. Nothing is a convention to memorize: every rule is forced by one choice, $i^2 = -1$, and everything geometric follows from the arithmetic (and vice versa).
 
@@ -128,7 +121,7 @@ $$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2}. $$
 $$ (3+2i)(5-i) = 15 - 3i + 10i - 2i^2 = 15 + 7i + 2 = 17 + 7i. $$
  Watch the last step: $-2i^2 = -2(-1) = +2$. That sign flip is the single most common slip in complex arithmetic.
 
-#### **P1**[JEE Main][practice][arithmetic]Simplify [formula] .
+#### **P1**[JEE Main][practice][arithmetic]Simplify $(1+2i)^2 + \dfrac{3-i}{i}$.
 
 Simplify $(1+2i)^2 + \dfrac{3-i}{i}$.
 
@@ -137,11 +130,9 @@ Simplify $(1+2i)^2 + \dfrac{3-i}{i}$.
 
 $(1+2i)^2 = 1 + 4i + 4i^2 = -3 + 4i$. For the fraction, note $\frac{1}{i} = -i$ (since $i \cdot (-i) = -i^2 = 1$): $\frac{3-i}{i} = (3-i)(-i) = -3i + i^2 = -1 - 3i$.
 
-
 Sum: $(-3 + 4i) + (-1 - 3i) = \mathbf{-4 + i}$.
 
 </details>
-
 
 ### 1.2 The conjugate, division, and why $\mathbb C$ is a field
 
@@ -188,7 +179,7 @@ $$ \frac{1+2i}{3-i} = \frac{(1+2i)(3+i)}{(3-i)(3+i)} = \frac{3 + i + 6i + 2i^2}{
 >       = 2^{20}(i^4)^5 = 2^{20} = 1{,}048{,}576. $$
 >  The trick is always: **reduce the base first, then the exponent mod 4**.
 
-#### **P2**[JEE Main][practice][conjugate · division]Compute [formula] .
+#### **P2**[JEE Main][practice][conjugate · division]Compute $\left(\dfrac{1+i}{1-i}\right)^3$.
 
 Compute $\left(\dfrac{1+i}{1-i}\right)^3$.
 
@@ -200,7 +191,7 @@ Conjugate the denominator: $\frac{1+i}{1-i} = \frac{(1+i)^2}{(1-i)(1+i)}
 
 </details>
 
-#### **P3**[JEE Adv][practice][real/imaginary parts]Find all [formula] for which [formula] is purely imaginary.
+#### **P3**[JEE Adv][practice][real/imaginary parts]Find all $z \in \mathbb C$ for which $2\bar z - 3z$ is purely imaginary.
 
 Find all $z \in \mathbb C$ for which $2\bar z - 3z$ is purely imaginary.
 
@@ -209,11 +200,9 @@ Find all $z \in \mathbb C$ for which $2\bar z - 3z$ is purely imaginary.
 
 Write $z = a + bi$: $\bar z = a - bi$. Then $2\bar z - 3z = 2(a-bi) - 3(a+bi) = -a - 5bi$.
 
-
 Purely imaginary $\iff$ real part $0$ $\iff a = 0$. So $z$ must be **purely imaginary** (including $z = 0$): the whole imaginary axis.
 
 </details>
-
 
 ### 1.3 The complex plane — where geometry lives
 
@@ -274,7 +263,7 @@ $$ |z - w| = \sqrt{(a-c)^2 + (b-d)^2} $$
 - $|z - 3i| = 4$: distance from $3i$ (the point $(0,4)$) is $4$ → a circle centered at $(0,4)$ with radius $4$.
 - $|z + 1| = |z - 2|$: distance from $-1$ equals distance from $2$ → the perpendicular bisector of the segment from $-1$ to $2$ → the vertical line $\operatorname{Re} z = \frac12$.
 
-#### **P4**[JEE Adv][practice][triangle inequality · geometry]If [formula] , find the minimum of [formula] . At which [formula] is it attain…
+#### **P4**[JEE Adv][practice][triangle inequality · geometry]If $|z| = 1$, find the minimum of $|z - 3 - 4i|$. At which $z$ is it attained?
 
 If $|z| = 1$, find the minimum of $|z - 3 - 4i|$. At which $z$ is it attained?
 
@@ -285,12 +274,11 @@ Geometrically: $z$ ranges over the unit circle; we want the closest point on it 
 $$ |z - (3+4i)| \ge |3+4i| - |z| = 5 - 1 = 4, $$
  with equality when $z$ points the same way as $3+4i$: $z = \frac{3+4i}{5}$.
 
-
 **Minimum $= 4$**, attained at $z = \frac35 + \frac45 i$.
 
 </details>
 
-#### **P5**[JEE Main][practice][parallelogram law]For [formula] and [formula] , compute both sides of [formula] and verify the i…
+#### **P5**[JEE Main][practice][parallelogram law]For $z = 3+4i$ and $w = 1-2i$, compute both sides of $|z+w|^2 + |z-w|^2 = 2|z|^2 + 2|w|^2$…
 
 For $z = 3+4i$ and $w = 1-2i$, compute both sides of $|z+w|^2 + |z-w|^2 = 2|z|^2 + 2|w|^2$ and verify the identity numerically.
 
@@ -299,13 +287,12 @@ For $z = 3+4i$ and $w = 1-2i$, compute both sides of $|z+w|^2 + |z-w|^2 = 2|z|^2
 
 $|z|^2 = 25$, $|w|^2 = 5$, so RHS $= 2(25) + 2(5) = 60$.
 
-
 $z+w = 4+2i \Rightarrow |z+w|^2 = 16 + 4 = 20$; $\ z-w = 2+6i \Rightarrow
         |z-w|^2 = 4 + 36 = 40$. LHS $= 20 + 40 = 60$. ✓ — and notice you never needed to "know" the formula: both sides are just sums of $a^2+b^2$.
 
 </details>
 
-#### **P6**[warm-up][practice][real/imaginary parts]Solve for [formula] : [formula] and [formula] .
+#### **P6**[warm-up][practice][real/imaginary parts]Solve for $z$: $\ \ z + \bar z = 4$ and $\ z - \bar z = 6i$.
 
 Solve for $z$: $\ \ z + \bar z = 4$ and $\ z - \bar z = 6i$.
 
@@ -315,7 +302,6 @@ Solve for $z$: $\ \ z + \bar z = 4$ and $\ z - \bar z = 6i$.
 Add the equations: $2z = 4 + 6i$, so $z = 2 + 3i$. (Check: $z+\bar z = 4$ ✓, $z - \bar z = 6i$ ✓.) This is the whole method: $z + \bar z = 2\operatorname{Re}z$, $z - \bar z = 2i\operatorname{Im}z$ — two linear equations in the two parts.
 
 </details>
-
 
 ### 1.4 Multiplication stretches and rotates — the subject in one picture
 
@@ -343,7 +329,7 @@ $$ i(a + bi) = -b + ai, $$
 >
 > **Algebraic** ($a+bi$, $\bar z$, $|z|$): fast, exact, no drawing. **Geometric** (points, distances, rotations): sees structure, solves loci and optimization instantly. The working method for JEE Advanced and Olympiad problems: *translate the problem into the language that makes it visible*, solve there, translate back. Every later chapter is a new translation rule (polar form = the rotation angle made explicit; roots of unity = regular polygons made algebraic).
 
-#### **P7**[JEE Adv][practice][algebra ↔ geometry]Solve [formula] in [formula] . Describe the solution set geometrically.
+#### **P7**[JEE Adv][practice][algebra ↔ geometry]Solve $iz = \bar z$ in $\mathbb C$. Describe the solution set geometrically.
 
 Solve $iz = \bar z$ in $\mathbb C$. Describe the solution set geometrically.
 
@@ -352,12 +338,11 @@ Solve $iz = \bar z$ in $\mathbb C$. Describe the solution set geometrically.
 
 Algebra: write $z = a + bi$. Then $iz = -b + ai$ and $\bar z = a - bi$. Equality forces $-b = a$ and $a = -b$ — the same condition. So $z = a - ai = a(1 - i)$ for arbitrary $a \in \mathbb R$ (including $a = 0$).
 
-
 Geometry: the solutions are exactly the points on the line $y = -x$ through the origin. Notice the symmetry: $iz = \bar z$ says "rotating $z$ by $90^\circ$ gives its mirror in the real axis" — that is exactly the line at $-45^\circ$.
 
 </details>
 
-#### **P8**[Olympiad][practice][reverse triangle inequality]If [formula] , find the minimum of [formula] .
+#### **P8**[Olympiad][practice][reverse triangle inequality]If $|z| = 2$, find the minimum of $|z + i|$.
 
 If $|z| = 2$, find the minimum of $|z + i|$.
 
@@ -366,14 +351,11 @@ If $|z| = 2$, find the minimum of $|z + i|$.
 
 Reverse triangle inequality: $|z + i| \ge \big||z| - |i|\big| = |2 - 1| = 1$.
 
-
 Equality holds when $z$ and $i$ point in *opposite* directions (the degenerate-triangle case with opposite orientation): $z = -2i$. Indeed $|-2i + i| = |-i| = 1$. **Minimum $= 1$**, attained at $z = -2i$.
-
 
 Same shape as P4 with the roles of the circle and the point swapped — the inequality $|u+v| \ge ||u|-|v||$ is the tool that closes both.
 
 </details>
-
 
 ### 1.5 The bridge — where this course is going
 
@@ -402,8 +384,6 @@ Meanwhile $x^2 + 1 = (x - i)(x + i)$: a "quadratic irreducible over the reals" s
 > - $|z - a| = r$ has center at $a$ — the *minus* inside the modulus points to the center, not to a reflection.
 > - $\bar{\bar z} = z$, but $\overline{z_1 z_2} = \bar z_1\,\bar z_2$ and $\overline{z_1 + z_2} = \bar z_1 + \bar z_2$ — conjugation respects $+$ and $\cdot$, so you may conjugate entire equations.
 
-
-
 ---
 
 ---
@@ -414,7 +394,7 @@ Meanwhile $x^2 + 1 = (x - i)(x + i)$: a "quadratic irreducible over the reals" s
 
 *Chapter 2 · Polar Form & De Moivre*
 
-# Stretch × Rotate
+**Stretch × Rotate**
 
 Every complex number is a *length times a direction*. Once the direction becomes a variable, multiplication becomes angle-addition, powers become angle-multiplication, and "find the n-th roots" becomes "draw a regular n-gon". De Moivre's theorem is the engine; everything in this chapter is its consequence.
 
@@ -453,7 +433,7 @@ $$ \begin{array}{c|c|c}
 >       \arg\frac{z_1}{z_2} = \arg z_1 - \arg z_2 \pmod{2\pi}, $$
 >  and $\arg \bar z = -\arg z$, $\arg(z^n) = n\arg z$. Proof preview: these all follow in one line from the polar form (next section). Consequence you can already use: the angle of the product is the *sum of the angles* — "rotate by $\theta_1$, then by $\theta_2$, is a rotation by $\theta_1+\theta_2$".
 
-#### **P9**[warm-up][practice][argument]Find the modulus and principal argument of [formula] . Hence express it in the…
+#### **P9**[warm-up][practice][argument]Find the modulus and principal argument of $-1 + i$. Hence express it in the form…
 
 Find the modulus and principal argument of $-1 + i$. Hence express it in the form $r(\cos\theta + i\sin\theta)$ with $r &gt; 0$.
 
@@ -462,14 +442,12 @@ Find the modulus and principal argument of $-1 + i$. Hence express it in the for
 
 $|-1+i| = \sqrt{1+1} = \sqrt2$. Point $(-1, 1)$ is in quadrant II; reference angle $\pi/4$: $\operatorname{Arg}(-1+i) = \pi - \pi/4 = 3\pi/4$.
 
-
-
 $$ -1 + i = \sqrt2\left(\cos\frac{3\pi}{4} + i\sin\frac{3\pi}{4}\right). $$
  Check: $\cos 3\pi/4 = -\frac{\sqrt2}{2}$, $\sin 3\pi/4 = \frac{\sqrt2}{2}$ → $\sqrt2 \cdot (-\frac{\sqrt2}{2} + i\frac{\sqrt2}{2}) = -1 + i$ ✓
 
 </details>
 
-#### **P10**[JEE Main][practice][argument]Express [formula] in polar form with principal argument.
+#### **P10**[JEE Main][practice][argument]Express $1 - i\sqrt3$ in polar form with principal argument.
 
 Express $1 - i\sqrt3$ in polar form with principal argument.
 
@@ -478,13 +456,10 @@ Express $1 - i\sqrt3$ in polar form with principal argument.
 
 $|1 - i\sqrt3| = \sqrt{1+3} = 2$. Point $(1, -\sqrt3)$ is quadrant IV with reference angle $\tan^{-1}(\sqrt3) = \pi/3$, so the principal argument is $-\pi/3$.
 
-
-
 $$ 1 - i\sqrt3 = 2\left(\cos\frac{-\pi}{3} + i\sin\frac{-\pi}{3}\right). $$
  (Equivalently $2(\cos \frac{5\pi}{3} + i\sin\frac{5\pi}{3})$ — same direction, non-principal representative.)
 
 </details>
-
 
 ### 2.2 Polar (trigonometric) form
 
@@ -494,7 +469,6 @@ $$ z = r(\cos\theta + i\sin\theta), \qquad r = |z| &gt; 0,\ \theta \in \arg z. $
 
 The inverse conversion (polar → Cartesian) is just expansion: 
 $$ r(\cos\theta + i\sin\theta) = r\cos\theta + i\, r\sin\theta. $$
-
 
 > [!abstract] First Principles — why the polar form multiplies the way it does
 >
@@ -511,7 +485,7 @@ $$ r(\cos\theta + i\sin\theta) = r\cos\theta + i\, r\sin\theta. $$
 - Polar: $-\sqrt3 + i = 2(\cos 5\pi/6 + i\sin 5\pi/6)$.
 - Back: $2\cos 5\pi/6 = 2(-\sqrt3/2) = -\sqrt3$, $2\sin 5\pi/6 = 2(1/2) = 1$ ✓.
 
-#### **P11**[JEE Main][practice][polar form]Find the polar form of [formula] , and of [formula] .
+#### **P11**[JEE Main][practice][polar form]Find the polar form of $-i$, and of $\dfrac{1}{1+i}$.
 
 Find the polar form of $-i$, and of $\dfrac{1}{1+i}$.
 
@@ -520,16 +494,12 @@ Find the polar form of $-i$, and of $\dfrac{1}{1+i}$.
 
 $-i$: $r = 1$, direction straight down: $\operatorname{Arg} = -\pi/2$. Polar: $\cos(-\pi/2) + i\sin(-\pi/2)$.
 
-
 $\frac{1}{1+i} = \frac{1-i}{(1+i)(1-i)} = \frac{1-i}{2} = \frac12 - \frac12 i$. So $r = \sqrt{\tfrac14 + \tfrac14} = \frac{1}{\sqrt2}$, quadrant IV, reference $\pi/4$: $\operatorname{Arg} = -\pi/4$.
-
-
 
 $$ \frac{1}{1+i} = \frac{1}{\sqrt2}\left(\cos\frac{-\pi}{4} + i\sin\frac{-\pi}{4}\right). $$
  Sanity check via arguments: $\arg(1/(1+i)) = -\arg(1+i) = -\pi/4$ ✓, $|1/(1+i)| = 1/|1+i| = 1/\sqrt2$ ✓ — the two-language method works in either direction.
 
 </details>
-
 
 ### 2.3 De Moivre's theorem — the engine
 
@@ -565,7 +535,7 @@ $$ \boxed{\ \cos 3\theta = 4\cos^3\theta - 3\cos\theta,\qquad
 >
 > $1+i = \sqrt2\, e^{i\pi/4}$, so $(1+i)^n = 2^{n/2}(\cos n\pi/4 + i\sin n\pi/4)$: the angle steps by $45^\circ$ each power. In particular $(1+i)^2 = 2i$, $(1+i)^4 = -4$, $(1+i)^8 = 16$, and the cycle of directions has period 8. Any $(1+i)^n$ with $n \le 40$ is a 5-second computation: halve the exponent's parity, multiply by $2^{n/2}$, read the angle from the table of $n\pi/4 \bmod 2\pi$.
 
-#### **P12**[JEE Main][practice][De Moivre]Compute [formula] .
+#### **P12**[JEE Main][practice][De Moivre]Compute $(1+i)^8$.
 
 Compute $(1+i)^8$.
 
@@ -574,12 +544,11 @@ Compute $(1+i)^8$.
 
 $(1+i)^8 = \big((1+i)^2\big)^4 = (2i)^4 = 16\, i^4 = \mathbf{16}$.
 
-
 De Moivre check: $(\sqrt2\, e^{i\pi/4})^8 = 2^4 e^{i2\pi} = 16$ ✓.
 
 </details>
 
-#### **P13**[JEE Adv][practice][De Moivre · trig]If [formula] , express [formula] as a function of [formula] .
+#### **P13**[JEE Adv][practice][De Moivre · trig]If $z = \cos\theta + i\sin\theta$, express $\operatorname{Re}(z^3 + z^{-3})$ as a function…
 
 If $z = \cos\theta + i\sin\theta$, express $\operatorname{Re}(z^3 + z^{-3})$ as a function of $\cos\theta$.
 
@@ -588,8 +557,6 @@ If $z = \cos\theta + i\sin\theta$, express $\operatorname{Re}(z^3 + z^{-3})$ as 
 
 By De Moivre: $z^3 = \cos 3\theta + i\sin 3\theta$. Also $z^{-1} = \bar z = \cos\theta - i\sin\theta = \cos(-\theta) + i\sin(-\theta)$, so $z^{-3} = \cos 3\theta - i\sin 3\theta$.
 
-
-
 $$ z^3 + z^{-3} = 2\cos 3\theta \quad (\text{purely real}) $$
  and with the triple-angle formula, 
 $$ \operatorname{Re}(z^3+z^{-3}) = 2\cos 3\theta = \mathbf{8\cos^3\theta - 6\cos\theta}. $$
@@ -597,7 +564,7 @@ $$ \operatorname{Re}(z^3+z^{-3}) = 2\cos 3\theta = \mathbf{8\cos^3\theta - 6\cos
 
 </details>
 
-#### **P14**[Olympiad][practice][De Moivre · identity]Prove that for all [formula] : [formula] (Here [formula] — the notation of §2.…
+#### **P14**[Olympiad][practice][De Moivre · identity]Prove that for all $\theta$:
 
 Prove that for all $\theta$: 
 $$ e^{i\theta} + e^{i(\theta + 2\pi/3)} + e^{i(\theta + 4\pi/3)} = 0. $$
@@ -610,11 +577,9 @@ Factor out $e^{i\theta}$:
 $$ e^{i\theta}\big(1 + e^{2\pi i/3} + e^{4\pi i/3}\big). $$
  The bracket is $1 + \omega + \omega^2$ with $\omega = e^{2\pi i/3}$ — the sum of all three cube roots of 1. Since $t^3 - 1 = (t-1)(t^2+t+1)$, every root of $t^2+t+1 = 0$ (i.e. $\omega, \omega^2$) satisfies $1 + \omega + \omega^2 = 0$. Hence the whole expression is $0$. $\square$
 
-
 Geometrically: three unit vectors spaced $120^\circ$ apart sum to zero — an equilateral triangle closed. This single fact powers a third of Chapter 3.
 
 </details>
-
 
 ### 2.4 The n-th roots of a complex number
 
@@ -649,7 +614,7 @@ $$ z_k = \sqrt8\left(\cos\frac{\pi + 2k\pi}{2} + i\sin\frac{\pi+2k\pi}{2}\right)
 >
 > When a problem writes $\sqrt{w}$ for complex $w$, the convention is the **principal square root** (the one with argument in $(-\pi/2, \pi/2]$, i.e. non-negative real part — and for purely negative imaginary results, the one with non-negative imaginary part). But "find the n-th roots" always means *all n*. The ambiguity is a classic trap: $\sqrt{(-1)^2} = 1$, while $(\sqrt{-1})^2 = -1$ — never distribute a root over a product for complex numbers.
 
-#### **P15**[JEE Main][practice][n-th roots]Find all fourth roots of [formula] .
+#### **P15**[JEE Main][practice][n-th roots]Find all fourth roots of $16$.
 
 Find all fourth roots of $16$.
 
@@ -658,15 +623,13 @@ Find all fourth roots of $16$.
 
 $R = 16$, $\phi = 0$: $r = 2$, angles $\frac{2k\pi}{4} = \frac{k\pi}{2}$, $k = 0,1,2,3$.
 
-
-
 $$ z_k = 2\left(\cos\frac{k\pi}{2} + i\sin\frac{k\pi}{2}\right)
         \in \{\ 2,\ 2i,\ -2,\ -2i\ \}. $$
  Each checks: $(2i)^4 = 16i^4 = 16$ ✓. Geometrically: the square inscribed in $|z| = 2$ — exactly as the diagram shows.
 
 </details>
 
-#### **P16**[JEE Adv][practice][n-th roots · geometry]Let [formula] be the three cube roots of [formula] . Find [formula] and [formu…
+#### **P16**[JEE Adv][practice][n-th roots · geometry]Let $z_1, z_2, z_3$ be the three cube roots of $-27$. Find $z_1 z_2 + z_2 z_3 + z_3 z_1$…
 
 Let $z_1, z_2, z_3$ be the three cube roots of $-27$. Find $z_1 z_2 + z_2 z_3 + z_3 z_1$ and $z_1 + z_2 + z_3$.
 
@@ -678,14 +641,12 @@ $$ z_1 + z_2 + z_3 = -\frac{0}{1} = \mathbf{0}, \qquad
         z_1z_2 + z_2z_3 + z_3z_1 = \frac{0}{1} = \mathbf{0}. $$
  **But the geometry explains *why* Vieta says so:** the roots are $-3, \tfrac32 \pm i\tfrac{3\sqrt3}{2}$ — an equilateral triangle centered at the origin, and any regular $n$-gon centered at $0$ has vertex-sum $0$ (§3, roots of unity) and, for $n = 3$, the pairwise-product sum $0$ as well.
 
-
 Explicit check (for the anxious): the arguments are $\pi, \pi/3, 5\pi/3$, so the pairwise products are $9e^{i4\pi/3},\ 9e^{i2\pi/3},\ 9e^{i2\pi} = 9$, and 
 $$ z_1z_2 + z_2z_3 + z_3z_1 = 9\left(e^{i4\pi/3} + e^{i2\pi/3} + 1\right)
         = 9\left(-\tfrac12 - i\tfrac{\sqrt3}{2} - \tfrac12 + i\tfrac{\sqrt3}{2} + 1\right) = 0 \ \checkmark $$
  Vieta is the method; this is the verification.
 
 </details>
-
 
 ### 2.5 Every complex number has a square root
 
@@ -715,7 +676,7 @@ $$ \sqrt{1+i} = \sqrt{\frac{1+\sqrt2}{2}} \;+\; i\,\sqrt{\frac{\sqrt2-1}{2}}. $$
 >
 > Now the quadratic formula *always* works: $x^2 + bx + c = 0$ has the two roots $\frac{-b \pm \sqrt{b^2-4c}}{2}$, with $\sqrt{\ \cdot\ }$ defined on all of $\mathbb C$. Combined with the fundamental theorem of algebra (every polynomial splits over $\mathbb C$), the complex numbers are the algebraically closed home of polynomial equations — the reason the subject exists at all in olympiad mathematics.
 
-#### **P17**[JEE Main][practice][square roots]Find the square roots of [formula] .
+#### **P17**[JEE Main][practice][square roots]Find the square roots of $3+4i$.
 
 Find the square roots of $3+4i$.
 
@@ -724,13 +685,12 @@ Find the square roots of $3+4i$.
 
 $r = 5$: $x^2 = \frac{5+3}{2} = 4$, $y^2 = \frac{5-3}{2} = 1$, $b &gt; 0$ → same sign. **Roots: $\pm(2+i)$.** Check $(2+i)^2 = 3+4i$ ✓.
 
-
 Shortcut for perfect cases: guess $(m+ni)^2 = m^2-n^2 + 2mni =
         a+bi$ with small integers — here $m^2+n^2 = 5$ immediately suggests $1,2$.
 
 </details>
 
-#### **P18**[JEE Adv][practice][square roots · algebra]Solve [formula] . Verify both roots directly.
+#### **P18**[JEE Adv][practice][square roots · algebra]Solve $z^2 = 4i$. Verify both roots directly.
 
 Solve $z^2 = 4i$. Verify both roots directly.
 
@@ -739,14 +699,11 @@ Solve $z^2 = 4i$. Verify both roots directly.
 
 $a = 0$, $b = 4$, $r = 4$: $x^2 = \frac{4+0}{2} = 2$, $y^2 = \frac{4-0}{2} = 2$, $b &gt; 0$ → same sign. Roots: $\pm(1+i)\sqrt{2} = \pm(\sqrt2 + i\sqrt2)$.
 
-
 Check directly: $(\sqrt2 + i\sqrt2)^2 = 2(1+i)^2 = 2(2i) = 4i$ ✓.
-
 
 Polar cross-check: $4i = 4e^{i\pi/2}$; square roots $2e^{i\pi/4}, 2e^{i5\pi/4} = \pm\sqrt2(1+i)$ ✓ — both languages agree.
 
 </details>
-
 
 ### 2.6 Euler's form — $e^{i\theta}$, and the formula that unifies everything
 
@@ -771,7 +728,7 @@ $$ e^{i\theta} := \cos\theta + i\sin\theta, $$
 
 That last row is the workhorse of the next two chapters: *a complex number plus its conjugate is twice its real part*, and for $|z| = 1$, $\bar z = 1/z$, so $z + 1/z = 2\cos\theta$ whenever $z = e^{i\theta}$. Chapter 3 is essentially the art of using $e^{i\theta}$-form to turn polynomial and binomial questions into geometry on the unit circle.
 
-#### **P19**[JEE Main][practice][Euler form]Using [formula] notation, show that [formula] .
+#### **P19**[JEE Main][practice][Euler form]Using $e^{i\theta}$ notation, show that $(1+i)^{10} = 32i$.
 
 Using $e^{i\theta}$ notation, show that $(1+i)^{10} = 32i$.
 
@@ -785,7 +742,7 @@ $$ (1+i)^{10} = (\sqrt2)^{10} e^{i10\pi/4} = 2^5 e^{i5\pi/2} = 32 e^{i(\pi/2 + 2
 
 </details>
 
-#### **P20**[Olympiad][practice][Euler form · geometry]Let [formula] be four quarter-turn- adjacent points [formula] (a square on the…
+#### **P20**[Olympiad][practice][Euler form · geometry]Let $z_0, z_1, z_2, z_3$ be four quarter-turn-*adjacent* points…
 
 Let $z_0, z_1, z_2, z_3$ be four quarter-turn-*adjacent* points $e^{i\alpha}, e^{i(\alpha+\pi/2)}, e^{i(\alpha+\pi)}, e^{i(\alpha+3\pi/2)}$ (a square on the unit circle). Show that 
 $$ z_0 + z_1 + z_2 + z_3 = 0 $$
@@ -798,13 +755,11 @@ Factor $e^{i\alpha}$:
 $$ e^{i\alpha}(1 + i + (-1) + (-i)) = e^{i\alpha}\cdot 0 = 0. $$
  The bracket is $1 + e^{i\pi/2} + e^{i\pi} + e^{i3\pi/2}$ — the sum of all fourth roots of 1, which is $0$ because $t^4 - 1 = (t-1)(t^3+t^2+t+1)$ and the other three roots satisfy $t^3+t^2+t+1 = 0$.
 
-
 **General $n$:** the vertices are $re^{i\alpha}e^{2\pi ik/n}$, $k = 0,\dots,n-1$; factor $re^{i\alpha}$ and sum the geometric series with ratio $\omega = e^{2\pi i/n} \ne 1$: 
 $$ \sum_{k=0}^{n-1}\omega^k = \frac{\omega^n - 1}{\omega - 1} = 0. \qquad \square $$
  This "vertex-sum zero" fact — proved once here — is used as a black box in Chapters 3, 5 and 6 (loci, Ptolemy, Napoleon).
 
 </details>
-
 
 ### 2.7 Mistake checklist & the bridge to Chapter 3
 
@@ -819,8 +774,6 @@ $$ \sum_{k=0}^{n-1}\omega^k = \frac{\omega^n - 1}{\omega - 1} = 0. \qquad \squar
 
 **Where this is going.** The $n$-th roots of $1$ themselves — $1, \omega, \omega^2, \dots$ with $\omega = e^{2\pi i/n}$ — are the next chapter's heroes. Two facts from this chapter carry straight across: (i) they form a regular $n$-gon (vertex-sum zero, §2.6), and (ii) $1 + \omega + \cdots + \omega^{n-1} = 0$ (geometric-series ratio $\omega \ne 1$). Chapter 3 turns these into a computation toolkit: sums of powers, filter formulas for "every r-th term" binomial sums, and the product $\prod_{k=1}^{n-1}(1 - \omega^k) = n$.
 
-
-
 ---
 
 ---
@@ -830,8 +783,6 @@ $$ \sum_{k=0}^{n-1}\omega^k = \frac{\omega^n - 1}{\omega - 1} = 0. \qquad \squar
 *5 sections · 8 questions*
 
 *Chapter 3 of 6*
-
-# Roots of Unity
 
 The most special numbers in the whole subject: the solutions of $z^n = 1$. One definition buys you a whole family of identities — sums that vanish, products that collapse to $n$, trigonometric products with clean answers, and the "roots-of-unity filter," a JEE-Advanced/Olympiad workhorse for binomial sums with $k \equiv r \pmod n$. Master this chapter and a whole class of "magical" answers stops being magical.
 
@@ -860,7 +811,6 @@ $$ (1+\omega)(1+\omega^2) = e^{i\pi/3} \cdot e^{-i\pi/3} = 1. $$
 >
 > $(1+\omega)(1+\omega^2) = 1$, and **not** 2. The slip is treating $\omega + \omega^2$ as $+1$. Drill: $\omega + \omega^2 = -1$, $\omega\omega^2 = 1$, $\omega^3 = 1$. If you ever write "2" here, one of those three is wrong in your head.
 
-
 ### 3.2 The $n$-th roots of unity and the vanishing sum
 
 Generalize to $z^n = 1$. By Ch 2, the exactly-$n$ solutions are
@@ -879,7 +829,7 @@ Generalize to $z^n = 1$. By Ch 2, the exactly-$n$ solutions are
 
 1 ζ ζ² −1 ζ⁴ ζ⁵ O The six sixth-roots of unity, $\zeta^k = e^{2\pi i k/6}$, form a regular hexagon. Their sum is $0$ — the vectors close the hexagon.
 
-#### **P25**[JEE Main][roots of unity]Evaluate [formula] .
+#### **P25**[JEE Main][roots of unity]Evaluate $\displaystyle\sum_{k=0}^{5} e^{i\pi k/3}$.
 
 Evaluate $\displaystyle\sum_{k=0}^{5} e^{i\pi k/3}$.
 
@@ -888,11 +838,9 @@ Evaluate $\displaystyle\sum_{k=0}^{5} e^{i\pi k/3}$.
 
 The six terms are the sixth-roots of unity (in order). Either invoke $\sum_{k=0}^{5}\eta^k = \frac{1-\eta^6}{1-\eta} = 0$ with $\eta = e^{i\pi/3}$, or read the hexagon: opposite vertices cancel in pairs $(1 + (-1)) = 0$, $(e^{i\pi/3} + e^{i4\pi/3}) = 0$, $(e^{i2\pi/3} + e^{i5\pi/3}) = 0$.
 
-
 Answer: $0$
 
 </details>
-
 
 ### 3.3 Two product formulas — where the number $n$ hides
 
@@ -917,7 +865,7 @@ Sums of roots vanish; *products* of distances from $1$ to the roots produce exac
 >  **Check, $n = 6$:** $\sin\frac{\pi}{6}\sin\frac{\pi}{3}\sin\frac{\pi}{2}\sin\frac{2\pi}{3}\sin\frac{5\pi}{6}
 >       = \frac12\cdot\frac{\sqrt3}{2}\cdot1\cdot\frac{\sqrt3}{2}\cdot\frac12 = \frac{3}{16}$, and the formula gives $\frac{6}{2^5} = \frac{3}{16}$ ✓.
 
-#### **P23**[JEE Advanced][product formula]Evaluate [formula] .
+#### **P23**[JEE Advanced][product formula]Evaluate $\displaystyle\prod_{k=1}^{5}\left(1 - e^{2\pi i k/5}\right)$.
 
 Evaluate $\displaystyle\prod_{k=1}^{5}\left(1 - e^{2\pi i k/5}\right)$.
 
@@ -926,12 +874,11 @@ Evaluate $\displaystyle\prod_{k=1}^{5}\left(1 - e^{2\pi i k/5}\right)$.
 
 Immediate from the product formula with $n = 5$: the product is $5$. (You could also note the factors come in conjugate pairs, so the product is real and positive — the formula gives its value for free.)
 
-
 Answer: $5$
 
 </details>
 
-#### **P24**[Olympiad][trig product]Evaluate [formula] .
+#### **P24**[Olympiad][trig product]Evaluate…
 
 Evaluate $\displaystyle\sin\frac{\pi}{5}\sin\frac{2\pi}{5}\sin\frac{3\pi}{5}\sin\frac{4\pi}{5}$.
 
@@ -940,11 +887,9 @@ Evaluate $\displaystyle\sin\frac{\pi}{5}\sin\frac{2\pi}{5}\sin\frac{3\pi}{5}\sin
 
 By the trigonometric product formula with $n = 5$: $\prod_{k=1}^{4}\sin\frac{\pi k}{5} = \frac{5}{2^4} = \frac{5}{16}$. (Sanity: each sine is between $0$ and $1$, product $\approx 0.31$ — plausible.)
 
-
 Answer: $\dfrac{5}{16}$
 
 </details>
-
 
 ### 3.4 The roots-of-unity filter — binomial sums with $k \equiv r \pmod n$
 
@@ -972,7 +917,7 @@ $$ \frac13\left(512 - 1 - 1\right) = \frac{510}{3} = 170. $$
     = \frac13\left[512 + \omega^2(-1) + \omega(-1)\right] = \frac13\left[512 - (\omega + \omega^2)\right]
     = \frac13(512 + 1) = 171$. And $r = 2$ gives $171$ by the conjugate symmetry. Check: $170 + 171 + 171 = 512 = 2^9$ ✓ — the three residue classes partition the $2^9$ subsets of a 9-set.
 
-#### **P26**[JEE Advanced][filter]Find [formula] .
+#### **P26**[JEE Advanced][filter]Find $\displaystyle\sum_{k \equiv 0 \pmod 3} \binom{9}{k}$.
 
 Find $\displaystyle\sum_{k \equiv 0 \pmod 3} \binom{9}{k}$.
 
@@ -981,18 +926,15 @@ Find $\displaystyle\sum_{k \equiv 0 \pmod 3} \binom{9}{k}$.
 
 Filter: $\frac13\left[2^9 + (1+\omega)^9 + (1+\omega^2)^9\right] = \frac13(512 - 1 - 1) = 170$. Direct: $1 + 84 + 84 + 1 = 170$.
 
-
 Answer: $170$
-
 
 Bonus (same method): the $r = 1$ and $r = 2$ classes each sum to $171$.
 
 </details>
 
-
 ### 3.5 Practice set — $\omega$ under pressure
 
-#### **P21**[JEE Main][$\omega$ identities]If [formula] is a non-real cube root of unity, find [formula] .
+#### **P21**[JEE Main][$\omega$ identities]If $\omega$ is a non-real cube root of unity, find $(1+\omega)(1+\omega^2)$.
 
 If $\omega$ is a non-real cube root of unity, find $(1+\omega)(1+\omega^2)$.
 
@@ -1001,12 +943,11 @@ If $\omega$ is a non-real cube root of unity, find $(1+\omega)(1+\omega^2)$.
 
 $(1+\omega)(1+\omega^2) = 1 + (\omega+\omega^2) + \omega^3 = 1 - 1 + 1 = 1$. Polar shortcut: $(e^{i\pi/3})(e^{-i\pi/3}) = 1$.
 
-
 Answer: $1$
 
 </details>
 
-#### **P22**[JEE Main][periodic sums]Evaluate [formula] .
+#### **P22**[JEE Main][periodic sums]Evaluate $\displaystyle\sum_{k=0}^{2023} \omega^k$.
 
 Evaluate $\displaystyle\sum_{k=0}^{2023} \omega^k$.
 
@@ -1015,12 +956,11 @@ Evaluate $\displaystyle\sum_{k=0}^{2023} \omega^k$.
 
 The sum is $3\cdot 674 + 2$ terms. Each block of three sums to $1+\omega+\omega^2 = 0$, so only the last two terms survive: $\omega^{2022} + \omega^{2023} = \omega^0 + \omega^1 = 1 + \omega = -\omega^2$.
 
-
 Answer: $-\omega^2$
 
 </details>
 
-#### **P27**[JEE Main][$\omega$ identities]If [formula] and [formula] , find [formula] .
+#### **P27**[JEE Main][$\omega$ identities]If $\omega^3 = 1$ and $\omega \ne 1$, find…
 
 If $\omega^3 = 1$ and $\omega \ne 1$, find $(\omega + \omega^2)^3 + 3(\omega + \omega^2) + 1$.
 
@@ -1029,12 +969,11 @@ If $\omega^3 = 1$ and $\omega \ne 1$, find $(\omega + \omega^2)^3 + 3(\omega + \
 
 $\omega + \omega^2 = -1$, so the expression is $(-1)^3 + 3(-1) + 1 = -1 - 3 + 1 = -3$.
 
-
 Answer: $-3$
 
 </details>
 
-#### **P28**[JEE Advanced][$\omega$ + polar]If [formula] is a non-real cube root of unity, evaluate [formula] and [formula…
+#### **P28**[JEE Advanced][$\omega$ + polar]If $\omega$ is a non-real cube root of unity, evaluate $|1-\omega|^2$ and $\arg(1-\omega)$.
 
 If $\omega$ is a non-real cube root of unity, evaluate $|1-\omega|^2$ and $\arg(1-\omega)$.
 
@@ -1042,7 +981,6 @@ If $\omega$ is a non-real cube root of unity, evaluate $|1-\omega|^2$ and $\arg(
 <summary>Answer + Reasoning</summary>
 
 From identity (v): $1-\omega = \sqrt3\, e^{-i\pi/6}$. So $|1-\omega|^2 = 3$ (the squared side of the equilateral triangle on the unit circle) and $\arg(1-\omega) = -\pi/6$. Pure-algebra check: $|1-\omega|^2 = (1-\omega)(1-\omega^2) = 3$ (identity iii).
-
 
 Answer: $3$, $-\dfrac{\pi}{6}$
 
@@ -1060,8 +998,6 @@ Answer: $3$, $-\dfrac{\pi}{6}$
 >
 > Chapters 1–3 are the toolkit: algebra (Ch 1), polar/De Moivre (Ch 2), roots of unity (Ch 3). Chapter 4 is where JEE Advanced becomes JEE Advanced — equations mixing $z$ and $\bar z$, loci defined by modulus/argument conditions, and minimizing $|z - a|$ subject to constraints. Every tool in this chapter gets used there at least once.
 
-
-
 ---
 
 ---
@@ -1072,7 +1008,7 @@ Answer: $3$, $-\dfrac{\pi}{6}$
 
 *Chapter 4 of 6*
 
-# JEE Advanced Core — Loci & Optimization
+**JEE Advanced Core — Loci & Optimization**
 
 Where the toolkit of Chapters 1–3 meets the JEE Advanced question sheet. Two families dominate this chapter: *loci* — the set of all $z$ satisfying a modulus or argument condition (circles and arcs, always) — and *optimization* — the range of $|z - a|$ under a constraint on $z$. Every method below reduces, in the end, to one of three moves: separate real and imaginary parts, use the triangle inequality with an equality condition, or rotate the picture.
 
@@ -1088,7 +1024,7 @@ Chapters 1–3 assumed the equation was "pure" in $z$ (like $z^2 = -4$). JEE que
 >
 > If the equation is *linear* in $z$ and $\bar z$, say $\alpha z + \beta \bar z = c$, then conjugating the whole equation gives $\bar\alpha \bar z + \bar\beta z = \bar c$ — a *second* linear equation in the same two unknowns $z, \bar z$. Solve the 2×2 system for $z$. No expansion into $a, b$ needed.
 
-#### **P29**[JEE Advanced][z & z̄ equations]Solve [formula] .
+#### **P29**[JEE Advanced][z & z̄ equations]Solve $2z + i\bar z = 5 + 2i$.
 
 Solve $2z + i\bar z = 5 + 2i$.
 
@@ -1100,7 +1036,6 @@ Solve $2z + i\bar z = 5 + 2i$.
 $$ 2a + b = 5, \qquad a + 2b = 2. $$
  Eliminate: $2a + b = 5$ minus $2(a + 2b = 2)$, i.e. $(2a+b) - 2(a+2b) = 5 - 4$ gives $-3b = 1$, so $b = -\tfrac13$, and then $2a = 5 - b = 5 + \tfrac13 = \tfrac{16}{3}$, $a = \tfrac83$.
 
-
 **Method 2.** Conjugate the equation — remembering $\bar i = -i$: 
 $$ \overline{2z + i\bar z} = 2\bar z - iz = 5 - 2i. $$
  Multiply this by $i$ so the coefficients of $z$ and $\bar z$ line up with the original equation: $i\cdot 2\bar z = 2i\bar z$, $i\cdot(-iz) = z$, $i(5-2i) = 2 + 5i$, giving 
@@ -1109,20 +1044,17 @@ $$ z + 2i\bar z = 2 + 5i. $$
 $$ z - i\bar z = (5+2i) - (2+5i) = 3 - 3i. $$
  Add to $2z + i\bar z = 5 + 2i$: the $\bar z$ terms cancel, $3z = 8 - i$, so $z = \tfrac83 - \tfrac13 i$ — same as Method 1 ✓.
 
-
 Answer: $z = \dfrac{8}{3} - \dfrac{1}{3}\, i$
-
 
 Lesson baked in: Method 2 is faster but has a sign trap in the conjugation step; Method 1 is slower and cannot be argued with. Know both, verify one with the other.
 
 </details>
 
-
 ### 4.2 Quadratic equations and complex-conjugate roots
 
 Real-coefficient quadratics with negative discriminant have complex-conjugate roots — and JEE loves to ask about *quantities built from* the roots (moduli of differences, sums of moduli, etc.) without ever naming them. The standard move: Vieta + conjugation.
 
-#### **P30**[JEE Advanced][quadratics]Let [formula] be the roots of [formula] . Find [formula] and [formula] .
+#### **P30**[JEE Advanced][quadratics]Let $z_1, z_2$ be the roots of $x^2 - 4x + 13 = 0$. Find $|z_1 - \bar z_1|$ and…
 
 Let $z_1, z_2$ be the roots of $x^2 - 4x + 13 = 0$. Find $|z_1 - \bar z_1|$ and $|z_1 - z_2|$.
 
@@ -1131,19 +1063,17 @@ Let $z_1, z_2$ be the roots of $x^2 - 4x + 13 = 0$. Find $|z_1 - \bar z_1|$ and 
 
 Discriminant: $16 - 52 = -36$, so $z_{1,2} = \frac{4 \pm 6i}{2} = 2 \pm 3i$. Take $z_1 = 2 + 3i$: $z_1 - \bar z_1 = (2+3i) - (2-3i) = 6i$, so $|z_1 - \bar z_1| = 6$. And $z_1 - z_2 = 6i$, so $|z_1 - z_2| = 6$ too. (For conjugate roots the two distances coincide: $|z_1 - z_2| = |z_1 - \bar z_1|$ because $z_2 = \bar z_1$.)
 
-
 Answer: $6$ and $6$
 
 </details>
 
 The general fact worth naming: for $x^2 + bx + c = 0$ with $\Delta = b^2 - 4c < 0$, the roots are $\tfrac{-b}{2} \pm i\tfrac{\sqrt{4c-b^2}}{2}$, so $|z_1 - z_2| = \sqrt{4c - b^2}$ and $|z_1 - \bar z_1| = \sqrt{4c-b^2}$ — one formula, no root-finding needed. (Here: $\sqrt{52-16} = 6$ ✓.)
 
-
 ### 4.3 Loci from modulus conditions — circles
 
 The condition $|z - a| = r$ *is* the circle centered at $a$ with radius $r$; the JEE skill is recognizing circle-conditions that are *disguised*.
 
-#### **P38**[JEE Advanced][locus → circle]Find the locus of [formula] satisfying [formula] . Show it is a circle and fin…
+#### **P38**[JEE Advanced][locus → circle]Find the locus of $z$ satisfying $|z|^2 = z + \bar z$. Show it is a circle and find the…
 
 Find the locus of $z$ satisfying $|z|^2 = z + \bar z$. Show it is a circle and find the maximum of $|z|$ on it.
 
@@ -1154,12 +1084,11 @@ Write $z = a + bi$. Then $|z|^2 = a^2 + b^2$ and $z + \bar z = 2a$, so the condi
 $$ a^2 - 2a + b^2 = 0 \iff (a-1)^2 + b^2 = 1. $$
  Circle, center $1$ (i.e. $(1,0)$), radius $1$. It passes through the origin — and that is the key: the farthest point from $0$ on the circle is the point on the line from $0$ through the center $(1,0)$, at distance $1 + 1 = 2$.
 
-
 Answer: circle, center $(1,0)$, radius $1$; $\max|z| = 2$
 
 </details>
 
-#### **P39**[JEE Advanced][pure imaginary]Find the locus of [formula] for which [formula] is purely imaginary.
+#### **P39**[JEE Advanced][pure imaginary]Find the locus of $z$ for which $\dfrac{z+1}{z-1}$ is purely imaginary.
 
 Find the locus of $z$ for which $\dfrac{z+1}{z-1}$ is purely imaginary.
 
@@ -1171,14 +1100,11 @@ $$ \frac{z+1}{z-1} + \overline{\left(\frac{z+1}{z-1}\right)} = 0
         \iff \frac{z+1}{z-1} + \frac{\bar z+1}{\bar z-1} = 0. $$
  Combine: $\dfrac{(z+1)(\bar z-1) + (\bar z+1)(z-1)}{(z-1)(\bar z-1)} = 0$. The numerator is $(|z|^2 - z + \bar z - 1) + (|z|^2 + z - \bar z - 1) = 2|z|^2 - 2$. So the condition is $|z|^2 = 1$, with $z \ne 1$ (the fraction is undefined) — and $z = -1$ gives $\frac{0}{-2} = 0$, purely imaginary, so $z = -1$ stays.
 
-
 Answer: the unit circle, $z \ne 1$
-
 
 Geometric reading (the deeper reason): $\arg\frac{z+1}{z-1}$ is the angle $\angle(z+1, z-1)$ at the point $z$ — "purely imaginary" means that angle is $90^\circ$, and the locus of points from which the segment $[-1, 1]$ is seen at a right angle is the circle on that segment as diameter (Thales). The circle on diameter $[-1,1]$ is exactly the unit circle. Algebra and geometry give the same answer — that agreement is the check.
 
 </details>
-
 
 ### 4.4 Loci from argument conditions — arcs of circles
 
@@ -1188,7 +1114,7 @@ The condition $\arg\dfrac{z-a}{z-b} = \theta$ (fixed $\theta$, $0 < |\theta| < \
 >
 > Given $a, b$ and $\theta$: the radius of the circle is $R = \dfrac{|a-b|}{2\sin|\theta|}$ (sine rule in the triangle with chord $ab$ and inscribed angle $|\theta|$), and its center $C$ lies on the perpendicular bisector of $ab$, at distance $\dfrac{|a-b|}{2}\cot|\theta|$ from the midpoint, on the side that makes the inscribed angle $|\theta|$. The actual locus is the arc of that circle from $a$ to $b$ *opposite* the center (major arc if $|\theta| < \pi/2$), excluding $a$ and $b$ themselves (the fraction is $0$ or undefined there).
 
-#### **P34**[JEE Advanced][argument locus]Find the locus of [formula] satisfying [formula] . Verify a point on it.
+#### **P34**[JEE Advanced][argument locus]Find the locus of $z$ satisfying $\arg\dfrac{z-1}{z+1} = \dfrac{\pi}{4}$. Verify a point on…
 
 Find the locus of $z$ satisfying $\arg\dfrac{z-1}{z+1} = \dfrac{\pi}{4}$. Verify a point on it.
 
@@ -1199,16 +1125,13 @@ Here $a = 1$, $b = -1$, $|\theta| = \pi/4$. Chord length $|a-b| = 2$, so
 $$ R = \frac{2}{2\sin\pi/4} = \frac{1}{\sin\pi/4} = \sqrt2, $$
  and the center is on the perpendicular bisector of $[-1,1]$ (the imaginary axis) at distance $\tfrac{2}{2}\cot\frac{\pi}{4} = 1$ from the midpoint $0$ — i.e. $C = i$. The circle is $|z - i| = \sqrt2$, i.e. $x^2 + (y-1)^2 = 2$. Which arc? The angle at $z$ is $+45^\circ$ (counterclockwise from the ray $zb$ to the ray $za$… orientation: $\arg\frac{z-1}{z+1}$ is the angle from $z+1$ to $z-1$), and a test point settles the side. Take $z = i(1+\sqrt2)$ (the top of the circle): $z - 1 = -1 + i(1+\sqrt2)$, $z + 1 = 1 + i(1+\sqrt2)$. With $1+\sqrt2 = \tan\frac{3\pi}{8}$: $\arg(z+1) = \frac{3\pi}{8}$, $\arg(z-1) = \pi - \frac{3\pi}{8} = \frac{5\pi}{8}$, so $\arg\frac{z-1}{z+1} = \frac{5\pi}{8} - \frac{3\pi}{8} = \frac{\pi}{4}$ ✓ — the top of the circle works, so the locus is the **upper arc** ($y &gt; 0$), with the endpoints $\pm 1$ excluded.
 
-
 Answer: arc of $x^2 + (y-1)^2 = 2$, $y &gt; 0$, excluding $\pm 1$
-
 
 Note the $\tan\frac{3\pi}{8} = \sqrt2 + 1$ — a standard value worth knowing (it is $\cot\frac{\pi}{8}$, from the half-angle formulas for $45^\circ$).
 
 </details>
 
 C = i −1 1 z = i(1+√2) O $\arg\frac{z-1}{z+1} = \frac{\pi}{4}$: the upper arc of the circle $|z-i| = \sqrt2$ (dashed: the rest of the circle), endpoints $\pm 1$ excluded. The marked point $z = i(1+\sqrt2)$ verifies the angle.
-
 
 ### 4.5 Optimization — the range of $|z - a|$ under constraints
 
@@ -1231,7 +1154,7 @@ The workhorse of this chapter. Three results, in increasing power:
 > $$ |z - w|^2 = (z-w)(\bar z - \bar w) = 2 - z\bar w - \bar z w = 2 - 2\operatorname{Re}(z\bar w), $$
 >  so $|z-w|$ depends only on the angle between $z$ and $w$: $|z - w| = 2\left|\sin\frac{\varphi}{2}\right|$ where $\varphi = \arg(w/z)$. In particular, $|z - w| = \sqrt2$ iff $\varphi = \pm \pi/2$, i.e. iff $z\bar w = \pm i$.
 
-#### **P32**[JEE Advanced][min on |z|=1]If [formula] , find [formula] and the [formula] where it occurs.
+#### **P32**[JEE Advanced][min on |z|=1]If $|z| = 1$, find $\min |z - (1-2i)|$ and the $z$ where it occurs.
 
 If $|z| = 1$, find $\min |z - (1-2i)|$ and the $z$ where it occurs.
 
@@ -1240,14 +1163,13 @@ If $|z| = 1$, find $\min |z - (1-2i)|$ and the $z$ where it occurs.
 
 By (B) with $a = 1-2i$: $|a| = \sqrt5 &gt; 1$, so $\min |z-a| = \sqrt5 - 1$, attained at $z = \dfrac{a}{|a|} = \dfrac{1-2i}{\sqrt5}$. Geometric picture: the closest point on the unit circle to an exterior point $a$ is where the ray $O \to a$ exits the circle.
 
-
 Answer: $\sqrt5 - 1$, at $z = \dfrac{1-2i}{\sqrt5}$
 
 </details>
 
 O z = (1−2i)/√5 a = 1−2i √5 − 1 1 Closest point of the unit circle to $a = 1-2i$: the ray $O \to a$ meets the circle at $z = a/|a|$, and the gap is $|a| - 1 = \sqrt5 - 1$ (bold segment).
 
-#### **P33**[JEE Advanced][chord distance]If [formula] and [formula] , find [formula] .
+#### **P33**[JEE Advanced][chord distance]If $|z| = |w| = 1$ and $z\bar w = i$, find $|z - w|$.
 
 If $|z| = |w| = 1$ and $z\bar w = i$, find $|z - w|$.
 
@@ -1256,12 +1178,11 @@ If $|z| = |w| = 1$ and $z\bar w = i$, find $|z - w|$.
 
 By (C): $|z-w|^2 = 2 - 2\operatorname{Re}(z\bar w) = 2 - 2\operatorname{Re}(i) = 2 - 0 = 2$, so $|z-w| = \sqrt2$. Geometrically: $z\bar w = i$ means $w/z = i$, i.e. the two points are $90^\circ$ apart on the unit circle — a chord of the "quarter" arc, length $2\sin 45^\circ = \sqrt2$.
 
-
 Answer: $\sqrt2$
 
 </details>
 
-#### **P31**[JEE Advanced][range on |z|=1]If [formula] , find the range of [formula] .
+#### **P31**[JEE Advanced][range on |z|=1]If $|z| = 1$, find the range of $\left|z + \dfrac{1}{z} + 2i\right|$.
 
 If $|z| = 1$, find the range of $\left|z + \dfrac{1}{z} + 2i\right|$.
 
@@ -1274,17 +1195,15 @@ $$ z + \frac{1}{z} + 2i = 2\cos\theta + 2i, $$
 $$ 2\sqrt{\cos^2\theta + 1}, $$
  which ranges over $[2, 2\sqrt2]$ as $\cos^2\theta$ ranges over $[0,1]$. Minimum $2$ at $\theta = \pm\pi/2$ (i.e. $z = \pm i$); maximum $2\sqrt2$ at $z = \pm 1$.
 
-
 Answer: $[2,\ 2\sqrt2]$
 
 </details>
-
 
 ### 4.6 Ellipses — $|z-A| + |z-B| =$ constant
 
 The sum of distances to two fixed points equals a constant $2a$ (with $2a &gt; |A-B| = 2c$): by the conic definition, an **ellipse** with foci $A, B$, major axis $a$, and minor axis $b = \sqrt{a^2 - c^2}$. The maximum height of an ellipse $|z - c| + |z + c| = 2a$ is $b$ (at the top of the minor axis) — this is a favorite "find the maximum of $\operatorname{Im} z$" setup.
 
-#### **P37**[JEE Advanced][ellipse]If [formula] , find the maximum of [formula] .
+#### **P37**[JEE Advanced][ellipse]If $|z - 1| + |z + 1| = 6$, find the maximum of $\operatorname{Im} z$.
 
 If $|z - 1| + |z + 1| = 6$, find the maximum of $\operatorname{Im} z$.
 
@@ -1292,7 +1211,6 @@ If $|z - 1| + |z + 1| = 6$, find the maximum of $\operatorname{Im} z$.
 <summary>Answer + Reasoning</summary>
 
 Foci at $\pm 1$: $2c = 2$, so $c = 1$. Constant $2a = 6$, so $a = 3$. Then $b = \sqrt{a^2 - c^2} = \sqrt{9 - 1} = \sqrt8 = 2\sqrt2$. The maximum of $\operatorname{Im} z$ is the top of the minor axis: **$2\sqrt2$** (at $z = \pm i\cdot 2\sqrt2$; check: $|i2\sqrt2 - 1| = \sqrt{1 + 8} = 3$, $|i2\sqrt2 + 1| = 3$, sum $6$ ✓).
-
 
 Answer: $2\sqrt2$
 
@@ -1302,12 +1220,11 @@ Answer: $2\sqrt2$
 >
 > If the constant $\le |A-B|$, the "ellipse" degenerates: equal to the focal distance gives the segment $AB$ itself; smaller than it gives the empty set. In the JEE setup $|z-1|+|z+1| = 2$ would be the segment $[-1,1]$, not an ellipse. One inequality check saves a whole wrong solution.
 
-
 ### 4.7 Ranges of $|z|$ over regions
 
 Given a *region* $R$ (intersection of a disk and a half-plane, say), find the range of $|z|$ for $z \in R$. The method is geometric, not algebraic: $|z|$ is the distance from the origin, so its minimum and maximum over $R$ are the closest and farthest points of $R$ from $0$ — which live on the boundary (or at a boundary vertex) of $R$. Draw the region; the answer is a distance you can read off.
 
-#### **P35**[JEE Advanced][region range]If [formula] and [formula] , find the range of [formula] .
+#### **P35**[JEE Advanced][region range]If $\operatorname{Re} z &gt; 0$ and $|z - 1| &lt; 1$, find the range of $|z|$.
 
 If $\operatorname{Re} z &gt; 0$ and $|z - 1| &lt; 1$, find the range of $|z|$.
 
@@ -1316,12 +1233,11 @@ If $\operatorname{Re} z &gt; 0$ and $|z - 1| &lt; 1$, find the range of $|z|$.
 
 $|z-1| &lt; 1$ is the open disk centered at $1$ with radius $1$ — it touches the origin and lies entirely in $\operatorname{Re} z \ge 0$ (its leftmost point is $0$, excluded). Intersecting with $\operatorname{Re} z &gt; 0$ removes only the origin itself (the disk's only point with $\operatorname{Re} z = 0$). Distances from $0$ inside the disk range over $(0, 2)$: closest is arbitrarily near $0$, farthest is the rightmost point $2$ (excluded, since the disk is open).
 
-
 Answer: $(0,\ 2)$
 
 </details>
 
-#### **P36**[JEE Main][region range]If [formula] , find the range of [formula] .
+#### **P36**[JEE Main][region range]If $|z + 2| \le 3$, find the range of $|z|$.
 
 If $|z + 2| \le 3$, find the range of $|z|$.
 
@@ -1329,7 +1245,6 @@ If $|z + 2| \le 3$, find the range of $|z|$.
 <summary>Answer + Reasoning</summary>
 
 Disk centered at $-2$ (on the real axis) with radius $3$, closed. It contains the origin ($|0+2| = 2 \le 3$), so the minimum of $|z|$ is $0$, at $z = 0$. The farthest point from $0$ is the one on the line from $0$ through the center, extended by the radius: $-2 - 3 = -5$, so $\max|z| = 5$. (Triangle inequality: $|z| \le |z+2| + 2 \le 5$, equality at $z = -5$; $|z| \ge 0$ is trivial.)
-
 
 Answer: $[0,\ 5]$
 
@@ -1349,8 +1264,6 @@ Answer: $[0,\ 5]$
 >
 > Everything in this chapter was *one object* — a $z$, a locus, a distance. Chapter 5 works with *several* complex numbers as vertices of a polygon, and proves geometric theorems (equilateral triangles, Ptolemy, Van Aubel, Napoleon) as algebra in $\mathbb{C}$. The unit-circle parametrization of §4.5 and the argument geometry of §4.4 become the standard setup there.
 
-
-
 ---
 
 ---
@@ -1360,8 +1273,6 @@ Answer: $[0,\ 5]$
 *6 sections · 6 questions*
 
 *Chapter 5 of 6*
-
-# Geometry via Complex Numbers
 
 Chapters 1–4 worked with one $z$. This chapter works with *several* complex numbers as vertices of a polygon, and turns classical geometry — equilateral triangles, Ptolemy, Van Aubel, Napoleon — into a few lines of algebra in $\mathbb{C}$. The engine is one idea: **rotation is multiplication by $e^{i\theta}$** (Ch 1, §1.4). Once you can write "rotate $X$ by $\theta$ about $A$" as $A + e^{i\theta}(X - A)$, the theorems almost prove themselves.
 
@@ -1374,7 +1285,7 @@ Chapters 1–4 worked with one $z$. This chapter works with *several* complex nu
 >  Proof is one line: $X - A$ is the vector from $A$ to $X$; multiplying by $e^{i\theta}$ keeps its length and adds $\theta$ to its direction; adding $A$ re-anchors it. For $\theta = \pi/3$, $e^{i\pi/3} = 1 + \omega$ (Ch 3, identity iv), and for $\theta = -\pi/3$, $e^{-i\pi/3} = -\omega$ (and also $e^{-i\pi/3} =
 >       \overline{e^{i\pi/3}}$).
 
-#### **P41**[JEE Advanced][equilateral]Let [formula] be complex numbers and [formula] a non-real cube root of unity. …
+#### **P41**[JEE Advanced][equilateral]Let $a, b, c$ be complex numbers and $\omega$ a non-real cube root of unity. Prove: the…
 
 Let $a, b, c$ be complex numbers and $\omega$ a non-real cube root of unity. Prove: the triangle $(a,b,c)$ is equilateral (with vertices in counterclockwise order) $\iff a + \omega b + \omega^2 c = 0$.
 
@@ -1388,12 +1299,10 @@ $$ a + \omega b + \omega^2 c = a + \omega b + \omega^2\big(-\omega a + (1+\omega
         = a + \omega b - \omega^3 a + (\omega^2 + \omega^3) b. $$
  With $\omega^3 = 1$ and $\omega^2 + 1 = -\omega$: $= a + \omega b - a - \omega b = 0$ ✓.
 
-
 **($\Leftarrow$)** Suppose $a + \omega b + \omega^2 c = 0$. Then $c = -\omega^{-2}(a + \omega b) = -\omega(a + \omega b) = -\omega a - \omega^2 b$ (using $\omega^{-2} = \omega$). So 
 $$ c - a = -\omega a - \omega^2 b - a = -(1+\omega)a - \omega^2 b. $$
  We claim $c - a = (1+\omega)(b - a)$: expand the RHS: $(1+\omega)b - (1+\omega)a
         = (1+\omega)b - a - \omega a$. Compare with $c - a = -a - \omega a - \omega^2 b$: equal iff $(1+\omega)b = -\omega^2 b$, i.e. $1 + \omega + \omega^2 = 0$ ✓. Hence $c - a = (1+\omega)(b-a) = e^{i\pi/3}(b-a)$: $|c-a| = |b-a|$ and the rotation is exactly $60^\circ$, so the triangle is equilateral with the CCW ordering. ∎
-
 
 Check on the standard example: $a = 0, b = 1, c = e^{i\pi/3}$ (equilateral, CCW): $a + \omega b + \omega^2 c = \omega + \omega^2 e^{i\pi/3}
         = \omega + \omega^2(-\omega^2) = \omega - \omega^4 = \omega - \omega = 0$ ✓.
@@ -1402,7 +1311,6 @@ Check on the standard example: $a = 0, b = 1, c = e^{i\pi/3}$ (equilateral, CCW)
 
 The condition $a + \omega b + \omega^2 c = 0$ is *orientation-sensitive*: for the same triangle read clockwise it reads $a + \omega^2 b + \omega c = 0$. JEE questions usually ask you to *use* the condition (given the triangle is equilateral, prove some relation) rather than verify orientation — but if a problem states "equilateral" without ordering, the two conditions differ only by conjugating $\omega \leftrightarrow
     \omega^2$, and most real-valued conclusions are unaffected.
-
 
 ### 5.2 Ptolemy's theorem — a one-line identity plus the triangle inequality
 
@@ -1434,11 +1342,9 @@ The proof is the two paragraphs above: identity → moduli → triangle inequali
         = \sqrt2$, so $|a-b||c-d| + |b-c||a-d| = \sqrt2\cdot\sqrt2 + \sqrt2\cdot\sqrt2 = 2 + 2
         = 4$ ✓. Equality, as it must be for a cyclic quadrilateral.
 
-
 Answer: proven; square check $4 = 4$ ✓
 
 </details>
-
 
 ### 5.3 Van Aubel — squares on the sides of a quadrilateral
 
@@ -1469,11 +1375,9 @@ $$ = (i-1)c + (1+i)d - (i+1)a + (1+i)b = -(1-i)c + (1+i)d + (1-i)a - (1+i)b. $$
 $$ m_{bc} - m_{da} = -\,i\,(m_{cd} - m_{ab}). $$
  One complex equation, two geometric facts: multiplication by $-i$ rotates by $90^\circ$ and preserves length — so the segments are **perpendicular and equal**. ∎ (Numerical check, quad $0, 1, 1.5+1.2i, 0.3+0.9i$: both segments have length $2.16448\ldots$ and the ratio of one to the other is pure imaginary ✓.)
 
-
 Answer: $m_{bc} - m_{da} = -i(m_{cd} - m_{ab})$ — equal + perpendicular ∎
 
 </details>
-
 
 ### 5.4 Napoleon — equilateral triangles on the sides of a triangle
 
@@ -1502,13 +1406,11 @@ $$ \big((2+\omega)a + (1-\omega)b\big) + \omega\big((2+\omega)b + (1-\omega)c\bi
 $$ m_{ab} + \omega m_{bc} + \omega^2 m_{ca} = 0 \ \Longrightarrow \ \text{the centers form an equilateral triangle. ∎} $$
  **Numerical check**, triangle $(0,0), (4,0), (1,3)$: the outward centers are $(2, -1.1547)$, $(3.366, 2.366)$, $(-0.366, 1.789)$, and the Napoleon triangle's sides are $\sqrt{14.261}$ each — equal, as required. (Note the proof is one computation; the heavy lifting was done twice — once in P41, once here — which is why the theorems are taught in this order.)
 
-
 Answer: $m_{ab} + \omega m_{bc} + \omega^2 m_{ca} = 0$ — centers equilateral ∎
 
 </details>
 
 a b c m_ab m_bc m_ca Napoleon on the scalene triangle $(0,0), (4,0), (1,3)$: three outward equilateral triangles (teal), and their centers (orange) form the Napoleon triangle — visibly equilateral (sides $\sqrt{14.261}$ each, verified numerically).
-
 
 ### 5.5 Distance sums — the centroid formula (Leibniz)
 
@@ -1519,7 +1421,7 @@ a b c m_ab m_bc m_ca Napoleon on the scalene triangle $(0,0), (4,0), (1,3)$: thr
 >       = n|p-c|^2 + \sum |v_k-c|^2 - 2\operatorname{Re}\Big((p-c)\overline{\sum(v_k - c)}\Big). $$
 >  The cross term vanishes because $\sum(v_k - c) = \sum v_k - n c = 0$. Two lines. The second term is fixed (the "inertia" of the configuration); the first is minimized at $p = c$ — which is why the centroid is the point of minimum total squared distance. That sentence is the theorem's real content.
 
-#### **P45**[JEE Advanced][distance sum]Let [formula] be the vertices of a regular hexagon of circumradius [formula] c…
+#### **P45**[JEE Advanced][distance sum]Let $v_1, \dots, v_6$ be the vertices of a regular hexagon of circumradius $2$ centered at…
 
 Let $v_1, \dots, v_6$ be the vertices of a regular hexagon of circumradius $2$ centered at $O$. If $P$ is a point with $|P - O| = 1$, find $\sum_{k=1}^{6} |P - v_k|^2$.
 
@@ -1528,11 +1430,9 @@ Let $v_1, \dots, v_6$ be the vertices of a regular hexagon of circumradius $2$ c
 
 Centroid $c = O$ (symmetry), $\sum|v_k - O|^2 = 6 \cdot 2^2 = 24$, and $n|p - c|^2 = 6 \cdot 1^2 = 6$. Hence the sum $= 6 + 24 = 30$ — *independent of where* $P$ sits on the circle of radius $1$. (The formula even gives the same value for $P = O$: $0 + 24$… no — for $P = O$: $6\cdot 0 + 24 = 24$; the $30$ uses $|P-O| = 1$. The independence is in the *direction* of $P$, not its distance from $O$.)
 
-
 Answer: $30$
 
 </details>
-
 
 ### 5.6 Area, circumcenter — the remaining classics
 
@@ -1548,7 +1448,7 @@ Answer: $30$
 >       \iff u(\bar b - \bar a) + \bar u (b - a) = \bar b\, b - \bar a\, a. $$
 >  Two such equations (one for each of $b, c$) are linear in the two unknowns $u, \bar u$ — solve the 2×2. No coordinate geometry, no perpendicular bisectors drawn.
 
-#### **P46**[JEE Main][area + circumcenter](a) Find the area of the triangle with vertices [formula] , [formula] , [formu…
+#### **P46**[JEE Main][area + circumcenter](a) Find the area of the triangle with vertices $1$, $3i$, $-2+2i$. (b) Find the…
 
 (a) Find the area of the triangle with vertices $1$, $3i$, $-2+2i$. (b) Find the circumcenter of the triangle with vertices $1, i, -1$.
 
@@ -1558,9 +1458,7 @@ Answer: $30$
 (a) $z_2 - z_1 = -1 + 3i$, $z_3 - z_1 = -3 + 2i$, $(z_2-z_1)\overline{(z_3-z_1)} = (-1+3i)(-3-2i) = 3 + 2i - 9i - 6i^2 = 9 - 7i$. Area $= \tfrac12 |{-7}| = \tfrac72$. (Shoelace check: $\tfrac12|1(3-2) + 0(2-0)
         + (-2)(0-3)| = \tfrac12 \cdot 7$ ✓.)
 
-
 (b) The points $1, i, -1$ all lie on the unit circle — the circumcenter is $0$. The linear method confirms it: with $a = 1, b = i, c = -1$, the first equation $u(\bar b - \bar a) + \bar u(b - a) = |b|^2 - |a|^2 = 0$ becomes $u(-i - 1) + \bar u(i - 1) = 0$, which $u = 0$ satisfies (and uniqueness of the circumcenter of a non-degenerate triangle makes $0$ the answer).
-
 
 Answer: (a) $\dfrac72$; (b) $0$
 
@@ -1580,8 +1478,6 @@ Answer: (a) $\dfrac72$; (b) $0$
 >
 > Everything is now in place: algebra, polar, roots of unity, loci, and polygon geometry. Chapter 6 assembles them into the problems that separate "knows the formulas" from "sees the structure" — unit-circle configurations that force rectangles, product identities for regular polygons, and the two-vertex transformations $w = z + 1/z$ that turn circles into line segments. Then: the 38-question paper, where the whole module is tested at once.
 
-
-
 ---
 
 ---
@@ -1592,13 +1488,13 @@ Answer: (a) $\dfrac72$; (b) $0$
 
 *Chapter 6 of 6*
 
-# Synthesis & Stretch
+**Synthesis & Stretch**
 
 The problems where the whole module has to work at once. Four themes: *configurations on the unit circle* (where the condition $|z| = 1$ plus a symmetric relation forces a specific shape), *product identities* from the factorization $z^n - 1$, the two-vertex transformation $w = z + 1/z$ (circles becoming line segments), and distance theorems (British Flag) that are one-line computations once you know $\lvert z-a\rvert^2 = (z-a)(\bar z - \bar a)$. After this chapter: the 38-question paper.
 
 ### 6.1 Unit-circle configurations — four unit numbers summing to zero
 
-#### **P47**[Olympiad][unit-circle config]Let [formula] be complex numbers with [formula] for all [formula] and [formula…
+#### **P47**[Olympiad][unit-circle config]Let $z_1, z_2, z_3, z_4$ be complex numbers with $|z_k| = 1$ for all $k$ and…
 
 Let $z_1, z_2, z_3, z_4$ be complex numbers with $|z_k| = 1$ for all $k$ and $z_1 + z_2 + z_3 + z_4 = 0$. Prove that they are the vertices of a rectangle (in some order). When is it a square?
 
@@ -1612,20 +1508,15 @@ $$ \frac{1}{z_1} + \frac{1}{z_2} = -\left(\frac{1}{z_3} + \frac{1}{z_4}\right)
 $$ (z_1 + z_2)\left(\frac{1}{z_1 z_2} - \frac{1}{z_3 z_4}\right) = 0. $$
  So either **(i)** $z_1 + z_2 = 0$ (an antipodal pair), or **(ii)** $z_1 z_2 = z_3 z_4$.
 
-
 **Case (i).** $z_2 = -z_1$; the sum then forces $z_4 = -z_3$. The four points are $\{\pm a, \pm b\}$ on the unit circle — read in the cyclic order around the circle they form a parallelogram inscribed in the circle, hence a rectangle (a parallelogram has equal opposite angles; a cyclic quadrilateral has supplementary opposite angles; both together force $90^\circ$).
-
 
 **Case (ii).** Let $s = z_1 + z_2$, so $z_3 + z_4 = -s$, and let $p = z_1 z_2 = z_3 z_4$. Then $z_1, z_2$ are the roots of $t^2 - s t + p = 0$ and $z_3, z_4$ the roots of $t^2 + s t + p = 0$, whose roots are *precisely the negatives* of the first pair's roots. So $\{z_3, z_4\} = \{-z_1, -z_2\}$ — the same shape as Case (i): a rectangle. ∎
 
-
 **Square, exactly when:** in the cyclic ordering the adjacent vertices are $90^\circ$ apart, i.e. $z_2 = \pm i\, z_1$. (Equivalently, the two antipodal pairs differ by a quarter-turn: $b = i a$ after naming.)
-
 
 The whole proof hinged on one move — conjugating a unit-modulus relation to replace $\bar z$ by $1/z$. That move converts "on the circle" into "algebraic," and it is the standard entry point for every unit-circle configuration problem.
 
 </details>
-
 
 ### 6.2 Product identities from $z^n - 1 = \prod (z - \zeta_k)$
 
@@ -1633,7 +1524,7 @@ The whole proof hinged on one move — conjugating a unit-modulus relation to re
 >
 > **Proof.** Factor $z^n - 1$ over its roots $\zeta_k = e^{2\pi i k/n}$: $z^n - 1 = \prod_{k=0}^{n-1}(z - \zeta_k)$. Take moduli. One line. This is the distance version of Ch 3's product formula — there we pinned $z = 1$ (getting $n$), here $z$ is free.
 
-#### **P48**[JEE Advanced][product identity]Let [formula] be the vertices of a regular pentagon on the unit circle. Find t…
+#### **P48**[JEE Advanced][product identity]Let $v_0, \dots, v_4$ be the vertices of a regular pentagon on the unit circle. Find the…
 
 Let $v_0, \dots, v_4$ be the vertices of a regular pentagon on the unit circle. Find the product of the distances from the point $2$ (on the real axis) to the five vertices.
 
@@ -1644,7 +1535,6 @@ By the identity with $n = 5, z = 2$:
 $$ \prod_{k=0}^{4} |2 - e^{2\pi i k/5}| = |2^5 - 1| = 31. $$
  No trigonometry, no law of cosines, no pairing of symmetric factors — the factorization does all the work. (Numerical sense-check, via $|2 - e^{2\pi i k/5}|^2 = 5 - 4\cos\frac{2\pi k}{5}$: the distances are $1,\ \sqrt{3.764},\ \sqrt{8.236},\ \sqrt{8.236},\ \sqrt{3.764}$ — product $1 \cdot 3.764 \cdot 8.236 = 31$ ✓.)
 
-
 Answer: $31$
 
 </details>
@@ -1653,13 +1543,12 @@ Answer: $31$
     = \lvert e^{in\theta} - 1\rvert = 2\left|\sin\frac{n\theta}{2}\right|$ — a clean product of $n$ chords. At $\theta = 0$ it degenerates to Ch 3's $\prod_{k=1}^{n-1}
     2\sin\frac{\pi k}{n} = n$. The same identity, two specializations.
 
-
 ### 6.3 The map $w = z + \dfrac{1}{z}$ — circles become line segments
 
 On the unit circle, $\frac{1}{z} = \bar z$, so $w = z + \bar z = 2\operatorname{Re} z
     = 2\cos\theta$ is *real*, running over $[-2, 2]$ as $\theta$ runs over $[0, 2\pi)$. The map $z \mapsto z + 1/z$ (the *Joukowski map* — the name matters less than the behavior) **collapses the unit circle onto the real segment $[-2, 2]$**, two-to-one except at $\pm 1$. Any affine image of the circle behaves the same, up to translation and rotation in the $w$-plane.
 
-#### **P49**[JEE Advanced][w = z + 1/z]As [formula] varies, find the locus of [formula] .
+#### **P49**[JEE Advanced][w = z + 1/z]As $|z| = 1$ varies, find the locus of $w = z + \dfrac{1}{z} + i$.
 
 As $|z| = 1$ varies, find the locus of $w = z + \dfrac{1}{z} + i$.
 
@@ -1668,11 +1557,9 @@ As $|z| = 1$ varies, find the locus of $w = z + \dfrac{1}{z} + i$.
 
 $z + 1/z = 2\cos\theta \in [-2, 2]$ (real), so $w = 2\cos\theta + i$: the horizontal line segment from $-2 + i$ to $2 + i$, traced twice as $\theta$ goes around (except at the endpoints, each hit once). Conversely every point of the segment is hit (take $\cos\theta = (x)/2$).
 
-
 Answer: the segment $[{-2+i},\ 2+i]$
 
 </details>
-
 
 ### 6.4 Three unit numbers summing to zero — the $120^\circ$ configuration
 
@@ -1682,7 +1569,7 @@ $$ 1 = |z_1 + z_2|^2 = 2 + 2\operatorname{Re}(z_1 \bar z_2)
     \iff \angle(z_1, z_2) = 120^\circ. $$
  By symmetry all three pairwise angles are $120^\circ$: the points are the vertices of an equilateral triangle centered at the origin — and $\{\pm z_1, \pm z_2, \pm z_3\}$ is a **regular hexagon** (antipodal points fill in the missing $60^\circ$ steps).
 
-#### **P50**[Olympiad][$120^\circ$ config]Let [formula] satisfy [formula] and [formula] . Show that [formula] are [formu…
+#### **P50**[Olympiad][$120^\circ$ config]Let $z_1, z_2, z_3$ satisfy $|z_k| = 1$ and $z_1 + z_2 + z_3 = 0$. Show that…
 
 Let $z_1, z_2, z_3$ satisfy $|z_k| = 1$ and $z_1 + z_2 + z_3 = 0$. Show that $z_1, z_2, z_3$ are $120^\circ$ apart, and that $\{\pm z_1, \pm z_2, \pm z_3\}$ are the vertices of a regular hexagon.
 
@@ -1693,19 +1580,17 @@ The computation is the paragraph above. For the hexagon: the six points have arg
         \alpha + 300^\circ$ — exactly $60^\circ$ steps on the unit circle: a regular hexagon. ∎ (Check the $60^\circ$: between $\theta_1$ and $\theta_2 = \theta_1
         + 120^\circ$ lies the antipode $-z_1$ at $\theta_1 + 180^\circ$… and $\theta_1 + 180^\circ = \theta_2 - 60^\circ$ ✓ — each antipode lands exactly halfway, at $60^\circ$ from its neighbors.)
 
-
 Answer: $120^\circ$ apart; $\{\pm z_k\}$ is a regular hexagon ∎
 
 </details>
 
 z₁ z₂ z₃ −z₁ −z₂ −z₃ O $z_1, z_2, z_3$ (teal) summing to zero on the unit circle are $120^\circ$ apart; their antipodes (orange) complete the regular hexagon.
 
-
 ### 6.5 British Flag — distance theorems as one-line algebra
 
 **British Flag theorem (geometry).** For any point $e$ in the plane of a rectangle with vertices $A, B, C, D$: $|e-A|^2 + |e-C|^2 = |e-B|^2 + |e-D|^2$ (diagonal pairs of vertices). For a square $0, 1, 1+i, i$ and any $e$ — *anywhere in the plane, no restriction* — it reads $|e|^2 + |e-(1+i)|^2 = |e-1|^2 + |e-i|^2$. The complex proof is one expansion:
 
-#### **P51**[Olympiad][British Flag]Prove the British Flag theorem for the square [formula] using [formula] .
+#### **P51**[Olympiad][British Flag]Prove the British Flag theorem for the square $0, 1, 1+i, i$ using…
 
 Prove the British Flag theorem for the square $0, 1, 1+i, i$ using $\lvert z-a\rvert^2 = (z-a)(\bar z - \bar a)$.
 
@@ -1718,7 +1603,6 @@ $$ \text{LHS} = |e|^2 + |e-(1+i)|^2 = 2|e|^2 - e + ie - \bar e - i\bar e + 2, $$
  
 $$ \text{RHS} = |e-1|^2 + |e-i|^2 = 2|e|^2 - e + ie - \bar e - i\bar e + 2. $$
  Identical term for term — the cross terms $-e + ie - \bar e - i\bar e$ from the far corner $(1+i)$ are exactly reproduced by the sum of the two near corners $1$ and $i$. Done, for *every* $e$ in the plane. ∎
-
 
 The pattern: $\lvert z-a\rvert^2$ is *quadratic in $z, \bar z$ with no $z\bar z$ issue* — always expand it as $(z-a)(\bar z-\bar a)$, and distance theorems about rectangles and squares become "collect like terms." (The rectangle generalization: vertices $0, w, w + i\ell\ldots$ — same expansion, same cancellation, because the four vertex constants pair up: $0 + (w+v) = w + v$.)
 
@@ -1736,8 +1620,6 @@ The pattern: $\lvert z-a\rvert^2$ is *quadratic in $z, \bar z$ with no $z\bar z$
 > [!tip] Next — the 38-question Olympiad paper
 >
 > Everything above, tested at once: eight sections, JEE Main → JEE Advanced → Olympiad, covering every chapter's signature move. Full worked solutions follow in the companion file. Do it cold, on paper, before opening the solutions — the paper is built so that each section's questions get harder within the section, and the stretch questions (37–38) require chaining three or four techniques.
-
-
 
 ---
 

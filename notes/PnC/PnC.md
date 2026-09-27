@@ -15,9 +15,6 @@ created: 2026-09-27
 > [!info] Navigation
 > 📖 [[Home|Vault home]] · 📝 [[PnC — Paper|Olympiad Paper]] · ✅ [[PnC — Solutions|Solutions]]
 
-# PnC — Complete Course Notes
-
-
 *JEE Advanced → Olympiad Ladder*
 
 # Permutations & Combinations
@@ -25,8 +22,6 @@ created: 2026-09-27
 A complete conceptual build-up: from the two primitive rules of counting, through every JEE Advanced weapon, to the Olympiad frontier — Burnside, Catalan, partitions and generating functions. Every formula is *derived from reasoning*, never memorized.
 
 `6 chapters` `~90 worked & practice questions` `SVG diagrams` `40-question Olympiad paper + full solutions`
-
-
 
 ### ★ How to use these notes
 
@@ -37,7 +32,6 @@ A complete conceptual build-up: from the two primitive rules of counting, throug
 - **The Olympiad paper at the end** (38 questions) is the exam: attempt it after Chapter 6, without solutions. The [[PnC — Solutions|solution key]] is separate and complete.
 - **Small-case habit** — the single most repeated advice: whenever you get a counting answer, *list all cases for a tiny instance* and check. It catches 90% of errors.
 
-
 ### ▣ The roadmap
 
 Here is the logical skeleton of the entire chapter. Notice that everything — even the hardest Olympiad theorem — is an application of **one of three moves**: *construct* (product rule), *split* (sum rule / cases), or *match up* (bijection / double counting).
@@ -46,11 +40,9 @@ Here is the logical skeleton of the entire chapter. Notice that everything — e
 
 ![Diagram](assets/fig-01.svg)
 
-
 ### ∑ Exam paper
 
 [[PnC — Paper| The Capstone Olympiad-Level Paper — 40 Questions Eight sections covering every concept of the chapter: arrangements, stars & bars, identities, inclusion–exclusion, pigeonhole, lattice paths & Catalan, Burnside & partitions, and synthesis (Erdős–Szekeres, IMO classics). Difficulty-tagged. ]] [[PnC — Solutions| Attempt first, then open Full Solutions Key Complete step-by-step solutions for all 38 questions, with the reasoning that motivates each step — not just algebra. ]]
-
 
 ### ! One-page mindset
 
@@ -61,8 +53,6 @@ Here is the logical skeleton of the entire chapter. Notice that everything — e
 > [!warning] Common Trap — the three sins of counting
 >
 > **1. Overcounting** — the same final object produced by two different choice paths. **2. Undercounting** — cases that are not exhaustive, or objects that "look impossible" but exist. **3. Broken independence** — assuming "3 choices, then 3 choices" when the second count depends on the first in a way you didn't track. The cure for all three: *verify a small case by brute force*.
-
-
 
 ## Roadmap
 
@@ -94,8 +84,6 @@ Here is the logical skeleton of the entire chapter. Notice that everything — e
 
 *Chapter 1 · Foundations*
 
-# Counting Basics
-
 Before any formula: what counting actually *is*. The three primitive moves — construct, split, match up — and the habit of proof-by-small-cases that will carry you through Olympiad level.
 
 `product rule` `sum rule` `complement` `bijection` `double counting (intro)`
@@ -126,8 +114,6 @@ $$ \#\{\text{subsets of } [n]\} \;=\; \#\{\text{binary strings of length } n\} \
 > [!tip] Key Idea — two ways of counting
 >
 > **(A) Construct:** describe how to *build* an object as a sequence of choices → multiply. **(B) Match up:** find a bijection with a known set → inherit its size. Every problem in this course is (A), (B), or a mixture.
-
-
 
 ### 1.2 The Product (Multiplication) Rule
 
@@ -177,21 +163,16 @@ How many **4-digit numbers** with **distinct digits** are divisible by 5?
 
 Solution & reasoning
 
-
 Divisibility by 5 pins the *units digit* to 0 or 5. The digits of a 4-digit number are labeled roles (thousands, hundreds, tens, units), so we multiply — but the thousands digit cannot be 0, which depends on the units choice. **Split into cases on the units digit**:
-
 
 - **Case 1: units = 0.** Thousands: any of the 9 non-zero digits; hundreds: any of the remaining 8; tens: any of the remaining 7. → $9\cdot 8\cdot 7 = 504$.
 - **Case 2: units = 5.** Thousands: non-zero and not 5 → 8 choices; hundreds: 8 remaining; tens: 7 remaining. → $8\cdot 8\cdot 7 = 448$.
 
-
 Cases are disjoint and exhaustive, so total $= 504 + 448 =$ **Answer: 952**
-
 
 **Small-case sanity check:** for 2-digit distinct-digit multiples of 5 the same method gives $9 + 8 = 17$: {10,20,…,90} (9) and {15,25,…,95} (8). ✓
 
 </details>
-
 
 ### 1.3 The Sum (Addition) Rule
 
@@ -216,20 +197,15 @@ From a group of 12 men and 8 women, a **5-member committee** is to be formed wit
 
 Solution & reasoning
 
-
 Two routes, and comparing them is the point:
-
 
 **Route 1 (direct cases).** Split by the number of women: $1,2,3,4,5$. Sum $\sum_{w=1}^{5} \binom{8}{w}\binom{12}{5-w}$ — five terms, tedious and error-prone.
 
-
 **Route 2 (complement — next section).** Total committees $\binom{20}{5} = 15504$. All-male committees $\binom{12}{5} = 792$. Answer $= 15504 - 792 =$ **Answer: 14712**
-
 
 Note how Route 2 used the sum rule implicitly: committees are partitioned into "has a woman" and "all male", disjoint and exhaustive.
 
 </details>
-
 
 ### 1.4 The Subtraction (Complement) Principle
 
@@ -241,7 +217,7 @@ $$\#\{x \in X : \text{not } P\} \;=\; |X| \;-\; \#\{x \in X : P\}$$
 >
 > Negation has a hidden superpower: **negatives are rigid, positives are flexible.** "At least one woman" allows many configurations; "no women at all" forces a single rigid configuration (all seats male), which is usually trivial to count. The same pattern repeats everywhere: "no two adjacent" → count the total, subtract "at least one adjacent pair" (via inclusion–exclusion, Chapter 5); "not all boxes empty" → total minus all-empty; derangements → all permutations minus "at least one fixed point". Whenever a problem says *at least, no, not all, avoid* — flip it.
 
-#### **S3**[JEE Adv][solved][complement + product]How many strings of length 4 over the alphabet [formula] contain at least one …
+#### **S3**[JEE Adv][solved][complement + product]How many strings of length 4 over the alphabet $\{0,1,2,3,4\}$ contain **at least one 0**?
 
 How many strings of length 4 over the alphabet $\{0,1,2,3,4\}$ contain **at least one 0**?
 
@@ -250,14 +226,11 @@ How many strings of length 4 over the alphabet $\{0,1,2,3,4\}$ contain **at leas
 
 Solution & reasoning
 
-
 Direct case-splitting by "first 0 at position $k$" is doable but ugly. The complement is a *one-line* product rule: strings with *no* 0 have 4 choices per position → $4^4 = 256$. Total strings: $5^4 = 625$. Answer $= 625 - 256 =$ **Answer: 369**
-
 
 This "total minus forbidden" pattern is the seed of inclusion–exclusion (Ch. 5). When the forbidden condition is "at least one of several events", complements alone are not enough — that is exactly the gap IE fills.
 
 </details>
-
 
 ### 1.5 Bijections and Involutions — the Olympiad Weapon
 
@@ -273,7 +246,6 @@ We saw bijections in §1.1. Now make them a **proof technique**. The central que
 >
 > An **involution** is a map $f$ with $f \circ f = \text{id}$. If an involution on a set $X$ has *no fixed points* and maps the "good" objects onto the "bad" ones, then good and bad are equal in number. Even more often: an involution with *only one kind* of fixed point proves a parity or near-equality statement. Look for involutions whenever a problem is about *even vs odd, more vs less, first vs last*.
 
-
 #### Worked proof — even and odd permutations are equally many
 
 **Claim:** for $n \ge 2$, exactly $n!/2$ of the permutations of $[n]$ are even (decompose into an even number of transpositions) and $n!/2$ are odd.
@@ -282,7 +254,7 @@ We saw bijections in §1.1. Now make them a **proof technique**. The central que
 
 Remark for later: composing with $(1\ 2)$ is also a bijection on the set of permutations *with a given number of cycles modulo 2* — it flips the cycle count by ±1. You will meet this exact involution again in the Olympiad paper (it counts permutations by the parity of their number of cycles).
 
-#### **S4**[JEE Adv][solved][bijection]How many functions [formula] satisfy [formula] ?
+#### **S4**[JEE Adv][solved][bijection]How many functions $f:\{1,2,3\}\to\{1,2,3,4,5\}$ satisfy $f(1) &lt; f(2) &lt; f(3)$?
 
 How many functions $f:\{1,2,3\}\to\{1,2,3,4,5\}$ satisfy $f(1) &lt; f(2) &lt; f(3)$?
 
@@ -291,15 +263,11 @@ How many functions $f:\{1,2,3\}\to\{1,2,3,4,5\}$ satisfy $f(1) &lt; f(2) &lt; f(
 
 Solution & reasoning
 
-
 Naïvely "5 choices, then fewer…" breaks independence. **Bijection:** any such $f$ is the same data as the 3-element subset $\{f(1), f(2), f(3)\}$ of $\{1,\dots,5\}$ — and every 3-element subset has *exactly one* increasing ordering. So the answer is $\binom{5}{3} =$ **Answer: 10**
-
 
 The general lesson: **an ordered structure with a monotonicity condition is the same thing as an unordered selection.** "Increasing functions $[r]\to[n]$ in bijection with $r$-subsets of $[n]$" is one of the most repeatedly used facts in combinatorics.
 
 </details>
-
-
 
 ### 1.6 Double Counting — Your First Proof Machine
 
@@ -315,7 +283,6 @@ The general lesson: **an ordered structure with a monotonicity condition is the 
 
 You have proved the "gaussian sum" without calculus — and you now understand *why* the sum is a binomial coefficient: it *is* a count of 2-subsets.
 
-
 #### Worked — $\sum k\binom{n}{k} = n\,2^{n-1}$
 
 **Proof.** Let $\Omega = \{(i, S) : S \subseteq [n],\ i \in S\}$ — pairs (chosen element, subset containing it). **Count by $i$:** $i$ can be any of the $n$ elements, and $S$ then any of the $2^{n-1}$ subsets of the remaining $n-1$ elements → $n\cdot 2^{n-1}$. **Count by $S$:** a subset of size $k$ contributes $k$ pairs → $\sum_k k\binom{n}{k}$. Equal. $\square$
@@ -323,8 +290,6 @@ You have proved the "gaussian sum" without calculus — and you now understand *
 > [!example] Olympiad Extension — how to spot a double-counting proof
 >
 > Red flags that double counting will work: the statement involves a **sum of $\binom{\cdot}{\cdot}$ terms** (each term "chooses something inside something"), or a product $n\cdot 2^{n-1}$ ("a distinguished element plus a subset"), or an identity between two symmetric-looking binomial expressions (often a "committee from two groups" story). Chapter 4 turns this into a full toolkit.
-
-
 
 ### 1.7 The Mistake Checklist (read this before every problem)
 
@@ -364,7 +329,7 @@ Units digit odd: 5 choices. The first digit is non-zero and different from the u
 
 </details>
 
-#### **P3**[JEE Adv][practice][bijection]How many pairs [formula] of subsets of [formula] satisfy [formula] ?
+#### **P3**[JEE Adv][practice][bijection]How many pairs $(A,B)$ of subsets of $[n]$ satisfy $A \subseteq B$?
 
 How many pairs $(A,B)$ of subsets of $[n]$ satisfy $A \subseteq B$?
 
@@ -386,7 +351,7 @@ Each game is W or L → $2^8 = 256$ sequences. Complement: lose all 8 → 1. Ans
 
 </details>
 
-#### **P5**[Olympiad][practice][involution]Let [formula] . Show that the number of even-sized subsets of [formula] contai…
+#### **P5**[Olympiad][practice][involution]Let $n\ge 2$. Show that the number of *even-sized* subsets of $[n]$ containing 1 equals the…
 
 Let $n\ge 2$. Show that the number of *even-sized* subsets of $[n]$ containing 1 equals the number of *odd-sized* subsets of $[n]$ containing 1… or find what is actually true, and prove it with an involution.
 
@@ -408,7 +373,7 @@ Let $a_n$ = ways to climb $n$ steps; $a_n = a_{n-1}+a_{n-2}+a_{n-3}$ (first jump
 
 </details>
 
-#### **P7**[Olympiad][practice][double counting]Prove: [formula] .
+#### **P7**[Olympiad][practice][double counting]Prove: $\displaystyle\sum_{k=1}^{n} k\binom{n}{k}^2 = n\binom{2n-1}{n-1}$.
 
 Prove: $\displaystyle\sum_{k=1}^{n} k\binom{n}{k}^2 = n\binom{2n-1}{n-1}$.
 
@@ -418,7 +383,6 @@ Prove: $\displaystyle\sum_{k=1}^{n} k\binom{n}{k}^2 = n\binom{2n-1}{n-1}$.
 **Verify first (the Olympiad habit):** $n=2$: LHS $= 1\cdot\binom21^{\,2} + 2\cdot\binom22^{\,2}
         = 4 + 2 = 6$; RHS $= 2\binom31 = 6$. ✓ (A common slip is writing $\binom21^2 = 1$ — recompute arithmetic digit by digit before trusting any "mismatch".)
 
-
 **Algebraic proof.** Use $k\binom{n}{k} = n\binom{n-1}{k-1}$ (choose the $k$-set, then its distinguished element = choose the distinguished element first, then the other $k-1$ members). Then, with $j = k-1$, 
 $$ \sum_{k=1}^{n} k\binom{n}{k}^2
         = n\sum_{k=1}^{n}\binom{n-1}{k-1}\binom{n}{k}
@@ -426,12 +390,9 @@ $$ \sum_{k=1}^{n} k\binom{n}{k}^2
         = n\binom{2n-1}{n-1}, $$
  where the last step is Vandermonde's identity (Chapter 4).
 
-
 **Counting flavor.** The LHS counts triples $(A,B,b)$: $A\subseteq X$, $B\subseteq Y$ with $X, Y$ two labeled $n$-sets, $|A| = |B|$, $b \in B$ distinguished — counted by $|B| = k$. The step $k\binom{n}{k} = n\binom{n-1}{k-1}$ says the same object is counted by choosing $b$ first and then $B\setminus\{b\}$; the remaining sum is the "committee from two groups" count of $(n-1)$-subsets of a $(2n-1)$-set (Vandermonde). Double counting and algebra are the same proof wearing different clothes.
 
 </details>
-
-
 
 ---
 
@@ -442,8 +403,6 @@ $$ \sum_{k=1}^{n} k\binom{n}{k}^2
 *6 sections · 13 questions*
 
 *Chapter 2 · Order Matters*
-
-# Permutations
 
 Arrangements: from the multiplication rule to $nPr$, repeated letters, circular permutations, adjacency and gap methods, fixed relative order, and derangements — including why "no fixed point" counts come out as the nearest integer to $n!/e$.
 
@@ -473,12 +432,9 @@ In how many ways can the letters of the word **COMBINATORICS** be arranged?
 
 Solution & reasoning
 
-
 13 letters with C ×2, O ×2, I ×2 and seven singletons. The answer is $\dfrac{13!}{2!\,2!\,2!} = \dfrac{6{,}227{,}020{,}800}{8} =$ **Answer: 778,377,600** — the division-by-factorials reasoning is developed rigorously in §2.2 below; in these notes every worked example uses techniques you already saw introduced.
 
 </details>
-
-
 
 ### 2.2 Identical objects — arrangements with repetition
 
@@ -503,11 +459,9 @@ How many distinct words can be formed from the letters of **DAAR** (D, A, A, R) 
 
 Solution & reasoning
 
-
 Bundling: treat AA as one super-letter. Now arrange the 3 objects {D, AA, R}: $3! = 6$. The A's are identical so the bundle has only 1 internal order. Answer **Answer: 6** — words: DAAR, AADR, ADAR, ADRA, ARDA, RADA. (Bundle-then-count-objects is the standard move for *must-be-adjacent* conditions.)
 
 </details>
-
 
 ### 2.3 Circular permutations
 
@@ -547,15 +501,11 @@ flowchart LR
 
 Solution & reasoning
 
-
 Total circular seatings: $(10-1)! = 9! = 362{,}880$. A & B adjacent: treat {A,B} as a block → 9 objects around the table → $8!$ circular arrangements, and the block has 2 internal orders: $2\cdot 8! = 80{,}640$. Answer: $362{,}880 - 80{,}640 =$ **Answer: 282,240**
-
 
 General form: $(n-1)! - 2(n-2)!$. For $n=10$: $9! - 2\cdot 8! = 362880 - 80640$.
 
 </details>
-
-
 
 ### 2.4 Linear permutations with restrictions
 
@@ -563,13 +513,11 @@ General form: $(n-1)! - 2(n-2)!$. For $n=10$: $9! - 2\cdot 8! = 362880 - 80640$.
 
 If $k$ specified objects must be consecutive, wrap them in a bundle: the bundle is one object with $k!$ internal orders (if the objects are distinct). Arrange the $n-k+1$ objects; multiply by $k!$. Multiple bundles work as long as they don't nest confusingly; "A before B" conditions are *not* bundles (next subsection).
 
-
 #### (b) "No two adjacent" — the gap method
 
 > [!abstract] First Principles — arrange the rest, then choose slots
 >
 > Suppose $k$ special objects must not be adjacent, and there are $m$ ordinary objects. Arrange the $m$ ordinary objects: $m!$ ways (if distinct). They create $m+1$ gaps — before, between, and after: $\underline{\ \ \ }\,O\underline{\ \ \ }\,O\underline{\ \ \ }\cdots O\underline{\ \ \ }$. Put each special object into a *different* gap (at most one per gap is what forces non-adjacency): choose $k$ of the $m+1$ gaps, $\binom{m+1}{k}$ ways, and order the special objects inside their gaps, $k!$ ways. Total: $\boxed{m!\,\binom{m+1}{k}\,k!}$. The method's real power is that it converts a *negative* condition ("not next to each other") into a *positive* placement rule.
-
 
 #### (c) "Fixed relative order" — divide by $k!$
 
@@ -586,21 +534,15 @@ Six people — P, Q, R, S, T, U — sit in a row. P and Q must sit **together**,
 
 Solution & reasoning
 
-
 **Step 1 (bundle).** Bundle P,Q: now 5 objects {B, R, S, T, U} with B having 2 internal orders. Total: $2\cdot 5! = 240$.
-
 
 **Step 2 (complement on R).** Count those with R at an end: R's end choice (2 ways); then arrange the remaining 4 objects (B, S, T, U) in the 4 inner positions: $4!$; internal order of B: 2. So $2\cdot 4! \cdot 2 = 96$.
 
-
 Answer: $240 - 96 =$ **Answer: 144**
-
 
 Order of operations matters: bundle first, *then* apply the positional restriction to the shrunken object list — the two restrictions interact only through the objects' positions, which is why composing them is safe here.
 
 </details>
-
-
 
 ### 2.5 Derangements — permutations with no fixed point
 
@@ -613,9 +555,7 @@ Denote the count by $D_n$. We derive it twice — the first derivation (Chapter 
 Let $E_i$ = event "$\sigma(i) = i$". We want $N = n! - |\cup_i E_i|$. Inclusion–exclusion (proved in Chapter 5; here is the direct 3-line logic): a permutation with exactly $k$ prescribed fixed points (a chosen set $S\subseteq[n]$ of size $k$) has the remaining $n-k$ points free: $(n-k)!$. IE says to count the complement of $\cup E_i$ by alternating sums over intersections: 
 $$ D_n = \sum_{k=0}^{n} (-1)^k \binom{n}{k} (n-k)! = n!\sum_{k=0}^{n}\frac{(-1)^k}{k!}. $$
 
-
 Intuition for the alternating sum: subtract arrangements with at least one fixed point (overcounts those with two), add back those with at least two (triple-counted ones now negative), etc. The alternation is exactly the bookkeeping of "how many times does a permutation with $m$ fixed points get counted" = $\sum_{k=m}^{n}(-1)^{k-m}\binom{m}{k-m}$… = 0 for $m\ge 1$, 1 for $m=0$. Chapter 5 makes this precise.
-
 
 #### Derivation 2 — the recurrence (first principles on where 1 goes)
 
@@ -634,7 +574,6 @@ So $D_n = (n-1)\big(D_{n-1} + D_{n-2}\big)$ with $D_0 = 1, D_1 = 0$.
 >
 > We have $D_n = n!\sum_{k=0}^n (-1)^k/k!$. The series $\sum_{k=0}^{\infty} (-1)^k/k! = 1/e$ (the Taylor series of $e^x$ at $x=-1$). The tail $\sum_{k>n} (-1)^k/k!$ has absolute value $&lt; \frac{1}{(n+1)!}$, so $0 \le \left|D_n - \frac{n!}{e}\right| &lt; \frac{n!}{(n+1)!} = \frac{1}{n+1} &lt; \tfrac12$ for $n\ge 1$ — which is exactly the statement $D_n = \left\lfloor \frac{n!}{e} + \tfrac12\right\rfloor$, the **nearest integer to $n!/e$**. A pure counting sequence is integer-rounded $n!/e$ because the events "fixed point at $i$" behave asymptotically independently: $P(\text{no fixed point}) = \sum (-1)^k/k! \to e^{-1}$, the limit of $(1-1/n)^n$. *This is the prototype of the Poisson heuristic that runs through probability and combinatorics.*
 
-
 #### Partial derangements and the rencontres numbers
 
 "Exactly $k$ of the letters in the right envelope": choose which $k$ are correct ($\binom{n}{k}$), derange the rest: $\binom{n}{k}D_{n-k}$. For $n=5, k=2$: $\binom52 D_3 = 10\cdot 2 = 20$.
@@ -648,13 +587,10 @@ Five letters are put into five correctly addressed envelopes at random. How many
 
 Solution & reasoning
 
-
 No correct: $D_5 = 5!(1 - 1 + \tfrac12 - \tfrac16 + \tfrac1{24} - \tfrac1{120})
         = 120\cdot \tfrac{44}{120} =$ **Answer: 44**
 
-
 Exactly two correct: $\binom{5}{2}D_3 = 10 \cdot 2 =$ **Answer: 20**
-
 
 Sanity: $44 + 20 + \binom51 D_4 + \binom53 D_2 + \binom54 D_1 + \binom55 D_0
         = 44 + 20 + 5\cdot 9 + 10\cdot 1 + 5\cdot 0 + 1 = 120 = 5!$ — every assignment is accounted for. Always run this "sum over k" check when using $\binom nk D_{n-k}$.
@@ -664,8 +600,6 @@ Sanity: $44 + 20 + \binom51 D_4 + \binom53 D_2 + \binom54 D_1 + \binom55 D_0
 > [!example] Olympiad Extension — derangements are a special case
 >
 > Counting permutations that avoid a *board of forbidden positions* (e.g. "letter i may not go to envelopes i and i+1") is done by **rook polynomials** + inclusion–exclusion — the full theory is Chapter 5. Derangements are the case where the forbidden board is the main diagonal.
-
-
 
 ### 2.6 Practice set
 
@@ -758,8 +692,6 @@ A, B bundled: 6 objects circular → $5!$, ×2 (internal AB) = $2\cdot 120 = 240
 
 </details>
 
-
-
 ---
 
 ---
@@ -769,8 +701,6 @@ A, B bundled: 6 objects circular → $5!$, ×2 (internal AB) = $2\cdot 120 = 240
 *7 sections · 14 questions*
 
 *Chapter 3 · Order Irrelevant*
-
-# Combinations
 
 Selections: why dividing by $r!$ is legitimate, Pascal's triangle from set theory, restricted selections, and the stars-and-bars bijection that turns "identical objects into boxes" into a one-line count. Plus compositions, multinomials, and a first look at partitions.
 
@@ -793,8 +723,6 @@ $\binom{n}{r} = \binom{n}{n-r}$. The *reason* is a bijection, not an algebraic t
 > [!tip] Key Idea — the boundary between Ch. 2 and Ch. 3
 >
 > Every problem begins with a question: **do the objects I'm building come with labels or positions?** "Arrange, schedule, line up, first/second/third" → permutations. "Choose, select, team, committee, how many subsets" → combinations. Mixed problems ("choose 3 of 10 and arrange them in a row") are compositions of both, in that order.
-
-
 
 ### 3.2 Pascal's identity and the triangle
 
@@ -832,8 +760,6 @@ $\displaystyle\sum_{i=r}^{n} \binom{i}{r} = \binom{n+1}{r+1}$.
 
 A diagonal of Pascal's triangle is literally the hockey stick: $\binom{1}{1}+\binom{2}{1}+\binom{3}{1}+\binom{4}{1} = 1+2+3+4 = 10 = \binom{5}{2}$ — which, by the way, re-proves the sum $1+2+\cdots+n = \binom{n+1}{2}$ from Chapter 1.
 
-
-
 ### 3.3 Restricted selections
 
 Real problems never ask for a bare $\binom{n}{r}$. The standard patterns:
@@ -855,9 +781,7 @@ A library has 20 different books, 4 of them are volumes of a specific series. In
 
 Solution & reasoning
 
-
 Total: $\binom{20}{5} = 15504$. None of the series: choose all 5 from the other 16: $\binom{16}{5} = 4368$. Answer $= 15504 - 4368 =$ **Answer: 11,136**
-
 
 "At least one" is the canonical complement trigger (Chapter 1). The direct case split $1 + 2 + 3 + 4$ series volumes works too but is four terms of arithmetic.
 
@@ -872,9 +796,7 @@ A cricket team of 11 is to be selected from 7 batsmen, 5 bowlers and 3 all-round
 
 Solution & reasoning
 
-
 Write the team as $(b, w, a)$ with $b+w+a = 11$, $3\le b\le 7$, $2\le w\le 5$, $0\le a\le 3$. All-rounders cap at 3, so enumerate by $a$:
-
 
 | $a$ | valid $(b,w)$ | count |
 | --- | --- | --- |
@@ -883,14 +805,11 @@ Write the team as $(b, w, a)$ with $b+w+a = 11$, $3\le b\le 7$, $2\le w\le 5$, $
 | 2 | (4,5), (5,4), (6,3), (7,2) | $35 + 105 + 70 + 10 = 220$ |
 | 3 | (3,5), (4,4), (5,3), (6,2) | $35 + 175 + 210 + 70 = 490$ |
 
-
 Total: $12 + 66 + 220 + 490 =$ **Answer: 788**
-
 
 This is the **multinomial-case-split template**: one free variable (here $a$) plus bounds makes a finite table. JEE Advanced loves this exact shape; the error pattern it catches is missing boundary triples like $(7,3)$ or $(7,2)$ — *always check that the bounds really exclude nothing you need*.
 
 </details>
-
 
 ### 3.4 Stars and bars — the master bijection
 
@@ -923,7 +842,7 @@ A **composition** of $n$ into $k$ (positive) parts is an ordered $k$-tuple $(a_1
 
 Any number of parts: $\sum_{k=1}^{n}\binom{n-1}{k-1} = 2^{n-1}$ — and there is a one-line bijection: a composition of $n$ ↔ a choice of which of the $n-1$ gaps between $1,1,\dots,1$ ( $n$ ones) get a separator.
 
-#### **S3**[JEE Main][solved][stars & bars]How many non-negative integer solutions does [formula] have? How many positive…
+#### **S3**[JEE Main][solved][stars & bars]How many **non-negative** integer solutions does $x + y + z = 15$ have? How many…
 
 How many **non-negative** integer solutions does $x + y + z = 15$ have? How many **positive** ones?
 
@@ -932,9 +851,7 @@ How many **non-negative** integer solutions does $x + y + z = 15$ have? How many
 
 Solution & reasoning
 
-
 Non-negative: $\binom{15+3-1}{3-1} = \binom{17}{2} =$ **Answer: 136**. Positive: $\binom{15-1}{3-1} = \binom{14}{2} =$ **Answer: 91**.
-
 
 **Complement check (small-case discipline):** solutions of $x+y+z=15$ with at least one zero: exactly one zero: $3\cdot 14 = 42$ (e.g. $x=0$, $y,z\ge 1$, $y+z=15$: 14 pairs); exactly two zeros: 3 (e.g. $x=y=0$, $z=15$); three zeros: 0. Total $45 = 136 - 91$ ✓.
 
@@ -949,7 +866,6 @@ You buy 12 fruits from a stall selling **5 varieties** (unlimited stock, only th
 
 Solution & reasoning
 
-
 A ticket = $(x_1,\dots,x_5) \ge 0$, $\sum x_i = 12$ = multiset of size 12 from 5 types: $\binom{12+5-1}{5-1} = \binom{16}{4} =$ **Answer: 1,820**
 
 </details>
@@ -963,15 +879,11 @@ In how many **ordered** ways can 10 be written as a sum of positive integers, **
 
 Solution & reasoning
 
-
 Let the $k$ parts be $a_i \ge 2$. Shift: $b_i = a_i - 1 \ge 1$, $\sum b_i = 10 - k$, a composition of $10-k$ into $k$ parts: $\binom{9-k}{k-1}$ ways (needs $10 - k \ge k$, i.e. $k \le 5$): $k=2: \binom{7}{1} = 7$; $k=3: \binom{6}{2} = 15$; $k=4: \binom{5}{3} = 10$; $k=5: \binom{4}{4} = 1$. Total $=$ **Answer: 33**
-
 
 Pattern: **constraints on parts → shift the variables → apply the standard form → sum over the (now bounded) number of parts.** The same three-beat sequence solves nearly every composition problem in JEE Advanced.
 
 </details>
-
-
 
 ### 3.5 Multinomial coefficients
 
@@ -987,7 +899,7 @@ Arranging a multiset with $n_1, \dots, n_k$ identical copies of $k$ types (Chapt
 >
 > **Face 3 (the identity).** $\sum \dbinom{n}{n_1,\dots,n_k} = k^n$ over all compositions of $n$ into $k$ parts (zeros allowed): the multinomial counts colorings of $n$ labeled balls with $k$ colors, grouped by how many got each color. This is the seed of the multinomial theorem — Chapter 4.
 
-#### **S6**[JEE Adv][solved][double counting preview]Prove [formula] .
+#### **S6**[JEE Adv][solved][double counting preview]Prove $\dbinom{2n}{n} = \sum_{k=0}^{n} \binom{n}{k}^2$.
 
 Prove $\dbinom{2n}{n} = \sum_{k=0}^{n} \binom{n}{k}^2$.
 
@@ -996,14 +908,11 @@ Prove $\dbinom{2n}{n} = \sum_{k=0}^{n} \binom{n}{k}^2$.
 
 Solution & reasoning (a double-counting preview)
 
-
 Let $A, B$ be two labeled sets of size $n$. Count the $n$-subsets of $A \cup B$. **Directly:** $\binom{2n}{n}$. **By the part from $A$:** an $n$-subset uses $k$ elements of $A$ (hence $n-k$ of $B$): $\binom{n}{k}\binom{n}{n-k}$ ways for each $k$; sum over $k$. Since $\binom{n}{n-k} = \binom{n}{k}$, $\binom{2n}{n} = \sum_k \binom{n}{k}^2$. $\square$
-
 
 This is Vandermonde's identity in the symmetric case — Chapter 4 generalizes the method and collects the whole identity toolkit.
 
 </details>
-
 
 ### 3.6 First look: integer partitions
 
@@ -1022,7 +931,6 @@ For $n = 4$: $4;\ 3+1;\ 2+2;\ 2+1+1;\ 1+1+1+1$ — 5 partitions, versus $2^{3} =
 > [!example] Olympiad Extension — the first surprising partition fact
 >
 > Already provable at this level: the number of partitions of $n$ **into distinct parts** equals the number **into odd parts** (Euler, 1748). The proof (Chapter 6) is a single line of generating functions: $\prod (1+x^k) = \prod_{\text{odd } m}\frac{1}{1-x^m}$. Keep it in mind when you meet "distinct" vs "odd" in problems — it is not a coincidence, it is a theorem.
-
 
 ### 3.7 Practice set
 
@@ -1049,7 +957,7 @@ IE on the missing suits: $\binom{52}{6} - 4\binom{39}{6} + 6\binom{26}{6} - 4\bi
 
 </details>
 
-#### **P3**[JEE Adv][practice][stars & bars + bound]Non-negative solutions of [formula] with [formula] .
+#### **P3**[JEE Adv][practice][stars & bars + bound]Non-negative solutions of $x_1 + x_2 + x_3 + x_4 = 20$ with $x_1 \le 5$.
 
 Non-negative solutions of $x_1 + x_2 + x_3 + x_4 = 20$ with $x_1 \le 5$.
 
@@ -1060,7 +968,7 @@ Total $\binom{23}{3} = 1771$. Bad ($x_1 \ge 6$): shift $x_1' = x_1 - 6 \ge 0$: $
 
 </details>
 
-#### **P4**[JEE Main][practice][stars & bars + bound]Non-negative solutions of [formula] with [formula] .
+#### **P4**[JEE Main][practice][stars & bars + bound]Non-negative solutions of $a + b + c = 20$ with $a \le 7$.
 
 Non-negative solutions of $a + b + c = 20$ with $a \le 7$.
 
@@ -1082,7 +990,7 @@ $\dfrac{13!}{5!\,4!\,2!\,2!} = \dfrac{6{,}227{,}020{,}800}{120\cdot 24 \cdot 4} 
 
 </details>
 
-#### **P6**[Olympiad][practice][Vandermonde]Prove [formula] .
+#### **P6**[Olympiad][practice][Vandermonde]Prove $\displaystyle\sum_{k} \binom{n}{k}\binom{n}{k+1} = \binom{2n}{n+1}$.
 
 Prove $\displaystyle\sum_{k} \binom{n}{k}\binom{n}{k+1} = \binom{2n}{n+1}$.
 
@@ -1115,8 +1023,6 @@ Total positive compositions: $\binom{11}{3} = 165$. A part $\ge 6$: shift it dow
 
 </details>
 
-
-
 ---
 
 ---
@@ -1127,7 +1033,7 @@ Total positive compositions: $\binom{11}{3} = 165$. A part $\ge 6$: shift it dow
 
 *Chapter 4 · Coefficients Count*
 
-# Binomial Theorem & Double Counting
+**Binomial Theorem & Double Counting**
 
 The binomial theorem is a counting statement wearing algebra's clothes. This chapter proves it by counting, turns double counting into a proof machine, builds the complete identity toolkit, and ends with coefficient extraction — the bridge to generating functions.
 
@@ -1153,7 +1059,6 @@ $$(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k$$
 | $x = y = 1$, differentiate in $x$ | $\sum k\binom{n}{k} = n2^{n-1}$ | (element, subset) pairs |
 | $x = 1, y = t$ | $(1+t)^n = \sum \binom{n}{k}t^k$ | the counting engine itself |
 
-
 ### 4.2 Double counting — the method, systematized
 
 From Chapter 1: count a pair-set $\Omega$ two ways. The complete recipe:
@@ -1174,13 +1079,11 @@ From Chapter 1: count a pair-set $\Omega$ two ways. The complete recipe:
 >
 > Everything downstream is a parameter choice: $r = s = n, m = n$ gives $\sum \binom{n}{k}^2 = \binom{2n}{n}$; $s = 1$ gives Pascal; $r = n, s = n, m = n+1$ gives $\sum \binom{n}{k}\binom{n}{k-1} = \binom{2n}{n+1}$. One proof, a family of identities.
 
-
 #### Worked — a genuinely new shape: $\sum_k \binom{k}{m}\binom{n-k}{r-m} = \binom{n+1}{r+1}$
 
 **Proof.** Let $U = \{0, 1, \dots, n\}$ (size $n+1$). Count the $(r+1)$-subsets of $U$, and inside each subset look at its $(m+1)$-**smallest** element, call it $k$. Then: $m$ elements are chosen from $\{0, \dots, k-1\}$: $\binom{k}{m}$ ways; $r-m$ elements from $\{k+1, \dots, n\}$: $\binom{n-k}{r-m}$ ways. Sum over possible $k$: $\sum_k \binom{k}{m}\binom{n-k}{r-m}$. But the total is $\binom{n+1}{r+1}$. $\square$
 
 The pattern to steal: **"split by a distinguished element's *position*"** (here: the $(m+1)$-smallest member). It is the same engine as the hockey-stick identity (split by the maximum element) — one idea, two costumes.
-
 
 #### Worked — $\sum k^2 \binom{n}{k} = n(n+1)2^{n-2}$
 
@@ -1188,8 +1091,6 @@ The pattern to steal: **"split by a distinguished element's *position*"** (here:
     \subseteq [n]\}$ — a subset with *two distinguished (ordered) elements*. **By $S$:** a $k$-subset contributes $k^2$ ordered pairs → $\sum k^2\binom{n}{k}$. **By $(i,j)$:** $i = j$: $n$ choices, then $S$ any of the $2^{n-1}$ subsets containing $i$ → $n\cdot 2^{n-1}$; $i \ne j$: $n(n-1)$ ordered pairs, then $S$ any of the $2^{n-2}$ subsets containing both → $n(n-1)2^{n-2}$. Total $n\cdot 2^{n-1} + n(n-1)2^{n-2} = n(n+1)2^{n-2}$. $\square$
 
 Same as differentiating twice (the $k(k-1)$ term plus the $k$ term) — but the counting proof shows *what is being counted*, and that knowledge is what lets you invent the next identity.
-
-
 
 ### 4.3 The identity toolkit
 
@@ -1213,7 +1114,7 @@ All proven by the methods above (committees, marking, involution). Memorize the 
 
 Since $\int_0^1 (1+x)^n dx = \frac{2^{n+1}-1}{n+1}$ and $\int_0^1 x^k dx = \frac{1}{k+1}$, integrating $\sum \binom{n}{k}x^k = (1+x)^n$ from 0 to 1 gives $\sum_k \binom{n}{k}\dfrac{1}{k+1} = \dfrac{2^{n+1}-1}{n+1}$. Counting meaning: $\binom{n}{k}\frac{1}{k+1} = \frac{1}{k+1}\binom{n+1}{k+1}\cdot\frac{k+1}{n+1}$… the cleanest form: $\dfrac{1}{k+1}\binom{n}{k} = \dfrac{1}{n+1}\binom{n+1}{k+1}$ (catalan-shaped!). So the identity is a scaled even-split of $\sum\binom{n+1}{k+1} = 2^{n+1}-1$.
 
-#### **S1**[JEE Adv][solved][three proofs of one identity]Prove [formula] in three different ways.
+#### **S1**[JEE Adv][solved][three proofs of one identity]Prove $\displaystyle\sum_{k=0}^{n} k\binom{n}{k} = n\,2^{n-1}$ in three different ways.
 
 Prove $\displaystyle\sum_{k=0}^{n} k\binom{n}{k} = n\,2^{n-1}$ in three different ways.
 
@@ -1222,21 +1123,17 @@ Prove $\displaystyle\sum_{k=0}^{n} k\binom{n}{k} = n\,2^{n-1}$ in three differen
 
 Solution
 
-
 **(i) Double counting.** $\Omega = \{(i,S): i \in S \subseteq [n]\}$: by $i$: $n\cdot 2^{n-1}$; by $S$: $\sum k\binom{n}{k}$. ✓ (Ch. 1/4.2.)
-
 
 **(ii) Calculus.** $(1+x)^n = \sum \binom{n}{k}x^k$; differentiate: $n(1+x)^{n-1} = \sum k\binom{n}{k}x^{k-1}$; set $x = 1$. ✓
 
-
 **(iii) Term manipulation.** $k\binom{n}{k} = n\binom{n-1}{k-1}$ (mark the chosen element, then it's "chosen element + subset of the rest" — choose the element first). Sum: $n\sum_{k\ge 1}\binom{n-1}{k-1} = n\sum_{j\ge 0}\binom{n-1}{j} = n2^{n-1}$. ✓
-
 
 **Why three proofs?** Each proof suggests different generalizations: (i) → pairs of marks; (ii) → higher moments; (iii) → shifting identities. The Olympiad habit is: *never stop at one proof when the problem invites more.*
 
 </details>
 
-#### **S2**[JEE Adv][solved][coefficient extraction]Find the coefficient of [formula] in [formula] .
+#### **S2**[JEE Adv][solved][coefficient extraction]Find the coefficient of $x^8$ in $(1+x)^{10}\left(1+\dfrac{1}{x}\right)^{12}$.
 
 Find the coefficient of $x^8$ in $(1+x)^{10}\left(1+\dfrac{1}{x}\right)^{12}$.
 
@@ -1245,15 +1142,13 @@ Find the coefficient of $x^8$ in $(1+x)^{10}\left(1+\dfrac{1}{x}\right)^{12}$.
 
 Solution & reasoning
 
-
 Rewrite: $\left(1+\frac{1}{x}\right)^{12} = x^{-12}(1+x)^{12}$, so the product is $x^{-12}(1+x)^{22}$. Coefficient of $x^8$ = coefficient of $x^{20}$ in $(1+x)^{22}$ $= \binom{22}{20} =$ **Answer: 231**
-
 
 The move "pull out $x^{-12}$ and reindex" is used constantly in coefficient problems — always write negative powers as $x^{-m}$ times a polynomial first.
 
 </details>
 
-#### **S3**[Olympiad][solved][onto functions (IE preview)]How many onto functions [formula] are there?
+#### **S3**[Olympiad][solved][onto functions (IE preview)]How many **onto** functions $f: \{1,2,3,4,5\} \to \{1,2,3\}$ are there?
 
 How many **onto** functions $f: \{1,2,3,4,5\} \to \{1,2,3\}$ are there?
 
@@ -1262,15 +1157,13 @@ How many **onto** functions $f: \{1,2,3,4,5\} \to \{1,2,3\}$ are there?
 
 Solution & reasoning
 
-
 Total functions: $3^5 = 243$. Subtract those missing at least one value, by IE on the three "value $i$ is missing" events: $3^5 - \binom31 2^5 + \binom32 1^5 - \binom33 0^5 = 243 - 96 + 3 =$ **Answer: 150**
-
 
 In general, onto $[n]\to[k]$ counts are $k!\,S(n,k)$ where $S(n,k)$ (Stirling numbers of the second kind, Chapter 6) partition $[n]$ into $k$ nonempty unlabeled blocks. The IE formula $\sum_{j=0}^k (-1)^j\binom{k}{j}(k-j)^n$ *is* the definition of $k!S(n,k)$ — the two notations are the same number seen from probability vs combinatorics.
 
 </details>
 
-#### **S4**[JEE Adv][solved][numeric application]Compute [formula] .
+#### **S4**[JEE Adv][solved][numeric application]Compute $\displaystyle\sum_{k=0}^{10} \binom{10}{k}^2$.
 
 Compute $\displaystyle\sum_{k=0}^{10} \binom{10}{k}^2$.
 
@@ -1279,12 +1172,9 @@ Compute $\displaystyle\sum_{k=0}^{10} \binom{10}{k}^2$.
 
 Solution
 
-
 Vandermonde with $r = s = n = 10, m = 10$: $\binom{20}{10} =$ **Answer: 184,756**. (JEE pattern: sums of $\binom{n}{k}^2$, $\binom{n}{k}\binom{n}{n-k}$, $\binom{2n}{2k}$ all resolve to a single central binomial coefficient.)
 
 </details>
-
-
 
 ### 4.4 Beyond positive exponents — the negative binomial
 
@@ -1301,7 +1191,6 @@ $$(1 - x)^{-(r+1)} = \sum_{n=0}^{\infty} \binom{n+r}{r} x^n$$
 > [!example] Olympiad Extension — the "any number of parts" corollaries
 >
 > $(1-x)^{-2} = \sum (n+1)x^n$: the coefficient $n+1$ is the number of 2-part compositions of $n$ — check: $\binom{n+1}{1}$ ✓. $(1-x)^{-3} = \sum \binom{n+2}{2}x^n$: 3-part compositions. The pattern: **compositions with parts from a set $S$ have GF $\frac{1}{1 - (x^{s_1} + x^{s_2} + \cdots)}$**. Example: parts from $\{1,2\}$: $\frac{1}{1 - x - x^2} = \sum F_{n+1}x^n$ — *Fibonacci as a counting sequence*, which Chapter 5 proves combinatorially too.
-
 
 ### 4.5 Coefficients under bounds — the dice engine
 
@@ -1323,9 +1212,7 @@ In how many outcomes do **3 dice** sum to **10**?
 
 Solution & reasoning
 
-
 Each die: $1$ to $6$ → shift: $x_i \in \{0,\dots,5\}$, $\sum x_i = 7$. By the engine: $[x^7](1+x+\cdots+x^5)^3 = \binom{9}{2} - 3\binom{3}{2} = 27$; compute term by term: $j = 0$: $\binom{7+3-1}{2} = \binom92 = 36$; $j = 1$: $-3\binom{7-6+2}{2} = -3\binom32 = -9$; $j \ge 2$: $7 - 12 &lt; 0$, no terms. Answer $36 - 9 =$ **Answer: 27**
-
 
 Sanity check: 3 dice, 216 outcomes, sum 10 has 27 — matches the known dice-distribution table (11: 25, 10: 27, 9: 25). The "small case by table" habit again.
 
@@ -1335,10 +1222,9 @@ Sanity check: 3 dice, 216 outcomes, sum 10 has 27 — matches the known dice-dis
 >
 > In the engine, a term $\binom{m - j(b+1) + k - 1}{k-1}$ with $m - j(b+1) &lt; 0$ is **zero** (no solutions to a negative-sum equation) — the sum terminates on its own. Never evaluate $\binom{-3}{2}$ algebraically; set the term to 0. This is the #1 arithmetic disaster in bounded-coefficient problems.
 
-
 ### 4.6 Practice set
 
-#### **P1**[JEE Adv][practice][coefficient enumeration]Coefficient of [formula] in [formula] .
+#### **P1**[JEE Adv][practice][coefficient enumeration]Coefficient of $x^5$ in $(1+x)^3 (1+x^2)^4 (1+x^3)^2$.
 
 Coefficient of $x^5$ in $(1+x)^3 (1+x^2)^4 (1+x^3)^2$.
 
@@ -1349,7 +1235,7 @@ Write $x^{a + 2b + 3c}$, $0\le a\le 3, 0\le b\le 4, 0\le c\le 2$, $a+2b+3c = 5$,
 
 </details>
 
-#### **P2**[JEE Adv][practice][proof]Prove [formula] .
+#### **P2**[JEE Adv][practice][proof]Prove $\displaystyle\sum k(k-1)\binom{n}{k} = n(n-1)2^{n-2}$.
 
 Prove $\displaystyle\sum k(k-1)\binom{n}{k} = n(n-1)2^{n-2}$.
 
@@ -1360,7 +1246,7 @@ $k(k-1)\binom{n}{k} = n(n-1)\binom{n-2}{k-2}$ (mark two elements, ordered: choos
 
 </details>
 
-#### **P3**[Olympiad][practice][bounded engine]Coefficient of [formula] in [formula] .
+#### **P3**[Olympiad][practice][bounded engine]Coefficient of $x^{15}$ in $(1 + x + x^2)^{10}$.
 
 Coefficient of $x^{15}$ in $(1 + x + x^2)^{10}$.
 
@@ -1371,7 +1257,7 @@ $(1+x+x^2)^{10} = (1-x^3)^{10}(1-x)^{-10}$. Terms $j = 0..4$ (for $j \ge 5$, $15
 
 </details>
 
-#### **P4**[JEE Main][practice][parity split]Sum of the coefficients of the odd powers of [formula] in [formula] .
+#### **P4**[JEE Main][practice][parity split]Sum of the coefficients of the **odd powers** of $x$ in $(1+x)^{100}$.
 
 Sum of the coefficients of the **odd powers** of $x$ in $(1+x)^{100}$.
 
@@ -1382,7 +1268,7 @@ $\frac{(1+1)^{100} - (1-1)^{100}}{2} =$ **$2^{99}$**. (General trick: even/odd s
 
 </details>
 
-#### **P5**[JEE Adv][practice][coefficient]Coefficient of [formula] in [formula] .
+#### **P5**[JEE Adv][practice][coefficient]Coefficient of $x^9$ in $(1+x)^4(1+x^2)^4(1+x^3)^4$.
 
 Coefficient of $x^9$ in $(1+x)^4(1+x^2)^4(1+x^3)^4$.
 
@@ -1392,7 +1278,6 @@ Coefficient of $x^9$ in $(1+x)^4(1+x^2)^4(1+x^3)^4$.
 Need $[x^9]$ of $\left(\sum_a \binom4a x^a\right)\left(\sum_b \binom4b x^{2b}\right)
         \left(\sum_c \binom4c x^{3c}\right)$: solutions of $a+2b+3c = 9$ with $0\le a,b,c\le 4$, weight $\binom4a\binom4b\binom4c$:
 
-
 | $c$ | $(a,b)$ valid | contribution |
 | --- | --- | --- |
 | 0 | $(1,4), (3,3)$ | $4 + 16 = 20$ |
@@ -1400,12 +1285,11 @@ Need $[x^9]$ of $\left(\sum_a \binom4a x^a\right)\left(\sum_b \binom4b x^{2b}\ri
 | 2 | $(3,0), (1,1)$ | $24 + 96 = 120$ |
 | 3 | $(0,0)$ | $4$ |
 
-
 Total: $20 + 176 + 120 + 4 =$ **320**.
 
 </details>
 
-#### **P6**[JEE Adv][practice][parity proof]Prove that for [formula] , [formula] .
+#### **P6**[JEE Adv][practice][parity proof]Prove that for $n \ge 1$, $\displaystyle\sum_{k\ \mathrm{even}} \binom{n}{k} = 2^{n-1}$.
 
 Prove that for $n \ge 1$, $\displaystyle\sum_{k\ \mathrm{even}} \binom{n}{k} = 2^{n-1}$.
 
@@ -1416,7 +1300,7 @@ $(1+1)^n = 2^n$ (all subsets) and $(1-1)^n = 0$ (even minus odd). Subtract: twic
 
 </details>
 
-#### **P7**[JEE Adv][practice][coefficient]Coefficient of [formula] in [formula] .
+#### **P7**[JEE Adv][practice][coefficient]Coefficient of $x^8$ in $(1+x)^6(1+x^2)^6$.
 
 Coefficient of $x^8$ in $(1+x)^6(1+x^2)^6$.
 
@@ -1427,7 +1311,7 @@ $\sum_{j} \binom6j\binom6{8-2j}$ over $8 - 2j \in [0,6]$: $j = 1: 6\cdot 1 = 6$;
 
 </details>
 
-#### **P8**[Olympiad][practice][roots-of-unity filter]If [formula] , find [formula] (sum over [formula] ).
+#### **P8**[Olympiad][practice][roots-of-unity filter]If $(1+x)^{20} = \sum_{r=0}^{20} \binom{20}{r} x^r$, find…
 
 If $(1+x)^{20} = \sum_{r=0}^{20} \binom{20}{r} x^r$, find $\displaystyle\sum_{4\mid r} \binom{20}{r}$ (sum over $r \equiv 0 \pmod 4$).
 
@@ -1439,8 +1323,6 @@ Roots-of-unity filter: $\sum_{4\mid r} \binom{20}{r}
 
 </details>
 
-
-
 ---
 
 ---
@@ -1451,7 +1333,7 @@ Roots-of-unity filter: $\sum_{4\mid r} \binom{20}{r}
 
 *Chapter 5 · JEE Advanced Weapons*
 
-# Inclusion–Exclusion, Pigeonhole & Recurrences
+**Inclusion–Exclusion, Pigeonhole & Recurrences**
 
 The three engines behind nearly every "at least one", "no two", "must exist" problem. Inclusion–exclusion is bookkeeping for overlaps; the pigeonhole principle is the existence engine; recurrences turn "count size n" into "count smaller sizes".
 
@@ -1464,7 +1346,6 @@ The three engines behind nearly every "at least one", "no two", "must exist" pro
 **Fig 5.1 — Two sets: add, subtract the double-counted intersection.**
 
 ![Fig 5.1 — Two sets: add, subtract the double-counted intersection.](assets/fig-07.svg)
-
 
 #### The general principle
 
@@ -1494,15 +1375,13 @@ How many integers from 1 to 1000 are divisible by **2, 3, or 5**?
 
 Solution & reasoning
 
-
 Events $A_2 =$ divisible by 2, etc. $|A_2| = 500, |A_3| = 333, |A_5| = 200$; $|A_2\cap A_3| = 166, |A_2\cap A_5| = 100, |A_3\cap A_5| = 66$; $|A_2\cap A_3\cap A_5| = 33$. (Each count is $\lfloor 1000/m \rfloor$ for the lcm $m$.) IE: $500 + 333 + 200 - 166 - 100 - 66 + 33 =$ **Answer: 734**
-
 
 The "why" to internalize: an integer divisible by exactly two of them (say 2 and 3) is added in $|A_2|, |A_3|$ (twice) and removed in $|A_2 \cap A_3|$ (once) → net 1 ✓. Divisible by all three: added 3 times, removed 3 times, added once → net 1 ✓. *Run this trace on every IE answer — it catches sign errors instantly.*
 
 </details>
 
-#### **S2**[JEE Main][solved][IE · derangements]Permutations of [formula] with [formula] , [formula] , [formula] (positions 4,…
+#### **S2**[JEE Main][solved][IE · derangements]Permutations of $[6]$ with $\sigma(1)\ne 1$, $\sigma(2)\ne 2$, $\sigma(3)\ne 3$ (positions…
 
 Permutations of $[6]$ with $\sigma(1)\ne 1$, $\sigma(2)\ne 2$, $\sigma(3)\ne 3$ (positions 4, 5, 6 unrestricted).
 
@@ -1511,14 +1390,11 @@ Permutations of $[6]$ with $\sigma(1)\ne 1$, $\sigma(2)\ne 2$, $\sigma(3)\ne 3$ 
 
 Solution
 
-
 IE on the three forbidden events $E_i = \{\sigma(i) = i\}$: $6! - 3\cdot 5! + 3\cdot 4! - 3\cdot 3! = 720 - 360 + 72 - 18 =$ **Answer: 414**
-
 
 Partial derangements: "fix exactly which positions are forbidden, derange those" generalizes to $\sum_k (-1)^k \binom{n}{k}(n-k)!$ with $n$ replaced by the forbidden count — the same engine as Ch. 2's derangements.
 
 </details>
-
 
 #### Rook polynomials — IE for "forbidden positions"
 
@@ -1530,7 +1406,7 @@ $$\#\{\sigma : (\sigma(i), i) \notin B\} = \sum_{k=0}^{n} (-1)^k\, r_k\, (n-k)!$
 >
 > Event $E_{(i,j)}$ = "rook lands on forbidden square $(i,j)$". The number of permutations containing a *specified* set of $k$ forbidden squares (in distinct rows and columns — otherwise 0) is $(n-k)!$. IE over the forbidden squares groups by "how many of them occur", and the number of $k$-sets of forbidden squares in distinct rows/columns is exactly the rook number $r_k$. Done. Derangements = $B$ is the diagonal: $r_k = \binom{n}{k}$, recovering $D_n = \sum (-1)^k\binom{n}{k}(n-k)!$. The rook formalism matters when $B$ is a *weird board* (L-shapes, staircases) where $r_k$ is easy but the events are not "symmetric".
 
-#### **S3**[Olympiad][solved][rook board]Count the permutations [formula] of [formula] with [formula] , [formula] , [fo…
+#### **S3**[Olympiad][solved][rook board]Count the permutations $\sigma$ of $[4]$ with $\sigma(1)\ne 2$, $\sigma(2)\ne 1$…
 
 Count the permutations $\sigma$ of $[4]$ with $\sigma(1)\ne 2$, $\sigma(2)\ne 1$, $\sigma(3)\ne 4$, $\sigma(4)\ne 3$.
 
@@ -1538,7 +1414,6 @@ Count the permutations $\sigma$ of $[4]$ with $\sigma(1)\ne 2$, $\sigma(2)\ne 1$
 <summary>Answer + Reasoning</summary>
 
 Solution
-
 
 Forbidden board: 4 squares — two disjoint "anti-diagonal pairs". Rook numbers: $r_0 = 1$; $r_1 = 4$; $r_2 = \binom42 = 6$ (any two of the 4 squares are in distinct rows and columns — check: rows 1,2,3,4 and columns 2,1,4,3, all distinct ✓); $r_3 = 4$; $r_4 = 1$ (all 4 use distinct rows/columns ✓). Answer: $4! - 4\cdot 3! + 6\cdot 2! - 4\cdot 1! + 1\cdot 0! = 24 - 24 + 12 - 4 + 1 =$ **Answer: 9**
 
@@ -1552,8 +1427,6 @@ Forbidden board: 4 squares — two disjoint "anti-diagonal pairs". Rook numbers:
 >
 >
 > Everything you've seen so far — derangements, bounded stars-and-bars (Ch. 4), "all suits present" (Ch. 3), "at least one 0" (Ch. 1) — is this recipe with a different $A_i$.
-
-
 
 ### 5.2 The Pigeonhole Principle
 
@@ -1573,7 +1446,7 @@ Forbidden board: 4 squares — two disjoint "anti-diagonal pairs". Rook numbers:
 
 #### Classic applications — each teaches one box construction
 
-#### **S4**[JEE Adv][solved][pigeonhole · odd part]Prove: from any [formula] integers chosen from [formula] , two exist such that…
+#### **S4**[JEE Adv][solved][pigeonhole · odd part]Prove: from any $n+1$ integers chosen from $\{1, 2, \dots, 2n\}$, two exist such that **one…
 
 Prove: from any $n+1$ integers chosen from $\{1, 2, \dots, 2n\}$, two exist such that **one divides the other**.
 
@@ -1582,15 +1455,13 @@ Prove: from any $n+1$ integers chosen from $\{1, 2, \dots, 2n\}$, two exist such
 
 Proof (the odd-part construction)
 
-
 Write each chosen integer uniquely as $2^a \cdot m$ with $m$ *odd*. The odd part $m$ lies in $\{1, 3, 5, \dots, 2n-1\}$ — exactly $n$ possible values (the boxes). We chose $n+1$ integers (the pigeons), so two, say $x = 2^a m$ and $y = 2^b m$, share the same odd part. If $a &lt; b$ then $x \mid y$ (indeed $y/x = 2^{b-a}$ is an integer). Done. $\square$
-
 
 Note the box map: $x \mapsto$ odd part of $x$. "Same box ⇒ one divides the other" is exactly what the odd-part factorization guarantees. *Refinement & sharpness:* the same argument shows any 11 integers from $\{1,\dots,20\}$ contain such a pair (only 10 odd parts $\le 20$ exist) — and 11 is best possible: $\{11,12,\dots,20\}$ is a 10-element subset with *no* dividing pair, since twice any element of it already exceeds 20.
 
 </details>
 
-#### **S5**[Olympiad][solved][pigeonhole · geometry]Given 5 points in a unit square, prove that two are within distance [formula] …
+#### **S5**[Olympiad][solved][pigeonhole · geometry]Given **5 points** in a unit square, prove that two are within distance…
 
 Given **5 points** in a unit square, prove that two are within distance $\le \dfrac{\sqrt2}{2}$.
 
@@ -1599,9 +1470,7 @@ Given **5 points** in a unit square, prove that two are within distance $\le \df
 
 Proof
 
-
 Split the square into 4 equal subsquares of side $1/2$ (the boxes). By the pigeonhole principle (5 points, 4 boxes), some subsquare contains at least 2 points. Two points in a $1/2 \times 1/2$ square are at distance at most its diagonal, $\frac{\sqrt{1/2}}{1} = \frac{\sqrt2}{2}$. Done. $\square$
-
 
 General shape: $2n+1$ points in a unit square $\Rightarrow$ 2 within distance $\le \sqrt2/2$. And the bound is sharp: the 4 corner points of the subsquares (plus center)… the extremal configuration is the 4 subsquare centers (mutual distance $\sqrt2/2$).
 
@@ -1617,8 +1486,6 @@ General shape: $2n+1$ points in a unit square $\Rightarrow$ 2 within distance $\
 >
 > This case-split style — "assume the opposite, follow the forced colors until a clash" — is the standard method for small Ramsey-type statements.
 
-
-
 ### 5.3 Recurrence methods — counting by structure
 
 > [!abstract] First Principles — the last-step decomposition
@@ -1632,7 +1499,6 @@ General shape: $2n+1$ points in a unit square $\Rightarrow$ 2 within distance $\
 **Fig 5.3 — The last-step decomposition: $2\times n$ domino tilings satisfy $a_n = a_{n-1} + a_{n-2}$, so $a_n = F_{n+1}$. For $n = 10$: $F_{11} = 89$.**
 
 ![Fig 5.3 — The last-step decomposition: $2\times n$ domino tilings satisfy $a_n = a_{n-1} + a_{n-2}$, so $a_n = F_{n+1}$. For $n = 10$: $F_{11} = 89$.](assets/fig-09.svg)
-
 
 | Object counted by $a_n$ | Last block | Recurrence |
 | --- | --- | --- |
@@ -1660,7 +1526,6 @@ In how many ways can 6 people sit in a row so that no two of A, B, C sit togethe
 
 Solution
 
-
 Gap method: arrange the other 3 people: $3! = 6$; choose 3 of the 4 gaps: $\binom43 = 4$; order A, B, C: $3! = 6$. Total $6 \cdot 4 \cdot 6 =$ **Answer: 144**
 
 </details>
@@ -1674,12 +1539,9 @@ A stair has 10 steps. Each move is 1 or 2 steps. How many ways to climb? (Ch. 1'
 
 Solution
 
-
 $a_n = a_{n-1} + a_{n-2}$, $a_0 = 1, a_1 = 1$: $1,1,2,3,5,8,13,21,34,55,89$. $a_{10} =$ **Answer: 89** (it is $F_{11}$).
 
 </details>
-
-
 
 ### 5.4 Practice set
 
@@ -1694,7 +1556,7 @@ $50 + 33 - 16 =$ **67**.
 
 </details>
 
-#### **P2**[JEE Adv][practice][pigeonhole (generalization)]Prove: from any 101 integers chosen from [formula] , two exist with one dividi…
+#### **P2**[JEE Adv][practice][pigeonhole (generalization)]Prove: from any 101 integers chosen from $\{1, \dots, 200\}$, two exist with one dividing…
 
 Prove: from any 101 integers chosen from $\{1, \dots, 200\}$, two exist with one dividing the other.
 
@@ -1716,7 +1578,7 @@ $1000 - 734 =$ **266** (from S1).
 
 </details>
 
-#### **P4**[JEE Main][practice][recurrence]Domino tilings of a [formula] board.
+#### **P4**[JEE Main][practice][recurrence]Domino tilings of a $2 \times 5$ board.
 
 Domino tilings of a $2 \times 5$ board.
 
@@ -1738,7 +1600,7 @@ Start with 1 ⇒ second symbol 0 ⇒ remaining 4 symbols: any no-consecutive-1s 
 
 </details>
 
-#### **P6**[Olympiad][practice][same-recurrence proof]Prove [formula] (define [formula] ).
+#### **P6**[Olympiad][practice][same-recurrence proof]Prove $\displaystyle\sum_{k\ge 0}\binom{n-k}{k} = F_{n+1}$ (define $F_1 = F_2 = 1$).
 
 Prove $\displaystyle\sum_{k\ge 0}\binom{n-k}{k} = F_{n+1}$ (define $F_1 = F_2 = 1$).
 
@@ -1749,7 +1611,7 @@ Shown in §5.3: $D_n = D_{n-1} + D_{n-2}$ by Pascal, $D_0 = D_1 = 1 = F_1, F_2$.
 
 </details>
 
-#### **P7**[Olympiad][practice][van der Waerden W(2,3)]Prove: any red/blue coloring of [formula] contains a monochromatic 3-term arit…
+#### **P7**[Olympiad][practice][van der Waerden W(2,3)]Prove: any red/blue coloring of $\{1,\dots,9\}$ contains a monochromatic 3-term arithmetic…
 
 Prove: any red/blue coloring of $\{1,\dots,9\}$ contains a monochromatic 3-term arithmetic progression, and the statement fails for $\{1,\dots,8\}$.
 
@@ -1760,7 +1622,7 @@ The upper bound is the full case analysis of §5.2 (follow it line by line — e
 
 </details>
 
-#### **P8**[JEE Adv][practice][IE + bounded]Non-negative solutions of [formula] with [formula] .
+#### **P8**[JEE Adv][practice][IE + bounded]Non-negative solutions of $x + y + z = 20$ with $x \le 7$.
 
 Non-negative solutions of $x + y + z = 20$ with $x \le 7$.
 
@@ -1771,8 +1633,6 @@ $\binom{22}{2} - \binom{14}{2} = 231 - 91 =$ **140** (total minus $x \ge 8$, shi
 
 </details>
 
-
-
 ---
 
 ---
@@ -1782,8 +1642,6 @@ $\binom{22}{2} - \binom{14}{2} = 231 - 91 =$ **140** (total minus $x \ge 8$, shi
 *7 sections · 13 questions*
 
 *Chapter 6 · The Frontier*
-
-# Olympiad Theory
 
 Generating functions as a working tool, lattice paths and the reflection principle, Catalan numbers, Burnside–Pólya enumeration, integer partitions and Euler's theorems, Stirling numbers, and a gallery of the lemmas that carry Olympiad proofs.
 
@@ -1814,7 +1672,6 @@ Generating functions as a working tool, lattice paths and the reflection princip
 | $\displaystyle\prod_{k\ge 1}\frac{1}{1-x^k}$ | $p(n)$ | integer partitions (Ch. 6.4) |
 | $\displaystyle\prod_{k\ge 1}(1+x^k)$ | distinct-part partitions | each part size used 0 or 1 times |
 
-
 ### 6.2 Lattice paths, the reflection principle & Catalan numbers
 
 A **monotone lattice path** from $(0,0)$ to $(a,b)$ uses steps $R = (1,0)$ and $U = (0,1)$. Without restriction: choose where the $b$ up-steps go: $\binom{a+b}{b}$.
@@ -1842,13 +1699,11 @@ $$C_n = \binom{2n}{n} - \binom{2n}{n+1} = \frac{1}{n+1}\binom{2n}{n}$$
 
 Values: $1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796$ for $n = 0, 1, \dots, 10$.
 
-
 #### Why the Catalan number counts so many different things
 
 Every standard Catalan object has the same **decomposition**: *first return to the ground splits the object into an inside and an outside, each a smaller copy of the same type*. Concretely, a Dyck path is $U$ (Dyck path) $D$ (Dyck path): the part between the first up-step and its matching down-step is a Dyck path, and so is the remainder. This gives the convolution recurrence 
 $$ C_{n+1} = \sum_{i=0}^{n} C_i C_{n-i}, $$
  which (together with $C_0 = 1$) has the unique solution $C_n = \frac{1}{n+1}\binom{2n}{n}$. The same first-return decomposition appears in: **balanced parentheses** ($\text{expr} = (\text{expr})\,\text{expr}$), **full binary trees** (root's left and right subtrees), **triangulations of a convex $(n+2)$-gon** (the triangle containing side $(1, n+2)$ splits the polygon), **non-crossing perfect matchings** (the arc from 1 splits the circle). One shape, four faces — and recognizing the shape is what solves these problems in seconds at Olympiad level.
-
 
 #### Ballot theorem (Bertrand) and the (a, b) generalization
 
@@ -1869,7 +1724,7 @@ $$\#\{\text{paths } (0,0)\to(a,b),\ a\ge b,\ \text{never above } y=x\}
 >       = \frac{p-q}{p+q}\binom{p+q}{q} $$
 >  (the two displayed forms are equal since $\binom{p+q}{q} = \frac{p+q}{p}\binom{p+q-1}{q}$; verify: $p=5, q=3$: both give 14). The cycle lemma (§6.6) yields the same count by a *different* bijection (cyclic shifts) — see that section for the contrasting style.
 
-#### **S2**[Olympiad][solved][Catalan · reflection]Count monotone paths from [formula] to [formula] that never go above the diago…
+#### **S2**[Olympiad][solved][Catalan · reflection]Count monotone paths from $(0,0)$ to $(4,4)$ that never go above the diagonal.
 
 Count monotone paths from $(0,0)$ to $(4,4)$ that never go above the diagonal.
 
@@ -1878,9 +1733,7 @@ Count monotone paths from $(0,0)$ to $(4,4)$ that never go above the diagonal.
 
 Solution
 
-
 $C_4 = \binom{8}{4} - \binom{8}{5} = 70 - 56 =$ **Answer: 14**
-
 
 Equivalently $\frac{1}{5}\binom{8}{4}$ — the $\frac{1}{n+1}$ factor is the "one out of $n+1$ cyclic positions stays above the diagonal" shadow of the cycle lemma.
 
@@ -1895,12 +1748,9 @@ In an election, A receives 5 votes and B receives 3. In how many counting orders
 
 Solution
 
-
 Ballot: $\frac{5-3}{5+3}\binom{8}{3} = \frac{2}{8}\cdot 56 =$ **Answer: 14**
 
 </details>
-
-
 
 ### 6.3 Burnside's lemma & Pólya enumeration
 
@@ -1928,7 +1778,6 @@ $$N(n, k) = \frac{1}{n}\sum_{d \mid n} \varphi(d)\, k^{n/d}$$
 **Example: 4 beads, 2 colors.** $N(4,2) = \frac{1}{4}\big(\varphi(1)2^4 + \varphi(2)2^2 + \varphi(4)2^1\big)
     = \frac{1}{4}(16 + 4 + 4) = 6$. List to verify: RRRR, RRRB, RRBB (adjacent pair), RBRB (alternating), RBBB, BBBB — 6 ✓. (This is the rotation-only version of "bead bracelets". Adding the reflections of the square, the full dihedral count is $\frac{1}{8}(24 + 16 + 8) = 6$: the same 6 classes, all flip-stable as classes — but the orbit sizes under the full group are $1, 1, 2, 4, 4, 4$ (they sum to 16): RBRB is flip-symmetric, RRBB is fixed pointwise by a reflection, while RRRB, RBBB form 4-orbits and RRRR, BBBB are fixed by everything. This non-uniformity — some orbits size 1, some size 4 — is exactly what "divide by $|G|$" cannot handle, and what Burnside was built for.)
 
-
 #### Pólya's enumeration theorem — the cycle index (the general engine)
 
 Burnside with "colors weighted" becomes Pólya. For the rotation group $C_4$ acting on the 4 vertices of a square, the **cycle index** is $Z(C_4) = \frac{1}{4}\left(x_1^4 + x_2^2 + 2x_4\right)$ (identity: four 1-cycles; $180^\circ$: two 2-cycles; $90^\circ, 270^\circ$: one 4-cycle each). The number of $k$-colorings is $Z(k, k, k, k) = \frac{1}{4}(k^4 + k^2 + 2k)$; for $k = 2$: $\frac{16 + 4 + 4}{4} = 6$ ✓ (matches the necklace formula — a square's vertex-coloring class under rotation *is* a length-4 necklace). The power of the cycle index: substitute $k_i \mapsto$ (sum of color weights raised to $i$) to get a **generating function of the colorings by color counts** at once — the full Pólya theorem. For JEE/Olympiad purposes, the necklace/bracelet formulas + Burnside on small groups cover 95% of the needs.
@@ -1942,9 +1791,7 @@ The vertices of a regular hexagon are colored with 2 colors. Count colorings up 
 
 Solution
 
-
 Count $\mathrm{Fix}(g)$ for each $g$ (a coloring is fixed by $g$ iff it is constant on the cycles of $g$: $2^{\#\text{cycles}}$ choices):
-
 
 | symmetry | count | cycle structure | fixed colorings |
 | --- | --- | --- | --- |
@@ -1955,13 +1802,10 @@ Count $\mathrm{Fix}(g)$ for each $g$ (a coloring is fixed by $g$ iff it is const
 | refl. through opposite vertices | 3 | 2 fixed + two 2-cycles | 16 each |
 | refl. through opposite edges | 3 | three 2-cycles | 8 each |
 
-
 Sum: $64 + 4 + 8 + 8 + 48 + 24 = 156$. Orbits: $156/12 =$ **Answer: 13** (bracelets of 6 beads, 2 colors — verify against the bracelet formula $\frac{1}{2n}\left(\sum_{d|n}\varphi(d)k^{n/d} + \frac{n}{2}(k^{n/2+1} + k^{n/2})\right)
         = \frac{1}{12}(84 + 72) = 13$ ✓ — the rotation sum $\sum_{d|6}\varphi(d)2^{6/d} = 84$.)
 
 </details>
-
-
 
 ### 6.4 Integer partitions — deeper
 
@@ -1983,7 +1827,6 @@ $$ p(n) = [x^n]\prod_{k=1}^{\infty}\frac{1}{1-x^k}. $$
 > $$ p(n) = p(n-1) + p(n-2) - p(n-5) - p(n-7) + p(n-12) - p(n-15) + \cdots $$
 >  (terms with negative argument are 0). **Verify on $p(10)$:** $p(10) = p(9) + p(8) - p(5) - p(3) = 30 + 22 - 7 - 3 = 42$ ✓ — a partition number computed without enumerating a single partition. (This is how partitions were computed for centuries: a recurrence with a *fixed* list of step sizes, no closed form in sight.)
 
-
 #### Euler: distinct parts = odd parts (the clean GF proof)
 
 > [!abstract] First Principles — a two-line proof of a 275-year-old theorem
@@ -1997,7 +1840,6 @@ $$ p(n) = [x^n]\prod_{k=1}^{\infty}\frac{1}{1-x^k}. $$
 >       5+4+1, 5+3+2, 4+3+2+1$ → **10**; odd-part partitions: $9+1, 7+3, 7+1+1+1, 5+5, 5+3+1+1, 5+1^5, 3+3+3+1, 3+3+1^4,
 >       3+1^7, 1^{10}$ → **10** ✓.
 
-
 #### Conjugation — the Young diagram bijection
 
 **Fig 6.2 — Conjugation: the partition 5+3+2+1 transposes to 5+4+3+2+1. "At most $k$ parts" mirrors "largest part $\le k$" — a pure bijection, no counting.**
@@ -2010,8 +1852,6 @@ flowchart LR
 ```
 
 **Theorem.** Partitions of $n$ into **at most $k$ parts** are in bijection with partitions of $n$ with **largest part $\le k$** (transpose the Young diagram). In particular, "exactly $k$ parts" ↔ "largest part exactly $k$" — the *duality* halves the number of cases in any restricted count. Don't confuse partitions with compositions here: the number of *ordered* sums of $n$ into exactly $k$ positive parts is $\binom{n-1}{k-1}$, while partitions into exactly $k$ parts have no closed form (a warning you'll feel the moment you try to guess one).
-
-
 
 ### 6.5 Stirling numbers, Bell numbers, surjections
 
@@ -2046,7 +1886,7 @@ The right side is the number of **onto functions** $[n]\to[k]$ (Ch. 4, S3) — a
 
 **Bell numbers** $B_n = \sum_k S(n,k)$: partitions of $[n]$ into any number of blocks: $1, 1, 2, 5, 15, 52, 203, \dots$. (Recurrence $B_{n+1} = \sum_k \binom{n}{k} B_k$: split by the block containing 1.)
 
-#### **S5**[Olympiad][solved][Stirling]Compute [formula] two ways, and count the ways to divide 6 people into 3 unlab…
+#### **S5**[Olympiad][solved][Stirling]Compute $S(6, 3)$ two ways, and count the ways to divide 6 people into 3 unlabeled pairs.
 
 Compute $S(6, 3)$ two ways, and count the ways to divide 6 people into 3 unlabeled pairs.
 
@@ -2055,19 +1895,14 @@ Compute $S(6, 3)$ two ways, and count the ways to divide 6 people into 3 unlabel
 
 Solution
 
-
 **Recurrence:** $S(6,3) = 3S(5,3) + S(5,2) = 3\cdot 25 + 15 = 90$.
-
 
 **Closed form:** $\frac{1}{6}(3^6 - 3\cdot 2^6 + 3\cdot 1^6)
         = \frac{729 - 192 + 3}{6} = 90$ ✓.
 
-
 **Unlabeled pairs:** $\frac{6!}{(2!)^3\, 3!} = \frac{720}{8\cdot 6} =$ **Answer: 15** (Ch. 2's labeling argument: label the pairs to get $6!/(2!)^3$, divide by $3!$ for pair order — exact symmetry since all pairs have size 2 and are distinct objects).
 
 </details>
-
-
 
 ### 6.6 Gallery of Olympiad lemmas
 
@@ -2092,7 +1927,6 @@ Solution
 >
 > Consequence for ballot problems: of the $\binom{p+q}{q}$ vote orders (A = +1), cyclic orbits have size $p+q$ and contain exactly $p-q$ good shifts — matching the reflection count $\frac{p-q}{p+q}\binom{p+q}{q}$ of §6.2 by a *different* bijection. (In this course the reflection principle is the workhorse; reach for the cycle lemma when the problem is phrased cyclically — e.g. seating problems around a table with a running-tally condition.)
 
-
 #### Sperner's theorem (via the LYM inequality)
 
 **Statement.** Let $\mathcal{F}$ be an **antichain** of subsets of $[n]$ (no member contains another). Then $|\mathcal{F}| \le \binom{n}{\lfloor n/2\rfloor}$ — the middle layer alone is the largest antichain.
@@ -2105,7 +1939,6 @@ Solution
 >       \ \ge\ \sum_{A\in\mathcal{F}} \frac{1}{\binom{n}{\lfloor n/2\rfloor}}
 >       \ =\ \frac{|\mathcal{F}|}{\binom{n}{\lfloor n/2\rfloor}}, $$
 >  since the middle binomial is the largest. Rearranged: $|\mathcal{F}| \le \binom{n}{\lfloor n/2\rfloor}$. $\square$ **Technique to steal:** "random maximal chain + at most one hit" — the LYM inequality is the template; it proves the same theorem for any graded poset with the same "chain probability" computation.
-
 
 #### Erdős–Szekeres (the "up or down" theorem)
 
@@ -2123,8 +1956,6 @@ Solution
 > A *lower bound* can sometimes be proved by showing a random object usually has the desired property. For $R(3,3)$ the lower bound is *explicit*, not probabilistic: color the edges of the 5-cycle red and its diagonals blue (paper Q24) — each color class is a 5-cycle, which contains no triangle, so $R(3,3) > 5$. The probabilistic method (Erdős, 1947) enters for larger parameters: color the edges of $K_n$ red/blue at random. A given $k$-clique is monochromatic with probability $2 \cdot 2^{-\binom{k}{2}}
 >       = 2^{1-\binom{k}{2}}$, so the expected number of monochromatic $k$-cliques is $\binom{n}{k}\, 2^{1-\binom{k}{2}}$. If this expectation is $&lt; 1$, *some* coloring has none at all — hence $R(k,k) &gt; n$. For instance, $k = 4, n = 6$: $\binom{6}{4}/2^{5} = 15/32 &lt; 1$, so $R(4,4) \ge 7$ — existence with no construction. (For $k = 3$ the bound only reaches $n = 3$, which is why $R(3,3)$ is better handled explicitly.) Expectation $&lt; 1$ ⇒ existence is the seed of an entire field.
 
-
-
 ### 6.7 Practice set
 
 #### **P1**[Olympiad][practice][Catalan]In how many ways can 5 factors be fully parenthesized? How many triangulations…
@@ -2137,9 +1968,7 @@ In how many ways can 5 factors be fully parenthesized? How many triangulations o
 **Parenthesizing $n+1$ factors $= C_n$** (calibrate: 2 factors $\to$ 1 way $= C_1$; 3 factors $\to$ 2 ways $= C_2$). So 5 factors $\to C_4 = \frac{1}{5}\binom{8}{4}
         =$ **14**.
 
-
 **Triangulations of a convex $(n+2)$-gon $= C_n$** (first-return decomposition on the triangle containing side $(1, n+2)$, §6.2). A heptagon has $7 = n+2$ sides, so $n = 5$: $C_5 = \frac{1}{6}\binom{10}{5} =$ **42**.
-
 
 Same sequence, different $n$ — the index convention ($n+1$ vs $n+2$) is the classic trap in Catalan problems.
 
@@ -2156,7 +1985,7 @@ $\frac{7-3}{7+3}\binom{10}{3} = \frac{4}{10}\cdot 120 =$ **48**.
 
 </details>
 
-#### **P3**[Olympiad][practice][Dvoretzky–Motzkin]Monotone paths from [formula] to [formula] that never go above the diagonal [f…
+#### **P3**[Olympiad][practice][Dvoretzky–Motzkin]Monotone paths from $(0,0)$ to $(5,3)$ that never go above the diagonal $y = x$.
 
 Monotone paths from $(0,0)$ to $(5,3)$ that never go above the diagonal $y = x$.
 
@@ -2179,7 +2008,7 @@ $\frac{1}{6}\left(\varphi(1)3^6 + \varphi(2)3^3 + \varphi(3)3^2 + \varphi(6)3^1\
 
 </details>
 
-#### **P5**[Olympiad][practice][partitions]Compute [formula] by direct enumeration, and verify the pentagonal recurrence …
+#### **P5**[Olympiad][practice][partitions]Compute $p(7)$ by direct enumeration, and verify the pentagonal recurrence…
 
 Compute $p(7)$ by direct enumeration, and verify the pentagonal recurrence $p(7) = p(6) + p(5) - p(2) - p(0)$.
 
@@ -2190,7 +2019,7 @@ Partitions of 7: 7; 6+1; 5+2; 5+1+1; 4+3; 4+2+1; 4+1+1+1; 3+3+1; 3+2+2; 3+2+1+1;
 
 </details>
 
-#### **P6**[Olympiad][practice][Stirling]Compute [formula] by the recurrence and by the closed form.
+#### **P6**[Olympiad][practice][Stirling]Compute $S(5, 2)$ by the recurrence and by the closed form.
 
 Compute $S(5, 2)$ by the recurrence and by the closed form.
 
@@ -2201,7 +2030,7 @@ Recurrence: $S(5,2) = 2S(4,2) + S(4,1) = 2\cdot 7 + 1 = 15$. Closed form: $\frac
 
 </details>
 
-#### **P7**[Olympiad][practice][Sperner]What is the largest number of subsets of [formula] such that no chosen set con…
+#### **P7**[Olympiad][practice][Sperner]What is the largest number of subsets of $\{1,\dots,6\}$ such that no chosen set contains…
 
 What is the largest number of subsets of $\{1,\dots,6\}$ such that no chosen set contains another?
 
@@ -2212,7 +2041,7 @@ By Sperner (S8 of this chapter): $\binom{6}{3} =$ **20**, achieved by the middle
 
 </details>
 
-#### **P8**[Olympiad][practice][GF]Show that the number of compositions of [formula] into parts from [formula] sa…
+#### **P8**[Olympiad][practice][GF]Show that the number of compositions of $n$ into parts from $\{1,2,3\}$ satisfies…
 
 Show that the number of compositions of $n$ into parts from $\{1,2,3\}$ satisfies $a_n = a_{n-1} + a_{n-2} + a_{n-3}$, and find $a_6$.
 
@@ -2223,8 +2052,6 @@ GF: $\frac{1}{1 - (x + x^2 + x^3)}$ → $(1 - x - x^2 - x^3)A(x) = 1$ → the st
         a_6 =$ **24**.
 
 </details>
-
-
 
 ---
 

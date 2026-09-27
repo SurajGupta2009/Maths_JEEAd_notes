@@ -25,7 +25,7 @@ Every solution shows the *method name* first, then the computation, then a check
 
 ### A · Binomial from Counting (Q1–Q5)
 
-#### **Q1**[JEE Main]Find the coefficient of [formula] in [formula] .
+#### **Q1**[JEE Main]Find the coefficient of $x^6$ in $(1-2x)^9$.
 
 Find the coefficient of $x^6$ in $(1-2x)^9$.
 
@@ -42,7 +42,7 @@ Check: $\binom96 = \binom93 = 84$, $2^6 = 64$, $84 \cdot 64 = 5376$; sign positi
 
 </details>
 
-#### **Q2**[JEE Main]Find the sum of the coefficients of [formula] .
+#### **Q2**[JEE Main]Find the sum of the coefficients of $(3x^2 - 2x + 1)^5$.
 
 Find the sum of the coefficients of $(3x^2 - 2x + 1)^5$.
 
@@ -59,7 +59,7 @@ Check: no expansion was needed — the whole question tests whether you know the
 
 </details>
 
-#### **Q3**[JEE Main]How many distinct terms remain after collecting like terms in [formula] ?
+#### **Q3**[JEE Main]How many distinct terms remain after collecting like terms in $(a+b+c)^{10}$?
 
 How many distinct terms remain after collecting like terms in $(a+b+c)^{10}$?
 
@@ -76,7 +76,7 @@ Check: the multinomial $x^3y^2z^5$ occurs $\frac{10!}{3!2!5!} = 2520$ times amon
 
 </details>
 
-#### **Q4**[JEE Adv]In [formula] , [formula] . Find [formula] and the common value.
+#### **Q4**[JEE Adv]In $(1+x)^{13}$, $\binom{13}{r} = \binom{13}{r+3}$. Find $r$ and the common value.
 
 In $(1+x)^{13}$, $\binom{13}{r} = \binom{13}{r+3}$. Find $r$ and the common value.
 
@@ -93,7 +93,7 @@ Check: $\binom{13}{5} = \frac{13\cdot12\cdot11\cdot10\cdot9}{120} = 13\cdot11\cd
 
 </details>
 
-#### **Q5**[JEE Adv]Prove [formula] by an explicit bijection.
+#### **Q5**[JEE Adv]Prove $\sum_{k=0}^n \binom{n}{k} = 2^n$ by an explicit bijection.
 
 Prove $\sum_{k=0}^n \binom{n}{k} = 2^n$ by an explicit bijection.
 
@@ -114,7 +114,7 @@ Check at $n = 3$: $1+3+3+1 = 8$ ✓ — and the grouping by parity of size gives
 
 ### B · Coefficient Machinery (Q6–Q11)
 
-#### **Q6**[JEE Main]Coefficient of [formula] in [formula] , rewritten via one identity.
+#### **Q6**[JEE Main]Coefficient of $x^5$ in $(1+x)^{10} + (1+x)^{11}$, rewritten via one identity.
 
 Coefficient of $x^5$ in $(1+x)^{10} + (1+x)^{11}$, rewritten via one identity.
 
@@ -131,7 +131,7 @@ Check: add one more way — $(1+x)^{11} = (1+x)(1+x)^{10}$ so the coefficient of
 
 </details>
 
-#### **Q7**[JEE Adv]Find the coefficient of [formula] in [formula] .
+#### **Q7**[JEE Adv]Find the coefficient of $x^{-2}$ in $\left(x^2 + \dfrac{1}{x^3}\right)^9$.
 
 Find the coefficient of $x^{-2}$ in $\left(x^2 + \dfrac{1}{x^3}\right)^9$.
 
@@ -149,7 +149,7 @@ Check: $18 - 5k$ hits $-2$ for exactly one $k \in [0,9]$ ✓ (step size 5, and $
 
 </details>
 
-#### **Q8**[JEE Adv]Find the coefficient of [formula] in [formula] .
+#### **Q8**[JEE Adv]Find the coefficient of $x^4$ in $(1+x+x^2)^5$.
 
 Find the coefficient of $x^4$ in $(1+x+x^2)^5$.
 
@@ -170,7 +170,7 @@ Check: two independent engines — the multinomial sum and the geometric product
 
 </details>
 
-#### **Q9**[JEE Adv]Sum of coefficients of [formula] is [formula] . Find [formula] .
+#### **Q9**[JEE Adv]Sum of coefficients of $(1+2x)^n$ is $6561$. Find $n$.
 
 Sum of coefficients of $(1+2x)^n$ is $6561$. Find $n$.
 
@@ -187,7 +187,7 @@ Check: $3^4 = 81$, $81^2 = 6561$ ✓ (so $3^8$ is right and the exponent is uniq
 
 </details>
 
-#### **Q10**[JEE Adv]4th and 8th binomial coefficients of [formula] are equal; find [formula] and t…
+#### **Q10**[JEE Adv]4th and 8th binomial coefficients of $(1+x)^n$ are equal; find $n$ and the greatest…
 
 4th and 8th binomial coefficients of $(1+x)^n$ are equal; find $n$ and the greatest coefficient.
 
@@ -204,7 +204,7 @@ Check: $\binom{10}{3} = 120 = \binom{10}{7}$ ✓; $n$ even ⇒ unique middle pea
 
 </details>
 
-#### **Q11**[Olympiad]Prove [formula] and evaluate at [formula] .
+#### **Q11**[Olympiad]Prove $\dbinom{2n}{n} \gt \dfrac{4^n}{2n+1}$ and evaluate at $n = 6$.
 
 Prove $\dbinom{2n}{n} \gt \dfrac{4^n}{2n+1}$ and evaluate at $n = 6$.
 
@@ -225,7 +225,7 @@ Check at $n=1$: $2 > 4/3$ ✓. Read the other way, the proof shows the central c
 
 ### C · The Identity Toolkit (Q12–Q16)
 
-#### **Q12**[JEE Main]Evaluate [formula] exactly.
+#### **Q12**[JEE Main]Evaluate $\sum_{k=0}^{6} \frac{\binom{6}{k}}{k+1}$ exactly.
 
 Evaluate $\sum_{k=0}^{6} \frac{\binom{6}{k}}{k+1}$ exactly.
 
@@ -244,7 +244,7 @@ Check by term: $1 + 3 + 3 + \tfrac{20}{4} + \tfrac{15}{5} + \tfrac{6}{6} + \tfra
 
 </details>
 
-#### **Q13**[JEE Main]Evaluate [formula] .
+#### **Q13**[JEE Main]Evaluate $\sum_{k=0}^{4} k\binom{4}{k} 2^{-k}$.
 
 Evaluate $\sum_{k=0}^{4} k\binom{4}{k} 2^{-k}$.
 
@@ -262,7 +262,7 @@ Check term by term: $0 + 4\cdot\tfrac12 + 6\cdot2\cdot\tfrac14 + 4\cdot3\cdot\tf
 
 </details>
 
-#### **Q14**[JEE Adv]Evaluate [formula] .
+#### **Q14**[JEE Adv]Evaluate $\sum_{k=0}^{10} \frac{(-1)^k}{k+1}\binom{10}{k}$.
 
 Evaluate $\sum_{k=0}^{10} \frac{(-1)^k}{k+1}\binom{10}{k}$.
 
@@ -279,7 +279,7 @@ Check: $\sum_k (-1)^k\binom{10}{k} = 0$ is the same computation with the integra
 
 </details>
 
-#### **Q15**[JEE Adv]Find [formula] over even [formula] only.
+#### **Q15**[JEE Adv]Find $\sum_k k\binom{12}{k}$ over even $k$ only.
 
 Find $\sum_k k\binom{12}{k}$ over even $k$ only.
 
@@ -297,7 +297,7 @@ Check: odd part equals the same $12288$; total $= 12\cdot 2^{11} = 24576$ ✓.
 
 </details>
 
-#### **Q16**[JEE Adv]Prove [formula] and deduce the alternating variant.
+#### **Q16**[JEE Adv]Prove $\sum_k \frac{\binom nk}{k+1} = \frac{2^{n+1}-1}{n+1}$ and deduce the alternating…
 
 Prove $\sum_k \frac{\binom nk}{k+1} = \frac{2^{n+1}-1}{n+1}$ and deduce the alternating variant.
 
@@ -318,7 +318,7 @@ Check at $n = 1$: $1 + \tfrac12 = \tfrac32 = \tfrac{2^2-1}{2}$ ✓ and $1 - \tfr
 
 ### D · Infinite Expansions (Q17–Q22)
 
-#### **Q17**[JEE Main]Coefficient of [formula] in [formula] .
+#### **Q17**[JEE Main]Coefficient of $x^6$ in $(1-x)^{-4}$.
 
 Coefficient of $x^6$ in $(1-x)^{-4}$.
 
@@ -336,7 +336,7 @@ Check the derivation of the family: $\binom{-4}{k} = (-1)^k
 
 </details>
 
-#### **Q18**[JEE Main]Expand [formula] ascending to the linear term; state validity.
+#### **Q18**[JEE Main]Expand $(3+2x)^{-2}$ ascending to the linear term; state validity.
 
 Expand $(3+2x)^{-2}$ ascending to the linear term; state validity.
 
@@ -355,7 +355,7 @@ Check: derivative at $x = 0$ of $(3+2x)^{-2}$ is $-2(3+2x)^{-3}\cdot2\big|_0 = -
 
 </details>
 
-#### **Q19**[JEE Adv]Coefficient of [formula] in [formula] .
+#### **Q19**[JEE Adv]Coefficient of $x^5$ in $(1+x)^{-1/2}$.
 
 Coefficient of $x^5$ in $(1+x)^{-1/2}$.
 
@@ -373,7 +373,7 @@ Check: $945/3840 = 63/256$ after dividing by 15 ✓; negative because five numer
 
 </details>
 
-#### **Q20**[JEE Adv]Evaluate [formula] .
+#### **Q20**[JEE Adv]Evaluate $1 + 2(0.9) + 3(0.9)^2 + \cdots$.
 
 Evaluate $1 + 2(0.9) + 3(0.9)^2 + \cdots$.
 
@@ -390,7 +390,7 @@ Check: the family is the derivative of the geometric series, and $\sum t^k = (1-
 
 </details>
 
-#### **Q21**[JEE Adv]Estimate [formula] to five decimal places with an error justification.
+#### **Q21**[JEE Adv]Estimate $\sqrt{1.04}$ to five decimal places with an error justification.
 
 Estimate $\sqrt{1.04}$ to five decimal places with an error justification.
 
@@ -409,7 +409,7 @@ Check: $(1.01980)^2 = 1.040 - \text{tiny}$: $1.0198^2 = 1.03999204$ vs $1.04$ �
 
 </details>
 
-#### **Q22**[Olympiad]Prove Bernoulli by truncation; use two kept terms to show [formula] .
+#### **Q22**[Olympiad]Prove Bernoulli by truncation; use two kept terms to show $1.01^{50} \gt 1.6$.
 
 Prove Bernoulli by truncation; use two kept terms to show $1.01^{50} \gt 1.6$.
 
@@ -430,7 +430,7 @@ Check: the true value is $1.6446\ldots$ — the two-term truncation overshoots t
 
 ### E · Size, Growth and Extremes (Q23–Q27)
 
-#### **Q23**[JEE Main]Prove [formula] .
+#### **Q23**[JEE Main]Prove $\left(1 + \frac1n\right)^n \lt 3$.
 
 Prove $\left(1 + \frac1n\right)^n \lt 3$.
 
@@ -447,7 +447,7 @@ Check $n = 1000$: $2.7169\ldots \lt 3$ ✓; the same chain gives the classical c
 
 </details>
 
-#### **Q24**[JEE Adv]Show [formula] strictly increases.
+#### **Q24**[JEE Adv]Show $a_n = (1+1/n)^n$ strictly increases.
 
 Show $a_n = (1+1/n)^n$ strictly increases.
 
@@ -464,7 +464,7 @@ Check: $a_1 = 2 \lt a_2 = 2.25 \lt a_3 = 64/27 \approx 2.37$ ✓.
 
 </details>
 
-#### **Q25**[JEE Adv]Find [formula] without approximating [formula] .
+#### **Q25**[JEE Adv]Find $\lfloor (1+\sqrt2)^3 \rfloor$ without approximating $\sqrt 2$.
 
 Find $\lfloor (1+\sqrt2)^3 \rfloor$ without approximating $\sqrt 2$.
 
@@ -481,7 +481,7 @@ Check directly: $(1+\sqrt2)^3 = 7 + 5\sqrt2 \approx 14.07$ ✓ — and the floor
 
 </details>
 
-#### **Q26**[JEE Adv]Greatest term of [formula] at [formula] .
+#### **Q26**[JEE Adv]Greatest term of $(3+2x)^{10}$ at $x = 1$.
 
 Greatest term of $(3+2x)^{10}$ at $x = 1$.
 
@@ -499,7 +499,7 @@ Check neighbours: $t_3 = 120\cdot2187\cdot8 = 2099520$ and $t_5 = 252\cdot243\cd
 
 </details>
 
-#### **Q27**[Olympiad]Prove [formula] for [formula] by keeping four symmetric terms of [formula] .
+#### **Q27**[Olympiad]Prove $2^n \gt n^2$ for $n \ge 5$ by keeping four symmetric terms of $(1+1)^n$.
 
 Prove $2^n \gt n^2$ for $n \ge 5$ by keeping four symmetric terms of $(1+1)^n$.
 
@@ -520,7 +520,7 @@ Check the coincidence honestly: at $n = 6$, "four terms" are actually $\binom62 
 
 ### F · Divisibility and Remainders (Q28–Q32)
 
-#### **Q28**[JEE Main]Prove [formula] for prime [formula] , [formula] ; deduce [formula] .
+#### **Q28**[JEE Main]Prove $p \mid \binom pk$ for prime $p$, $0 \lt k \lt p$; deduce $2^7 \equiv 2 \pmod 7$.
 
 Prove $p \mid \binom pk$ for prime $p$, $0 \lt k \lt p$; deduce $2^7 \equiv 2 \pmod 7$.
 
@@ -537,7 +537,7 @@ Check interior entries: $7, 21, 35, 35, 21, 7$ — every one a multiple of 7 ✓
 
 </details>
 
-#### **Q29**[JEE Main]Remainder of [formula] upon division by [formula] .
+#### **Q29**[JEE Main]Remainder of $3^{37} - 3$ upon division by $37$.
 
 Remainder of $3^{37} - 3$ upon division by $37$.
 
@@ -555,7 +555,7 @@ Check: the argument used only Q28's lemma twice — no external theorem quoted; 
 
 </details>
 
-#### **Q30**[JEE Adv]Trailing zeros of [formula] .
+#### **Q30**[JEE Adv]Trailing zeros of $200!$.
 
 Trailing zeros of $200!$.
 
@@ -573,7 +573,7 @@ Check the bookkeeping: the 8 counts 25-multiples twice, the 1 counts 125-multipl
 
 </details>
 
-#### **Q31**[JEE Adv]Remainder of [formula] mod [formula] .
+#### **Q31**[JEE Adv]Remainder of $6^{999} + 1$ mod $5$.
 
 Remainder of $6^{999} + 1$ mod $5$.
 
@@ -590,7 +590,7 @@ Check: $6^2 = 36 \equiv 1$, so $6^{998} \equiv 1$ and $6^{999} + 1 \equiv 6 + 1 
 
 </details>
 
-#### **Q32**[Olympiad]Prove: a prime [formula] divides every interior entry of row [formula] iff [fo…
+#### **Q32**[Olympiad]Prove: a prime $p$ divides every interior entry of row $n$ iff $n = p^e$.
 
 Prove: a prime $p$ divides every interior entry of row $n$ iff $n = p^e$.
 
@@ -630,7 +630,7 @@ Check the bit string: $1024+512+256+128+64+32+8 = 2024$ ✓ — seven summands, 
 
 </details>
 
-#### **Q34**[JEE Adv]Highest power of [formula] dividing [formula] .
+#### **Q34**[JEE Adv]Highest power of $2$ dividing $\binom{20}{10}$.
 
 Highest power of $2$ dividing $\binom{20}{10}$.
 
@@ -648,7 +648,7 @@ Check with Legendre directly: $v_2(20!) - 2v_2(10!) = (10+5+2+1) -
 
 </details>
 
-#### **Q35**[JEE Adv][formula] mod 7 by Lucas, and mod 2. Explain the different verdicts.
+#### **Q35**[JEE Adv] $\binom{10}{3}$ mod 7 by Lucas, and mod 2. Explain the different verdicts.
 
 $\binom{10}{3}$ mod 7 by Lucas, and mod 2. Explain the different verdicts.
 
@@ -665,7 +665,7 @@ Check: no contradiction is possible — Lucas computes the *same integer's* resi
 
 </details>
 
-#### **Q36**[Olympiad]Compute [formula] with the roots-of-unity filter.
+#### **Q36**[Olympiad]Compute $\sum_{k \equiv 0 (3)} \binom{15}{k}$ with the roots-of-unity filter.
 
 Compute $\sum_{k \equiv 0 (3)} \binom{15}{k}$ with the roots-of-unity filter.
 
@@ -686,7 +686,7 @@ Check: the other two classes come out $\sum_{k\equiv1} = \sum_{k\equiv2} = \frac
 
 ### H · Synthesis and Stretch (Q37–Q38)
 
-#### **Q37**[Olympiad]Prove [formula] , constant in [formula] .
+#### **Q37**[Olympiad]Prove $\sum_{k=0}^n (-1)^k \binom nk (x+k)^n = (-1)^n n!$, constant in $x$.
 
 Prove $\sum_{k=0}^n (-1)^k \binom nk (x+k)^n = (-1)^n n!$, constant in $x$.
 
@@ -704,7 +704,7 @@ Check at $n=2$, $x = 1$: $1\cdot1 - 2\cdot4 + 1\cdot9 = 2$ — and the formula s
 
 </details>
 
-#### **Q38**[Olympiad]Prove [formula] is even; determine the even-exponent case.
+#### **Q38**[Olympiad]Prove $\lfloor (1+\sqrt2)^{2m+1}\rfloor$ is even; determine the even-exponent case.
 
 Prove $\lfloor (1+\sqrt2)^{2m+1}\rfloor$ is even; determine the even-exponent case.
 
