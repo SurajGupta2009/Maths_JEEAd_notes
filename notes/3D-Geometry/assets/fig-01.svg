@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 250" width="470" height="250" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="470" height="250" fill="#ffffff"/>
+  <!-- origin -->
+  <circle cx="120" cy="150" r="3" fill="#0f172a"/>
+  <text x="104" y="168" font-size="12" fill="#0f172a">O</text>
+  <!-- x axis -->
+  <line x1="120" y1="150" x2="330" y2="150" stroke="#334155" stroke-width="1.2"/>
+  <polygon points="330,150 322,146 322,154" fill="#334155"/>
+  <text x="334" y="154" font-size="12" fill="#334155">x</text>
+  <!-- y axis -->
+  <line x1="120" y1="150" x2="120" y2="30" stroke="#334155" stroke-width="1.2"/>
+  <polygon points="120,30 116,39 124,39" fill="#334155"/>
+  <text x="126" y="38" font-size="12" fill="#334155">y</text>
+  <!-- z axis -->
+  <line x1="120" y1="150" x2="215" y2="205" stroke="#334155" stroke-width="1.2"/>
+  <polygon points="215,205 205,202 209,194" fill="#334155"/>
+  <text x="219" y="212" font-size="12" fill="#334155">z</text>
+  <!-- xy plane (parallelogram) -->
+  <polygon points="120,150 330,150 330,30 120,30" fill="#0ea5e9" fill-opacity="0.10" stroke="#0ea5e9" stroke-width="1"/>
+  <text x="238" y="98" font-size="11" fill="#0369a1">xy-plane</text>
+  <!-- yz plane -->
+  <polygon points="120,150 120,30 215,205" fill="#16a34a" fill-opacity="0.10" stroke="#16a34a" stroke-width="1"/>
+  <text x="126" y="128" font-size="11" fill="#15803d">yz-plane</text>
+  <!-- zx plane -->
+  <polygon points="120,150 330,150 215,205" fill="#a855f7" fill-opacity="0.10" stroke="#a855f7" stroke-width="1"/>
+  <text x="212" y="176" font-size="11" fill="#7e22ce">zx-plane</text>
+  <!-- point P in first octant -->
+  <circle cx="240" cy="80" r="4" fill="#dc2626"/>
+  <text x="248" y="76" font-size="13" fill="#dc2626">P(x, y, z)</text>
+  <!-- dashed coordinate projections -->
+  <line x1="240" y1="80" x2="240" y2="150" stroke="#64748b" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="240" y1="150" x2="120" y2="150" stroke="#64748b" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="120" y1="150" x2="120" y2="80" stroke="#64748b" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="240" y1="80" x2="120" y2="80" stroke="#64748b" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="150" y="98" font-size="11" fill="#475569">x</text>
+  <text x="128" y="118" font-size="11" fill="#475569">y</text>
+  <text x="196" y="142" font-size="11" fill="#475569">z</text>
+  <!-- octant labels -->
+  <text x="60" y="60" font-size="10" fill="#94a3b8">octant II</text>
+  <text x="350" y="60" font-size="10" fill="#94a3b8">octant I</text>
+  <text x="60" y="230" font-size="10" fill="#94a3b8">octant VI</text>
+  <text x="350" y="230" font-size="10" fill="#94a3b8">octant V</text>
+  <text x="40" y="130" font-size="11" fill="#475569">The three coordinate planes divide space into 8 octants;</text>
+  <text x="40" y="146" font-size="11" fill="#475569">the sign pattern of (x, y, z) names the octant.</text>
+</svg>
