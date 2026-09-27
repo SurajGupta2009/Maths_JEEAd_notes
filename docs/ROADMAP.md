@@ -44,7 +44,7 @@ basics to Olympiad level.
 | 10 | Coordinate Geometry — Lines & Circles | `notes/Coordinate-Geometry-Lines-and-Circles/` | ✅ done |
 | 11 | Conic Sections | `notes/Conic-Sections/` | ✅ done |
 | 12 | 3D Geometry | `notes/3D-Geometry/` | ⬜ to do |
-| 13 | Vectors | `notes/Vectors/` | ⬜ to do |
+| 13 | Vectors | `notes/Vectors/` | ✅ done |
 | 14 | Matrices & Determinants | `notes/Matrices-and-Determinants/` | ⬜ to do |
 | 15 | Probability | `notes/Probability/` | ⬜ to do |
 | — | PnC · Permutations & Combinations *(bonus)* | `notes/PnC/` | ✅ done |
