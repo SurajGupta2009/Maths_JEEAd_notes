@@ -119,9 +119,7 @@ GitHub Flavored Markdown tables.
 
 ```
 notes/<Module>/
-├── <Module>.md            # index / course map
-├── 01-…/README.md → 01-….md … 06-….md   # ONE note per chapter
-├── <Module> — Theory.md   # one-page reference
+├── <Module>.md            # complete notes: course map + 6 chapters + theory appendix
 ├── <Module> — Paper.md    # Olympiad paper (A–H)
 ├── <Module> — Solutions.md
 └── assets/fig-XX.svg
@@ -129,13 +127,13 @@ notes/<Module>/
 
 ## Dataview dashboards
 
-`[[Home]]` and each module index use Dataview to list chapters:
+`[[Home]]` lists the modules (there is one complete note per module):
 
 ```dataview
-TABLE chapter AS "Ch", level AS "Level"
-FROM "notes/PnC"
-WHERE chapter
-SORT chapter ASC
+LIST
+FROM "notes"
+WHERE type = "notes"
+SORT file.name ASC
 ```
 
 Requires the **Dataview** community plugin.
@@ -144,7 +142,7 @@ Requires the **Dataview** community plugin.
 
 ```bash
 python3 tools/verify-md.py          # frontmatter, math balance, blocks, image links
-python3 tools/verify-structure.py   # 6 chapters/module, unique names, P/S numbering
+python3 tools/verify-structure.py   # 3 notes/module, 6 chapters + appendix, paper<->solutions
 ```
 
 ---

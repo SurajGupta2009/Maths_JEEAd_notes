@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
 """Whole-vault layout gate for the Obsidian maths vault.
 
-Usage:
-  python3 tools/verify-structure.py
+New model — three notes per module:
+
+    notes/<Module>/<Module>.md              complete notes (course map + 6 chapters + theory appendix)
+    notes/<Module>/<Module> — Paper.md      Olympiad paper (sections A–H)
+    notes/<Module>/<Module> — Solutions.md  full worked solutions
 
 Invariants checked across notes/:
 
-  * every module folder has exactly six chapter notes  NN-<slug>.md
-  * every module folder has its four module-level notes:
-        <Module>.md · <Module> - Paper.md · <Module> - Solutions.md · <Module> - Theory.md
+  * every module folder has EXACTLY those three notes and nothing else
+    (no leftover per-chapter NN-slug.md files)
+  * the complete note contains all six `# Chapter N` headings and the
+    `# Appendix — Well-ordered theory reference`
   * every note's basename is unique across the whole vault (so [[Wikilinks]]
     resolve without ambiguity)
-  * the six chapter numbers are 01..06 with no gaps or duplicates
-  * no chapter note carries a P/S question id duplicated elsewhere in the
-    module (continuous per-module numbering)
+  * paper Q-ids and the Solutions note's Q-ids match (every question answered)
 
 Exits non-zero (with a summary) if any invariant is violated.
 """
@@ -24,9 +26,9 @@ from collections import Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NOTES_DIR = os.path.join(ROOT, 'notes')
-CHAPTER_RE = re.compile(r'^(\d\d)-.+\.md$')
-PS_RE = re.compile(r'####\s*\*\*([PS]\d+)\*\*')
-DASH = '\u2014'  # em dash used in module-note names (e.g. "PnC — Paper.md")
+DASH = '\u2014'
+CHAPTER_H1 = re.compile(r'^#\s+Chapter\s+(\d+)', re.M)
+QID = re.compile(r'\*\*Q(\d+)\*\*')
 
 
 def modules():
@@ -36,52 +38,57 @@ def modules():
 
 def main():
     problems = []
+    warnings = []
 
-    # 1. per-module layout
     for mod in modules():
         base = os.path.join(NOTES_DIR, mod)
-        files = [f for f in os.listdir(base) if f.endswith('.md')]
-        chapters = sorted(f for f in files if CHAPTER_RE.match(f))
-        nums = [CHAPTER_RE.match(f).group(1) for f in chapters]
-        if len(chapters) != 6:
-            problems.append('%s: expected 6 chapter notes, found %d (%s)'
-                            % (mod, len(chapters), ', '.join(chapters) or 'none'))
-        if nums != ['01', '02', '03', '04', '05', '06']:
-            problems.append('%s: chapter numbers must be 01..06, got %s'
-                            % (mod, nums))
-        for suffix, label in (('.md', 'index'), (' %s Paper.md' % DASH, 'paper'),
-                              (' %s Solutions.md' % DASH, 'solutions'),
-                              (' %s Theory.md' % DASH, 'theory')):
-            expected = mod + suffix
-            if expected not in files:
-                problems.append('%s: missing %s note %r' % (mod, label, expected))
+        md = sorted(f for f in os.listdir(base) if f.endswith('.md'))
+        expected = sorted(['%s.md' % mod,
+                           '%s %s Paper.md' % (mod, DASH),
+                           '%s %s Solutions.md' % (mod, DASH)])
+        stray_chapters = [f for f in md if re.match(r'^\d\d-', f)]
+        if stray_chapters:
+            problems.append('%s: leftover per-chapter notes %s — merge them into '
+                            '%s.md with tools/build-complete.py'
+                            % (mod, stray_chapters, mod))
+        if md != expected:
+            missing = [f for f in expected if f not in md]
+            extra = [f for f in md if f not in expected]
+            if missing:
+                problems.append('%s: missing %s' % (mod, missing))
+            if extra:
+                problems.append('%s: unexpected notes %s' % (mod, extra))
 
-    # 2. globally unique note basenames (clean Wikilinks)
+        complete = os.path.join(base, '%s.md' % mod)
+        if os.path.isfile(complete):
+            text = open(complete, encoding='utf-8').read()
+            chaps = sorted(set(int(n) for n in CHAPTER_H1.findall(text)))
+            if chaps != [1, 2, 3, 4, 5, 6]:
+                problems.append('%s.md: expected chapters 1..6, found %s'
+                                % (mod, chaps))
+            if '# Appendix' not in text:
+                warnings.append('%s.md: no theory appendix found' % mod)
+
+        # paper <-> solutions Q-id parity
+        paper = os.path.join(base, '%s %s Paper.md' % (mod, DASH))
+        sols = os.path.join(base, '%s %s Solutions.md' % (mod, DASH))
+        if os.path.isfile(paper) and os.path.isfile(sols):
+            pq = set(QID.findall(open(paper, encoding='utf-8').read()))
+            sq = set(QID.findall(open(sols, encoding='utf-8').read()))
+            unanswered = sorted(pq - sq, key=int)
+            if unanswered:
+                problems.append('%s: paper questions with no solution: Q%s'
+                                % (mod, ', Q'.join(unanswered)))
+
+    # globally unique note basenames (clean Wikilinks)
     names = []
     for dirpath, dirnames, filenames in os.walk(NOTES_DIR):
         dirnames[:] = [d for d in dirnames if not d.startswith('.')]
-        for f in filenames:
-            if f.endswith('.md'):
-                names.append(f[:-3])
+        names += [f[:-3] for f in filenames if f.endswith('.md')]
     for name, count in Counter(names).items():
         if count > 1:
             problems.append('duplicate note name %r appears %d times '
                             '(Wikilinks would be ambiguous)' % (name, count))
-
-    # 3. P/S question-id numbering per module (informational — some modules,
-    #    e.g. PnC, intentionally number P1–P8 within each chapter)
-    warnings = []
-    for mod in modules():
-        base = os.path.join(NOTES_DIR, mod)
-        ids = []
-        for f in sorted(os.listdir(base)):
-            if f.endswith('.md'):
-                with open(os.path.join(base, f), encoding='utf-8') as fh:
-                    ids += PS_RE.findall(fh.read())
-        dupes = sorted(i for i, c in Counter(ids).items() if c > 1)
-        if dupes:
-            warnings.append('%s: repeated question ids %s (per-chapter numbering?)'
-                            % (mod, dupes))
 
     if problems:
         print('STRUCTURE FAIL')
@@ -90,8 +97,9 @@ def main():
         for w in warnings:
             print('  ~ ' + w)
         return 1
-    print('STRUCTURE PASS — %d modules, all chapters + module notes present, '
-          'unique note names' % len(modules()))
+    print('STRUCTURE PASS — %d modules × 3 notes (complete + paper + solutions), '
+          '6 chapters + appendix each, unique names, paper↔solutions matched'
+          % len(modules()))
     for w in warnings:
         print('  ~ ' + w)
     return 0

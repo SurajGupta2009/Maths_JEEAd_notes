@@ -16,16 +16,15 @@ templates/markdown/         note skeletons (module index, chapter, paper, soluti
 tools/                      verify-md.py, verify-structure.py, migrate-to-obsidian.py (legacy)
 ```
 
-- **One module = one folder under `notes/`** (kebab-case slug). No module files
-  at the repo root; no module files outside `notes/`.
-- **One chapter = one note** `NN-<chapter-slug>.md`, containing ALL of the
-  chapter's content. Exactly six chapter notes per module, numbered `01`…`06`
-  (`foundations → machinery → core → applications → frontier → synthesis`).
-- Chapter note name = `NN-` + chapter title lowercased, non-alphanumerics → single
-  hyphens, `&` → `and`.
+- **One module = one folder under `notes/`** (kebab-case slug) holding **exactly
+  three notes**. No module files at the repo root; none outside `notes/`.
+- **One complete-notes file per module** `<Module>.md`, containing all six
+  chapters as `# Chapter N` sections (foundations → machinery → core →
+  applications → frontier → synthesis) plus a theory appendix. Never split a
+  module's notes across multiple files.
 - **Note basenames are globally unique** across the vault (clean `[[Wikilinks]]`).
   Module notes are module-prefixed: `<Module>.md`, `<Module> — Paper.md`,
-  `<Module> — Solutions.md`, `<Module> — Theory.md`.
+  `<Module> — Solutions.md`.
 - Diagrams: `assets/fig-XX.svg` per module, referenced as `assets/fig-XX.svg`.
   Every image link must resolve.
 - Every note starts with YAML frontmatter defining `title` and `module`/`type`.
@@ -42,7 +41,7 @@ tools/                      verify-md.py, verify-structure.py, migrate-to-obsidi
   `#### **Q1**[JEE Main][concept]preview` (paper, short `**Answer:**` line).
   Answers in `<details><summary>Answer + Reasoning</summary>` blocks (not in the
   paper). Solution = **method name first**, derivation, then a check.
-- Numbering: `P1…Pn`/`S1…Sn` continuous per module, unique across chapter notes,
+- Numbering: `P1…Pn`/`S1…Sn` continuous per module, unique across the complete-notes file,
   interleaved between theory sections (PnC is the legacy per-chapter exception);
   paper `Q1…Qn` continuous across A–H, ≥30 (aim 38–40); solutions repeat Q-ids
   verbatim.
@@ -82,9 +81,9 @@ content pass.
 
 ## New module procedure
 
-Follow `templates/CHECKLIST.md` (10 steps): `notes/<Module-Slug>/` + `assets/` →
-`<Module>.md` from `templates/markdown/module-index.md` → six chapter notes from
-`templates/markdown/chapter.md` → continuous P/S numbering → `<Module> — Paper.md`
+Follow `templates/CHECKLIST.md`: `notes/<Module-Slug>/` + `assets/` →
+`<Module>.md` (complete notes, six chapters + appendix) from
+`templates/markdown/complete.md` → continuous P/S numbering → `<Module> — Paper.md`
 (≥30 Q, A–H; **pure-Python verification first**) → `<Module> — Solutions.md` →
-`<Module> — Theory.md` → diagrams in `assets/` → run both gates → update [[Home]],
+diagrams in `assets/` → run both gates → update [[Home]],
 [README.md](README.md) and [docs/ROADMAP.md](docs/ROADMAP.md) → PR.

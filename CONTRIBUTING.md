@@ -20,13 +20,10 @@ Maths_JEEAd_notes/
 ├── .obsidian/                   # vault config + enabled plugins (share it)
 ├── notes/                       # ★ the canonical, hand-authored notes
 │   └── <Module>/                # one folder per module, kebab-case slug
-│       ├── <Module>.md                  # module index / course map
-│       ├── 01-<chapter-slug>.md         # ONE note = ONE chapter …
-│       ├── … 02-… 03-… 04-… 05-… 06-…   #   exactly six chapter notes
-│       ├── <Module> — Theory.md         # one-page theory reference
-│       ├── <Module> — Paper.md          # Olympiad paper (sections A–H)
-│       ├── <Module> — Solutions.md      # full worked solutions
-│       └── assets/fig-XX.svg            # the module's diagrams
+│       ├── <Module>.md              # COMPLETE notes: course map + 6 chapters + theory appendix
+│       ├── <Module> — Paper.md      # Olympiad paper (sections A–H)
+│       ├── <Module> — Solutions.md  # full worked solutions
+│       └── assets/fig-XX.svg        # the module's diagrams
 ├── docs/                        # ROADMAP · coverage · formatting · diagrams
 ├── templates/markdown/          # skeletons for a new module
 ├── tools/                       # verify-md.py · verify-structure.py · …
@@ -35,42 +32,40 @@ Maths_JEEAd_notes/
 
 Layout rules:
 
-- **One module = exactly one folder under `notes/`.** Kebab-case slug
-  (`Quadratic-Equations/`). No module files at the repo root, none outside
-  `notes/`.
-- **One chapter = one note** named `NN-<chapter-slug>.md`, and **all of that
-  chapter's content lives in the note**. Never split a chapter across files.
-- Chapter note name = `NN-` + the chapter title lowercased, non-alphanumerics
-  collapsed to single hyphens, `&` → `and`
-  (`Ch 4 · Binomial Coefficients & Identities` →
-  `04-binomial-coefficients-and-identities.md`).
+- **One module = exactly one folder under `notes/`**, holding **exactly three
+  notes**: `<Module>.md` (complete notes), `<Module> — Paper.md`,
+  `<Module> — Solutions.md`. Kebab-case slug (`Quadratic-Equations/`). No module
+  files at the repo root, none outside `notes/`.
+- **One complete-notes file per module.** All six chapters live inside
+  `<Module>.md` as `# Chapter N — <title>` sections (foundations → machinery →
+  core → applications → frontier → synthesis), followed by a theory appendix.
+  Never split a module's notes across multiple files.
 - **Note names are globally unique** across the vault, so `[[Wikilinks]]`
-  resolve without ambiguity. Chapter slugs are naturally unique; the module
-  notes are prefixed with the module name (`PnC — Paper.md`, `Complex-Numbers —
-  Theory.md`, …).
+  resolve without ambiguity. Module notes are module-prefixed (`PnC — Paper.md`,
+  `Complex-Numbers — Solutions.md`, …).
 - Diagrams live in the module's `assets/` — `fig-XX.svg`, numbered in order of
   first appearance. From any module note reference `assets/fig-XX.svg`. Every
   image link must resolve (enforced by `tools/verify-md.py`).
 
 ## 2. Note anatomy (frontmatter + callouts)
 
-Every note starts with YAML frontmatter:
+Every note starts with YAML frontmatter. The complete-notes file uses:
 
 ```yaml
 ---
-title: "Chapter 1 — Counting Basics"
-aliases: ["Counting Basics", "Ch 1 — Counting Basics"]
+title: "PnC — Complete Notes"
+aliases: ["PnC", "Permutations & Combinations"]
 module: "PnC"
-module_title: "PnC"
-chapter: 1
-level: foundations            # foundations | machinery | core | applications | frontier | synthesis
-tags: [pnc, chapter, foundations]
+type: notes            # notes (complete) | paper | solutions
+tags: [pnc, module, complete]
 created: 2026-09-27
 ---
 ```
 
-The six-chapter arc is always **foundations → machinery → core → applications →
-frontier → synthesis** (chapter 6 holds the Olympiad frontier).
+Each chapter inside it is a `# Chapter N — <title>` section. The six-chapter arc
+is always **foundations → machinery → core → applications → frontier →
+synthesis** (chapter 6 holds the Olympiad frontier), followed by the
+`# Appendix — Well-Ordered Theory Reference`.
 
 ### The scope ladder (what every module must cover)
 
@@ -120,7 +115,7 @@ a CSS snippet (`.obsidian/snippets/maths-vault.css`) that tints these types.
 ### Numbering (fixed)
 
 - **Practice `P1…Pn`** and **worked examples `S1…Sn`** — continuous *per module*
-  and unique across the six chapter notes, woven **between** theory sections.
+  and unique across the whole complete-notes file, woven **between** theory sections.
   (PnC is the one legacy exception: it numbers `P1–P8` within each chapter.)
 - **Paper `Q1…Qn`** — continuous across lettered sections **A–H**, difficulty
   ramping Main → Advanced → Olympiad; minimum 30, aim 38–40. The Solutions note
@@ -155,18 +150,16 @@ Follow [templates/CHECKLIST.md](templates/CHECKLIST.md) (10 steps). In one line
 each:
 
 1. `notes/<Module-Slug>/` + `assets/`.
-2. Module index `<Module>.md` from `templates/markdown/module-index.md`.
-3. Six chapter notes `01-…/README.md`→`01-….md` from
-   `templates/markdown/chapter.md` (frontmatter + callouts + navigation).
-4. Number P/S continuously per module.
-5. `<Module> — Paper.md` — ≥30 Q, A–H, answer lines — **verify all answers in
+2. Complete notes `<Module>.md` from `templates/markdown/complete.md`
+   (frontmatter + navigation + course map + all six chapters + theory appendix).
+3. Number P/S continuously per module (unique across the file).
+4. `<Module> — Paper.md` — ≥30 Q, A–H, answer lines — **verify all answers in
    pure Python first**.
-6. `<Module> — Solutions.md` — method first → derivation → check.
-7. `<Module> — Theory.md` — the one-page reference.
-8. Diagrams in `assets/`, Mermaid where it helps.
-9. Run the gates (below); fix anything that fails.
-10. Update [[Home]] + [README.md](README.md) + [docs/ROADMAP.md](docs/ROADMAP.md),
-    open a PR — do not push to `main`.
+5. `<Module> — Solutions.md` — method first → derivation → check.
+6. Diagrams in `assets/`, Mermaid where it helps.
+7. Run the gates (below); fix anything that fails.
+8. Update [[Home]] + [README.md](README.md) + [docs/ROADMAP.md](docs/ROADMAP.md),
+   open a PR — do not push to `main`.
 
 ## 6. Verify before you commit (CI enforces this)
 

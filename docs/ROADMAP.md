@@ -21,10 +21,10 @@ extras already built (PnC, Complex Numbers, Binomial Theorem) sit *beyond* the
 roadmap.
 
 ```dataview
-TABLE length(rows) AS "Chapters built"
+LIST
 FROM "notes"
-WHERE chapter
-GROUP BY module
+WHERE type = "notes"
+SORT file.name ASC
 ```
 
 **➡ 14 of the 15 roadmap modules remain → 84 chapters still to write** from

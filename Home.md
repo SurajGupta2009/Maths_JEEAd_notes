@@ -43,24 +43,17 @@ is *derived*, never memorised; every paper answer is *numerically verified*.
 Jump to any module's [[PnC — Paper|Olympiad papers]] and
 [[PnC — Solutions|solution keys]].
 
-## 🗺️ All chapters (Dataview)
+## 📖 Modules in this vault (Dataview)
 
 ```dataview
-TABLE module AS "Module", chapter AS "Ch", level AS "Level"
+TABLE module AS "Module"
 FROM "notes"
-WHERE chapter
-SORT module ASC, chapter ASC
+WHERE type = "notes"
+SORT file.name ASC
 ```
 
-## 📊 Chapters per module (Dataview)
-
-```dataview
-TABLE length(rows) AS "Chapters"
-FROM "notes"
-WHERE chapter
-GROUP BY module
-SORT module ASC
-```
+Each module is one complete-notes note (six chapters + theory appendix), plus its
+[[PnC — Paper|Olympiad paper]] and [[PnC — Solutions|solutions]].
 
 ## 🎯 What's next
 

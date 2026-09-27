@@ -30,21 +30,19 @@ Maths_JEEAd_notes/
 ├── .obsidian/                   # vault config, enabled plugins, CSS snippet
 ├── notes/                       # ★ the course — one folder per module
 │   └── <Module>/
-│       ├── <Module>.md                  # module index / course map
-│       ├── 01-<chapter-slug>.md         # ONE note per chapter …
-│       ├── … 02-… 03-… 04-… 05-… 06-…   #   (all content in the note)
-│       ├── <Module> — Theory.md         # one-page theory reference
-│       ├── <Module> — Paper.md          # Olympiad paper (sections A–H)
-│       ├── <Module> — Solutions.md      # full worked solutions
-│       └── assets/fig-XX.svg            # the module's diagrams
+│       ├── <Module>.md              # complete notes: course map + 6 chapters + theory appendix
+│       ├── <Module> — Paper.md      # Olympiad paper (sections A–H)
+│       ├── <Module> — Solutions.md  # full worked solutions
+│       └── assets/fig-XX.svg        # the module's diagrams
 ├── docs/                        # ROADMAP · coverage · formatting · diagrams
 ├── templates/markdown/          # skeletons for a new module (Templater-ready)
 ├── tools/                       # pure-Python stdlib gates (see below)
 └── README.md · CONTRIBUTING.md · AGENTS.md
 ```
 
-Each module has exactly **six chapter notes** numbered `01`…`06`, following one
-arc: **foundations → machinery → core → applications → frontier → synthesis**.
+Each module is **three notes**. The complete-notes file holds **six chapters**
+(`# Chapter 1`…`# Chapter 6`) following one arc: **foundations → machinery → core
+→ applications → frontier → synthesis**, plus a theory appendix.
 
 ## Modules
 
