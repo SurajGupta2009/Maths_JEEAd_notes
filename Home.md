@@ -42,6 +42,7 @@ is *derived*, never memorised; every paper answer is *numerically verified*.
 | **Limits & Continuity** | `notes/Limits-and-Continuity` | 6 | [[Limits-and-Continuity]] |
 | **Differentiation & Methods** | `notes/Differentiation-and-Methods` | 6 | [[Differentiation-and-Methods]] |
 | **Applications of Derivatives** | `notes/Applications-of-Derivatives` | 6 | [[Applications-of-Derivatives]] |
+| **Integration** | `notes/Integration` | 6 | [[Integration]] |
 
 Jump to any module's [[PnC — Paper|Olympiad papers]] and
 [[PnC — Solutions|solution keys]].

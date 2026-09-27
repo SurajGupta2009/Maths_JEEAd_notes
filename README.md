@@ -55,6 +55,7 @@ Each module is **three notes**. The complete-notes file holds **six chapters**
 | **Limits & Continuity** | `notes/Limits-and-Continuity` | 6 | 32 | [[Limits-and-Continuity]] |
 | **Differentiation & Methods** | `notes/Differentiation-and-Methods` | 6 | 32 | [[Differentiation-and-Methods]] |
 | **Applications of Derivatives** | `notes/Applications-of-Derivatives` | 6 | 34 | [[Applications-of-Derivatives]] |
+| **Integration** | `notes/Integration` | 6 | 34 | [[Integration]] |
 
 ## The notes standard (short version)
 
@@ -87,8 +88,8 @@ chapter-folder layout into this vault (kept for provenance).
 
 ## What's next
 
-[[ROADMAP]] lists the full syllabus and tracks progress. **11 of the 15 planned
-modules remain → 66 chapters** still to write from basics to Olympiad level (the
+[[ROADMAP]] lists the full syllabus and tracks progress. **10 of the 15 planned
+modules remain → 60 chapters** still to write from basics to Olympiad level (the
 3 already-built extras — PnC, Complex Numbers, Binomial Theorem — sit beyond
 that roadmap).
 

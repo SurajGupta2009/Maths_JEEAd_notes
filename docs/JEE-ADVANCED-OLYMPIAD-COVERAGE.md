@@ -181,6 +181,19 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 
 ---
 
+## Integration — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 Antiderivatives | Indefinite integral, the $+C$ family, linearity, the standard library, why $\int\frac1x=\ln\lvert x\rvert$ is the special case | Antiderivatives defined piecewise, the constant as an initial condition | Antiderivatives of functions defined by series or limits |
+| 2 Substitution | $u=g(x)$ reversing the chain rule, polynomial/exponential/trig cases, changing limits in a definite integral | Completing the square before the inverse-trig standard forms, $\tan x$, $\sec x$ | Substitutions tailored to the integrand's symmetry, rationalising substitutions |
+| 3 Integration by parts | The formula from the product rule, LIATE, $\int xe^x$, $\int\ln x$ | Repeated by parts (tabular), the circular $\int e^x\sin x$, $\int x^2e^x$ | By parts on integrals with a parameter, recursive reduction via parts |
+| 4 Partial fractions | Distinct linear factors, splitting and integrating logs | Repeated factors, irreducible quadratics (log $+$ arctangent), properness/division first | Partial fractions inside a larger substitution, residue-style splits |
+| 5 Definite integrals & FTC | FTC Parts 1 and 2, evaluating $\int_0^1x^n$, the five properties | Even/odd shortcuts, King's property $\int_0^a f(x)=\int_0^a f(a-x)$, $\int_0^{\pi/2}\frac{dx}{1+\tan x}$ | Riemann-sum definitions proved from scratch, limit-of-a-sum evaluations |
+| 6 Olympiad frontier | Improper integrals as limits, $\int_0^\infty e^{-x}$ | $\int_0^1 x\ln x$ via Feynman, $\int_0^1(\ln x)^2$, Wallis reduction $I_n=\frac{n-1}{n}I_{n-2}$ | Universal substitution $t=\tan\frac x2$, $\int_0^{\pi/2}\frac{dx}{2+\cos x}$, $x\mapsto1/u$ self-inverse integrals, Dirichlet $\int_0^\infty\frac{\sin x}{x}=\frac\pi2$ via Laplace damping |
+
+---
+
 ## Verification
 
 ### Markdown notes — PASS
