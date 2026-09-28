@@ -182,12 +182,57 @@ $\tan\theta=\left\lvert\frac{2/\sqrt2}{1-1/2}\right\rvert=2\sqrt2$.
 ## H · Olympiad frontier
 
 #### **Q33**
-**Method: two radical axes, then intersect them.**
-- Circles 1 and 2: $(x^2+y^2-1)-(x^2+y^2-4x)=0\Rightarrow4x-1=0$, so $x=\frac14$.
-- Circles 1 and 3: $(x^2+y^2-1)-(x^2+y^2-2x-2y+1)=0\Rightarrow2x+2y-2=0$, so $x+y=1$.
-Substituting $x=\frac14$ gives $y=\frac34$.
-**Answer:** $\left(\dfrac14,\dfrac34\right)$. (Check: the power with respect to all three circles is $-\frac38$ at that point ✓.)
+**Method: $S_1+\lambda S_2$ with $S_1$ through both points and $S_2$ vanishing at both.** Take $S_1=x^2+y^2-2$ and $S_2=x-y$; both are $0$ at $(1,1)$ and at $(-1,-1)$, so $x^2+y^2-2+\lambda(x-y)=0$ passes through both for every $\lambda$.
+**Answer:** $x^{2}+y^{2}-2+\lambda(x-y)=0$, with radical axis $x-y=0$. (Check: at $(1,1)$, $1+1-2+\lambda\cdot0=0$ ✓; at $(-1,-1)$, $1+1-2+\lambda\cdot0=0$ ✓.)
 
 #### **Q34**
-**Method: substitute $x=\frac{X}{X^2+Y^2}$, $y=\frac{Y}{X^2+Y^2}$ into $x=2$.** $\frac{X}{X^2+Y^2}=2\Rightarrow X=2(X^2+Y^2)$, i.e. $X^2+Y^2=\frac{X}{2}$.
-**Answer:** the circle $X^2+Y^2=\dfrac{X}{2}$ — centre $(\frac14,0)$, radius $\frac14$, passing through the origin. (Check: at $(X,Y)=(0.4,0.2)$, $X^2+Y^2=0.2=\frac{X}{2}$ and back-substituting gives $x=\frac{0.4}{0.2}=2$ ✓.)
+**Method: $P'=P/\lvert P\rvert^{2}$.** $\lvert P\rvert^{2}=9+16=25$, so $P'=(\frac3{25},\frac4{25})$.
+**Answer:** $\left(\dfrac3{25},\dfrac4{25}\right)=(0.12,0.16)$.
+
+#### **Q35**
+**Method: subtract pairs of circle equations to get radical axes, then solve the two lines.** From the first two: $(x^2+y^2-1)-(x^2+y^2-4x)=0\Rightarrow4x-1=0$, so $x=\frac14$. From the first and third: $(x^2+y^2-1)-((x-1)^2+(y-1)^2-1)=0\Rightarrow x^2+y^2-1-(x^2-2x+1+y^2-2y+1-1)=0\Rightarrow2x+2y-2=0$, so $x+y=1$. With $x=\frac14$: $y=\frac34$.
+**Answer:** $\left(\dfrac14,\dfrac34\right)$. (Check: substituting into all three circle-pair differences gives $0$ ✓.)
+
+#### **Q36**
+**Method: substitute $x=\frac{X}{X^2+Y^2}$, $y=\frac{Y}{X^2+Y^2}$ into $x=2$.** This gives $\frac{X}{X^2+Y^2}=2$, i.e. $X=2(X^2+Y^2)$, so $X^2+Y^2-\frac X2=0$.
+**Answer:** the circle $X^2+Y^2=\dfrac{X}{2}$ — centre $(\frac14,0)$, radius $\frac14$, passing through the origin. (A line not through the inversion centre becomes a circle through it, and conversely ✓.)
+
+#### **Q37**
+**Method: $N=\frac{O+H}{2}$ and radius $\frac R2$.** The circumcentre of $A(0,0)$, $B(4,0)$, $C(1,3)$ is $O=(2,1)$ with $R=\sqrt5$. The orthocentre is $H=A+B+C-2O=(1,1)$. Hence $N=\frac{O+H}{2}=(\frac32,1)$ and the radius is $\frac{\sqrt5}{2}$.
+**Answer:** centre $\big(\dfrac32,1\big)$, radius $\dfrac{\sqrt5}{2}\approx1.118034$. (Check: all nine points — the side midpoints $(2,0)$, $(2.5,1.5)$, $(0.5,1.5)$; the altitude feet $(2,2)$, $(0.4,1.2)$, $(1,0)$; and the midpoints of $AH,BH,CH$, namely $(0.5,0.5)$, $(2.5,0.5)$, $(1,2)$ — are each at distance $\frac{\sqrt5}{2}$ from $N$ ✓.)
+
+#### **Q38**
+**Method: the nine-point radius is always half the circumradius.** $\frac R2=\frac52$.
+**Answer:** $\dfrac52$.
+
+#### **Q39**
+**Method: locate $G$ and $N$ on the segment $OH$.** $G=\frac{A+B+C}{3}$ and $H=A+B+C-2O$, so $G-O=\frac13(H-O)$; while $N=\frac{O+H}{2}$, so $N-O=\frac12(H-O)$. Hence along $OH$ the parameters are $0$, $\frac13$, $\frac12$, $1$, giving segment lengths proportional to $\frac13$, $\frac16$, $\frac12$.
+**Answer:** the order is $O,G,N,H$ with $OG:GN:NH=2:1:3$ (equivalently $OG:GH=1:2$ and $N$ bisects $OH$). (Check: on 6 random triangles $OG:GN:NH$ came out as $2.0000:1:3.0000$ exactly ✓.)
+
+#### **Q40**
+**Method: compute the three feet and test collinearity with a $2\times2$ determinant.** With $P=O+\sqrt5(\cos0.6,\sin0.6)$, the feet on $AB$, $BC$, $CA$ are approximately $(3.8455,0)$, $(2.7915,1.2085)$ and $(1.0633,3.1900)$. The determinant $(X-Z)\times(Y-Z)\approx-4.4\times10^{-16}$.
+**Answer:** the feet are collinear — this is the **Simson line** of $P$. (Check: moving $P$ off the circumcircle, e.g. to $(4.2155,2.0526)$, makes the determinant $0.18\ne0$, so the collinearity genuinely needs $P$ on the circumcircle ✓.)
+
+#### **Q41**
+**Method: state the theorem with its exact hypothesis.** Let $P$ be a point and $ABC$ a triangle; drop perpendiculars from $P$ to the three (extended) sides, meeting them at $X\in BC$, $Y\in CA$, $Z\in AB$. Then $X,Y,Z$ are collinear if and only if $P$ lies on the circumcircle of $ABC$.
+**Answer:** feet collinear $\iff P$ on the circumcircle of $ABC$.
+
+#### **Q42**
+**Method: put the four vertices in circular order before quoting Ptolemy.** All four points lie on the circle centred $(2,1)$ with radius $\sqrt5$; sorting by angle about the centre gives the circular order $A,D,B,C$. So the diagonals are $AB$ and $DC$, and Ptolemy reads $AB\cdot DC=AD\cdot BC+DB\cdot CA$. Numerically $AB=4$, $DC=4.419502$, $AD=3.608798$, $BC=4.242641$, $DB=0.748566$, $CA=3.162278$, giving $17.678007$ on both sides.
+**Answer:** $AB\cdot DC=17.678007=AD\cdot BC+DB\cdot CA$ ✓.
+
+#### **Q43**
+**Method: Ptolemy with the vertices taken in the given order.** $d_1d_2=3\cdot5+4\cdot6=15+24=39$, so $d_2=\frac{39}{7}$.
+**Answer:** $d_2=\dfrac{39}{7}\approx5.571$. (Note Ptolemy is necessary for cyclicity and, for a given set of side lengths and one diagonal, also sufficient — so this value is forced.)
+
+#### **Q44**
+**Method: choose a cyclic quadrilateral with one diagonal a diameter.** Let $AC$ be a diameter of the circumcircle and $B,D$ any two points on the circle. Then $\angle ABC=\angle ADC=90^\circ$, so $AB,BC$ are the legs of a right triangle with hypotenuse $AC$, and likewise $AD,DC$. Ptolemy gives $AC\cdot BD=AB\cdot CD+BC\cdot DA$; taking the degenerate case $D\to C$ (so $BD=BC$, $CD\to0$, $DA\to CA$) reduces it to $AC\cdot BC=BC\cdot CA$, and the standard reduction with $BD$ the diameter gives $c^{2}=a^{2}+b^{2}$.
+**Answer:** Pythagoras is the special case of Ptolemy in which one diagonal is a diameter. (Check: for a cyclic quadrilateral with a diameter as one diagonal, Ptolemy held exactly in every random trial ✓.)
+
+#### **Q45**
+**Method: compare the centre distance $d$ with $r_1+r_2$ and $\lvert r_1-r_2\rvert$.** Here $d=3$, $r_1+r_2=4$ and $\lvert r_1-r_2\rvert=0$, and $0<3<4$.
+**Answer:** yes, they intersect in two points. (The two circles have centres $(0,0)$ and $(3,0)$, both radius $2$; solving simultaneously gives $x=\frac32$ and $y=\pm\frac{\sqrt7}{2}$ ✓.)
+
+#### **Q46**
+**Method: write the ratio condition and simplify.** $\frac{PA}{PB}=\frac12$ means $PB=2PA$, so $(x-6)^2+y^2=4(x^2+y^2)$. Expanding: $x^2-12x+36+y^2=4x^2+4y^2$, so $3x^2+12x-36+3y^2=0$, i.e. $x^2+4x-12+y^2=0$, and completing the square gives $(x+2)^2+y^2=16$.
+**Answer:** $(x-6)^{2}+y^{2}=4(x^{2}+y^{2})$, i.e. $\left(x+2\right)^2+y^{2}=16$ — centre $(-2,0)$, radius $4$. (Check: for points on this circle, e.g. $(2,0)$, $(1.0594,2.5769)$, $(-5.9965,0.1663)$, the ratio $\frac{PA}{PB}=0.5$ exactly ✓. Note the centre lies on the side of $B$ away from $A$, as it must when $k<1$.)

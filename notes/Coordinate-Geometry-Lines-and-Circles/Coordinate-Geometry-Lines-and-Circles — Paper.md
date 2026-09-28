@@ -159,9 +159,9 @@ created: 2026-09-27
 
 ---
 
-## G · Apollonius & distance problems (Q30–Q32)
+## G · Apollonius & distance problems (Q30–Q34)
 
-#### **Q30**[Olympiad][distance]Find the shortest distance from $(1,2)$ to the circle $x^2+y^2=9$.
+#### **Q30**[Olympiad][distance]Find the shortest distance from $(1,2)$ to the circle $x^{2}+y^{2}=9$.
 
 **Answer:** $3-\sqrt5\approx0.7639$
 
@@ -173,17 +173,65 @@ created: 2026-09-27
 
 **Answer:** $(x-4)^2+y^2=4$
 
+#### **Q33**[JEE Adv][coaxal]Find the coaxal system of circles through $(1,1)$ and $(-1,-1)$.
+
+**Answer:** $x^{2}+y^{2}-2+\lambda(x-y)=0$, with radical axis $x-y=0$
+
+#### **Q34**[JEE Adv][inversion]Invert $(3,4)$ in the unit circle.
+
+**Answer:** $\left(\dfrac3{25},\dfrac4{25}\right)=(0.12,0.16)$
+
 ---
 
-## H · Olympiad frontier (Q33–Q34)
+## H · Olympiad frontier (Q35–Q46)
 
-#### **Q33**[Olympiad][radical centre]Find the radical centre of $x^2+y^2=1$, $x^2+y^2-4x=0$ and $(x-1)^2+(y-1)^2=1$.
+#### **Q35**[Olympiad][radical centre]Find the radical centre of $x^2+y^2=1$, $x^2+y^2-4x=0$ and $(x-1)^2+(y-1)^2=1$.
 
 **Answer:** $\left(\dfrac14,\dfrac34\right)$
 
-#### **Q34**[Olympiad][inversion]Under inversion in the unit circle, what curve does the line $x=2$ become?
+#### **Q36**[Olympiad][inversion]Under inversion in the unit circle, what curve does the line $x=2$ become?
 
-**Answer:** the circle $X^2+Y^2=\dfrac{X}{2}$
+**Answer:** the circle $X^2+Y^2=\dfrac{X}{2}$ (through the origin, centre $(\frac14,0)$, radius $\frac14$)
+
+#### **Q37**[Olympiad][nine-point]For $A(0,0)$, $B(4,0)$, $C(1,3)$, find the centre and radius of the nine-point circle.
+
+**Answer:** centre $\big(\frac32,1\big)$, radius $\dfrac{\sqrt5}{2}\approx1.118034$
+
+#### **Q38**[Olympiad][nine-point]A triangle has circumradius $5$. What is the radius of its nine-point circle?
+
+**Answer:** $\dfrac52$
+
+#### **Q39**[Olympiad][Euler line]In what order and ratio do $O$, $G$, $N$, $H$ lie on the Euler line, where $N$ is the nine-point centre?
+
+**Answer:** in the order $O,G,N,H$ with $OG:GN:NH=2:1:3$ (equivalently $OG:GH=1:2$ and $N$ bisects $OH$)
+
+#### **Q40**[Olympiad][Simson]For $A(0,0)$, $B(4,0)$, $C(1,3)$ and $P\approx(3.8455,2.2626)$ on the circumcircle, verify that the three perpendicular feet are collinear.
+
+**Answer:** the feet are $\approx(3.8455,0)$, $(2.7915,1.2085)$, $(1.0633,3.1900)$; their $2\times2$ determinant is $\approx-4.4\times10^{-16}$, i.e. $0$ ✓
+
+#### **Q41**[Olympiad][Simson]State the Simson line theorem and the exact condition on $P$.
+
+**Answer:** the feet of the perpendiculars from $P$ to the sides of $ABC$ are collinear **iff** $P$ lies on the circumcircle of $ABC$
+
+#### **Q42**[Olympiad][Ptolemy]For $A(0,0)$, $B(4,0)$, $C(1,3)$ and $D\approx(3.5579,-0.6041)$, all on the circle centred $(2,1)$ with radius $\sqrt5$, verify Ptolemy's theorem.
+
+**Answer:** in circular order $A,D,B,C$: $AB\cdot DC=17.678007=AD\cdot BC+DB\cdot CA$ ✓
+
+#### **Q43**[Olympiad][Ptolemy]A cyclic quadrilateral has sides $3,4,5,6$ in order and diagonals $d_1,d_2$. If $d_1=7$, find $d_2$.
+
+**Answer:** $d_1d_2=3\cdot5+4\cdot6=39$, so $d_2=\dfrac{39}{7}\approx5.571$
+
+#### **Q44**[Olympiad][Ptolemy]Show that Pythagoras' theorem is a special case of Ptolemy's.
+
+**Answer:** take a cyclic quadrilateral with one diagonal a diameter; the two angles it subtends are right angles, and Ptolemy reduces to $c^{2}=a^{2}+b^{2}$
+
+#### **Q45**[Olympiad][position]Do the circles $x^{2}+y^{2}=4$ and $(x-3)^{2}+y^{2}=4$ intersect?
+
+**Answer:** yes — the centre distance is $3$, between $r_1+r_2=4$ and $\lvert r_1-r_2\rvert=0$
+
+#### **Q46**[Olympiad][Apollonius]Find the circle of Apollonius for $A=(0,0)$, $B=(6,0)$ and $\dfrac{PA}{PB}=\frac12$.
+
+**Answer:** $(x-6)^{2}+y^{2}=4(x^{2}+y^{2})$, i.e. $\left(x+2\right)^2+y^{2}=16$
 
 ---
 
@@ -195,3 +243,7 @@ created: 2026-09-27
 > - Subtract two circle equations to get a radical axis — it is always a line.
 > - Before claiming two circles meet, compare the centre distance with
 >   $r_1+r_2$ and $\lvert r_1-r_2\rvert$.
+> - In any problem about a triangle, compute $O$ and $H$ first: $N=\frac{O+H}{2}$
+>   then hands you the nine-point circle, and $G=\frac{A+B+C}{3}$ the centroid.
+> - Before quoting Ptolemy, put the four vertices in **circular order** — the
+>   statement is not symmetric under arbitrary relabelling.

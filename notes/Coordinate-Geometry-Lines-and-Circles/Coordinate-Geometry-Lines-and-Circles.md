@@ -620,6 +620,137 @@ The distance from $(1,2)$ to the centre is $\sqrt5\approx2.236<3$, so the point 
 
 ---
 
+*Synthesis · the great circle theorems of the triangle*
+
+## 6.4 The nine-point circle
+
+> [!abstract] First Principles — nine points, one circle
+> Take a triangle $ABC$ with circumcentre $O$ and orthocentre $H$. The
+> following **nine** points are concyclic:
+> the three side midpoints, the three feet of the altitudes, and the three
+> midpoints of $AH$, $BH$, $CH$. The circle through them is the **nine-point
+> circle**; its centre is the midpoint of $OH$ and its radius is $\frac R2$, half
+> the circumradius.
+
+#### **S17**[Olympiad][solved][nine-point]For $A(0,0)$, $B(4,0)$, $C(1,3)$, find the centre and radius of the nine-point circle, and verify that all nine points lie on it.
+
+The circumcentre is $O=(2,1)$ with $R=\sqrt5$. The orthocentre is $H=A+B+C-2O=(1,1)$, so the nine-point centre is $N=\frac{O+H}{2}=\big(\frac32,1\big)$ and the radius is $\frac{\sqrt5}{2}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: $N=\frac{O+H}{2}$, radius $\frac R2$ — then check all nine points.** The nine points are $(2,0)$, $(2.5,1.5)$, $(0.5,1.5)$; $(2,2)$, $(0.4,1.2)$, $(1,0)$; and $(0.5,0.5)$, $(2.5,0.5)$, $(1,2)$. Each is at distance $\frac{\sqrt5}{2}\approx1.118034$ from $N$ ✓.
+
+**Answer:** centre $\big(\dfrac32,1\big)$, radius $\dfrac{\sqrt5}{2}\approx1.118034$.
+
+</details>
+
+> [!example] Olympiad Extension — the nine-point circle contains the Euler line
+> Since $N=\frac{O+H}{2}$, the nine-point centre is the midpoint of the Euler
+> line's endpoints. So the Euler line of a triangle carries $O$, $G$, $N$, $H$
+> in the order $O\!:\!G\!:\!N\!:\!H=2\!:\!1\!:\!1\!:\!2$ — because $G$ divides $OH$
+> in the ratio $1:2$ and $N$ bisects it. Two of the four points are then enough
+> to locate the other two, and any one of them can be used as a proxy for the
+> whole configuration.
+
+#### **P15**[Olympiad][practice][nine-point]A triangle has circumradius $5$. What is the radius of its nine-point circle?
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the nine-point radius is always half the circumradius.** $\frac R2=\frac52$.
+
+**Answer:** $\dfrac52$.
+
+</details>
+
+## 6.5 The Simson line
+
+> [!abstract] First Principles — a collinearity from a circumcircle point
+> Let $P$ lie on the circumcircle of $ABC$, and drop perpendiculars from $P$ to
+> the three (extended) sides, meeting them at $X\in BC$, $Y\in CA$, $Z\in AB$.
+> Then $X,Y,Z$ are **collinear** — the *Simson line* of $P$. If $P$ is **not** on
+> the circumcircle the three feet are not collinear, so the condition is exactly
+> right.
+
+#### **S18**[Olympiad][solved][Simson]For $A(0,0)$, $B(4,0)$, $C(1,3)$ and $P=O+\sqrt5(\cos0.6,\sin0.6)\approx(3.8455,2.2626)$ on the circumcircle, verify that the three feet are collinear.
+
+The feet are $Z\approx(3.8455,0)$ on $AB$, $X\approx(2.7915,1.2085)$ on $BC$, $Y\approx(1.0633,3.1900)$ on $CA$. The cross product $(X-Z)\times(Y-Z)\approx-4.4\times10^{-16}$, i.e. zero to machine precision.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: compute the three feet and test collinearity with a $2\times2$ determinant.** The determinant vanishes, so the feet are collinear ✓.
+
+**Answer:** the three feet are collinear — this is the Simson line of $P$. (Check: moving $P$ off the circle, say to $(4.2155,2.0526)$, makes the determinant $0.18\ne0$, so collinearity genuinely requires $P$ on the circumcircle ✓.)
+
+</details>
+
+> [!example] Olympiad Extension — the Simson line envelopes the deltoid
+> As $P$ runs once around the circumcircle, its Simson line rotates and remains
+> tangent to a fixed curve — the **Steiner deltoid**, a three-cusped hypocycloid.
+> The Simson line is therefore not an isolated curiosity but a whole family of
+> lines with an envelope, exactly as in §6.4 of Applications-of-Derivatives. The
+> angle the Simson line makes with $BC$ is half the arc $PC$, which is the
+> cleanest way to prove the collinearity synthetically.
+
+#### **P16**[Olympiad][practice][Simson]State the Simson line theorem and the exact condition on $P$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: recall the hypothesis precisely.** The feet of the perpendiculars from $P$ to the sides of $ABC$ are collinear **iff $P$ lies on the circumcircle of $ABC$**.
+
+**Answer:** feet collinear $\iff P$ on the circumcircle of $ABC$.
+
+</details>
+
+## 6.6 Ptolemy's theorem
+
+> [!abstract] First Principles — the metric relation in a cyclic quadrilateral
+> If $A,B,C,D$ lie on a circle **in that order**, then
+> $$AC\cdot BD \;=\; AB\cdot CD+BC\cdot DA.$$
+> The product of the diagonals equals the sum of the products of opposite sides.
+> No other quadrilateral satisfies this, so Ptolemy is a *characterisation* of
+> cyclicity as well as a consequence of it.
+
+#### **S19**[Olympiad][solved][Ptolemy]For $A(0,0)$, $B(4,0)$, $C(1,3)$ and $D=O+\sqrt5(\cos(-0.8),\sin(-0.8))\approx(3.5579,-0.6041)$, where $O=(2,1)$ is the circumcentre, verify Ptolemy's theorem.
+
+All four points lie on the circle centred $(2,1)$ with radius $\sqrt5$, in the circular order $A,D,B,C$. Hence the diagonals are $AB$ and $DC$, and
+$$AB\cdot DC=4\cdot4.419502=17.678007,$$
+while
+$$AD\cdot BC+DB\cdot CA=3.608798\cdot4.242641+0.748566\cdot3.162278=15.310841+2.367166=17.678007.$$
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: put the vertices in circular order first — Ptolemy's statement depends on it.** The two sides agree to six decimals ✓.
+
+**Answer:** $AB\cdot DC=AD\cdot BC+DB\cdot CA=17.678007$ ✓.
+
+</details>
+
+> [!example] Olympiad Extension — Ptolemy yields Pythagoras and the sine rule
+> Take a cyclic quadrilateral in which one diagonal is a **diameter**. Then the
+> two angles it subtends are right angles, so both "side products" reduce to
+> legs of right triangles sharing the diameter as hypotenuse, and Ptolemy
+> collapses to $c^{2}=a^{2}+b^{2}$ — **Pythagoras is a special case of Ptolemy**.
+> Conversely, applying Ptolemy to a degenerate quadrilateral gives the sine rule,
+> and applying it to an isosceles trapezium gives the identity
+> $\cos\theta=1-2\sin^{2}\frac\theta2$. Ptolemy is the single most efficient
+> theorem in cyclic geometry.
+
+#### **P17**[Olympiad][practice][Ptolemy]A cyclic quadrilateral has sides $3,4,5,6$ in order and diagonals $d_1,d_2$. If $d_1=7$, find $d_2$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: Ptolemy with the vertices in order.** $d_1d_2=3\cdot5+4\cdot6=15+24=39$, so $d_2=\frac{39}{7}$.
+
+**Answer:** $d_2=\dfrac{39}{7}\approx5.571$. (Note this does not by itself guarantee such a quadrilateral exists — Ptolemy is necessary, and for a cyclic quadrilateral also sufficient.)
+
+</details>
+
 # Appendix — Well-Ordered Theory Reference
 
 Every result in dependency order; nothing is used before it is proved.
@@ -679,6 +810,10 @@ Every result in dependency order; nothing is used before it is proved.
 | Inversion (unit circle) | $P'=P/\lvert P\rvert^2$; conformal; lines ↔ circles through the origin |
 | Circle of Apollonius | $\frac{PA}{PB}=k$ is a circle |
 | Radical centre | the common point of three radical axes |
+| Nine-point circle | centre $\frac{O+H}{2}$, radius $\frac R2$; through the 3 side midpoints, 3 altitude feet and 3 midpoints of $AH,BH,CH$ |
+| Euler line | $O,G,N,H$ in order with $OG:GN:NH=2:1:3$ |
+| Simson line | feet from $P$ to the sides are collinear iff $P$ lies on the circumcircle |
+| Ptolemy | cyclic $A,B,C,D$ in circular order: $AC\cdot BD=AB\cdot CD+BC\cdot DA$ |
 
 ### F. Mistake checklist
 
