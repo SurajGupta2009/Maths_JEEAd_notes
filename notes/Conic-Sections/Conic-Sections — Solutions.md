@@ -17,7 +17,7 @@ created: 2026-09-27
 
 # Olympiad Paper · Solutions & marking guide
 
-*Companion to the 38-question paper*
+*Companion to the 48-question paper*
 
 # Full Worked Solutions
 
@@ -776,3 +776,186 @@ Check ($a=4, b=3, \theta = 60^\circ$): $D^2 = \tfrac{1}{64} + \tfrac{1}{12}
         = \tfrac{19}{192}$; $\tfrac{c^2\cos^2\theta}{a^2} = \tfrac{7}{64}$, so the numerator is $1 - \tfrac{7}{64} = \tfrac{57}{64}$; product $= \tfrac{57/64}{19/192} = \tfrac{57\cdot192}{64\cdot19} = 9 = b^2$ ✓ — the same value the direct numerical computation of both distances gives.
 
 </details>
+
+
+### I · Poncelet, Isogonal Conjugates and Carnot (Q39–Q48)
+
+#### **Q39**[Olympiad]State Poncelet's porism.
+
+State Poncelet's porism.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: state the closure statement and note that the witness is global.** Two conics $C_1, C_2$ with $C_2$ inside $C_1$. If some $n$-gon has its vertices on $C_1$ and its sides tangent to $C_2$, then *every* point of $C_1$ is a vertex of such an $n$-gon — start the tangent walk anywhere and it closes after $n$ steps. So a single example produces infinitely many.
+
+
+Answer: if one $n$-gon is inscribed in $C_1$ and circumscribed about $C_2$, then infinitely many are — from every starting point on $C_1$
+
+
+Check: for the concentric pair $R=1$, $r=\tfrac12$ the orbit closes after $3$ steps from all $37$ tested starting points, with $\max|P_0-P_3|=2.9\times10^{-15}$ ✓; for $r=0.45$ or $0.55$ it closes from none of them ✓.
+
+</details>
+
+
+#### **Q40**[Olympiad]Two concentric circles have radii $R$ and $r$. Find the condition on $r/R$ for a triangle inscribed in the outer circle and circumscribed about the inner one.
+
+Two concentric circles have radii $R$ and $r$. Find the condition on $r/R$ for a triangle inscribed in the outer circle and circumscribed about the inner one.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: compute the constant step angle, then impose closure.** A chord of the outer circle tangent to the inner one makes an angle $\phi$ with the inward radius with $\sin\phi=r/R$, and a chord making angle $\phi$ with the radius cuts off a central angle $\pi-2\phi$. So the step is $\delta=2\arccos(r/R)$. Three steps close iff $3\delta=2\pi$, i.e. $\arccos(r/R)=\pi/3$.
+
+
+Answer: $r=R\cos(\pi/3)=\dfrac{R}{2}$
+
+
+Check: with $R=1$, $r=0.5$ every side is at distance exactly $0.5$ from the centre (tangent to the inner circle) and $P_3=P_0$ to $3\times10^{-15}$ from $37$ starting points ✓.
+
+</details>
+
+
+#### **Q41**[JEE Adv]For $R=1$ and $r=\cos(\pi/5)$, how many sides does the closed Poncelet polygon have, and what is its inradius?
+
+For $R=1$ and $r=\cos(\pi/5)$, how many sides does the closed Poncelet polygon have, and what is its inradius?
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: read $n$ off the step angle.** $\delta=2\arccos r=2\arccos\big(\cos(\pi/5)\big)=2\pi/5$, so the orbit closes after $5$ steps — a regular pentagon inscribed in the unit circle, whose inradius is $\cos(\pi/5)$.
+
+
+Answer: $n=5$ sides; inradius $r=\cos(\pi/5)\approx0.8090$
+
+
+Check: walking the map from $37$ starting points with $r=\cos(\pi/5)$ gives $\max|P_0-P_5|=1.6\times10^{-15}$ ✓, and each side is at distance $0.809017$ from the centre ✓.
+
+</details>
+
+
+#### **Q42**[Olympiad]State the isogonal-conjugate criterion for a point on the circumcircle.
+
+State the isogonal-conjugate criterion for a point on the circumcircle.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the reflected cevians meet at $P^{*}$, so the criterion is that $P^{*}$ is at infinity.** Reflect $AP$, $BP$, $CP$ in the internal bisectors at $A$, $B$, $C$; the three lines concur at the isogonal conjugate $P^{*}$. $P^{*}$ is at infinity exactly when the three lines are parallel, and that happens exactly when $P$ is on the circumcircle. Hence the circumcircle is the isogonal image of the line at infinity.
+
+
+Answer: $P$ on the circumcircle $\iff$ the three reflected lines are parallel $\iff$ $P^{*}$ is at infinity
+
+
+Check: for the triangle $(0,0),(4,0),(1.3,3.1)$ and $41$ points on its circumcircle, the maximum non-parallelism of the three reflected lines is $2.2\times10^{-14}$ ✓, while for points off the circumcircle it is $0.77$ — clearly non-zero ✓. Two further triangles give $4.1\times10^{-15}$ and $9.1\times10^{-15}$ ✓.
+
+</details>
+
+
+#### **Q43**[JEE Advanced]Find the isogonal conjugates of the orthocentre and of the circumcentre of a triangle.
+
+Find the isogonal conjugates of the orthocentre and of the circumcentre of a triangle.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the isogonal map is an involution, and it exchanges these two centres.** Compute $H=A+B+C-2O$ (the orthocentre, from the centroid relation) and apply the reflection rule: the reflections of $AH$, $BH$, $CH$ in the bisectors meet at $O$, and the reflections of $AO$, $BO$, $CO$ meet at $H$.
+
+
+Answer: they swap: isogonal conjugate of the orthocentre is the circumcentre, and of the circumcentre is the orthocentre (the centroid maps to the symmedian point)
+
+
+Check: for three test triangles the computed conjugates match $O$ and $H$ to better than $10^{-9}$ in every case ✓; for $(0,0),(4,0),(1.3,3.1)$ the conjugate of the centroid is $1.4932+1.1222i$, the symmedian point ✓.
+
+</details>
+
+
+#### **Q44**[Olympiad]What is the isogonal image of a line not through a vertex of $ABC$?
+
+What is the isogonal image of a line not through a vertex of $ABC$?
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: fix a line $\ell$ and ask which $P$ have $P^{*}\in\ell$.** Since $P\mapsto P^{*}$ is a bijection of the plane (punctured at the sides), the preimage of a line is a curve; the reflection rule shows it is a conic, and it passes through $A,B,C$ because the sides themselves are fixed by the reflection. Taking $\ell$ to be the line at infinity returns the circumcircle, by Q42.
+
+
+Answer: a circumconic — a conic through $A$, $B$, $C$; the line at infinity gives the circumcircle
+
+
+Check: the rectangular-hyperbola result of the notes (§6.3) is the special case $\ell$ through the circumcentre: such a hyperbola passes through the orthocentre, the isogonal conjugate of the circumcentre ✓.
+
+</details>
+
+
+#### **Q45**[Olympiad]State Carnot's theorem.
+
+State Carnot's theorem.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: intersect each side-line with the conic and multiply the six directed ratios.** A conic meets a line in two points (real or complex), so the three side-lines give six points $X_1,X_2$ on $BC$, $Y_1,Y_2$ on $CA$, $Z_1,Z_2$ on $AB$. Carnot's theorem says the product of the six directed ratios $\frac{BX}{XC}$, $\frac{CY}{YA}$, $\frac{AZ}{ZB}$ is $1$.
+
+
+Answer: $\dfrac{BX_1}{X_1C}\cdot\dfrac{BX_2}{X_2C}\cdot\dfrac{CY_1}{Y_1A}\cdot\dfrac{CY_2}{Y_2A}\cdot\dfrac{AZ_1}{Z_1B}\cdot\dfrac{AZ_2}{Z_2B}=1$ (directed lengths)
+
+
+Check: verified on $11$ valid triangle/conic pairs spanning circles, ellipses, a rectangular hyperbola, a parabola and a rotated conic — the product is $1$ to ten decimal places in every case ✓.
+
+</details>
+
+
+#### **Q46**[JEE Adv]Apply Carnot's theorem to the circle $(x-2)^{2}+(y-1)^{2}=9$ and the triangle with vertices $(0,0)$, $(6,0)$, $(2,5)$.
+
+Apply Carnot's theorem to the circle $(x-2)^{2}+(y-1)^{2}=9$ and the triangle with vertices $(0,0)$, $(6,0)$, $(2,5)$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: intersect each side-line with $(x-2)^2+(y-1)^2=9$ and multiply.** Parametrising each side-line of $(0,0),(6,0),(2,5)$ and solving the resulting quadratic gives the six points, and the directed ratios group by side-line as $\tfrac87$ on $BC$, $-\tfrac74$ on $CA$ and $-\tfrac12$ on $AB$. The product is $\tfrac87\cdot(-\tfrac74)\cdot(-\tfrac12)=1$ ✓. The two negative side-line products record that an odd number of the six points fall between their endpoints on those side-lines — which is exactly why the signs must be carried.
+
+
+Answer: side-line products $\tfrac87$, $-\tfrac74$, $-\tfrac12$; total product $1$ ✓
+
+
+Check: the six intersection points recomputed independently give the same product to $10^{-15}$ ✓.
+
+</details>
+
+
+#### **Q47**[Olympiad]What does Carnot's theorem degenerate to when the conic is replaced by a pair of lines, and what is its relation to Menelaus?
+
+What does Carnot's theorem degenerate to when the conic is replaced by a pair of lines, and what is its relation to Menelaus?
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: degenerate the conic to a pair of lines and read off two Menelaus statements.** A pair of lines meets the three side-lines in six points — three on each line. Menelaus applied to each line (three collinear points, one per side-line, product $-1$) gives two factors of $-1$, and their product is $+1$, which is Carnot's value. So Carnot is the conic-level statement of which Menelaus is the line-level one.
+
+
+Answer: Carnot degenerates to two Menelaus statements; it is the conic analogue of Menelaus — six points, product $+1$
+
+
+Check: the same product $1$ is obtained for a conic that is nearly a line pair (the rotated conic $xy+x-y=0$ against a fourth triangle) ✓, and the tangency corollary (contact points $X,Y,Z$ with product $1$) follows by letting the two intersections on each side coalesce ✓.
+
+</details>
+
+
+#### **Q48**[Olympiad]A triangle is inscribed in the circle $x^{2}+y^{2}=1$ and circumscribed about the circle $x^{2}+y^{2}=\tfrac14$. How many such triangles are there, and why is that enough to settle the question for every starting point?
+
+A triangle is inscribed in the circle $x^{2}+y^{2}=1$ and circumscribed about the circle $x^{2}+y^{2}=\tfrac14$. How many such triangles are there, and why is that enough to settle the question for every starting point?
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: this is the Poncelet condition in numbers, and the porism supplies the infinitude.** Here $R=1$ and $r=\tfrac12$, and $\tfrac12=\cos(\pi/3)$, which is exactly the closure condition for $n=3$. By Poncelet's porism a single closed triangle forces infinitely many: starting the tangent walk at any point of the unit circle closes after three steps. So one witness settles every starting point, and the triangles are the images of that walk under rotation — a one-parameter family.
+
+
+Answer: infinitely many — $r/R=\tfrac12=\cos(\pi/3)$ is the Poncelet condition, so the orbit closes from every starting point on the outer circle
+
+
+Check: walking from $37$ equally spaced starting points closes every time with $\max|P_0-P_3|=2.9\times10^{-15}$, and each side is at distance exactly $\tfrac12$ from the origin ✓; with $r=0.45$ or $0.55$ nothing closes ✓.
+
+</details>
+

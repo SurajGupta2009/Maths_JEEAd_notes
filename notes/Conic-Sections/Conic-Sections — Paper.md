@@ -16,13 +16,13 @@ created: 2026-09-27
 > [!info] Navigation
 > ⬅ [[06-the-olympiad-frontier-reflection-confocals-and-triangles|Chapter 6]] · 📖 [[Conic-Sections|Conic Sections]] · ✅ [[Conic-Sections — Solutions|Solutions]] ➡
 
-# Olympiad Paper · 38 questions
+# Olympiad Paper · 48 questions
 
 *Final assessment · whole module*
 
 # Olympiad & JEE Advanced Paper — Conic Sections
 
-38 questions in eight sections (A–H), JEE Main → JEE Advanced → Olympiad. Each section maps onto a chapter's signature move: A · first principles, B · parabola machinery, C · ellipse, D · hyperbola, E · tangents and polars, F · normals and parameters, G · reflection/confocals/triangles, H · synthesis. **Do it cold, on paper.** Suggested time: 3 h 30 m. Short-form answers are given; full worked solutions are in [the companion file](#solutions). Every numeric answer below was verified by an independent pure-Python computation before publication.
+48 questions in nine sections (A–I), JEE Main → JEE Advanced → Olympiad. Each section maps onto a chapter's signature move: A · first principles, B · parabola machinery, C · ellipse, D · hyperbola, E · tangents and polars, F · normals and parameters, G · reflection/confocals/triangles, H · synthesis, I · Poncelet, isogonal conjugates and Carnot. **Do it cold, on paper.** Suggested time: 4 h. Short-form answers are given; full worked solutions are in [the companion file](#solutions). Every numeric answer below was verified by an independent pure-Python computation before publication.
 
 ### Supplementary notes
 
@@ -318,6 +318,78 @@ Prove that for any tangent to $\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$, the pro
 
 Answer: product $= \dfrac{|c^2\cos^2\theta/a^2 - 1|}{\cos^2\theta/a^2 + \sin^2\theta/b^2} = b^2$; numerically $= 9$
 
+
+### I · Poncelet, Isogonal Conjugates and Carnot (Q39–Q48)
+
+#### **Q39**[Olympiad]State Poncelet's porism.
+
+State Poncelet's porism.
+
+
+Answer: if one $n$-gon is inscribed in a conic $C_1$ and circumscribed about a conic $C_2$, then infinitely many are — every starting point on $C_1$ gives a closed $n$-gon
+
+#### **Q40**[Olympiad]Two concentric circles have radii $R$ and $r$. Find the condition on $r/R$ for a triangle inscribed in the outer circle and circumscribed about the inner one.
+
+Two concentric circles have radii $R$ and $r$. Find the condition on $r/R$ for a triangle inscribed in the outer circle and circumscribed about the inner one.
+
+
+Answer: $r=R\cos(\pi/3)=\dfrac{R}{2}$ — each step turns through $2\arccos(r/R)$, and three steps must make $2\pi$
+
+#### **Q41**[JEE Adv]For $R=1$ and $r=\cos(\pi/5)$, how many sides does the closed Poncelet polygon have, and what is its inradius?
+
+For $R=1$ and $r=\cos(\pi/5)$, how many sides does the closed Poncelet polygon have, and what is its inradius?
+
+
+Answer: $n=5$ sides, inradius $r=\cos(\pi/5)\approx0.8090$ (a regular pentagon inscribed in the unit circle)
+
+#### **Q42**[Olympiad]State the isogonal-conjugate criterion for a point on the circumcircle.
+
+State the isogonal-conjugate criterion for a point on the circumcircle.
+
+
+Answer: $P$ is on the circumcircle of $ABC$ iff the reflections of $AP$, $BP$, $CP$ in the respective internal bisectors are parallel — i.e. iff $P^{*}$ is a point at infinity
+
+#### **Q43**[JEE Advanced]Find the isogonal conjugates of the orthocentre and of the circumcentre of a triangle.
+
+Find the isogonal conjugates of the orthocentre and of the circumcentre of a triangle.
+
+
+Answer: they swap: the isogonal conjugate of the orthocentre is the circumcentre, and that of the circumcentre is the orthocentre (the isogonal conjugate of the centroid is the symmedian point)
+
+#### **Q44**[Olympiad]What is the isogonal image of a line not through a vertex of $ABC$?
+
+What is the isogonal image of a line not through a vertex of $ABC$?
+
+
+Answer: a circumconic — a conic through $A$, $B$, $C$; the line at infinity gives the circumcircle
+
+#### **Q45**[Olympiad]State Carnot's theorem.
+
+State Carnot's theorem.
+
+
+Answer: a conic meeting the side-lines $BC$, $CA$, $AB$ at $(X_1,X_2)$, $(Y_1,Y_2)$, $(Z_1,Z_2)$ satisfies $\frac{BX_1}{X_1C}\frac{BX_2}{X_2C}\frac{CY_1}{Y_1A}\frac{CY_2}{Y_2A}\frac{AZ_1}{Z_1B}\frac{AZ_2}{Z_2B}=1$ with directed lengths
+
+#### **Q46**[JEE Adv]Apply Carnot's theorem to the circle $(x-2)^{2}+(y-1)^{2}=9$ and the triangle with vertices $(0,0)$, $(6,0)$, $(2,5)$.
+
+Apply Carnot's theorem to the circle $(x-2)^{2}+(y-1)^{2}=9$ and the triangle with vertices $(0,0)$, $(6,0)$, $(2,5)$.
+
+
+Answer: the side-line products are $\tfrac87$, $-\tfrac74$ and $-\tfrac12$, whose product is $1$ ✓
+
+#### **Q47**[Olympiad]What does Carnot's theorem degenerate to when the conic is replaced by a pair of lines, and what is its relation to Menelaus?
+
+What does Carnot's theorem degenerate to when the conic is replaced by a pair of lines, and what is its relation to Menelaus?
+
+
+Answer: it splits into two Menelaus statements (product $-1$ each); Carnot is the conic analogue of Menelaus, with six points and product $+1$
+
+#### **Q48**[Olympiad]A triangle is inscribed in the circle $x^{2}+y^{2}=1$ and circumscribed about the circle $x^{2}+y^{2}=\tfrac14$. How many such triangles are there, and why is that enough to settle the question for every starting point?
+
+A triangle is inscribed in the circle $x^{2}+y^{2}=1$ and circumscribed about the circle $x^{2}+y^{2}=\tfrac14$. How many such triangles are there, and why is that enough to settle the question for every starting point?
+
+
+Answer: infinitely many — $r/R=\tfrac12=\cos(\pi/3)$ is exactly the Poncelet condition, so the orbit closes from every starting point on the outer circle
 
 ### 📝 Exam technique notes
 

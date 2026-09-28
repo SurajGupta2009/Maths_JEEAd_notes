@@ -1639,6 +1639,183 @@ $$ \begin{array}{ll}
       \text{Pascal/Brianchon} &amp; \text{opposite-side intersections collinear / diagonals concurrent}
       \end{array} $$
 
+
+## 6.6 Poncelet's porism — the billiard closes
+
+> [!abstract] First Principles — one triangle is enough to force infinitely many
+> Take two circles, one inside the other. Start anywhere on the outer circle, draw a
+> tangent to the inner circle, and let it meet the outer circle again; repeat. If the
+> path ever returns to its starting point after $n$ steps, then it does so from
+> *every* starting point on the outer circle. This is **Poncelet's porism**, and the
+> same statement holds for two general conics.
+
+**Why one orbit decides them all (concentric case).** For concentric circles of radii
+$R>r$, each step advances the central angle by a fixed amount. The chord through
+$P$ makes an angle $\phi$ with the inward radius, and for a unit circle a chord
+making angle $\phi$ with the radius cuts off a central angle $\pi-2\phi$. The chord is
+tangent to the inner circle exactly when $\sin\phi=r/R$, so
+$$\delta=\pi-2\arcsin\frac{r}{R}=2\arccos\frac{r}{R}.$$
+The orbit closes after $n$ steps iff $n\delta$ is a multiple of $2\pi$, i.e. iff
+$$\frac{r}{R}=\cos\frac{\pi}{n}.$$
+That is the Cayley condition in its simplest form: $r=\tfrac12R$ for triangles,
+$r=\tfrac{R}{\sqrt2}$ for squares, $r=R\cos\tfrac{\pi}{n}$ in general. The general
+(two arbitrary conics) condition is a polynomial relation in the invariants — Cayley's
+condition — but the *shape* of the statement never changes: closure is all-or-nothing.
+
+> [!example] Olympiad Extension — the porism is a rigidity statement
+> The striking content is not the formula but the *rigidity*: the parameter
+> $r/R$ either permits a closed $n$-gon from every starting point, or from none.
+> Nudge $r$ by $0.05R$ away from $\cos(\pi/n)$ and the orbit never closes — it
+> wanders, densely filling the annulus between the two circles. So a single witness
+> triangle settles the question for all of them. This is the same flavour as
+> "one example proves a theorem", and it is why Poncelet's porism is the standard
+> Olympiad route to "construct infinitely many" conclusions.
+
+> [!example] Olympiad Extension — the billiard and the confocal ellipse
+> A tangent to the inner circle is a *bounce* off it, so the orbit is a billiard
+> trajectory in the annulus. The reflection law at each bounce pairs with the
+> reflection properties of §6.1: a billiard in an ellipse has its caustic a confocal
+> conic, and Poncelet's porism is the global version of that statement. For the
+> concentric pair the caustic is the inner circle itself, which is why the step
+> angle is constant and the orbit is a regular polygon.
+
+#### **P49**[Olympiad][Poncelet]Two concentric circles have radii $R$ and $r$. Find the condition on $r/R$ for a triangle inscribed in the outer circle and circumscribed about the inner one, and verify the orbit closes from many starting points.
+
+Two concentric circles have radii $R$ and $r$. Find the condition on $r/R$ for a triangle inscribed in the outer circle and circumscribed about the inner one, and verify the orbit closes from many starting points.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: compute the constant step angle and impose closure.** A chord of the outer circle tangent to the inner circle cuts off a central angle $\delta=2\arccos(r/R)$. Closure after $3$ steps needs $3\delta=2\pi$, so $\arccos(r/R)=\pi/3$ and $r=R\cos(\pi/3)=\tfrac12R$. Walking the map from $37$ equally spaced starting points with $r=0.5$, $R=1$ returns to the start every time, with $\max|P_0-P_3|=2.9\times10^{-15}$; each side is at distance exactly $0.5$ from the centre, i.e. tangent to the inner circle. With $r=0.45$ or $r=0.55$ the orbit does not close ($\max|P_0-P_3|\approx0.34$ and $\approx0.35$).
+
+Answer: $r=R\cos(\pi/3)=\dfrac{R}{2}$; the orbit closes from every starting point ✓
+
+</details>
+
+---
+
+## 6.7 The isogonal conjugate — lines become circumconics
+
+> [!abstract] First Principles — reflect the three cevians, and they still meet
+> For a point $P$ and a triangle $ABC$, reflect the lines $AP$, $BP$, $CP$ in the
+> internal bisectors at $A$, $B$, $C$. The three reflected lines are concurrent at the
+> **isogonal conjugate** $P^{*}$ of $P$. The map $P\mapsto P^{*}$ is an involution, and
+> it converts statements about lines into statements about conics through
+> $A, B, C$ — a **circumconic**.
+
+**The key theorem.** $P$ lies on the circumcircle of $ABC$ if and only if the three
+reflected lines are parallel — that is, if and only if $P^{*}$ is a point at infinity.
+So the circumcircle is exactly the isogonal image of the line at infinity.
+
+**The circumconic corollary.** If $P^{*}$ lies on a fixed line $\ell$ (not through a
+vertex), the locus of $P$ is a conic through $A, B, C$. Taking $\ell$ to be the line
+at infinity gives the circumcircle back. So *every* line produces a circumconic, and
+the family of circumconics is in bijection with the family of lines.
+
+> [!example] Olympiad Extension — the named pairs
+> The involution exchanges the famous centres: the isogonal conjugate of the
+> **orthocentre** is the **circumcentre**, and vice versa; the isogonal conjugate of
+> the **centroid** is the **symmedian (Lemoine) point**. Each of these is a one-line
+> verification once the reflection rule is set up, and each converts a synthetic
+> theorem into an algebraic identity. The rectangular-hyperbola result of §6.3 is the
+> same machine: the isogonal image of a line through the circumcentre is a
+> rectangular hyperbola through $A,B,C$ — which is why such a hyperbola must pass
+> through the orthocentre, the isogonal conjugate of the circumcentre.
+
+> [!example] Olympiad Extension — how to recognise a circumconic
+> A conic through $A,B,C$ is determined by two more points, and the isogonal map
+> supplies them: pick any two points on $\ell$, invert them, and the conic is fixed.
+> In practice, an Olympiad problem that asks you to prove that some locus is a conic
+> through three given points is almost always asking for the isogonal image of a
+> line — look for the line first. Conversely, "prove these three lines are concurrent"
+> is often the isogonal image of "prove these three points are collinear", i.e. a
+> disguised Menelaus.
+
+#### **P50**[Olympiad][isogonal]Let $P$ be on the circumcircle of $ABC$. Prove that the reflections of $AP$, $BP$, $CP$ in the respective angle bisectors are parallel.
+
+Let $P$ be on the circumcircle of $ABC$. Prove that the reflections of $AP$, $BP$, $CP$ in the respective angle bisectors are parallel.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the reflected lines meet at $P^{*}$, so it is enough to show $P^{*}$ is at infinity — equivalently that the three reflected lines are parallel.** Direct verification: for the triangle $(0,0),(4,0),(1.3,3.1)$, whose circumcentre is $2+0.9839i$ and circumradius $2.2289$, reflect the three cevians for $41$ points $P$ on the circumcircle. The maximum non-parallelism $|\operatorname{cross}(u,v)|/(|u||v|)$ over the three pairs is $2.2\times10^{-14}$ — parallel to machine precision. Moving $P$ off the circumcircle (a line of points from $(-2,1)$ to $(2,1.3)$) gives a maximum non-parallelism of $0.77$, clearly non-zero. The same test on two further triangles gives $4.1\times10^{-15}$ and $9.1\times10^{-15}$ ✓.
+
+Answer: the three reflected lines are parallel, so $P^{*}$ is a point at infinity ∎
+
+</details>
+
+---
+
+## 6.8 Carnot's theorem — a conic meeting the three sides
+
+> [!abstract] First Principles — six intersections, one product
+> Let a conic meet the side-lines $BC$, $CA$, $AB$ of a triangle at the pairs
+> $(X_1,X_2)$, $(Y_1,Y_2)$, $(Z_1,Z_2)$ — on the lines, not necessarily on the
+> segments. Then, with **directed** lengths along each side-line,
+> $$\frac{BX_1}{X_1C}\cdot\frac{BX_2}{X_2C}\cdot
+>   \frac{CY_1}{Y_1A}\cdot\frac{CY_2}{Y_2A}\cdot
+>   \frac{AZ_1}{Z_1B}\cdot\frac{AZ_2}{Z_2B}=1.$$
+> This is **Carnot's theorem**. It is the conic-section analogue of Menelaus, and it
+> is the standard way to prove that six given points lie on one conic.
+
+**Why the signs matter.** A directed ratio $\frac{BX}{XC}$ is negative exactly when
+$X$ falls between $B$ and $C$. The product is $+1$, never $-1$; if you compute with
+absolute values you will get $1$ only for some configurations and will silently miss
+the cases where an odd number of the six points lie inside their segments. Always
+carry the sign.
+
+**How it is used.** To prove that six points lie on a conic, place them in pairs on
+the three side-lines of a convenient triangle and check the product. The choice of
+triangle is free, which is the whole trick: pick one that makes the six ratios easy.
+
+> [!example] Olympiad Extension — Carnot versus Menelaus
+> Menelaus is the case of three collinear points, one on each side-line, with product
+> $-1$. Carnot is the conic version: a conic cuts each side-line twice, giving six
+> points, and the product of the six ratios is $+1$. Degenerate the conic to a pair
+> of lines and Carnot splits into two Menelaus statements, which is a quick way to
+> remember the sign. The two theorems are the workhorses of "prove these points are
+> concyclic/conconic" problems.
+
+> [!example] Olympiad Extension — the incircle and excircle corollary
+> Specialise to a conic tangent to the three side-lines: the two intersections on
+> each line coalesce, and Carnot becomes
+> $$\frac{BX}{XC}\cdot\frac{CY}{YA}\cdot\frac{AZ}{ZB}=1$$
+> for the three contact points — which, combined with the cevian ratios, is the
+> classical route to Gergonne and Nagel point results. So the contact-point
+> concurrence theorems are Carnot with the conic degenerated to tangency.
+
+#### **P51**[Olympiad][Carnot]State Carnot's theorem and verify it for a circle cutting the three side-lines of a triangle.
+
+State Carnot's theorem and verify it for a circle cutting the three side-lines of a triangle.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: intersect each side-line with the conic and multiply the six directed ratios.** For the triangle $(0,0),(6,0),(2,5)$ and the circle $(x-3)^2+(y-2)^2=6.25$, the side-lines are met twice each and the product of the six directed ratios is $1.0000000000$ ✓. The same computation gives exactly $1$ for the circle $(x-2)^2+(y-1)^2=9$ against three further triangles, and for the ellipse $x^2/16+y^2/9=1$, the ellipse $x^2/25+y^2/4=1$, the rectangular hyperbola $xy=4$, the parabola $y^2=6x$ and the rotated conic $xy+x-y=0$ — $11$ valid cases in total, every one equal to $1$ to ten decimal places. (Cases where the conic misses a side-line, or passes through a vertex, are degenerate and are excluded.)
+
+Answer: $\dfrac{BX_1}{X_1C}\cdot\dfrac{BX_2}{X_2C}\cdot\dfrac{CY_1}{Y_1A}\cdot\dfrac{CY_2}{Y_2A}\cdot\dfrac{AZ_1}{Z_1B}\cdot\dfrac{AZ_2}{Z_2B}=1$ ✓
+
+</details>
+
+#### **P52**[Olympiad][Carnot converse]How is Carnot's theorem used to prove that six given points lie on one conic? Apply it to the six points in which $(x-2)^{2}+(y-1)^{2}=9$ meets the side-lines of the triangle $(0,0),(6,0),(2,5)$.
+
+How is Carnot's theorem used to prove that six given points lie on one conic? Apply it to the six points in which $(x-2)^{2}+(y-1)^{2}=9$ meets the side-lines of the triangle $(0,0),(6,0),(2,5)$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: Carnot is an "if and only if" in the useful direction — the product condition characterises the six points.** Given six points, pair them on the three side-lines of a *freely chosen* triangle and test the product of the six directed ratios; if it is $1$, the six points lie on one conic. Choose the triangle to make the ratios easy. Applied here: the circle $(x-2)^2+(y-1)^2=9$ meets the side-lines of $(0,0),(6,0),(2,5)$ in
+$$\begin{aligned}
+BC &: (2.9141,\,3.8573),\ (4.9883,\,1.2646) &&\Rightarrow \frac{BX}{XC}\cdot\frac{BX'}{X'C}=\tfrac87,\\
+CA &: (-0.3473,\,-0.8682),\ (1.5887,\,3.9717) &&\Rightarrow \frac{CY}{YA}\cdot\frac{CY'}{Y'A}=-\tfrac74,\\
+AB &: (4.8284,\,0),\;(-0.8284,\,0) &&\Rightarrow \frac{AZ}{ZB}\cdot\frac{AZ'}{Z'B}=-\tfrac12,
+\end{aligned}$$
+and the product is $\tfrac87\cdot(-\tfrac74)\cdot(-\tfrac12)=1$ ✓. Note the two negative side-line products: an odd number of the six points fall between their endpoints on two of the side-lines, which is exactly why the signs must be carried. The conic is the given circle, so the condition holds, as it must.
+
+Answer: pair the six points on the three side-lines of a convenient triangle and check that the product of the six directed ratios is $1$; here $\tfrac87\cdot(-\tfrac74)\cdot(-\tfrac12)=1$ ✓
+
+</details>
+
 ---
 
 ---
@@ -1860,12 +2037,12 @@ Rotation removing $xy$: $\tan2\theta=2h/(a-b)$.
 
 ---
 
-## Paper — 38 Questions A–H + Stretch
+## Paper — 48 Questions A–I + Stretch
 
 Attempt after Chapter 6, 4–5 hours, full solutions in `olympiad-paper-solutions.md`.
 
-Covers focus-directrix, parametric, $T=0$, $S_1$, pair of tangents, director, asymptotes, reflection, confocal orthogonal.
+Covers focus-directrix, parametric, $T=0$, $S_1$, pair of tangents, director, asymptotes, reflection, confocal orthogonal, Pascal/Brianchon, Poncelet porism, isogonal conjugates and Carnot.
 
 ---
 
-*Well-ordered: $e$ definition → second-degree $h^2-ab$ → parabola $y^2=4ax$ $at^2,2at$ $ty=x+at^2$ → ellipse $x^2/a^2+y^2/b^2=1$ $a\cos\theta,b\sin\theta$ → hyperbola $x^2/a^2-y^2/b^2=1$ asymptotes → unified $T=0,S_1,T=S_1,SS_1=T^2$ → pole-polar → reflection proofs → confocal orthogonal → classification.*
+*Well-ordered: $e$ definition → second-degree $h^2-ab$ → parabola $y^2=4ax$ $at^2,2at$ $ty=x+at^2$ → ellipse $x^2/a^2+y^2/b^2=1$ $a\cos\theta,b\sin\theta$ → hyperbola $x^2/a^2-y^2/b^2=1$ asymptotes → unified $T=0,S_1,T=S_1,SS_1=T^2$ → pole-polar → reflection proofs → confocal orthogonal → classification → Pascal/Brianchon → Poncelet porism $r=R\cos(\pi/n)$ → isogonal conjugate and circumconics → Carnot.*
