@@ -21,9 +21,9 @@ created: 2026-09-27
 
 # Full Solutions — The PnC Olympiad Paper
 
-All 40 solutions with the reasoning written out: the bijection, the inclusion–exclusion table, the generating function, or the case analysis — the thing that earns the marks. Answers verified by direct enumeration wherever a computer can be trusted more than a hand.
+All 50 solutions with the reasoning written out: the bijection, the inclusion–exclusion table, the generating function, or the case analysis — the thing that earns the marks. Answers verified by direct enumeration wherever a computer can be trusted more than a hand.
 
-`A · Q1–Q8` `B · Q9–Q12` `C · Q13–Q17` `D · Q18–Q22` `E · Q23–Q28` `F · Q29–Q32` `G · Q33–Q38` `+ Q39–Q40`
+`A · Q1–Q8` `B · Q9–Q12` `C · Q13–Q17` `D · Q18–Q22` `E · Q23–Q28` `F · Q29–Q32` `G · Q33–Q38` `+ Q39–Q40` `H · Q41–Q46` `I · Q47–Q50`
 
 ### A Arrangements
 
@@ -927,6 +927,252 @@ The example is tight exactly at the theorem's threshold: it has $(11-1)(11-1) = 
 </details>
 
 
+### H Intersecting & Restricted Families
+
+#### **Q41**[Erdős–Ko–Rado]
+
+
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+Solution
+
+
+(a) A $4$-subset of $[8]$ containing $1$ is determined by the other $3$ elements, chosen from the remaining $7$: $\binom{7}{3} = 35$. Any two of them share the element $1$, so the star $\{A : |A| = 4,\ 1 \in A\}$ is intersecting.
+
+(b) **Erdős–Ko–Rado.** If $\mathcal F$ is an intersecting family of $k$-subsets of $[n]$ with $n \ge 2k$, then $|\mathcal F| \le \binom{n-1}{k-1}$. For $n = 8$, $k = 4$: $\binom{7}{3} = 35$.
+
+(c) The $70$ four-subsets of $[8]$ form a graph in which two vertices are adjacent when the sets meet; an intersecting family is exactly a clique. The maximum clique was computed by branch and bound and equals $35$, so the bound is attained and cannot be improved.
+
+(d) The hypothesis $n \ge 2k$ is essential. When $n < 2k$, *every* two $k$-sets meet (two $k$-subsets can be disjoint only inside a set of size at least $2k$), so the whole $\binom{n}{k}$ family is intersecting and the theorem is vacuous. Check at $n = 7$, $k = 4$: $4 + 4 = 8 > 7$, so all $35 = \binom{7}{4}$ four-subsets of $[7]$ are pairwise intersecting — while the EKR formula would have predicted the smaller $\binom{6}{3} = 20$.
+
+
+**Answer: 35**
+
+</details>
+
+#### **Q42**[Hilton–Milner]
+
+
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+Solution
+
+
+(a) **Hilton–Milner.** The largest intersecting $k$-uniform family on $[n]$ whose total intersection is empty (no element lies in every member) has size
+$$\binom{n-1}{k-1} - \binom{n-k-1}{k-1} + 1$$
+as long as $n > 2k$. For $n = 7$, $k = 3$: $\binom{6}{2} - \binom{3}{2} + 1 = 15 - 3 + 1 = 13$.
+
+(b) Fix $S = \{2,3,4\}$ and an element $1 \notin S$, and take
+$$\mathcal H = \{A : |A| = 3,\ 1 \in A,\ A \cap S \ne \varnothing\} \cup \{S\}.$$
+The first part has $\binom{6}{2} - \binom{3}{2} = 12$ members (all triples through $1$, minus the three using only $\{5,6,7\}$), and adding $S$ gives $13$. It is intersecting: two members both containing $1$ meet; a member containing $1$ meets $S$ by construction; $S$ meets itself. Its total intersection is empty: $1 \notin S$, and for each $x \in S$ the triple $\{1\} \cup (S \setminus \{x\}) \cup \{5\}$ is a member missing $x$. A direct maximum-clique computation over the $\binom{7}{3} = 35$ triples, restricted to families with empty total intersection, returns $13$.
+
+(c) $n = 6$, $k = 3$: $\binom{5}{2} - \binom{2}{2} + 1 = 10 - 1 + 1 = 10$. $n = 8$, $k = 3$: $\binom{7}{2} - \binom{4}{2} + 1 = 21 - 6 + 1 = 16$. Both confirmed by the same clique computation (maxima $10$ and $16$).
+
+
+**Answer: 13** (and $10$, $16$ for the two smaller/larger cases)
+
+</details>
+
+#### **Q43**[Katona circle]
+
+
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+Solution
+
+
+(a) Arrange the $n$ points on a circle and call $k$ consecutive points an *interval*. There are exactly $n$ cyclic intervals of length $k$. **Claim: an intersecting family contains at most $k$ of them.**
+
+*Proof.* Suppose $k+1$ of them were pairwise intersecting, with starts $s_1 < s_2 < \cdots < s_{k+1}$ taken as integers in $[0,n)$. Because $n \ge 2k$, two length-$k$ intervals are disjoint exactly when the clockwise distance between their starts lies in $[k,\,n-k]$; so pairwise intersection forces every difference $s_b - s_a$ ($a<b$) into $\{1,\dots,k-1\}\cup\{n-k+1,\dots,n-1\}$.
+
+Fix $I_1$, the interval starting at $s_1$. Every other interval meets $I_1$, so its start lies in the window $[s_1-k+1,\,s_1+k-1]$ (width $2k-1 \le n-1$, so no wraparound ambiguity). Such an interval contains $s_1$ if its start is $\le s_1$, and contains $s_1+k-1$ if its start is $\ge s_1+1$. Let $U$ be the set of offsets $u\in\{1,\dots,k-1\}$ of intervals starting at $s_1-u$ and $V$ the set of offsets $v\in\{1,\dots,k-1\}$ of intervals starting at $s_1+v$; together with $I_1$ itself (offset $0$) these account for all $k+1$ intervals, so $|U|+|V| = k$.
+
+An interval with offset $u$ is $[s_1-u,\,s_1-u+k-1]$ and one with offset $v$ is $[s_1+v,\,s_1+v+k-1]$; they meet iff $s_1+v \le s_1-u+k-1$, i.e. iff $u+v\le k-1$. This must hold for every $u\in U$, $v\in V$, so $\max U+\max V\le k-1$. As $U$ and $V$ are sets of distinct positive integers, $|U|\le\max U$ and $|V|\le\max V$, giving $|U|+|V|\le k-1$ — contradicting $|U|+|V|=k$.
+
+The remaining possibility is that $U$ or $V$ is empty, so that all $k+1$ intervals pass through the single point $s_1$ (or $s_1+k-1$). But exactly $k$ cyclic intervals of length $k$ pass through any given point, so that is impossible too. Hence at most $k$. $\square$
+
+(b) The twelve intervals $\{i, i+1, i+2, i+3\}$ (mod $12$) on a circle of $12$ points: the largest pairwise-intersecting subfamily has size $4$, attained for instance by $\{0,1,2,3\}$, $\{1,2,3,4\}$, $\{2,3,4,5\}$, $\{3,4,5,6\}$, which all contain the point $3$. (No five are pairwise intersecting, by (a) and by direct computation.)
+
+(c) $(n,k) = (8,3)$: the eight intervals of length $3$ admit a pairwise-intersecting subfamily of size $3$, e.g. $\{0,1,2\},\{1,2,3\},\{2,3,4\}$. $(n,k) = (10,4)$: size $4$, e.g. $\{0,1,2,3\},\{1,2,3,4\},\{2,3,4,5\},\{3,4,5,6\}$. Both match the general bound $k$ exactly.
+
+
+**Answer: 4** (at most $k$ in general; $3$ and $4$ for the two checks)
+
+</details>
+
+#### **Q44**[Frankl–Wilson]
+
+
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+Solution
+
+
+(a) **Frankl–Wilson (uniform version).** Let $\mathcal F$ be a $k$-uniform family on $[n]$ and $L$ a set of $s$ non-negative integers with $k \notin L$, such that $|A \cap B| \in L$ for all *distinct* $A, B \in \mathcal F$. Then $|\mathcal F| \le \binom{n}{s}$. Here $n = 8$, $k = 3$, $L = \{1,2\}$, so $s = 2$ and $k = 3 \notin L$: the bound is $\binom{8}{2} = 28$.
+
+(b) The compatibility graph on the $\binom{8}{3} = 56$ triples joins two triples when their intersection has size $1$ or $2$; a valid family is a clique. Its maximum clique is $21$, comfortably inside the bound of $28$.
+
+(c) The theorem depends only on $s = |L|$, never on which sizes are allowed. Replacing $L$ by $\{0,2\}$ leaves $s = 2$, so the bound is again $\binom{8}{2} = 28$ — yet the actual maximum drops to $8$. The permitted sizes $1,2$ are far more permissive than $0,2$, but the *number* of permitted sizes is what the linear-algebra proof counts: the vectors $\big(\binom{|A \cap T|}{j}\big)$ live in a space of dimension $\binom{n}{s}$, and independence caps the family at $\binom{n}{s}$ whatever $L$ is.
+
+
+**Answer: 28** (the bound); the true maximum is $21$
+
+</details>
+
+#### **Q45**[odd town]
+
+
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+Solution
+
+
+(a) To each $A \in \mathcal F$ attach its incidence vector $v_A \in \mathbb F_2^{\,n}$. For $A \ne B$ the inner product is $\langle v_A, v_B\rangle = |A \cap B| \bmod 2 = 0$, and for $A = A$ it is $\langle v_A, v_A\rangle = |A| \bmod 2 = 1$ because $|A|$ is odd. So the Gram matrix $G = (\langle v_A, v_B\rangle)$ is the identity matrix of size $|\mathcal F|$. If $\sum_A \lambda_A v_A = 0$ with $\lambda \in \mathbb F_2^{|\mathcal F|}$, taking inner products with $v_B$ gives $\lambda_B = 0$ for every $B$. The $v_A$ are linearly independent in an $n$-dimensional space, so $|\mathcal F| \le n$.
+
+(b) The $n$ singletons $\{1\}, \dots, \{n\}$: each has odd size, and two distinct singletons meet in $0$ elements, which is even. So $|\mathcal F| = n$ is attained.
+
+(c) Exhaustive search over all $2^n$ subsets (max clique in the graph joining two odd subsets when their intersection is even) gives maxima $4, 5, 6$ for $n = 4, 5, 6$ — exactly $n$ in each case.
+
+
+**Answer: n** (attained by the singletons; verified $4, 5, 6$)
+
+</details>
+
+#### **Q46**[even town]
+
+
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+Solution
+
+
+(a) If $A, B$ are both even and $|A \cap B|$ is even, then $|A \mathbin{\Delta} B| = |A| + |B| - 2|A \cap B|$ is even, and $|(A \mathbin{\Delta} B) \cap C| = |(A \cap C) \mathbin{\Delta} (B \cap C)|$ is even too. So $\mathcal F$ is closed under symmetric difference and is a subspace of $\mathbb F_2^{\,n}$ — necessarily a subspace of the even-weight hyperplane. Moreover every $v_A$ is orthogonal to every $v_B$ including itself, so $\mathcal F \subseteq \mathcal F^\perp$ and $\dim \mathcal F \le n - \dim \mathcal F$, i.e. $\dim \mathcal F \le \lfloor n/2 \rfloor$. Hence $|\mathcal F| = 2^{\dim \mathcal F} \le 2^{\lfloor n/2 \rfloor}$.
+
+(b) Pair the coordinates as $(1,2), (3,4), \dots$ and take every union of complete pairs. For $n = 6$: $\varnothing, \{1,2\}, \{3,4\}, \{5,6\}, \{1,2,3,4\}, \{1,2,5,6\}, \{3,4,5,6\}, \{1,2,3,4,5,6\}$ — $8 = 2^3$ sets. For $n = 5$ the same construction on the pairs $(1,2),(3,4)$ gives $4 = 2^2$ sets.
+
+(c) Exhaustive search over the even subsets gives maxima $2, 4, 4, 8$ for $n = 3, 4, 5, 6$, matching $2^{\lfloor n/2 \rfloor}$ throughout.
+
+
+**Answer: $2^{\lfloor n/2 \rfloor}$** (attained by unions of coordinate pairs; verified $2, 4, 4, 8$)
+
+</details>
+
+### I Bollobás & Set-Pairs
+
+#### **Q47**[Bollobás]
+
+
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+Solution
+
+
+(a) **Bollobás's set-pairs inequality.** Let $(A_i, B_i)$, $i = 1, \dots, m$, satisfy $A_i \cap B_i = \varnothing$ and $A_i \cap B_j \ne \varnothing$ for $i \ne j$. Then $\sum_{i=1}^m \binom{|A_i| + |B_i|}{|A_i|}^{-1} \le 1$.
+
+*Proof.* Take a uniformly random permutation of the ground set and read it left to right. For a pair with $a_i = |A_i|$, $b_i = |B_i|$, consider the event $E_i$ = "every element of $A_i$ precedes every element of $B_i$". Among the $a_i + b_i$ elements of $A_i \cup B_i$ all relative orders are equally likely, and exactly the $\binom{a_i+b_i}{a_i}$ orders in which the $a_i$ positions of $A_i$ come first satisfy $E_i$; hence $\Pr[E_i] = \binom{a_i+b_i}{a_i}^{-1}$.
+
+The events are pairwise disjoint. Suppose $E_i$ and $E_j$ both occur with $i \ne j$. The hypothesis supplies $x \in A_i \cap B_j$ and $y \in A_j \cap B_i$. From $E_i$, every element of $A_i$ precedes every element of $B_i$, so $x$ precedes $y$. From $E_j$, every element of $A_j$ precedes every element of $B_j$, so $y$ precedes $x$. A strict linear order cannot satisfy both $x \prec y$ and $y \prec x$. So $\sum_i \Pr[E_i] = \Pr[\bigcup E_i] \le 1$. $\square$
+
+(b) Random families were generated subject to the crossing condition (each pair's own intersection empty, every cross-intersection non-empty), the condition was re-checked, and the sum evaluated. Over $1393$ valid families the largest value was $1.000000000000$ — never above the bound.
+
+(c) Take $A_1 = \{1\}$, $B_1 = \{2\}$, $A_2 = \{2\}$, $B_2 = \{1\}$. Then $A_1 \cap B_1 = A_2 \cap B_2 = \varnothing$ and $A_1 \cap B_2 = A_2 \cap B_1 = \{1\} \ne \varnothing$ (equivalently $\{2\}$), so the hypothesis holds and the sum is $\binom{2}{1}^{-1} + \binom{2}{1}^{-1} = \tfrac12 + \tfrac12 = 1$ exactly.
+
+
+**Answer: $\le 1$** — attained by $A_1=\{1\},B_1=\{2\},A_2=\{2\},B_2=\{1\}$
+
+</details>
+
+#### **Q48**[Bollobás corollary]
+
+
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+Solution
+
+
+(a) If $|A_i| \ge a$ and $|B_i| \ge b$ for all $i$, then every summand is at least $\binom{a+b}{a}^{-1}$, because $\binom{x+y}{x}$ is increasing in each argument on the relevant range. Bollobás gives $m \binom{a+b}{a}^{-1} \le \sum_i \binom{a_i+b_i}{a_i}^{-1} \le 1$, hence $m \le \binom{a+b}{a}$. The bound depends only on the two *minimum* sizes.
+
+(b) For $a = b = 1$ the corollary gives $m \le \binom{2}{1} = 2$. Attained by $A_1 = \{1\}$, $B_1 = \{2\}$, $A_2 = \{2\}$, $B_2 = \{1\}$: both own-intersections are empty and both cross-intersections are non-empty, and the sum is exactly $1$.
+
+(c) With $|A_i| = |B_i| = 1$ write $A_i = \{x_i\}$, $B_i = \{y_i\}$ with $x_i \ne y_i$. The crossing condition forces $x_i = y_j$ for every $i \ne j$. If $m \ge 3$, fixing $i$ gives $y_j = x_i$ for all $j \ne i$, so all the $x$'s and $y$'s coincide with one value, contradicting $x_i \ne y_i$. Hence $m \le 2$, confirmed by exhaustive search over all candidate pairs for ground sets of size $3, 4, 5$: the maximum is $2$ in every case.
+
+
+**Answer: $m \le \binom{a+b}{a}$**; for $a = b = 1$ this is $m \le 2$, and it is tight
+
+</details>
+
+#### **Q49**[Bollobás sharp]
+
+
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+Solution
+
+
+(a) All pairs $(A, B)$ with $A, B$ disjoint $2$-subsets of $[5]$ were enumerated ($30$ of them), and the largest subfamily in which every $A$ meets every other pair's $B$ was found by maximum clique. The answer is $6$, meeting the corollary's bound $\binom{2+2}{2} = 6$ exactly.
+
+(b) An extremal family of six, using only the ground set $\{1,2,3,4\}$:
+
+| $i$ | $A_i$ | $B_i$ |
+| --- | --- | --- |
+| 1 | $\{1,2\}$ | $\{3,4\}$ |
+| 2 | $\{1,3\}$ | $\{2,4\}$ |
+| 3 | $\{1,4\}$ | $\{2,3\}$ |
+| 4 | $\{2,3\}$ | $\{1,4\}$ |
+| 5 | $\{2,4\}$ | $\{1,3\}$ |
+| 6 | $\{3,4\}$ | $\{1,2\}$ |
+
+These are the six ordered ways to split $\{1,2,3,4\}$ into two pairs. Each $B_i$ is the complement of $A_i$, so $A_i \cap B_i = \varnothing$; and for $i \ne j$ the sets $A_i$ and $B_j$ are two distinct $2$-subsets of a $4$-set that are not complementary, so they meet. Both conditions hold. The sum is $6 \cdot \binom{4}{2}^{-1} = 6/6 = 1$ — Bollobás is *tight* here as well.
+
+(c) The cyclic-interval construction with $n = 6$, $a = b = 3$ gives $m = 6$ pairs with sum $6/\binom{6}{3} = 6/20 = 0.3$, far from $1$. The corollary's bound $\binom{6}{3} = 20$ is a cap on the *count*, not on the sum, and this construction is nowhere near saturating it: tightness needs the $A_i$ and $B_i$ to be as small as the hypothesis allows, which the $a = b = 2$ family above achieves but the $a = b = 3$ one does not.
+
+
+**Answer: 6** $= \binom{4}{2}$, with the sum exactly $1$
+
+</details>
+
+#### **Q50**[synthesis]
+
+
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+Solution
+
+
+(a) Frankl–Wilson with $n = 9$, $k = 3$, $L = \{0,2\}$: $s = |L| = 2$ and $k = 3 \notin L$, so $|\mathcal F| \le \binom{9}{2} = 36$. The true maximum, found by maximum clique over the $\binom{9}{3} = 84$ triples, is $8$ — the theorem's bound is a long way from sharp here, which is typical: Frankl–Wilson is a universal cap, not a formula for the extremal family.
+
+(b) With $L = \{1\}$ every two members meet in exactly one point. Now $s = 1$, so $|\mathcal G| \le \binom{9}{1} = 9$, and the actual maximum is $7$ (again by maximum clique). Note how much stronger the bound becomes as $s$ shrinks — the same machinery, one fewer permitted intersection size, a bound $4$ times smaller.
+
+(c) On the ground set $\{1,2,3,4\}$ arranged on a circle, take $a = 1$, $b = 3$: $A_i = \{i\}$ and $B_i$ = the three consecutive points immediately before $i$. The four pairs satisfy $A_i \cap B_i = \varnothing$ and $A_i \cap B_j \ne \varnothing$ for $i \ne j$, and the sum is
+$$4 \cdot \binom{1+3}{1}^{-1} = \frac{4}{4} = 1.$$
+In general the cyclic construction with $n = a + b$ points gives $n$ valid pairs and sum $n \big/ \binom{n}{a}$, which equals $1$ precisely when $n = \binom{n}{a}$ — e.g. $n = 4, a = 1, b = 3$ and $n = 5, a = 1, b = 4$. What makes it tight is that the pairs are *consecutive* on the circle: each $A_i$ sits in the unique gap of $B_i$, and every other $B_j$ wraps around to meet it.
+
+
+**Answer: (a) $36$; (b) $9$; (c) sum $= 1$**
+
+</details>
+
+
 ### ◈ Marking guide (suggested)
 
 | band | questions | weight |
@@ -934,5 +1180,6 @@ The example is tight exactly at the theorem's threshold: it has $(11-1)(11-1) = 
 | Mechanics (execute a known method cleanly) | Q3, Q6, Q7, Q9, Q10, Q11, Q13, Q19, Q20, Q21, Q26, Q28, Q31, Q32 | 1 mark each |
 | Hard (method + a twist: bounded IE, rooks, parity, gaps in circles) | Q1, Q2, Q4, Q5, Q8, Q15, Q16, Q18, Q22, Q23, Q27, Q33, Q34, Q35, Q36 | 2 marks each |
 | Olympiad (full bijections / proofs: reflection, Burnside 3D, cycle parity, Ramsey, W(2,3), ES) | Q12, Q14, Q17, Q24, Q25, Q29, Q30, Q37, Q38, Q39, Q40 | 3–4 marks each |
+| Frontier (extremal set theory: EKR, Hilton–Milner, Katona, Frankl–Wilson, odd/even town, Bollobás) | Q41, Q42, Q43, Q44, Q45, Q46, Q47, Q48, Q49, Q50 | 3–4 marks each |
 
-Total: $14 + 15\cdot 2 + 11\cdot 3.5 \approx 78$ "marks" over 40 questions — a realistic full-length attempt covers $\sim 60\%$ with strong time management; the stretch questions are worth starting only after G is done.
+Total: $14 + 15\cdot 2 + 11\cdot 3.5 + 10\cdot 3.5 \approx 113$ "marks" over 50 questions — a realistic full-length attempt covers $\sim 60\%$ with strong time management; the stretch questions are worth starting only after G is done, and the frontier sections H–I after that.

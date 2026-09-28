@@ -16,15 +16,15 @@ created: 2026-09-27
 > [!info] Navigation
 > ⬅ [[06-olympiad-theory|Chapter 6]] · 📖 [[PnC|PnC]] · ✅ [[PnC — Solutions|Solutions]] ➡
 
-# Olympiad Paper · 40 questions
+# Olympiad Paper · 50 questions
 
 *Assessment · The Whole Course*
 
 # The PnC Olympiad Paper
 
-40 questions covering every concept of the six chapters, from arrangement mechanics to Burnside, partitions and synthesis proofs. Questions 1–38 are the core paper (sections A–G); 39–40 are stretch. Suggested time: 4–5 hours. No calculator needed; "exact number" questions expect a fully reduced integer.
+50 questions covering every concept of the six chapters, from arrangement mechanics to Burnside, partitions, extremal set theory and synthesis proofs. Questions 1–38 are the core paper (sections A–G); 39–40 are stretch; 41–50 are the frontier sections H–I — Erdős–Ko–Rado, Hilton–Milner, Katona's circle method, Frankl–Wilson, odd/even town, and Bollobás set-pairs. Suggested time: 5–6 hours. No calculator needed; "exact number" questions expect a fully reduced integer.
 
-`A · Arrangements (8)` `B · Stars & Bars (4)` `C · Binomial / Double Counting (5)` `D · Inclusion–Exclusion (5)` `E · Pigeonhole (6)` `F · Lattice Paths (4)` `G · Synthesis (6)` `+2 stretch`
+`A · Arrangements (8)` `B · Stars & Bars (4)` `C · Binomial / Double Counting (5)` `D · Inclusion–Exclusion (5)` `E · Pigeonhole (6)` `F · Lattice Paths (4)` `G · Synthesis (6)` `H · Intersecting & Restricted Families (6)` `I · Bollobás & Set-Pairs (4)` `+2 stretch`
 
 ### Supplementary notes
 
@@ -217,6 +217,51 @@ The 8 vertices of a cube are colored with 2 colors. Count the colorings up to *r
 Prove the Erdős–Szekeres theorem: every sequence of $(r-1)(s-1) + 1$ distinct real numbers contains an increasing subsequence of length $r$ or a decreasing one of length $s$ (use the $(I_i, D_i)$ label argument). Deduce: any 101 distinct real numbers contain a monotone subsequence of length 11. Give an example of 100 distinct reals with *no* monotone subsequence of length 11, and verify it.
 
 
+### H Intersecting & Restricted Families
+
+#### **Q41**[Erdős–Ko–Rado][Olympiad]For $n = 8$, $k = 4$, how large is the largest intersecting family of $4$-subsets of $[8]$?…
+
+(a) How many $4$-subsets of $[8]$ contain the element $1$? Show this "star" is an intersecting family. (b) State the Erdős–Ko–Rado theorem and quote the bound it gives for $n = 8$, $k = 4$. (c) By an explicit computation of the maximum clique in the intersecting graph on the $\binom{8}{4}$ four-subsets, confirm the bound is attained. (d) Explain why the theorem says nothing when $n < 2k$, and check your explanation at $n = 7$, $k = 4$.
+
+#### **Q42**[Hilton–Milner][Olympiad]What is the largest intersecting family of $3$-subsets of $[7]$ in which no single element belongs to every member?…
+
+(a) The star on $[7]$ with $k = 3$ has $\binom{6}{2} = 15$ members, but every one of them contains $1$. Find the largest intersecting $3$-uniform family on $[7]$ whose total intersection is empty, and compare it with the Hilton–Milner value $\binom{n-1}{k-1} - \binom{n-k-1}{k-1} + 1$. (b) Exhibit a family attaining your answer and verify that it is intersecting and has no common element. (c) Do the same for $n = 6$, $k = 3$ and $n = 8$, $k = 3$.
+
+#### **Q43**[Katona circle][Olympiad]Twelve points sit on a circle. How many pairwise-intersecting cyclic intervals of length $4$ can an intersecting family contain?…
+
+(a) On a circle of $n$ points, call $k$ consecutive points an *interval*. Prove that an intersecting family contains at most $k$ of the $n$ cyclic intervals of length $k$, assuming $n \ge 2k$. (b) For $n = 12$, $k = 4$, verify by computing the largest pairwise-intersecting subfamily of the twelve intervals $\{i, i+1, i+2, i+3\}$ (indices mod $12$), and exhibit one of that size. (c) Repeat for $(n,k) = (8,3)$ and $(10,4)$.
+
+#### **Q44**[Frankl–Wilson][Olympiad]Let $\mathcal F$ be a $3$-uniform family on $[8]$ in which every two distinct members meet in $1$ or $2$ points. How large can $\mathcal F$ be?…
+
+(a) State the Frankl–Wilson theorem for $k$-uniform families whose pairwise intersections all lie in a set $L$ with $|L| = s$, and apply it to $n = 8$, $k = 3$, $L = \{1, 2\}$ to get a bound. (b) By explicit computation find the actual maximum, and note how far it is from the bound. (c) Explain in one sentence why the theorem sees only the *number* of permitted intersection sizes, not their values, by redoing the bound with $L = \{0, 2\}$.
+
+#### **Q45**[odd town][Olympiad]A family $\mathcal F$ of subsets of $[n]$ has every member of odd size, and any two distinct members meet in an even number of points. How large can $\mathcal F$ be?…
+
+(a) Prove $|\mathcal F| \le n$ (the "odd town" theorem) by working over $\mathbb{F}_2$: to each set attach its incidence vector and show the vectors are linearly independent. (b) Exhibit a family of size $n$. (c) Verify the bound by computing the largest such family for $n = 4, 5, 6$ over all $2^n$ subsets.
+
+#### **Q46**[even town][Olympiad]Same hypotheses as Q45 but every member has *even* size. How large can $\mathcal F$ be now?…
+
+(a) Prove $|\mathcal F| \le 2^{\lfloor n/2 \rfloor}$ (the "even town" theorem) by pairing the coordinates and reducing to the odd-town argument. (b) Exhibit a family attaining the bound for $n = 5$ and $n = 6$. (c) Verify by computing the largest such family for $n = 3, 4, 5, 6$ over all even subsets.
+
+### I Bollobás & Set-Pairs
+
+#### **Q47**[Bollobás][Olympiad]Pairs $(A_i, B_i)$ with $A_i \cap B_i = \varnothing$ but $A_i \cap B_j \ne \varnothing$ for $i \ne j$. Prove $\sum_i \binom{|A_i|+|B_i|}{|A_i|}^{-1} \le 1$…
+
+(a) State and prove Bollobás's set-pairs inequality using a uniformly random permutation of the ground set: identify the event whose probability is $\binom{a_i+b_i}{a_i}^{-1}$ and prove the events are pairwise disjoint. (b) Generate random families satisfying the crossing condition and evaluate the sum; report the largest value found over at least a thousand valid families. (c) Find a family for which the sum is exactly $1$.
+
+#### **Q48**[Bollobás corollary][Olympiad]Deduce from Bollobás a bound on the *number* of pairs, then find the sharp case for $a = b = 1$…
+
+(a) If every $|A_i| \ge a$ and every $|B_i| \ge b$, show $m \le \binom{a+b}{a}$. (b) For $a = b = 1$ the corollary gives $m \le 2$: exhibit two pairs attaining it and check the sum. (c) Verify by exhaustive search that no valid family of three pairs exists with $|A_i| = |B_i| = 1$.
+
+#### **Q49**[Bollobás sharp][Olympiad]For $a = b = 2$ the corollary gives $m \le \binom{4}{2} = 6$. Is that bound attained?…
+
+(a) Search all pairs $(A,B)$ with $A, B$ disjoint $2$-subsets of $[5]$ for the largest subfamily in which every $A$ meets every other pair's $B$, and report the maximum. (b) Exhibit a family of that size and verify both Bollobás conditions and the value of the sum. (c) Explain why the corollary's bound is tight here but not for the cyclic-interval construction with $n = 6$, $a = b = 3$.
+
+#### **Q50**[synthesis][Olympiad]Bound $|\mathcal F|$ for a $3$-uniform family on $[9]$ whose pairwise intersections all lie in $\{0,2\}$, then tighten it…
+
+(a) Let $\mathcal F$ be a family of $3$-subsets of $[9]$ with all pairwise intersections in $L = \{0, 2\}$. Bound $|\mathcal F|$ by Frankl–Wilson. (b) Now let $\mathcal G$ be a family of $3$-subsets of $[9]$ with all pairwise intersections in $\{1\}$. Bound $|\mathcal G|$ and compute the actual maximum if you can. (c) Construct a valid Bollobás family of pairs with $|A_i| = 1$, $|B_i| = 3$ on a $4$-element ground set whose sum is exactly $1$, and say what makes the cyclic-interval construction tight in general.
+
+
 ### ✎ Answer Key
 
 | Q | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |  |
@@ -226,3 +271,7 @@ Prove the Erdős–Szekeres theorem: every sequence of $(r-1)(s-1) + 1$ distinct
 | ans | 315 | 10 | 165 | 381 | 44 | 18 | 126 | 64 | 44 |
 | Q | 31 | 32a | 32b | 33 | 34a | 34b | 36a | 36b | 39 |
 | ans | 14 | 14 | 54 | 13 | 42 | 10 | 90 | 15 | 23 |
+| Q | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 |
+| ans | 35 | 13 | 4 | 21 | n | 2^⌊n/2⌋ | 1 | 2 | 6 |
+| Q | 50 |  |  |  |  |  |  |  |  |
+| ans | 36 |  |  |  |  |  |  |  |  |

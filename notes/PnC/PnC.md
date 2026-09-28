@@ -1956,7 +1956,116 @@ Solution
 > A *lower bound* can sometimes be proved by showing a random object usually has the desired property. For $R(3,3)$ the lower bound is *explicit*, not probabilistic: color the edges of the 5-cycle red and its diagonals blue (paper Q24) — each color class is a 5-cycle, which contains no triangle, so $R(3,3) > 5$. The probabilistic method (Erdős, 1947) enters for larger parameters: color the edges of $K_n$ red/blue at random. A given $k$-clique is monochromatic with probability $2 \cdot 2^{-\binom{k}{2}}
 >       = 2^{1-\binom{k}{2}}$, so the expected number of monochromatic $k$-cliques is $\binom{n}{k}\, 2^{1-\binom{k}{2}}$. If this expectation is $&lt; 1$, *some* coloring has none at all — hence $R(k,k) &gt; n$. For instance, $k = 4, n = 6$: $\binom{6}{4}/2^{5} = 15/32 &lt; 1$, so $R(4,4) \ge 7$ — existence with no construction. (For $k = 3$ the bound only reaches $n = 3$, which is why $R(3,3)$ is better handled explicitly.) Expectation $&lt; 1$ ⇒ existence is the seed of an entire field.
 
-### 6.7 Practice set
+### 6.7 Erdős–Ko–Rado and Katona's circle method
+
+A family is **intersecting** if any two of its members meet. For $k$-subsets of $[n]$ with $n \ge 2k$, the largest intersecting family has size $\binom{n-1}{k-1}$ — the **star** $\{A : 1 \in A\}$ is extremal.
+
+**Katona's circle proof.** Arrange $[n]$ on a circle and call $k$ consecutive points an *interval*. An intersecting family contains **at most $k$** of the $n$ cyclic intervals. To see why, take $k+1$ intervals with starts $s_1 < \cdots < s_{k+1}$ in $[0,n)$; because $n \ge 2k$, two length-$k$ intervals are disjoint exactly when the clockwise distance between their starts lies in $[k,\,n-k]$, so pairwise intersection forces every difference $s_b-s_a$ into $\{1,\dots,k-1\}\cup\{n-k+1,\dots,n-1\}$. Fix the interval starting at $s_1$: every other start lies in the window $[s_1-k+1,\,s_1+k-1]$ and its interval contains $s_1$ (start $\le s_1$) or $s_1+k-1$ (start $\ge s_1+1$). Writing the offsets as $u\in U$, $v\in V\subseteq\{1,\dots,k-1\}$, an offset-$u$ and an offset-$v$ interval meet iff $u+v\le k-1$, so $\max U+\max V\le k-1$ and hence $|U|+|V|\le k-1$ — one short of the $k$ needed, since $I_1$ supplies the extra offset $0$. If instead $U$ or $V$ is empty, all $k+1$ intervals pass through a single point, and exactly $k$ intervals of length $k$ pass through any given point. Either way $k+1$ is impossible.
+
+Now count pairs (cyclic arrangement, interval belonging to $\mathcal F$):
+
+- from above: at most $k$ per arrangement, and there are $(n-1)!$ arrangements, so $\le k\,(n-1)!$;
+- from below: a fixed $k$-set $A$ is a consecutive interval in exactly $k!\,(n-k)!$ arrangements.
+
+Dividing: $|\mathcal F| \le \frac{k(n-1)!}{k!(n-k)!} = \frac{k}{n}\binom{n}{k} = \binom{n-1}{k-1}$. ∎
+
+**The hypothesis $n \ge 2k$ is necessary.** If $n < 2k$ then *every* two $k$-sets meet, so the maximum is the whole $\binom{n}{k}$ — no restriction at all.
+
+> [!example] Olympiad Extension — the circle method is a general machine
+> Katona's argument is not a one-off: put the ground set on a circle, bound how many members of the family can appear as intervals, and count pairs. The same device proves Sperner's theorem (via chains), the Erdős–Ko–Rado theorem for $t$-intersecting families, and the two-families theorem. Whenever a problem asks for the largest family with a pairwise condition, try the circle first.
+
+> [!example] Olympiad Extension — $t$-intersecting and the Hilton–Milner escape
+> Require $|A \cap B| \ge t$ instead of $\ge 1$: for $n$ large enough the extremal family is again a star, of size $\binom{n-t}{k-t}$. The star is not the only shape though — **Hilton–Milner** gives the largest intersecting family containing no common element, of size $\binom{n-1}{k-1} - \binom{n-k-1}{k-1} + 1$, and it is the standard second-order bound in Olympiad use.
+
+#### **P9**[Olympiad][EKR]Verify the Erdős–Ko–Rado bound $\binom{n-1}{k-1}$ for intersecting $k$-uniform families on $[n]$, and exhibit the extremal family.
+
+Verify the Erdős–Ko–Rado bound $\binom{n-1}{k-1}$ for intersecting $k$-uniform families on $[n]$, and exhibit the extremal family.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: brute-force maximum clique in the "intersecting graph", against the star size.** Two $k$-sets are adjacent when they meet; a family is intersecting iff it is a clique. Computing the maximum clique for $(n,k) = (4,2),(5,2),(6,2),(7,2),(6,3),(7,3),(8,3)$ gives $3,4,5,6,10,15,21$, and $\binom{n-1}{k-1}$ gives $3,4,5,6,10,15,21$ — exact agreement in every case. The star $\{A \subseteq [n] : |A| = k,\ 1 \in A\}$ has exactly $\binom{n-1}{k-1}$ members and is intersecting, so the bound is attained. For $n < 2k$ the theorem does not apply: at $(n,k)=(5,3)$ the maximum is $10 = \binom{5}{3}$, the whole family, since two $3$-subsets of a $5$-set always meet.
+
+Answer: maximum $=\binom{n-1}{k-1}$ for $n \ge 2k$; the star attains it ✓
+
+</details>
+
+---
+
+### 6.8 Frankl–Wilson: intersection restrictions bound the family
+
+If $\mathcal F$ is $k$-uniform on $[n]$ and all pairwise intersections $|A \cap B|$ ($A \ne B$) lie in a set $L$ with $|L| = s$, then
+$$|\mathcal F| \le \binom{n}{s}.$$
+The bound depends only on how many *distinct intersection sizes* are allowed, not on their values — one forbidden size is already a strong constraint.
+
+**The linear-algebra core.** To each $A \in \mathcal F$ attach the vector $v_A = \big(\binom{|A \cap T|}{j}\big)_{T \subseteq [n],\ |T| = s,\ j \in L}$ in a space of dimension $\sum_{j \in L}\binom{n}{j}$. For $A \ne B$, the polynomial $\prod_{\ell \in L}(x - \ell)$ vanishes at $|A \cap B|$, so $\langle v_A, v_B\rangle = 0$; while $\langle v_A, v_A\rangle \ne 0$ because $|A \cap A| = k \notin L$. So the $v_A$ are linearly independent, and there are at most $\binom{n}{s}$ of them once the dimension is trimmed to the $s$-th symmetric layer.
+
+> [!example] Olympiad Extension — why the condition is on *distinct* sizes
+> Allowing intersections in $\{0,1,2\}$ is far weaker than forcing them all to be $1$, yet both have $s = 3$ and the same bound $\binom{n}{3}$. The theorem sees only the *number* of permitted sizes. This is the standard first tool for "how large can a family be if no two members meet in exactly $m$ points" questions, and it is the reason such questions have clean binomial answers.
+
+> [!example] Olympiad Extension — Ray-Chaudhuri–Wilson and the non-uniform version
+> Drop uniformity and require only $|A| \in L$ and $|A \cap B| \in L$: then $|\mathcal F| \le \binom{n}{s} + \binom{n}{s-1} + \cdots + \binom{n}{0}$. The two statements are the workhorses of extremal set theory, and both are proved by the same independence argument — the polynomials $\prod_{\ell \in L}(x-\ell)$ do all the work.
+
+#### **P10**[Olympiad][Frankl–Wilson]Verify $|\mathcal F| \le \binom{n}{s}$ for $k$-uniform families whose pairwise intersections all lie in a set $L$ of size $s$.
+
+Verify $|\mathcal F| \le \binom{n}{s}$ for $k$-uniform families whose pairwise intersections all lie in a set $L$ of size $s$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: maximum clique in the "compatibility graph" where two $k$-sets are adjacent iff their intersection lies in $L$, then compare with $\binom{n}{s}$.** The maximum was computed for $(n,k,L) = (6,2,\{0,1\})$, $(6,3,\{1,2\})$, $(7,3,\{0,2\})$, $(8,3,\{1,2\})$, $(8,4,\{0,2\})$, $(7,2,\{0\})$, $(8,3,\{0,1\})$, $(7,3,\{1\})$, $(6,2,\{1\})$, $(8,2,\{0,1\})$, $(7,4,\{2\})$ — eleven cases, giving maxima $15, 10, 5, 21, 14, 3, 8, 7, 5, 28, 7$ against bounds $15, 15, 21, 28, 28, 7, 28, 7, 6, 28, 7$. Every maximum is at most its bound ✓, and the bound is *attained* in four of the eleven cases: $(6,2,\{0,1\})$, $(7,3,\{1\})$, $(8,2,\{0,1\})$ and $(7,4,\{2\})$, where the maximum equals $\binom{n}{s}$ exactly. Note $k \notin L$ in each case, as the theorem requires.
+
+Answer: $|\mathcal F| \le \binom{n}{s}$ holds in all eleven tested cases ✓
+
+</details>
+
+---
+
+### 6.9 Bollobás's set-pairs inequality
+
+Let $(A_i, B_i)$, $i = 1,\dots,m$, be pairs of finite sets with
+$$A_i \cap B_i = \varnothing \quad\text{and}\quad A_i \cap B_j \ne \varnothing \ \ (i \ne j).$$
+Then
+$$\sum_{i=1}^{m}\binom{|A_i|+|B_i|}{|A_i|}^{-1} \le 1.$$
+The hypothesis is a *crossing* condition: each $A_i$ misses its own $B_i$ and hits every other $B_j$.
+
+**Why it is true (sketch).** Pick a uniformly random permutation of the ground set and read it left to right. For a pair $(A_i,B_i)$ with $a_i + b_i$ elements, the event "$A_i$ entirely precedes $B_i$" has probability $\binom{a_i+b_i}{a_i}^{-1}$. The crossing condition makes these events **pairwise disjoint**: if $A_i$ precedes $B_i$ and $A_j$ precedes $B_j$ with $i \ne j$, take $x \in A_i \cap B_j$ and $y \in A_j \cap B_i$; the first event forces $x \prec y$ and the second forces $y \prec x$, impossible in a linear order. Disjoint events have total probability at most $1$. ∎
+
+> [!example] Olympiad Extension — the permutation proof is the whole point
+> No linear algebra and no induction: a single random ordering turns a combinatorial hypothesis into disjoint events. This "random permutation" device is the same one behind Lubell's proof of Sperner and behind Katona's circle method in disguise. When a problem hands you a crossing condition on pairs of sets, reach for a random permutation before anything else.
+
+> [!example] Olympiad Extension — tight examples and the skew version
+> The bound is attained. On a circle of $n = a+b$ points let $A_i$ be the $a$ consecutive points starting at $i$ and $B_i$ the $b$ consecutive points immediately before $i$: the family of $n$ pairs is valid and the sum is exactly $n/\binom{n}{a}$, which equals $1$ when $n = \binom{n}{a}$ (e.g. $n = 4$, $a = 1$, $b = 3$; and $n = 5$, $a = 1$, $b = 4$). The **skew Bollobás** version replaces the last condition by $A_i \cap B_j \ne \varnothing$ for $i < j$ only, with the same conclusion — a strictly weaker hypothesis, useful when the full crossing condition is unavailable.
+
+#### **P11**[Olympiad][Bollobás]Verify Bollobás's set-pairs inequality on random valid families, and construct a tight example.
+
+Verify Bollobás's set-pairs inequality on random valid families, and construct a tight example.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: generate random families satisfying the crossing condition, check the condition, and evaluate the sum.** Over $1393$ valid random families (each pair's own intersection empty, every cross-intersection non-empty) the largest value of $\sum_i \binom{a_i+b_i}{a_i}^{-1}$ was $1.000000000000$ — never above the bound. Tight example: on a circle of $n = a+b$ points take $A_i$ = the $a$ consecutive points starting at $i$ and $B_i$ = the $b$ consecutive points immediately before $i$. For $n=4$, $a=b=2$ the family of four pairs is valid and the sum is $0.6667 = 4/\binom42$; for $n=4$, $a=1$, $b=3$ and for $n=5$, $a=1$, $b=4$ the sum is exactly $1.0000000000$ — the bound attained.
+
+Answer: $\sum_i \binom{a_i+b_i}{a_i}^{-1} \le 1$, with equality for the $n=4, a=1, b=3$ and $n=5, a=1, b=4$ cyclic constructions ✓
+
+</details>
+
+#### **P12**[Olympiad][synthesis]Use Bollobás to bound the number of sets in a family, then check the bound numerically.
+
+Use Bollobás to bound the number of sets in a family, then check the bound numerically.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: turn the family into set-pairs and read off the count.** If $(A_i,B_i)$ satisfy the Bollobás hypothesis and every $a_i \ge a$, $b_i \ge b$, then each summand is at least $\binom{a+b}{a}^{-1}$, so $m \le \binom{a+b}{a}$. That is the standard corollary: a crossing family of pairs with member sizes bounded below has at most $\binom{a+b}{a}$ pairs. Numerical check: for $a=b=2$ the cyclic construction on $n=4$ points gives $m=4$ pairs with sum $4/\binom42 = 0.6667 \le 1$ ✓, and the corollary's bound $\binom{2+2}{2}=6$ is not contradicted (the construction is not extremal for these sizes); for $a=1,b=3$ the cyclic construction on $n=4$ gives $m=4 = \binom{4}{1}$ pairs with sum exactly $1$ ✓ — the corollary is tight there.
+
+Answer: $m \le \binom{a+b}{a}$; tight at $a=1$, $b=3$ with $m=4$ ✓
+
+</details>
+
+---
+
+### 6.10 Practice set
 
 #### **P1**[Olympiad][practice][Catalan]In how many ways can 5 factors be fully parenthesized? How many triangulations…
 
@@ -2387,13 +2496,17 @@ $S(n,k)$ = partitions of $n$ distinct objects into $k$ non-empty unlabeled subse
 - **Sperner via LYM**: Random chain, $\sum \binom{n}{|A|}^{-1} \le 1$, max antichain $\binom{n}{\lfloor n/2\rfloor}$
 - **Erdős–Szekeres**: $(r-1)(s-1)+1$ sequence has increasing length $r$ or decreasing $s$
 - **Probabilistic method**: $\mathbb{E}<1$ → existence
+- **Erdős–Ko–Rado** (Katona circle): intersecting $k$-uniform on $[n]$, $n\ge2k$ → $\le\binom{n-1}{k-1}$
+- **Frankl–Wilson**: $|A\cap B|\in L$, $|L|=s$ → $|\mathcal F|\le\binom{n}{s}$
+- **Bollobás set-pairs**: crossing pairs → $\sum\binom{a_i+b_i}{a_i}^{-1}\le1$ (random permutation)
 
----
 
-## Paper — 40 Questions A–G + Stretch
+## Paper — 48 Questions A–I + Stretch
 
 Attempt after Chapter 6, 4–5 hours, without solutions. Full solutions in `olympiad-paper-solutions.md`.
 
+Covers arrangements, stars and bars, binomial identities, inclusion–exclusion, pigeonhole, lattice paths and Catalan, Burnside and Pólya, partitions, Stirling and Bell, the cycle lemma and Sperner, Erdős–Ko–Rado, Frankl–Wilson and Bollobás.
+
 ---
 
-*Well-ordered from first principles, every formula derived, every answer verified at $n=3,4$ — the core of JEE Advanced & Olympiad preparation.*
+*Well-ordered from first principles, every formula derived, every answer verified at $n=3,4$ — the core of JEE Advanced & Olympiad preparation — and at the frontier: Katona's circle method and Erdős–Ko–Rado, Frankl–Wilson intersection bounds, and Bollobás set-pairs from a random permutation.*
