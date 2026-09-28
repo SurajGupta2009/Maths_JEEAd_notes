@@ -21,7 +21,7 @@ created: 2026-09-27
 
 A complete conceptual build-up: from the two primitive rules of counting, through every JEE Advanced weapon, to the Olympiad frontier — Burnside, Catalan, partitions and generating functions. Every formula is *derived from reasoning*, never memorized.
 
-`6 chapters` `~90 worked & practice questions` `SVG diagrams` `40-question Olympiad paper + full solutions`
+`6 chapters` `~90 worked & practice questions` `SVG diagrams` `50-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 
@@ -29,7 +29,7 @@ A complete conceptual build-up: from the two primitive rules of counting, throug
 
 - **Colored boxes** — First Principles = the actual reasoning a mathematician uses; Key Idea = the takeaway technique; Common Trap = the classic mistake; Olympiad Extension = the frontier version.
 - **Questions are placed in context** — a solved example right after the technique that solves it, plus practice sets with difficulty tags: [JEE Main] [JEE Adv] [Olympiad]
-- **The Olympiad paper at the end** (38 questions) is the exam: attempt it after Chapter 6, without solutions. The [[PnC — Solutions|solution key]] is separate and complete.
+- **The Olympiad paper at the end** (50 questions) is the exam: attempt it after Chapter 6, without solutions. The [[PnC — Solutions|solution key]] is separate and complete.
 - **Small-case habit** — the single most repeated advice: whenever you get a counting answer, *list all cases for a tiny instance* and check. It catches 90% of errors.
 
 ### ▣ The roadmap
@@ -42,7 +42,7 @@ Here is the logical skeleton of the entire chapter. Notice that everything — e
 
 ### ∑ Exam paper
 
-[[PnC — Paper| The Capstone Olympiad-Level Paper — 40 Questions Eight sections covering every concept of the chapter: arrangements, stars & bars, identities, inclusion–exclusion, pigeonhole, lattice paths & Catalan, Burnside & partitions, and synthesis (Erdős–Szekeres, IMO classics). Difficulty-tagged. ]] [[PnC — Solutions| Attempt first, then open Full Solutions Key Complete step-by-step solutions for all 38 questions, with the reasoning that motivates each step — not just algebra. ]]
+[[PnC — Paper| The Capstone Olympiad-Level Paper — 50 Questions Nine sections covering every concept of the chapter: arrangements, stars & bars, identities, inclusion–exclusion, pigeonhole, lattice paths & Catalan, Burnside & partitions, intersecting families (Erdős–Ko–Rado, Frankl–Wilson), and Bollobás set-pairs. Difficulty-tagged. ]] [[PnC — Solutions| Attempt first, then open Full Solutions Key Complete step-by-step solutions for all 50 questions, with the reasoning that motivates each step — not just algebra. ]]
 
 ### ! One-page mindset
 
@@ -62,7 +62,7 @@ Here is the logical skeleton of the entire chapter. Notice that everything — e
 - **Chapter 4**: Ch 4 · Binomial Coefficients & Identities — 6 sections · 13 questions
 - **Chapter 5**: Ch 5 · Advanced Methods — 4 sections · 15 questions
 - **Chapter 6**: Ch 6 · Olympiad Theory — 7 sections · 13 questions
-- **Olympiad Paper**: Olympiad Paper · 40 questions — 
+- **Olympiad Paper**: Olympiad Paper · 50 questions — 
 - **Solutions**: Olympiad Paper · Solutions & marking guide
 
 ---
@@ -2501,7 +2501,7 @@ $S(n,k)$ = partitions of $n$ distinct objects into $k$ non-empty unlabeled subse
 - **Bollobás set-pairs**: crossing pairs → $\sum\binom{a_i+b_i}{a_i}^{-1}\le1$ (random permutation)
 
 
-## Paper — 48 Questions A–I + Stretch
+## Paper — 50 Questions A–I + Stretch
 
 Attempt after Chapter 6, 4–5 hours, without solutions. Full solutions in `olympiad-paper-solutions.md`.
 

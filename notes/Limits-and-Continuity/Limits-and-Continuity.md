@@ -20,7 +20,7 @@ limits, **continuity** and the Intermediate Value Theorem, and pushes on to the
 Olympiad frontier: sequential criteria, Stolz–Cesàro, Stirling, and limits of
 sums. Every claim is *derived*, every numeric answer *verified*.
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `32-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `39-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 
@@ -699,7 +699,7 @@ Take logs: $\ln P_n = \sum_{k=1}^n \ln(1 + k/n^2)$. Since $x - \tfrac{x^2}{2} \l
 
 </details>
 
-> [!tip] Next — the 32-question Olympiad paper
+> [!tip] Next — the 39-question Olympiad paper
 > Eight sections (A–H), JEE Main → JEE Advanced → Olympiad, covering ε–δ,
 > standard limits, continuity, IVT, differentiability, Stolz–Cesàro, Riemann
 > sums and recursive sequences. Full worked solutions are in

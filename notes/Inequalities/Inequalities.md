@@ -26,7 +26,7 @@ consists of *rewriting the difference as a sum of obviously non-negative
 quantities*. Squares, absolute values, and AM–GM are the three sources of
 obvious non-negativity, and the whole art is finding the right rewriting.
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `34-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `36-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 

@@ -13,7 +13,7 @@ created: 2026-09-27
 
 # Applications of Derivatives — Solutions
 
-> Full solutions to all 34 questions, same Q-ids as the [[Applications-of-Derivatives — Paper|paper]].
+> Full solutions to all 46 questions, same Q-ids as the [[Applications-of-Derivatives — Paper|paper]].
 > Every solution: **method first → derivation → a check.** Every numeric answer was
 > verified in pure Python (stdlib only) before this file was written.
 

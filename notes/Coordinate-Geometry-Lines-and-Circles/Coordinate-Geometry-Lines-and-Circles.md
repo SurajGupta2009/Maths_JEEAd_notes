@@ -22,7 +22,7 @@ This module covers the two simplest and most useful families: **lines** and
 Conics proper live in [[Conic-Sections|the Conic Sections module]]; everything
 here is the foundation that module assumes.
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `34-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `46-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 

@@ -21,7 +21,7 @@ differentiation rule from first principles, systematises the **methods**
 machinery, and reaches the Olympiad frontier: functional equations cracked by
 differentiating, Leibniz's rule, and derivative-based inequalities.
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `32-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `38-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 
@@ -544,7 +544,7 @@ $(-1)^{n-1}(n-1)!\Big[(x-1)^{-n}+(x+1)^{-n}\Big]$.
 
 </details>
 
-> [!tip] Next — the 32-question Olympiad paper
+> [!tip] Next — the 38-question Olympiad paper
 > Eight sections (A–H), JEE Main → JEE Advanced → Olympiad, covering the
 > difference quotient, the rules, chain/implicit/log/parametric methods, nth
 > derivatives, MVT/Rolle and functional equations. Full worked solutions are in

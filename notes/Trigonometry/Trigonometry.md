@@ -26,7 +26,7 @@ The payoff is broad. Trigonometry is the language of periodic phenomena, of
 vectors and rotations, and — through the sine and cosine rules — of every
 triangle that is not right-angled.
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `34-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `36-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 

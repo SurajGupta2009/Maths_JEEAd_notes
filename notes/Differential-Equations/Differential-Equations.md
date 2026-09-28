@@ -26,7 +26,7 @@ Everything here rests on [[Integration|antiderivatives and the integration
 toolkit]] — every solution is obtained by *integrating*, which is why this module
 comes after Integration.
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `34-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `41-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 

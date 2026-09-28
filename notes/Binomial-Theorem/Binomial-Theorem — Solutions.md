@@ -17,7 +17,7 @@ created: 2026-09-27
 
 # Olympiad Paper · Solutions & marking guide
 
-*Companion to the 38-question paper*
+*Companion to the 48-question paper*
 
 # Full Worked Solutions
 

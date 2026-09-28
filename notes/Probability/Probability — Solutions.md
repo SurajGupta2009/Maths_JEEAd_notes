@@ -13,7 +13,7 @@ created: 2026-09-28
 
 # Probability — Solutions
 
-> Full solutions to all 34 questions, same Q-ids as the
+> Full solutions to all 38 questions, same Q-ids as the
 > [[Probability — Paper|paper]]. Every solution: **method first → derivation →
 > a check.** Every numeric answer was verified in pure Python (exact fractions
 > and, where relevant, simulation) before this file was written.

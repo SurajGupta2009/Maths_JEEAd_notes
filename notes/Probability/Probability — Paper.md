@@ -13,7 +13,7 @@ created: 2026-09-28
 
 # Probability — Olympiad Paper
 
-> **34 questions · Sections A–G · difficulty ramps JEE Main → JEE Advanced → Olympiad.**
+> **38 questions · Sections A–G · difficulty ramps JEE Main → JEE Advanced → Olympiad.** → JEE Advanced → Olympiad.**
 > Attempt the whole paper before opening the [[Probability — Solutions|solutions]].
 > Every numeric answer was verified in pure Python (exact fractions and simulation)
 > before this file was written.

@@ -21,7 +21,7 @@ created: 2026-09-27
 
 From slicing a double cone to confocal families and the nine-point circle — one locus idea, six layers deep. Every tangent you will ever draw, every focal chord you will ever measure, derived from the focus-directrix definition rather than memorised. The parabola, the ellipse and the hyperbola are one object wearing three eccentricities.
 
-`6 chapters · basics → JEE Advanced → Olympiad` `15 worked examples (S1–S15)` `48 practice questions (P1–P48, verified answers)` `38-question Olympiad paper + full solutions`
+`6 chapters · basics → JEE Advanced → Olympiad` `15 worked examples (S1–S15)` `48 practice questions (P1–P48, verified answers)` `48-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 
@@ -29,7 +29,7 @@ From slicing a double cone to confocal families and the nine-point circle — on
 
 - **Colored boxes** — First Principles = the actual reasoning; Key Idea = the takeaway technique; Common Trap = the classic mistake; Olympiad Extension = the frontier version.
 - **Questions are placed in context** — a solved example right after the technique that solves it, plus practice sets with difficulty tags: [JEE Main] [JEE Adv] [Olympiad]
-- **The Olympiad paper at the end** (38 questions) is the exam: attempt it after Chapter 6, without solutions. The [[Conic-Sections — Solutions|solution key]] is separate and complete.
+- **The Olympiad paper at the end** (48 questions) is the exam: attempt it after Chapter 6, without solutions. The [[Conic-Sections — Solutions|solution key]] is separate and complete.
 
 ### ▣ The roadmap
 
@@ -41,7 +41,7 @@ The logical skeleton of the module. First principles build the three standard cu
 
 ### ∑ Exam paper
 
-[[Conic-Sections — Paper| The Capstone Olympiad-Level Paper — 38 Questions Eight sections (A–H) ramping JEE Main → Advanced → Olympiad: eccentricity vaults, focal-chord machinery, polars, normals, and the reflection/confocal frontier. ]] [[Conic-Sections — Solutions| Attempt first, then open Full Solutions Key Complete step-by-step solutions for all 38 questions — method name first, then the derivation, then a check. Every numeric answer verified by pure-Python computation. ]] 
+[[Conic-Sections — Paper| The Capstone Olympiad-Level Paper — 48 Questions Nine sections (A–I) ramping JEE Main → Advanced → Olympiad: eccentricity vaults, focal-chord machinery, polars, normals, and the reflection/confocal frontier. ]] [[Conic-Sections — Solutions| Attempt first, then open Full Solutions Key Complete step-by-step solutions for all 48 questions — method name first, then the derivation, then a check. Every numeric answer verified by pure-Python computation. ]] 
 
 ### ! One-page mindset
 
@@ -61,7 +61,7 @@ The logical skeleton of the module. First principles build the three standard cu
 - **Chapter 4**: Ch 4 · The Hyperbola and Its Asymptotes — 6 sections · 11 questions
 - **Chapter 5**: Ch 5 · Tangents, Normals, Chords and Polars — 6 sections · 10 questions
 - **Chapter 6**: Ch 6 · The Olympiad Frontier — Reflection, Confocals and Triangles — 6 sections · 10 questions
-- **Olympiad Paper**: Olympiad Paper · 38 questions — 
+- **Olympiad Paper**: Olympiad Paper · 48 questions — 
 - **Solutions**: Olympiad Paper · Solutions & marking guide
 
 ---

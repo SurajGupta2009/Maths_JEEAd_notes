@@ -13,7 +13,7 @@ created: 2026-09-27
 
 # Matrices & Determinants — Solutions
 
-> Full solutions to all 34 questions, same Q-ids as the
+> Full solutions to all 36 questions, same Q-ids as the
 > [[Matrices-and-Determinants — Paper|paper]]. Every solution: **method first →
 > derivation → a check.** Every numeric answer was verified in pure Python
 > (stdlib only) before this file was written.

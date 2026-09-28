@@ -22,7 +22,7 @@ geometry: points, lines and planes in space, distances, areas and volumes. The
 payoff is that almost every three-dimensional theorem becomes a two-line
 computation.
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `34-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `46-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 

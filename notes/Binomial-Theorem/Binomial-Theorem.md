@@ -21,7 +21,7 @@ created: 2026-09-27
 
 From "expanding a bracket is a census of choices" to Lucas' theorem, Kummer's carries and Wolstenholme's congruence — one idea, six layers deep. Every coefficient you will ever extract, every inequality you will ever prove with it, derived rather than memorised.
 
-`6 chapters · basics → JEE Advanced → Olympiad` `15 worked examples (S1–S15)` `47 practice questions (P1–P47, verified answers)` `38-question Olympiad paper + full solutions`
+`6 chapters · basics → JEE Advanced → Olympiad` `15 worked examples (S1–S15)` `47 practice questions (P1–P47, verified answers)` `48-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 
@@ -29,7 +29,7 @@ From "expanding a bracket is a census of choices" to Lucas' theorem, Kummer's ca
 
 - **Colored boxes** — First Principles = the actual reasoning; Key Idea = the takeaway technique; Common Trap = the classic mistake; Olympiad Extension = the frontier version.
 - **Questions are placed in context** — a solved example right after the technique that solves it, plus practice sets with difficulty tags: [JEE Main] [JEE Adv] [Olympiad]
-- **The Olympiad paper at the end** (38 questions) is the exam: attempt it after Chapter 6, without solutions. The [[Binomial-Theorem — Solutions|solution key]] is separate and complete.
+- **The Olympiad paper at the end** (48 questions) is the exam: attempt it after Chapter 6, without solutions. The [[Binomial-Theorem — Solutions|solution key]] is separate and complete.
 
 ### ▣ The roadmap
 
@@ -41,7 +41,7 @@ The logical skeleton of the module. A left-to-right chain of the six chapters wi
 
 ### ∑ Exam paper
 
-[[Binomial-Theorem — Paper| The Capstone Olympiad-Level Paper — 38 Questions Eight sections (A–H) ramping JEE Main → Advanced → Olympiad: coefficient vaults, identity engines, validity traps, and the Lucas/Kummer frontier. ]] [[Binomial-Theorem — Solutions| Attempt first, then open Full Solutions Key Complete step-by-step solutions for all 38 questions — method name first, then the derivation, then a check. Every numeric answer verified by pure-Python computation. ]] 
+[[Binomial-Theorem — Paper| The Capstone Olympiad-Level Paper — 48 Questions Nine sections (A–I) ramping JEE Main → Advanced → Olympiad: coefficient vaults, identity engines, validity traps, and the Lucas/Kummer frontier. ]] [[Binomial-Theorem — Solutions| Attempt first, then open Full Solutions Key Complete step-by-step solutions for all 48 questions — method name first, then the derivation, then a check. Every numeric answer verified by pure-Python computation. ]] 
 
 ### ! One-page mindset
 
@@ -61,7 +61,7 @@ The logical skeleton of the module. A left-to-right chain of the six chapters wi
 - **Chapter 4**: Ch 4 · Beyond Non-Negative Integer Powers — 4 sections · 11 questions
 - **Chapter 5**: Ch 5 · Size, Growth and Extremes — 3 sections · 8 questions
 - **Chapter 6**: Ch 6 · Divisibility, Parity and Primes — 4 sections · 10 questions
-- **Olympiad Paper**: Olympiad Paper · 38 questions — 
+- **Olympiad Paper**: Olympiad Paper · 48 questions — 
 - **Solutions**: Olympiad Paper · Solutions & marking guide
 
 ---

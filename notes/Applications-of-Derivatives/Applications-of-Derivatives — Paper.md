@@ -13,7 +13,7 @@ created: 2026-09-27
 
 # Applications of Derivatives — Olympiad Paper
 
-> **34 questions · Sections A–H · difficulty ramps JEE Main → JEE Advanced → Olympiad.**
+> **46 questions · Sections A–H · difficulty ramps JEE Main → JEE Advanced → Olympiad.** → JEE Advanced → Olympiad.**
 > Attempt the whole paper before opening the [[Applications-of-Derivatives — Solutions|solutions]].
 > Every numeric answer was verified in pure Python before this file was written.
 

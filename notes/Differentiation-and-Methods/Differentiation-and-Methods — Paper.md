@@ -13,7 +13,7 @@ created: 2026-09-27
 
 # Differentiation and Method of Differentiation — Olympiad Paper
 
-> **32 questions · Sections A–H · difficulty ramps JEE Main → JEE Advanced → Olympiad.**
+> **38 questions · Sections A–H · difficulty ramps JEE Main → JEE Advanced → Olympiad.** → JEE Advanced → Olympiad.**
 > Attempt the whole paper before opening the [[Differentiation-and-Methods — Solutions|solutions]].
 > Every numeric answer was verified in pure Python before this file was written.
 

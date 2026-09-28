@@ -13,7 +13,7 @@ created: 2026-09-27
 
 # Differential Equations — Solutions
 
-> Full solutions to all 34 questions, same Q-ids as the [[Differential-Equations — Paper|paper]].
+> Full solutions to all 41 questions, same Q-ids as the [[Differential-Equations — Paper|paper]].
 > Every solution: **method first → derivation → a check.** Every numeric answer was
 > verified in pure Python (stdlib only) before this file was written — most by an
 > independent RK4 numerical integration of $y'=f(x,y)$.

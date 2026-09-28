@@ -330,7 +330,7 @@ Directly: $1+1+\frac34+\frac12+\frac5{16}=\frac{16+16+12+8+5}{16}=\frac{57}{16}=
 
 ---
 
-# Chapter 5 · Telescoping and Summation Techniques
+# Chapter 5 — Telescoping and Summation Techniques
 
 *Applications · the method of differences*
 

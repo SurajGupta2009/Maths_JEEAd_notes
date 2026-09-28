@@ -13,7 +13,7 @@ created: 2026-09-27
 
 # Limits and Continuity — Solutions & Marking Guide
 
-> Full solutions to all 32 questions, same Q-ids as the [[Limits-and-Continuity — Paper|paper]].
+> Full solutions to all 39 questions, same Q-ids as the [[Limits-and-Continuity — Paper|paper]].
 > Every solution: **method first → derivation → a check.** Every numeric answer was
 > verified in pure Python (stdlib only) before this file was written.
 

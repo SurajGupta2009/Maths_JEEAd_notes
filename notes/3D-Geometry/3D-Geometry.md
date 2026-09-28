@@ -23,7 +23,7 @@ products, triple products and volumes live there, while here we work with the
 Cartesian equations of the line, the plane and the sphere — including the
 standard forms and the sphere, which Vectors does not cover.
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `34-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `46-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 

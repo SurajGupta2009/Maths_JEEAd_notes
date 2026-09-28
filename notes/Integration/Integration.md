@@ -23,7 +23,7 @@ curve, defined as a limit of Riemann sums (built in [[Limits-and-Continuity]]).
 The **Fundamental Theorem of Calculus** is the bridge between them — the single
 most important theorem in the subject.
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `34-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `46-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 

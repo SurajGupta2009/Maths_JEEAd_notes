@@ -21,7 +21,7 @@ created: 2026-09-27
 
 From the equation that has no answer — $x^2 = -1$ — to a geometric language where multiplication is rotation and Olympiad geometry collapses into algebra. Every formula is *derived from reasoning*, never memorized.
 
-`6 chapters · complete` `50 in-context questions (P1–P51)` `38-question paper + solutions` `SVG diagrams` `JEE Advanced → Olympiad`
+`6 chapters · complete` `50 in-context questions (P1–P51)` `48-question paper + solutions` `SVG diagrams` `JEE Advanced → Olympiad`
 
 ### ★ How to use these notes
 
@@ -44,7 +44,7 @@ From the equation that has no answer — $x^2 = -1$ — to a geometric language 
 | 3 · Roots of unity | the $n$-th roots form a regular polygon | $1+\omega+\cdots+\omega^{n-1}=0$, factorizations, $\binom$-sums via filters |
 | 4 · JEE Advanced | the interface language | $\|z-a\|=r$, arg conditions, $\|z\|$-inequalities, solving $z$ equations, loci |
 | 5 · Olympiad geometry | geometry collapses to algebra | Ptolemy as $\|z_1z_3+w_1w_3\|=\|z_1z_2\|\|w_2w_3\|$-style identities, van Aubel, regular $n$-gons |
-| 6 · Synthesis | the whole toolkit | 38-question paper + full solutions |
+| 6 · Synthesis | the whole toolkit | 48-question paper + full solutions |
 
 ### ! One-page mindset
 
@@ -62,7 +62,7 @@ Three habits separate people who "know complex numbers" from people who can solv
 - **Chapter 4**: Ch 4 · JEE Advanced Core — 7 sections · 11 questions
 - **Chapter 5**: Ch 5 · Geometry via Complex Numbers — 6 sections · 6 questions
 - **Chapter 6**: Ch 6 · Synthesis — 5 sections · 5 questions
-- **Olympiad Paper**: Olympiad Paper · 38 questions — 
+- **Olympiad Paper**: Olympiad Paper · 48 questions — 
 - **Solutions**: Olympiad Paper · Solutions & marking guide
 
 ---
@@ -1476,7 +1476,7 @@ Answer: (a) $\dfrac72$; (b) $0$
 
 > [!info] Bridge to Ch 6 — synthesis & the stretch problems
 >
-> Everything is now in place: algebra, polar, roots of unity, loci, and polygon geometry. Chapter 6 assembles them into the problems that separate "knows the formulas" from "sees the structure" — unit-circle configurations that force rectangles, product identities for regular polygons, and the two-vertex transformations $w = z + 1/z$ that turn circles into line segments. Then: the 38-question paper, where the whole module is tested at once.
+> Everything is now in place: algebra, polar, roots of unity, loci, and polygon geometry. Chapter 6 assembles them into the problems that separate "knows the formulas" from "sees the structure" — unit-circle configurations that force rectangles, product identities for regular polygons, and the two-vertex transformations $w = z + 1/z$ that turn circles into line segments. Then: the 48-question paper, where the whole module is tested at once.
 
 ---
 
@@ -1490,7 +1490,7 @@ Answer: (a) $\dfrac72$; (b) $0$
 
 **Synthesis & Stretch**
 
-The problems where the whole module has to work at once. Four themes: *configurations on the unit circle* (where the condition $|z| = 1$ plus a symmetric relation forces a specific shape), *product identities* from the factorization $z^n - 1$, the two-vertex transformation $w = z + 1/z$ (circles becoming line segments), and distance theorems (British Flag) that are one-line computations once you know $\lvert z-a\rvert^2 = (z-a)(\bar z - \bar a)$. After this chapter: the 38-question paper.
+The problems where the whole module has to work at once. Four themes: *configurations on the unit circle* (where the condition $|z| = 1$ plus a symmetric relation forces a specific shape), *product identities* from the factorization $z^n - 1$, the two-vertex transformation $w = z + 1/z$ (circles becoming line segments), and distance theorems (British Flag) that are one-line computations once you know $\lvert z-a\rvert^2 = (z-a)(\bar z - \bar a)$. After this chapter: the 48-question paper.
 
 ### 6.1 Unit-circle configurations — four unit numbers summing to zero
 
@@ -2070,7 +2070,7 @@ Encode figure as complex numbers on unit circle, use $z\bar z=|z|^2$ to eliminat
 
 ## 6. Synthesis & Paper
 
-38 questions A–H, from $i$ cycle $(1+i)^{40}$ to geometry via complex, with full solutions.
+48 questions A–I, from $i$ cycle $(1+i)^{40}$ to geometry via complex, with full solutions.
 
 Attempt 4–5 hours without solutions.
 

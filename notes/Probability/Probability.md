@@ -30,7 +30,7 @@ The single most important habit in probability is the one most often skipped:
 **write down the sample space before doing anything else.** Nearly every error
 in this module traces back to an unstated or wrongly assumed sample space.
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `34-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `38-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 

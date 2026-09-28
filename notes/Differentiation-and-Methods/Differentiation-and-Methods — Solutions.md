@@ -13,7 +13,7 @@ created: 2026-09-27
 
 # Differentiation and Method of Differentiation — Solutions
 
-> Full solutions to all 32 questions, same Q-ids as the [[Differentiation-and-Methods — Paper|paper]].
+> Full solutions to all 38 questions, same Q-ids as the [[Differentiation-and-Methods — Paper|paper]].
 > Every solution: **method first → derivation → a check.** Every numeric answer was
 > verified in pure Python (stdlib only) before this file was written.
 

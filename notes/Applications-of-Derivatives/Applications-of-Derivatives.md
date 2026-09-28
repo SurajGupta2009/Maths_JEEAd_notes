@@ -21,7 +21,7 @@ Everything here stands on [[Differentiation-and-Methods|the differentiation
 rules]] and [[Limits-and-Continuity|limits]] — the derivative is *defined* there;
 here it is *used*.
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `32-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `46-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 

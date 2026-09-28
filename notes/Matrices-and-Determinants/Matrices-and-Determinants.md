@@ -23,7 +23,7 @@ The practical payoff is immediate: a system of $n$ linear equations in $n$
 unknowns becomes the single equation $AX=B$, and the question "does this system
 have a unique solution?" becomes the question "is $\det A\ne0$?"
 
-`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `34-question Olympiad paper + full solutions`
+`6 chapters` `worked examples (S) + practice (P)` `SVG + Mermaid diagrams` `36-question Olympiad paper + full solutions`
 
 ### ★ How to use these notes
 

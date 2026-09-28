@@ -13,7 +13,7 @@ created: 2026-09-27
 
 # Differential Equations — Olympiad Paper
 
-> **34 questions · Sections A–H · difficulty ramps JEE Main → JEE Advanced → Olympiad.**
+> **41 questions · Sections A–H · difficulty ramps JEE Main → JEE Advanced → Olympiad.** → JEE Advanced → Olympiad.**
 > Attempt the whole paper before opening the [[Differential-Equations — Solutions|solutions]].
 > Every numeric answer was verified in pure Python before this file was written.
 
