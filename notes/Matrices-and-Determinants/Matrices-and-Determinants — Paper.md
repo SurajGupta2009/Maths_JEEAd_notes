@@ -159,37 +159,48 @@ created: 2026-09-27
 
 ---
 
-## G · Olympiad frontier (Q30–Q34)
+## G · Olympiad frontier (Q30–Q36)
 
-#### **Q30**[Olympiad][cayley hamilton]Verify Cayley–Hamilton for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$.
+#### **Q30**[Olympiad][eigenvalues]Find the eigenvalues of $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$, and verify that their sum and product are the trace and the determinant.
 
-**Answer:** $A^2-5A-2I=0$ ✓
+**Answer:** $\dfrac{5\pm\sqrt{33}}2\approx5.3723,\,-0.3723$; sum $5=\operatorname{tr}A$, product $-2=\det A$
 
-#### **Q31**[Olympiad][power]Use Cayley–Hamilton to express $A^3$ as $\alpha A+\beta I$ for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$.
+#### **Q31**[Olympiad][cayley hamilton]Verify Cayley–Hamilton for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$.
+
+**Answer:** $A^2-5A-2I=0$
+
+#### **Q32**[Olympiad][power]Use Cayley–Hamilton to express $A^3$ as $\alpha A+\beta I$ for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$.
 
 **Answer:** $A^3=27A+10I$
 
-#### **Q32**[JEE Adv][block]Evaluate $\det\begin{pmatrix}2&0&0&0\\0&3&0&0\\0&0&4&0\\0&0&0&5\end{pmatrix}$ using block structure.
+#### **Q33**[Olympiad][hadamard]Verify Hadamard's inequality $\lvert\det A\rvert\le\prod_j\lVert A_{\cdot j}\rVert$ for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$ and $B=\begin{pmatrix}2&-1&0\\-1&2&-1\\0&-1&2\end{pmatrix}$.
 
-**Answer:** $120$
+**Answer:** $A$: $2\le\sqrt{200}\approx14.1421$; $B$: $4\le\sqrt{150}\approx12.2474$
 
-#### **Q33**[Olympiad][geometry]Explain why $\lvert\det A\rvert$ is the area scale factor of $x\mapsto Ax$ in two dimensions.
+#### **Q34**[Olympiad][det lemma]Verify the matrix determinant lemma $\det(A+uv^{\rm T})=\det(A)(1+v^{\rm T}A^{-1}u)$ for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$, $u=\binom12$, $v=\binom34$.
 
-**Answer:** the unit square maps to the parallelogram spanned by the columns of $A$, whose area is $\lvert\det A\rvert$
+**Answer:** both sides equal $-6$
 
-#### **Q34**[Olympiad][det properties]Show that $\det(A+kI)=k^2+5k-2$ for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$.
+#### **Q35**[Olympiad][trace]Verify that $\operatorname{tr}(AB)=\operatorname{tr}(BA)$ for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$ and $B=\begin{pmatrix}5&6\\7&8\end{pmatrix}$, and note whether $AB=BA$.
 
-**Answer:** $k^2+5k-2$ (check at $k=3$: $22$)
+**Answer:** both traces are $69$, but $AB\ne BA$
+
+#### **Q36**[Olympiad][vandermonde]Evaluate the Vandermonde determinant $\det\begin{pmatrix}1&1&1\\2&5&9\\4&25&81\end{pmatrix}$ and verify it against $\prod_{i<j}(x_j-x_i)$.
+
+**Answer:** $84$
 
 ---
 
 > [!note] Exam technique notes
-> - Before expanding a determinant, look for a zero row/column, two proportional
->   rows, or a common factor.
-> - Remember that the **adjoint is the transpose** of the cofactor matrix.
-> - For $A^{-1}$, verify by computing $AA^{-1}$ — it costs one multiplication and
->   catches sign errors.
-> - In a system, compute $\rho(A)$ and $\rho[A\,|\,B]$ before attempting a
->   solution; the ranks tell you how many solutions to expect.
-> - For a high power of $A$, reach for Cayley–Hamilton rather than repeated
->   multiplication.
+> - **Compute $\operatorname{tr}$ and $\det$ first.** They are the two invariants
+>   that generate the whole characteristic polynomial, and they are the cheapest
+>   things to compute.
+> - **Cayley–Hamilton turns powers into linear combinations.** To get $A^n$,
+>   reduce modulo $p(A)$ rather than multiplying $n$ times.
+> - **For a determinant bound, think geometry.** Hadamard is the statement that a
+>   parallelepiped's volume is at most the product of its edge lengths.
+> - **A rank-one update changes $\det$ by a scalar factor** — the matrix
+>   determinant lemma. Recognising $uv^{\rm T}$ structure saves a full
+>   recomputation.
+> - **Check invariance claims by change of basis:** similar matrices share
+>   characteristic polynomial, trace and determinant, but not the matrix itself.

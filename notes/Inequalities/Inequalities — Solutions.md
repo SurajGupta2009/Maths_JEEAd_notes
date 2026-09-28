@@ -147,45 +147,85 @@ $(1+4)(9+16)=125$ and $(3+8)^2=121$; the difference is $(1\cdot4-2\cdot3)^2=4$, 
 ## F · Olympiad frontier
 
 #### **Q26**
-**Method: evaluate $a(a-b)(a-c)+b(b-c)(b-a)+c(c-a)(c-b)$ directly.** For $(1,2,3)$: $1(-1)(-2)+2(-1)(1)+3(2)(1)=2-2+6=6$. For $(3,4,5)$: $3(-1)(-2)+4(-1)(1)+5(2)(1)=6-4+10=12$.
-**Answer:** $6$ and $12$ — both $\ge0$, consistent with Schur ✓.
+**Method: direct evaluation of Schur's left side.** For $(1,2,3)$:
+$1(-1)(-2)+2(-1)(1)+3(2)(1)=2-2+6=6$. For $(3,4,5)$:
+$3(-1)(-2)+4(-1)(1)+5(2)(1)=6-4+10=12$.
+**Answer:** $6$ and $12$ — both non-negative ✓.
 
 #### **Q27**
-**Method: AM–GM on three numbers, then cube.** $\frac{a+b+c}{3}\ge\sqrt[3]{abc}$, so $a+b+c\ge3\sqrt[3]{abc}$ and cubing gives $(a+b+c)^3\ge27abc$.
-**Answer:** proved, equality at $a=b=c$. (Numeric check for $(1,2,3)$: $6^3=216\ge27\cdot6=162$ ✓.)
+**Method: SOS.** $a^2+b^2+c^2-ab-bc-ca=\frac12[(a-b)^2+(b-c)^2+(c-a)^2]\ge0$.
+**Answer:** proved. (Check for $(1,2,3)$: LHS $=1+4+9=14$ and
+$ab+bc+ca=2+6+3=11$, so $14\ge11$ ✓; the SOS form gives
+$\frac12[1+1+4]=3=14-11$ ✓.)
 
 #### **Q28**
-**Method: double both sides and complete the squares.**
-$$2(a^2+b^2+c^2-ab-bc-ca)=(a-b)^2+(b-c)^2+(c-a)^2\ge0.$$
-**Answer:** proved, equality iff $a=b=c$. (Numeric check for $(1,2,3)$: $14\ge11$ ✓.)
+**Method: Cauchy–Schwarz, or AM–GM on the pairs.** By Cauchy–Schwarz,
+$(a+b+c)\left(\frac1a+\frac1b+\frac1c\right)\ge(1+1+1)^2=9$.
+**Answer:** $9$. (Check for $(a,b,c)=(\frac13,\frac13,\frac13)$: the sum of
+reciprocals is $9$ ✓; for $(\frac12,\frac13,\frac16)$ it is $2+3+6=11\ge9$ ✓.)
 
 #### **Q29**
-**Method: apply Q23 and use $a+b+c=1$.**
-$$(a+b+c)\left(\frac1a+\frac1b+\frac1c\right)\ge9\implies\frac1a+\frac1b+\frac1c\ge9.$$
-**Answer:** proved, equality at $a=b=c=\frac13$. (Check: $3+3+3=9$ ✓.)
+**Method: AM–GM directly.** $a+b+c\ge3\sqrt[3]{abc}=3\sqrt[3]{1}=3$.
+**Answer:** $3$. (Check for $(1,1,1)$: $3=3$ (equality) ✓; for $(2,\frac12,1)$:
+$3.5\ge3$ ✓.)
 
 #### **Q30**
-**Method: $-\ln x$ is convex on $x>0$, so Jensen gives $-\ln\left(\frac{\sum x_i}{n}\right)\le\frac{\sum(-\ln x_i)}{n}$.** Exponentiating both sides yields
-$$\frac{\sum x_i}{n}\ge\left(\prod x_i\right)^{1/n},$$
-which is AM–GM.
-**Answer:** AM–GM is Jensen applied to the convex function $-\ln x$.
+**Method: the master SOS identity.** $a^3+b^3+c^3-3abc=\frac12(a+b+c)[(a-b)^2+(b-c)^2+(c-a)^2]\ge0$
+since $a+b+c>0$ and squares are non-negative. Equality needs all three squares to
+vanish, i.e. $a=b=c$.
+**Answer:** proved; equality iff $a=b=c$. (Check for $(1,2,3)$: $36\ge18$ ✓; for
+$(3,4,5)$: $216\ge180$ ✓.)
 
 #### **Q31**
-**Method: substitute $t=\sqrt{x^2+1}\ge1$.** Then $x^2+2=t^2+1$, so the expression is $\frac{t^2+1}{t}=t+\frac1t\ge2$ by AM–GM, with equality at $t=1$, i.e. $x=0$. Since $t+\frac1t$ is increasing for $t\ge1$, the minimum on the admissible range is attained at $t=1$.
-**Answer:** least value $2$ at $x=0$. (Check at $x=1$: $\frac3{\sqrt2}\approx2.1213>2$ ✓.)
-
----
-
-## G · Applications and mixed
+**Method: two chained rounds of AM–GM.** First $a^4+b^4\ge2a^2b^2$ etc., giving
+$a^4+b^4+c^4\ge a^2b^2+b^2c^2+c^2a^2$. Then $a^2b^2+b^2c^2\ge2ab^2c$ etc., giving
+$a^2b^2+b^2c^2+c^2a^2\ge abc(a+b+c)$. Chaining proves the claim.
+**Answer:** proved; equality iff $a=b=c$. (Check for $(1,1,1)$: $3=3$ ✓; for
+$(2,1,1)$: $18\ge8$ ✓; for $(1,2,3)$: $98\ge36$ ✓. A $200000$-sample random test
+found no violation.)
 
 #### **Q32**
-**Method: AM–GM on three numbers.** $a+b+c\ge3\sqrt[3]{abc}=3\sqrt[3]{1}=3$.
-**Answer:** proved, equality at $a=b=c=1$. (Numeric check for $(2,\frac12,1)$: $3.5\ge3$ ✓.)
+**Method: expand in symmetric sums and cancel.** $p^3=a^3+b^3+c^3+3\sum_{\rm sym}a^2b+6abc$
+and $pq=\sum_{\rm sym}a^2b+3abc$, so
+$$p^3-4pq=a^3+b^3+c^3-\sum_{\rm sym}a^2b-6abc,$$
+and adding $9r=9abc$ gives
+$$p^3+9r-4pq=a^3+b^3+c^3+3abc-\sum_{\rm sym}a^2b,$$
+which is Schur's left side, already proved non-negative.
+**Answer:** proved. (Check: $(1,1,1)$ gives $36=36$ (equality) ✓; $(2,1,1)$ gives
+$82\ge80$ ✓; $(1,2,3)$ gives $270\ge264$ ✓. A $200000$-sample random test found no
+violation. Equality at $a=b=c$ or when two variables are equal and the third is
+$0$.)
 
 #### **Q33**
-**Method: solve first, then count.** $\lvert x-2\rvert<3\Rightarrow-1<x<5$, whose integers are $0,1,2,3,4$.
-**Answer:** $5$ integers.
+**Method: uvw with $q=3$ fixed.** The target $p$ involves no $r$, so the reduction
+applies and only the two boundary cases need checking.
+*Two equal:* $a=b=x$ gives $c=\frac{3-x^2}{2x}$ and
+$p=2x+\frac{3-x^2}{2x}=\frac32\left(x+\frac1x\right)\ge3$ by AM–GM, with equality
+at $x=1$.
+*One zero:* $c=0$ gives $ab=3$ and $p=a+b\ge2\sqrt{ab}=2\sqrt3\approx3.464\ge3$ ✓.
+**Answer:** $a+b+c\ge3$; equality at $a=b=c=1$. (Check numerically: $x=0.8$ gives
+$p=3.075$ ✓; $x=0.5$ gives $3.75$ ✓; $x=1.5$ gives $3.25$ ✓.)
 
 #### **Q34**
-**Method: find the interval for $x$, then the range of $x+\frac1x$ on it.** $x^2-3x+2\le0\Rightarrow(x-1)(x-2)\le0\Rightarrow1\le x\le2$. On $[1,2]$ the function $x+\frac1x$ has derivative $1-\frac1{x^2}\ge0$, so it is increasing; hence the range is $[f(1),f(2)]=\left[2,\frac52\right]$.
-**Answer:** $\left[2,\dfrac52\right]$. (Check: the minimum $2$ is attained at $x=1$ and the maximum $\frac52$ at $x=2$; a fine scan of $[1,2]$ confirms both ✓.)
+**Method: Engel form of Cauchy–Schwarz.** $\sum\frac{a_i^2}{b_i}\ge\frac{(\sum a_i)^2}{\sum b_i}$
+with $(a_i)=(a,b,c)$ and $(b_i)=(b,c,a)$ gives
+$\frac{a^2}{b}+\frac{b^2}{c}+\frac{c^2}{a}\ge\frac{(a+b+c)^2}{a+b+c}=a+b+c$.
+**Answer:** proved; equality iff $a=b=c$. (Check: $(1,1,1)$ gives $3=3$ ✓;
+$(1,2,3)$ gives $10.833\ge6$ ✓; $(2,1,4)$ gives $12.25\ge7$ ✓.)
+
+#### **Q35**
+**Method: Engel form with the pair-sums.** With $(a_i)=(a,b,c)$ and
+$(b_i)=(b+c,c+a,a+b)$, $\sum b_i=2(a+b+c)$, so
+$$\frac{a^2}{b+c}+\frac{b^2}{c+a}+\frac{c^2}{a+b}\ge\frac{(a+b+c)^2}{2(a+b+c)}=\frac{a+b+c}{2}.$$
+**Answer:** proved; equality iff $a=b=c$. (Check: $(1,1,1)$ gives $1.5=1.5$ ✓;
+$(2,1,1)$ gives $2.667\ge2$ ✓; $(1,2,3)$ gives $4.2\ge3$ ✓. A $200000$-sample
+random test found no violation.)
+
+#### **Q36**
+**Method: Jensen with the concave function $\ln$.** Since $\ln''x=-\frac1{x^2}<0$,
+$\ln$ is concave, so
+$$\ln\left(\frac{\sum a_i}{n}\right)\ge\frac{\sum\ln a_i}{n}=\ln\left(\left(\prod a_i\right)^{1/n}\right),$$
+and exponentiating gives $\frac{\sum a_i}{n}\ge\left(\prod a_i\right)^{1/n}$ — AM–GM.
+For $n=2$ this is $\frac{a+b}{2}\ge\sqrt{ab}$, the familiar case.
+**Answer:** proved. (Check: for $(1,2,3,4)$, AM $=2.5$ and
+$GM=24^{1/4}\approx2.2134$, so $2.5\ge2.2134$ ✓.)

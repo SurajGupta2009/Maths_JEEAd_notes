@@ -220,12 +220,11 @@ Equivalently $E[X]=\sum_{k\ge1}k\,2^{-k}=\frac{1/2}{(1-1/2)^2}=2$.
 
 #### **Q30**
 **Method: sum the tail probabilities.** Let $T$ be the position of the first red
-ball among the $8$. Then
-$P(T\ge k)=\binom{9-k}{3}/\binom83$ for $k\le6$, so
-$$E[T]=\sum_{k=1}^6P(T\ge k)=\frac{\binom83+\binom73+\binom63+\binom53+\binom43+\binom33}{\binom83}=\frac{56+35+20+10+4+1}{56}=\frac94.$$
-**Answer:** $\dfrac94$. (Check: the general formula for the minimum of $k$ red
-positions among $n$ balls is $\frac{n+1}{k+1}=\frac{9}{4}$ ✓, and a simulation
-over $100000$ shuffles gave $2.2499$ ✓.)
+ball among the $8$. Then $P(T\ge k)=\binom{9-k}{3}/\binom83$ for $k\le6$, so
+$$E[T]=\sum_{k=1}^6 P(T\ge k)=\frac{\binom83+\binom73+\binom63+\binom53+\binom43+\binom33}{\binom83}=\frac{56+35+20+10+4+1}{56}=\frac94.$$
+**Answer:** $\dfrac94$. (Check with the general formula for the minimum of $k$ red
+positions among $n$ balls, $E=\frac{n+1}{k+1}=\frac{9}{4}$ ✓. A simulation over
+$100000$ shuffles gave $2.2499$ ✓.)
 
 #### **Q31**
 **Method: area ratio in the $(x,y)$ sample space.** With break points
@@ -257,3 +256,49 @@ so $p=\frac12+\frac14p$, giving $p=\frac{1/2}{1-1/4}$.
 **Answer:** $\dfrac23$. (Check: direct summation
 $\frac12+\frac18+\frac1{32}+\cdots=\frac{1/2}{1-1/4}$ ✓, and a $200000$-game
 simulation gave $0.6664$ ✓.)
+
+#### **Q35**
+**Method: the reflection principle.** Every ordering is a lattice path from
+$(0,0)$ to $(a,b)$; "strictly ahead" means the path never touches the diagonal
+$x=y$ after the start. After $A$'s first vote the path starts at $(1,0)$, so the
+total number of paths to $(a,b)$ is $\binom{a+b-1}{a-1}$. A path that ever touches
+the diagonal can be reflected up to its first touch, giving a bijection with the
+paths from $(0,1)$ to $(a,b)$, of which there are $\binom{a+b-1}{a}$. Hence
+$$\#\text{good}=\binom{a+b-1}{a-1}-\binom{a+b-1}{a},$$
+and using $\binom{a+b-1}{a-1}=\frac{a}{a+b}\binom{a+b}{a}$ and
+$\binom{a+b-1}{a}=\frac{b}{a+b}\binom{a+b}{a}$,
+$$P=\frac{a-b}{a+b}\binom{a+b}{a}\Big/\binom{a+b}{a}=\frac{a-b}{a+b}.$$
+For $(a,b)=(3,2)$: the ten orderings of $AAABB$ contain exactly two that stay
+strictly ahead, so $P=\frac{2}{10}=\frac15$, and $\frac{3-2}{3+2}=\frac15$ ✓.
+**Answer:** $\dfrac{a-b}{a+b}$; for $(3,2)$ it is $\dfrac15$. (Further checks:
+$(2,1)\to\frac13$ ✓, $(4,1)\to\frac35$ ✓, $(5,3)\to\frac14$ ✓,
+$(7,4)\to\frac3{11}$ ✓.)
+
+#### **Q36**
+**Method: the fair-game formula $u_i=\frac{i}{N}$.** With $i=3$, $N=10$:
+$u_3=\frac3{10}=0.3$.
+**Answer:** $\dfrac3{10}$. (Check by simulation: $200000$ games from $3$ units
+reached $10$ in $29.95\%$ of them ✓. The martingale argument confirms it:
+$E[\text{final}]=3$, the only final values are $0$ and $10$, so
+$10\cdot u_3=3$ ✓.)
+
+#### **Q37**
+**Method: a recursion on the current run length.** Let $E_n$ be the expected
+number of further tosses when $n$ consecutive heads are already showing. Then
+$$E_n=\tfrac12(E_{n-1}+1)+\tfrac12(E_n+1)\quad\Longrightarrow\quad E_n=2(E_{n-1}+1),$$
+because with probability $\frac12$ the next toss is a head (advancing the run at
+cost $1$) and with probability $\frac12$ it is a tail (resetting to $0$ at cost
+$1$). With $E_0=0$: $E_1=2$, $E_2=6$, $E_3=14$.
+**Answer:** $14$ tosses. (Check by simulation: $100000$ runs gave a mean of
+$14.03$ ✓. The closed form is $E_n=2^{n+1}-2$: $E_1=2$, $E_2=6$, $E_3=14$,
+$E_4=30$ ✓.)
+
+#### **Q38**
+**Method: inclusion–exclusion.** The number of derangements of $n$ objects is
+$$D_n=n!\sum_{k=0}^{n}\frac{(-1)^k}{k!},$$
+so the probability is $\frac{D_n}{n!}=\sum_{k=0}^{n}\frac{(-1)^k}{k!}$. For
+$n=5$:
+$$1-1+\frac12-\frac16+\frac1{24}-\frac1{120}=\frac{44}{120}=\frac{11}{30}\approx0.3667.$$
+**Answer:** $\dfrac{11}{30}\approx0.3667$. (Check: $D_5=44$ and $5!=120$, so
+$\frac{44}{120}=\frac{11}{30}$ ✓; as $n\to\infty$ the probability tends to
+$\frac1e\approx0.3679$, and $n=10$ gives $0.36788$ ✓.)

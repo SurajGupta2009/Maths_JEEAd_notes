@@ -153,33 +153,33 @@ created: 2026-09-27
 
 ## G · Olympiad frontier (Q28–Q34)
 
-#### **Q28**[JEE Adv][recurrence]Solve $a_n=2a_{n-1}+1$ with $a_1=1$.
+#### **Q28**[Olympiad][telescoping]Evaluate $\displaystyle\sum_{k=1}^{n}\frac1{k(k+1)(k+2)}$ in closed form.
 
-**Answer:** $a_n=2^n-1$
+**Answer:** $\dfrac{n(n+3)}{4(n+1)(n+2)}$
 
-#### **Q29**[Olympiad][shifted sum]Evaluate $\displaystyle\sum_{k=1}^{n}k\,2^{k-1}$ in closed form.
+#### **Q29**[Olympiad][factorial]Evaluate $\displaystyle\sum_{k=1}^{n}k\,k!$ in closed form.
+
+**Answer:** $(n+1)!-1$
+
+#### **Q30**[Olympiad][arctan]Evaluate $\displaystyle\sum_{k=1}^{n}\arctan\dfrac1{k^2+k+1}$ in closed form.
+
+**Answer:** $\dfrac\pi4-\arctan\dfrac1{n+1}$
+
+#### **Q31**[Olympiad][generating]Use a generating function to derive Binet's formula $F_n=\dfrac{\varphi^n-\psi^n}{\sqrt5}$ for the Fibonacci numbers.
+
+**Answer:** $F_n=\dfrac{\varphi^n-\psi^n}{\sqrt5}$, with $\varphi=\frac{1+\sqrt5}{2}$, $\psi=\frac{1-\sqrt5}{2}$
+
+#### **Q32**[Olympiad][product]Evaluate $\displaystyle\prod_{k=2}^{n}\left(1-\frac1{k^2}\right)$ in closed form, and state its limit.
+
+**Answer:** $\dfrac{n+1}{2n}\to\dfrac12$
+
+#### **Q33**[Olympiad][shifted sum]Evaluate $\displaystyle\sum_{k=1}^{n}k\,2^{k-1}$ in closed form.
 
 **Answer:** $1+(n-1)2^n$
 
-#### **Q30**[JEE Adv][amgm]Verify AM–GM for the first four positive integers.
+#### **Q34**[Olympiad][recurrence]Solve $a_n=2a_{n-1}+1$ with $a_1=1$.
 
-**Answer:** AM $=2.5\ge$ GM $=24^{1/4}\approx2.2134$
-
-#### **Q31**[JEE Main][gp]Find the common ratio of the GP obtained by inserting three geometric means between $1$ and $81$.
-
-**Answer:** $3$
-
-#### **Q32**[JEE Main][gp]Evaluate $\displaystyle\sum_{k=0}^{10}2^k$.
-
-**Answer:** $2047$
-
-#### **Q33**[Olympiad][generating]Find the generating function of the constant sequence $1,1,1,\ldots$
-
-**Answer:** $\dfrac1{1-x}$
-
-#### **Q34**[Olympiad][series]Evaluate $\displaystyle\sum_{k=1}^{5}\frac1{2k-1}$.
-
-**Answer:** $\dfrac{563}{315}\approx1.7873$
+**Answer:** $a_n=2^n-1$
 
 ---
 
@@ -192,3 +192,5 @@ created: 2026-09-27
 > - For a rational general term, look for a product of terms in arithmetic
 >   progression in the denominator: that is the signature of a telescoping sum.
 > - Always check convergence ($\lvert r\rvert<1$) before using an infinite sum.
+> - For a product, look for a difference of squares; for a sum of arctangents,
+>   look for the tangent difference formula.

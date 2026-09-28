@@ -182,27 +182,64 @@ $$\Delta=\frac12\cdot5\cdot7\cdot\sin60^\circ=\frac{35}{2}\cdot\frac{\sqrt3}{2}=
 ## G · Olympiad frontier
 
 #### **Q31**
-**Method: verify numerically, and check the consistency $\cos36^\circ=1-2\sin^2 18^\circ$.**
-$$\frac{\sqrt5-1}{4}\approx0.3090=\sin18^\circ,$$
-$$1-2\left(\frac{\sqrt5-1}{4}\right)^2=1-2\cdot\frac{6-2\sqrt5}{16}=1-\frac{3-\sqrt5}{4}=\frac{1+\sqrt5}{4}\approx0.8090=\cos36^\circ.$$
-**Answer:** both verified ✓.
+**Method: use $2\theta+3\theta=90^\circ$ at $\theta=18^\circ$.** Then
+$\sin2\theta=\cos3\theta$, so with $s=\sin\theta$ and $c=\cos\theta$:
+$$2sc=4c^3-3c.$$
+Dividing by the non-zero $c$ and using $c^2=1-s^2$:
+$$2s=4(1-s^2)-3=1-4s^2,$$
+so $4s^2+2s-1=0$, giving $s=\frac{-1+\sqrt5}{4}$ (the positive root). Then
+$\cos36^\circ=1-2s^2=1-2\cdot\frac{3-\sqrt5}{8}=\frac{1+\sqrt5}{4}$.
+**Answer:** both verified. (Check: $4s^2+2s-1=0$ exactly for $s=\frac{\sqrt5-1}{4}$ ✓,
+$\frac{\sqrt5-1}{4}=0.30902=\sin18^\circ$ ✓ and
+$\frac{1+\sqrt5}{4}=0.80902=\cos36^\circ$ ✓.)
 
 #### **Q32**
-**Method: use $C=180^\circ-(A+B)$ and sum-to-product.**
-$$\sin2A+\sin2B=2\sin(A+B)\cos(A-B)=2\sin C\cos(A-B),$$
-and $\sin2C=\sin\big(360^\circ-2(A+B)\big)=-2\sin(A+B)\cos(A+B)=-2\sin C\cos(A+B)$. Adding:
-$$2\sin C\big(\cos(A-B)-\cos(A+B)\big)=2\sin C\cdot2\sin A\sin B=4\sin A\sin B\sin C.$$
-**Answer:** proved ✓.
+**Method: sum-to-product, then use $C=\pi-(A+B)$.**
+$\sin2A+\sin2B=2\sin(A+B)\cos(A-B)$ and
+$\sin2C=\sin(2\pi-2(A+B))=-\sin2(A+B)$, so the left side is
+$$2\sin(A+B)\big[\cos(A-B)-\cos(A+B)\big]=2\sin(A+B)\cdot2\sin A\sin B=4\sin A\sin B\sin C,$$
+using $\sin(A+B)=\sin C$ and $\cos(A-B)-\cos(A+B)=2\sin A\sin B$.
+**Answer:** proved. (Check for $(60^\circ,60^\circ,60^\circ)$: LHS
+$=3\sin120^\circ=2.5981$ and RHS $=4(\frac{\sqrt3}{2})^3=2.5981$ ✓.)
 
 #### **Q33**
-**Method: write $\cos2x=\sin(90^\circ-2x)$ and use $\sin\alpha=\sin\beta\Rightarrow\alpha=n180^\circ+(-1)^n\beta$.**
-$$3x=n180^\circ+(-1)^n(90^\circ-2x).$$
-For even $n=2m$: $3x=360^\circ m+90^\circ-2x\Rightarrow5x=360^\circ m+90^\circ\Rightarrow x=72^\circ m+18^\circ$. For odd $n=2m+1$: $3x=180^\circ(2m+1)-(90^\circ-2x)\Rightarrow x=360^\circ m+90^\circ$.
-**Answer:** $x=72^\circ m+18^\circ$ or $x=360^\circ m+90^\circ$.
+**Method: replace $\sin^2$ by $1-\cos^2$ and use the cosine identity.**
+$\sin^2A+\sin^2B+\sin^2C=3-(\cos^2A+\cos^2B+\cos^2C)$. From the companion
+identity $\cos^2A+\cos^2B+\cos^2C=1-2\cos A\cos B\cos C$, this becomes
+$3-1+2\cos A\cos B\cos C=2+2\cos A\cos B\cos C$ ✓.
+**Answer:** proved. (Check for $(60^\circ,60^\circ,60^\circ)$: LHS $=3\cdot\frac34=2.25$
+and RHS $=2+2\cdot\frac18=2.25$ ✓. For $(30^\circ,60^\circ,90^\circ)$: both give
+$2$ ✓.)
 
 #### **Q34**
-**Method: apply the closed form of Q20 with $n=90$, $\theta=1^\circ$.**
-$$\sum_{k=1}^{90}\sin(k^\circ)=\frac{\sin45^\circ\sin45.5^\circ}{\sin0.5^\circ}.$$
-Evaluating: $\sin45^\circ\approx0.70711$, $\sin45.5^\circ\approx0.71325$, $\sin0.5^\circ\approx0.0087265$, giving
-$$\frac{0.70711\cdot0.71325}{0.0087265}\approx57.7943.$$
-**Answer:** $\dfrac{\sin45^\circ\sin45.5^\circ}{\sin0.5^\circ}\approx57.7943$. (Verified against a direct term-by-term sum ✓.)
+**Method: $\tan3\theta$ is unchanged by $\theta\mapsto\theta+60^\circ$.**
+With $t=\tan\theta$, $\tan3\theta=\frac{3t-t^3}{1-3t^2}$. At $\theta=20^\circ$,
+$\tan3\theta=\tan60^\circ=\sqrt3$, so $t=\tan20^\circ$ satisfies
+$$t^3-3\sqrt3\,t^2-3t+\sqrt3=0.$$
+Adding $60^\circ$ and $120^\circ$ to $\theta$ leaves $\tan3\theta$ unchanged, so
+the three roots are $\tan20^\circ$, $\tan80^\circ$ and $\tan140^\circ=-\tan40^\circ$.
+Their product is the negative of the constant term, $-\sqrt3$, hence
+$\tan20^\circ\tan80^\circ(-\tan40^\circ)=-\sqrt3$.
+**Answer:** $\sqrt3$. (Check numerically:
+$0.36397\times0.83910\times5.67128=1.7321=\sqrt3$ ✓, and the root sum
+$0.36397+5.67128-0.83910=5.19615=3\sqrt3$ ✓.)
+
+#### **Q35**
+**Method: roots of unity, then take moduli.** Factoring
+$z^n-1=(z-1)\prod_{k=1}^{n-1}(z-e^{2\pi ik/n})$, dividing by $z-1$ and setting
+$z=1$ gives $n=\prod_{k=1}^{n-1}(1-e^{2\pi ik/n})$. Since
+$\lvert1-e^{2\pi ik/n}\rvert=2\sin\frac{k\pi}{n}$ for $1\le k\le n-1$, taking
+moduli yields $n=2^{n-1}\prod_{k=1}^{n-1}\sin\frac{k\pi}{n}$.
+**Answer:** $\dfrac{n}{2^{n-1}}$; for $n=7$ it is $\dfrac7{64}$. (Check for $n=7$:
+the product is $0.43388\times0.78183\times0.97493\times0.97493\times0.78183\times0.43388
+=0.109375=\frac7{64}$ ✓. For $n=3$: $(\frac{\sqrt3}{2})^2=\frac34=\frac3{2^2}$ ✓.)
+
+#### **Q36**
+**Method: the sine-sum formula
+$\sum_{k=1}^{n}\sin k\theta=\frac{\sin(n\theta/2)\sin((n+1)\theta/2)}{\sin(\theta/2)}$.**
+With $n=90$ and $\theta=1^\circ$, $n\theta/2=45^\circ$ and
+$(n+1)\theta/2=45.5^\circ$, so
+$$\sum_{k=1}^{90}\sin k^\circ=\frac{\sin45^\circ\sin45.5^\circ}{\sin0.5^\circ}.$$
+**Answer:** $\dfrac{\sin45^\circ\sin45.5^\circ}{\sin0.5^\circ}\approx57.7943$. (Check
+numerically: $\frac{0.70711\times0.71325}{0.0087265}=57.7943$ ✓, and a direct sum
+of the $90$ terms gives $57.7943$ ✓.)

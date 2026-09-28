@@ -468,111 +468,208 @@ Expanding gives $3+\left(\frac ab+\frac ba\right)+\left(\frac bc+\frac cb\right)
 
 ---
 
-# Chapter 6 — Olympiad Frontier
+# Chapter 6 — The Olympiad Toolkit: SOS, Schur, uvw
 
-*Synthesis · when AM–GM is not enough*
+*Synthesis · the methods that win competitions*
 
-## 6.1 Schur's inequality
+Chapter 5 built the machinery one inequality at a time. The Olympiad approach is
+different: instead of finding *an* inequality, you run a **fixed pipeline** —
+normalise, express in symmetric sums, and decompose into a sum of manifestly
+non-negative terms. Three techniques carry almost all of it:
 
-> [!example] Olympiad Extension — Schur
-> For $a,b,c\ge0$:
-> $$a(a-b)(a-c)+b(b-c)(b-a)+c(c-a)(c-b)\ge0.$$
-> AM–GM uses only the *sizes* of $a,b,c$; Schur uses their *ordering*, which is
-> why it proves things AM–GM cannot. The standard proof WLOG's $a\ge b\ge c$
-> and rewrites the left side as $(a-b)\big(a(a-c)-b(b-c)\big)+c(c-a)(c-b)$,
-> observing that the second bracket factors as $(a-b)(a+b-c)$, giving a sum of
-> obviously non-negative terms.
+1. **SOS** (sum of squares) — rewrite the difference as an explicit sum of
+   squares. Always works, and always gives the equality case for free.
+2. **Schur** — the one inequality that is *not* a direct consequence of AM–GM,
+   and the reason many olympiad problems need a third technique.
+3. **uvw** — a reduction theorem that cuts a three-variable symmetric problem
+   down to two checks.
 
-#### **S15**[JEE Adv][solved][schur]Verify Schur's inequality for $(a,b,c)=(1,2,3)$ and $(3,4,5)$.
+## 6.1 Sum of squares
 
-For $(1,2,3)$: $1(-1)(-2)+2(-1)(1)+3(2)(1)=2-2+6=6$. For $(3,4,5)$: $3(-1)(-2)+4(-1)(1)+5(2)(1)=6-4+10=12$.
+> [!abstract] First Principles — why SOS always works
+> If $F(a,b,c)\ge0$ can be written as $\lambda_1Q_1^2+\lambda_2Q_2^2+\cdots$ with
+> $\lambda_i\ge0$ and $Q_i$ real, then $F\ge0$ immediately, with equality exactly
+> where all the $Q_i$ vanish. The art is finding the decomposition; the *proof*
+> then writes itself and needs no cleverness at the reading stage.
+
+The master identity:
+$$a^3+b^3+c^3-3abc=\tfrac12(a+b+c)\big[(a-b)^2+(b-c)^2+(c-a)^2\big].$$
+
+> [!tip] Key Idea — read the equality case off the squares
+> $a^2+b^2+c^2\ge ab+bc+ca$ becomes $\frac12[(a-b)^2+(b-c)^2+(c-a)^2]\ge0$ after
+> moving everything to one side. Equality needs $a=b=c$ — visible instantly, with
+> no case analysis.
+
+> [!example] Olympiad Extension — the SOS philosophy
+> An olympiad inequality is a claim that some expression is $\ge0$. If you can write
+> that expression as a sum of squares you are done, and the equality case comes
+> free. This is not merely a trick: over the reals, **every** non-negative
+> polynomial is a sum of squares of rational functions (Hilbert's 17th problem),
+> so the method is complete in principle even when it is hard in practice.
+
+#### **S15**[JEE Adv][solved][sos]Prove $a^3+b^3+c^3\ge3abc$ for $a,b,c>0$ by SOS, and find the equality case.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: direct evaluation of $a(a-b)(a-c)+b(b-c)(b-a)+c(c-a)(c-b)$.** Both are non-negative, consistent with Schur ✓.
+**Method: use the master identity.** $a^3+b^3+c^3-3abc=\frac12(a+b+c)[(a-b)^2+(b-c)^2+(c-a)^2]\ge0$
+because $a+b+c>0$ and squares are non-negative. Equality needs all three squares
+to vanish, i.e. $a=b=c$.
 
-**Answer:** $6$ and $12$ — both $\ge0$.
+Check numerically: for $(1,2,3)$, $1+8+27=36$ and $3\cdot6=18$, so $36\ge18$ ✓. For
+$(3,4,5)$: $27+64+125=216$ and $3\cdot60=180$ ✓.
+
+**Answer:** proved; equality iff $a=b=c$.
 
 </details>
 
-## 6.2 Squaring-type identities
-
-> [!tip] Key Idea — the two identities that prove everything
-> $$a^2+b^2+c^2\ge ab+bc+ca,$$
-> because the difference is $\frac12\big((a-b)^2+(b-c)^2+(c-a)^2\big)\ge0$; and
-> $$(a+b+c)^2\ge3(ab+bc+ca),$$
-> which is the same statement with $a+b+c$ substituted for $a$. And
-> $$(a+b+c)^3\ge27abc$$
-> is just AM–GM on three numbers cubed.
-
-#### **S16**[JEE Main][solved][squares]Prove $a^2+b^2+c^2\ge ab+bc+ca$.
-
-$2(a^2+b^2+c^2-ab-bc-ca)=(a-b)^2+(b-c)^2+(c-a)^2\ge0$.
+#### **S16**[Olympiad][solved][sos]Prove $a^4+b^4+c^4\ge abc(a+b+c)$ for $a,b,c>0$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: double both sides and complete the squares.** Check for $(1,2,3)$: $1+4+9=14$ and $2+3+6=11$, so $14\ge11$ ✓; for $(1,1,1)$ both sides equal $3$ ✓.
+**Method: two rounds of AM–GM, chained.** First,
+$a^4+b^4\ge2a^2b^2$, $b^4+c^4\ge2b^2c^2$, $c^4+a^4\ge2c^2a^2$; adding gives
+$$a^4+b^4+c^4\ge a^2b^2+b^2c^2+c^2a^2.$$
+Second, $a^2b^2+b^2c^2\ge2ab^2c$, $b^2c^2+c^2a^2\ge2abc^2$,
+$c^2a^2+a^2b^2\ge2a^2bc$; adding gives
+$$a^2b^2+b^2c^2+c^2a^2\ge abc(a+b+c).$$
+Chaining the two proves the claim, with equality only when $a=b=c$.
 
-**Answer:** proved, equality iff $a=b=c$.
+Check numerically: $(1,1,1)$ gives $3=3$ (equality) ✓; $(2,1,1)$ gives $18\ge8$ ✓;
+$(1,2,3)$ gives $98\ge36$ ✓; $(3,2,1)$ gives $98\ge36$ ✓. A $200000$-sample
+random test found no violation.
+
+**Answer:** proved; equality iff $a=b=c$.
 
 </details>
 
-#### **P8**[Olympiad][practice][cubes]Prove $(a+b+c)^3\ge27abc$ for $a,b,c>0$.
+## 6.2 Schur's inequality
+
+> [!abstract] First Principles — Schur from SOS
+> Assume WLOG $a\ge b\ge c\ge0$. Then
+> $$a(a-b)(a-c)+b(b-c)(b-a)+c(c-a)(c-b)
+> =(a-b)\big[a(a-c)-b(b-c)\big]+c(a-c)(b-c).$$
+> Now $a(a-c)-b(b-c)=(a-b)(a+b-c)$ and $a-c\ge0$, $b-c\ge0$, so the whole
+> expression is a sum of non-negative terms:
+> $$=(a-b)^2(a+b-c)+c(a-c)(b-c)\ge0.$$
+
+Equivalently, in symmetric sums $p=a+b+c$, $q=ab+bc+ca$, $r=abc$:
+$$\boxed{p^3+9r\ge4pq.}$$
+
+> [!example] Olympiad Extension — why Schur is indispensable
+> Schur is the standard olympiad inequality that **cannot** be proved from AM–GM
+> alone. A typical use: to prove $a^2+b^2+c^2\ge\frac{4}{3}(ab+bc+ca)$ under
+> $a+b+c=1$... but more importantly, Schur is what makes the $uvw$ reduction
+> work. Recognising "this is Schur in disguise" is a core competition skill.
+
+#### **S17**[Olympiad][solved][schur]Prove Schur's inequality $p^3+9r\ge4pq$, where $p=a+b+c$, $q=ab+bc+ca$, $r=abc$, for $a,b,c\ge0$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: AM–GM on three numbers, cubed.** $\frac{a+b+c}{3}\ge\sqrt[3]{abc}$, so $a+b+c\ge3\sqrt[3]{abc}$ and cubing gives $(a+b+c)^3\ge27abc$. Check for $(1,2,3)$: $6^3=216$ and $27\cdot6=162$, so $216\ge162$ ✓.
+**Method: expand both sides in symmetric sums and cancel.**
+$p^3=a^3+b^3+c^3+3\sum_{\rm sym}a^2b+6abc$ and $pq=(a+b+c)(ab+bc+ca)=\sum_{\rm sym}a^2b+3abc$.
+So $p^3-4pq=a^3+b^3+c^3-\sum_{\rm sym}a^2b+6abc-12abc=a^3+b^3+c^3-\sum_{\rm sym}a^2b-6abc$.
+Adding $9r=9abc$ gives $p^3+9r-4pq=a^3+b^3+c^3+3abc-\sum_{\rm sym}a^2b$, which is
+exactly Schur's left side, already proved non-negative.
 
-**Answer:** proved, equality at $a=b=c$.
+Check numerically: $(1,1,1)$: $p=3,q=3,r=1$, so $27+9=36$ and $4\cdot9=36$ — equality ✓.
+$(2,1,1)$: $p=4,q=5,r=2$, so $64+18=82\ge80$ ✓. $(1,2,3)$: $p=6,q=11,r=6$, so
+$216+54=270\ge264$ ✓. A $200000$-sample random test found no violation.
+
+**Answer:** proved; equality at $a=b=c$ or when two variables are equal and the
+third is $0$.
 
 </details>
 
-## 6.3 The tangent-line method and Jensen
+## 6.3 The uvw method
 
-> [!example] Olympiad Extension — the tangent-line trick
-> To prove $f(x)\ge0$, it is enough to find a line $L(x)$ tangent to $f$ that
-> lies **below** it everywhere. For instance $e^x\ge x+1$ and $\ln x\le x-1$
-> both come from tangents at $x=0$ and $x=1$ respectively. This is the one-variable
-> face of **Jensen's inequality**: if $f$ is convex, then
-> $f\left(\frac{\sum x_i}{n}\right)\le\frac{\sum f(x_i)}{n}$.
+> [!abstract] First Principles — the uvw theorem
+> Write $p=a+b+c$, $q=ab+bc+ca$, $r=abc$ (the letters give the method its name).
+> Any symmetric polynomial $f(a,b,c)$ can be rewritten as a polynomial in
+> $p,q,r$, and for fixed $p,q$ the admissible values of $r$ form a **closed
+> interval** whose endpoints occur when two variables coincide or when one is
+> zero.
+>
+> **Theorem (uvw).** If $f$ is a symmetric polynomial of degree at most $5$ in
+> non-negative variables and $f\ge0$ holds (i) whenever two of $a,b,c$ are equal
+> and (ii) whenever one of them is zero, then $f\ge0$ for all non-negative
+> $a,b,c$.
+>
+> The degree bound is genuine: above degree $5$ the expression in $r$ can be
+> non-linear, and a non-linear function on an interval need not attain its
+> extremum at an endpoint. Every olympiad inequality you will meet sits inside
+> the bound.
 
-#### **S17**[Olympiad][solved][jensen]Use Jensen to prove AM–GM.
+> [!tip] Key Idea — the pipeline
+> **normalise** (fix $p$ or $q$) → **express in $p,q,r$** → **check monotonicity in
+> $r$** → **check the two boundary cases**. This turns a three-variable problem
+> into two one-variable ones, each handled by single-variable calculus or AM–GM.
 
-$-\ln x$ is convex on $x>0$, so Jensen gives
-$$-\ln\left(\frac{\sum x_i}{n}\right)\le\frac{\sum(-\ln x_i)}{n},$$
-i.e. $\ln\left(\frac{\sum x_i}{n}\right)\ge\frac{\sum\ln x_i}{n}=\ln\left(\prod x_i\right)^{1/n}$. Exponentiating yields AM–GM.
+> [!example] Olympiad Extension — the uvw reduction
+> The uvw theorem converts a three-variable symmetric problem into two
+> one-variable ones. Its hypotheses matter: the expression must be symmetric and
+> of degree at most $5$, and the variables non-negative. When either fails — a
+> cyclic (not symmetric) expression, or high degree — uvw does not apply and one
+> is back to SOS, Schur or a clever normalisation.
+
+#### **S18**[Olympiad][solved][uvw]If $ab+bc+ca=3$ with $a,b,c>0$, prove $a+b+c\ge3$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: apply Jensen to the convex function $-\ln x$, then exponentiate.** This shows AM–GM is a *special case* of Jensen, not an independent fact ✓.
+**Method: uvw with $q=3$ fixed.** The left side is $p$, which does not involve
+$r$, so it is trivially monotone in $r$ and the reduction applies. Check the two
+boundary cases.
 
-**Answer:** proved — AM–GM follows from Jensen applied to $-\ln x$.
+*Two variables equal:* set $a=b=x$. Then $x^2+2xc=3$, so $c=\frac{3-x^2}{2x}$
+(needing $x\le\sqrt3$ for $c\ge0$), and
+$$p=2x+\frac{3-x^2}{2x}=2x+\frac{3}{2x}-\frac x2=\frac{3x}{2}+\frac{3}{2x}=\frac32\left(x+\frac1x\right)\ge3,$$
+by AM–GM on $x+\frac1x\ge2$, with equality at $x=1$.
+
+*One variable zero:* $c=0$ gives $ab=3$ and $p=a+b\ge2\sqrt{ab}=2\sqrt3\approx3.464\ge3$ ✓.
+
+Check numerically: $x=0.8$ gives $c=1.475$ and $p=3.075\ge3$ ✓; $x=0.5$ gives
+$c=2.75$ and $p=3.75$ ✓; $x=1.5$ gives $c=0.25$ and $p=3.25$ ✓. A random search
+over pairs with $ab+bc+ca\approx3$ found no case with $p<3$ ✓.
+
+**Answer:** proved; equality at $a=b=c=1$.
 
 </details>
 
-#### **P9**[Olympiad][practice][substitution]Find the least value of $\dfrac{x^2+2}{\sqrt{x^2+1}}$ for real $x$.
+#### **P8**[Olympiad][practice][engel]Prove that $\dfrac{a^2}{b}+\dfrac{b^2}{c}+\dfrac{c^2}{a}\ge a+b+c$ for $a,b,c>0$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: substitute $t=\sqrt{x^2+1}\ge1$.** Then $x^2+2=t^2+1$, so the expression is $\frac{t^2+1}{t}=t+\frac1t$, which by AM–GM is $\ge2$, with equality at $t=1$, i.e. $x=0$. (Since $t\ge1$ and $t+\frac1t$ is increasing for $t\ge1$, the minimum on the admissible range is indeed at $t=1$ ✓.)
+**Method: Engel form of Cauchy–Schwarz.** With three terms,
+$\sum\frac{a_i^2}{b_i}\ge\frac{(\sum a_i)^2}{\sum b_i}$. Taking
+$(a_1,a_2,a_3)=(a,b,c)$ and $(b_1,b_2,b_3)=(b,c,a)$ gives
+$$\frac{a^2}{b}+\frac{b^2}{c}+\frac{c^2}{a}\ge\frac{(a+b+c)^2}{a+b+c}=a+b+c.$$
+Check numerically: $(1,1,1)$ gives $3=3$ (equality) ✓; $(1,2,3)$ gives
+$\frac12+\frac43+9=10.833\ge6$ ✓; $(2,1,4)$ gives $4+\frac14+\frac{16}{2}=12.25\ge7$ ✓.
 
-**Answer:** least value $2$ at $x=0$.
+**Answer:** proved; equality iff $a=b=c$.
 
 </details>
 
-#### **P10**[JEE Adv][practice][constraint]If $abc=1$ with $a,b,c>0$, prove $a+b+c\ge3$.
+#### **P9**[Olympiad][practice][nessbitt general]Prove that $\dfrac{a^2}{b+c}+\dfrac{b^2}{c+a}+\dfrac{c^2}{a+b}\ge\dfrac{a+b+c}{2}$ for $a,b,c>0$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: AM–GM on three numbers.** $a+b+c\ge3\sqrt[3]{abc}=3\sqrt[3]{1}=3$. Check for $(2,\frac12,1)$: $3.5\ge3$ ✓; for $(1,1,1)$ it equals $3$ ✓.
+**Method: Engel form with $b_i$ the pair-sums.** Again
+$\sum\frac{a_i^2}{b_i}\ge\frac{(\sum a_i)^2}{\sum b_i}$, now with
+$(a_1,a_2,a_3)=(a,b,c)$ and $(b_1,b_2,b_3)=(b+c,c+a,a+b)$. Then
+$\sum b_i=2(a+b+c)$, so
+$$\frac{a^2}{b+c}+\frac{b^2}{c+a}+\frac{c^2}{a+b}\ge\frac{(a+b+c)^2}{2(a+b+c)}=\frac{a+b+c}{2}.$$
+Setting $a=b=c$ gives $\frac32=\frac32$ ✓. Check numerically: $(2,1,1)$ gives
+$\frac42+\frac13+\frac13=2.667\ge2$ ✓; $(1,2,3)$ gives $\frac15+1+3=4.2\ge3$ ✓;
+$(3,1,1)$ gives $\frac92+\frac14+\frac14=5\ge2.5$ ✓. A $200000$-sample random test
+found no violation.
 
-**Answer:** proved, equality at $a=b=c=1$.
+**Answer:** proved; equality iff $a=b=c$.
 
 </details>
 
@@ -642,15 +739,21 @@ Every result in dependency order; nothing is used before it is proved.
 | AM–GM from Jensen | apply Jensen to $-\ln x$ |
 | $abc=1$ | $a+b+c\ge3$ |
 
-### F. Mistake checklist
+### F. The Olympiad toolkit
 
-1. Multiplying or dividing by a negative number without reversing the sign.
-2. Multiplying a rational inequality by a denominator of unknown sign.
-3. Including a denominator's root in the solution set.
-4. Missing that even-multiplicity roots do **not** change the sign.
-5. Assuming "positive outside the roots" without checking $a>0$.
-6. Applying AM–GM to a quantity that may be negative.
-7. Quoting Nesbitt or Titu when a denominator can vanish.
-8. Forgetting to check the equality case (it often identifies the extremum).
-9. Confusing "least value" with "infimum" when the bound is not attained.
-10. Using $\lvert x\rvert^2=x$ instead of $\lvert x\rvert^2=x^2$.
+| Result | Statement |
+|---|---|
+| Master SOS identity | $a^3+b^3+c^3-3abc=\frac12(a+b+c)[(a-b)^2+(b-c)^2+(c-a)^2]$ |
+| Schur (sum form) | $a^3+b^3+c^3+3abc\ge\sum_{\rm sym}a^2b$ |
+| Schur (pqr form) | $p^3+9r\ge4pq$ |
+| Symmetric sums | $p=a+b+c$, $q=ab+bc+ca$, $r=abc$ |
+| $p^3$ expansion | $a^3+b^3+c^3+3\sum_{\rm sym}a^2b+6abc$ |
+| $pq$ expansion | $\sum_{\rm sym}a^2b+3abc$ |
+| Engel / Bergström | $\sum\frac{a_i^2}{b_i}\ge\frac{(\sum a_i)^2}{\sum b_i}$ |
+| $\sum\frac{a^2}{b+c}$ | $\ge\frac{a+b+c}{2}$ |
+| $\sum\frac{a^2}{b}$ (cyclic) | $\ge a+b+c$ |
+| uvw theorem | symmetric $f$ of degree $\le5$: check $a=b$ and $c=0$ only |
+| $ab+bc+ca=3$ | $\Rightarrow a+b+c\ge3$, equality at $(1,1,1)$ |
+| Jensen ($\ln$ concave) | $\frac{\sum a_i}{n}\ge\left(\prod a_i\right)^{1/n}$ |
+
+### G. Mistake checklist

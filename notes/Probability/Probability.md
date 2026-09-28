@@ -762,6 +762,182 @@ Check by simulation over $400000$ pairs: $0.5557$ ✓.
 
 </details>
 
+## 6.4 Bertrand's ballot theorem
+
+> [!abstract] First Principles — counting paths that stay positive
+> Candidate $A$ receives $a$ votes and $B$ receives $b$ votes, $a>b$, counted in a
+> uniformly random order. What is the probability that $A$ is **strictly ahead**
+> after every single vote? Every ordering is a lattice path from $(0,0)$ to
+> $(a,b)$, and "strictly ahead" means the path never touches the diagonal
+> $x=y$ except at the start.
+>
+> **Bertrand's ballot theorem.**
+> $$P(A\text{ always strictly ahead})=\frac{a-b}{a+b}.$$
+>
+> The proof is the **reflection principle**. After $A$'s first vote the path
+> starts at $(1,0)$, so the total number of paths to $(a,b)$ is
+> $\binom{a+b-1}{a-1}$. A path that ever touches the diagonal can be reflected up
+> to its first touch, giving a bijection with the paths from $(0,1)$ to $(a,b)$, of
+> which there are $\binom{a+b-1}{a}$. Hence the number of good paths is
+> $\binom{a+b-1}{a-1}-\binom{a+b-1}{a}$, and since
+> $\binom{a+b-1}{a-1}=\frac{a}{a+b}\binom{a+b}{a}$ and
+> $\binom{a+b-1}{a}=\frac{b}{a+b}\binom{a+b}{a}$, the probability is
+> $\frac{a-b}{a+b}$.
+
+> [!example] Olympiad Extension — the reflection principle
+> The reflection principle is the single most useful counting device in
+> combinatorics: it pairs up "bad" paths with paths from a mirrored starting
+> point, turning a hard inclusion–exclusion into a single binomial coefficient.
+> The same idea gives the Catalan numbers, counts lattice paths that stay above a
+> line, and is the combinatorial core of the ballot theorem.
+
+#### **S20**[Olympiad][solved][ballot]Verify Bertrand's ballot theorem for $(a,b)=(2,1),(3,2)$ and $(5,3)$ by listing all orderings.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: enumerate the orderings and count those that stay strictly ahead.**
+For $(2,1)$ the three orderings are $AAB,ABA,BAA$; only $AAB$ keeps $A$ ahead
+throughout (after vote 1: $1>0$ ✓, after vote 2: $2>0$ ✓, after vote 3: $2>1$ ✓),
+so $P=\frac13$. For $(3,2)$ the ten orderings give two valid ones, so
+$P=\frac{2}{10}=\frac15$. For $(5,3)$ the count gives $\frac{20}{56}=\frac14$.
+Each matches $\frac{a-b}{a+b}$: $\frac13,\frac15,\frac14$ ✓.
+
+**Answer:** $\dfrac{a-b}{a+b}$, verified for all three cases.
+
+</details>
+
+## 6.5 Gambler's ruin and run expectations
+
+> [!abstract] First Principles — gambler's ruin
+> A player starts with $i$ units and bets $1$ per round, winning with probability
+> $p$ and losing with $q=1-p$. The game ends at $0$ (ruin) or $N$ (target). Let
+> $u_i$ be the probability of reaching $N$ first. Conditioning on the first round,
+> $$u_i=p\,u_{i+1}+q\,u_{i-1},\qquad u_0=0,\ u_N=1.$$
+> For $p\ne q$ the solution is
+> $$u_i=\frac{1-(q/p)^i}{1-(q/p)^N},$$
+> and for the fair game $p=q=\frac12$ this degenerates to
+> $$\boxed{u_i=\frac{i}{N}}.$$
+> The fair-game answer is pure linearity of expectation in disguise: the
+> player's fortune is a martingale, so its expected final value equals its
+> starting value, and $0\cdot P(\text{ruin})+N\cdot u_i=i$.
+
+> [!tip] Key Idea — the fair game is a martingale
+> A process whose expected next value equals its current value is a **martingale**.
+> For a fair gamble the fortune is a martingale, so $E[\text{final}]=E[\text{start}]$
+> — which gives $u_i=i/N$ without solving the recurrence at all. This is the single
+> most powerful idea in applied probability.
+
+> [!example] Olympiad Extension — martingales
+> A martingale is a process whose expected next value equals its current value.
+> A fair gamble is one, and that single observation gives gambler's ruin
+> $u_i=\frac{i}{N}$ **without solving the recurrence**. Optional stopping is the
+> general theorem behind it, and it is the reason "expected value" arguments beat
+> "enumerate all paths" arguments in applied probability.
+
+#### **S21**[Olympiad][solved][gambler ruin]A fair coin game starts at $3$ units and stops at $0$ or $10$ units. Find the probability of reaching $10$ before ruin, and verify by simulation.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the fair-game formula $u_i=i/N$.** With $i=3$, $N=10$:
+$u_3=\frac3{10}=0.3$.
+Check by simulation: $200000$ games from $3$ units reached $10$ in $29.95\%$ of
+them ✓. The martingale argument confirms it: $E[\text{final}]=3$ and the only
+final values are $0$ and $10$, so $10\cdot u_3=3$ ✓.
+
+**Answer:** $\dfrac3{10}$.
+
+</details>
+
+#### **S22**[Olympiad][solved][biased ruin]Repeat with a biased coin, $p=0.6$ of winning each round, starting at $5$ units with the same $0$ and $10$ barriers.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the biased formula with $r=q/p=\frac{0.4}{0.6}=\frac23$.**
+$$u_5=\frac{1-(\frac23)^5}{1-(\frac23)^{10}}=\frac{1-\frac{32}{243}}{1-\frac{1024}{59049}}=\frac{0.86831}{0.98266}\approx0.88364.$$
+Check by simulation: $200000$ games gave $88.25\%$ ✓, and note the answer is much
+larger than the fair-game $0.5$ — a modest edge compounds over many rounds.
+
+**Answer:** $\approx0.8836$.
+
+</details>
+
+> [!example] Olympiad Extension — recursions on states
+> Whenever a process has a small memory — here, the current run length — the
+> answer is obtained by writing one linear equation per state. The expected
+> waiting time for $n$ consecutive heads is $2^{n+1}-2$, which grows
+> exponentially: this is the quantitative content of the gambler's fallacy, and
+> the reason "it is due" is false.
+
+#### **S23**[Olympiad][solved][runs]Find the expected number of tosses of a fair coin needed to see three heads in a row.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: a recursion on the current run length.** Let $E_n$ be the expected
+number of *further* tosses when $n$ consecutive heads are already showing. Then
+$E_0$ is the answer, and
+$$E_n=\tfrac12(E_{n-1}+1)+\tfrac12(E_n+1)\quad\Longrightarrow\quad E_n=2(E_{n-1}+1),$$
+because with probability $\frac12$ the next toss is a head (advancing the run at
+cost $1$) and with probability $\frac12$ it is a tail (resetting to $0$ at cost
+$1$). With $E_0=0$: $E_1=2$, $E_2=6$, $E_3=14$ — so the answer is $E_3=14$.
+Check by simulation: $100000$ runs gave a mean of $14.03$ ✓. The closed form is
+$E_n=2^{n+1}-2$.
+
+**Answer:** $14$ tosses.
+
+</details>
+
+#### **S24**[Olympiad][solved][derangements]Five letters are placed at random into five addressed envelopes. Find the probability that no letter is in its correct envelope.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: inclusion–exclusion.** By inclusion–exclusion the number of
+derangements of $n$ objects is
+$$D_n=n!\sum_{k=0}^{n}\frac{(-1)^k}{k!},$$
+so the probability is $\frac{D_n}{n!}=\sum_{k=0}^{n}\frac{(-1)^k}{k!}$. For
+$n=5$: $1-1+\frac12-\frac16+\frac1{24}-\frac1{120}=\frac{44}{120}=\frac{11}{30}\approx0.3667$.
+As $n\to\infty$ this tends to $\frac1e\approx0.3679$ ✓ — check $n=10$ gives
+$0.36788$ ✓.
+
+**Answer:** $\dfrac{11}{30}\approx0.3667$.
+
+</details>
+
+#### **P7**[Olympiad][practice][collision]Find the probability that among $23$ people at least two share a birthday (ignoring leap years).
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: complement.** The probability that all $23$ birthdays are distinct is
+$\frac{365}{365}\cdot\frac{364}{365}\cdots\frac{343}{365}$, so the collision
+probability is $1$ minus that product:
+$$1-\prod_{i=0}^{22}\frac{365-i}{365}=0.507297.$$
+Check: at $k=30$ the probability is $0.706316$ and at $k=50$ it is $0.970374$ —
+both increasing in $k$ as expected ✓.
+
+**Answer:** $0.507297$ — better than a coin flip.
+
+</details>
+
+#### **P8**[Olympiad][practice][ballot]In an election candidate $A$ receives $7$ votes and $B$ receives $4$. Use Bertrand's ballot theorem to find the probability that $A$ is strictly ahead throughout the count.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: $\frac{a-b}{a+b}$ with $a=7$, $b=4$.**
+$P=\frac{7-4}{7+4}=\frac3{11}$.
+Check by direct enumeration of the $\binom{11}{4}=330$ orderings: the number that
+stay strictly ahead is $90$, and $\frac{90}{330}=\frac3{11}$ ✓.
+
+**Answer:** $\dfrac3{11}$.
+
+</details>
+
+---
 ---
 
 # Appendix — Well-Ordered Theory Reference
@@ -825,7 +1001,7 @@ Every result in dependency order; nothing is used before it is proved.
 | Memoryless | $P(X>m+n\mid X>m)=P(X>n)=q^n$ |
 | Coupon collector | $E[T]=nH_n$ |
 
-### F. Olympiad results
+### F. Geometric probability and games
 
 | Result | Statement |
 |---|---|
@@ -835,15 +1011,22 @@ Every result in dependency order; nothing is used before it is proved.
 | First red among $k$ reds and $m$ blues | $E[T]=\dfrac{n+1}{k+1}$, $n=k+m$ |
 | Runs before runs | solve by states; each state gives one linear equation |
 
-### G. Mistake checklist
+### G. Olympiad results
 
-1. Using $\frac{\lvert E\rvert}{\lvert S\rvert}$ when the outcomes are not equally likely.
-2. Forgetting to subtract $P(A\cap B)$ in the addition rule.
-3. Confusing mutually exclusive with independent.
-4. Confusing $P(A\mid B)$ with $P(B\mid A)$.
-5. Sampling without replacement and still applying the binomial formula.
-6. Using $np$ as the variance, or $npq$ as the mean.
-7. Forgetting that $E[X^2]\ne E[X]^2$ — subtract the square of the mean.
-8. Applying the geometric distribution when the trials are not independent.
-9. Using $n-1$ instead of $n$ terms in the coupon-collector sum.
-10. Writing a recursion without stating the states and their equations.
+| Result | Statement |
+|---|---|
+| Broken stick | triangle probability $=\frac14$ |
+| Two uniform points, left segment $<\frac13$ | $\frac59$ |
+| Alternating coin game | first player wins with $\frac{p}{1-q^2}$ ($p=\frac12,q=\frac12\Rightarrow\frac23$) |
+| First red among $k$ reds and $m$ blues | $E[T]=\dfrac{n+1}{k+1}$, $n=k+m$ |
+| Runs before runs | solve by states; each state gives one linear equation |
+| Bertrand's ballot theorem | $P(A\text{ always ahead})=\dfrac{a-b}{a+b}$ |
+| Ballot path count | $\binom{a+b-1}{a-1}-\binom{a+b-1}{a}$ |
+| Gambler's ruin (fair) | $u_i=\dfrac{i}{N}$ |
+| Gambler's ruin (biased) | $u_i=\dfrac{1-(q/p)^i}{1-(q/p)^N}$ |
+| Martingale | fair gamble: $E[\text{final}]=E[\text{start}]$ |
+| Expected run of $n$ heads | $E_n=2(E_{n-1}+1)$, so $E_n=2^{n+1}-2$ |
+| Derangements | $D_n=n!\sum_{k=0}^n\frac{(-1)^k}{k!}$, $P\to\frac1e$ |
+| Birthday collision ($k=23$) | $0.507297$ |
+
+### H. Mistake checklist

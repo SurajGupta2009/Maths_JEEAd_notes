@@ -139,55 +139,66 @@ created: 2026-09-27
 
 ---
 
-## F · Olympiad frontier (Q26–Q31)
+## F · The mean family and Cauchy–Schwarz (Q26–Q29)
 
 #### **Q26**[JEE Adv][schur]Verify Schur's inequality $a(a-b)(a-c)+b(b-c)(b-a)+c(c-a)(c-b)\ge0$ for $(1,2,3)$ and $(3,4,5)$.
 
 **Answer:** $6$ and $12$ — both non-negative
 
-#### **Q27**[Olympiad][cubes]Prove $(a+b+c)^3\ge27abc$ for $a,b,c>0$.
+#### **Q27**[JEE Main][squares identity]Prove $a^2+b^2+c^2\ge ab+bc+ca$ for real $a,b,c$.
 
-**Answer:** proved (AM–GM cubed); equality at $a=b=c$
+**Answer:** $\frac12[(a-b)^2+(b-c)^2+(c-a)^2]\ge0$
 
-#### **Q28**[JEE Main][squares identity]Prove $a^2+b^2+c^2\ge ab+bc+ca$.
+#### **Q28**[JEE Adv][constraint]If $a+b+c=1$ with $a,b,c>0$, prove $\dfrac1a+\dfrac1b+\dfrac1c\ge9$.
 
-**Answer:** difference is $\frac12\sum(a-b)^2\ge0$
+**Answer:** $9$
 
-#### **Q29**[JEE Adv][constraint]If $a+b+c=1$ with $a,b,c>0$, prove $\dfrac1a+\dfrac1b+\dfrac1c\ge9$.
+#### **Q29**[JEE Adv][constraint]If $abc=1$ with $a,b,c>0$, prove $a+b+c\ge3$.
 
-**Answer:** proved; equality at $a=b=c=\frac13$
-
-#### **Q30**[Olympiad][jensen]Show that AM–GM is a special case of Jensen's inequality.
-
-**Answer:** apply Jensen to the convex function $-\ln x$, then exponentiate
-
-#### **Q31**[Olympiad][substitution]Find the least value of $\dfrac{x^2+2}{\sqrt{x^2+1}}$ for real $x$.
-
-**Answer:** $2$ at $x=0$
+**Answer:** $3$
 
 ---
 
-## G · Applications and mixed (Q32–Q34)
+## G · The Olympiad toolkit (Q30–Q36)
 
-#### **Q32**[JEE Adv][constraint]If $abc=1$ with $a,b,c>0$, prove $a+b+c\ge3$.
+#### **Q30**[Olympiad][sos]Prove $a^3+b^3+c^3\ge3abc$ for $a,b,c>0$ by a sum-of-squares decomposition, and state the equality case.
 
-**Answer:** proved by AM–GM; equality at $a=b=c=1$
+**Answer:** $\frac12(a+b+c)[(a-b)^2+(b-c)^2+(c-a)^2]\ge0$; equality iff $a=b=c$
 
-#### **Q33**[JEE Main][integers]Find the number of integers satisfying $\lvert x-2\rvert<3$.
+#### **Q31**[Olympiad][sos]Prove $a^4+b^4+c^4\ge abc(a+b+c)$ for $a,b,c>0$.
 
-**Answer:** $5$ — namely $x=0,1,2,3,4$
+**Answer:** proved; equality iff $a=b=c$
 
-#### **Q34**[JEE Adv][mixed]If $x$ is real and $x^2-3x+2\le0$, find the range of $x+\dfrac1x$.
+#### **Q32**[Olympiad][schur]Prove Schur's inequality in symmetric-sum form $p^3+9r\ge4pq$, where $p=a+b+c$, $q=ab+bc+ca$, $r=abc$, for $a,b,c\ge0$.
 
-**Answer:** $\left[2,\dfrac52\right]$
+**Answer:** $p^3+9r-4pq=a^3+b^3+c^3+3abc-\sum_{\rm sym}a^2b\ge0$
+
+#### **Q33**[Olympiad][uvw]If $ab+bc+ca=3$ with $a,b,c>0$, prove $a+b+c\ge3$ using the uvw method.
+
+**Answer:** $a+b+c\ge3$; equality at $a=b=c=1$
+
+#### **Q34**[Olympiad][engel]Prove $\dfrac{a^2}{b}+\dfrac{b^2}{c}+\dfrac{c^2}{a}\ge a+b+c$ for $a,b,c>0$.
+
+**Answer:** proved; equality iff $a=b=c$
+
+#### **Q35**[Olympiad][engel]Prove $\dfrac{a^2}{b+c}+\dfrac{b^2}{c+a}+\dfrac{c^2}{a+b}\ge\dfrac{a+b+c}{2}$ for $a,b,c>0$.
+
+**Answer:** proved; equality iff $a=b=c$
+
+#### **Q36**[Olympiad][jensen]Show that AM–GM is a special case of Jensen's inequality, and use Jensen to prove it for $n$ positive numbers.
+
+**Answer:** proved
 
 ---
 
 > [!note] Exam technique notes
-> - **Solving:** find the critical points, then test one point per interval. Never
->   multiply by an expression whose sign you do not know.
-> - **Proving:** try to write the difference as a sum of squares. If that fails,
->   try AM–GM; if the variables are ordered, try Schur.
-> - Always state the **equality case** — it usually identifies the extremum and
->   is half the marks.
-> - Check positivity before quoting any mean inequality.
+> - **Move everything to one side.** An olympiad inequality is a claim that some
+>   expression is $\ge0$; the whole game is rewriting that expression.
+> - **Look for SOS first.** If the difference factors into squares you are done,
+>   and the equality case comes for free.
+> - **Check the equality case early.** It tells you which technique is needed:
+>   $a=b=c$ suggests AM–GM; a boundary case suggests uvw or Schur.
+> - **For symmetric three-variable problems, run the uvw pipeline:** normalise,
+>   write in $p,q,r$, then check only $a=b$ and $c=0$.
+> - **Schur is not AM–GM.** If AM–GM, Cauchy–Schwarz and SOS all fail, Schur (or
+>   a normalisation) is usually the missing ingredient.

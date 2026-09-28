@@ -158,38 +158,68 @@ $$(p-r)^2=(q-s)(r-p).$$
 ## G · Olympiad inequalities
 
 #### **Q28**
-**Method: substitute $x=b+c$, $y=c+a$, $z=a+b$, so that $a=\frac{y+z-x}{2}$, and pair the reciprocals with AM–GM.**
-$$\sum_{\rm cyc}\frac{a}{b+c}=\frac12\left[\left(\frac yx+\frac xy\right)+\left(\frac zx+\frac xz\right)+\left(\frac zy+\frac yz\right)-3\right]\ge\frac12(2+2+2-3)=\frac32.$$
-**Answer:** proved, with equality at $a=b=c$. (Numeric check for $(1,2,3)$: $\frac13+\frac24+\frac35=\frac{47}{30}\approx1.5667\ge1.5$ ✓.)
+**Method: symmetric reduction.** $\alpha+\beta=5$ and $\alpha\beta=3$, so
+$\alpha^2+\beta^2=(\alpha+\beta)^2-2\alpha\beta=25-6=19$.
+**Answer:** $19$. (Check via Newton's sums: $S_2=5\cdot5-2\cdot3=19$; numerically
+$\alpha\approx4.3028$, $\beta\approx0.6972$ and $\alpha^2+\beta^2\approx19.0000$ ✓.)
 
 #### **Q29**
-**Method: AM–GM on $x$ and $\frac1x$.** $x+\frac1x\ge2\sqrt{x\cdot\frac1x}=2$, with equality at $x=1$.
-**Answer:** least value $2$ at $x=1$.
+**Method: compute $\Delta$ and test whether it is a perfect square.**
+$\Delta=k^2-4(k-1)=k^2-4k+4=(k-2)^2$, a perfect square for every integer $k$.
+Hence the roots are rational for all integers $k$:
+$x=\frac{k\pm|k-2|}{2}$, namely $x=1$ and $x=k-1$.
+**Answer:** every integer $k$; roots $1$ and $k-1$. (Check:
+$x^2-kx+k-1=(x-1)(x-(k-1))$ exactly, so $x=1$ is always a root ✓.)
 
 #### **Q30**
-**Method: expand and pair each term with its reciprocal.**
-$$(a+b+c)\left(\frac1a+\frac1b+\frac1c\right)=3+\left(\frac ab+\frac ba\right)+\left(\frac bc+\frac cb\right)+\left(\frac ca+\frac ac\right)\ge3+2+2+2=9.$$
-**Answer:** proved, with equality at $a=b=c$. (Numeric check for $(1,2,3)$: $6\cdot\frac{11}{6}=11\ge9$ ✓.)
+**Method: induction using $\alpha^2=\alpha+1$.** Base cases:
+$n=1$ gives $F_1\alpha+F_0=\alpha$ ✓; $n=2$ gives $F_2\alpha+F_1=\alpha+1=\alpha^2$ ✓.
+For the step,
+$\alpha^{n+1}=\alpha(F_n\alpha+F_{n-1})=F_n\alpha^2+F_{n-1}\alpha=F_n(\alpha+1)+F_{n-1}\alpha
+=(F_n+F_{n-1})\alpha+F_n$, and $F_n+F_{n-1}=F_{n+1}$ by definition ✓.
+**Answer:** $F_{10}=55$. (Check: the Fibonacci list is
+$0,1,1,2,3,5,8,13,21,34,55$; and $\alpha^{10}\approx122.9918=55\cdot1.618034+34$ ✓.
+Adding the identities for both roots gives the Lucas numbers
+$S_n=\alpha^n+\beta^n=F_{n+1}+F_{n-1}=2,1,3,4,7,11,\ldots$ ✓.)
 
 #### **Q31**
-**Method: Cauchy–Schwarz on $\left(\frac a{\sqrt b},\frac c{\sqrt d}\right)$ and $(\sqrt b,\sqrt d)$.**
-$$\left(\frac{a^2}{b}+\frac{c^2}{d}\right)(b+d)\ge\left(\frac a{\sqrt b}\sqrt b+\frac c{\sqrt d}\sqrt d\right)^2=(a+c)^2.$$
-**Answer:** proved; equality when $\frac ab=\frac cd$. (Numeric check for $a=1,c=2,b=3,d=4$: LHS $=\frac13+1=\frac43\approx1.3333$, RHS $=\frac97\approx1.2857$ ✓.)
-
----
-
-## H · Olympiad frontier
+**Method: build from the new symmetric sums.** For roots $\alpha^2,\beta^2$ the sum
+is $\alpha^2+\beta^2=19$ and the product is $(\alpha\beta)^2=9$, so the equation is
+$x^2-19x+9=0$.
+**Answer:** $x^2-19x+9=0$. (Check: $\alpha^2\approx18.5139$ and
+$\beta^2\approx0.4861$ give sum $\approx19.0000$, product $\approx9.0000$, and
+$\Delta=325>0$ so both are real ✓.)
 
 #### **Q32**
-**Method: expand the proposed factorisation.**
-$$(a+b+c)(a^2+b^2+c^2-ab-bc-ca)=a^3+b^3+c^3-3abc.$$
-Setting $a+b+c=0$ makes the left side vanish, so $a^3+b^3+c^3-3abc=0$.
-**Answer:** $a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)$; and if $a+b+c=0$ then $a^3+b^3+c^3=3abc$. (Numeric check: for $(1,1,-2)$, $-6=3(1)(1)(-2)=-6$ ✓.)
+**Method: Newton's recurrence.** With $\alpha+\beta=3$, $\alpha\beta=1$ the roots
+satisfy $t^2=3t-1$, so $S_n=3S_{n-1}-S_{n-2}$ with $S_0=2$, $S_1=3$:
+$$S_2=7,\quad S_3=18,\quad S_4=47,\quad S_5=123.$$
+**Answer:** $123$. (Check: $\alpha=\frac{3+\sqrt5}{2}\approx2.6180$,
+$\beta\approx0.3820$; $\alpha^5+\beta^5\approx122.9919+0.0081=123.0000$ ✓.)
 
 #### **Q33**
-**Method: evaluate $a(a-b)(a-c)+b(b-c)(b-a)+c(c-a)(c-b)$ directly.** For $(1,2,3)$: $1(-1)(-2)+2(-1)(1)+3(2)(1)=2-2+6=6$. For $(3,4,5)$: $3(-1)(-2)+4(-1)(1)+5(2)(1)=6-4+10=12$.
-**Answer:** $6$ and $12$ — both non-negative, consistent with Schur ✓.
+**Method: depress the cubic, form the resolvent, take cube roots.** Substituting
+$x=y+2$ gives $y^3-y=0$, so $P=-1$, $Q=0$. The resolvent quadratic is
+$t^2+Qt-\frac{P^3}{27}=t^2+\frac1{27}=0$, whose roots are
+$t=\pm\frac{i}{3\sqrt3}$. Since $u,v$ are conjugates with $uv=-\frac P3=\frac13$,
+we get $|u|^2=\frac13$, so $|u|=\frac1{\sqrt3}$ and $\arg u=\frac\pi6$. Hence
+$u=\frac12+\frac{i}{2\sqrt3}$, $v=\frac12-\frac{i}{2\sqrt3}$, giving $y=u+v=1$ and
+$x=3$. The three cube-root choices give all three roots.
+**Answer:** $x=1,2,3$. (Check: $1+2+3=6=-p$ and $1\cdot2\cdot3=6=-r$ ✓; the
+depressed values $y=1,0,-1$ each satisfy $y^3-y=0$ ✓, and the numerically
+recovered roots are exactly $1.0,2.0,3.0$ ✓.)
 
 #### **Q34**
-**Method: rational-root theorem, then reduce to a quadratic.** Candidates are $\pm1,\pm2,\pm3,\pm6$; $x=1$ gives $1-6+11-6=0$, so $(x-1)$ is a factor. Dividing gives $x^2-5x+6=(x-2)(x-3)$.
-**Answer:** $x=1,\;2,\;3$. (Check: $1-6+11-6=0$, $8-24+22-6=0$, $27-54+33-6=0$ ✓; and the roots sum to $6$ with pairwise products summing to $11$ and product $6$ ✓.)
+**Method: Vieta jumping.** Fix $k=\frac{a^2+b^2}{ab+1}$, an integer, and read the
+relation as a quadratic in $a$:
+$$a^2-kba+(b^2-k)=0.$$
+One root is $a$; by Vieta the other is $a'=kb-a=\frac{b^2-k}{a}$, and $a'$ is an
+integer because rearranging gives $b^2-k=a(kb-a)$. Ordering $A\ge B$ one checks
+$0\le a'<B$, so $(a',B)$ is a smaller solution with the *same* $k$. The descent
+must terminate, and it can only terminate when $a'=0$, i.e. when $k=b^2$ — a
+perfect square. Since $k$ never changes, the original $k$ is that same square.
+**Answer:** $\frac{a^2+b^2}{ab+1}$ is always a perfect square. (Check: over all
+$a,b<300$ with $ab+1\mid a^2+b^2$ the quotient takes only the values
+$1,4,9,16,25$ — all squares — and the descent inequality $0\le a'<B$ held for
+every pair. For example $(8,30)$: $k=\frac{964}{241}=4$, and the descent
+$(30,8)\to(8,2)\to(0,2)$ stops at $k=2^2$ ✓.)

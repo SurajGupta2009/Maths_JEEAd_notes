@@ -153,48 +153,36 @@ For $x^2-5x+6=0$ with roots $\alpha,\beta$:
 
 ---
 
-## G · Olympiad inequalities (Q28–Q31)
+## G · Symmetric functions and transformed equations (Q28–Q31)
 
-#### **Q28**[JEE Adv][nesbitt]Prove that $\dfrac{a}{b+c}+\dfrac{b}{c+a}+\dfrac{c}{a+b}\ge\dfrac32$ for $a,b,c>0$.
+#### **Q28**[JEE Main][newton]If $\alpha,\beta$ are the roots of $x^2-5x+3=0$, find $\alpha^2+\beta^2$ without solving the equation.
 
-**Answer:** proved; equality at $a=b=c$
+**Answer:** $19$
 
-#### **Q29**[JEE Main][amgm]Find the least value of $x+\dfrac1x$ for $x>0$.
+#### **Q29**[JEE Adv][discriminant]For which integers $k$ does $x^2-kx+k-1=0$ have rational roots?
 
-**Answer:** $2$, attained at $x=1$
+**Answer:** every integer $k$ — $\Delta=(k-2)^2$; the roots are $1$ and $k-1$
 
-#### **Q30**[JEE Adv][reciprocal sum]Prove that $(a+b+c)\left(\dfrac1a+\dfrac1b+\dfrac1c\right)\ge9$ for $a,b,c>0$.
+#### **Q30**[JEE Adv][fibonacci]Let $\alpha$ be a root of $x^2-x-1=0$. Prove that $\alpha^n=F_n\alpha+F_{n-1}$ for $n\ge1$, where $F_0=0$, $F_1=1$, and hence find $F_{10}$.
 
-**Answer:** proved; equality at $a=b=c$
+**Answer:** $F_{10}=55$
 
-#### **Q31**[Olympiad][titu]Prove that $\dfrac{a^2}{b}+\dfrac{c^2}{d}\ge\dfrac{(a+c)^2}{b+d}$ for $b,d>0$.
+#### **Q31**[JEE Adv][transform]Form the equation whose roots are $\alpha^2$ and $\beta^2$, where $\alpha,\beta$ are the roots of $x^2-5x+3=0$.
 
-**Answer:** proved by Cauchy–Schwarz; equality when $\dfrac ab=\dfrac cd$
-
----
-
-## H · Olympiad frontier (Q32–Q34)
-
-#### **Q32**[JEE Adv][identity]Factorise $a^3+b^3+c^3-3abc$, and state the consequence when $a+b+c=0$.
-
-**Answer:** $(a+b+c)(a^2+b^2+c^2-ab-bc-ca)$; hence $a^3+b^3+c^3=3abc$
-
-#### **Q33**[Olympiad][schur]Verify Schur's inequality $a(a-b)(a-c)+b(b-c)(b-a)+c(c-a)(c-b)\ge0$ for $(a,b,c)=(1,2,3)$ and $(3,4,5)$.
-
-**Answer:** $6$ and $12$ — both non-negative ✓
-
-#### **Q34**[JEE Adv][cubic]Solve $x^3-6x^2+11x-6=0$.
-
-**Answer:** $x=1,\;2,\;3$
+**Answer:** $x^2-19x+9=0$
 
 ---
 
-> [!note] Exam technique notes
-> - Reach for Vieta before solving: most questions ask for a *function of the
->   roots*, not the roots themselves.
-> - Always state the discriminant before the roots; it costs one line and often
->   answers the question by itself.
-> - After squaring, substitute back — extraneous roots are the commonest lost
->   mark in this topic.
-> - For inequalities, check positivity of every variable before quoting AM–GM,
->   and identify the equality case.
+## H · Olympiad frontier: resolvents, discriminants, Vieta jumping (Q32–Q34)
+
+#### **Q32**[Olympiad][newton]If $\alpha,\beta$ are the roots of $x^2-3x+1=0$, find $\alpha^5+\beta^5$ without finding the roots.
+
+**Answer:** $123$
+
+#### **Q33**[Olympiad][resolvent]Solve $x^3-6x^2+11x-6=0$ by the method of Lagrange resolvents.
+
+**Answer:** $x=1,2,3$
+
+#### **Q34**[Olympiad][vieta]Let $a,b$ be positive integers such that $ab+1$ divides $a^2+b^2$. Prove that $\dfrac{a^2+b^2}{ab+1}$ is a perfect square.
+
+**Answer:** it is always a perfect square (Vieta jumping / IMO 1988 Problem 6)

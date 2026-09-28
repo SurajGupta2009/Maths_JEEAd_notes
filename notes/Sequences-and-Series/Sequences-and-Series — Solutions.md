@@ -148,42 +148,71 @@ $$\frac12\left(1+\frac12-\frac16-\frac17\right)=\frac12\left(\frac32-\frac{13}{4
 **Answer:** $\dfrac{12}{7}\approx1.7143$.
 
 #### **Q26**
-**Method: compute all three means.** $A=\frac{4+9}{2}=6.5$; $G=\sqrt{36}=6$; $H=\frac{2\cdot4\cdot9}{13}=\frac{72}{13}\approx5.5385$.
-**Answer:** $6.5\ge6\ge5.5385$, so $A\ge G\ge H$ ✓ (strict, since $4\ne9$).
+**Method: compare $A$, $G$ and $H$ for $4$ and $9$.** $A=\frac{4+9}{2}=6.5$,
+$G=\sqrt{36}=6$ and $H=\frac{2\cdot4\cdot9}{4+9}=\frac{72}{13}\approx5.5385$.
+**Answer:** $6.5\ge6\ge\dfrac{72}{13}$. (Check: $A^2=42.25\ge36=G^2$ ✓, and
+$G^2=36\ge\frac{5184}{169}\approx30.67=H^2$ ✓.)
 
 #### **Q27**
-**Method: the reciprocals $1,2,3,\ldots$ form an AP with $a=1$, $d=1$.** The $4^{\rm th}$ reciprocal is $4$, so the $4^{\rm th}$ HP term is $\frac14$.
-**Answer:** $\dfrac14$.
-
----
-
-## G · Olympiad frontier
+**Method: the reciprocals form an AP.** The reciprocals are $1,2,3,\ldots$ with
+common difference $1$, so the $4^{\rm th}$ reciprocal is $4$.
+**Answer:** $\dfrac14$. (Check: the HP is $\frac11,\frac12,\frac13,\frac14$ ✓.)
 
 #### **Q28**
-**Method: find the fixed point $L=\frac q{1-p}$, then the differences form a GP.** Here $L=\frac1{1-2}=-1$, so $a_n+1=2(a_{n-1}+1)$ and $a_n+1=2^{n-1}(a_1+1)=2^n$.
-**Answer:** $a_n=2^n-1$. (Check: $1,3,7,15,31$ and $2^5-1=31$ ✓.)
+**Method: split as a difference of two-factor terms.**
+$\frac1{k(k+1)(k+2)}=\frac12\left[\frac1{k(k+1)}-\frac1{(k+1)(k+2)}\right]$, so
+$$\sum_{k=1}^n\frac1{k(k+1)(k+2)}=\frac12\left[\frac12-\frac1{(n+1)(n+2)}\right]=\frac{n(n+3)}{4(n+1)(n+2)}.$$
+**Answer:** $\dfrac{n(n+3)}{4(n+1)(n+2)}$. (Check for $n=5$: direct sum
+$\frac16+\frac1{24}+\frac1{60}+\frac1{120}+\frac1{210}=\frac{200}{840}=\frac5{21}$, and the
+formula gives $\frac{40}{168}=\frac5{21}$ ✓. For $n=10$: $\frac{65}{264}$ ✓.)
 
 #### **Q29**
-**Method: shift-and-subtract.** Writing $S=\sum_{k=1}^n k2^{k-1}$ and $2S=\sum_{k=1}^n k2^k$, subtraction leaves $S=1+(n-1)2^n$.
-**Answer:** $1+(n-1)2^n$. (Check for $n=5$: $1+4+12+32+80=129$ and $1+4\cdot32=129$ ✓.)
+**Method: telescope.** $k\,k!=(k+1-1)k!=(k+1)!-k!$, so
+$$\sum_{k=1}^n k\,k!=\sum_{k=1}^n\big[(k+1)!-k!\big]=(n+1)!-1.$$
+**Answer:** $(n+1)!-1$. (Check for $n=5$: $1+4+18+96+600=719$ and $6!-1=719$ ✓.
+For $n=7$: $40319=8!-1$ ✓.)
 
 #### **Q30**
-**Method: compare the arithmetic and geometric means.** $A=\frac{1+2+3+4}{4}=2.5$ and $G=(1\cdot2\cdot3\cdot4)^{1/4}=24^{1/4}\approx2.2134$.
-**Answer:** $2.5\ge2.2134$ ✓ (strict, since the four numbers are not all equal).
+**Method: the tangent difference formula.** With $\tan\alpha=\frac1k$ and
+$\tan\beta=\frac1{k+1}$,
+$\tan(\alpha-\beta)=\frac{1/(k(k+1))}{1+1/(k(k+1))}=\frac1{k^2+k+1}$, so each term
+is $\arctan\frac1k-\arctan\frac1{k+1}$ and the sum telescopes:
+$$\sum_{k=1}^n\arctan\frac1{k^2+k+1}=\arctan1-\arctan\frac1{n+1}=\frac\pi4-\arctan\frac1{n+1}.$$
+**Answer:** $\dfrac\pi4-\arctan\dfrac1{n+1}$. (Check numerically for $n=5$: the
+sum equals $\frac\pi4-\arctan\frac16$ to $10^{-9}$ ✓. As $n\to\infty$ the sum tends
+to $\frac\pi4\approx0.7854$ ✓.)
 
 #### **Q31**
-**Method: $r=\left(\frac ba\right)^{1/(k+1)}$ with $k=3$.** $\left(\frac{81}{1}\right)^{1/4}=3$.
-**Answer:** $r=3$ (giving means $3,9,27$).
+**Method: solve for $F(x)$, then partial fractions.** Let
+$F(x)=\sum_{n\ge0}F_nx^n$ with $F_0=0$, $F_1=1$. Since
+$F_n=F_{n-1}+F_{n-2}$ for $n\ge2$,
+$$F(x)=xF(x)+x^2F(x)+x\quad\Longrightarrow\quad F(x)=\frac{x}{1-x-x^2}.$$
+Factor $1-x-x^2=(1-\varphi x)(1-\psi x)$ with $\varphi=\frac{1+\sqrt5}{2}$,
+$\psi=\frac{1-\sqrt5}{2}$, and write
+$\frac{x}{(1-\varphi x)(1-\psi x)}=\frac{A}{1-\varphi x}+\frac{B}{1-\psi x}$ with
+$A=\frac1{\sqrt5}$, $B=-\frac1{\sqrt5}$. Expanding each fraction as a geometric
+series gives $F_n=A\varphi^n+B\psi^n$.
+**Answer:** $F_n=\dfrac{\varphi^n-\psi^n}{\sqrt5}$. (Check: $F_1=\frac{1.618034+0.618034}{2.236068}=1$ ✓,
+$F_7=13$ ✓, $F_{10}=55$ ✓, and $(1-x-x^2)\sum_{n=0}^{13}F_nx^n=x$ exactly ✓.)
 
 #### **Q32**
-**Method: GP with $a=1$, $r=2$, $n=11$.** $\frac{2^{11}-1}{2-1}$.
-**Answer:** $2047$.
+**Method: difference of squares, then cancel.**
+$1-\frac1{k^2}=\frac{k-1}{k}\cdot\frac{k+1}{k}$, so
+$$\prod_{k=2}^n\left(1-\frac1{k^2}\right)=\prod_{k=2}^n\frac{k-1}{k}\cdot\prod_{k=2}^n\frac{k+1}{k}=\frac1n\cdot\frac{n+1}{2}=\frac{n+1}{2n}.$$
+**Answer:** $\dfrac{n+1}{2n}$, tending to $\dfrac12$. (Check for $n=4$:
+$\frac34\cdot\frac89\cdot\frac{15}{16}=\frac{360}{576}=\frac58=\frac{4+1}{2\cdot4}$ ✓.
+For $n=7$: $\frac47$ ✓.)
 
 #### **Q33**
-**Method: the generating function is $\sum_{n\ge0}a_nx^n$.** For $a_n=1$ this is $\sum_{n\ge0}x^n=\frac1{1-x}$, convergent for $\lvert x\rvert<1$.
-**Answer:** $G(x)=\dfrac1{1-x}$.
+**Method: shift and subtract.** Writing $S=\sum_{k=1}^n k2^{k-1}$ and
+$2S=\sum_{k=1}^n k2^k$, subtraction gives
+$S=2S-S=\sum_{k=1}^n k2^k-\sum_{k=1}^n k2^{k-1}$; re-indexing the first sum and
+cancelling leaves $S=(n-1)2^n+1$.
+**Answer:** $1+(n-1)2^n$. (Check for $n=5$: $1+4+12+32+80=129$ and
+$1+4\cdot32=129$ ✓.)
 
 #### **Q34**
-**Method: direct summation.**
-$$1+\frac13+\frac15+\frac17+\frac19=\frac{315+105+63+45+35}{315}=\frac{563}{315}.$$
-**Answer:** $\dfrac{563}{315}\approx1.7873$.
+**Method: shift by the fixed point.** $L=\frac1{1-2}=-1$, so
+$a_n+1=2^{n-1}(a_1+1)=2^n$, giving $a_n=2^n-1$.
+**Answer:** $a_n=2^n-1$. (Check: $a_1=1$, $a_2=3$, $a_3=7$, $a_4=15$ — each is
+$2^n-1$ ✓, and $2a_{n-1}+1=2(2^{n-1}-1)+1=2^n-1=a_n$ ✓.)

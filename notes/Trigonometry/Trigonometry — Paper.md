@@ -163,31 +163,40 @@ created: 2026-09-27
 
 ---
 
-## G · Olympiad frontier (Q31–Q34)
+## G · Olympiad frontier (Q31–Q36)
 
 #### **Q31**[Olympiad][special angles]Verify $\sin18^\circ=\dfrac{\sqrt5-1}{4}$ and $\cos36^\circ=\dfrac{\sqrt5+1}{4}$.
 
-**Answer:** both verified; $\approx0.3090$ and $\approx0.8090$
+**Answer:** both verified
 
-#### **Q32**[Olympiad][conditional]If $A+B+C=180^\circ$, prove $\sin2A+\sin2B+\sin2C=4\sin A\sin B\sin C$.
+#### **Q32**[Olympiad][triangle identity]If $A+B+C=180^\circ$, prove $\sin2A+\sin2B+\sin2C=4\sin A\sin B\sin C$.
 
-**Answer:** proved by sum-to-product
+**Answer:** proved
 
-#### **Q33**[JEE Adv][equation]Solve $\sin3x=\cos2x$.
+#### **Q33**[Olympiad][triangle identity]If $A+B+C=180^\circ$, prove $\sin^2A+\sin^2B+\sin^2C=2+2\cos A\cos B\cos C$.
 
-**Answer:** $x=72^\circ m+18^\circ$ or $x=360^\circ m+90^\circ$
+**Answer:** proved
 
-#### **Q34**[Olympiad][series]Find $\displaystyle\sum_{k=1}^{90}\sin(k^\circ)$ in closed form, and evaluate it.
+#### **Q34**[Olympiad][triangle identity]Use $\tan3\theta=\dfrac{3t-t^3}{1-3t^2}$ with $t=\tan\theta$ to show that $\tan20^\circ\tan40^\circ\tan80^\circ=\sqrt3$.
+
+**Answer:** $\sqrt3$
+
+#### **Q35**[Olympiad][product]Prove that $\displaystyle\prod_{k=1}^{n-1}\sin\frac{k\pi}{n}=\frac{n}{2^{n-1}}$, and evaluate it for $n=7$.
+
+**Answer:** $\dfrac{n}{2^{n-1}}$; for $n=7$ it is $\dfrac7{64}$
+
+#### **Q36**[Olympiad][series]Find $\displaystyle\sum_{k=1}^{90}\sin(k^\circ)$ in closed form, and evaluate it.
 
 **Answer:** $\dfrac{\sin45^\circ\sin45.5^\circ}{\sin0.5^\circ}\approx57.7943$
 
 ---
 
 > [!note] Exam technique notes
-> - Reduce everything to sine and cosine before doing anything clever.
-> - In an equation, **factorise** — never divide by a trigonometric factor.
-> - State the quadrant before fixing a half-angle sign.
-> - For "all solutions", write the general form, then list the ones in the
->   requested interval.
-> - In triangle problems, decide between the sine rule (two angles, one side)
->   and the cosine rule (two sides, included angle) before computing.
+> - **Reduce to one angle first.** In any triangle problem, replace $C$ by
+>   $180^\circ-A-B$ and expand; almost every identity then falls out.
+> - For a product of sines at multiples of $\frac\pi n$, think **roots of unity**:
+>   factor $z^n-1$ and take moduli.
+> - For a sum of $\cot^2$ or $\csc^2$ at multiples of $\frac\pi n$, think
+>   **polynomial whose roots are the tangents**, then read off $\sum t_k^2$.
+> - $\tan A+\tan B+\tan C=\tan A\tan B\tan C$ is the workhorse for symmetric
+>   tangent expressions; check for a $90^\circ$ angle first.

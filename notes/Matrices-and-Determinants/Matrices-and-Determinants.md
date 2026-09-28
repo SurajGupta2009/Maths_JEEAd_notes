@@ -513,108 +513,247 @@ $$A=\begin{pmatrix}1&\frac52\\\frac52&4\end{pmatrix}+\begin{pmatrix}0&-\frac12\\
 
 ---
 
-# Chapter 6 — Olympiad Frontier
+# Chapter 6 — Olympiad Frontier: Eigenvalues, Determinant Bounds, Vandermonde
 
-*Synthesis · the deep structure*
+*Synthesis · the structural results*
+
+Cayley–Hamilton is the doorway. Past it, matrices stop being tables of numbers
+and become objects with **invariants** — eigenvalues, trace, rank — and
+**inequalities** that bound what a determinant can be. This chapter collects the
+structural results that turn a computation into a proof.
 
 ## 6.1 Cayley–Hamilton
 
-> [!example] Olympiad Extension — Cayley–Hamilton
-> Every square matrix satisfies its own characteristic equation:
-> $$p(\lambda)=\det(\lambda I-A)=\lambda^n-(\operatorname{tr}A)\lambda^{n-1}+\cdots+(-1)^n\det A,$$
-> and $p(A)=0$. This lets you reduce any high power of $A$ to a linear
-> combination of $I,A,\ldots,A^{n-1}$ — the standard tool for computing $A^{100}$
-> or $A^{-1}$ without inverting.
+> [!abstract] First Principles — the characteristic polynomial
+> A number $\lambda$ is an **eigenvalue** of $A$ if $Av=\lambda v$ for some
+> non-zero $v$, i.e. $(A-\lambda I)v=0$ has a non-trivial solution, which happens
+> exactly when $\det(A-\lambda I)=0$. The polynomial
+> $$p(\lambda)=\det(A-\lambda I)$$
+> is the **characteristic polynomial**. For a $2\times2$ matrix it is always
+> $\lambda^2-(\operatorname{tr}A)\lambda+\det A$, because the trace is the sum and
+> the determinant the product of the eigenvalues.
+
+> [!abstract] First Principles — Cayley–Hamilton
+> **Theorem.** $p(A)=0$: substituting the matrix $A$ into its own characteristic
+> polynomial gives the zero matrix.
+>
+> For $2\times2$ this reads
+> $$A^2-(\operatorname{tr}A)A+(\det A)I=0.$$
+> The power of the theorem is that it turns *any* polynomial in $A$ into a linear
+> combination of $I$ and $A$ — so $A^{100}$ is computable from two numbers.
 
 #### **S18**[Olympiad][solved][cayley hamilton]Verify Cayley–Hamilton for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$.
 
-$\operatorname{tr}A=5$ and $\det A=-2$, so $p(\lambda)=\lambda^2-5\lambda-2$. Now
-$A^2=\begin{pmatrix}7&10\\15&22\end{pmatrix}$ and
-$$A^2-5A-2I=\begin{pmatrix}7&10\\15&22\end{pmatrix}-\begin{pmatrix}5&10\\15&20\end{pmatrix}-\begin{pmatrix}2&0\\0&2\end{pmatrix}=\begin{pmatrix}0&0\\0&0\end{pmatrix}.$$
+$p(\lambda)=\lambda^2-5\lambda-2$ since $\operatorname{tr}A=5$ and $\det A=-2$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: form $p(A)$ and check it is the zero matrix.** ✓
+**Method: compute $p(A)$ directly.**
+$A^2=\begin{pmatrix}7&10\\15&22\end{pmatrix}$, so
+$A^2-5A-2I=\begin{pmatrix}7-5-2&10-10\\15-15&22-20-2\end{pmatrix}=0$ ✓.
 
-**Answer:** verified, $A^2-5A-2I=0$.
+**Answer:** verified; $A^2=5A+2I$.
 
 </details>
 
 #### **S19**[Olympiad][solved][power]Use Cayley–Hamilton to express $A^3$ for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$ as $\alpha A+\beta I$.
 
-From $A^2=5A+2I$, multiply by $A$: $A^3=5A^2+2A=5(5A+2I)+2A=27A+10I$.
-
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: reduce using the characteristic equation.** Check directly: $A^3=A^2\cdot A=\begin{pmatrix}7&10\\15&22\end{pmatrix}\begin{pmatrix}1&2\\3&4\end{pmatrix}=\begin{pmatrix}37&54\\81&118\end{pmatrix}$, and $27A+10I=\begin{pmatrix}37&54\\81&118\end{pmatrix}$ ✓.
+**Method: reduce using $A^2=5A+2I$.**
+$A^3=A\cdot A^2=A(5A+2I)=5A^2+2A=5(5A+2I)+2A=27A+10I$.
+Check directly: $A^3=\begin{pmatrix}37&54\\81&118\end{pmatrix}$ and
+$27A+10I=\begin{pmatrix}37&54\\81&118\end{pmatrix}$ ✓.
 
 **Answer:** $A^3=27A+10I$.
 
 </details>
 
-## 6.2 Vandermonde and block determinants
+## 6.2 Eigenvalues and the characteristic polynomial
 
-> [!example] Olympiad Extension — the Vandermonde determinant
-> $$\det\begin{pmatrix}1&1&\cdots&1\\x_1&x_2&\cdots&x_n\\x_1^2&x_2^2&\cdots&x_n^2\\\vdots&&&\vdots\\x_1^{n-1}&\cdots&&x_n^{n-1}\end{pmatrix}=\prod_{i<j}(x_j-x_i).$$
-> It is the determinant behind polynomial interpolation: it vanishes exactly when
-> two of the $x_i$ coincide, which is precisely when interpolation becomes
-> degenerate.
+> [!abstract] First Principles — eigenvalues are invariants
+> If $B=P^{-1}AP$ is a **similar** matrix (a change of basis), then
+> $p_B(\lambda)=\det(P^{-1}AP-\lambda I)=\det(P^{-1}(A-\lambda I)P)=\det(A-\lambda I)=p_A(\lambda)$.
+> So **similar matrices share a characteristic polynomial**, and therefore share
+> trace and determinant. These are properties of the *linear map*, not of the
+> coordinate system — which is exactly why they are useful.
 
-> [!example] Olympiad Extension — block determinants
-> If $A$ is invertible, then
-> $$\det\begin{pmatrix}A&B\\C&D\end{pmatrix}=\det A\cdot\det(D-CA^{-1}B).$$
-> In particular, when $C=0$ or $B=0$ the determinant **factors**. This is the
-> tool for large sparse systems.
+| Invariant | Meaning | For $\begin{pmatrix}1&2\\3&4\end{pmatrix}$ |
+|---|---|---|
+| $\operatorname{tr}A$ | sum of eigenvalues | $5$ |
+| $\det A$ | product of eigenvalues | $-2$ |
+| eigenvalues | roots of $p$ | $\frac{5\pm\sqrt{33}}2\approx5.3723,\,-0.3723$ |
 
-#### **S20**[Olympiad][solved][vandermonde]Verify the Vandermonde formula for $x_1=2,x_2=5,x_3=9$.
+> [!tip] Key Idea — diagonalisation
+> If $A$ has $n$ distinct eigenvalues it is **diagonalisable**: $A=PDP^{-1}$ with
+> $D$ diagonal. Then $A^k=PD^kP^{-1}$, and $D^k$ is trivial to compute. This is the
+> reason eigenvalues matter computationally, not just theoretically.
 
-$\det\begin{pmatrix}1&1&1\\2&5&9\\4&25&81\end{pmatrix}=84$ and $(5-2)(9-2)(9-5)=3\cdot7\cdot4=84$ ✓.
+> [!example] Olympiad Extension — diagonalisation
+> If $A$ has distinct eigenvalues it is diagonalisable: $A=PDP^{-1}$ with $D$
+> diagonal. Then $A^k=PD^kP^{-1}$, and $D^k$ costs nothing. This is why
+> eigenvalues matter computationally: they convert repeated multiplication into
+> $n$ scalar exponentiations. The obstruction is a repeated eigenvalue without
+> enough eigenvectors — the non-diagonalisable (defective) case.
+
+#### **S20**[Olympiad][solved][eigenvalues]Find the eigenvalues of $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$ and verify that their sum and product are the trace and determinant.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: compute the determinant directly and compare with the product of differences.** ✓
+**Method: solve $p(\lambda)=\lambda^2-5\lambda-2=0$.**
+$\lambda=\frac{5\pm\sqrt{25+8}}2=\frac{5\pm\sqrt{33}}2$, so
+$\lambda_1\approx5.37228$ and $\lambda_2\approx-0.37228$.
+Check: $\lambda_1+\lambda_2=5=\operatorname{tr}A$ ✓ and
+$\lambda_1\lambda_2=\frac{25-33}{4}=-2=\det A$ ✓. Also
+$\lambda_1^2-5\lambda_1-2=0$ and $\lambda_2^2-5\lambda_2-2=0$ ✓.
 
-**Answer:** verified, both $84$.
+**Answer:** $\dfrac{5\pm\sqrt{33}}2$.
 
 </details>
 
-#### **S21**[JEE Adv][solved][block]Evaluate $\det\begin{pmatrix}2&0&0&0\\0&3&0&0\\0&0&4&0\\0&0&0&5\end{pmatrix}$ using block structure.
+## 6.3 Determinant bounds and the determinant lemma
 
-Splitting into two $2\times2$ blocks: $\det\begin{pmatrix}2&0\\0&3\end{pmatrix}\det\begin{pmatrix}4&0\\0&5\end{pmatrix}=6\cdot20=120$.
+> [!abstract] First Principles — Hadamard's inequality
+> The determinant is the volume of the parallelepiped spanned by the columns.
+> That volume is at most the product of the column lengths, with equality exactly
+> when the columns are mutually orthogonal:
+> $$\lvert\det A\rvert\le\prod_{j}\big\lVert A_{\cdot j}\big\rVert.$$
+> For a $2\times2$ matrix this is $|ad-bc|\le\sqrt{a^2+c^2}\sqrt{b^2+d^2}$ —
+> which is just Lagrange's identity followed by Cauchy–Schwarz.
+
+> [!abstract] First Principles — the matrix determinant lemma
+> For an invertible $A$ and vectors $u,v$,
+> $$\det(A+uv^{\rm T})=\det(A)\left(1+v^{\rm T}A^{-1}u\right).$$
+> The proof is the **Sylvester determinant theorem**: $\det(I+XY)=\det(I+YX)$
+> for any $X,Y$ with matching dimensions. Taking $X=u$, $Y=v^{\rm T}A^{-1}$ gives
+> $\det(I+uv^{\rm T}A^{-1})=\det(I+v^{\rm T}A^{-1}u)$, and multiplying by
+> $\det A$ gives the lemma. A rank-one update changes the determinant by a
+> *scalar* factor — a genuinely surprising fact.
+
+> [!example] Olympiad Extension — Hadamard as a volume bound
+> Hadamard's inequality is the statement that a parallelepiped's volume is at
+> most the product of its edge lengths, with equality exactly when the edges are
+> mutually orthogonal. In two dimensions it is Cauchy–Schwarz in disguise; in
+> higher dimensions it is the reason an orthogonal matrix has
+> $\lvert\det\rvert=1$. It is also the standard way to bound a determinant when the
+> entries are only known in magnitude — as in the proof of the
+> Siegel–Bruhat or in random-matrix theory.
+
+#### **S21**[Olympiad][solved][hadamard]Verify Hadamard's inequality for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$ and $B=\begin{pmatrix}2&-1&0\\-1&2&-1\\0&-1&2\end{pmatrix}$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: for a block-diagonal matrix the determinant is the product of the block determinants.** (Directly it is $2\cdot3\cdot4\cdot5=120$ ✓.)
+**Method: compare $|\det|$ with the product of the column norms.**
+For $A$: $|\det A|=|4-6|=2$; the column norms are $\sqrt{1+9}=\sqrt{10}$ and
+$\sqrt{4+16}=\sqrt{20}$, product $=\sqrt{200}\approx14.1421$. So $2\le14.1421$ ✓.
+For $B$: $\det B=4$ (expanding, or noting it is the $3\times3$ tridiagonal
+$2,-1,-1$ matrix); the column norms are $\sqrt5,\sqrt6,\sqrt5$, product
+$=\sqrt{150}\approx12.2474$. So $4\le12.2474$ ✓.
 
-**Answer:** $120$.
+**Answer:** both satisfy Hadamard's inequality.
 
 </details>
 
-#### **P6**[Olympiad][practice][geometry]Explain why $\lvert\det A\rvert$ is the area scale factor of the linear map $x\mapsto Ax$ in two dimensions.
+> [!example] Olympiad Extension — Sylvester's determinant theorem
+> The matrix determinant lemma is a corollary of
+> $\det(I+XY)=\det(I+YX)$, valid for *any* $X,Y$ with matching inner dimensions
+> — even when $XY$ and $YX$ have different sizes. That asymmetry is the whole
+> point: a large low-rank update to a determinant reduces to a small one. This is
+> the engine behind the Sherman–Morrison formula and behind fast updates of
+> least-squares problems.
+
+#### **S22**[Olympiad][solved][det lemma]Verify the matrix determinant lemma for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$, $u=\binom12$, $v=\binom34$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: the map sends the unit square to the parallelogram spanned by the columns of $A$, whose area is $\lvert a_{11}a_{22}-a_{12}a_{21}\rvert=\lvert\det A\rvert$.** Since the map is linear, every area is scaled by the same factor ✓.
+**Method: compute both sides.** $A+uv^{\rm T}=\begin{pmatrix}4&6\\9&12\end{pmatrix}$,
+whose determinant is $48-54=-6$. On the right, $\det A=-2$ and
+$A^{-1}=\begin{pmatrix}-2&1\\\frac32&-\frac12\end{pmatrix}$, so
+$v^{\rm T}A^{-1}u=3(-2\cdot1+1\cdot2)+4(\frac32\cdot1-\frac12\cdot2)=3\cdot0+4\cdot\frac12=2$,
+giving $-2(1+2)=-6$ ✓.
 
-**Answer:** $\lvert\det A\rvert$ — the area of the image of the unit square.
+**Answer:** verified; both sides equal $-6$.
 
 </details>
 
-#### **P7**[Olympiad][practice][det properties]Show that $\det(A+kI)$ for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$ equals $k^2+5k-2$.
+## 6.4 Trace and rank–nullity
 
-$\det\begin{pmatrix}1+k&2\\3&4+k\end{pmatrix}=(1+k)(4+k)-6=k^2+5k+4-6=k^2+5k-2$. Check at $k=3$: $9+15-2=22$ ✓.
+> [!abstract] First Principles — the trace is basis-free
+> $\operatorname{tr}(A+B)=\operatorname{tr}A+\operatorname{tr}B$ and
+> $\operatorname{tr}(AB)=\operatorname{tr}(BA)$ — the second is remarkable because
+> $AB\ne BA$ in general. It follows from
+> $\operatorname{tr}(AB)=\sum_i\sum_j A_{ij}B_{ji}=\sum_j\sum_i B_{ji}A_{ij}=\operatorname{tr}(BA)$,
+> a pure index swap.
+
+> [!abstract] First Principles — rank–nullity
+> Row-reduction preserves the solution set, so the **rank** (number of pivots)
+> is well defined. The solutions of $Ax=0$ form a subspace of dimension
+> $n-\operatorname{rank}A$: each non-pivot column is a free parameter.
+> $$\operatorname{rank}A+\operatorname{nullity}A=n.$$
+
+#### **P6**[Olympiad][practice][trace]Verify that $\operatorname{tr}(AB)=\operatorname{tr}(BA)$ for $A=\begin{pmatrix}1&2\\3&4\end{pmatrix}$ and $B=\begin{pmatrix}5&6\\7&8\end{pmatrix}$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: expand the determinant directly.** Note this is the characteristic polynomial evaluated at $-k$ ✓.
+**Method: compute both traces.**
+$AB=\begin{pmatrix}19&22\\43&50\end{pmatrix}$, so $\operatorname{tr}(AB)=19+50=69$.
+$BA=\begin{pmatrix}23&34\\31&46\end{pmatrix}$, so $\operatorname{tr}(BA)=23+46=69$ ✓ — equal
+even though $AB\ne BA$.
 
-**Answer:** $k^2+5k-2$.
+**Answer:** both are $69$.
+
+</details>
+
+#### **P7**[Olympiad][practice][rank nullity]Verify rank–nullity for $A=\begin{pmatrix}1&2&3&4\\2&4&6&8\\1&0&1&0\end{pmatrix}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: row-reduce and count pivots and free columns.** Row-reducing gives two
+non-zero rows, so $\operatorname{rank}A=2$. With $4$ columns there are $4-2=2$ free
+parameters, so $\operatorname{nullity}A=2$ and $2+2=4$ ✓.
+Check: the solution space of $Ax=0$ is spanned by $(-2,1,0,0)$ and
+$(-1,0,-1,1)$, two independent vectors ✓.
+
+**Answer:** rank $2$, nullity $2$, sum $4$ ✓.
+
+</details>
+
+## 6.5 Vandermonde and block determinants
+
+> [!abstract] First Principles — the Vandermonde determinant
+> $$\det\begin{pmatrix}1&x_1&x_1^2\\1&x_2&x_2^2\\1&x_3&x_3^2\end{pmatrix}=(x_2-x_1)(x_3-x_1)(x_3-x_2).$$
+> Subtract the first row from the others and factor $(x_i-x_1)$ out of row $i$;
+> what remains is a $2\times2$ difference of squares that factors again. The
+> general $n\times n$ form is $\prod_{i<j}(x_j-x_i)$.
+
+> [!tip] Key Idea — why Vandermonde matters
+> The determinant vanishes **iff** two of the $x_i$ coincide, which is exactly the
+> condition for the interpolation problem (find the quadratic through three
+> points) to become singular. Vandermonde is the reason polynomial interpolation
+> works.
+
+**Block determinants.** If $A$ and $B$ are square and the off-diagonal blocks
+vanish, then $\det\begin{pmatrix}A&0\\0&B\end{pmatrix}=\det A\det B$ — because the
+determinant is multiplicative and such a matrix is the product of a block-diagonal
+pair.
+
+#### **S23**[Olympiad][solved][vandermonde]Verify the Vandermonde formula for $x_1=2,x_2=5,x_3=9$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: evaluate the determinant and the product separately.**
+The determinant of $\begin{pmatrix}1&2&4\\1&5&25\\1&9&81\end{pmatrix}$ is $84$. The
+product $(5-2)(9-2)(9-5)=3\cdot7\cdot4=84$ ✓.
+
+**Answer:** $84$.
 
 </details>
 

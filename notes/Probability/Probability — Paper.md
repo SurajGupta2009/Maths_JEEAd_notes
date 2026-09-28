@@ -160,7 +160,7 @@ created: 2026-09-28
 
 ---
 
-## G · Olympiad frontier (Q30–Q34)
+## G · Olympiad frontier (Q30–Q38)
 
 #### **Q30**[Olympiad][expectation]A bag contains $3$ red and $5$ blue balls. Balls are drawn one at a time without replacement until a red ball appears. Find the expected number of draws.
 
@@ -181,3 +181,34 @@ created: 2026-09-28
 #### **Q34**[Olympiad][game]Two players alternately toss a fair coin; the first to throw a head wins. Find the probability that the first player to toss wins.
 
 **Answer:** $\dfrac23$
+
+#### **Q35**[Olympiad][ballot]In an election candidate $A$ receives $a$ votes and $B$ receives $b$ votes with $a>b$, counted in a uniformly random order. Prove Bertrand's ballot theorem: the probability that $A$ is strictly ahead after every vote is $\dfrac{a-b}{a+b}$. Verify it for $(a,b)=(3,2)$.
+
+**Answer:** $\dfrac{a-b}{a+b}$; for $(3,2)$ it is $\dfrac15$
+
+#### **Q36**[Olympiad][gambler ruin]A fair coin game starts at $3$ units and stops at $0$ or $10$ units. Find the probability of reaching $10$ before ruin.
+
+**Answer:** $\dfrac3{10}$
+
+#### **Q37**[Olympiad][runs]Find the expected number of tosses of a fair coin needed to see three heads in a row.
+
+**Answer:** $14$ tosses
+
+#### **Q38**[Olympiad][derangements]Five letters are placed at random into five addressed envelopes. Find the probability that no letter is in its correct envelope.
+
+**Answer:** $\dfrac{11}{30}\approx0.3667$
+
+---
+
+> [!note] Exam technique notes
+> - **State the sample space first**, and make sure its outcomes are equally likely
+>   before using $\frac{\lvert E\rvert}{\lvert S\rvert}$.
+> - **For "at least one", use the complement** — it is almost always smaller.
+> - **Never confuse $P(A\mid B)$ with $P(B\mid A)$.** Bayes' theorem is the only
+>   legitimate bridge between them, and it needs the priors.
+> - **Linearity of expectation needs no independence** — use it before attempting a
+>   full distribution.
+> - **For a process with a reset, write a recursion on the state** rather than
+>   enumerating outcomes.
+> - **A fair gamble is a martingale:** $E[\text{final}]=E[\text{start}]$ gives
+>   gambler's ruin instantly.

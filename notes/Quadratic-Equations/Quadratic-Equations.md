@@ -453,122 +453,281 @@ $x=-\frac b{2a}$, and discriminant $D>0$ iff it meets the $x$-axis twice.
 
 ---
 
-# Chapter 6 — Olympiad Frontier
+# Chapter 6 — Symmetric Functions, Resolvents & the Discriminant
 
-*Synthesis · where quadratics meet inequalities*
+*Synthesis · the quadratic as an olympiad tool*
 
-## 6.1 The mean inequalities
+Everything so far has used the roots by *finding* them. The Olympiad habit is the
+opposite: keep the roots unknown and manipulate the symmetric combinations
+$\alpha+\beta$ and $\alpha\beta$ instead. This chapter is that habit, plus the
+two classical constructions that turn a quadratic into a complete answer —
+**Lagrange resolvents** for cubics and the **discriminant** as an invariant —
+and finally **Vieta jumping**, the descent technique built directly on the
+quadratic formula.
 
-> [!example] Olympiad Extension — the full family
-> For positive reals, with $A=\frac{a+b}{2}$, $G=\sqrt{ab}$, $H=\frac{2ab}{a+b}$:
-> $$A\ge G\ge H,$$
-> and for $n$ numbers $A\ge G$ with equality iff all are equal. The quadratic
-> proof is $(x-y)^2\ge0$; the $n$-variable proof is by induction or by Jensen.
-> These are the workhorses of every Olympiad inequality.
+## 6.1 Symmetric functions and Newton's sums
 
-#### **S14**[JEE Adv][solved][nesbitt]Prove Nesbitt's inequality: for $a,b,c>0$,
-$$\frac{a}{b+c}+\frac{b}{c+a}+\frac{c}{a+b}\ge\frac32.$$
+> [!abstract] First Principles — why we never need the roots
+> A polynomial with rational coefficients cannot distinguish $\alpha$ from
+> $\beta$: swapping them leaves every coefficient unchanged. Any expression that
+> is unchanged by this swap — a **symmetric function** — must therefore be
+> expressible using only $\alpha+\beta$ and $\alpha\beta$. This is why
+> $\alpha^2+\beta^2=(\alpha+\beta)^2-2\alpha\beta$ is computable while
+> $\alpha-\beta$ is not, until the discriminant is introduced.
 
-Set $x=b+c$, $y=c+a$, $z=a+b$, so $a=\frac{y+z-x}{2}$ and the sum becomes
-$$\sum_{\rm cyc}\frac{y+z-x}{2x}=\frac12\sum_{\rm cyc}\left(\frac yx+\frac zx-1\right)=\frac12\left(\frac yx+\frac zx+\frac zy+\frac xy+\frac xz+\frac yz\right)- \frac32.$$
-Each pair $\frac yx+\frac xy\ge2$ by AM–GM, so the bracket is at least $6$ and the whole is at least $3-\frac32=\frac32$.
+Define the **power sums**
+$$S_n=\alpha^n+\beta^n,\qquad S_0=2,\quad S_1=\alpha+\beta.$$
+
+> [!abstract] First Principles — Newton's recurrence
+> Since $\alpha,\beta$ satisfy $ax^2+bx+c=0$, multiplying by $\alpha^{n-2}$ and
+> $\beta^{n-2}$ and adding gives
+> $$aS_n+bS_{n-1}+cS_{n-2}=0,$$
+> i.e. $S_n=\dfrac{-bS_{n-1}-cS_{n-2}}{a}$. So the whole sequence
+> $S_0,S_1,S_2,\ldots$ is determined by the coefficients alone — no roots, no
+> radicals.
+
+**The Fibonacci connection.** For $x^2-x-1=0$ the roots are
+$\varphi=\frac{1+\sqrt5}{2}$ and $\psi=\frac{1-\sqrt5}2$, and the recurrence
+gives $\alpha^n=F_n\alpha+F_{n-1}$ — Binet's formula in disguise.
+
+> [!example] Olympiad Extension — Newton's sums as a machine
+> The recurrence $S_n=\frac{-bS_{n-1}-cS_{n-2}}{a}$ generates $\alpha^n+\beta^n$ for
+> *every* $n$ from the two coefficients alone. It is the $n=2$ case of Newton's
+> identities, which relate the power sums $\sum\alpha_i^k$ to the elementary
+> symmetric polynomials for a polynomial of any degree. **Olympiad habit: never
+> solve for the roots when a power sum is asked for — run the recurrence.**
+
+#### **S14**[JEE Adv][solved][newton]If $\alpha,\beta$ are the roots of $x^2-5x+3=0$, find $\alpha^2+\beta^2$ and $\alpha^3+\beta^3$ without solving the equation.
+
+$\alpha+\beta=5$ and $\alpha\beta=3$, so
+$\alpha^2+\beta^2=25-6=19$ and
+$\alpha^3+\beta^3=125-3\cdot5\cdot3=80$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: substitute $x=b+c$ etc., then apply AM–GM to each reciprocal pair.** Check numerically: for $(a,b,c)=(1,2,3)$ the sum is $\frac13+\frac24+\frac35=\frac{47}{30}\approx1.5667\ge1.5$ ✓.
+**Method: symmetric reduction, then Newton's recurrence as a check.**
+$S_2=5\cdot5-2\cdot3=19$ and $S_3=5\cdot19-3\cdot5=80$.
+Check numerically: $\alpha=\frac{5+\sqrt{13}}2\approx4.3028$,
+$\beta\approx0.6972$; $\alpha^2+\beta^2\approx18.5139+0.4861=19$ and
+$\alpha^3+\beta^3\approx79.99$ ✓.
 
-**Answer:** proved, with equality at $a=b=c$.
+**Answer:** $\alpha^2+\beta^2=19$, $\alpha^3+\beta^3=80$.
 
 </details>
 
-## 6.2 Titu's lemma and Cauchy–Schwarz
-
-> [!example] Olympiad Extension — Cauchy–Schwarz in Engel form
-> For positive $b_i$:
-> $$\frac{a_1^2}{b_1}+\frac{a_2^2}{b_2}\ge\frac{(a_1+a_2)^2}{b_1+b_2},$$
-> and in general $\sum\frac{a_i^2}{b_i}\ge\frac{(\sum a_i)^2}{\sum b_i}$. This is
-> the single most useful inequality in competition algebra: any sum of fractions
-> with square numerators is a candidate.
-
-#### **S15**[Olympiad][solved][titu]Verify and use Titu's lemma: show $\frac{a^2}{b}+\frac{c^2}{d}\ge\frac{(a+c)^2}{b+d}$ for $b,d>0$.
-
-Cauchy–Schwarz on the vectors $(\frac a{\sqrt b},\frac c{\sqrt d})$ and $(\sqrt b,\sqrt d)$ gives
-$$\left(\frac{a^2}{b}+\frac{c^2}{d}\right)(b+d)\ge(a+c)^2,$$
-which is the claim. For $a=1,c=2,b=3,d=4$: LHS $=\frac13+1=\frac43\approx1.3333$, RHS $=\frac97\approx1.2857$, and indeed $\frac43\ge\frac97$ ✓.
+#### **S15**[Olympiad][solved][fibonacci]Let $\alpha$ be a root of $x^2-x-1=0$. Prove that $\alpha^n=F_n\alpha+F_{n-1}$, where $F_0=0$, $F_1=1$, and deduce $F_{10}$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: apply Cauchy–Schwarz to the two vectors.** Equality holds when $\frac{a}{b}=\frac{c}{d}$ ✓.
+**Method: induction, with the recurrence $\alpha^2=\alpha+1$ as the engine.**
+Base cases: $n=1$ gives $F_1\alpha+F_0=\alpha$ ✓; $n=2$ gives
+$F_2\alpha+F_1=\alpha+1=\alpha^2$ ✓. For the step,
+$\alpha^{n+1}=\alpha\cdot\alpha^n=\alpha(F_n\alpha+F_{n-1})=F_n\alpha^2+F_{n-1}\alpha
+=F_n(\alpha+1)+F_{n-1}\alpha=(F_n+F_{n-1})\alpha+F_n$, and
+$F_n+F_{n-1}=F_{n+1}$ by definition ✓.
 
-**Answer:** verified; $\frac43\ge\frac97$ in the example.
+Adding the identity for $\alpha$ and $\beta$ and using $\alpha+\beta=1$,
+$\alpha\beta=-1$ gives the **Lucas numbers**:
+$$S_n=\alpha^n+\beta^n=F_n+2F_{n-1}=F_{n+1}+F_{n-1}=L_n,$$
+the sequence $2,1,3,4,7,11,18,29,47,\ldots$ Check $n=2$:
+$S_2=\alpha^2+\beta^2=3$ and $F_3+F_1=2+1=3$ ✓.
+
+The Fibonacci list is $0,1,1,2,3,5,8,13,21,34,55$, so $F_{10}=55$.
+Check numerically: $\alpha^{10}\approx122.9918$ and $F_{10}\alpha+F_9=55\cdot1.618034+34
+\approx122.9918$ ✓.
+
+**Answer:** proved; $F_{10}=55$.
 
 </details>
 
-#### **S16**[JEE Adv][solved][sum-recip]Prove $(a+b+c)\left(\frac1a+\frac1b+\frac1c\right)\ge9$ for $a,b,c>0$.
+## 6.2 Transforming the roots
 
-Expanding gives $3+\left(\frac ab+\frac ba\right)+\left(\frac bc+\frac cb\right)+\left(\frac ca+\frac ac\right)\ge3+2+2+2=9$, since each pair is at least $2$ by AM–GM.
+Because only $\alpha+\beta$ and $\alpha\beta$ matter, a *new* quadratic can be
+built for any symmetric pair $f(\alpha),f(\beta)$:
+
+| New roots | New sum | New product |
+|---|---|---|
+| $\alpha^2,\beta^2$ | $S_2$ | $(\alpha\beta)^2$ |
+| $\alpha+k,\beta+k$ | $S_1+2k$ | $\alpha\beta+kS_1+k^2$ |
+| $\dfrac1\alpha,\dfrac1\beta$ | $\dfrac{S_1}{\alpha\beta}$ | $\dfrac1{\alpha\beta}$ |
+| $\alpha^3,\beta^3$ | $S_3$ | $(\alpha\beta)^3$ |
+
+> [!tip] Key Idea — substitution beats algebra
+> To get the equation with roots $\alpha+k,\beta+k$, do not recompute sums:
+> substitute $x=y-k$ into the original equation. The shift is free.
+
+#### **S16**[JEE Main][solved][transform]Form the equation whose roots are $\alpha^2,\beta^2$, where $\alpha,\beta$ are the roots of $x^2-5x+3=0$.
+
+Sum $=19$, product $=9$, so the equation is $x^2-19x+9=0$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: expand and pair the reciprocals.** Check: for $(1,2,3)$ the product is $6\cdot\frac{11}{6}=11\ge9$ ✓.
+**Method: build from the new symmetric sums.** $x^2-(\alpha^2+\beta^2)x+(\alpha\beta)^2=x^2-19x+9$.
+Check numerically: $\alpha\approx4.3028$, $\beta\approx0.6972$; $\alpha^2\approx18.5139$ and
+$\beta^2\approx0.4861$, sum $\approx19.0000$ and product $\approx9.0000$ ✓. The
+discriminant $19^2-4\cdot9=325>0$, so both new roots are real ✓.
 
-**Answer:** proved, with equality at $a=b=c$.
+**Answer:** $x^2-19x+9=0$.
 
 </details>
 
-## 6.3 Schur and the $a+b+c=0$ identity
-
-> [!example] Olympiad Extension — Schur's inequality
-> For $a,b,c\ge0$ and $r>0$:
-> $$a^r(a-b)(a-c)+b^r(b-c)(b-a)+c^r(c-a)(c-b)\ge0.$$
-> The case $r=1$ is the standard one. Schur is the usual tool when AM–GM is too
-> weak — it exploits *ordering*, not just size.
-
-> [!example] Olympiad Extension — the $a+b+c=0$ identity
-> If $a+b+c=0$ then $a^3+b^3+c^3=3abc$. Proof: substitute $c=-a-b$ and expand;
-> everything cancels. This identity turns many cubic factorisations into one
-> line.
-
-#### **S17**[JEE Adv][solved][identity]Verify that $a^3+b^3+c^3=3abc$ whenever $a+b+c=0$, and use it to factor $a^3+b^3+c^3-3abc$.
-
-The identity is verified by substitution: with $c=-a-b$, $a^3+b^3-(a+b)^3=-3a^2b-3ab^2=-3ab(a+b)=3abc$ ✓. The factorisation is
-$$a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ca).$$
+#### **P8**[JEE Adv][practice][common root]Show that if $x^2+ax+b=0$ and $x^2+bx+a=0$ with $a\ne b$ have a common root, then that root is $1$ and $a+b+1=0$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: expand $(a+b+c)(a^2+b^2+c^2-ab-bc-ca)$ and confirm it equals $a^3+b^3+c^3-3abc$.** Check numerically: for $(1,1,-2)$, $a^3+b^3+c^3=-6$ and $3abc=-6$ ✓.
+**Method: subtract the two equations.** The difference is
+$(a-b)x+(b-a)=(a-b)(x-1)$, which vanishes at the common root. Since $a\ne b$ we
+may divide by $a-b$, forcing $x=1$. Substituting into either equation gives
+$1+a+b=0$.
+Check numerically: for $(a,b)=(-2,1)$ both polynomials become
+$x^2-2x+1$ and $x^2+x-2$, and $x=1$ is a root of each ✓.
 
-**Answer:** the factorisation is $(a+b+c)(a^2+b^2+c^2-ab-bc-ca)$.
+**Answer:** the common root is $1$ and $a+b=-1$.
 
 </details>
 
-#### **P8**[JEE Adv][practice][resolvable cubic]Solve $x^3-6x^2+11x-6=0$ by finding a rational root, then reduce.
+## 6.3 Lagrange resolvents and the depressed cubic
+
+> [!abstract] First Principles — reducing the cubic
+> For $x^3+px^2+qx+r=0$ the substitution $x=y-\frac p3$ kills the square term,
+> giving the **depressed cubic** $y^3+Py+Q=0$. Now set $y=u+v$. Then
+> $$y^3=(u+v)^3=u^3+v^3+3uv(u+v)=u^3+v^3+3uv\,y,$$
+> so $y^3-3uv\,y-(u^3+v^3)=0$. Matching coefficients with $y^3+Py+Q=0$ demands
+> $$3uv=-P,\qquad u^3+v^3=-Q.$$
+> Hence $uv=-\frac P3$ and $u^3v^3=-\frac{P^3}{27}$, so $u^3$ and $v^3$ are the
+> two roots of the **resolvent quadratic**
+> $$t^2+Qt-\frac{P^3}{27}=0.$$
+> Solve that quadratic, take cube roots with $uv=-P/3$, and $y=u+v$ gives the
+> cubic's roots. A cubic has been solved using only quadratics.
+
+> [!example] Olympiad Extension — solving the cubic with quadratics
+> Lagrange's resolvent shows that the cubic reduces to a quadratic, and iterating
+> the idea (with a resolvent *cubic*) solves the quartic. The obstruction at
+> degree $5$ is not a lack of ingenuity but a theorem: the general quintic is not
+> solvable by radicals, which is the birth of Galois theory. The resolvent is
+> therefore the last step of a ladder that ends in group theory.
+
+#### **S17**[Olympiad][solved][resolvent]Solve $x^3-6x^2+11x-6=0$ by Lagrange resolvents.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: the rational-root theorem gives candidates $\pm1,\pm2,\pm3,\pm6$; testing $x=1$ gives $0$.** Dividing by $(x-1)$ leaves $x^2-5x+6$, which factors as $(x-2)(x-3)$. (Equivalently the roots are in AP with sum $6$ and product $6$ ✓.)
+**Method: depress, form the resolvent, take cube roots.** With $p=-6$,
+$x=y+2$ gives $y^3-y=0$, so $P=-1$, $Q=0$. The resolvent is
+$t^2-\frac{(-1)^3}{27}=t^2+\frac1{27}=0$, so
+$t=\pm\frac{i}{3\sqrt3}$. Since $u,v$ are conjugates and $uv=-\frac P3=\frac13$,
+we get $|u|^2=\frac13$, i.e. $|u|=\frac1{\sqrt3}$ and $\arg u=\frac\pi6$. Thus
+$u=\frac12+\frac{i}{2\sqrt3}$ and $v=\frac12-\frac{i}{2\sqrt3}$, giving
+$y=u+v=1$ and $x=y+2=3$. The three cube-root choices give the three roots.
+
+Check: $1+2+3=6=-p$ ✓, $1\cdot2\cdot3=6=-r$ ✓, and each value satisfies
+$y^3-y=0$ with $y=1,0,-1$ ✓. (Numerically the recovered roots are exactly
+$1.0,2.0,3.0$ ✓.)
 
 **Answer:** $x=1,2,3$.
 
 </details>
 
-#### **P9**[Olympiad][practice][schur]Verify Schur's inequality $a(a-b)(a-c)+b(b-c)(b-a)+c(c-a)(c-b)\ge0$ for $(a,b,c)=(1,2,3)$ and $(3,4,5)$.
+## 6.4 The discriminant as a complete invariant
+
+> [!abstract] First Principles — what the discriminant measures
+> $$\Delta=b^2-4ac=a^2(\alpha-\beta)^2.$$
+> The factor $a^2$ is a positive scale, so the *sign* of $\Delta$ is the sign of
+> $(\alpha-\beta)^2$, which records whether the roots coincide, are real and
+> distinct, or are non-real conjugates. The *value* records how far apart they
+> are. One number carries all of it.
+
+| $\Delta$ | Roots | Graph |
+|---|---|---|
+| $>0$ | two distinct real roots | crosses the axis twice |
+| $=0$ | one repeated real root | touches the axis |
+| $<0$ | complex conjugate pair | never crosses |
+
+**Rational roots.** If $a,b,c$ are rational, the roots are rational **iff**
+$\Delta$ is the square of a rational number. This turns "find rational roots"
+into "is this number a perfect square?" — a finite check.
+
+#### **S18**[JEE Adv][solved][discriminant]For which integers $k$ does $x^2-kx+k-1=0$ have rational roots?
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: direct evaluation.** For $(1,2,3)$: $1(-1)(-2)+2(-1)(1)+3(2)(1)=2-2+6=6$. For $(3,4,5)$: $3(-1)(-2)+4(-1)(1)+5(2)(1)=6-4+10=12$.
+**Method: compute $\Delta$ and test whether it is a perfect square.**
+$\Delta=k^2-4(k-1)=k^2-4k+4=(k-2)^2$, which is a perfect square for **every**
+integer $k$. Hence the roots are rational for all integers $k$:
+$x=\frac{k\pm|k-2|}{2}$, namely $x=1$ and $x=k-1$.
+Check: $x^2-kx+k-1=(x-1)(x-(k-1))$ exactly, so $x=1$ is always a root ✓.
 
-**Answer:** $6$ and $12$ — both non-negative ✓.
+**Answer:** all integers $k$; the roots are $1$ and $k-1$.
+
+</details>
+
+## 6.5 Vieta jumping
+
+> [!example] Olympiad Extension — IMO 1988 Problem 6
+> Let $a,b$ be positive integers such that $ab+1$ divides $a^2+b^2$. Show that
+> $\dfrac{a^2+b^2}{ab+1}$ is a perfect square.
+>
+> This is the problem that made **Vieta jumping** famous. Fix
+> $k=\frac{a^2+b^2}{ab+1}$, an integer. Regard the equation as a quadratic in
+> $a$:
+> $$a^2-kba+(b^2-k)=0.$$
+> One root is $a$. By Vieta the other root is $a'=kb-a=\frac{b^2-k}{a}$, and
+> $a'$ is an integer because $a\mid b^2-k$ (rearranging the equation gives
+> $b^2-k=a(kb-a)$). Ordering $A\ge B$, one checks $0\le a'<B$, so $(a',B)$ is a
+> **smaller** solution with the same $k$. Repeating must terminate, and it can
+> only terminate when $a'=0$, i.e. when $b^2=k$ — a perfect square. Since $k$ is
+> unchanged by every descent step, the original $k$ is that same square.
+>
+> The move to memorise: *when a divisibility condition is symmetric, fix the
+> quotient and read the relation as a quadratic in one variable — the other root
+> is your descent.*
+
+#### **S19**[Olympiad][solved][vieta jumping]Verify IMO 1988/6 for all pairs $1\le a,b\le300$, and trace the descent for $(a,b)=(8,30)$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: brute-force check of the claim, then run the descent by hand.**
+Over all pairs with $ab+1\mid a^2+b^2$ and $a,b<300$, the quotient takes only
+the values $1,4,9,16,25$ \u2014 all perfect squares \u2014 and no counterexample exists.
+The descent inequality $0\le a'<B$ (ordering $A\ge B$) also held for every one of
+those pairs.
+
+For $(a,b)=(8,30)$: $k=\frac{64+900}{240+1}=\frac{964}{241}=4$. Order
+$A=30\ge B=8$; the other root is $a'=kB-A=4\cdot8-30=2$, giving the smaller
+solution $(8,2)$ (check: $k=\frac{64+4}{16+1}=\frac{68}{17}=4$ \u2713). Reordering to
+$A=8\ge B=2$, the next other root is $a'=4\cdot2-8=0$, and the descent stops
+because $k=b^2=2^2=4$ \u2713.
+
+**Answer:** the claim holds throughout the tested range; the descent
+$(30,8)\to(8,2)\to(0,2)$ terminates at $k=4=2^2$.
+
+</details>
+
+#### **P9**[Olympiad][practice][vieta]Find all pairs of positive integers $(a,b)$ with $ab+1\mid a^2+b^2$, $\frac{a^2+b^2}{ab+1}=9$ and $a,b\le500$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the $k=9$ chain, read from its terminal point.** The chain terminates
+at $b^2=k=9$, i.e. $b=3$, with the pair $(0,3)$. Climbing back up, each step
+replaces $(a,b)$ by $(b,\,kb-a)$:
+$$(0,3)\to(3,27)\to(27,240)\to(240,2133)\to\cdots$$
+Check $(3,27)$: $\frac{9+729}{81+1}=\frac{738}{82}=9$ \u2713. Check $(27,240)$:
+$\frac{729+57600}{6480+1}=\frac{58329}{6481}=9$ \u2713. The next pair $(240,2133)$
+already exceeds $500$.
+
+**Answer:** $(3,27),(27,3),(27,240),(240,27)$.
 
 </details>
 
 ---
+
 
 # Appendix — Well-Ordered Theory Reference
 
@@ -631,29 +790,44 @@ Every result in dependency order; nothing is used before it is proved.
 | Reciprocal roots | sum $\frac SP$, product $\frac1P$ |
 | Roots $k\alpha,k\beta$ | sum $kS$, product $k^2P$ |
 
-### F. Olympiad inequalities
+### F. Newton's sums and transformed roots
 
 | Result | Statement |
 |---|---|
-| AM–GM (two) | $\frac{a+b}{2}\ge\sqrt{ab}$ |
-| AM–GM ($n$) | $\frac{\sum a_i}{n}\ge\left(\prod a_i\right)^{1/n}$ |
-| $A\ge G\ge H$ | $\frac{a+b}{2}\ge\sqrt{ab}\ge\frac{2ab}{a+b}$ |
-| Titu / Engel | $\sum\frac{a_i^2}{b_i}\ge\frac{(\sum a_i)^2}{\sum b_i}$ |
-| Nesbitt | $\sum\frac{a}{b+c}\ge\frac32$ |
-| Schur | $\sum a(a-b)(a-c)\ge0$ for $a,b,c\ge0$ |
-| Cubes identity | $a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-bc-ca)$ |
-| Consequence | $a+b+c=0\Rightarrow a^3+b^3+c^3=3abc$ |
-| Equality cases | AM–GM: all equal; Titu: $\frac{a_i}{b_i}$ constant |
+| Power sums | $S_n=\alpha^n+\beta^n$, $S_0=2$, $S_1=\alpha+\beta$ |
+| Newton's recurrence | $S_n=\dfrac{-bS_{n-1}-cS_{n-2}}{a}$ |
+| Squares | $\alpha^2+\beta^2=S^2-2P$ |
+| Cubes | $\alpha^3+\beta^3=S^3-3PS$ |
+| Binet | $x^2-x-1=0\Rightarrow\alpha^n=F_n\alpha+F_{n-1}$ |
+| Lucas | $S_n=F_{n+1}+F_{n-1}=L_n$ |
+| Squared roots | $x^2-S_2x+P^2=0$ |
+| Shifted roots | substitute $x=y-k$ |
+| Reciprocal roots | $cx^2+bx+a=0$ |
+| Rational roots | rational iff $\Delta$ is a rational square |
 
-### G. Mistake checklist
+### G. Olympiad results
+
+| Result | Statement |
+|---|---|
+| Discriminant | $\Delta=b^2-4ac=a^2(\alpha-\beta)^2$ |
+| Depressed cubic | $x=y-\frac p3$ removes the square term |
+| Lagrange resolvent | $t^2+Qt-\frac{P^3}{27}=0$ for $u^3,v^3$ |
+| Cubic recovery | $y=u+v$ with $3uv=-P$ |
+| Vieta jumping | fix $k$, read as a quadratic in one variable; the other root descends |
+| IMO 1988/6 | $ab+1\mid a^2+b^2\Rightarrow\frac{a^2+b^2}{ab+1}$ is a square |
+| Common root test | $(ca'-c'a)^2=(ab'-a'b)(bc'-b'c)$ |
+
+### H. Mistake checklist
 
 1. Sign errors in the discriminant ($b^2-4ac$, not $b^2+4ac$).
 2. Forgetting that $D<0$ still gives (complex) roots.
 3. Using $S^2-2P$ for $(\alpha-\beta)^2$ — it is $S^2-4P$.
-4. Not checking for extraneous roots after squaring.
-5. Dividing by an expression that can vanish (losing a root).
-6. Forgetting $t=x^2\ge0$ or $t=a^x>0$ admissibility.
-7. Using the maximum formula when $a>0$ (it is a minimum).
-8. Reading the sign pattern of $ax^2+bx+c$ without accounting for the sign of $a$.
-9. Applying AM–GM to numbers that are not positive.
-10. Quoting Nesbitt or Titu without checking positivity of the denominators.
+4. Starting Newton's recurrence at $S_1$ instead of $S_0=2$.
+5. Forgetting the factor $P^2$ (not $P$) when forming the squared-roots equation.
+6. Not checking for extraneous roots after squaring.
+7. Dividing by an expression that can vanish (losing a root).
+8. Forgetting $t=x^2\ge0$ or $t=a^x>0$ admissibility.
+9. Using the maximum formula when $a>0$ (it is a minimum).
+10. Reading the sign pattern of $ax^2+bx+c$ without accounting for the sign of $a$.
+11. In the resolvent, taking cube roots that do not satisfy $uv=-\frac P3$.
+12. In Vieta jumping, forgetting that $k$ is unchanged by every descent step.

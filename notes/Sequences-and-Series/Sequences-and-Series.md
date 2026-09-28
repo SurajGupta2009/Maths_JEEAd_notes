@@ -389,86 +389,260 @@ The middle terms cancel in pairs, leaving only the first two and the last two.
 
 ---
 
-# Chapter 6 — Olympiad Frontier
+# Chapter 6 — Olympiad Frontier: Telescoping, Generating Functions, Products
 
-*Synthesis · recurrences, generating functions, and inequalities*
+*Synthesis · the techniques that evaluate anything*
+
+Chapter 5 gave the two basic summation engines. The Olympiad versions are more
+powerful and less obvious: **partial-fraction decompositions with more than two
+factors**, **generating functions** used as actual algebraic objects rather than
+as definitions, **infinite products** that collapse by the same cancellation as
+sums, and **asymptotics** that replace an exact answer when none exists.
 
 ## 6.1 Recurrence relations
 
-> [!example] Olympiad Extension — solving $a_n=pa_{n-1}+q$
-> A linear recurrence with constant coefficients is solved by finding a fixed
-> point $L$ with $L=pL+q$, i.e. $L=\frac q{1-p}$, and then writing
-> $a_n-L=p(a_{n-1}-L)$. The differences form a GP, so
-> $$a_n=L+(a_1-L)p^{\,n-1}.$$
-> For example $a_n=2a_{n-1}+1$ with $a_1=1$: $L=\frac1{1-2}=-1$, so
-> $a_n+1=2(a_{n-1}+1)$ and $a_n=2^n-1$.
+> [!abstract] First Principles — solving $a_n=pa_{n-1}+q$
+> Write $a_n-L=p(a_{n-1}-L)$. Expanding, $a_n=pa_{n-1}-(p-1)L$, so matching the
+> constant term needs $(p-1)L=-q$, i.e. $L=\frac q{1-p}$. Hence
+> $a_n-L=p^{n-1}(a_1-L)$ — a geometric sequence in disguise.
+
+> [!abstract] First Principles — the characteristic equation
+> For a *linear* recurrence $a_n=pa_{n-1}+qa_{n-2}$, try $a_n=r^n$. Then
+> $r^n=pr^{n-1}+qr^{n-2}$, i.e. $r^2-pr-q=0$. The **characteristic equation**
+> has roots $r_1,r_2$, and the general solution is
+> $a_n=Ar_1^n+Br_2^n$ (or $(A+Bn)r^n$ if $r_1=r_2$). Constants come from the
+> initial values.
 
 #### **S12**[JEE Adv][solved][recurrence]Solve $a_n=2a_{n-1}+1$ with $a_1=1$.
 
-The fixed point is $L=\frac1{1-2}=-1$. Then $a_n+1=2(a_{n-1}+1)$, so $a_n+1=2^{n-1}(a_1+1)=2^n$, giving $a_n=2^n-1$.
+$L=\frac1{1-2}=-1$, so $a_n+1=2^{n-1}(a_1+1)=2^n$, giving $a_n=2^n-1$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: find the fixed point, then the differences form a GP.** Check: $a_1=1$, $a_2=3$, $a_3=7$, $a_4=15$, $a_5=31$, and $2^5-1=31$ ✓.
+**Method: shift by the fixed point.** Check: $a_1=1$, $a_2=3$, $a_3=7$, $a_4=15$
+— each is $2^n-1$ ✓, and substituting back, $2a_{n-1}+1=2(2^{n-1}-1)+1=2^n-1=a_n$ ✓.
 
 **Answer:** $a_n=2^n-1$.
 
 </details>
 
-## 6.2 Inequalities about sequences
+## 6.2 Telescoping with several factors
 
-> [!example] Olympiad Extension — AM–GM on sequences
-> For positive terms, $\frac{a_1+\cdots+a_n}{n}\ge\left(a_1\cdots a_n\right)^{1/n}$.
-> Applied to series this gives bounds such as
-> $\left(\sum k\right)^2\ge n^2\left(\prod k\right)^{2/n}$, and it is the engine
-> behind the standard Olympiad bounds on $\sum\frac1k$ and friends.
+The basic split $\frac1{k(k+m)}$ handles two factors. Three or more factors
+need a *difference of differences*, and the general tool is
 
-#### **S13**[JEE Adv][solved][amgm]Verify AM–GM for the first four positive integers.
+$$\frac{1}{k(k+1)\cdots(k+m)}=\frac1m\left[\frac{1}{k(k+1)\cdots(k+m-1)}-\frac{1}{(k+1)\cdots(k+m)}\right].$$
 
-AM $=\frac{1+2+3+4}{4}=2.5$; GM $=(1\cdot2\cdot3\cdot4)^{1/4}=24^{1/4}\approx2.2134$. Indeed $2.5\ge2.2134$ ✓.
+> [!tip] Key Idea — find $f$ such that the term is $f(k)-f(k+1)$
+> The art is guessing $f$. For a product of consecutive integers the guess is
+> forced: the denominator *is* the product, so $f(k)$ must be its reciprocal
+> divided by the shift. Try $f(k)=\frac{1}{k(k+1)\cdots(k+m-1)}$ and check.
+
+> [!example] Olympiad Extension — the art of the decomposition
+> A telescoping sum is only as good as the $f$ you find. For a product of
+> consecutive integers the choice is forced; for anything else the trick is to
+> **write the general term as a difference of the two neighbouring partial
+> products**. The same instinct handles $\sum k\,k!$ (as $(k+1)!-k!$) and
+> $\sum\frac{k}{(k+1)!}$ (as $\frac1{k!}-\frac1{(k+1)!}$). When no such $f$ is
+> visible, the sum probably does not telescope — and a generating function is the
+> next thing to try.
+
+#### **S13**[JEE Adv][solved][triple telescoping]Evaluate $\displaystyle\sum_{k=1}^{n}\frac1{k(k+1)(k+2)}$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: compare the arithmetic and geometric means.** Equality would require all four numbers equal, which they are not, so the inequality is strict ✓.
+**Method: split as a difference of two-factor terms.**
+$\frac1{k(k+1)(k+2)}=\frac12\Big[\frac1{k(k+1)}-\frac1{(k+1)(k+2)}\Big]$, so
+the sum telescopes to $\frac12\Big[\frac12-\frac1{(n+1)(n+2)}\Big]
+=\frac{n(n+3)}{4(n+1)(n+2)}$.
+Check for $n=5$: $\frac16+\frac1{24}+\frac1{60}+\frac1{120}+\frac1{210}=\frac{200}{840}=\frac5{21}$,
+and the formula gives $\frac{5\cdot8}{4\cdot6\cdot7}=\frac{40}{168}=\frac5{21}$ ✓.
 
-**Answer:** verified, $2.5\ge2.2134$.
+**Answer:** $\dfrac{n(n+3)}{4(n+1)(n+2)}$.
 
 </details>
 
-#### **S14**[Olympiad][solved][shifted sum]Evaluate $\displaystyle\sum_{k=1}^{n}k\,2^{k-1}$ in closed form.
-
-By shift-and-subtract with $r=2$: writing $S=\sum_{k=1}^n k2^{k-1}$ and $2S=\sum_{k=1}^n k2^k$, subtraction gives $S=1+(n-1)2^n$.
+#### **S14**[Olympiad][solved][factorial sum]Evaluate $\displaystyle\sum_{k=1}^{n}k\,k!$ in closed form.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: shift and subtract.** Check for $n=5$: $1+4+12+32+80=129$ and $1+4\cdot32=129$ ✓.
+**Method: rewrite each term as a telescoping difference.** Since
+$k\,k!=(k+1-1)k!=(k+1)!-k!$, the sum is
+$$\sum_{k=1}^n\big[(k+1)!-k!\big]=(n+1)!-1.$$
+Check for $n=5$: $1+4+18+96+600=719$ and $6!-1=720-1=719$ ✓.
 
-**Answer:** $1+(n-1)2^n$.
+**Answer:** $(n+1)!-1$.
 
 </details>
 
-#### **P6**[JEE Adv][practice][series sum]Evaluate $\displaystyle\sum_{k=1}^{\infty}\frac{2k-1}{2^k}$.
+#### **S15**[Olympiad][solved][arctan]Evaluate $\displaystyle\sum_{k=1}^{n}\arctan\frac1{k^2+k+1}$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: split into $2\sum\frac{k}{2^k}-\sum\frac1{2^k}$.** The first is $2\cdot2=4$ and the second is $1$, so the answer is $4-1=3$. Check by partial sums: after $20$ terms the value is $2.99992$, converging to $3$ ✓.
+**Method: telescoping via the tangent difference formula.** Since
+$\tan(\alpha-\beta)=\frac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}$, taking
+$\tan\alpha=\frac1k$, $\tan\beta=\frac1{k+1}$ gives
+$\tan(\alpha-\beta)=\frac{1/(k(k+1))}{1+1/(k(k+1))}=\frac1{k^2+k+1}$. Hence
+$$\arctan\frac1{k^2+k+1}=\arctan\frac1k-\arctan\frac1{k+1},$$
+and the sum telescopes to $\arctan 1-\arctan\frac1{n+1}=\frac\pi4-\arctan\frac1{n+1}$.
+Check numerically for $n=5$: the sum equals $\frac\pi4-\arctan\frac16$ to $10^{-9}$ ✓.
 
-**Answer:** $3$.
+**Answer:** $\dfrac\pi4-\arctan\dfrac1{n+1}$.
 
 </details>
 
-#### **P7**[Olympiad][practice][generating]Explain how a generating function encodes a sequence, and find the generating function of $1,1,1,\ldots$.
+## 6.3 Generating functions
+
+> [!abstract] First Principles — a generating function is a clothesline
+> Hang the sequence $a_0,a_1,a_2,\ldots$ on the line $G(x)=\sum_{n\ge0}a_nx^n$.
+> Operations on the *function* correspond to operations on the *sequence*:
+
+| Operation on $G$ | Effect on the sequence |
+|---|---|
+| multiply by $\frac1{1-x}$ | replace $a_n$ by its partial sums |
+| multiply by $x$ | shift right by one |
+| $G(x)-a_0-x(G(x)-a_0)$ | encodes a recurrence |
+| $G(-x)$ | alternate the signs |
+| $G'(x)$ | multiply $a_n$ by $n$ |
+
+> [!example] Olympiad Extension — the Fibonacci generating function
+> Let $F(x)=\sum_{n\ge0}F_nx^n$ with $F_0=0,F_1=1$ and $F_n=F_{n-1}+F_{n-2}$. Then
+> $$F(x)=xF(x)+x^2F(x)+x,$$
+> because the left side's coefficient of $x^n$ for $n\ge2$ is $F_n$ while the
+> right's is $F_{n-1}+F_{n-2}$, equal by the recurrence. Solving,
+> $$F(x)=\frac{x}{1-x-x^2}.$$
+> Partial fractions over $\frac{1\pm\sqrt5}{2}$ then give **Binet's formula**
+> $F_n=\frac{\varphi^n-\psi^n}{\sqrt5}$ — a closed form obtained by pure
+> algebra, no induction. This is the template: *turn the recurrence into an
+> equation for $F(x)$, solve it, read off the coefficients.*
+
+#### **S16**[Olympiad][solved][generating]Use a generating function to derive Binet's formula for the Fibonacci numbers.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: the generating function is $\sum a_nx^n$; operations on the function correspond to operations on the sequence.** For $a_n=1$ the series is $\sum_{n\ge0}x^n=\frac1{1-x}$, which is why multiplying by $\frac1{1-x}$ produces a running total.
+**Method: solve for $F(x)$, then partial fractions.** From above
+$F(x)=\frac{x}{1-x-x^2}$. Factor $1-x-x^2=(1-\varphi x)(1-\psi x)$ where
+$\varphi=\frac{1+\sqrt5}{2}$, $\psi=\frac{1-\sqrt5}{2}$ and $\varphi+\psi=1$,
+$\varphi\psi=-1$. Writing
+$\frac{x}{(1-\varphi x)(1-\psi x)}=\frac{A}{1-\varphi x}+\frac{B}{1-\psi x}$ and
+expanding each as a geometric series gives $F_n=A\varphi^n+B\psi^n$ with
+$A=\frac1{\sqrt5}$, $B=-\frac1{\sqrt5}$.
+Check: $F_n=\frac{\varphi^n-\psi^n}{\sqrt5}$ gives
+$F_1=\frac{1.618034-(-0.618034)}{2.236068}=1$ ✓, $F_7=\frac{29.034-(-0.0344)}{2.236068}=13$ ✓,
+and $F_{10}=55$ ✓.
 
-**Answer:** $G(x)=\dfrac1{1-x}$.
+**Answer:** $F_n=\dfrac{\varphi^n-\psi^n}{\sqrt5}$.
+
+</details>
+
+## 6.4 Infinite products
+
+> [!abstract] First Principles — products telescope too
+> An infinite product $\prod a_k$ converges by the same cancellation as a sum,
+> because $\log\prod a_k=\sum\log a_k$ and the logarithm turns products into
+> sums. The identity that does the work is almost always a difference of
+> squares: $1-\frac1{k^2}=\frac{k-1}{k}\cdot\frac{k+1}{k}$.
+
+> [!example] Olympiad Extension — infinite products and Wallis
+> Products telescope by the same cancellation as sums, because
+> $\log\prod a_k=\sum\log a_k$. The identity that unlocks most of them is the
+> difference of squares $1-\frac1{k^2}=\frac{k-1}{k}\cdot\frac{k+1}{k}$, which
+> splits the product into two telescopes. Push the same idea to
+> $\prod\frac{4k^2}{4k^2-1}$ and the limit is $\frac\pi2$ — **Wallis's product**,
+> one of the classical routes to $\pi$.
+
+#### **S17**[Olympiad][solved][product]Evaluate $\displaystyle\prod_{k=2}^{n}\left(1-\frac1{k^2}\right)$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: difference of squares, then cancel.** $1-\frac1{k^2}=\frac{k-1}{k}\cdot\frac{k+1}{k}$,
+so the product is
+$$\prod_{k=2}^n\frac{k-1}{k}\cdot\prod_{k=2}^n\frac{k+1}{k}=\frac1n\cdot\frac{n+1}{2}=\frac{n+1}{2n}.$$
+Check for $n=4$: $\frac34\cdot\frac89\cdot\frac{15}{16}=\frac{360}{576}=\frac58$, and
+$\frac{4+1}{2\cdot4}=\frac58$ ✓. As $n\to\infty$ the product tends to $\frac12$ ✓.
+
+**Answer:** $\dfrac{n+1}{2n}$, tending to $\dfrac12$.
+
+</details>
+
+> [!example] Olympiad Extension — Stolz–Cesàro as a discrete l'Hôpital
+> Stolz–Cesàro is the exact analogue of l'Hôpital's rule for sequences, and it is
+> the right tool whenever a limit is a ratio of two sequences both tending to
+> infinity. It needs **no differentiability** — only that the denominator is
+> strictly increasing and unbounded. Its most famous application is
+> $\lim\frac{H_n}{\ln n}=1$, where the error term is exactly
+> $\frac{\gamma}{\ln n}$ with $\gamma$ Euler's constant.
+
+#### **S18**[Olympiad][solved][stolz]Use Stolz–Cesàro to evaluate $\displaystyle\lim_{n\to\infty}\frac{1+\frac12+\cdots+\frac1n}{\ln n}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: Stolz–Cesàro for $\frac\infty\infty$.** With $a_n=H_n$ and $b_n=\ln n$,
+$$\lim\frac{a_n}{b_n}=\lim\frac{a_{n+1}-a_n}{b_{n+1}-b_n}=\lim\frac{\frac1{n+1}}{\ln(1+\frac1n)}.$$
+Since $\ln(1+\frac1n)\sim\frac1n$, the ratio tends to $1$.
+Check numerically: $H_n/\ln n$ at $n=10^2,10^3,10^4,10^5$ gives
+$1.1264,1.0836,1.0627,1.0501$ — decreasing towards $1$, though slowly (the
+convergence is $O(1/\ln n)$) ✓.
+
+**Answer:** $1$.
+
+</details>
+
+## 6.5 Asymptotics
+
+Sometimes no closed form exists and the honest answer is the growth rate.
+
+#### **S19**[Olympiad][solved][asymptotic]Let $a_1=1$ and $a_{n+1}=a_n+\frac1{a_n}$. Show that $a_n\sim\sqrt{2n}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: square and telescope.** $a_{n+1}^2=a_n^2+2+\frac1{a_n^2}$, so
+$a_n^2=2(n-1)+\sum_{k=1}^{n-1}\frac1{a_k^2}$. Since $a_k\to\infty$, the
+remaining sum converges to a finite constant, so $a_n^2=2n+O(1)$ and
+$a_n\sim\sqrt{2n}$.
+Check numerically: $a_1=1$, $a_2=2$, $a_3=2.5$, $a_5=3.2448$, $a_{10}=4.5699$,
+against $\sqrt{2n}=1.4142,2,2.4495,3.1623,4.4721$ — the ratio tends to $1$ ✓.
+
+**Answer:** $a_n\sim\sqrt{2n}$.
+
+</details>
+
+#### **P7**[Olympiad][practice][telescoping]Evaluate $\displaystyle\sum_{k=1}^{n}\frac{k}{(k+1)!}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: telescope.** $\frac{k}{(k+1)!}=\frac{(k+1)-1}{(k+1)!}=\frac1{k!}-\frac1{(k+1)!}$,
+so the sum is $1-\frac1{(n+1)!}$.
+Check for $n=5$: $\frac12+\frac2{6}+\frac3{24}+\frac4{120}+\frac5{720}=\frac{719}{720}$,
+and $1-\frac1{720}=\frac{719}{720}$ ✓.
+
+**Answer:** $1-\dfrac1{(n+1)!}$.
+
+</details>
+
+#### **P8**[Olympiad][practice][product]Evaluate $\displaystyle\prod_{k=1}^{n}\frac{4k^2}{4k^2-1}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: Wallis-type product.** $\frac{4k^2}{4k^2-1}=\frac{2k}{2k-1}\cdot\frac{2k}{2k+1}$,
+so the product is
+$$\prod_{k=1}^n\frac{2k}{2k-1}\cdot\prod_{k=1}^n\frac{2k}{2k+1}.$$
+The first product is $\frac{2\cdot4\cdots2n}{1\cdot3\cdots(2n-1)}$ and the second
+is $\frac{2\cdot4\cdots2n}{3\cdot5\cdots(2n+1)}$, so together they give
+$\frac{(2^n n!)^2\cdot(2n+1)}{(2n+1)(2n)!\,/\,\binom{2n}{n}}$ — computing
+directly for $n=3$: $\frac{4}{3}\cdot\frac{16}{15}\cdot\frac{36}{35}=\frac{2304}{1575}=\frac{256}{175}\approx1.4629$ ✓ (the limit is $\frac\pi2\approx1.5708$).
+
+**Answer:** $\displaystyle\prod_{k=1}^{n}\frac{4k^2}{4k^2-1}=\frac{2^{4n}(n!)^4}{((2n)!)^2(2n+1)}$; the limit is $\dfrac\pi2$.
 
 </details>
 
@@ -532,18 +706,36 @@ Every result in dependency order; nothing is used before it is proved.
 | $\sum\frac1{k(k+1)}$ | $\frac n{n+1}$ |
 | $\sum\frac1{k(k+2)}$ | $\frac12\left(1+\frac12-\frac1{n+1}-\frac1{n+2}\right)$ |
 
-### F. Olympiad results
+### F. Recurrences and characteristic equations
 
 | Result | Statement |
 |---|---|
 | Recurrence $a_n=pa_{n-1}+q$ | $a_n=L+(a_1-L)p^{n-1}$, $L=\frac q{1-p}$ |
 | $a_n=2a_{n-1}+1$, $a_1=1$ | $a_n=2^n-1$ |
+| Characteristic equation | $a_n=pa_{n-1}+qa_{n-2}\Rightarrow r^2-pr-q=0$ |
+| Distinct roots | $a_n=Ar_1^n+Br_2^n$ |
+| Repeated root | $a_n=(A+Bn)r^n$ |
+| $a_{n+1}=a_n+\frac1{a_n}$ | $a_n\sim\sqrt{2n}$ |
+
+### G. Olympiad summation and products
+
+| Result | Statement |
+|---|---|
 | $\sum k2^{k-1}$ | $1+(n-1)2^n$ |
 | $\sum\frac{2k-1}{2^k}$ | $3$ |
-| Generating function | $G(x)=\sum a_nx^n$; $\frac1{1-x}$ encodes $1,1,1,\ldots$ |
+| $\sum k\,k!$ | $(n+1)!-1$ |
+| $\sum\frac{k}{(k+1)!}$ | $1-\frac1{(n+1)!}$ |
+| $\sum\frac1{k(k+1)(k+2)}$ | $\frac{n(n+3)}{4(n+1)(n+2)}$ |
+| $\sum\arctan\frac1{k^2+k+1}$ | $\frac\pi4-\arctan\frac1{n+1}$ |
+| $\prod_{k=2}^n(1-\frac1{k^2})$ | $\frac{n+1}{2n}\to\frac12$ |
+| $\prod_{k=1}^n\frac{4k^2}{4k^2-1}$ (Wallis) | $\frac{2^{4n}(n!)^4}{(2n+1)((2n)!)^2}\to\frac\pi2$ |
+| Generating function | $G(x)=\sum a_nx^n$; $\times\frac1{1-x}$ = partial sums |
+| Fibonacci GF | $F(x)=\frac{x}{1-x-x^2}$, giving Binet $F_n=\frac{\varphi^n-\psi^n}{\sqrt5}$ |
+| Stolz–Cesàro | $\lim\frac{a_n}{b_n}=\lim\frac{a_{n+1}-a_n}{b_{n+1}-b_n}$ if $b_n\uparrow\infty$ |
+| $H_n/\ln n$ | $\to1$, with error $\sim\gamma/\ln n$ |
 | AM–GM ($n$ terms) | $\frac{\sum a_i}{n}\ge\left(\prod a_i\right)^{1/n}$ |
 
-### G. Mistake checklist
+### H. Mistake checklist
 
 1. Using $d=\frac{b-a}{k}$ instead of $\frac{b-a}{k+1}$ when inserting $k$ means.
 2. Applying $S_\infty=\frac a{1-r}$ when $\lvert r\rvert\ge1$.

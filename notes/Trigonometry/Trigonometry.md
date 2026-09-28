@@ -458,92 +458,224 @@ $2\sin x\cos x=\cos x$, so $\cos x(2\sin x-1)=0$. Hence $\cos x=0$ or $\sin x=\f
 
 ---
 
-# Chapter 6 — Properties of Triangles & the Olympiad Frontier
+# Chapter 6 — The Olympiad Identities
 
-*Synthesis · from angles to side lengths and back*
+*Synthesis · where angles stop being independent*
 
-## 6.1 The sine and cosine rules
+Everything up to now treats $A$ and $B$ as independent. The Olympiad content
+begins the moment they are **linked** — most often by $A+B+C=180^\circ$ in a
+triangle, or by $n\theta$ being a multiple of $2\pi$. Those constraints collapse
+whole families of expressions into exact values, and the two tools that do the
+collapsing are the **$A+B+C=\pi$ identities** and the **roots-of-unity**
+argument behind products of sines.
 
-> [!abstract] First Principles — the two rules
-> **Sine rule:** $\dfrac a{\sin A}=\dfrac b{\sin B}=\dfrac c{\sin C}=2R$, where $R$
-> is the circumradius.
-> **Cosine rule:** $a^2=b^2+c^2-2bc\cos A$.
-> Both drop out of dropping a perpendicular and using the definitions of sine
-> and cosine in the resulting right-angled triangles.
+## 6.1 The $A+B+C=\pi$ family
 
-The area is $\Delta=\frac12bc\sin A$, and $\Delta=rs$ where $r$ is the inradius
-and $s=\frac{a+b+c}{2}$ the semiperimeter.
+> [!abstract] First Principles — one constraint, many identities
+> If $A+B+C=\pi$ then $C=\pi-(A+B)$, and every function of $C$ can be rewritten
+> using $A+B$: $\sin C=\sin(A+B)$, $\cos C=-\cos(A+B)$,
+> $\tan C=-\tan(A+B)$. Substituting the addition formulae and simplifying gives
+> the whole family at once.
 
-#### **S15**[JEE Main][solved][sine rule]For the triangle $a=3$, $b=4$, $C=90^\circ$, find $c$, $R$ and the area.
+| Identity | Statement |
+|---|---|
+| Cosines squared | $\cos^2A+\cos^2B+\cos^2C+2\cos A\cos B\cos C=1$ |
+| Sines squared | $\sin^2A+\sin^2B+\sin^2C=2+2\cos A\cos B\cos C$ |
+| Sines | $\sin A+\sin B+\sin C=4\cos\frac A2\cos\frac B2\cos\frac C2$ |
+| Double angles | $\sin2A+\sin2B+\sin2C=4\sin A\sin B\sin C$ |
+| Tangents | $\tan A+\tan B+\tan C=\tan A\tan B\tan C$ |
+| Half-angle tangents | $\tan\frac A2\tan\frac B2+\tan\frac B2\tan\frac C2+\tan\frac C2\tan\frac A2=1$ |
 
-$c=\sqrt{9+16}=5$; $2R=\frac{c}{\sin C}=\frac5{1}=5$, so $R=2.5$; area $=\frac12\cdot3\cdot4\cdot\sin90^\circ=6$.
+> [!tip] Key Idea — the tangent identity is the most useful
+> $\tan A+\tan B+\tan C=\tan A\tan B\tan C$ holds for $A+B+C=\pi$ and is the
+> standard way to break a symmetric expression involving tangents. It fails
+> exactly when one angle is $90^\circ$, which is the degenerate case to watch for.
 
-<details>
-<summary>Answer + Reasoning</summary>
-
-**Method: cosine rule for $c$, sine rule for $R$, $\frac12ab\sin C$ for the area.** (The hypotenuse of a right triangle is a diameter of its circumcircle, so $R=\frac c2=2.5$ ✓.)
-
-**Answer:** $c=5$, $R=2.5$, area $6$.
-
-</details>
-
-#### **S16**[JEE Adv][solved][half angle]For the same $3$-$4$-$5$ triangle, find $\tan\frac A2$ where $A$ is opposite $a=3$.
-
-$s=6$, $r=\frac{\Delta}{s}=1$, and $\tan\frac A2=\frac r{s-a}=\frac1{6-3}=\frac13$.
-
-<details>
-<summary>Answer + Reasoning</summary>
-
-**Method: $\tan\frac A2=\frac r{s-a}$.** Check directly: $A\approx36.87^\circ$, so $\frac A2\approx18.43^\circ$ and $\tan18.43^\circ\approx0.3333$ ✓.
-
-**Answer:** $\dfrac13$.
-
-</details>
-
-## 6.2 Exact values for special angles
-
-> [!example] Olympiad Extension — $\sin18^\circ$ from a pentagon
-> The exact values $\sin18^\circ=\frac{\sqrt5-1}{4}$ and
-> $\cos36^\circ=\frac{\sqrt5+1}{4}$ come from the geometry of a regular
-> pentagon, or from solving $\sin5\theta=0$ at $\theta=18^\circ$ using the
-> quintuple-angle formula. Note $\frac{\sqrt5-1}{4}$ is the reciprocal of the
-> golden ratio — these are the only "nice" exact values outside multiples of
-> $30^\circ$ and $45^\circ$.
-
-#### **S17**[Olympiad][solved][special angles]Verify $\sin18^\circ=\dfrac{\sqrt5-1}{4}$ and $\cos36^\circ=\dfrac{\sqrt5+1}{4}$.
-
-$\frac{\sqrt5-1}{4}\approx0.3090$ and $\sin18^\circ\approx0.3090$ ✓. Also
-$\cos36^\circ=1-2\sin^2 18^\circ=1-2\left(\frac{\sqrt5-1}{4}\right)^2=\frac{\sqrt5+1}{4}\approx0.8090$ ✓.
+#### **S15**[JEE Adv][solved][triangle identity]If $A+B+C=180^\circ$, prove $\sin2A+\sin2B+\sin2C=4\sin A\sin B\sin C$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: verify numerically, and check the consistency via $\cos36^\circ=1-2\sin^2 18^\circ$.** Both agree to full precision ✓.
+**Method: sum-to-product, then use $C=\pi-(A+B)$.**
+$\sin2A+\sin2B=2\sin(A+B)\cos(A-B)$, and $\sin2C=\sin(2\pi-2(A+B))=-\sin2(A+B)$.
+So the left side is
+$$2\sin(A+B)\cos(A-B)-2\sin(A+B)\cos(A+B)=2\sin(A+B)\big[\cos(A-B)-\cos(A+B)\big].$$
+Since $\cos(A-B)-\cos(A+B)=2\sin A\sin B$ and $\sin(A+B)=\sin C$, this becomes
+$4\sin A\sin B\sin C$ ✓.
 
-**Answer:** verified.
-
-</details>
-
-#### **P6**[Olympiad][practice][conditional]If $A+B+C=180^\circ$, prove
-$\sin2A+\sin2B+\sin2C=4\sin A\sin B\sin C$.
-
-<details>
-<summary>Answer + Reasoning</summary>
-
-**Method: use $C=180^\circ-(A+B)$ and the sum-to-product formula.** $\sin2A+\sin2B=2\sin(A+B)\cos(A-B)=2\sin C\cos(A-B)$, and $\sin2C=-2\sin(A+B)\cos(A+B)=-2\sin C\cos(A+B)$. Adding gives $2\sin C\big(\cos(A-B)-\cos(A+B)\big)=2\sin C\cdot2\sin A\sin B=4\sin A\sin B\sin C$ ✓.
+Check numerically for $(60^\circ,60^\circ,60^\circ)$: LHS $=3\sin120^\circ=2.5981$
+and RHS $=4(\frac{\sqrt3}{2})^3=2.5981$ ✓. For $(30^\circ,60^\circ,90^\circ)$: both
+give $1.7321$ ✓.
 
 **Answer:** proved.
 
 </details>
 
-#### **P7**[JEE Adv][practice][equation]Solve $\sin3x=\cos2x$.
+#### **S16**[JEE Adv][solved][triangle identity]If $A+B+C=180^\unicode{00b0}$, prove $\tan A+\tan B+\tan C=\tan A\tan B\tan C$, and use it to find $\tan20^\circ\tan40^\circ\tan80^\circ$.
 
 <details>
 <summary>Answer + Reasoning</summary>
 
-**Method: write $\cos2x=\sin(90^\circ-2x)$ and use $\sin\alpha=\sin\beta$.** $3x=n180^\circ+(-1)^n(90^\circ-2x)$. For even $n=2m$: $3x=360^\circ m+90^\circ-2x\Rightarrow5x=360^\circ m+90^\circ\Rightarrow x=72^\circ m+18^\circ$. For odd $n=2m+1$: $3x=180^\circ(2m+1)-90^\circ+2x\Rightarrow x=360^\circ m+90^\circ$.
+**Method: the tangent addition formula.** $\tan(A+B)=\frac{\tan A+\tan B}{1-\tan A\tan B}$,
+and $\tan(A+B)=\tan(\pi-C)=-\tan C$. Cross-multiplying gives
+$\tan A+\tan B=-\tan C(1-\tan A\tan B)$, i.e.
+$\tan A+\tan B+\tan C=\tan A\tan B\tan C$ ✓.
 
-**Answer:** $x=72^\circ m+18^\circ$ or $x=360^\circ m+90^\circ$.
+For the product, use $\tan3\theta=\frac{3t-t^3}{1-3t^2}$ with $t=\tan\theta$.
+At $\theta=20^\circ$, $\tan60^\circ=\sqrt3$, so $t=\tan20^\circ$ satisfies
+$$t^3-3\sqrt3\,t^2-3t+\sqrt3=0.$$
+The three roots are $\tan20^\circ$, $\tan80^\circ$ and $\tan140^\circ=-\tan40^\circ$
+(adding $60^\circ$ and $120^\circ$ leaves $\tan3\theta$ unchanged). Their product is
+the negative of the constant term, $-\sqrt3$, so
+$\tan20^\circ\cdot\tan80^\circ\cdot(-\tan40^\circ)=-\sqrt3$.
+
+Check numerically: $\tan20^\circ\tan40^\circ\tan80^\circ
+=0.36397\times0.83910\times5.67128=1.7321=\sqrt3$ ✓. Also the root sum is
+$0.36397+5.67128-0.83910=5.19615=3\sqrt3$ ✓.
+
+**Answer:** proved; $\tan20^\circ\tan40^\circ\tan80^\circ=\sqrt3$.
+
+</details>
+
+## 6.2 The Weierstrass (half-angle) substitution
+
+> [!abstract] First Principles — rationalising trigonometry
+> Put $t=\tan\frac A2$. Then
+> $$\sin A=\frac{2t}{1+t^2},\qquad \cos A=\frac{1-t^2}{1+t^2},\qquad \tan A=\frac{2t}{1-t^2}.$$
+> These follow from $\sin A=2\sin\frac A2\cos\frac A2$ after dividing by
+> $\cos^2\frac A2$. The point is that **any** rational expression in sines and
+> cosines becomes a rational expression in $t$ — so trig equations reduce to
+> polynomial equations, and calculus on trig functions becomes calculus on
+> rational functions.
+
+> [!warning] Common Trap — the substitution is not onto
+> $t=\tan\frac A2$ is undefined when $A=\pi$ (mod $2\pi$). Any solution with
+> $\cos\frac A2=0$ is lost and must be checked separately. For $A\in(-\pi,\pi)$
+> the map is a bijection onto $\mathbb R$.
+
+> [!example] Olympiad Extension — rationalising everything
+> The substitution $t=\tan\frac A2$ converts *any* rational expression in
+> $\sin A,\cos A$ into a rational expression in $t$. This is why it is the standard
+> first move for trig equations, and also why every integral of the form
+> $\int R(\sin x,\cos x)\,dx$ becomes an integral of a rational function. Its one
+> blind spot is $A=\pi$, where $\cos\frac A2=0$ — always check that case
+> separately.
+
+#### **S17**[JEE Adv][solved][weierstrass]Solve $\sin x+\cos x=1$ for $0\le x<2\pi$ using $t=\tan\frac x2$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: substitute and solve the resulting quadratic.**
+$\frac{2t}{1+t^2}+\frac{1-t^2}{1+t^2}=1$, so $2t+1-t^2=1+t^2$, giving
+$2t^2-2t=0$, i.e. $t=0$ or $t=1$.
+$t=0$ gives $x=0$; $t=1$ gives $\frac x2=45^\circ$, so $x=90^\circ$.
+Check: at $x=0$, $\sin0+\cos0=1$ ✓; at $x=90^\circ$, $1+0=1$ ✓. The excluded case
+$x=\pi$ gives $\sin\pi+\cos\pi=-1\ne1$, so nothing was lost ✓.
+
+**Answer:** $x=0$ and $x=\dfrac\pi2$.
+
+</details>
+
+## 6.3 Products of sines and cosines from roots of unity
+
+> [!abstract] First Principles — the $n^{\rm th}$ roots of unity
+> The $n$ roots of $z^n=1$ are $e^{2\pi ik/n}$, $k=0,\ldots,n-1$. Factoring,
+> $$z^n-1=(z-1)\prod_{k=1}^{n-1}\left(z-e^{2\pi ik/n}\right),$$
+> and dividing by $z-1$ and setting $z=1$ gives
+> $$n=\prod_{k=1}^{n-1}\left(1-e^{2\pi ik/n}\right).$$
+> Now $\lvert1-e^{i\theta}\rvert=2\left\lvert\sin\frac\theta2\right\rvert$, so taking
+> moduli yields the sine product; a variant with $z=-1$ gives the cosine product.
+
+$$\boxed{\prod_{k=1}^{n-1}\sin\frac{k\pi}{n}=\frac{n}{2^{n-1}}}
+\qquad
+\boxed{\prod_{k=1}^{n}\cos\frac{k\pi}{2n+1}=\frac1{2^n}}$$
+
+> [!example] Olympiad Extension — products from roots of unity
+> The identity $\prod_{k=1}^{n-1}\sin\frac{k\pi}{n}=\frac{n}{2^{n-1}}$ looks like
+> it needs $n-1$ separate trig evaluations. It needs none: factor $z^n-1$ over the
+> complex roots of unity, set $z=1$, and take moduli. The same trick gives the
+> cosine product $\prod_{k=1}^{n}\cos\frac{k\pi}{2n+1}=\frac1{2^n}$ by working at
+> $z=-1$ instead. **The pattern to memorise: a product of trig values at rational
+> multiples of $\pi$ is a roots-of-unity problem in disguise.**
+
+#### **S18**[Olympiad][solved][sine product]Prove $\displaystyle\prod_{k=1}^{n-1}\sin\frac{k\pi}{n}=\frac{n}{2^{n-1}}$, and evaluate the product for $n=7$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: roots of unity, then take moduli.** From the factorisation above,
+$n=\prod_{k=1}^{n-1}(1-e^{2\pi ik/n})$. Since
+$\lvert1-e^{2\pi ik/n}\rvert=2\sin\frac{k\pi}{n}$ (positive for $1\le k\le n-1$),
+$$n=2^{n-1}\prod_{k=1}^{n-1}\sin\frac{k\pi}{n}.$$
+Check for $n=7$: the product is
+$\sin\frac\pi7\sin\frac{2\pi}7\sin\frac{3\pi}7\sin\frac{4\pi}7\sin\frac{5\pi}7\sin\frac{6\pi}7
+=0.43388\times0.78183\times0.97493\times0.97493\times0.78183\times0.43388
+=0.109375$, and $\frac7{2^6}=\frac7{64}=0.109375$ ✓.
+
+**Answer:** $\dfrac{n}{2^{n-1}}$; for $n=7$ it is $\dfrac7{64}$.
+
+</details>
+
+#### **S19**[Olympiad][solved][cosine product]Evaluate $\cos\dfrac\pi7\cos\dfrac{2\pi}7\cos\dfrac{3\pi}7$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the cosine product with $2n+1=7$, so $n=3$.**
+$\prod_{k=1}^{3}\cos\frac{k\pi}{7}=\frac1{2^3}=\frac18$.
+Check numerically: $0.90097\times0.62349\times0.22252=0.125$ ✓.
+
+**Answer:** $\dfrac18$.
+
+</details>
+
+## 6.4 Sums of cotangent and cosecant squares
+
+> [!abstract] First Principles — where the sums come from
+> The numbers $\tan\frac{k\pi}{n}$, $k=1,\ldots,n-1$, are the non-zero roots of a
+> polynomial obtained by writing $\tan(n\theta)$ in terms of $t=\tan\theta$.
+> Expanding $\tan(n\theta)=\frac{\Im(1+it)^n}{\Re(1+it)^n}$ and setting the
+> numerator to zero gives a polynomial in $t$ whose roots are exactly those
+> tangents. Reading off $\sum t_k^2$ from the coefficients gives
+> $$\sum_{k=1}^{n-1}\cot^2\frac{k\pi}{n}=\frac{(n-1)(n-2)}{3},\qquad
+> \sum_{k=1}^{n-1}\csc^2\frac{k\pi}{n}=\frac{n^2-1}{3},$$
+> using $\csc^2=1+\cot^2$.
+
+> [!example] Olympiad Extension — sums from polynomial roots
+> The numbers $t_k=\tan\frac{k\pi}{n}$, $k=1,\ldots,n-1$, are the non-zero roots of
+> a polynomial obtained by clearing denominators in $\tan(n\theta)$. Once that
+> polynomial is written down, Vieta's formulae hand you $\sum t_k^2$ for free — and
+> $\cot^2\frac{k\pi}{n}=\frac1{t_k^2}$ turns it into the cotangent sum. **Whenever a
+> sum runs over trig values at equally spaced angles, look for the polynomial whose
+> roots they are.**
+
+#### **P6**[Olympiad][practice][cot sum]Verify $\displaystyle\sum_{k=1}^{n-1}\cot^2\frac{k\pi}{n}=\frac{(n-1)(n-2)}{3}$ for $n=3,4,5,6,7$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: direct evaluation.** For $n=3$: $\cot^260^\circ+\cot^2120^\circ=\frac13+\frac13=\frac23$,
+and $\frac{2\cdot1}{3}=\frac23$ ✓. For $n=4$: $1+0+1=2=\frac{3\cdot2}{3}$ ✓. For
+$n=5$: the sum is $4=\frac{4\cdot3}{3}$ ✓. For $n=6$: $6.6667=\frac{5\cdot4}{3}$ ✓.
+For $n=7$: $10=\frac{6\cdot5}{3}$ ✓.
+
+**Answer:** the identity holds for all tested $n$.
+
+</details>
+
+#### **P7**[Olympiad][practice][csc sum]Verify $\displaystyle\sum_{k=1}^{n-1}\csc^2\frac{k\pi}{n}=\frac{n^2-1}{3}$ for $n=3,4,5,6$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: use $\csc^2=1+\cot^2$ and the cotangent sum.** There are $n-1$ terms,
+so $\sum\csc^2=(n-1)+\frac{(n-1)(n-2)}{3}=\frac{(n-1)(n+1)}{3}=\frac{n^2-1}{3}$.
+Check for $n=3$: $\csc^260^\circ+\csc^2120^\circ=\frac43+\frac43=\frac83$, and
+$\frac{9-1}{3}=\frac83$ ✓. For $n=4$: $2+1+2=5=\frac{15}{3}$ ✓. For $n=5$: $8=\frac{24}{3}$ ✓.
+For $n=6$: $11.6667=\frac{35}{3}$ ✓.
+
+**Answer:** the identity holds for all tested $n$.
 
 </details>
 
@@ -620,7 +752,31 @@ Every result in dependency order; nothing is used before it is proved.
 | Right triangle | hypotenuse $=2R$ |
 | Special values | $\sin18^\circ=\frac{\sqrt5-1}{4}$, $\cos36^\circ=\frac{\sqrt5+1}{4}$ |
 
-### G. Mistake checklist
+### G. The $A+B+C=\pi$ identities
+
+| Result | Statement |
+|---|---|
+| Cosines squared | $\cos^2A+\cos^2B+\cos^2C+2\cos A\cos B\cos C=1$ |
+| Sines squared | $\sin^2A+\sin^2B+\sin^2C=2+2\cos A\cos B\cos C$ |
+| Sines | $\sin A+\sin B+\sin C=4\cos\frac A2\cos\frac B2\cos\frac C2$ |
+| Double angles | $\sin2A+\sin2B+\sin2C=4\sin A\sin B\sin C$ |
+| Tangents | $\tan A+\tan B+\tan C=\tan A\tan B\tan C$ |
+| Half-angle tangents | $\sum_{\rm cyc}\tan\frac A2\tan\frac B2=1$ |
+
+### H. Olympiad products and sums
+
+| Result | Statement |
+|---|---|
+| Weierstrass | $t=\tan\frac A2$: $\sin A=\frac{2t}{1+t^2}$, $\cos A=\frac{1-t^2}{1+t^2}$ |
+| Sine product | $\prod_{k=1}^{n-1}\sin\frac{k\pi}{n}=\frac{n}{2^{n-1}}$ |
+| Cosine product | $\prod_{k=1}^{n}\cos\frac{k\pi}{2n+1}=\frac1{2^n}$ |
+| $\cos\frac\pi7\cos\frac{2\pi}7\cos\frac{3\pi}7$ | $\frac18$ |
+| Cotangent squares | $\sum_{k=1}^{n-1}\cot^2\frac{k\pi}{n}=\frac{(n-1)(n-2)}{3}$ |
+| Cosecant squares | $\sum_{k=1}^{n-1}\csc^2\frac{k\pi}{n}=\frac{n^2-1}{3}$ |
+| $\tan20^\circ\tan40^\circ\tan80^\circ$ | $\sqrt3$ (cubic $t^3-3\sqrt3t^2-3t+\sqrt3=0$) |
+| Sine sum | $\sum_{k=1}^{n}\sin k\theta=\frac{\sin(n\theta/2)\sin((n+1)\theta/2)}{\sin(\theta/2)}$ |
+
+### I. Mistake checklist
 
 1. The sign flip in $\cos(A-B)$ (it is $\cos A\cos B+\sin A\sin B$).
 2. Resolving the half-angle $\pm$ without checking the quadrant of $\frac A2$.

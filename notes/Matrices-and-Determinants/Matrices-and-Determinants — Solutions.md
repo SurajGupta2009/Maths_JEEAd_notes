@@ -164,24 +164,53 @@ $$A^{-1}=-\frac12\begin{pmatrix}4&-2\\-3&1\end{pmatrix}=\begin{pmatrix}-2&1\\\fr
 ## G · Olympiad frontier
 
 #### **Q30**
-**Method: form the characteristic polynomial and substitute $A$.** $\operatorname{tr}A=5$, $\det A=-2$, so $p(\lambda)=\lambda^2-5\lambda-2$. With $A^2=\begin{pmatrix}7&10\\15&22\end{pmatrix}$:
-$$A^2-5A-2I=\begin{pmatrix}7&10\\15&22\end{pmatrix}-\begin{pmatrix}5&10\\15&20\end{pmatrix}-\begin{pmatrix}2&0\\0&2\end{pmatrix}=0.$$
-**Answer:** verified, $A^2-5A-2I=0$.
+**Method: solve $p(\lambda)=\det(A-\lambda I)=0$.** For a $2\times2$ matrix
+$p(\lambda)=\lambda^2-(\operatorname{tr}A)\lambda+\det A=\lambda^2-5\lambda-2$, so
+$$\lambda=\frac{5\pm\sqrt{25+8}}2=\frac{5\pm\sqrt{33}}2,$$
+i.e. $\lambda_1\approx5.37228$ and $\lambda_2\approx-0.37228$.
+**Answer:** $\dfrac{5\pm\sqrt{33}}2$. (Check: $\lambda_1+\lambda_2=5=\operatorname{tr}A$ ✓ and
+$\lambda_1\lambda_2=\frac{25-33}{4}=-2=\det A$ ✓. Also
+$\lambda_1^2-5\lambda_1-2=0$ and $\lambda_2^2-5\lambda_2-2=0$ ✓.)
 
 #### **Q31**
-**Method: multiply the characteristic relation by $A$.** From $A^2=5A+2I$:
-$$A^3=5A^2+2A=5(5A+2I)+2A=27A+10I.$$
-**Answer:** $A^3=27A+10I$. (Check directly: $A^3=A^2A=\begin{pmatrix}37&54\\81&118\end{pmatrix}$ and $27A+10I=\begin{pmatrix}37&54\\81&118\end{pmatrix}$ ✓.)
+**Method: compute $p(A)$ directly.** $A^2=\begin{pmatrix}7&10\\15&22\end{pmatrix}$, so
+$$A^2-5A-2I=\begin{pmatrix}7-5-2&10-10\\15-15&22-20-2\end{pmatrix}=0.$$
+**Answer:** verified; $A^2=5A+2I$.
 
 #### **Q32**
-**Method: split into two $2\times2$ blocks.** $\det\begin{pmatrix}2&0\\0&3\end{pmatrix}\det\begin{pmatrix}4&0\\0&5\end{pmatrix}=6\cdot20$.
-**Answer:** $120$. (Directly $2\cdot3\cdot4\cdot5=120$ ✓.)
+**Method: reduce using $A^2=5A+2I$.**
+$A^3=A\cdot A^2=A(5A+2I)=5A^2+2A=5(5A+2I)+2A=27A+10I$.
+**Answer:** $A^3=27A+10I$. (Check directly:
+$A^3=\begin{pmatrix}37&54\\81&118\end{pmatrix}$ and
+$27A+10I=\begin{pmatrix}37&54\\81&118\end{pmatrix}$ ✓.)
 
 #### **Q33**
-**Method: track the image of the unit square.** The columns of $A$ are the images of the basis vectors, so the unit square maps to the parallelogram they span, whose area is $\lvert a_{11}a_{22}-a_{12}a_{21}\rvert=\lvert\det A\rvert$. Linearity makes every area scale by the same factor.
-**Answer:** $\lvert\det A\rvert$ — the area of the image of the unit square.
+**Method: compare $|\det|$ with the product of the column norms.** For $A$:
+$|\det A|=|4-6|=2$; the column norms are $\sqrt{1+9}=\sqrt{10}$ and
+$\sqrt{4+16}=\sqrt{20}$, product $=\sqrt{200}\approx14.1421$, so $2\le14.1421$ ✓.
+For $B$: $\det B=4$; the column norms are $\sqrt5,\sqrt6,\sqrt5$, product
+$=\sqrt{150}\approx12.2474$, so $4\le12.2474$ ✓.
+**Answer:** both satisfy Hadamard's inequality. (Check $\det B=4$ by expansion along
+the first row: $2(4-1)-(-1)(-2-0)=6-2=4$ ✓.)
 
 #### **Q34**
-**Method: expand the determinant directly.**
-$$\det\begin{pmatrix}1+k&2\\3&4+k\end{pmatrix}=(1+k)(4+k)-6=k^2+5k+4-6=k^2+5k-2.$$
-**Answer:** $k^2+5k-2$. (Check at $k=3$: $9+15-2=22$, and directly $\det\begin{pmatrix}4&2\\3&7\end{pmatrix}=28-6=22$ ✓.)
+**Method: compute both sides.** $A+uv^{\rm T}=\begin{pmatrix}4&6\\9&12\end{pmatrix}$,
+whose determinant is $48-54=-6$. On the right, $\det A=-2$ and
+$A^{-1}=\begin{pmatrix}-2&1\\\frac32&-\frac12\end{pmatrix}$, so
+$$v^{\rm T}A^{-1}u=3(-2\cdot1+1\cdot2)+4\left(\frac32\cdot1-\frac12\cdot2\right)=3\cdot0+4\cdot\frac12=2,$$
+giving $-2(1+2)=-6$ ✓.
+**Answer:** both sides equal $-6$.
+
+#### **Q35**
+**Method: compute both traces.** $AB=\begin{pmatrix}19&22\\43&50\end{pmatrix}$, so
+$\operatorname{tr}(AB)=19+50=69$. $BA=\begin{pmatrix}23&34\\31&46\end{pmatrix}$, so
+$\operatorname{tr}(BA)=23+46=69$ ✓.
+**Answer:** both traces are $69$, but $AB\ne BA$ (the off-diagonal entries differ:
+$22\ne34$ and $43\ne31$) — the trace identity holds without commutativity.
+
+#### **Q36**
+**Method: evaluate the determinant and the product separately.** Expanding,
+$$\det\begin{pmatrix}1&1&1\\2&5&9\\4&25&81\end{pmatrix}=84.$$
+The product $\prod_{i<j}(x_j-x_i)=(5-2)(9-2)(9-5)=3\cdot7\cdot4=84$ ✓.
+**Answer:** $84$. (Check by a second route: subtract row 1 from rows 2 and 3, factor
+$3$ and $7$ out, and the remaining $2\times2$ determinant is $4$; $3\cdot7\cdot4=84$ ✓.)
