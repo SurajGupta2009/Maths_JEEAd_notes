@@ -16,13 +16,13 @@ created: 2026-09-27
 > [!info] Navigation
 > ⬅ [[06-synthesis|Chapter 6]] · 📖 [[Complex-Numbers|Complex Numbers]] · ✅ [[Complex-Numbers — Solutions|Solutions]] ➡
 
-# Olympiad Paper · 38 questions
+# Olympiad Paper · 48 questions
 
 *Final assessment · whole module*
 
 # Olympiad & JEE Advanced Paper — Complex Numbers
 
-38 questions in eight sections, JEE Main → JEE Advanced → Olympiad. Every chapter's signature move appears: arithmetic and the conjugate (A), roots of unity and the filter (B), loci (C), regions and conics (D), $z$-$\bar z$ algebra (E), geometry proofs (F), unit-circle synthesis (G), stretch (H). **Do it cold, on paper.** Answers (short form) are given; full worked solutions are in the companion file.
+48 questions in nine sections, JEE Main → JEE Advanced → Olympiad. Every chapter's signature move appears: arithmetic and the conjugate (A), roots of unity and the filter (B), loci (C), regions and conics (D), $z$-$\bar z$ algebra (E), geometry proofs (F), unit-circle synthesis (G), stretch (H), and the frontier — Gauss sums, Gauss–Lucas and Pompeiu (I). **Do it cold, on paper.** Answers (short form) are given; full worked solutions are in the companion file.
 
 ### A · Foundations (Q1–Q6)
 
@@ -314,11 +314,85 @@ For the rectangle with vertices $0, 2, 2+3i, 3i$: (a) with $e = 1+i$, compute $|
 Answer: (a) $7 = 7$; (b) proof
 
 
+### I · Gauss Sums, Gauss–Lucas and Pompeiu (Q39–Q48)
+
+#### **Q39**[Olympiad]Evaluate $\displaystyle G(7)=\sum_{k=0}^{6}\zeta^{k^{2}}$ for $\zeta=e^{2\pi i/7}$.
+
+Evaluate $G(7)=\sum_{k=0}^{6}\zeta^{k^{2}}$ for $\zeta=e^{2\pi i/7}$.
+
+
+Answer: $i\sqrt7\approx2.6458\,i$ (pair $k$ with $7-k$: $G(7)=1+2(\zeta+\zeta^{2}+\zeta^{4})$, and $7\equiv3\pmod4$)
+
+#### **Q40**[Olympiad]State the quadratic Gauss sum $G(n)=\sum_{k=0}^{n-1}\zeta^{k^{2}}$ in closed form, for all four residue classes of $n\bmod4$.
+
+State the quadratic Gauss sum $G(n)=\sum_{k=0}^{n-1}\zeta^{k^{2}}$ in closed form, for all four residue classes of $n\bmod4$.
+
+
+Answer: $\sqrt n$ if $n\equiv1\pmod4$; $i\sqrt n$ if $n\equiv3\pmod4$; $(1+i)\sqrt n$ if $n\equiv0\pmod4$; $0$ if $n\equiv2\pmod4$
+
+#### **Q41**[JEE Advanced]Evaluate $G(8)=\sum_{k=0}^{7}\zeta^{k^{2}}$ for $\zeta=e^{2\pi i/8}$, using only the residues $k^{2}\bmod 8$.
+
+Evaluate $G(8)=\sum_{k=0}^{7}\zeta^{k^{2}}$ for $\zeta=e^{2\pi i/8}$, using only the residues $k^{2}\bmod 8$.
+
+
+Answer: $2(1+\zeta^{4})+4\zeta=0+4\cdot\tfrac{1+i}{\sqrt2}=2\sqrt2\,(1+i)=(1+i)\sqrt8\approx2.8284+2.8284i$
+
+#### **Q42**[Olympiad]State the Gauss–Lucas theorem.
+
+State the Gauss–Lucas theorem.
+
+
+Answer: every zero of $p'$ lies in the convex hull of the zeros of $p$ (equivalently $\frac{p'}{p}=\sum_{k}\frac{1}{z-r_{k}}$ cannot vanish outside the hull)
+
+#### **Q43**[JEE Advanced]The roots of a cubic $p$ are $0$, $2$ and $1+2i$. Find its critical points and identify the region containing them.
+
+The roots of a cubic $p$ are $0$, $2$ and $1+2i$. Find its critical points and identify the region containing them.
+
+
+Answer: $1+i$ and $1+\dfrac{i}{3}$; both inside $\operatorname{conv}\{0,2,1+2i\}$ (centred at $1+\tfrac23 i$ they are $\pm\tfrac{i}{3}$)
+
+#### **Q44**[Olympiad]For the triangle with vertices $0$, $2$, $1+2i$, state Marden's theorem and name its two foci.
+
+For the triangle with vertices $0$, $2$, $1+2i$, state Marden's theorem and name its two foci.
+
+
+Answer: the two roots of $p'$ are the foci of the Steiner inellipse; here they are $1+i$ and $1+\dfrac{i}{3}$
+
+#### **Q45**[Olympiad]State Pompeiu's theorem for an equilateral triangle $ABC$ and an arbitrary point $P$.
+
+State Pompeiu's theorem for an equilateral triangle $ABC$ and an arbitrary point $P$.
+
+
+Answer: $PA$, $PB$, $PC$ are the side lengths of a (possibly degenerate) triangle; degenerate exactly when $P$ is on the circumcircle of $ABC$
+
+#### **Q46**[JEE Advanced]Prove Pompeiu's theorem using the equilateral condition $A+\omega B+\omega^{2}C=0$ with $\omega=e^{2\pi i/3}$.
+
+Prove Pompeiu's theorem using the equilateral condition $A+\omega B+\omega^{2}C=0$ with $\omega=e^{2\pi i/3}$.
+
+
+Answer: with $u=P-A$, $v=P-B$, $w=P-C$ one gets $u+\omega v+\omega^{2}w=0$ (the $P$ terms cancel since $1+\omega+\omega^{2}=0$); rotating by $\omega$ and $\omega^{2}$ yields $|v|\le|u|+|w|$ and $|w|\le|u|+|v|$, and the original gives $|u|\le|v|+|w|$
+
+#### **Q47**[Olympiad]For the equilateral triangle $1,\omega,\omega^{2}$ and $P=e^{i\theta}$, show $PA+PB=PC$ for $0\le\theta\le\tfrac{2\pi}{3}$.
+
+For the equilateral triangle $1,\omega,\omega^{2}$ and $P=e^{i\theta}$, show $PA+PB=PC$ for $0\le\theta\le\tfrac{2\pi}{3}$.
+
+
+Answer: $PA=2\sin\tfrac\theta2$, $PB=2\sin(\tfrac\pi3-\tfrac\theta2)$, $PC=2\sin(\tfrac{2\pi}3-\tfrac\theta2)$, and sum-to-product gives $PA+PB=4\sin\tfrac\pi6\cos(\tfrac\theta2-\tfrac\pi6)=2\cos(\tfrac\theta2-\tfrac\pi6)=PC$
+
+#### **Q48**[Olympiad]For which positive integers $n$ does the Gauss sum $G(n)=\sum_{k=0}^{n-1}\zeta^{k^{2}}$ vanish?
+
+For which positive integers $n$ does the Gauss sum $G(n)=\sum_{k=0}^{n-1}\zeta^{k^{2}}$ vanish?
+
+
+Answer: exactly $n\equiv2\pmod4$, i.e. $n=2,6,10,14,\dots$ — in the squaring argument the two surviving terms $h=0$ and $h=m$ contribute $1$ and $\zeta^{m^{2}}=(-1)^{m}=-1$
+
 ### 📝 Exam technique notes
 
 > **📝 Exam technique notes**
 >
-> - **Q5, Q8, Q10, Q28–Q31, Q33, Q37, Q38(b)** are full proofs — write the chain of implications, not just the claim. The grader's path is the identity, then the geometry, then the orientation/order check.
+> - **Q5, Q8, Q10, Q28–Q31, Q33, Q37, Q38(b), Q42, Q46, Q48** are full proofs — write the chain of implications, not just the claim. The grader's path is the identity, then the geometry, then the orientation/order check.
 > - **Locus questions (Q13, Q17, Q21, Q26, Q27):** always state the *excluded points* (where a fraction is undefined or a condition degenerates) — it is half the mark.
 > - **Range questions (Q14, Q18, Q19, Q23):** open vs closed endpoints come from strict vs non-strict inequalities in the constraint — check which boundary points are actually attained.
-> - **Roots of unity (Q7–Q12):** before computing, name the tool (vanishing sum / product formula / filter) — the tools, not the arithmetic, are being tested.
+> > - **Gauss-sum questions (Q39–Q41):** fix the residue class of $n$ *before* computing; the answer is $\sqrt n$, $i\sqrt n$, $(1+i)\sqrt n$ or $0$, and a non-matching modulus means a residue was mis-listed.
+> - **Pompeiu questions (Q45–Q47):** write the equilateral condition as a linear relation in $u,v,w$ and cancel the $P$ terms — the three triangle inequalities then come from rotating one identity, not from three separate estimates.
+- **Roots of unity (Q7–Q12):** before computing, name the tool (vanishing sum / product formula / filter) — the tools, not the arithmetic, are being tested.

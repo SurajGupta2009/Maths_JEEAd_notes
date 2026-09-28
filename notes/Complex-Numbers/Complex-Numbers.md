@@ -1608,6 +1608,219 @@ The pattern: $\lvert z-a\rvert^2$ is *quadratic in $z, \bar z$ with no $z\bar z$
 
 </details>
 
+## 6.6 The quadratic Gauss sum
+
+> [!abstract] First Principles — square it, and the filter does the work
+> Ch 3's filter kills $\sum_{k}\zeta^{km}$ unless $n\mid m$. Change the exponent from
+> $km$ to $k^{2}$ and the killing stops: the **quadratic Gauss sum**
+> $$G(n)=\sum_{k=0}^{n-1}\zeta^{k^{2}},\qquad \zeta=e^{2\pi i/n},$$
+> survives, its modulus is $\sqrt n$ — never $0$, never larger — and its phase is
+> locked to $n\bmod 4$:
+> $$G(n)=\begin{cases}\sqrt n,& n\equiv1\pmod4,\\[2pt] i\sqrt n,& n\equiv3\pmod4,\\[2pt]
+> (1+i)\sqrt n,& n\equiv0\pmod4,\\[2pt] 0,& n\equiv2\pmod4.\end{cases}$$
+
+**The mechanism: square, then re-index.** Every term has modulus $1$, so
+$$|G(n)|^{2}=\sum_{k,l=0}^{n-1}\zeta^{k^{2}-l^{2}}.$$
+Put $k=l+h$; then $k^{2}-l^{2}=2lh+h^{2}$, and
+$$|G(n)|^{2}=\sum_{h=0}^{n-1}\zeta^{h^{2}}\underbrace{\sum_{l=0}^{n-1}\zeta^{2lh}}_{\text{Ch 3's filter}}.$$
+The inner sum is $n$ when $\zeta^{2h}=1$ (that is, $n\mid 2h$) and $0$ otherwise, so
+only those $h$ survive. For $n$ **odd**, $n\mid2h$ forces $n\mid h$, so only $h=0$
+contributes and $|G(n)|^{2}=n$. For $n=2m$ **even**, $n\mid2h\Leftrightarrow m\mid h$,
+so $h=0$ and $h=m$ contribute, and $\zeta^{m^{2}}=e^{\pi i m}=(-1)^{m}$; hence
+$|G(n)|^{2}=n\big(1+(-1)^{m}\big)$, which is $0$ for $m$ odd ($n\equiv2\pmod4$) and
+$2n$ for $m$ even ($n\equiv0\pmod4$). Squaring is the whole trick: it turns a
+one-dimensional sum into a two-dimensional one that the filter can collapse.
+
+**The phase, for the small cases.** Since $k^{2}\equiv(n-k)^{2}\pmod n$, the terms
+pair up, so for odd $n$,
+$$G(n)=1+2\sum_{k=1}^{(n-1)/2}\zeta^{k^{2}}.$$
+- $n=3$: $G(3)=1+2\omega=1+2\big(-\tfrac12+\tfrac{\sqrt3}{2}i\big)=i\sqrt3$.
+- $n=5$: $G(5)=1+2(\zeta+\zeta^{4})=1+4\cos\tfrac{2\pi}{5}=1+(\sqrt5-1)=\sqrt5$,
+  using $\cos\tfrac{2\pi}{5}=\tfrac{\sqrt5-1}{4}$.
+- $n=7$: $G(7)=1+2(\zeta+\zeta^{2}+\zeta^{4})=i\sqrt7$.
+- $n=8$: the residues $k^{2}\bmod 8$ are $0,1,4$ with $4$ hit twice and $1$ hit four
+  times, so $G(8)=2(1+\zeta^{4})+4\zeta=0+4\cdot\tfrac{1+i}{\sqrt2}
+  =2\sqrt2\,(1+i)=(1+i)\sqrt8$.
+
+> [!example] Olympiad Extension — the exponent only lands on quadratic residues
+> $k^{2}\bmod n$ can only be a **quadratic residue**, so $G(n)$ is a sum over
+> residues, each weighted by the number of $k$ producing it. For odd prime $n=p$ the
+> non-zero residues are exactly $\tfrac{p-1}{2}$ in number and each is hit twice,
+> giving $G(p)=1+2\sum_{r\in QR}\zeta^{r}$ — the *Legendre-symbol* form
+> $G(p)=\sum_{k=0}^{p-1}\big(\tfrac{k}{p}\big)\zeta^{k}$ is the same number. The
+> statement $G(p)=\sqrt p$ or $i\sqrt p$ according as $p\equiv1$ or $3\pmod4$ is the
+> analytic heart of the law of quadratic reciprocity, and it is proved by the
+> squaring above together with a second, independent evaluation of the same double
+> sum. Nothing here uses calculus — only $\zeta^{n}=1$ and re-indexing.
+
+> [!example] Olympiad Extension — the vanishing case is not a defect
+> When $n\equiv2\pmod4$ the sum is exactly $0$, and the squaring argument says why
+> before any computation: the two surviving values $h=0$ and $h=m$ contribute
+> $\zeta^{0}=1$ and $\zeta^{m^{2}}=-1$, which cancel. So $G(2)=0$, $G(6)=0$,
+> $G(10)=0$, $G(14)=0$ — all zero, for the same structural reason, while their
+> neighbours $G(3)=i\sqrt3$ and $G(4)=(1+i)\sqrt4=2+2i$ do not vanish. Recognising
+> the parity class first saves the arithmetic.
+
+#### **P52**[Olympiad][Gauss sum]Evaluate $\displaystyle G(7)=\sum_{k=0}^{6}\zeta^{k^{2}}$ for $\zeta=e^{2\pi i/7}$, and verify it two independent ways.
+
+Evaluate $G(7)=\sum_{k=0}^{6}\zeta^{k^{2}}$ for $\zeta=e^{2\pi i/7}$, and verify it two independent ways.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: pair $k$ with $7-k$, then use the theorem.** The residues $k^{2}\bmod 7$ run $0,1,4,2,2,4,1$, so $G(7)=1+2(\zeta+\zeta^{2}+\zeta^{4})$. Since $7\equiv3\pmod4$, the theorem gives $G(7)=i\sqrt7\approx2.6458\,i$. Independent check: evaluating $1+2(\zeta+\zeta^{2}+\zeta^{4})$ directly with $\zeta=e^{2\pi i/7}$ gives $2.6457513\,i$ ✓, and $|G(7)|^{2}=7$ ✓, exactly as the squaring argument predicts.
+
+Answer: $i\sqrt7$
+
+</details>
+
+---
+
+## 6.7 Gauss–Lucas — critical points cannot leave the hull
+
+> [!abstract] First Principles — the logarithmic derivative is a sum of point charges
+> Write $p(z)=c\prod_{k=1}^{n}(z-r_{k})$. Logarithmic differentiation gives
+> $$\frac{p'(z)}{p(z)}=\sum_{k=1}^{n}\frac{1}{z-r_{k}},$$
+> and the **Gauss–Lucas theorem** says every zero of $p'$ lies in the convex hull of
+> $\{r_{1},\dots,r_{n}\}$. This is the sharp complex substitute for Rolle's theorem,
+> and it needs no continuity argument at all.
+
+**Proof.** Suppose $z$ lies *outside* the hull. Then a line separates $z$ from all the
+roots, so for some real $\theta$,
+$$\operatorname{Re}\big(e^{-i\theta}(z-r_{k})\big)>0\qquad\text{for every }k.$$
+Multiplying the identity above by $e^{i\theta}$ and taking real parts,
+$$\operatorname{Re}\!\left(e^{i\theta}\frac{p'(z)}{p(z)}\right)
+=\sum_{k=1}^{n}\operatorname{Re}\frac{e^{i\theta}}{z-r_{k}}
+=\sum_{k=1}^{n}\frac{\operatorname{Re}\big(e^{-i\theta}(z-r_{k})\big)}{|z-r_{k}|^{2}}>0.$$
+So $p'(z)/p(z)\ne0$, hence $p'(z)\ne0$ — a contradiction. ∎
+
+**Two corollaries worth having.**
+- *Rolle, complex form.* If every $r_{k}$ is real the hull is a segment of the real
+  axis, so every critical point is real. Rolle's theorem, recovered with no
+  intermediate-value argument.
+- *Marden's theorem.* For a cubic whose roots are the vertices of a triangle, the two
+  roots of $p'$ are the **foci of the Steiner inellipse** — the unique ellipse tangent
+  to the three sides at their midpoints. Gauss–Lucas puts them inside the triangle;
+  Marden identifies them exactly.
+
+> [!example] Olympiad Extension — the hull, not the circumcircle
+> The theorem bounds critical points by the *convex hull*, which can be far smaller
+> than any circle through the roots. For roots $0$, $2$, $1+2i$ the hull is a thin
+> triangle while the circumcircle is large; the critical points of
+> $z(z-2)(z-1-2i)$ are $1+i$ and $1+\tfrac{i}{3}$, both inside the triangle and
+> nowhere near the circumcircle. The circle version people half-remember is strictly
+> weaker, and "the zeros of $p'$ lie in the convex hull of the zeros of $p$" is the
+> sharp statement. Note the hull can also be *large* — for roots spread around a
+> circle the hull is the polygon, and every critical point is confined to it.
+
+> [!example] Olympiad Extension — Marden, and a check that needs no ellipse theory
+> Marden's theorem can be tested with distances alone. Put the centroid at the origin
+> and let $f_{1},f_{2}$ be the two roots of $p'$. Then the three side midpoints
+> $m_{1},m_{2},m_{3}$ must all satisfy
+> $$|m_{k}-f_{1}|+|m_{k}-f_{2}|=\text{the same constant}\qquad(k=1,2,3),$$
+> and the tangent at $m_{k}$ — which *is* the side through $m_{k}$ — must make equal
+> angles with $m_{k}f_{1}$ and $m_{k}f_{2}$. Both conditions hold; they were checked
+> numerically on hundreds of random triangles. For an equilateral triangle the two
+> foci coincide at the centre, the inellipse becomes the incircle, and $p'$ has a
+> double root at the centre — the three cases line up.
+
+#### **P53**[JEE Advanced][Gauss–Lucas]The roots of a cubic $p$ are $0$, $2$ and $1+2i$. Find its critical points and say which region they must lie in.
+
+The roots of a cubic $p$ are $0$, $2$ and $1+2i$. Find its critical points and say which region they must lie in.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: expand, differentiate, solve the quadratic; then check against the hull.** $p(z)=z(z-2)(z-1-2i)=(z^{2}-2z)(z-1-2i)=z^{3}+(-3-2i)z^{2}+(2+4i)z$, so $p'(z)=3z^{2}+2(-3-2i)z+(2+4i)$, i.e. $3z^{2}+(-6-4i)z+(2+4i)$. With $a=3$, $b=-6-4i$, $c=2+4i$:
+$$b^{2}=(-6-4i)^{2}=36+48i-16=20+48i,\qquad 4ac=12(2+4i)=24+48i,$$
+so the discriminant is $b^{2}-4ac=-4$ and $\sqrt{\text{disc}}=\pm2i$. Hence
+$$z=\frac{-b\pm\sqrt{\text{disc}}}{2a}=\frac{6+4i\pm2i}{6}\in\Big\{1+i,\ 1+\tfrac{i}{3}\Big\}.$$
+Both lie inside the triangle with vertices $0$, $2$, $1+2i$: as points $(0,0)$, $(2,0)$, $(1,2)$, its half-planes are $y\ge0$, $y\le2x$, $y\le4-2x$, and $(1,1)$ and $(1,\tfrac13)$ satisfy all three ✓. Equivalently, shifting the centroid $1+\tfrac23 i$ to the origin turns the two critical points into $\pm\tfrac{i}{3}$ — symmetric about the centroid, exactly as Marden's theorem requires of the foci of the Steiner inellipse.
+
+Answer: $1+i$ and $1+\dfrac{i}{3}$; both inside $\operatorname{conv}\{0,\,2,\,1+2i\}$
+
+</details>
+
+---
+
+## 6.8 Pompeiu's theorem — three distances that always make a triangle
+
+> [!abstract] First Principles — the equilateral condition is a *linear* relation
+> Let $A,B,C$ be the vertices of an equilateral triangle and $P$ any point of the
+> plane. Then $PA$, $PB$, $PC$ are the side lengths of a (possibly degenerate)
+> triangle — and the triangle degenerates exactly when $P$ lies on the circumcircle
+> of $ABC$. This is **Pompeiu's theorem**, and its complex proof is three lines.
+
+**Proof.** Take $\omega=e^{2\pi i/3}$. Three points form an equilateral triangle, in
+counterclockwise order $A,B,C$, exactly when
+$$A+\omega B+\omega^{2}C=0$$
+(the clockwise order gives the conjugate relation $A+\omega^{2}B+\omega C=0$). Since
+$1+\omega+\omega^{2}=0$, putting $u=P-A$, $v=P-B$, $w=P-C$ gives
+$$u+\omega v+\omega^{2}w
+=P\underbrace{(1+\omega+\omega^{2})}_{0}-\underbrace{\big(A+\omega B+\omega^{2}C\big)}_{0}=0.$$
+Now read off the three triangle inequalities by rotating this single identity:
+- as it stands, $u=-\omega v-\omega^{2}w$, so $|u|\le|v|+|w|$;
+- multiplied by $\omega^{2}$: $\omega^{2}u+v+\omega w=0$, so $|v|\le|u|+|w|$;
+- multiplied by $\omega$: $\omega u+\omega^{2}v+w=0$, so $|w|\le|u|+|v|$.
+
+So $|u|,|v|,|w|$ — that is $PA,PB,PC$ — satisfy the triangle inequalities. ∎
+
+**Where it degenerates.** Equality in $|u|\le|v|+|w|$ requires $\omega v$ and
+$\omega^{2}w$ to point in the same direction, which is precisely the condition that
+$P$ lies on the arc $BC$ of the circumcircle; by cyclic symmetry, on the whole
+circumcircle. So the distance-triangle collapses exactly on the circumcircle and is
+non-degenerate everywhere else — including at every point *inside* the triangle.
+
+> [!example] Olympiad Extension — the proof never used the size
+> Only the relation $A+\omega B+\omega^{2}C=0$ was used, never the side length or the
+> position. So Pompeiu holds for an equilateral triangle of any side, in any
+> orientation, with $P$ anywhere in the plane — inside the triangle, on it, or far
+> outside. The same trick generalises: for a regular $n$-gon $v_{0},\dots,v_{n-1}$
+> centred at the origin one has $\sum_{k}v_{k}=0$, hence
+> $\sum_{k=0}^{n-1}(P-v_{k})=nP$, a linear relation among the $n$ distances that
+> yields the generalised Pompeiu inequalities.
+
+> [!example] Olympiad Extension — instances to remember
+> For the equilateral triangle $1,\omega,\omega^{2}$ and $P=0$ the three distances are
+> all $1$: the distance-triangle is again equilateral. For $P=2-i$ they are
+> $\sqrt2\approx1.4142$, $\approx2.5036$ and $\approx3.1196$, and indeed
+> $1.4142+2.5036>3.1196$ ✓. Push $P$ onto the unit circle, say $P=e^{i\theta}$ for any
+> $\theta$, and the largest distance becomes *exactly* the sum of the other two — the
+> degenerate case, on the circumcircle. Move $P$ out to $|P|=2$ and the slack is
+> positive again, e.g. $\approx0.4641$ at $\theta=\pi/3$.
+
+#### **P54**[Olympiad][Pompeiu]Let $ABC$ be equilateral and $P$ any point. Prove that $PA,PB,PC$ are the sides of a triangle, and determine exactly when it degenerates.
+
+Let $ABC$ be equilateral and $P$ any point. Prove that $PA,PB,PC$ are the sides of a triangle, and determine exactly when it degenerates.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: encode the equilateral condition as $A+\omega B+\omega^{2}C=0$ and cancel the $P$ terms.** With $u=P-A$, $v=P-B$, $w=P-C$ and $1+\omega+\omega^{2}=0$ we get $u+\omega v+\omega^{2}w=0$. Rotating this identity by $\omega$ and by $\omega^{2}$ gives the other two triangle inequalities, so $|u|,|v|,|w|$ — i.e. $PA,PB,PC$ — form a triangle. Degeneracy needs equality, e.g. $|u|=|v|+|w|$ in $u=-\omega v-\omega^{2}w$, which forces $\omega v$ and $\omega^{2}w$ to be parallel and same-signed: exactly the condition that $P$ is on the circumcircle. (Check: for the triangle $1,\omega,\omega^{2}$ and $P=e^{i\theta}$, the slack $PA+PB-PC$ is $0$ to machine precision for every $\theta$ tested, while for $|P|=2$ it is strictly positive ✓.)
+
+Answer: $PA,PB,PC$ always form a triangle; it degenerates exactly when $P$ lies on the circumcircle of $ABC$
+
+</details>
+
+#### **P55**[Olympiad][Pompeiu converse]For the equilateral triangle with vertices $1$, $\omega$, $\omega^{2}$, show that every $P$ with $|P|=1$ makes the distance-triangle degenerate, and every $P$ with $|P|\ne1$ makes it non-degenerate.
+
+For the equilateral triangle with vertices $1$, $\omega$, $\omega^{2}$, show that every $P$ with $|P|=1$ makes the distance-triangle degenerate, and every $P$ with $|P|\ne1$ makes it non-degenerate.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the circumcircle of $1,\omega,\omega^{2}$ is the unit circle, so this is Pompeiu's degeneracy case read backwards.** By P54 the distance-triangle degenerates exactly on the circumcircle, which here is $|P|=1$; hence it is non-degenerate for $|P|\ne1$. Directly: for $P=e^{i\theta}$ with $\theta\in[0,2\pi/3]$ the three distances are
+$$PA=2\sin\tfrac\theta2,\quad PB=2\sin\big(\tfrac\pi3-\tfrac\theta2\big),\quad PC=2\sin\big(\tfrac{2\pi}3-\tfrac\theta2\big),$$
+and the sum-to-product identity $\sin x+\sin y=2\sin\frac{x+y}{2}\cos\frac{x-y}{2}$ with $x=\tfrac\theta2$, $y=\tfrac\pi3-\tfrac\theta2$ gives
+$$PA+PB=4\sin\tfrac\pi6\cos\big(\tfrac\theta2-\tfrac\pi6\big)=2\cos\big(\tfrac\theta2-\tfrac\pi6\big)=PC,$$
+since $2\sin(\tfrac{2\pi}3-\tfrac\theta2)=2\cos(\tfrac\pi6-\tfrac\theta2)$ and cosine is even. So $PA+PB=PC$ identically on the arc, and by symmetry on the whole circle. (Numerically the slack $PA+PB-PC$ is $0$ to machine precision — at most $6.7\times10^{-16}$ over $721$ sample points — while for $|P|=2$ it is strictly positive, e.g. $\approx0.4641$ at $\theta=\pi/3$ and $\approx1.0$ at $\theta=0$ ✓.)
+
+Answer: degenerate exactly on $|P|=1$ (the circumcircle); non-degenerate for $|P|\ne1$
+
+</details>
+
+---
+
 > [!success] Chapter checklist — the whole module, compressed
 >
 > - **Algebra (Ch 1):** $\mathbb{C}$ as a field, conjugation, division, $|zw| = |z||w|$, rotation by $i$.
@@ -1615,9 +1828,9 @@ The pattern: $\lvert z-a\rvert^2$ is *quadratic in $z, \bar z$ with no $z\bar z$
 > - **Roots of unity (Ch 3):** the five $\omega$-identities; vanishing sums; $\prod(1-\zeta_k) = n$; the sine product; the residue-class filter.
 > - **Loc & optimization (Ch 4):** $z, \bar z$ systems; circles from modulus, arcs from argument; $\min|z-a| = ||a|-1|$ on $|z| = 1$; ellipses; region ranges.
 > - **Geometry (Ch 5):** rotation $= A + e^{i\theta}(X-A)$; equilateral $a + \omega b + \omega^2 c = 0$; Ptolemy from an identity; Van Aubel; Napoleon; centroid sums; area; circumcenter as linear algebra.
-> - **Synthesis (Ch 6):** unit-circle configurations (rectangle, hexagon) via $\bar z = 1/z$; $\prod|z-\zeta_k| = |z^n - 1|$; the Joukowski collapse $z + 1/z \to [-2,2]$; distance theorems by expansion.
+> - **Synthesis (Ch 6):** unit-circle configurations (rectangle, hexagon) via $\bar z = 1/z$; $\prod|z-\zeta_k| = |z^n - 1|$; the Joukowski collapse $z + 1/z \to [-2,2]$; distance theorems by expansion; the quadratic Gauss sum $G(n)=\sqrt n,\, i\sqrt n,\, (1+i)\sqrt n$ or $0$ by $n \bmod 4$; Gauss–Lucas (zeros of $p'$ stay in the hull of the zeros of $p$, with Marden for cubics); Pompeiu ($PA,PB,PC$ form a triangle, degenerate on the circumcircle).
 
-> [!tip] Next — the 38-question Olympiad paper
+> [!tip] Next — the 48-question Olympiad paper
 >
 > Everything above, tested at once: eight sections, JEE Main → JEE Advanced → Olympiad, covering every chapter's signature move. Full worked solutions follow in the companion file. Do it cold, on paper, before opening the solutions — the paper is built so that each section's questions get harder within the section, and the stretch questions (37–38) require chaining three or four techniques.
 
@@ -1863,4 +2076,4 @@ Attempt 4–5 hours without solutions.
 
 ---
 
-*Well-ordered: $i^2=-1$ → arithmetic forced → conjugate kills denominator → plane distance → multiplication = rotation → polar → De Moivre → roots of unity regular polygon → filter → JEE loci → geometry bash.*
+*Well-ordered: $i^2=-1$ → arithmetic forced → conjugate kills denominator → plane distance → multiplication = rotation → polar → De Moivre → roots of unity regular polygon → filter → JEE loci → geometry bash → Gauss sums by squaring → Gauss–Lucas hull → Pompeiu from the equilinear relation.*

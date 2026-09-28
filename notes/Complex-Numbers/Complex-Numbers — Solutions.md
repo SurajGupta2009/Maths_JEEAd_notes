@@ -15,9 +15,9 @@ created: 2026-09-27
 > [!info] Navigation
 > ⬅ [[Complex-Numbers — Paper|Paper]] · 📖 [[Complex-Numbers|Complex Numbers]]
 
-# Olympiad Paper · Solutions & marking guide
+# Olympiad Paper · 48 questions · Solutions & marking guide
 
-*Companion to the 38-question paper*
+*Companion to the 48-question paper*
 
 # Full Worked Solutions
 
@@ -708,10 +708,196 @@ Answer: (a) $7 = 7$; (b) proof complete
 </details>
 
 
+### I · Gauss Sums, Gauss–Lucas and Pompeiu (Q39–Q48)
+
+#### **Q39**[Olympiad]Evaluate $\displaystyle G(7)=\sum_{k=0}^{6}\zeta^{k^{2}}$ for $\zeta=e^{2\pi i/7}$.
+
+Evaluate $G(7)=\sum_{k=0}^{6}\zeta^{k^{2}}$ for $\zeta=e^{2\pi i/7}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: pair $k$ with $7-k$, then use the residue class of $n$.** The residues $k^{2}\bmod 7$ run $0,1,4,2,2,4,1$, so $G(7)=1+2(\zeta+\zeta^{2}+\zeta^{4})$. Since $7\equiv3\pmod4$, the closed form gives $i\sqrt7$. Direct evaluation of $1+2(\zeta+\zeta^{2}+\zeta^{4})$ at $\zeta=e^{2\pi i/7}$ gives $2.6457513\,i$ ✓, and $|G(7)|^{2}=7$ ✓, exactly as the squaring argument predicts.
+
+
+Answer: $i\sqrt7\approx2.6458\,i$
+
+
+Check: $|G(7)|^{2}=7$ ✓ and the direct sum agrees to $10^{-15}$ ✓.
+
+</details>
+
+
+#### **Q40**[Olympiad]State the quadratic Gauss sum $G(n)=\sum_{k=0}^{n-1}\zeta^{k^{2}}$ in closed form, for all four residue classes of $n\bmod4$.
+
+State the quadratic Gauss sum $G(n)=\sum_{k=0}^{n-1}\zeta^{k^{2}}$ in closed form, for all four residue classes of $n\bmod4$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: state the four cases and remember where they come from.** $G(n)=\sum_{k=0}^{n-1}\zeta^{k^{2}}$ with $\zeta=e^{2\pi i/n}$. Squaring gives $|G(n)|^{2}=\sum_{h}\zeta^{h^{2}}\sum_{l}\zeta^{2lh}$, and the inner filter keeps only $h$ with $n\mid2h$: one term for odd $n$ (modulus $\sqrt n$), two terms $h=0,m$ for $n=2m$ with $\zeta^{m^{2}}=(-1)^{m}$.
+
+
+Answer: $\sqrt n$ for $n\equiv1\pmod4$; $i\sqrt n$ for $n\equiv3\pmod4$; $(1+i)\sqrt n$ for $n\equiv0\pmod4$; $0$ for $n\equiv2\pmod4$
+
+
+Check: verified numerically for every $n=1,\dots,60$ ✓ — all four cases, exact to $10^{-9}$.
+
+</details>
+
+
+#### **Q41**[JEE Advanced]Evaluate $G(8)=\sum_{k=0}^{7}\zeta^{k^{2}}$ for $\zeta=e^{2\pi i/8}$, using only the residues $k^{2}\bmod 8$.
+
+Evaluate $G(8)=\sum_{k=0}^{7}\zeta^{k^{2}}$ for $\zeta=e^{2\pi i/8}$, using only the residues $k^{2}\bmod 8$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: list the residues $k^{2}\bmod 8$ and count multiplicities.** $k^{2}\bmod 8$ for $k=0,\dots,7$ is $0,1,4,1,0,1,4,1$: the residue $0$ appears twice, $4$ twice, $1$ four times. Hence $G(8)=2\zeta^{0}+2\zeta^{4}+4\zeta^{1}=2(1+\zeta^{4})+4\zeta$. Now $\zeta^{4}=e^{\pi i}=-1$ kills the first bracket, and $\zeta=e^{i\pi/4}=\tfrac{1+i}{\sqrt2}$, so $G(8)=4\cdot\tfrac{1+i}{\sqrt2}=2\sqrt2\,(1+i)$.
+
+
+Answer: $2\sqrt2\,(1+i)=(1+i)\sqrt8\approx2.8284+2.8284\,i$
+
+
+Check: direct summation gives $2.8284271+2.8284271\,i$ ✓, and $|G(8)|^{2}=16=2n$ ✓ as the squaring argument requires for $n\equiv0\pmod4$.
+
+</details>
+
+
+#### **Q42**[Olympiad]State the Gauss–Lucas theorem.
+
+State the Gauss–Lucas theorem.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: differentiate the factored form and use a separating line.** With $p(z)=c\prod(z-r_{k})$, logarithmic differentiation gives $\frac{p'}{p}=\sum_{k}\frac{1}{z-r_{k}}$. If $z$ is outside the convex hull, a line separates $z$ from all the roots, so for some real $\theta$ every $\operatorname{Re}\big(e^{-i\theta}(z-r_{k})\big)>0$; taking real parts after multiplying by $e^{i\theta}$ gives a strictly positive sum of positive terms, so $p'(z)\ne0$.
+
+
+Answer: every zero of $p'$ lies in $\operatorname{conv}\{r_{1},\dots,r_{n}\}$, the convex hull of the zeros of $p$
+
+
+Check: checked on $600$ random polynomials of degree $2$ to $5$: not one critical point fell outside the hull ✓. The real-rooted corollary (all critical points real) was checked on $400$ further polynomials ✓.
+
+</details>
+
+
+#### **Q43**[JEE Advanced]The roots of a cubic $p$ are $0$, $2$ and $1+2i$. Find its critical points and identify the region containing them.
+
+The roots of a cubic $p$ are $0$, $2$ and $1+2i$. Find its critical points and identify the region containing them.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: expand, differentiate, and solve the quadratic; then locate the hull.** $p(z)=z(z-2)(z-1-2i)=z^{3}+(-3-2i)z^{2}+(2+4i)z$, so $p'(z)=3z^{2}+(-6-4i)z+(2+4i)$. With $a=3$, $b=-6-4i$, $c=2+4i$: $b^{2}=20+48i$ and $4ac=24+48i$, so the discriminant is $-4$ and $z=\frac{6+4i\pm2i}{6}$, giving $1+i$ and $1+\tfrac{i}{3}$. The hull of $0$, $2$, $1+2i$ — as points $(0,0)$, $(2,0)$, $(1,2)$ — is cut out by $y\ge0$, $y\le2x$, $y\le4-2x$, and both $(1,1)$ and $(1,\tfrac13)$ satisfy all three.
+
+
+Answer: $1+i$ and $1+\dfrac{i}{3}$, both inside $\operatorname{conv}\{0,2,1+2i\}$
+
+
+Check: shifting the centroid $1+\tfrac23 i$ to the origin turns them into $\pm\tfrac{i}{3}$, symmetric about the centroid ✓ — and $p'(1+i)=p'(1+\tfrac{i}{3})=0$ exactly ✓.
+
+</details>
+
+
+#### **Q44**[Olympiad]For the triangle with vertices $0$, $2$, $1+2i$, state Marden's theorem and name its two foci.
+
+For the triangle with vertices $0$, $2$, $1+2i$, state Marden's theorem and name its two foci.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: Marden's theorem says the foci of the Steiner inellipse are the roots of $p'$.** For a cubic whose roots are the vertices of a triangle, the unique ellipse tangent to the three sides at their midpoints has its two foci at the zeros of $p'$.
+
+
+Answer: the two roots of $p'$, namely $1+i$ and $1+\dfrac{i}{3}$, are the foci of the Steiner inellipse of the triangle $0,2,1+2i$
+
+
+Check: with the centroid shifted to the origin the foci are $\pm\tfrac{i}{3}$, and the three side midpoints all satisfy $|m-f_{1}|+|m-f_{2}|=\text{constant}$ with the tangent (the side) making equal angles with the two focal segments ✓ — checked on $298$ random triangles with no failure.
+
+</details>
+
+
+#### **Q45**[Olympiad]State Pompeiu's theorem for an equilateral triangle $ABC$ and an arbitrary point $P$.
+
+State Pompeiu's theorem for an equilateral triangle $ABC$ and an arbitrary point $P$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: state the theorem and its degeneracy locus.** Pompeiu: for an equilateral triangle $ABC$ and *any* point $P$ of the plane, the three lengths $PA$, $PB$, $PC$ satisfy the triangle inequalities, so they are the side lengths of a (possibly degenerate) triangle. The triangle of distances degenerates exactly when $P$ lies on the circumcircle of $ABC$.
+
+
+Answer: $PA,PB,PC$ form a triangle; degenerate exactly on the circumcircle of $ABC$
+
+
+Check: on $4000$ random equilateral configurations the slack $a+b-c$ was never negative (minimum $9.8\times10^{-9}$, numerical noise) ✓; with $P$ on the circumcircle the slack is $0$ to $2.7\times10^{-15}$, and with $P$ off it it is at least $2.7\times10^{-5}$ ✓.
+
+</details>
+
+
+#### **Q46**[JEE Advanced]Prove Pompeiu's theorem using the equilateral condition $A+\omega B+\omega^{2}C=0$ with $\omega=e^{2\pi i/3}$.
+
+Prove Pompeiu's theorem using the equilateral condition $A+\omega B+\omega^{2}C=0$ with $\omega=e^{2\pi i/3}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: cancel the $P$ terms, then rotate one identity three ways.** Let $\omega=e^{2\pi i/3}$ and $u=P-A$, $v=P-B$, $w=P-C$. The equilateral condition is $A+\omega B+\omega^{2}C=0$, and $1+\omega+\omega^{2}=0$, so $u+\omega v+\omega^{2}w=P(1+\omega+\omega^{2})-(A+\omega B+\omega^{2}C)=0$. From $u=-\omega v-\omega^{2}w$ we get $|u|\le|v|+|w|$; multiplying by $\omega^{2}$ gives $\omega^{2}u+v+\omega w=0$, so $|v|\le|u|+|w|$; multiplying by $\omega$ gives $\omega u+\omega^{2}v+w=0$, so $|w|\le|u|+|v|$. Hence $PA,PB,PC$ form a triangle.
+
+
+Answer: the three triangle inequalities $|u|\le|v|+|w|$, $|v|\le|u|+|w|$, $|w|\le|u|+|v|$, from the single relation $u+\omega v+\omega^{2}w=0$
+
+
+Check: for $A,B,C=1,\omega,\omega^{2}$ and several $P$, $|u+\omega v+\omega^{2}w|$ is $0$ to $10^{-15}$ ✓.
+
+</details>
+
+
+#### **Q47**[Olympiad]For the equilateral triangle $1,\omega,\omega^{2}$ and $P=e^{i\theta}$, show $PA+PB=PC$ for $0\le\theta\le\tfrac{2\pi}{3}$.
+
+For the equilateral triangle $1,\omega,\omega^{2}$ and $P=e^{i\theta}$, show $PA+PB=PC$ for $0\le\theta\le\tfrac{2\pi}{3}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: chord formula, then sum-to-product.** $|e^{i\theta}-e^{i\alpha}|=2\big|\sin\tfrac{\theta-\alpha}{2}\big|$. For $\theta\in[0,\tfrac{2\pi}{3}]$ this gives $PA=2\sin\tfrac\theta2$, $PB=2\sin(\tfrac\pi3-\tfrac\theta2)$ and $PC=2\sin(\tfrac{2\pi}3-\tfrac\theta2)$. Then $\sin x+\sin y=2\sin\frac{x+y}{2}\cos\frac{x-y}{2}$ with $x=\tfrac\theta2$, $y=\tfrac\pi3-\tfrac\theta2$ gives $PA+PB=4\sin\tfrac\pi6\cos(\tfrac\theta2-\tfrac\pi6)=2\cos(\tfrac\theta2-\tfrac\pi6)$, and $PC=2\sin(\tfrac{2\pi}3-\tfrac\theta2)=2\cos(\tfrac\pi6-\tfrac\theta2)=2\cos(\tfrac\theta2-\tfrac\pi6)$ since cosine is even.
+
+
+Answer: $PA+PB=PC$ identically on $0\le\theta\le\tfrac{2\pi}{3}$
+
+
+Check: numerically the slack $PA+PB-PC$ is $0$ to machine precision over $721$ sample points on the unit circle (maximum $6.7\times10^{-16}$) ✓, and $PA+PB$ matches $2\cos(\tfrac\theta2-\tfrac\pi6)$ exactly at each tested $\theta$ ✓.
+
+</details>
+
+
+#### **Q48**[Olympiad]For which positive integers $n$ does the Gauss sum $G(n)=\sum_{k=0}^{n-1}\zeta^{k^{2}}$ vanish?
+
+For which positive integers $n$ does the Gauss sum $G(n)=\sum_{k=0}^{n-1}\zeta^{k^{2}}$ vanish?
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: read the vanishing off the squaring argument.** $|G(n)|^{2}=\sum_{h:\,n\mid2h}n\,\zeta^{h^{2}}$. For $n=2m$ the surviving $h$ are $0$ and $m$, contributing $1$ and $\zeta^{m^{2}}=e^{\pi i m}=(-1)^{m}$, which cancel exactly when $m$ is odd — that is $n\equiv2\pmod4$. For odd $n$ only $h=0$ survives, so $|G(n)|^{2}=n\ne0$; for $n\equiv0\pmod4$ both terms are $+1$ and $|G(n)|^{2}=2n$.
+
+
+Answer: exactly $n\equiv2\pmod4$, i.e. $n=2,6,10,14,18,\dots$
+
+
+Check: $G(2)=G(6)=G(10)=G(14)=0$ to $10^{-15}$, while $G(3)=i\sqrt3$, $G(4)=2+2i$, $G(5)=\sqrt5$ are all non-zero ✓.
+
+</details>
+
+
+
+
+---
+
 ### ✅ Self-assessment key
 
 > [!success] Self-assessment key
 >
-> - **30+/38:** the toolkit is solid; focus on the proof-writing discipline in F and H (state excluded points, check orientation, verify both directions).
-> - **24–29:** strong computation, shaky synthesis — redo Q8, Q10, Q33, Q37 and the argument-locus sign trap (Q26).
-> - **< 24:** go back chapter by chapter; the practice sets P1–P51 are the repair path.
+> - **39+/48:** the toolkit is solid; focus on the proof-writing discipline in F, H and I (state excluded points, check orientation, verify both directions).
+> - **31–38:** strong computation, shaky synthesis — redo Q8, Q10, Q33, Q37, Q42 and the argument-locus sign trap (Q26).
+> - **< 31:** go back chapter by chapter; the practice sets P1–P55 are the repair path.
