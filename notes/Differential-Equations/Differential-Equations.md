@@ -533,6 +533,214 @@ Differentiating: $(x+2y')y''=0$. The branch $y''=0$ gives $y'=c$, so $y=cx+c^2$ 
 
 ---
 
+*Synthesis · higher-order structure, existence theory, and the nonlinear frontier*
+
+## 6.4 Reduction of order: equations free of $x$
+
+> [!abstract] First Principles — the substitution $p=p(y)$
+> If $x$ does not appear explicitly, the equation has the form $y''=f(y,y')$.
+> Treat $p=y'$ as a function of $y$ and use the chain rule:
+> $$y''=\frac{dp}{dx}=\frac{dp}{dy}\cdot\frac{dy}{dx}=p\,\frac{dp}{dy}.$$
+> A second-order equation collapses to a **first-order** one in $p$ and $y$ — one
+> integration down. The constant that appears is genuinely new, and a second
+> integration later the general solution carries its two constants, as it must.
+
+#### **S16**[JEE Adv][solved][reduction of order]Solve $yy''=(y')^2$ with $y(0)=1$, $y'(0)=1$.
+
+Put $p=y'$ and regard $p$ as a function of $y$: $y''=p\frac{dp}{dy}$, so
+$yp\frac{dp}{dy}=p^2$. For $p\neq0$ this is $\frac{dp}{p}=\frac{dy}{y}$, giving
+$\ln p=\ln y+\ln C$, i.e. $p=Cy$. From $y(0)=1$ and $y'(0)=p=1$ we get $C=1$, so
+$y'=y$, hence $y=Ae^{x}$ and $y(0)=1$ gives $A=1$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the $p(y)$ substitution; note the discarded branch $p=0$ before dividing.** Check: for $y=e^{x}$, $y''=e^{x}=y$ and $yy''=e^{2x}=(y')^{2}$ ✓; $y(0)=1$, $y'(0)=1$ ✓. The branch $p=0$ gives $y$ constant, which cannot satisfy $y'(0)=1$, so nothing is lost.
+
+**Answer:** $y=e^{x}$; $y(1)=e\approx2.718282$.
+
+</details>
+
+> [!example] Olympiad Extension — one known solution generates the whole family
+> For a homogeneous linear equation $y''+P(x)y'+Q(x)y=0$, a **single** known
+> solution $y_{1}$ determines a second one:
+> $$y_{2}=y_{1}\int\frac{e^{-\int P\,dx}}{y_{1}^{2}}\,dx.$$
+> So the general solution is recovered from one solution alone. The proof is a
+> substitution: put $y=y_{1}v$, and $v$ satisfies
+> $y_{1}v''+(2y_{1}'+Py_{1})v'=0$ — first-order in $v'$, with integrating factor
+> $y_{1}^{2}e^{\int P\,dx}$. This is why finding *one* solution of a homogeneous
+> linear equation is as good as finding them all.
+
+#### **S17**[JEE Adv][solved][reduction of order]Given that $y=\sin x$ solves $y''+y=0$, find a second independent solution and the general solution.
+
+Here $P(x)=0$, so $y_{2}=\sin x\int\frac{1}{\sin^{2}x}\,dx=\sin x\,(-\cot x)=-\cos x$. Independence is confirmed by the Wronskian: $W=\sin x\cdot(-\sin x)-\cos x\cdot\cos x=-1\neq0$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the reduction-of-order formula with $P=0$.** Check: $(-\cos x)''+(-\cos x)=\cos x-\cos x=0$ ✓; $W=-1\neq0$ ✓.
+
+**Answer:** general solution $y=A\sin x+B\cos x$ (any independent pair does — $-\cos x$ may be replaced by $\cos x$).
+
+</details>
+
+#### **P13**[JEE Adv][practice][reduction of order]Given that $y=x$ solves $x^{2}y''-2xy'+2y=0$, find the general solution.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: divide by $x^{2}$ first to read off $P=-\frac2x$.** Then $e^{-\int P\,dx}=e^{2\ln x}=x^{2}$, so $y_{2}=x\int\frac{x^{2}}{x^{2}}\,dx=x\int1\,dx=x^{2}$.
+
+**Answer:** $y=Ax+Bx^{2}$. (Check: $x^{2}(2)-2x(2x)+2x^{2}=0$ ✓.)
+
+</details>
+
+## 6.5 Existence and uniqueness: where the theorem stops
+
+> [!abstract] First Principles — Picard–Lindelöf
+> If $f(x,y)$ and $\frac{\partial f}{\partial y}$ are continuous near
+> $(x_{0},y_{0})$, then $y'=f(x,y)$, $y(x_{0})=y_{0}$ has exactly **one**
+> solution through that point. The hypothesis on $\partial f/\partial y$ is a
+> *Lipschitz* condition: the slope may not grow faster than linearly in $y$.
+> It is this — not the continuity of $f$ — that forces uniqueness.
+
+> [!example] Olympiad Extension — $y'=y^{1/2}$ has a continuum of solutions
+> With $y(0)=0$, the equation $y'=y^{1/2}$ has at least two solutions:
+> $$y=0\qquad\text{and}\qquad y=\frac{x^{2}}{4}\quad(x\ge0).$$
+> Both pass through the origin. The reason is that $y\mapsto y^{1/2}$ has
+> **infinite slope at $0$**, so the Lipschitz condition fails exactly at the
+> initial point. More is true: for **any** $a\ge0$,
+> $$y=\begin{cases}0,&x\le a\\[2pt]\dfrac{(x-a)^{2}}{4},&x>a\end{cases}$$
+> is also a solution — the curve may sit at $0$ as long as it likes and then
+> peel away. Uniqueness is not a property of equations; it is a **theorem with
+> hypotheses**, and dropping them yields infinitely many solutions.
+
+#### **S18**[Olympiad][solved][non-uniqueness]Exhibit two distinct solutions of $y'=y^{1/2}$ with $y(0)=0$, and explain why the uniqueness theorem does not apply.
+
+$y=0$ clearly works. For $y=\frac{x^{2}}{4}$ we have $y'=\frac{x}{2}$ and
+$y^{1/2}=\frac{|x|}{2}$, which equals $\frac x2$ for $x\ge0$; so it solves the
+equation on $x\ge0$ and satisfies $y(0)=0$. Two different curves pass through
+$(0,0)$, so the initial value problem is not uniquely solvable.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: check both candidates directly, then audit the hypotheses.** $\frac{\partial f}{\partial y}=\frac{1}{2\sqrt y}\to\infty$ as $y\to0^{+}$, so $f$ is not Lipschitz near $y=0$ and Picard–Lindelöf gives no conclusion.
+
+**Answer:** $y=0$ and $y=\dfrac{x^{2}}{4}$ ($x\ge0$) — infinitely many in total. Related: $y'=y^{1/3}$, $y(0)=0$ has solutions $y=0$ and $y=\big(\frac{2x}{3}\big)^{3/2}$ ($x\ge0$).
+
+</details>
+
+#### **P14**[Olympiad][practice][non-uniqueness]Show that $y'=y^{1/3}$, $y(0)=0$, has a solution that is $0$ for $x\le1$ and positive for $x>1$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: shift the standard solution so that it starts at $x=1$.** Take $y=\big(\frac{2(x-1)}{3}\big)^{3/2}$ for $x>1$: then $y'=\big(\frac{2(x-1)}{3}\big)^{1/2}$ and $y^{1/3}=\big(\frac{2(x-1)}{3}\big)^{1/2}$ ✓, with $y(1)=0$.
+
+**Answer:** $y=\begin{cases}0,&x\le1\\[2pt]\big(\dfrac{2(x-1)}{3}\big)^{3/2},&x>1\end{cases}$
+
+</details>
+
+## 6.6 Lagrange and Riccati: the nonlinear frontier
+
+> [!abstract] First Principles — Lagrange's equation
+> An equation of the form $y=xf(y')+g(y')$ is not linear in $y$, but
+> differentiating once makes it linear — in the *other* variable. With $p=y'$:
+> $$p=f(p)+\big(xf'(p)+g'(p)\big)\frac{dp}{dx},$$
+> and rearranging gives a **linear** equation for $x$ as a function of $p$:
+> $$\frac{dx}{dp}-\frac{xf'(p)}{p-f(p)}=\frac{g'(p)}{p-f(p)}.$$
+> Solve it with an integrating factor; the answer then comes out parametrically
+> in $p$.
+
+#### **S19**[Olympiad][solved][Lagrange]Solve $y=x(y')^{2}+1$.
+
+With $p=y'$ the equation is $y=xp^{2}+1$, so $f(p)=p^{2}$ and $g(p)=1$ with
+$g'(p)=0$. Differentiating: $p=2xp+xp^{2}p'$, so
+$p(1-2x)=xp^{2}\frac{dp}{dx}$. Solving for $\frac{dx}{dp}$ rather than
+$\frac{dp}{dx}$ gives $\frac{dx}{dp}=\frac{2x}{1-p}$, i.e.
+$\frac{dx}{dp}-\frac{2x}{1-p}=0$ — linear and homogeneous. Hence
+$\frac{dx}{x}=\frac{2\,dp}{1-p}$, so $\ln x=-2\ln(1-p)+C$ and
+$x=\frac{C}{(1-p)^{2}}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: differentiate, then read the equation as linear in $x(p)$ — not in $p(x)$.** Substituting back gives $y=xp^{2}+1=1+\dfrac{Cp^{2}}{(1-p)^{2}}$.
+
+**Answer:** $x=\dfrac{C}{(1-p)^{2}},\qquad y=1+\dfrac{Cp^{2}}{(1-p)^{2}}$ (parametric, $p$ the parameter). Check: from the parametric form, $\dfrac{dy}{dx}=\dfrac{dy/dp}{dx/dp}=\dfrac{2Cp(1-p)^{-2}+2Cp^{2}(1-p)^{-3}}{2C(1-p)^{-3}}=p$ exactly, so $y=xp^{2}+1$ holds ✓ (verified at $p=0,\,0.2,\,0.5,\,-0.3,\,0.9$).
+
+</details>
+
+> [!example] Olympiad Extension — Riccati: linear once you know one solution
+> $$y'=q_{0}(x)+q_{1}(x)y+q_{2}(x)y^{2}$$
+> has **no general quadrature**: no formula built from integrals and elementary
+> functions solves it for arbitrary $q_{0},q_{1},q_{2}$. But if one particular
+> solution $y_{1}$ is known, the substitution $y=y_{1}+\frac1u$ turns it into a
+> **linear** equation for $u$. Riccati is exactly what sits between the linear
+> case ($q_{2}=0$) and the separable case ($q_{0}=q_{1}=0$) — and that is
+> precisely why it resists a closed form in general.
+
+#### **S20**[Olympiad][solved][Riccati]Solve $y'=y^{2}-y$, given that $y=0$ is a solution.
+
+Put $y=0+\frac1u$, so $y'=-\frac{u'}{u^{2}}$. Then
+$-\frac{u'}{u^{2}}=\frac1{u^{2}}-\frac1u$, so $-u'=1-u$, i.e. $u'-u=-1$. This is
+linear with integrating factor $e^{-x}$: $\frac{d}{dx}(ue^{-x})=-e^{-x}$, so
+$ue^{-x}=e^{-x}+C$ and $u=1+Ce^{x}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the Riccati substitution $y=y_{1}+\frac1u$ reduces the equation to a linear DE.** Hence $y=\dfrac{1}{1+Ce^{x}}$.
+
+**Answer:** $y=\dfrac{1}{1+Ce^{x}}$. Check: $y'=\dfrac{-Ce^{x}}{(1+Ce^{x})^{2}}$ and $y^{2}-y=\dfrac{1-(Ce^{x}+1)}{(1+Ce^{x})^{2}}=\dfrac{-Ce^{x}}{(1+Ce^{x})^{2}}$ ✓; also $y\to0$ as $C\to\infty$, recovering the given particular solution ✓. Cross-checked by RK4 at $x=1.3$ from $x_{0}=0.3$ for $C=1$ and $C=3$ ✓.
+
+</details>
+
+#### **P15**[Olympiad][practice][Riccati]Solve $y'=x\big(y^{2}-1\big)$, given that $y=1$ is a solution.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: as S20, but the integrating factor is now a Gaussian.** With $y=1+\frac1u$: $-\frac{u'}{u^{2}}=x\big(2/u+1/u^{2}\big)$, so $-u'=2xu+x$, i.e. $u'+2xu=-x$. The integrating factor is $e^{x^{2}}$, giving $\frac{d}{dx}(ue^{x^{2}})=-xe^{x^{2}}$, so $ue^{x^{2}}=-\frac12 e^{x^{2}}+C$ and $u=Ce^{-x^{2}}-\frac12$.
+
+**Answer:** $y=1+\dfrac{1}{Ce^{-x^{2}}-\frac12}$. Check: with $u=Ce^{-x^{2}}-\frac12$, $u'=-2Cxe^{-x^{2}}$ and $2xu+x=2xCe^{-x^{2}}$, so $u'+2xu=-x$ ✓; substituting back gives $x(y^{2}-1)=y'$ exactly at $x=0.6$ for $C=1,\,2,\,-0.7$ ✓.
+
+</details>
+
+## 6.7 Damping: the three regimes
+
+> [!abstract] First Principles — the damped oscillator
+> $y''+2\zeta\omega\,y'+\omega^{2}y=0$ has characteristic roots
+> $r=-\zeta\omega\pm\omega\sqrt{\zeta^{2}-1}$. The sign of the discriminant
+> splits the behaviour into three regimes, and the transition at $\zeta=1$ is
+> where the two real roots merge into one — which is exactly why the critically
+> damped solution needs the $xe^{rx}$ companion term.
+
+#### **S21**[JEE Adv][solved][damping]Solve $y''+2y'+5y=0$ with $y(0)=0$, $y'(0)=2$, and describe the behaviour.
+
+$r^{2}+2r+5=0$ gives $r=-1\pm2i$, so $y=e^{-x}(A\cos2x+B\sin2x)$. From $y(0)=0$, $A=0$; then $y=Be^{-x}\sin2x$ and $y'(0)=2B=2$, so $B=1$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: complex roots with a negative real part — under-damped oscillation with a decaying envelope.** Check: $y'=e^{-x}(2\cos2x-\sin2x)$, so $y'(0)=2$ ✓; substituting $y=e^{-x}\sin2x$ into $y''+2y'+5y$ gives $0$ ✓.
+
+**Answer:** $y=e^{-x}\sin 2x$; $y(1)\approx0.334512$. The oscillation has period $\pi$ and the envelope $e^{-x}$ halves every $\ln2\approx0.693$ units — this is **under-damped** ($\zeta=\frac{1}{\sqrt5}<1$).
+
+</details>
+
+#### **P16**[JEE Adv][practice][damping]Classify and solve $y''+3y'+2y=0$ with $y(0)=0$, $y'(0)=1$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: $r^{2}+3r+2=(r+1)(r+2)$ — two distinct negative real roots, so the motion is over-damped and non-oscillatory. $y=Ae^{-x}+Be^{-2x}$; $A+B=0$ and $-A-2B=1$, so $A=1$, $B=-1$.
+
+**Answer:** $y=e^{-x}-e^{-2x}$; $y(1)\approx0.232544$. Both terms decay, so the response returns to $0$ without crossing it — the hallmark of over-damping.
+
+</details>
+
 # Appendix — Well-Ordered Theory Reference
 
 Every result in dependency order; nothing is used before it is proved.
@@ -566,6 +774,9 @@ Every result in dependency order; nothing is used before it is proved.
 | Repeated root | $y=(A+Bx)e^{rx}$ |
 | Complex roots $\alpha\pm i\beta$ | $y=e^{\alpha x}(A\cos\beta x+B\sin\beta x)$ |
 | Cauchy–Euler | try $y=x^r$ in $ax^2y''+bxy'+cy=0$ |
+| No explicit $x$: $y''=f(y,y')$ | set $p=y'$, then $y''=p\frac{dp}{dy}$ | first-order in $p(y)$ |
+| One known solution $y_1$ | $y_2=y_1\int\frac{e^{-\int P\,dx}}{y_1^2}\,dx$ | generates the second |
+| Damped oscillator | $y''+2\zeta\omega y'+\omega^2y=0$ | $\zeta<1$ oscillates, $\zeta=1$ critical, $\zeta>1$ overdamped |
 | Newton's cooling | $T-T_a=(T_0-T_a)e^{-kt}$ |
 | Exponential growth | $P=P_0e^{kt}$ |
 
@@ -576,6 +787,10 @@ Every result in dependency order; nothing is used before it is proved.
 | Clairaut $y=xp+f(p)$ | lines $y=cx+f(c)$ **plus** the singular envelope |
 | Envelope | differentiate the family w.r.t. the parameter and eliminate it |
 | Singular solution | satisfies the DE but is not a member of the general family |
+| Lagrange $y=xf(y')+g(y')$ | differentiate ⇒ **linear** in $x(p)$; answer parametric in $p$ |
+| Riccati $y'=q_0+q_1y+q_2y^2$ | no general quadrature; one known solution ⇒ linear in $u$ via $y=y_1+\frac1u$ |
+| Picard–Lindelöf | $f$, $\partial f/\partial y$ continuous ⇒ **unique** solution |
+| Lipschitz failure | $y'=y^{1/2}$, $y(0)=0$ has infinitely many solutions |
 
 ### E. Mistake checklist
 
@@ -587,3 +802,7 @@ Every result in dependency order; nothing is used before it is proved.
 6. Using $\ln y$ instead of $\ln\lvert y\rvert$ when the solution may be negative.
 7. Forgetting the $Bxe^{rx}$ companion term for a repeated characteristic root.
 8. Reporting only the family of lines from a Clairaut equation and missing the singular solution.
+9. Dividing by $p=y'$ in a reduction of order without checking the branch $p=0$.
+10. Applying Picard–Lindelöf when $\partial f/\partial y$ blows up at the initial point — uniqueness is not automatic.
+11. Solving a Lagrange or Riccati equation for $\frac{dp}{dx}$ instead of inverting to get a **linear** equation.
+12. Forgetting that a critically damped oscillator ($\zeta=1$) needs the $xe^{rx}$ term, not two distinct exponentials.

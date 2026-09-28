@@ -158,21 +158,72 @@ created: 2026-09-27
 ## G · Rolle, MVT & functional equations
 
 #### **Q29**
-**Method: Rolle.** $f(-2)=f(2)=0$, $f$ smooth; $f'=2x=0\Rightarrow c=0\in(-2,2)$.
-**Answer:** $c=0$.
-
-#### **Q30**
-**Method: MVT.** Secant slope $\frac{9-1}{2}=4$; $f'=2x=4\Rightarrow c=2\in(1,3)$.
+**Method: the Mean Value Theorem.** $f'(x)=2x$ and
+$\frac{f(3)-f(1)}{3-1}=\frac{9-1}{2}=4$, so $2c=4$ and $c=2\in(1,3)$ ✓.
 **Answer:** $c=2$.
 
+#### **Q30**
+**Method: Rolle's theorem needs $f(a)=f(b)$.** Here $f(-1)=0=f(1)$, so there is
+$c\in(-1,1)$ with $f'(c)=0$. Since $f'(x)=3x^2-1$, we get
+$c=\pm\frac1{\sqrt3}$, both inside $(-1,1)$ ✓.
+**Answer:** $f'\big(\pm\tfrac1{\sqrt3}\big)=0$.
+
 #### **Q31**
-**Method: differentiate the FE.** $f'(x+y)=f(x)f'(y)$; set $y=0$: $f'(x)=f(x)f'(0)=2f(x)$. With $f(0)=1$, solve $f'=2f\Rightarrow f=Ce^{2x}=e^{2x}$.
-**Answer:** $f(x)=e^{2x}$.
-
----
-
-## H · Synthesis & stretch
+**Method: differentiate with respect to $y$ at $y=0$.** $f'(x+y)=f(x)f'(y)$, so
+at $y=0$: $f'(x)=f(x)f'(0)=2f(x)$. This ODE has solution $f(x)=Ce^{2x}$, and
+$f(0)=f(0)^2$ with $f\not\equiv0$ gives $f(0)=1$, so $C=1$.
+**Answer:** $f(x)=e^{2x}$. (Check: $e^{2(x+y)}=e^{2x}e^{2y}$ ✓ and
+$(e^{2x})'(0)=2$ ✓.)
 
 #### **Q32**
-**Method: complex form.** $e^x\cos x=\operatorname{Re}\big(e^{(1+i)x}\big)$; the $n$th derivative is $\operatorname{Re}\big((1+i)^n e^{(1+i)x}\big)$. Since $1+i=\sqrt2\,e^{i\pi/4}$, $(1+i)^n=2^{n/2}e^{in\pi/4}$, giving $2^{n/2}e^x\cos\!\big(x+\frac{n\pi}{4}\big)$.
-**Answer:** $2^{n/2}e^{x}\cos\!\Big(x+\dfrac{n\pi}{4}\Big)$. (Check $n=1$: $\sqrt2\,e^x\cos(x+\pi/4)=e^x(\cos x-\sin x)=(e^x\cos x)'$ ✓.)
+**Method: Leibniz with $f=x^2$.** Only $f^{(0)}=x^2$, $f^{(1)}=2x$ and
+$f^{(2)}=2$ survive, so
+$$\frac{d^n}{dx^n}(x^2e^x)=e^x\left[x^2+2nx+n(n-1)\right].$$
+**Answer:** $e^x\big[x^2+2nx+n(n-1)\big]$. (Check at $x=1.3$: $n=1$ gives
+$15.7413$ ✓, $n=2$ gives $32.6200$ ✓, $n=3$ gives $56.8374$ ✓.)
+
+#### **Q33**
+**Method: complex exponentials.** $e^x\cos x=\Re\,e^{(1+i)x}$ and
+$1+i=\sqrt2\,e^{i\pi/4}$, so $(1+i)^n=2^{n/2}e^{in\pi/4}$ and
+$$\frac{d^n}{dx^n}(e^x\cos x)=2^{n/2}e^x\cos\!\left(x+\frac{n\pi}{4}\right).$$
+**Answer:** $2^{n/2}e^x\cos\!\big(x+\frac{n\pi}{4}\big)$. (Check at $x=0.7$:
+$n=1$ gives $0.2429$ ✓, $n=2$ gives $-2.5946$ ✓, $n=3$ gives $-5.6750$ ✓,
+$n=4$ gives $-6.1608$ ✓.)
+
+#### **Q34**
+**Method: induction.** $\frac{d}{dx}(1-x)^{-1}=(1-x)^{-2}$, and if
+$\frac{d^n}{dx^n}(1-x)^{-1}=n!(1-x)^{-(n+1)}$ then differentiating gives
+$(n+1)!(1-x)^{-(n+2)}$ ✓.
+**Answer:** $\dfrac{n!}{(1-x)^{n+1}}$. (Check at $x=0.4$: $n=1$ gives
+$2.7778$ ✓, $n=2$ gives $9.2593$ ✓, $n=4$ gives $308.6420$ ✓.)
+
+#### **Q35**
+**Method: differentiate with respect to $y$ at $y=0$.** $f'(x+y)=f'(y)$, so at
+$y=0$: $f'(x)=f'(0)=3$, a constant. Hence $f(x)=3x+C$, and $f(0)=0$ (from
+$f(0)=f(0)+f(0)$) gives $C=0$.
+**Answer:** $f(x)=3x$; differentiability is needed because without it there exist
+additive functions that are nowhere continuous (constructed using a Hamel basis),
+for which the conclusion fails.
+
+#### **Q36**
+**Method: the difference quotient, then the explicit formula.** At $0$:
+$\frac{f(h)-f(0)}{h}=h\sin\frac1h\to0$ since $\lvert\sin\frac1h\rvert\le1$, so
+$f'(0)=0$ ✓. For $x\ne0$ the product and chain rules give
+$f'(x)=2x\sin\frac1x-\cos\frac1x$, and
+$f'\big(\frac1{k\pi}\big)=-\cos(k\pi)=(-1)^{k+1}$, which alternates between $1$
+and $-1$ as $k\to\infty$ ✓.
+**Answer:** $f'(0)=0$ exists, but $f'$ oscillates and is discontinuous at $0$.
+
+#### **Q37**
+**Method: study $g(x)=e^x-1-x$.** $g'(x)=e^x-1$, which is negative for $x<0$ and
+positive for $x>0$, so $g$ decreases then increases and attains its minimum at
+$x=0$, where $g(0)=0$. Hence $g(x)\ge0$ everywhere, with equality only at $x=0$.
+**Answer:** proved; equality only at $x=0$. (Check numerically: $x=-1$ gives
+$0.3679\ge0$ ✓, $x=2$ gives $6.389\ge2$ ✓, $x=0$ gives equality ✓.)
+
+#### **Q38**
+**Method: study $h(x)=\ln x-x+1$.** $h'(x)=\frac1x-1$, positive for $0<x<1$ and
+negative for $x>1$, so $h$ attains its maximum at $x=1$, where $h(1)=0$. Hence
+$h(x)\le0$, i.e. $\ln x\le x-1$, with equality only at $x=1$.
+**Answer:** proved; equality only at $x=1$. (Check numerically: $x=0.3$ gives
+$-1.204\le-0.7$ ✓, $x=2.5$ gives $0.916\le1.5$ ✓, $x=1$ gives equality ✓.)

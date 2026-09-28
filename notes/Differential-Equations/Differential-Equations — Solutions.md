@@ -144,7 +144,7 @@ created: 2026-09-27
 
 ---
 
-## G · Applications
+## G · Applications & higher-order structure
 
 #### **Q26**
 **Method: Newton's cooling, separable.** $T-20=(100-20)e^{-kt}=80e^{-kt}$. From $T(10)=60$: $40=80e^{-10k}$, so $e^{-10k}=\frac12$ and $e^{-20k}=\frac14$. Hence $T(20)=20+80\cdot\frac14=40$.
@@ -163,27 +163,55 @@ created: 2026-09-27
 ## H · Olympiad frontier
 
 #### **Q29**
-**Method: differentiate a Clairaut equation and split into two branches.** With $p=y'$, $y=xp+p^2$. Differentiating: $p=p+xp'+2pp'$, so $(x+2p)p'=0$.
-- **Branch $p'=0$:** $p=c$ constant, giving the family of lines $y=cx+c^2$.
-- **Branch $x+2p=0$:** $p=-\frac x2$, substituting back: $y=-\frac{x^2}{2}+\frac{x^2}{4}=-\frac{x^2}{4}$.
-**Answer:** general solution $y=cx+c^2$; singular solution $y=-\dfrac{x^2}{4}$. (Check: at $x=2$, $y=-1$, $p=-1$, and $xp+p^2=2(-1)+1=-1=y$ ✓ — verified at $x=1,2,-3$.)
+**Method: complex roots with negative real part — under-damped oscillation.** $r^2+2r+5=0$ gives $r=-1\pm2i$, so $y=e^{-x}(A\cos2x+B\sin2x)$. From $y(0)=0$, $A=0$; then $y=Be^{-x}\sin2x$ and $y'=Be^{-x}(2\cos2x-\sin2x)$, so $y'(0)=2B=2$ and $B=1$.
+**Answer:** $y=e^{-x}\sin2x$; $y(1)=e^{-1}\sin2\approx0.334512$. (Check: RK4 on the system $y'=u$, $u'=-2u-5y$ gives $0.33451$ at $x=1$ ✓. Here $\zeta=\frac{2}{2\sqrt5}=\frac1{\sqrt5}<1$.)
 
 #### **Q30**
-**Method: as Q29.** $p=y'$, differentiate $y=xp-p^2$: $(x-2p)p'=0$. Lines $y=cx-c^2$; envelope from $x-2p=0$, $p=\frac x2$: $y=\frac{x^2}{2}-\frac{x^2}{4}=\frac{x^2}{4}$.
-**Answer:** $y=\dfrac{x^2}{4}$. (Check: at $x=2$, $y=1$, $p=1$, and $xp-p^2=2-1=1=y$ ✓.)
+**Method: $r^2+3r+2=(r+1)(r+2)$ — two distinct negative real roots, hence no oscillation.** $y=Ae^{-x}+Be^{-2x}$; $A+B=0$ and $-A-2B=1$, giving $A=1$, $B=-1$.
+**Answer:** over-damped; $y=e^{-x}-e^{-2x}$, so $y(1)\approx0.232544$. (Check: RK4 on $y'=u$, $u'=-3u-2y$ gives $0.23254$ ✓. Both terms decay to $0$ and the response never changes sign — the signature of over-damping.)
 
 #### **Q31**
-**Method: reduce the order by treating $p=y'$ as a function of $y$.** $y''=p\frac{dp}{dy}$, so $p\frac{dp}{dy}=\frac{p^2}{y}$, giving $\frac{dp}{p}=\frac{dy}{y}$ (for $p\ne0$), so $\ln p=\ln y+C$ and $p=Cy$. From $p(0)=y'(0)=1$ and $y(0)=1$: $C=1$. Then $y'=y$ with $y(0)=1$ gives $y=e^x$.
-**Answer:** $y=e^x$. (Check: RK4 on the system $y'=u$, $u'=u^2/y$ gives $2.71828$ at $x=1$ ✓.)
+**Method: the equation contains no $x$, so treat $p=y'$ as a function of $y$.** Then $y''=p\frac{dp}{dy}$ and the equation becomes $yp\frac{dp}{dy}=p^2$. For $p\ne0$: $\frac{dp}{p}=\frac{dy}{y}$, so $p=Cy$. With $y(0)=1$ and $y'(0)=p=1$ we get $C=1$, so $y'=y$ and $y=Ae^x$ with $y(0)=1$, i.e. $A=1$.
+**Answer:** $y=e^{x}$; $y(1)=e\approx2.718282$. (Check: RK4 on $y'=u$, $u'=u^2/y$ from $(1,1)$ gives $2.71828$ ✓. The discarded branch $p=0$ gives $y$ constant, which cannot satisfy $y'(0)=1$.)
 
 #### **Q32**
-**Method: characteristic roots $r=\pm1$.** $y=Ae^x+Be^{-x}$; $A+B=1$ and $A-B=0\Rightarrow A=B=\frac12$, so $y=\cosh x$.
-**Answer:** $y=\cosh x$; $y(1)=\cosh1\approx1.5431$. (Check: RK4 system gives $1.54308$ ✓.)
+**Method: differentiate a Clairaut equation and split into two branches.** With $p=y'$, differentiate $y=xp+p^2$: $p=p+xp'+2pp'$, so $(x+2p)p'=0$.
+- **Branch $p'=0$:** $p=c$ constant, giving the family of lines $y=cx+c^2$.
+- **Branch $x+2p=0$:** $p=-\frac x2$, and substituting into the family gives $y=-\frac{x^2}{2}+\frac{x^2}{4}=-\frac{x^2}{4}$.
+**Answer:** general solution $y=cx+c^2$; singular solution $y=-\dfrac{x^2}{4}$. (Check: at $x=2$, $y=-1$, $p=-1$, and $xp+p^2=2(-1)+1=-1=y$ ✓.)
 
 #### **Q33**
-**Method: two arbitrary constants ⇒ a second-order DE; differentiate twice and eliminate.** $y=c_1e^x+c_2e^{-x}$, $y'=c_1e^x-c_2e^{-x}$, $y''=c_1e^x+c_2e^{-x}=y$.
-**Answer:** $y''-y=0$.
+**Method: as Q32.** Differentiate $y=xp-p^2$: $(x-2p)p'=0$. Lines $y=cx-c^2$; envelope from $x-2p=0$, so $p=\frac x2$: $y=\frac{x^2}{2}-\frac{x^2}{4}=\frac{x^2}{4}$.
+**Answer:** general solution $y=cx-c^2$; singular solution $y=\dfrac{x^2}{4}$. (Check: at $x=2$, $y=1$, $p=1$, and $xp-p^2=2-1=1=y$ ✓.)
 
 #### **Q34**
-**Method: as Q33.** $y=ae^{2x}+be^{-2x}$, $y''=4ae^{2x}+4be^{-2x}=4y$.
-**Answer:** $y''-4y=0$. (Check: for $(a,b,x)=(1,2,0.5),(3,-1,1),(-2,5,2)$, $y''-4y=0$ exactly ✓.)
+**Method: reduction of order — one known solution generates a second.** Divide by the leading coefficient to read off $P(x)=0$. Then $y_2=\sin x\int\frac{e^{-\int0\,dx}}{\sin^2x}\,dx=\sin x\int\csc^2x\,dx=\sin x(-\cot x)=-\cos x$.
+**Answer:** $y_2=-\cos x$; general solution $y=A\sin x+B\cos x$. (Check: $(-\cos x)''+(-\cos x)=\cos x-\cos x=0$ ✓; the Wronskian $W=\sin x(-\sin x)-\cos x(\cos x)=-1\ne0$, so the two are independent ✓.)
+
+#### **Q35**
+**Method: divide by $x^2$ first to identify $P(x)=-\frac2x$.** Then $e^{-\int P\,dx}=e^{2\ln x}=x^2$, so $y_2=x\int\frac{x^2}{x^2}\,dx=x\int1\,dx=x^2$.
+**Answer:** $y=Ax+Bx^2$. (Check: $x^2(2)-2x(2x)+2x^2=0$ ✓ — verified at $x=2.3$.)
+
+#### **Q36**
+**Method: test both candidates directly, then audit the hypotheses.** $y=0$ plainly works. For $y=\frac{x^2}{4}$: $y'=\frac x2$ and $y^{1/2}=\frac{|x|}{2}=\frac x2$ for $x\ge0$, so it solves the equation on $x\ge0$ with $y(0)=0$.
+**Answer:** $y=0$ and $y=\dfrac{x^2}{4}$ ($x\ge0$) — infinitely many in total. $\frac{\partial f}{\partial y}=\frac{1}{2\sqrt y}\to\infty$ as $y\to0^+$, so $f$ is **not Lipschitz** at the initial point and Picard–Lindelöf simply does not apply. (Check: in fact for any $a\ge0$, $y=\frac{(x-a)^2}{4}$ for $x>a$ and $0$ for $x\le a$ is also a solution.)
+
+#### **Q37**
+**Method: shift the standard solution so that it starts peeling away at $x=1$.** Take $y=\big(\frac{2(x-1)}{3}\big)^{3/2}$ for $x>1$. Then $y'=\big(\frac{2(x-1)}{3}\big)^{1/2}$ and $y^{1/3}=\big(\frac{2(x-1)}{3}\big)^{1/2}$, so $y'=y^{1/3}$ ✓, with $y(1)=0$ matching the initial condition.
+**Answer:** $y=\begin{cases}0,&x\le1\\[2pt]\big(\dfrac{2(x-1)}{3}\big)^{3/2},&x>1\end{cases}$
+
+#### **Q38**
+**Method: differentiate, then read the result as a linear equation in $x(p)$.** With $p=y'$, differentiate $y=xp^2+1$: $p=2xp+xp^2p'$, so $p(1-2x)=xp^2\frac{dp}{dx}$. Inverting: $\frac{dx}{dp}=\frac{2x}{1-p}$, i.e. $\frac{dx}{dp}-\frac{2x}{1-p}=0$ — linear and homogeneous. Hence $\frac{dx}{x}=\frac{2\,dp}{1-p}$, so $\ln x=-2\ln(1-p)+C$ and $x=\frac{C}{(1-p)^2}$. Substituting back: $y=xp^2+1=1+\frac{Cp^2}{(1-p)^2}$.
+**Answer:** $x=\dfrac{C}{(1-p)^{2}},\quad y=1+\dfrac{Cp^{2}}{(1-p)^{2}}$ (parametric). (Check: $\frac{dy}{dx}=\frac{dy/dp}{dx/dp}=\frac{2Cp(1-p)^{-2}+2Cp^2(1-p)^{-3}}{2C(1-p)^{-3}}=p$ exactly, so $y=xp^2+1$ is satisfied ✓ — verified at $p=0,\,0.2,\,0.5,\,-0.3,\,0.9$.)
+
+#### **Q39**
+**Method: the Riccati substitution with the known particular solution $y_1=0$.** Put $y=\frac1u$, so $y'=-\frac{u'}{u^2}$. Then $-\frac{u'}{u^2}=\frac1{u^2}-\frac1u$, i.e. $-u'=1-u$, so $u'-u=-1$. This is linear with integrating factor $e^{-x}$: $\frac{d}{dx}(ue^{-x})=-e^{-x}$, so $ue^{-x}=e^{-x}+C$ and $u=1+Ce^x$.
+**Answer:** $y=\dfrac{1}{1+Ce^{x}}$. (Check: $y'=\frac{-Ce^{x}}{(1+Ce^{x})^{2}}$ and $y^2-y=\frac{1-(Ce^x+1)}{(1+Ce^x)^2}=\frac{-Ce^{x}}{(1+Ce^x)^2}$ ✓; RK4 from $x_0=0.3$ to $x=1.3$ matches for $C=1$ and $C=3$ ✓.)
+
+#### **Q40**
+**Method: as Q39, but the integrating factor is a Gaussian.** Put $y=1+\frac1u$: $-\frac{u'}{u^2}=x\big(\frac2u+\frac1{u^2}\big)$, so $-u'=2xu+x$, i.e. $u'+2xu=-x$. The integrating factor is $e^{x^2}$, so $\frac{d}{dx}(ue^{x^2})=-xe^{x^2}$ and $ue^{x^2}=-\frac12 e^{x^2}+C$, giving $u=Ce^{-x^2}-\frac12$.
+**Answer:** $y=1+\dfrac{1}{Ce^{-x^{2}}-\frac12}$. (Check: with $u=Ce^{-x^2}-\frac12$, $u'=-2Cxe^{-x^2}$ and $2xu+x=2xCe^{-x^2}$, so $u'+2xu=-x$ ✓; substituting back gives $x(y^2-1)=y'$ exactly at $x=0.6$ for $C=1,\,2,\,-0.7$ ✓.)
+
+#### **Q41**
+**Method: two arbitrary constants demand a second-order DE; differentiate twice and eliminate.** $y=c_1e^x+c_2e^{-x}$, $y'=c_1e^x-c_2e^{-x}$, $y''=c_1e^x+c_2e^{-x}=y$.
+**Answer:** $y''-y=0$. (Check: for $(c_1,c_2,x)=(1,2,0.5),(3,-1,1),(-2,5,2)$, $y''-y=0$ exactly ✓.)

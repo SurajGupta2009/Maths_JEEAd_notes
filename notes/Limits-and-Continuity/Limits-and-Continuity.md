@@ -705,6 +705,101 @@ Take logs: $\ln P_n = \sum_{k=1}^n \ln(1 + k/n^2)$. Since $x - \tfrac{x^2}{2} \l
 > sums and recursive sequences. Full worked solutions are in
 > [[Limits-and-Continuity — Solutions|the solutions file]].
 
+## 6.4 Riemann sums and the integral as a limit
+
+> [!abstract] First Principles — a limit that is secretly an integral
+> A sum of the shape $\frac1n\sum_{k=1}^{n}g\!\big(\frac kn\big)$ is a Riemann sum
+> for $\int_0^1g(x)\,dx$. The limit is therefore *exactly* the integral:
+> $$\lim_{n\to\infty}\frac1n\sum_{k=1}^{n}\left(\frac kn\right)^{p}
+> =\int_0^1x^{p}\,dx=\frac1{p+1}.$$
+> Recognising the Riemann-sum shape converts a hard limit into a one-line
+> integral — and it is the formal definition of the definite integral in
+> disguise.
+
+#### **S13**[Olympiad][solved][riemann]Evaluate $\displaystyle\lim_{n\to\infty}\frac1n\sum_{k=1}^{n}\left(\frac kn\right)^{2}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: recognise the Riemann sum.** The expression is
+$\frac1n\sum_{k=1}^{n}(\frac kn)^2\to\int_0^1x^2\,dx=\frac13$.
+Check numerically with $n=200000$: the sum is $0.333336$, converging to
+$\frac13$ ✓.
+
+**Answer:** $\dfrac13$.
+
+</details>
+
+#### **S14**[Olympiad][solved][riemann]Evaluate $\displaystyle\lim_{n\to\infty}\frac{1^p+2^p+\cdots+n^p}{n^{p+1}}$ for $p>0$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: factor out $n^p$ to expose the Riemann sum.**
+$$\frac{1^p+\cdots+n^p}{n^{p+1}}=\frac1n\sum_{k=1}^{n}\left(\frac kn\right)^{p}\to\int_0^1x^{p}\,dx=\frac1{p+1}.$$
+Check numerically for $p=3$ with $n=100000$: the ratio is $0.250005$, converging
+to $\frac14$ ✓. For $p=1$ it gives $\frac12$ (the familiar
+$\frac{n(n+1)/2}{n^2}$) ✓.
+
+**Answer:** $\dfrac1{p+1}$.
+
+</details>
+
+## 6.5 The intermediate value theorem as a fixed-point engine
+
+> [!abstract] First Principles — the half-shift trick
+> Let $f$ be continuous on $[0,1]$ with $f(0)=f(1)$. Define
+> $g(x)=f(x)-f\big(x+\frac12\big)$ on $[0,\frac12]$. Then
+> $g(0)=f(0)-f(\frac12)$ and $g(\frac12)=f(\frac12)-f(1)=-g(0)$. So $g$ changes
+> sign (or vanishes at an endpoint), and by the IVT there is
+> $c\in[0,\frac12]$ with $g(c)=0$, i.e. $f(c)=f(c+\frac12)$.
+
+This is the template for a whole family of olympiad existence results: **build a
+function whose sign change is forced, then apply the IVT.** The same trick proves
+that any continuous $f$ on a circle attains every value twice at antipodal points.
+
+#### **S15**[Olympiad][solved][ivt]Let $f$ be continuous on $[0,1]$ with $f(0)=f(1)$. Prove there is $c\in[0,\tfrac12]$ with $f(c)=f\big(c+\tfrac12\big)$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the auxiliary function $g(x)=f(x)-f(x+\frac12)$.** As above,
+$g(\frac12)=-g(0)$. If $g(0)=0$ take $c=0$; otherwise $g(0)$ and $g(\frac12)$
+have opposite signs, so the IVT gives $c\in(0,\frac12)$ with $g(c)=0$ ✓.
+Check numerically on $20000$ random quadratics with $f(0)=f(1)$: the property held
+in every case ✓.
+
+**Answer:** such a $c$ always exists.
+
+</details>
+
+## 6.6 Convergence rates and the error term
+
+> [!abstract] First Principles — the second-order term of $(1+1/n)^n$
+> Writing $\ln(1+\frac1n)=\frac1n-\frac1{2n^2}+O(n^{-3})$ gives
+> $$n\ln\!\Big(1+\frac1n\Big)=1-\frac1{2n}+O(n^{-2}),$$
+> so $\big(1+\frac1n\big)^n=e\cdot e^{-1/(2n)+O(n^{-2})}=e\Big(1-\frac1{2n}+O(n^{-2})\Big)$
+> and therefore
+> $$n\left[\Big(1+\frac1n\Big)^{n}-e\right]\to-\frac e2.$$
+> The limit is not $0$: the sequence approaches $e$ at rate $\frac1n$, so
+> multiplying by $n$ exposes the constant $-\frac e2$.
+
+#### **S16**[Olympiad][solved][convergence rate]Evaluate $\displaystyle\lim_{n\to\infty}n\left[\Big(1+\frac1n\Big)^{n}-e\right]$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: expand the logarithm to second order.** From the expansion above,
+$\big(1+\frac1n\big)^n=e\big(1-\frac1{2n}+O(n^{-2})\big)$, so
+$n\big[\big(1+\frac1n\big)^n-e\big]=e\big(-\frac12+O(n^{-1})\big)\to-\frac e2$.
+Check numerically: at $n=1000$ the value is $-1.3579$ and at $n=100000$ it is
+$-1.3591$, converging to $-\frac e2=-1.35914$ ✓.
+
+**Answer:** $-\dfrac e2$.
+
+</details>
+
+---
 ---
 
 # Appendix — Well-Ordered Theory Reference

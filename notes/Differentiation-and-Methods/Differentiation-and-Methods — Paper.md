@@ -155,31 +155,62 @@ created: 2026-09-27
 
 ---
 
-## G · Rolle, MVT & functional equations (Q29–Q31)
+## G · Rolle, MVT and functional equations (Q29–Q31)
 
-#### **Q29**[JEE Main][Rolle]$f(x)=x^2-4$ on $[-2,2]$. Find $c$ with $f'(c)=0$.
-
-**Answer:** $c=0$
-
-#### **Q30**[JEE Adv][MVT]$f(x)=x^2$ on $[1,3]$. Find $c$ with $f'(c)=\dfrac{f(3)-f(1)}{3-1}$.
+#### **Q29**[JEE Main][MVT]$f(x)=x^2$ on $[1,3]$. Find $c$ with $f'(c)=\dfrac{f(3)-f(1)}{3-1}$.
 
 **Answer:** $c=2$
 
-#### **Q31**[Olympiad][functional]$f$ differentiable, $f(x+y)=f(x)f(y)$, $f'(0)=2$. Find $f$.
+#### **Q30**[JEE Adv][MVT]State Rolle's theorem and verify it for $f(x)=x^3-x$ on $[-1,1]$.
+
+**Answer:** $f'(\pm\tfrac1{\sqrt3})=0$
+
+#### **Q31**[Olympiad][functional]$f$ is differentiable, $f(x+y)=f(x)f(y)$ for all real $x,y$, and $f'(0)=2$. Find $f$.
 
 **Answer:** $f(x)=e^{2x}$
 
 ---
 
-## H · Synthesis & stretch (Q32)
+## H · Olympiad frontier (Q32–Q38)
 
-#### **Q32**[Olympiad][stretch]Find $\dfrac{d^{n}}{dx^{n}}\big(e^{x}\cos x\big)$.
+#### **Q32**[Olympiad][leibniz]Find $\dfrac{d^n}{dx^n}\big(x^2e^x\big)$ in closed form.
 
-**Answer:** $2^{n/2}\,e^{x}\cos\!\Big(x+\dfrac{n\pi}{4}\Big)$
+**Answer:** $e^x\big[x^2+2nx+n(n-1)\big]$
+
+#### **Q33**[Olympiad][leibniz]Find $\dfrac{d^n}{dx^n}\big(e^x\cos x\big)$ in closed form.
+
+**Answer:** $2^{n/2}e^x\cos\!\big(x+\frac{n\pi}{4}\big)$
+
+#### **Q34**[Olympiad][nth derivative]Find the $n^{\rm th}$ derivative of $\dfrac1{1-x}$.
+
+**Answer:** $\dfrac{n!}{(1-x)^{n+1}}$
+
+#### **Q35**[Olympiad][functional]$f$ is differentiable and $f(x+y)=f(x)+f(y)$ for all real $x,y$, with $f'(0)=3$. Find $f$, and explain why differentiability is needed.
+
+**Answer:** $f(x)=3x$; without regularity there are wild discontinuous solutions
+
+#### **Q36**[Olympiad][darboux]Let $f(x)=x^2\sin\frac1x$ for $x\ne0$ and $f(0)=0$. Show that $f$ is differentiable at $0$ but that $f'$ is not continuous at $0$.
+
+**Answer:** $f'(0)=0$, but $f'\big(\frac1{k\pi}\big)=(-1)^{k+1}$ oscillates
+
+#### **Q37**[Olympiad][inequality]Using calculus, prove $e^x\ge1+x$ for all real $x$, and state when equality holds.
+
+**Answer:** proved; equality only at $x=0$
+
+#### **Q38**[Olympiad][inequality]Using calculus, prove $\ln x\le x-1$ for $x>0$, and state when equality holds.
+
+**Answer:** proved; equality only at $x=1$
 
 ---
 
 > [!note] Exam technique notes
-> - Match the method to the shape: $u^v$ → logarithmic; two parametric equations → $\frac{dy/dt}{dx/dt}$; $F(x,y)=0$ → implicit.
-> - For an $n$th derivative, compute the first few and read the pattern, or reach for Leibniz.
-> - To prove an inequality, differentiate a difference and read the sign.
+> - **Leibniz before brute force.** For the $n^{\rm th}$ derivative of a product,
+>   only the derivatives of each factor that survive matter — most terms vanish.
+> - **Complex exponentials kill trig.** $e^{ax}\cos bx=\Re\,e^{(a+ib)x}$ turns an
+>   $n^{\rm th}$ derivative into one multiplication.
+> - **Differentiate a functional equation at the coincidence point** ($y=0$ or
+>   $y=1$) to extract an ODE, then solve it.
+> - **Check the regularity hypothesis** in every functional-equation problem —
+>   without it the conclusion can fail spectacularly.
+> - **For a derivative inequality, study $g=f-h$:** show $g'\ge0$ (or $g$ has a
+>   minimum) and read the equality case off the critical point.

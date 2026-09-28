@@ -550,6 +550,117 @@ $(-1)^{n-1}(n-1)!\Big[(x-1)^{-n}+(x+1)^{-n}\Big]$.
 > derivatives, MVT/Rolle and functional equations. Full worked solutions are in
 > [[Differentiation-and-Methods — Solutions|the solutions file]].
 
+## 6.4 The Leibniz rule and $n^{\rm th}$ derivatives
+
+> [!abstract] First Principles — Leibniz's rule
+> For a product, differentiation distributes over the factors with binomial
+> coefficients:
+> $$(fg)^{(n)}=\sum_{k=0}^{n}\binom nk f^{(n-k)}g^{(k)}.$$
+> The proof is induction using the product rule twice; the coefficients are
+> binomial because each of the $n$ derivatives independently chooses which factor
+> to hit — exactly the argument that produces Pascal's triangle.
+
+The two shapes worth memorising:
+
+$$\frac{d^n}{dx^n}\big(x^m e^x\big)=e^x\sum_{j=0}^{\min(m,n)}\binom nj\frac{m!}{(m-j)!}x^{m-j},
+\qquad
+\frac{d^n}{dx^n}\big(e^{ax}\cos bx\big)=(a^2+b^2)^{n/2}e^{ax}\cos(bx+n\theta),$$
+where $\theta=\arctan\frac ba$.
+
+#### **S12**[Olympiad][solved][leibniz]Find $\dfrac{d^n}{dx^n}\big(x^2e^x\big)$ and $\dfrac{d^n}{dx^n}\big(e^x\cos x\big)$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: Leibniz with $f=x^2$.** Only $f^{(0)}=x^2$, $f^{(1)}=2x$ and
+$f^{(2)}=2$ survive, so
+$$\frac{d^n}{dx^n}(x^2e^x)=e^x\left[x^2+2nx+n(n-1)\right].$$
+**Method for the second: complex exponentials.** $e^x\cos x=\Re\,e^{(1+i)x}$, and
+$e^{(1+i)x}$ has $n^{\rm th}$ derivative $(1+i)^ne^x$. Since
+$1+i=\sqrt2\,e^{i\pi/4}$, we get $(1+i)^n=2^{n/2}e^{in\pi/4}$, hence
+$$\frac{d^n}{dx^n}(e^x\cos x)=2^{n/2}e^x\cos\!\left(x+\frac{n\pi}{4}\right).$$
+Check numerically at $x=0.7$: for $n=1$ both give $0.2429$ ✓, $n=2$ gives
+$-2.5946$ ✓, $n=3$ gives $-5.6750$ ✓. For $x^2e^x$ at $x=1.3$: $n=1$ gives
+$15.7413$ ✓, $n=3$ gives $56.8374$ ✓.
+
+**Answer:** $e^x\big[x^2+2nx+n(n-1)\big]$ and
+$2^{n/2}e^x\cos\!\big(x+\frac{n\pi}{4}\big)$.
+
+</details>
+
+## 6.5 Functional equations from derivatives
+
+> [!abstract] First Principles — differentiation turns algebra into ODEs
+> A functional equation $f(x+y)=f(x)f(y)$ says nothing about calculus. But
+> differentiating it with respect to $y$ at $y=0$ *does*:
+> $$f'(x)=f(x)f'(0),$$
+> which is an ordinary differential equation with the unique solution
+> $f(x)=Ce^{f'(0)x}$. The functional equation forces $f(0)=1$ (put $x=y=0$),
+> so $C=1$. **The pattern: differentiate a functional equation at the point
+> where the two arguments coincide, and read off an ODE.**
+
+| Equation | Differentiate at $y=0$ | Solution |
+|---|---|---|
+| $f(x+y)=f(x)f(y)$ | $f'(x)=f(x)f'(0)$ | $f(x)=e^{f'(0)x}$ |
+| $f(x+y)=f(x)+f(y)$ | $f'(x)=f'(0)$ | $f(x)=f'(0)\,x$ |
+| $f(xy)=f(x)+f(y)$ | $\frac{f'(xy)}{f(y)}=f'(x)$ at $y=1$ | $f(x)=a\ln x$ |
+
+> [!warning] Common Trap — regularity is essential
+> $f(x+y)=f(x)+f(y)$ has wildly discontinuous solutions if $f$ is not assumed
+> continuous or monotone (they need the axiom of choice to construct). Every
+> conclusion above uses differentiability, and that hypothesis cannot be dropped.
+
+#### **S13**[Olympiad][solved][functional]$f$ is differentiable, $f(x+y)=f(x)f(y)$ for all real $x,y$, and $f'(0)=2$. Find $f$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: differentiate with respect to $y$ at $y=0$.**
+$f'(x+y)=f(x)f'(y)$, so at $y=0$: $f'(x)=f(x)f'(0)=2f(x)$. This ODE has
+solution $f(x)=Ce^{2x}$, and $f(0)=f(0)^2$ with $f(0)\ne0$ (else $f\equiv0$,
+contradicting $f'(0)=2$) gives $f(0)=1$, so $C=1$.
+Check: $e^{2(x+y)}=e^{2x}e^{2y}$ ✓ and $(e^{2x})'(0)=2$ ✓.
+
+**Answer:** $f(x)=e^{2x}$.
+
+</details>
+
+## 6.6 The Darboux property
+
+> [!abstract] First Principles — derivatives have the intermediate value property
+> A derivative need not be continuous, but it *does* take every value between any
+> two of its values. If $f'(a)<0<f'(b)$ then $f'(c)=0$ for some $c\in(a,b)$ —
+> which is Rolle's theorem in disguise, and the reason the usual "critical point"
+> arguments work without assuming $f'$ is continuous.
+
+> [!example] Olympiad Extension — a differentiable function with a discontinuous derivative
+> Let $f(x)=x^2\sin\frac1x$ for $x\ne0$ and $f(0)=0$. Then $f$ is differentiable
+> everywhere, but
+> $$f'(x)=2x\sin\frac1x-\cos\frac1x\quad(x\ne0),\qquad f'(0)=0,$$
+> and $f'(x)$ oscillates between roughly $-1$ and $1$ as $x\to0$, so $f'$ has no
+> limit at $0$. Check numerically: $f'\big(\frac1{k\pi}\big)=\pm1$ for
+> $k=1,2,3,\ldots$ ✓. **Differentiability does not imply continuity of the
+> derivative** — a genuinely counter-intuitive fact, and the reason the Darboux
+> theorem is stated separately from continuity.
+
+#### **S14**[Olympiad][solved][darboux]Show that $f(x)=x^2\sin\frac1x$ (with $f(0)=0$) is differentiable at $0$ but that $f'$ is not continuous at $0$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the difference quotient, then the explicit formula.**
+At $0$: $\frac{f(h)-f(0)}{h}=h\sin\frac1h\to0$ since $\lvert\sin\frac1h\rvert\le1$,
+so $f'(0)=0$ ✓. For $x\ne0$ the product and chain rules give
+$f'(x)=2x\sin\frac1x-\cos\frac1x$. Now
+$f'\big(\frac1{k\pi}\big)=-\cos(k\pi)=(-1)^{k+1}$, which alternates between $1$
+and $-1$ as $k\to\infty$ ✓ — so $f'$ has no limit at $0$ and cannot be continuous
+there, even though $f$ is differentiable.
+
+**Answer:** $f'(0)=0$ exists, but $f'$ oscillates and is discontinuous at $0$.
+
+</details>
+
+---
 ---
 
 # Appendix — Well-Ordered Theory Reference

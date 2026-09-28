@@ -158,21 +158,78 @@ created: 2026-09-27
 ## G · Olympiad techniques
 
 #### **Q29**
-**Method: Stolz–Cesàro (or exact sum).** $a_n=\frac{n(n+1)}2$, $b_n=n^2$; $\frac{a_{n+1}-a_n}{b_{n+1}-b_n}=\frac{n+1}{(n+1)^2-n^2}=\frac{n+1}{2n+1}\to\frac12$. (Directly: $\frac{n(n+1)}{2n^2}\to\frac12$.)
-**Answer:** $\frac12$. ✓
+**Method: Stolz–Cesàro, or the closed form.** $\frac{1+2+\cdots+n}{n^2}=\frac{n(n+1)/2}{n^2}=\frac{n+1}{2n}\to\frac12$.
+**Answer:** $\dfrac12$. (Check at $n=100000$: the ratio is $0.500005$ ✓.)
 
 #### **Q30**
-**Method: Riemann sum.** $\frac1n\sum_{k=1}^n (k/n)^2 \to \int_0^1 x^2\,dx=\frac13$.
-**Answer:** $\frac13$. (Check: at $n=2\times10^5$, $0.33334$ ✓.)
+**Method: recognise the Riemann sum.** $\frac1n\sum_{k=1}^{n}(\frac kn)^2\to\int_0^1x^2\,dx=\frac13$.
+**Answer:** $\dfrac13$. (Check at $n=200000$: the sum is $0.333336$ ✓.)
 
 #### **Q31**
-**Method: monotone bounded + fixed point (Newton for $\sqrt2$).** $a_n\ge\sqrt2$ (AM–GM) and $a_{n+1}\le a_n$, so $a_n$ decreases to $L$ with $L=\frac12(L+2/L)$, i.e. $L^2=2$, $L=\sqrt2>0$.
-**Answer:** $\sqrt2\approx1.41421$. (Check: 60 iterations from $2$ give $1.41421356$ ✓.)
-
----
-
-## H · Synthesis & stretch
+**Method: Heron's iteration for $\sqrt2$.** The sequence is decreasing and bounded
+below by $\sqrt2$ (AM–GM: $a_{n+1}\ge\sqrt{a_n\cdot\frac2{a_n}}=\sqrt2$), so the
+limit $L$ exists and $L=\frac12(L+\frac2L)$, i.e. $L^2=2$ and $L=\sqrt2>0$.
+**Answer:** $\sqrt2$. (Check: $60$ iterations from $a_1=2$ give
+$1.414213562$ ✓.)
 
 #### **Q32**
-**Method: expand the exponent.** $\big(1+\frac1n\big)^n=\exp\!\big(n\ln(1+\tfrac1n)\big)$ and $n\ln(1+\tfrac1n)=1-\frac1{2n}+O(n^{-2})$, so $\big(1+\frac1n\big)^n = e\cdot e^{-1/(2n)+O(n^{-2})}=e\Big(1-\frac1{2n}+O(n^{-2})\Big)$. Hence $n\big[\big(1+\frac1n\big)^n-e\big]\to-\frac e2$.
-**Answer:** $-\frac e2\approx-1.35914$. (Check: $-1.35902,-1.35913$ at $n=10^4,10^5$, converging to $-1.35914$ ✓.)
+**Method: expand $\ln(1+\frac1n)$ to second order.** Since
+$\ln(1+\frac1n)=\frac1n-\frac1{2n^2}+O(n^{-3})$,
+$n\ln(1+\frac1n)=1-\frac1{2n}+O(n^{-2})$, so
+$\big(1+\frac1n\big)^n=e\big(1-\frac1{2n}+O(n^{-2})\big)$ and
+$n\big[\big(1+\frac1n\big)^n-e\big]\to-\frac e2$.
+**Answer:** $-\dfrac e2$. (Check numerically: at $n=1000$ the value is $-1.3579$
+and at $n=100000$ it is $-1.3591$, converging to $-1.35914$ ✓.)
+
+#### **Q33**
+**Method: factor out $n^3$ to expose the Riemann sum.**
+$\frac{1^3+\cdots+n^3}{n^4}=\frac1n\sum_{k=1}^{n}(\frac kn)^3\to\int_0^1x^3\,dx=\frac14$.
+**Answer:** $\dfrac14$. (Check at $n=100000$: the ratio is $0.250005$ ✓.)
+
+#### **Q34**
+**Method: Riemann sum for $\int_0^1\sqrt{x}\,dx$.**
+$\frac1n\sum_{k=1}^{n}\sqrt{\frac kn}\to\int_0^1x^{1/2}\,dx=\frac23$.
+**Answer:** $\dfrac23$. (Check at $n=200000$: the sum is $0.666669$ ✓.)
+
+#### **Q35**
+**Method: logs + squeeze.** With $P_n$ the product,
+$\ln P_n=\sum_{k=1}^{n}\ln(1+\frac{k}{n^2})$. Since
+$x-\frac{x^2}2\le\ln(1+x)\le x$ for $x\ge0$ and
+$\sum_{k=1}^{n}\frac{k}{n^2}=\frac{n(n+1)}{2n^2}\to\frac12$, while
+$\sum_{k=1}^{n}\frac{k^2}{n^4}=O(n^{-1})\to0$, we get $\ln P_n\to\frac12$.
+**Answer:** $\sqrt e\approx1.648721$. (Check numerically at $n=1000$: the product
+is $1.64836$, converging to $1.64872$ ✓.)
+
+#### **Q36**
+**Method: monotone + bounded, then the fixed-point equation.** The sequence is
+increasing and bounded above by $2$ (induction), so $L$ exists and
+$L=\sqrt{2+L}$, i.e. $L^2-L-2=0$, so $L=2$ (the positive root; $-1$ is
+impossible).
+**Answer:** $2$. (Check: $a_1=1$, $a_2=\sqrt3\approx1.7321$,
+$a_3=\sqrt{2+\sqrt3}\approx1.9319$, $a_4\approx1.9829$, converging up to $2$ ✓;
+the root $-1$ of $L^2-L-2=0$ is impossible since $L>0$ ✓.)
+
+#### **Q37**
+**Method: the auxiliary function.** Set $g(x)=f(x)-f(x+\frac12)$ on
+$[0,\frac12]$. Then $g(0)=f(0)-f(\frac12)$ and
+$g(\frac12)=f(\frac12)-f(1)=-g(0)$. If $g(0)=0$ take $c=0$; otherwise $g(0)$ and
+$g(\frac12)$ have opposite signs and the IVT gives $c\in(0,\frac12)$ with
+$g(c)=0$.
+**Answer:** proved. (Check on $20000$ random quadratics with $f(0)=f(1)$: the
+property held in every case ✓.)
+
+#### **Q38**
+**Method: the Jensen-type relation forces equal spacing.** Taking $y=0$ gives
+$f(\frac x2)=\frac{f(x)+f(0)}2$, so $f(x)=2f(\frac x2)-f(0)$. Iterating,
+$f(\frac{x}{2^n})=2^{-n}f(x)+(1-2^{-n})f(0)$; letting $n\to\infty$ and using
+continuity at $0$ gives $f(0)=f(0)$ — no information. Instead set
+$b=f(0)$ and $g=f-b$, so $g(\frac{x+y}2)=\frac{g(x)+g(y)}2$ and $g(0)=0$. Then
+$g(\frac x2)=\frac{g(x)}2$, so by induction $g(\frac{x}{2^n})=2^{-n}g(x)$, and
+$g(x+y)=g(x)+g(y)$ follows from the midpoint property. A continuous additive
+function is linear, so $g(x)=ax$ and $f(x)=ax+b$.
+**Answer:** $f(x)=ax+b$.
+
+#### **Q39**
+**Method: Riemann sum.** $\frac1n\sum_{k=1}^{n}\frac1{1+k/n}\to\int_0^1\frac{dx}{1+x}=\ln2$.
+**Answer:** $\ln2$. (Check at $n=200000$: the sum is $0.693148$, converging to
+$\ln2=0.693147$ ✓.)

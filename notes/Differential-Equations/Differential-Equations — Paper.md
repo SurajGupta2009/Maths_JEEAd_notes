@@ -143,7 +143,7 @@ created: 2026-09-27
 
 ---
 
-## G · Applications (Q26–Q28)
+## G · Applications & higher-order structure (Q26–Q31)
 
 #### **Q26**[JEE Main][cooling]A body at $100^\circ$C cools in a $20^\circ$C room; after $10$ min it reads $60^\circ$C. Find the temperature after $20$ min.
 
@@ -157,33 +157,61 @@ created: 2026-09-27
 
 **Answer:** $y=\dfrac{\sin x-\cos x}{2}+\dfrac{e^{-x}}{2}$, so $y\!\left(\dfrac\pi2\right)=\dfrac{1+e^{-\pi/2}}{2}\approx0.6039$
 
+#### **Q29**[JEE Adv][damping]Solve $y''+2y'+5y=0$ with $y(0)=0$, $y'(0)=2$; state the damping regime and find $y(1)$.
+
+**Answer:** $y=e^{-x}\sin 2x$, under-damped ($\zeta=\frac{1}{\sqrt5}<1$); $y(1)\approx0.334512$
+
+#### **Q30**[JEE Adv][damping]Classify and solve $y''+3y'+2y=0$ with $y(0)=0$, $y'(0)=1$.
+
+**Answer:** over-damped ($r=-1,-2$); $y=e^{-x}-e^{-2x}$, so $y(1)\approx0.232544$
+
+#### **Q31**[JEE Adv][reduction of order]Solve $yy''=(y')^{2}$ with $y(0)=1$, $y'(0)=1$.
+
+**Answer:** $y=e^{x}$ (set $p=y'$ as a function of $y$, so $y''=p\frac{dp}{dy}$)
+
 ---
 
-## H · Olympiad frontier (Q29–Q34)
+## H · Olympiad frontier (Q32–Q41)
 
-#### **Q29**[Olympiad][Clairaut]Solve $y=xy'+(y')^2$ and find its singular solution.
+#### **Q32**[Olympiad][Clairaut]Solve $y=xy'+(y')^{2}$ and find its singular solution.
 
-**Answer:** $y=cx+c^2$; singular solution $y=-\dfrac{x^2}{4}$
+**Answer:** general $y=cx+c^{2}$; singular solution $y=-\dfrac{x^{2}}{4}$
 
-#### **Q30**[Olympiad][Clairaut]Find the singular solution of $y=xy'-(y')^2$.
+#### **Q33**[Olympiad][Clairaut]Find the singular solution of $y=xy'-(y')^{2}$.
 
-**Answer:** $y=\dfrac{x^2}{4}$
+**Answer:** general $y=cx-c^{2}$; singular solution $y=\dfrac{x^{2}}{4}$
 
-#### **Q31**[Olympiad][reduction]Solve $yy''=(y')^2$ with $y(0)=1$, $y'(0)=1$.
+#### **Q34**[Olympiad][reduction of order]Given that $y=\sin x$ solves $y''+y=0$, find a second independent solution and the general solution.
 
-**Answer:** $y=e^x$
+**Answer:** $y_{2}=-\cos x$ (Wronskian $-1$); general solution $y=A\sin x+B\cos x$
 
-#### **Q32**[Olympiad][second order]Solve $y''=y$ with $y(0)=1$, $y'(0)=0$; find $y(1)$.
+#### **Q35**[Olympiad][reduction of order]Given that $y=x$ solves $x^{2}y''-2xy'+2y=0$, find the general solution.
 
-**Answer:** $y=\cosh x$, so $y(1)=\cosh1\approx1.5431$
+**Answer:** $y=Ax+Bx^{2}$
 
-#### **Q33**[Olympiad][formation]Form the DE whose general solution is $y=c_1e^x+c_2e^{-x}$.
+#### **Q36**[Olympiad][non-uniqueness]Exhibit two distinct solutions of $y'=y^{1/2}$ with $y(0)=0$, and explain why Picard–Lindelöf does not force uniqueness here.
+
+**Answer:** $y=0$ and $y=\dfrac{x^{2}}{4}$ ($x\ge0$); $\frac{\partial f}{\partial y}=\frac{1}{2\sqrt y}\to\infty$ as $y\to0^{+}$, so $f$ is not Lipschitz at the initial point
+
+#### **Q37**[Olympiad][non-uniqueness]Show that $y'=y^{1/3}$, $y(0)=0$, has a solution equal to $0$ for $x\le1$ and positive for $x>1$.
+
+**Answer:** $y=\begin{cases}0,&x\le1\\[2pt]\big(\frac{2(x-1)}{3}\big)^{3/2},&x>1\end{cases}$
+
+#### **Q38**[Olympiad][Lagrange]Solve $y=x(y')^{2}+1$.
+
+**Answer:** parametric in $p=y'$: $x=\dfrac{C}{(1-p)^{2}},\ y=1+\dfrac{Cp^{2}}{(1-p)^{2}}$
+
+#### **Q39**[Olympiad][Riccati]Solve $y'=y^{2}-y$, given that $y=0$ is a solution.
+
+**Answer:** $y=\dfrac{1}{1+Ce^{x}}$ (substitute $y=\frac1u$)
+
+#### **Q40**[Olympiad][Riccati]Solve $y'=x\big(y^{2}-1\big)$, given that $y=1$ is a solution.
+
+**Answer:** $y=1+\dfrac{1}{Ce^{-x^{2}}-\frac12}$
+
+#### **Q41**[Olympiad][formation]Form the differential equation whose general solution is $y=c_{1}e^{x}+c_{2}e^{-x}$.
 
 **Answer:** $y''-y=0$
-
-#### **Q34**[Olympiad][formation]Form the DE of the family $y=ae^{2x}+be^{-2x}$.
-
-**Answer:** $y''-4y=0$
 
 ---
 
@@ -191,6 +219,12 @@ created: 2026-09-27
 > - Identify the type first: separable? homogeneous? linear? exact? — in that order.
 > - For a linear first-order DE, write $y'+P(x)y=Q(x)$ in standard form *before*
 >   computing the integrating factor.
+> - If $x$ is absent from a second-order equation, set $p=y'$ and use
+>   $y''=p\frac{dp}{dy}$ — this is the single most useful reduction available.
 > - In a Clairaut equation, always look for **both** the family of lines and the
 >   singular (envelope) solution.
+> - For a Riccati equation, hunt for one particular solution first; without it
+>   there is no general closed form.
+> - Before invoking uniqueness, check that $\partial f/\partial y$ is finite at
+>   the initial point.
 > - Check every solution by substituting it back, and verify the initial condition.
