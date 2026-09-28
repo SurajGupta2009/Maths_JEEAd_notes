@@ -179,6 +179,62 @@ created: 2026-09-27
 
 ---
 
+## G · Orthogonality, spherical excess & the regular tetrahedron (Q35–Q40)
+
+#### **Q35**[Olympiad][orthogonal]Do the spheres $x^{2}+y^{2}+z^{2}=25$ and $(x-4)^{2}+(y-3)^{2}+z^{2}=16$ cut orthogonally?
+
+**Answer:** no — the centre distance is $5$, so $d^{2}=25\ne41=r_1^{2}+r_2^{2}$
+
+#### **Q36**[Olympiad][orthogonal]Find the locus of the centres of spheres of radius $3$ that cut $x^{2}+y^{2}+z^{2}=16$ orthogonally.
+
+**Answer:** $x^{2}+y^{2}+z^{2}=25$ (centre at distance $\sqrt{16+9}=5$ from the origin)
+
+#### **Q37**[JEE Adv][orthogonal]State the condition for two spheres of radii $r_1,r_2$ whose centres are distance $d$ apart to cut orthogonally.
+
+**Answer:** $d^{2}=r_{1}^{2}+r_{2}^{2}$
+
+#### **Q38**[Olympiad][Girard]A spherical triangle on the unit sphere has angles $80^{\circ}$, $70^{\circ}$ and $60^{\circ}$. Find its area and the fraction of the sphere it covers.
+
+**Answer:** excess $30^{\circ}=\frac\pi6$, area $\frac\pi6\approx0.5236$, fraction $\frac1{24}$
+
+#### **Q39**[Olympiad][Girard]A spherical triangle on a sphere of radius $2$ has area $1$. Find its spherical excess.
+
+**Answer:** $E=\text{area}/R^{2}=\frac14$ radian $\approx14.32^{\circ}$
+
+#### **Q40**[Olympiad][regular]A regular tetrahedron has inradius $1$. Find its edge, circumradius and volume.
+
+**Answer:** edge $2\sqrt6\approx4.8990$, circumradius $3$, volume $8\sqrt3\approx13.8564$
+
+---
+
+## H · Olympiad synthesis (Q41–Q46)
+
+#### **Q41**[Olympiad][regular]For a regular tetrahedron of edge $a$, prove $R=3r$ and find the dihedral angle between two faces.
+
+**Answer:** $R=\frac{a\sqrt6}{4}$, $r=\frac{a\sqrt6}{12}$, so $R=3r$; dihedral angle $\cos^{-1}\!\frac13\approx70.53^{\circ}$
+
+#### **Q42**[Olympiad][regular]Find the solid angle subtended at a vertex of a regular tetrahedron by the opposite face.
+
+**Answer:** $\Omega=3\cos^{-1}\!\frac13-\pi\approx0.5513$ steradians
+
+#### **Q43**[Olympiad][spherical]The three coordinate planes cut the unit sphere into eight congruent spherical triangles. Find the area of one of them, and check it against Girard's theorem.
+
+**Answer:** each has angles $\frac\pi2,\frac\pi2,\frac\pi2$, excess $\frac\pi2$, area $\frac\pi2$ — exactly $\frac18$ of $4\pi$ ✓
+
+#### **Q44**[Olympiad][Dandelin]Explain why the Dandelin spheres prove that a plane section of a cone is an ellipse with the tangency points as foci.
+
+**Answer:** the two tangent segments from a point on the section to each sphere are equal, so $PF_1+PF_2$ equals the constant distance between the contact circles along a generator
+
+#### **Q45**[Olympiad][coaxal]A sphere is orthogonal to two given spheres. What can you say about it and the coaxal pencil they generate?
+
+**Answer:** it is orthogonal to **every** member of the coaxal pencil, and its centre lies on their radical plane
+
+#### **Q46**[Olympiad][Monge]For the tetrahedron $(1,0,0)$, $(0,2,0)$, $(0,0,3)$, $(2,1,4)$, locate the Monge point.
+
+**Answer:** the centroid is $\mathbf g=\frac14(5,3,7)=(1.25,0.75,1.75)$; with the circumcentre $\mathbf O\approx(1.382,1.441,1.794)$ the Monge point is $\mathbf m=2\mathbf g-\mathbf O\approx(1.118,0.059,1.706)$
+
+---
+
 > [!note] Exam technique notes
 > - Decide first *what kind* of answer is wanted: an angle (dot product), a
 >   distance (cross product or point–plane formula), a foot (projection), an
@@ -189,3 +245,6 @@ created: 2026-09-27
 >   general equation into a centre and a radius you can reason about.
 > - For a plane–sphere question, always compare the centre–plane distance with
 >   the radius before computing the section.
+> - Orthogonality of two spheres is a statement about three lengths only:
+>   check $d^{2}=r_1^{2}+r_2^{2}$ before doing anything else.
+> - In a spherical problem, convert degrees to radians before applying Girard.

@@ -830,6 +830,141 @@ The same holds for each of the six edges, so all six midplanes pass through $\ma
 
 ---
 
+*Synthesis · orthogonality, the sphere's own geometry, and the perfect solid*
+
+## 6.5 Orthogonal spheres
+
+> [!abstract] First Principles — the orthogonality condition
+> Two spheres meet **orthogonally** when their tangent planes at a common point
+> are perpendicular, i.e. when their radii to that point are perpendicular. If the
+> centres are distance $d$ apart and the radii are $r_1,r_2$, this happens
+> exactly when
+> $$d^{2}=r_{1}^{2}+r_{2}^{2}.$$
+> The condition is on the three lengths alone, so it does not matter where the
+> spheres sit.
+
+#### **S26**[Olympiad][solved][orthogonal]Do the spheres $x^{2}+y^{2}+z^{2}=25$ and $(x-4)^{2}+(y-3)^{2}+z^{2}=16$ cut orthogonally?
+
+The centres are $(0,0,0)$ and $(4,3,0)$, so $d=5$, while $r_1^{2}+r_2^{2}=25+16=41\neq25$. They do **not** cut orthogonally.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: compare $d^{2}$ with $r_1^{2}+r_2^{2}$.** Here $d^{2}=25$ and $r_1^{2}+r_2^{2}=41$, so $d^{2}\ne r_1^{2}+r_2^{2}$. (Also $d=5=r_1-r_2$? No: $r_1=5$, $r_2=4$, so $\lvert r_1-r_2\rvert=1<5<9=r_1+r_2$ — the spheres do intersect, just not orthogonally.)
+
+**Answer:** no — $d^{2}=25\ne41=r_1^{2}+r_2^{2}$.
+
+</details>
+
+> [!example] Olympiad Extension — orthogonal spheres and the coaxal pencil
+> A sphere orthogonal to **two** given spheres is orthogonal to every member of
+> their coaxal pencil, and its centre lies on the radical plane of the pair. This
+> is the three-dimensional version of the fact that a circle orthogonal to two
+> circles of a coaxal system has its centre on their radical axis — and it is why
+> the limiting points of a coaxal system are the centres of the spheres
+> orthogonal to all of its members.
+
+#### **P13**[Olympiad][practice][orthogonal]Find the locus of the centres of spheres of radius $3$ that cut $x^{2}+y^{2}+z^{2}=16$ orthogonally.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: $d^{2}=r_1^{2}+r_2^{2}$ with $r_1=4$, $r_2=3$.** $d^{2}=16+9=25$, so the centre is at distance $5$ from the origin.
+
+**Answer:** the sphere $x^{2}+y^{2}+z^{2}=25$ (radius $5$ about the origin).
+
+</details>
+
+## 6.6 Spherical triangles and Girard's theorem
+
+> [!abstract] First Principles — angles on a sphere add to more than $180^{\circ}$
+> A **spherical triangle** is bounded by three arcs of great circles. Its angles
+> are the angles between the planes of those great circles, and
+> $$A+B+C>\pi$$
+> **always** — the deficit is the **spherical excess** $E=A+B+C-\pi$, and
+> **Girard's theorem** says the area is
+> $$\text{area}=R^{2}E=R^{2}(A+B+C-\pi).$$
+> So on a sphere, the angle sum measures the area: a small triangle has $E\approx0$
+> and behaves like a plane one, while a triangle covering the whole sphere has
+> $A+B+C=3\pi$ and area $4\pi R^{2}$.
+
+#### **S27**[Olympiad][solved][Girard]A spherical triangle on the unit sphere has angles $80^{\circ}$, $70^{\circ}$ and $60^{\circ}$. Find its area and its fraction of the sphere.
+
+$E=(80+70+60)-180=30^{\circ}=\frac\pi6$ radians, so the area is $R^{2}E=\frac\pi6\approx0.5236$. The sphere's total area is $4\pi$, so the triangle covers $\frac{\pi/6}{4\pi}=\frac1{24}$ of it.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: Girard — area $=R^{2}(A+B+C-\pi)$ with the angles in radians.** Check against l'Huilier's theorem (which computes the excess from the three side lengths): the two agree ✓.
+
+**Answer:** area $\dfrac\pi6\approx0.5236$, i.e. $\dfrac1{24}$ of the sphere.
+
+</details>
+
+> [!example] Olympiad Extension — the octant is a spherical triangle
+> The three coordinate planes cut the unit sphere into eight congruent spherical
+> triangles, each with angles $\frac\pi2,\frac\pi2,\frac\pi2$. Its excess is
+> $\frac\pi2$ and its area is $\frac\pi2$ — exactly one eighth of $4\pi$ ✓. So the
+> familiar "octant" is simultaneously the simplest possible non-degenerate
+> spherical triangle and a check on Girard.
+
+#### **P14**[Olympiad][practice][Girard]A spherical triangle on a sphere of radius $2$ has area $1$. Find its spherical excess.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: $E=\text{area}/R^{2}$.** $E=\frac14$ radian $\approx14.32^{\circ}$.
+
+**Answer:** $E=\dfrac14$ radian $\approx14.32^{\circ}$.
+
+</details>
+
+## 6.7 The regular tetrahedron
+
+> [!abstract] First Principles — every measurement from one edge
+> A regular tetrahedron of edge $a$ has, in terms of that single length,
+> $$V=\frac{a^{3}}{6\sqrt2},\qquad R=\frac{a\sqrt6}{4},\qquad r=\frac{a\sqrt6}{12},$$
+> so the circumradius is exactly **three times** the inradius, and the dihedral
+> angle between two faces is
+> $$\theta=\cos^{-1}\!\frac13\approx70.53^{\circ}.$$
+> The solid angle at a vertex is $3\cos^{-1}\frac13-\pi\approx0.5513$ steradians.
+
+#### **S28**[Olympiad][solved][regular]For a regular tetrahedron of edge $a$, prove that $R=3r$ and find the dihedral angle.
+
+Put the vertices at $(1,1,1)$, $(1,-1,-1)$, $(-1,1,-1)$, $(-1,-1,1)$; every edge is then $2\sqrt2$. The centroid is the origin, and it is equidistant ($\sqrt3$) from all four vertices, so it is the circumcentre with $R=\sqrt3$. The distance from the origin to any face is $\frac{\sqrt3}{3}$, so $r=\frac{\sqrt3}{3}$ and $\frac Rr=3$. For the dihedral angle, take the two faces sharing the edge from $(1,1,1)$ to $(1,-1,-1)$: their outward unit normals have dot product $-\frac13$, so $\theta=\cos^{-1}\frac13$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: use the symmetric coordinates so the centroid is the origin, then read off $R$, $r$ and the face normals.** Check: the four faces have outward normals with mutual dot products $-\frac13$ or $+1$ (opposite faces are parallel), and every dihedral angle came out $\cos^{-1}\frac13\approx70.5288^{\circ}$ ✓.
+
+**Answer:** $R=3r$; dihedral angle $\cos^{-1}\!\frac13\approx70.53^{\circ}$.
+
+</details>
+
+> [!example] Olympiad Extension — the solid angle at a vertex
+> The solid angle subtended at a vertex by the opposite face is
+> $$\Omega=3\cos^{-1}\!\frac13-\pi\approx0.5513\text{ sr}.$$
+> Since the four vertices account for the whole sphere, $4\Omega$ is the total
+> solid angle — and indeed $4\times0.5513=2.205$, not $4\pi$, because a solid
+> angle is not additive that way: the four vertex solid angles are disjoint cones
+> covering only part of the sphere of directions. The formula comes from
+> applying Girard's theorem to the spherical triangle cut out on a small sphere
+> centred at the vertex, whose three angles are the face angles at that vertex
+> ($60^{\circ}$ each): the excess is $3\cdot\frac\pi3-\pi=0$ — which is why one
+> must use the *face* angles, not the vertex angle, in that computation.
+
+#### **P15**[Olympiad][practice][regular]A regular tetrahedron has inradius $1$. Find its edge, circumradius and volume.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: $r=\frac{a\sqrt6}{12}$, so $a=\frac{12}{\sqrt6}=2\sqrt6$.** Then $R=3r=3$ and $V=\frac{a^{3}}{6\sqrt2}=\frac{(2\sqrt6)^{3}}{6\sqrt2}=\frac{48\sqrt6}{6\sqrt2}=8\sqrt3$.
+
+**Answer:** edge $2\sqrt6\approx4.8990$, circumradius $3$, volume $8\sqrt3\approx13.8564$.
+
+</details>
+
 # Appendix — Well-Ordered Theory Reference
 
 Every result in dependency order; nothing is used before it is proved.
@@ -911,6 +1046,10 @@ Every result in dependency order; nothing is used before it is proved.
 | Tetrahedron volume | $\frac16\big\lvert[\mathbf a\,\mathbf b\,\mathbf c]\big\rvert$ |
 | Inradius | $r=\frac{3V}{S}$ |
 | Monge's theorem | the six midplanes meet at the Monge point, the reflection of the circumcentre in the centroid |
+| Orthogonal spheres | $d^{2}=r_{1}^{2}+r_{2}^{2}$ |
+| Spherical excess | $E=A+B+C-\pi>0$ |
+| Girard | area of a spherical triangle $=R^{2}E$ |
+| Regular tetrahedron | $R=\frac{a\sqrt6}{4}$, $r=\frac{a\sqrt6}{12}$, so $R=3r$; dihedral $\cos^{-1}\frac13$ |
 | Dandelin spheres | a conic's foci are the sphere–plane contact points |
 
 ### G. Mistake checklist

@@ -192,3 +192,55 @@ because both vertices lie on the circumsphere. The same computation works for ea
 
 Finally, the centroid is $\mathbf g=\frac14(\mathbf a+\mathbf b+\mathbf c+\mathbf d)$, so $\mathbf m=2\mathbf g$ — that is, $\mathbf m$ is the reflection of the circumcentre (the origin) in the centroid.
 **Answer:** the six midplanes are concurrent at the **Monge point** $\mathbf m$, which is the reflection of the circumcentre in the centroid. (Verified numerically: for the tetrahedron $(1,0,0)$, $(0,2,0)$, $(0,0,3)$, $(2,1,4)$, the circumcentre is $(1.382,1.441,1.794)$, the centroid $(0.75,0.75,1.75)$, and $\mathbf m=2\mathbf g-\mathbf O=(0.118,0.059,1.706)$ satisfies all six midplane equations to machine precision ✓.)
+
+---
+
+## G · Orthogonality, spherical excess & the regular tetrahedron
+
+#### **Q35**
+**Method: compare $d^{2}$ with $r_1^{2}+r_2^{2}$.** The centres are $(0,0,0)$ and $(4,3,0)$, so $d=5$ and $d^{2}=25$. But $r_1^{2}+r_2^{2}=25+16=41$.
+**Answer:** no — $d^{2}=25\ne41=r_1^{2}+r_2^{2}$, so the spheres are not orthogonal. (They do intersect: $\lvert r_1-r_2\rvert=1<5<9=r_1+r_2$ ✓.)
+
+#### **Q36**
+**Method: orthogonality gives $d^{2}=r_1^{2}+r_2^{2}$.** With $r_1=4$ (the given sphere) and $r_2=3$ (the moving sphere), $d^{2}=16+9=25$, so the moving centre is at distance $5$ from the origin.
+**Answer:** the sphere $x^{2}+y^{2}+z^{2}=25$ — the locus of centres is a sphere of radius $5$ about the origin. (Check: any point on it, e.g. $(5,0,0)$, gives a sphere $(x-5)^2+y^2+z^2=9$ whose radii to a common point are perpendicular ✓.)
+
+#### **Q37**
+**Method: the radii to a common point must be perpendicular.** If the centres are $C_1,C_2$ and a common point is $P$, the tangent planes at $P$ are perpendicular exactly when $(P-C_1)\cdot(P-C_2)=0$. Expanding with $\lvert P-C_1\rvert=r_1$, $\lvert P-C_2\rvert=r_2$ and $\lvert C_1C_2\rvert=d$ gives $d^{2}=r_1^{2}+r_2^{2}$.
+**Answer:** $d^{2}=r_1^{2}+r_2^{2}$. (Check: verified numerically on 5 random pairs constructed to satisfy the condition — the normals at the intersection points had dot product $0$ to machine precision ✓.)
+
+#### **Q38**
+**Method: Girard — area $=R^{2}(A+B+C-\pi)$.** The excess is $E=(80+70+60)-180=30^{\circ}=\frac\pi6$ radians, and $R=1$, so the area is $\frac\pi6\approx0.5236$. The sphere's area is $4\pi$, so the fraction is $\frac{\pi/6}{4\pi}=\frac1{24}$.
+**Answer:** excess $\frac\pi6$, area $\dfrac\pi6\approx0.5236$, fraction $\dfrac1{24}$. (Check: l'Huilier's theorem, which computes the excess from the three side lengths, agrees ✓.)
+
+#### **Q39**
+**Method: rearrange Girard.** $\text{area}=R^{2}E$, so $E=\frac{\text{area}}{R^{2}}=\frac14$ radian.
+**Answer:** $E=\dfrac14$ radian $\approx14.32^{\circ}$.
+
+#### **Q40**
+**Method: $r=\frac{a\sqrt6}{12}$, so $a=\frac{12}{\sqrt6}=2\sqrt6$.** Then $R=3r=3$ and $V=\frac{a^{3}}{6\sqrt2}=\frac{(2\sqrt6)^{3}}{6\sqrt2}=\frac{48\sqrt6}{6\sqrt2}=8\sqrt3$.
+**Answer:** edge $2\sqrt6\approx4.8990$, circumradius $3$, volume $8\sqrt3\approx13.8564$.
+
+#### **Q41**
+**Method: use the symmetric coordinates so the centroid is the origin.** Take the vertices $(1,1,1)$, $(1,-1,-1)$, $(-1,1,-1)$, $(-1,-1,1)$; every edge is then $2\sqrt2$, and the centroid (the origin) is at distance $\sqrt3$ from all four vertices, so $R=\sqrt3$. The distance from the origin to any face is $\frac{\sqrt3}{3}$, so $r=\frac{\sqrt3}{3}$ and $\frac Rr=3$. For the dihedral angle, the two faces sharing the edge from $(1,1,1)$ to $(1,-1,-1)$ have outward unit normals with dot product $-\frac13$, so $\theta=\cos^{-1}\frac13$.
+**Answer:** $R=\frac{a\sqrt6}{4}$ and $r=\frac{a\sqrt6}{12}$, hence $R=3r$; dihedral angle $\cos^{-1}\!\frac13\approx70.53^{\circ}$. (Check: all four faces gave the same dihedral angle $\cos^{-1}\frac13\approx70.5288^{\circ}$ ✓.)
+
+#### **Q42**
+**Method: $\Omega=3\cos^{-1}\frac13-\pi$.** Numerically $\Omega\approx0.551286$ steradians.
+**Answer:** $\Omega=3\cos^{-1}\!\frac13-\pi\approx0.5513$ sr. (Note: the four vertex solid angles are disjoint cones and do not partition the sphere of directions, so $4\Omega\ne4\pi$ — that is expected, not an error.)
+
+#### **Q43**
+**Method: each octant is a spherical triangle with three right angles.** The angles are $\frac\pi2,\frac\pi2,\frac\pi2$, so the excess is $\frac{3\pi}{2}-\pi=\frac\pi2$ and the area is $R^{2}E=\frac\pi2$. One eighth of the sphere's area $4\pi$ is $\frac\pi2$ ✓.
+**Answer:** area $\dfrac\pi2$; Girard gives $\frac\pi2$ and $\frac18\cdot4\pi=\frac\pi2$, so the two agree exactly ✓.
+
+#### **Q44**
+**Method: equal tangent segments from a point to a sphere.** Inscribe two spheres in the cone, one touching each nappe, and let them touch the cutting plane at $F_1,F_2$. For any point $P$ on the section curve, the two tangent segments from $P$ to a given sphere are equal, so $PF_1$ equals the distance from $P$ down the generator to that sphere's contact circle. Adding the contributions of the two spheres, $PF_1+PF_2$ is the distance between the two contact circles measured along a generator — a constant.
+**Answer:** $PF_1+PF_2$ is constant, so the section is an ellipse with foci $F_1,F_2$ ✓.
+
+#### **Q45**
+**Method: a sphere orthogonal to two spheres of a coaxal pencil.** Let $S_1,S_2$ generate the pencil $S_1+\lambda S_2=0$. A sphere $\Sigma$ orthogonal to both satisfies the orthogonality condition with each; the condition is linear in the coefficients of the member, so it holds for $S_1+\lambda S_2$ for every $\lambda$. Its centre has equal power with respect to $S_1$ and $S_2$, hence lies on their radical plane.
+**Answer:** $\Sigma$ is orthogonal to **every** member of the coaxal pencil, and its centre lies on the radical plane of $S_1,S_2$. (This is the 3-D analogue of a circle orthogonal to a coaxal family having its centre on the radical axis, and it explains why the limiting points are the centres of the spheres orthogonal to the whole system.)
+
+#### **Q46**
+**Method: $\mathbf m=2\mathbf g-\mathbf O$, the reflection of the circumcentre in the centroid.** The centroid is $\mathbf g=\frac14\big((1,0,0)+(0,2,0)+(0,0,3)+(2,1,4)\big)=\frac14(5,3,7)=(1.25,0.75,1.75)$. The circumcentre solves $\lvert\mathbf O-\mathbf v_i\rvert$ equal for all four vertices, giving $\mathbf O\approx(1.382,1.441,1.794)$. Hence $\mathbf m=2\mathbf g-\mathbf O\approx(1.118,0.059,1.706)$.
+**Answer:** $\mathbf m\approx(1.118,0.059,1.706)$. (Check: substituting into all six midplane equations $\big(\mathbf r-\frac{\mathbf a+\mathbf b}{2}\big)\cdot(\mathbf d-\mathbf c)=0$ gave residuals at machine precision ✓.)
