@@ -27,8 +27,9 @@ WHERE type = "notes"
 SORT file.name ASC
 ```
 
-**➡ 8 of the 15 roadmap modules remain → 48 chapters still to write** from
-basics to Olympiad level.
+**➡ 0 of the 15 roadmap modules remain → all 90 chapters written** from basics
+to Olympiad level. The full JEE Advanced + Olympiad syllabus is complete; the 3
+bonus modules (PnC, Complex Numbers, Binomial Theorem) sit beyond the roadmap.
 
 | # | Module | Folder | Status |
 |---|---|---|---|
@@ -46,7 +47,7 @@ basics to Olympiad level.
 | 12 | 3D Geometry | `notes/3D-Geometry/` | ✅ done |
 | 13 | Vectors | `notes/Vectors/` | ✅ done |
 | 14 | Matrices & Determinants | `notes/Matrices-and-Determinants/` | ✅ done |
-| 15 | Probability | `notes/Probability/` | ⬜ to do |
+| 15 | Probability | `notes/Probability/` | ✅ done |
 | — | PnC · Permutations & Combinations *(bonus)* | `notes/PnC/` | ✅ done |
 | — | Complex Numbers *(bonus)* | `notes/Complex-Numbers/` | ✅ done |
 | — | Binomial Theorem *(bonus)* | `notes/Binomial-Theorem/` | ✅ done |
