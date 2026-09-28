@@ -78,7 +78,7 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 | Rook polynomials | Adv | Board, inclusion-exclusion for forbidden positions |
 | Probabilistic method intro | Olympiad | $\mathbb{E}<1 \Rightarrow \exists$, Erdős |
 
-### Chapter 6: Olympiad Theory — 8 Sections
+### Chapter 6: Olympiad Theory — 10 Sections
 
 | Topic | Level | Coverage | Diagram |
 |-------|-------|----------|---------|
@@ -90,8 +90,11 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 | Partitions & Euler | Olympiad | GF $\prod \frac{1}{1-x^k}$, pentagonal theorem, recurrence $p(n)=p(n-1)+p(n-2)-p(n-5)-\cdots$, conjugation Young | `fig-09.svg` + Mermaid |
 | Stirling $S(n,k)$, Bell $B_n$ | Olympiad | Recurrence $kS(n-1,k)+S(n-1,k-1)$, IE closed form, onto $k!S(n,k)$, $B_n=\sum S(n,k)$ | - |
 | Sperner, Erdős–Szekeres, Cycle lemma | Olympiad | LYM random chain, $(r-1)(s-1)+1$, Dvoretzky–Motzkin | - |
+| Erdős–Ko–Rado | Olympiad | Intersecting $k$-uniform on $[n]$, $n\ge2k$ → $\le\binom{n-1}{k-1}$, Katona circle pair-counting, Hilton–Milner | - |
+| Frankl–Wilson | Olympiad | $|A\cap B|\in L$, $|L|=s$ → $|\mathcal F|\le\binom{n}{s}$; odd town $n$, even town $2^{\lfloor n/2\rfloor}$ | - |
+| Bollobás set-pairs | Olympiad | Crossing pairs → $\sum\binom{a_i+b_i}{a_i}^{-1}\le1$ via a random permutation; corollary $m\le\binom{a+b}{a}$, tight cyclic constructions | - |
 
-**Paper**: 40 questions A–G + stretch, 4–5 hours, full solutions
+**Paper**: 50 questions A–I + stretch, 5–6 hours, full solutions
 
 ---
 
@@ -106,7 +109,7 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 | 3 Roots of Unity | $\omega=e^{2\pi i/n}$, $\omega^n=1$ | $1+\omega+\cdots+\omega^{n-1}=0$, $x^n-1$ factorization | Filter $\frac{1}{n}\sum \zeta^{-rk}$, regular polygons algebraic, cyclotomic |
 | 4 JEE Adv Core | Equations in $z$, $\bar z$, $|z|$ | Apollonius $|z-a|=k|z-b|$ circle, $\arg\frac{z-a}{z-b}=\theta$ arc, optimization via triangle inequality, $iz=\bar z$ line $y=-x$ | - |
 | 5 Geometry via Complex | - | Section formula, rotation $e^{i\theta}$, collinearity, concyclicity | Ptolemy, van Aubel, complex bash, $z\bar z=|z|^2$ |
-| 6 Synthesis Paper | 38 Q A–H, $i$ cycle to geometry, with solutions | - | - |
+| 6 Synthesis Paper | 48 Q A–I, $i$ cycle $(1+i)^{40}$ to geometry, with solutions | - | - |
 
 **Diagrams**: Complex plane `fig-02.svg` + Mermaid loci, multiplication=rotation `fig-03.svg` + Mermaid, roots of unity regular polygon Mermaid
 
@@ -213,10 +216,13 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 |---------|----------|--------------|----------|
 | 1 Coordinates & locus | Distance, midpoint, section, centroid, area by determinant, collinearity, simple loci | Loci requiring squaring a condition, equidistant loci reducing to circles | Loci with ratios (Apollonius-type), locus of a midpoint under motion |
 | 2 The straight line | Slope, all six forms, angle between lines, parallel/perpendicular tests, point–line distance | Foot of the perpendicular, intercept and normal forms, distance in optimisation | Distance extremal problems, families of lines and their envelopes |
-| 3 Pairs of lines | Homogeneous pair factored into two lines, perpendicularity test $a+b=0$ | Angle between a pair from $	an	heta=\left\lvertrac{2\sqrt{h^2-ab}}{a+b}ightvert$, normalised angle bisectors | Angle bisectors as a pair of lines, joint equation of two given lines |
+| 3 Pairs of lines | Homogeneous pair factored into two lines, perpendicularity test $a+b=0$ | Angle between a pair from $	an	heta=\left\lvertrac{2\sqrt{h^2-ab}}{a+b}
+ight
+vert$, normalised angle bisectors | Angle bisectors as a pair of lines, joint equation of two given lines |
 | 4 The circle | Standard and general form, centre/radius, circle through three points, diameter form | $g^2+f^2<c$ (no real circle), completing the square, tangent/normal by $T=0$ | Diameter form derived from the right angle, circles through constrained triples |
 | 5 Circle–line interaction | Tangent $T=0$, normal through the centre, tangent length, chord length, power of a point | Chord of contact, radical axis by subtraction, common chord, radical centre of three circles | Power as a signed quantity, coaxal reasoning, orthogonality of circles |
-| 6 Coaxal & inversion | Position test via $d$ vs $r_1+r_2$, $\lvert r_1-r_2vert$ | Shortest distance to a circle, Apollonius circle, coaxal system $S_1+\lambda S_2$ | Inversion in a circle (lines ↔ circles through the origin, conformality), limiting points, radical centre computations |
+| 6 Coaxal & inversion | Position test via $d$ vs $r_1+r_2$, $\lvert r_1-r_2
+vert$ | Shortest distance to a circle, Apollonius circle, coaxal system $S_1+\lambda S_2$ | Inversion in a circle (lines ↔ circles through the origin, conformality), limiting points, radical centre computations |
 
 ---
 

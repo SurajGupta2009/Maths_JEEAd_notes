@@ -21,7 +21,7 @@ Maths_JEEAd_notes/
 ├── notes/                       # ★ the canonical, hand-authored notes
 │   └── <Module>/                # one folder per module, kebab-case slug
 │       ├── <Module>.md              # COMPLETE notes: course map + 6 chapters + theory appendix
-│       ├── <Module> — Paper.md      # Olympiad paper (sections A–H)
+│       ├── <Module> — Paper.md      # Olympiad paper (sections A–G / A–H / A–I)
 │       ├── <Module> — Solutions.md  # full worked solutions
 │       └── assets/fig-XX.svg        # the module's diagrams
 ├── docs/                        # ROADMAP · coverage · formatting · diagrams
@@ -117,8 +117,9 @@ a CSS snippet (`.obsidian/snippets/maths-vault.css`) that tints these types.
 - **Practice `P1…Pn`** and **worked examples `S1…Sn`** — continuous *per module*
   and unique across the whole complete-notes file, woven **between** theory sections.
   (PnC is the one legacy exception: it numbers `P1–P8` within each chapter.)
-- **Paper `Q1…Qn`** — continuous across lettered sections **A–H**, difficulty
-  ramping Main → Advanced → Olympiad; minimum 30, aim 38–40. The Solutions note
+- **Paper `Q1…Qn`** — continuous across the lettered sections **A–G / A–H /
+  A–I**, difficulty ramping Main → Advanced → Olympiad; minimum 34, aim 38–50.
+  The Solutions note
   reuses the Q-ids verbatim and answers every one.
 
 ## 3. Authoring rules (Markdown in Obsidian)
@@ -153,7 +154,7 @@ each:
 2. Complete notes `<Module>.md` from `templates/markdown/complete.md`
    (frontmatter + navigation + course map + all six chapters + theory appendix).
 3. Number P/S continuously per module (unique across the file).
-4. `<Module> — Paper.md` — ≥30 Q, A–H, answer lines — **verify all answers in
+4. `<Module> — Paper.md` — ≥34 Q, A–G/A–H/A–I, answer lines — **verify all answers in
    pure Python first**.
 5. `<Module> — Solutions.md` — method first → derivation → check.
 6. Diagrams in `assets/`, Mermaid where it helps.

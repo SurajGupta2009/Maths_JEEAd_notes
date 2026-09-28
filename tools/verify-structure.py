@@ -49,8 +49,8 @@ def main():
         stray_chapters = [f for f in md if re.match(r'^\d\d-', f)]
         if stray_chapters:
             problems.append('%s: leftover per-chapter notes %s — merge them into '
-                            '%s.md with tools/build-complete.py'
-                            % (mod, stray_chapters, mod))
+                            '%s.md by hand (the vault keeps one complete note per '
+                            'module)' % (mod, stray_chapters, mod))
         if md != expected:
             missing = [f for f in expected if f not in md]
             extra = [f for f in md if f not in expected]

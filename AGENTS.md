@@ -13,7 +13,7 @@ notes/<Module-Slug>/        ★ canonical hand-authored Markdown — one folder 
 .obsidian/                  vault config + enabled plugins (share; don't commit workspace/cache)
 docs/                       ROADMAP, coverage, formatting guide, diagrams
 templates/markdown/         note skeletons (module index, chapter, paper, solutions, theory)
-tools/                      verify-md.py, verify-structure.py, migrate-to-obsidian.py (legacy)
+tools/                      verify-md.py, verify-structure.py (the two CI gates)
 ```
 
 - **One module = one folder under `notes/`** (kebab-case slug) holding **exactly
@@ -43,8 +43,8 @@ tools/                      verify-md.py, verify-structure.py, migrate-to-obsidi
   paper). Solution = **method name first**, derivation, then a check.
 - Numbering: `P1…Pn`/`S1…Sn` continuous per module, unique across the complete-notes file,
   interleaved between theory sections (PnC is the legacy per-chapter exception);
-  paper `Q1…Qn` continuous across A–H, ≥30 (aim 38–40); solutions repeat Q-ids
-  verbatim.
+  paper `Q1…Qn` continuous across the lettered sections A–G/A–H/A–I, ≥34 (aim
+  38–50); solutions repeat Q-ids verbatim.
 
 ## Correctness (MUST)
 
@@ -84,6 +84,6 @@ content pass.
 Follow `templates/CHECKLIST.md`: `notes/<Module-Slug>/` + `assets/` →
 `<Module>.md` (complete notes, six chapters + appendix) from
 `templates/markdown/complete.md` → continuous P/S numbering → `<Module> — Paper.md`
-(≥30 Q, A–H; **pure-Python verification first**) → `<Module> — Solutions.md` →
+(≥34 Q, A–G/A–H/A–I; **pure-Python verification first**) → `<Module> — Solutions.md` →
 diagrams in `assets/` → run both gates → update [[Home]],
 [README.md](README.md) and [docs/ROADMAP.md](docs/ROADMAP.md) → PR.

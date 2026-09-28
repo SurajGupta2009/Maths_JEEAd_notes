@@ -36,8 +36,9 @@ and configured as the Templater folder (`.obsidian/plugins/templates/data.json`)
    → empty.
 
 4. **Write the paper** `Quadratic-Equations — Paper.md` from
-   `templates/markdown/paper.md`: 30+ questions (aim 38–40), lettered sections
-   A–H, difficulty ramping Main → Advanced → Olympiad, every question with a
+   `templates/markdown/paper.md`: 34+ questions (aim 38–50), lettered sections
+   A–G / A–H / A–I, difficulty ramping Main → Advanced → Olympiad, every question
+   with a
    short `**Answer:**` line. **Before writing solutions, verify every answer
    numerically with a pure-Python script** (stdlib only — no numpy, no sympy).
    Do not proceed with a wrong answer. Keep the throwaway script out of the repo;

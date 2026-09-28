@@ -16,9 +16,9 @@ This roadmap shows how each module builds from first principles to Olympiad-leve
 ## 📊 Progress — how many chapters remain
 
 Each module is **6 chapters**. The target syllabus is the **15-module JEE
-roadmap** below (90 chapters). **Conic Sections** is done from that list; the 3
-extras already built (PnC, Complex Numbers, Binomial Theorem) sit *beyond* the
-roadmap.
+roadmap** below (90 chapters); the 3 extras already built (PnC, Complex Numbers,
+Binomial Theorem) sit *beyond* the roadmap, which makes **18 modules and 108
+chapters** in total.
 
 ```dataview
 LIST
@@ -28,8 +28,10 @@ SORT file.name ASC
 ```
 
 **➡ 0 of the 15 roadmap modules remain → all 90 chapters written** from basics
-to Olympiad level. The full JEE Advanced + Olympiad syllabus is complete; the 3
-bonus modules (PnC, Complex Numbers, Binomial Theorem) sit beyond the roadmap.
+to Olympiad level, plus the 3 bonus modules: **18 modules · 108 chapters · 756
+paper questions · 122 `[!example]` Olympiad Extension callouts**. The full JEE
+Advanced + Olympiad syllabus is complete, and every module carries a paper
+(34–50 questions) with full solutions.
 
 | # | Module | Folder | Status |
 |---|---|---|---|
@@ -174,7 +176,7 @@ flowchart TD
 - **Olympiad Weapon**: Complex bash for geometry, $z\bar z = |z|^2$ to eliminate $\bar z$
 
 ### Chapter 6 — Synthesis & Olympiad Paper
-- 38 questions A–H, from $i$ cycle to geometry, with full solutions
+- 48 questions A–I, from $i$ cycle $(1+i)^{40}$ to geometry via complex, with full solutions
 
 ---
 

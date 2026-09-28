@@ -5,7 +5,7 @@ board-level basics to **JEE Advanced and Olympiad mathematics** — every formul
 *derived from reasoning*, every answer *numerically verified*.
 
 The whole repository **is an [Obsidian](https://obsidian.md) vault** (git-enabled):
-one Markdown note per chapter, native Obsidian callouts, YAML frontmatter,
+one Markdown note per module, native Obsidian callouts, YAML frontmatter,
 `[[Wikilinks]]`, and Dataview dashboards. Math is real LaTeX (`$…$`, `$$…$$`,
 rendered by Obsidian's built-in MathJax).
 
@@ -30,8 +30,8 @@ Maths_JEEAd_notes/
 ├── .obsidian/                   # vault config, enabled plugins, CSS snippet
 ├── notes/                       # ★ the course — one folder per module
 │   └── <Module>/
-│       ├── <Module>.md              # complete notes: course map + 6 chapters + theory appendix
-│       ├── <Module> — Paper.md      # Olympiad paper (sections A–H)
+│       ├── <Module>.md              # complete notes: 6 chapters + theory appendix
+│       ├── <Module> — Paper.md      # Olympiad paper (sections A–G / A–H / A–I)
 │       ├── <Module> — Solutions.md  # full worked solutions
 │       └── assets/fig-XX.svg        # the module's diagrams
 ├── docs/                        # ROADMAP · coverage · formatting · diagrams
@@ -46,18 +46,32 @@ Each module is **three notes**. The complete-notes file holds **six chapters**
 
 ## Modules
 
-| Module | Folder | Chapters | Paper Qs | Index |
-|---|---|---|---|---|
-| **PnC** · Permutations & Combinations | `notes/PnC` | 6 | 40 | [[PnC]] |
-| **Complex Numbers** | `notes/Complex-Numbers` | 6 | 38 | [[Complex-Numbers]] |
-| **Binomial Theorem** | `notes/Binomial-Theorem` | 6 | 38 | [[Binomial-Theorem]] |
-| **Conic Sections** | `notes/Conic-Sections` | 6 | 38 | [[Conic-Sections]] |
-| **Limits & Continuity** | `notes/Limits-and-Continuity` | 6 | 32 | [[Limits-and-Continuity]] |
-| **Differentiation & Methods** | `notes/Differentiation-and-Methods` | 6 | 32 | [[Differentiation-and-Methods]] |
-| **Applications of Derivatives** | `notes/Applications-of-Derivatives` | 6 | 34 | [[Applications-of-Derivatives]] |
-| **Integration** | `notes/Integration` | 6 | 34 | [[Integration]] |
-| **Differential Equations** | `notes/Differential-Equations` | 6 | 34 | [[Differential-Equations]] |
-| **Coordinate Geometry — Lines & Circles** | `notes/Coordinate-Geometry-Lines-and-Circles` | 6 | 34 | [[Coordinate-Geometry-Lines-and-Circles]] |
+All 18 modules are complete: **108 chapters** and **756 paper questions**, each
+module climbing board basics → JEE Main → JEE Advanced → Olympiad frontier.
+
+| Module | Folder | Chapters | Paper Qs | Sections | `[!example]` | Index |
+|---|---|---|---|---|---|---|
+| **PnC** · Permutations & Combinations | `notes/PnC` | 6 | 50 | A–I | 12 | [[PnC]] |
+| **Complex Numbers** | `notes/Complex-Numbers` | 6 | 48 | A–I | 9 | [[Complex-Numbers]] |
+| **Binomial Theorem** | `notes/Binomial-Theorem` | 6 | 48 | A–I | 10 | [[Binomial-Theorem]] |
+| **Conic Sections** | `notes/Conic-Sections` | 6 | 48 | A–I | 14 | [[Conic-Sections]] |
+| **Limits & Continuity** | `notes/Limits-and-Continuity` | 6 | 39 | A–H | 2 | [[Limits-and-Continuity]] |
+| **Differentiation & Methods** | `notes/Differentiation-and-Methods` | 6 | 38 | A–H | 3 | [[Differentiation-and-Methods]] |
+| **Applications of Derivatives** | `notes/Applications-of-Derivatives` | 6 | 46 | A–H | 7 | [[Applications-of-Derivatives]] |
+| **Integration** | `notes/Integration` | 6 | 46 | A–H | 7 | [[Integration]] |
+| **Differential Equations** | `notes/Differential-Equations` | 6 | 41 | A–H | 5 | [[Differential-Equations]] |
+| **Coordinate Geometry — Lines & Circles** | `notes/Coordinate-Geometry-Lines-and-Circles` | 6 | 46 | A–H | 7 | [[Coordinate-Geometry-Lines-and-Circles]] |
+| **3D Geometry** | `notes/3D-Geometry` | 6 | 46 | A–H | 8 | [[3D-Geometry]] |
+| **Vectors** | `notes/Vectors` | 6 | 46 | A–H | 8 | [[Vectors]] |
+| **Matrices & Determinants** | `notes/Matrices-and-Determinants` | 6 | 36 | A–G | 4 | [[Matrices-and-Determinants]] |
+| **Quadratic Equations** | `notes/Quadratic-Equations` | 6 | 34 | A–H | 5 | [[Quadratic-Equations]] |
+| **Inequalities** | `notes/Inequalities` | 6 | 36 | A–G | 6 | [[Inequalities]] |
+| **Sequences & Series** | `notes/Sequences-and-Series` | 6 | 34 | A–G | 5 | [[Sequences-and-Series]] |
+| **Trigonometry** | `notes/Trigonometry` | 6 | 36 | A–G | 4 | [[Trigonometry]] |
+| **Probability** | `notes/Probability` | 6 | 38 | A–G | 6 | [[Probability]] |
+
+`[!example]` counts the **Olympiad Extension** callouts — the frontier material
+that sits beyond the JEE Advanced syllabus.
 
 ## The notes standard (short version)
 
@@ -70,9 +84,11 @@ Olympiad frontier**, and:
   `[!tip]` Key Idea · `[!warning]` Common Trap · `[!example]` Olympiad
   Extension · `[!note]`/`[!info]` formulas · `[!quote]` named results.
 - **Questions** — `S#` worked example, `P#` practice (woven between theory),
-  `Q#` paper (sections A–H, 30–40 questions, answers in `<details>` blocks).
-- **Numbering** — continuous per module (except PnC, which numbers P1–P8 within
-  each chapter); paper `Q1…Qn` continuous across A–H.
+  `Q#` paper (sections A–G/A–H/A–I, 34–50 questions, answers in `<details>`
+  blocks). PnC keeps its own format: difficulty tags instead of JEE tiers, and
+  answers collected in an Answer Key table.
+- **Numbering** — continuous per module (except PnC, which numbers `P1…Pn`
+  within each chapter); paper `Q1…Qn` continuous across the lettered sections.
 
 The full rules live in [CONTRIBUTING.md](CONTRIBUTING.md); the machine-checkable
 invariants for AI agents are in [AGENTS.md](AGENTS.md).
@@ -85,15 +101,14 @@ python3 tools/verify-structure.py   # 6 chapters/module, unique names, P/S numbe
 ```
 
 CI (`.github/workflows/verify.yml`) runs both on every push/PR to `main`.
-`tools/migrate-to-obsidian.py` is the one-time script that converted the old
-chapter-folder layout into this vault (kept for provenance).
+Both currently pass: **66/66 Markdown files PASS**, **STRUCTURE PASS**.
 
-## What's next
+## Status
 
-[[ROADMAP]] lists the full syllabus and tracks progress. **8 of the 15 planned
-modules remain → 48 chapters** still to write from basics to Olympiad level (the
-3 already-built extras — PnC, Complex Numbers, Binomial Theorem — sit beyond
-that roadmap).
+**Complete.** All 18 modules are written from basics to the Olympiad frontier,
+with a paper and full solutions each. [[ROADMAP]] tracks the syllabus coverage;
+[docs/JEE-ADVANCED-OLYMPIAD-COVERAGE.md](docs/JEE-ADVANCED-OLYMPIAD-COVERAGE.md)
+is the detailed per-chapter checklist.
 
 ## Contributing
 

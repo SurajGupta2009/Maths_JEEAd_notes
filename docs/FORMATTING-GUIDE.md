@@ -120,7 +120,7 @@ GitHub Flavored Markdown tables.
 ```
 notes/<Module>/
 ├── <Module>.md            # complete notes: course map + 6 chapters + theory appendix
-├── <Module> — Paper.md    # Olympiad paper (A–H)
+├── <Module> — Paper.md    # Olympiad paper (A–G / A–H / A–I)
 ├── <Module> — Solutions.md
 └── assets/fig-XX.svg
 ```
