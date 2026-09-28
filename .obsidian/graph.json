@@ -1,0 +1,24 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": true,
+  "showAttachments": false,
+  "showOrphans": true,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.5,
+  "repelStrength": 12,
+  "linkStrength": 1,
+  "linkDistance": 260,
+  "scale": 1,
+  "close": false,
+  "colorGroups": [
+    { "query": "path:notes/PnC", "color": { "a": 1, "rgb": 5431370 } },
+    { "query": "path:notes/Complex-Numbers", "color": { "a": 1, "rgb": 2104319 } },
+    { "query": "path:notes/Binomial-Theorem", "color": { "a": 1, "rgb": 15122990 } },
+    { "query": "path:notes/Conic-Sections", "color": { "a": 1, "rgb": 1379071 } }
+  ]
+}

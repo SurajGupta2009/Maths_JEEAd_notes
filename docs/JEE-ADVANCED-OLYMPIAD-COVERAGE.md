@@ -3,7 +3,7 @@
 > This document proves that theory **up to JEE Advanced and Olympiad** is covered and well-ordered in the Markdown notes.
 
 > File paths below are relative to `notes/<Module>/` (e.g.
-> `01-counting-basics/` = the folder `notes/PnC/01-counting-basics/`).
+> `01-counting-basics` = the note `notes/PnC/01-counting-basics.md`).
 
 ## How Theory Is Organized
 
@@ -78,7 +78,7 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 | Rook polynomials | Adv | Board, inclusion-exclusion for forbidden positions |
 | Probabilistic method intro | Olympiad | $\mathbb{E}<1 \Rightarrow \exists$, Erdős |
 
-### Chapter 6: Olympiad Theory — 8 Sections
+### Chapter 6: Olympiad Theory — 10 Sections
 
 | Topic | Level | Coverage | Diagram |
 |-------|-------|----------|---------|
@@ -90,8 +90,11 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 | Partitions & Euler | Olympiad | GF $\prod \frac{1}{1-x^k}$, pentagonal theorem, recurrence $p(n)=p(n-1)+p(n-2)-p(n-5)-\cdots$, conjugation Young | `fig-09.svg` + Mermaid |
 | Stirling $S(n,k)$, Bell $B_n$ | Olympiad | Recurrence $kS(n-1,k)+S(n-1,k-1)$, IE closed form, onto $k!S(n,k)$, $B_n=\sum S(n,k)$ | - |
 | Sperner, Erdős–Szekeres, Cycle lemma | Olympiad | LYM random chain, $(r-1)(s-1)+1$, Dvoretzky–Motzkin | - |
+| Erdős–Ko–Rado | Olympiad | Intersecting $k$-uniform on $[n]$, $n\ge2k$ → $\le\binom{n-1}{k-1}$, Katona circle pair-counting, Hilton–Milner | - |
+| Frankl–Wilson | Olympiad | $|A\cap B|\in L$, $|L|=s$ → $|\mathcal F|\le\binom{n}{s}$; odd town $n$, even town $2^{\lfloor n/2\rfloor}$ | - |
+| Bollobás set-pairs | Olympiad | Crossing pairs → $\sum\binom{a_i+b_i}{a_i}^{-1}\le1$ via a random permutation; corollary $m\le\binom{a+b}{a}$, tight cyclic constructions | - |
 
-**Paper**: 40 questions A–G + stretch, 4–5 hours, full solutions
+**Paper**: 50 questions A–I + stretch, 5–6 hours, full solutions
 
 ---
 
@@ -106,7 +109,7 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 | 3 Roots of Unity | $\omega=e^{2\pi i/n}$, $\omega^n=1$ | $1+\omega+\cdots+\omega^{n-1}=0$, $x^n-1$ factorization | Filter $\frac{1}{n}\sum \zeta^{-rk}$, regular polygons algebraic, cyclotomic |
 | 4 JEE Adv Core | Equations in $z$, $\bar z$, $|z|$ | Apollonius $|z-a|=k|z-b|$ circle, $\arg\frac{z-a}{z-b}=\theta$ arc, optimization via triangle inequality, $iz=\bar z$ line $y=-x$ | - |
 | 5 Geometry via Complex | - | Section formula, rotation $e^{i\theta}$, collinearity, concyclicity | Ptolemy, van Aubel, complex bash, $z\bar z=|z|^2$ |
-| 6 Synthesis Paper | 38 Q A–H, $i$ cycle to geometry, with solutions | - | - |
+| 6 Synthesis Paper | 48 Q A–I, $i$ cycle $(1+i)^{40}$ to geometry, with solutions | - | - |
 
 **Diagrams**: Complex plane `fig-02.svg` + Mermaid loci, multiplication=rotation `fig-03.svg` + Mermaid, roots of unity regular polygon Mermaid
 
@@ -142,35 +145,104 @@ Every formula has a **proof** and a **small-case verification** ($n=3,4$ explici
 
 ---
 
+## Limits & Continuity — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 What a limit is | $\varepsilon$–$\delta$ language, $\lim_{x\to a}(f+g)$, squeeze, standard limits, one-sided limits | Two-sided vs one-sided, $\lim$ exists iff both one-sided agree, $\lim_{x\to0}\frac{\sin x}{x}=1$ derivation | Squeeze with $n$, $\lim_{x\to0}x\sin(1/x)=0$, non-existent limit proofs |
+| 2 Computing limits | Factor/cancel, rationalise, standard $\frac{\sin ax}{bx}$, $\frac{e^x-1}{x}$, $\frac{\ln(1+x)}{x}$, L'Hôpital as shortcut | Indeterminate $0/0,\infty/\infty$, algebraic reduction before L'Hôpital, $1^\infty$ via $\ln$ | Series expansions, $\lim$ via substitution, asymptotics, non-trivial $0\cdot\infty$ |
+| 3 Continuity | $f(a)$ defined, $\lim_{x\to a}=f(a)$, continuity of polynomials/trig/exp/ln | IVT (bisection), continuity of compositions, removable vs jump vs infinite discontinuity | Continuous nowhere-differentiable flavour, fixed-point arguments, topological IVT |
+| 4 Differentiability & continuity tools | Differentiability $\Rightarrow$ continuity, derivative as limit, sign of $f'$ vs monotonicity | One-sided derivatives, $f$ differentiable with $f'$ discontinuous, chain of implications | Derivative Darboux property, derivatives with no antiderivative-in-elementary-form |
+| 5 Olympiad techniques | Sandwich sequences, recurrence limits, limit of a sum $\to$ integral | Limits of series/sequences, $\lim_{n\to\infty}$ vs $\lim_{x\to\infty}$, Stolz–Cesàro, limit of nested radicals | Stolz–Cesàro, limit of nested radicals/iterations, limits of functional forms |
+| 6 Synthesis | Mixed problems, graph sketching from limits | Differentiating under the integral (intro), optimisation via limits | Full frontier: squeeze+series+FE combinations, L'Hôpital on olympiad forms |
+
+---
+
+## Differentiation & Methods — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 Derivative from first principles | $f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}$, derivative as slope, polynomial/power rule | Differentiability $\Rightarrow$ continuity, one-sided derivatives, corner vs cusp vs vertical tangent | Differentiability of piecewise-defined and series-defined functions, $f'$ unbounded near a point |
+| 2 Algebra of derivatives | Sum, constant multiple, product, quotient rules, power rule for integers | Deriving the power rule from the quotient rule, all four rules from first principles | Derivative of a quotient of products, log-derivative of $u^v$ edge cases |
+| 3 Chain rule & standard functions | $\frac{d}{dx}f(g(x))=f'(g)g'$, trig/exp/ln derivatives, inverse-function rule | Composition of 3+ functions, inverse-function rule derivation, $\arcsin$, $\arctan$, $\operatorname{arccot}$ | Derivatives of implicitly-defined inverses, derivatives of series-defined functions |
+| 4 Methods of differentiation | Implicit ($x^2+y^2$), logarithmic ($x^x$), parametric ($x=t^2,y=t^3$), higher-order | Second derivative for parametric curves, $\frac{d^2y}{dx^2}$ from $\frac{dy/dt}{dx/dt}$, mixed methods | Tangent/normal to curves given implicitly or parametrically at special points |
+| 5 Olympiad techniques | Nth derivative of $e^{ax}$, $\sin ax$, $\frac1{1-x}$, chain patterns | Leibniz's rule $(fg)^{(n)}$, nth derivative of $x^2e^x$, $\ln(1\pm x)$, functional equations $f(x+y)=f(x)f(y)$ | Derivative-as-limit tricks, nth derivative via complex form $e^x\cos x$, FE systems |
+| 6 Synthesis — the frontier | Rolle's theorem, MVT, tangent/normal geometry | Derivative-based inequalities ($\sin x<x$), monotonicity via $f'$ sign, Lagrange MVT applications | Cauchy MVT, differentiability forcing continuity in olympiad FEs, extremal-via-derivative proofs |
+
+---
+
+## Applications of Derivatives — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 Rates of change | Average vs instantaneous rate, chain rule in time, circle/cube/sphere related rates | Ladder and cone problems, rates with implicit relations, sign interpretation | Related rates where the constraint itself is implicit or parametric |
+| 2 Tangents, normals & differentials | Tangent/normal equations, linear approximation, $\sqrt{25.4}$, $(1.01)^{10}$ | Angle between curves, orthogonality, subtangent/subnormal/normal lengths | Tangent/normal at points defined implicitly, envelope as a locus of tangents |
+| 3 Monotonicity | $f'>0$ increasing, sign chart, intervals of increase/decrease | $f'\ge0$ and strict monotonicity, $\ln x\le x-1$, counting roots via monotonicity + IVT | Strict monotone from $f'\ge0$ vanishing on no subinterval, injectivity arguments |
+| 4 Maxima & minima | Critical points, first derivative test, local extrema of polynomials | Second derivative test, inconclusive case, absolute extrema on a closed interval | Higher-order derivative test, extrema of piecewise and series-defined functions |
+| 5 Convexity & sketching | Convex/concave meaning, inflection, number of turning points | $f''$ sign change for inflection, the $x^4$ counterexample, full sketching recipe | Asymptote computation, sketching functions with essential singularities |
+| 6 Optimisation & frontier | Two-numbers-sum problem, open box, $x+\frac1x\ge2$ | Symmetric optimisation ($xyz$ with $x+y+z=1$), inscribed rectangle in an ellipse, feasibility check | Jensen/AM–GM from calculus, Lagrange multipliers, envelopes, symmetric inequality proofs |
+
+---
+
+## Integration — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 Antiderivatives | Indefinite integral, the $+C$ family, linearity, the standard library, why $\int\frac1x=\ln\lvert x\rvert$ is the special case | Antiderivatives defined piecewise, the constant as an initial condition | Antiderivatives of functions defined by series or limits |
+| 2 Substitution | $u=g(x)$ reversing the chain rule, polynomial/exponential/trig cases, changing limits in a definite integral | Completing the square before the inverse-trig standard forms, $\tan x$, $\sec x$ | Substitutions tailored to the integrand's symmetry, rationalising substitutions |
+| 3 Integration by parts | The formula from the product rule, LIATE, $\int xe^x$, $\int\ln x$ | Repeated by parts (tabular), the circular $\int e^x\sin x$, $\int x^2e^x$ | By parts on integrals with a parameter, recursive reduction via parts |
+| 4 Partial fractions | Distinct linear factors, splitting and integrating logs | Repeated factors, irreducible quadratics (log $+$ arctangent), properness/division first | Partial fractions inside a larger substitution, residue-style splits |
+| 5 Definite integrals & FTC | FTC Parts 1 and 2, evaluating $\int_0^1x^n$, the five properties | Even/odd shortcuts, King's property $\int_0^a f(x)=\int_0^a f(a-x)$, $\int_0^{\pi/2}\frac{dx}{1+\tan x}$ | Riemann-sum definitions proved from scratch, limit-of-a-sum evaluations |
+| 6 Olympiad frontier | Improper integrals as limits, $\int_0^\infty e^{-x}$ | $\int_0^1 x\ln x$ via Feynman, $\int_0^1(\ln x)^2$, Wallis reduction $I_n=\frac{n-1}{n}I_{n-2}$ | Universal substitution $t=\tan\frac x2$, $\int_0^{\pi/2}\frac{dx}{2+\cos x}$, $x\mapsto1/u$ self-inverse integrals, Dirichlet $\int_0^\infty\frac{\sin x}{x}=\frac\pi2$ via Laplace damping |
+
+---
+
+## Differential Equations — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 Formation & terminology | Order and degree, solution vs general vs particular solution, IVP, forming a DE from a one-parameter family of curves | Degree undefined for non-polynomial derivative forms, two-parameter families | Forming DEs from families with parameters hidden in transcendental form |
+| 2 Variables separable | $y'=f(x)g(y)$, separate and integrate, $rac{dy}{dx}=rac xy$, $e^{x-y}$ | Separability disguised by algebra, absolute values in $\ln$ | Separable equations needing a domain split, implicit solutions |
+| 3 Homogeneous | Recognising equal-degree $M,N$, the $y=vx$ substitution, $rac{x+y}{x}$ | $rac{x^2+y^2}{xy}$, blow-up and domain of validity | Homogeneous after a change of variables, reduction to separable |
+| 4 Linear first-order & Bernoulli | $y'+Py=Q$, integrating factor, $\sinh x$ and $2x-1+2e^{-2x}$ solutions | $P=rac1x$ giving $\mu=x$, by parts inside the IF, Bernoulli $u=y^{1-n}$ | Bernoulli with $n=2$ solved by substitution, linear DEs with a parameter |
+| 5 Exact & orthogonal trajectories | Orthogonality as slope $-rac1{y'}$, ellipses from $y=cx^2$ | Exactness test $M_y=N_x$, potentials, level-curve solutions | Orthogonal families in polar form, self-inverse substitutions |
+| 6 Higher-order & frontier | $y''+y=0$, characteristic roots, exponential growth, Newton's cooling | Repeated roots and the $xe^{rx}$ companion, Cauchy–Euler $y=x^r$, $y'+y=\sin x$ | Clairaut $y=xp+f(p)$ and singular (envelope) solutions, order reduction $yy''=(y')^2$, forming DEs from general solutions |
+
+---
+
+## Coordinate Geometry — Lines & Circles — 6 Chapters
+
+| Chapter | JEE Main | JEE Advanced | Olympiad |
+|---------|----------|--------------|----------|
+| 1 Coordinates & locus | Distance, midpoint, section, centroid, area by determinant, collinearity, simple loci | Loci requiring squaring a condition, equidistant loci reducing to circles | Loci with ratios (Apollonius-type), locus of a midpoint under motion |
+| 2 The straight line | Slope, all six forms, angle between lines, parallel/perpendicular tests, point–line distance | Foot of the perpendicular, intercept and normal forms, distance in optimisation | Distance extremal problems, families of lines and their envelopes |
+| 3 Pairs of lines | Homogeneous pair factored into two lines, perpendicularity test $a+b=0$ | Angle between a pair from $	an	heta=\left\lvertrac{2\sqrt{h^2-ab}}{a+b}
+ight
+vert$, normalised angle bisectors | Angle bisectors as a pair of lines, joint equation of two given lines |
+| 4 The circle | Standard and general form, centre/radius, circle through three points, diameter form | $g^2+f^2<c$ (no real circle), completing the square, tangent/normal by $T=0$ | Diameter form derived from the right angle, circles through constrained triples |
+| 5 Circle–line interaction | Tangent $T=0$, normal through the centre, tangent length, chord length, power of a point | Chord of contact, radical axis by subtraction, common chord, radical centre of three circles | Power as a signed quantity, coaxal reasoning, orthogonality of circles |
+| 6 Coaxal & inversion | Position test via $d$ vs $r_1+r_2$, $\lvert r_1-r_2
+vert$ | Shortest distance to a circle, Apollonius circle, coaxal system $S_1+\lambda S_2$ | Inversion in a circle (lines ↔ circles through the origin, conformality), limiting points, radical centre computations |
+
+---
+
 ## Verification
 
-### Math Delimiters — PASS
+### Markdown notes — PASS
 
 ```bash
-python3 tools/verify-math.py
-# PnC: balance OK | math D40/bad0 I2337/bad0 $$17/bad0 -> PASS
-# Complex-Numbers: D146/bad0 I2102/bad0 $$2/bad0 -> PASS
-# Binomial-Theorem: D28/bad0 I1753/bad0 $$0/bad0 -> PASS
-# Conic-Sections: D42/bad0 I2187/bad0 $$0/bad0 -> PASS
+python3 tools/verify-md.py
+# every notes/**.md: frontmatter present, $$ and inline $ balanced,
+# <details>/<summary> balanced, every ![](assets/…) resolves -> all PASS
 ```
 
-### Mindmap Completeness — PASS
+### Vault structure — PASS
 
 ```bash
-python3 tools/verify-mindmap.py all
-# All modules PASS: top nodes 9, heroes 9, q nodes 139/159 etc., visuals, audit counts, no source cards, box summaries, links, SVG ids, tag balance, math delimiters
-```
-
-### Markdown Generation
-
-```bash
-python3 tools/convert_to_md.py all
-# Generated 6 chapters + paper + solutions per module
-# PnC: 6 ch + 10 figs
-# Complex-Numbers: 6 ch + 7 figs
-# Binomial-Theorem: 6 ch + 1 fig
-# Conic-Sections: 6 ch + 1 fig
-# Combined *-complete.md per module
+python3 tools/verify-structure.py
+# every module is 3 notes: <Module>.md (course map + 6 chapters + appendix) +
+# <Module> — Paper.md + <Module> — Solutions.md, note basenames unique across
+# the vault, paper↔solutions question ids matched -> PASS
 ```
 
 ---
@@ -185,4 +257,4 @@ python3 tools/convert_to_md.py all
 
 ---
 
-*This checklist is generated from the HTML mindmaps and the Markdown conversion — see `docs/ROADMAP.md` for the visual roadmap and `docs/DIAGRAMS.md` for all diagrams.*
+*This checklist covers the Obsidian vault notes — see [ROADMAP.md](ROADMAP.md) for the visual roadmap and progress, and [DIAGRAMS.md](DIAGRAMS.md) for all diagrams.*

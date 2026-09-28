@@ -17,29 +17,8 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Verify every HTML file (tag + MathJax delimiter balance)
-        run: python3 tools/verify-math.py
-
-      - name: Verify complete or published standalone mind maps
-        run: python3 tools/verify-mindmap.py all
-
-      - name: Mind maps must be generated (source-less maps are safe no-ops)
-        run: |
-          python3 tools/build-mindmap.py all
-          if ! git diff --quiet -- '*-mindmap.html'; then
-            echo '::error::mind maps are out of date — run `python3 tools/build-mindmap.py all` and commit the result'
-            git diff --stat -- '*-mindmap.html'
-            exit 1
-          fi
-
-      - name: Verify the Markdown notes (math balance, blocks, image links)
+      - name: Verify the Markdown notes (frontmatter, math balance, blocks, image links)
         run: python3 tools/verify-md.py
 
-      - name: Single-file snapshots must be up to date
-        run: |
-          python3 tools/build-complete.py all
-          if ! git diff --quiet -- 'notes/*-complete.md'; then
-            echo '::error::*-complete.md snapshots are out of date — run `python3 tools/build-complete.py all` and commit the result'
-            git diff --stat -- 'notes/*-complete.md'
-            exit 1
-          fi
+      - name: Verify the vault structure (6 chapters/module, unique names, P/S numbering)
+        run: python3 tools/verify-structure.py

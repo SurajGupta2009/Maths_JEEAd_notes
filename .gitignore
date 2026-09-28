@@ -9,3 +9,13 @@ __pycache__/
 
 # Node (this repo needs none — listed for hygiene)
 node_modules/
+
+# Obsidian — share vault config & plugin list, ignore per-machine state
+.obsidian/workspace*
+.obsidian/cache
+# Installed community-plugin / theme code is downloaded locally, not committed:
+.obsidian/plugins/*/
+!.obsidian/plugins/templates/
+.obsidian/themes/
+# Obsidian trash
+.trash/

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 250" width="470" height="250" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="470" height="250" fill="#ffffff"/>
+  <!-- axes -->
+  <line x1="35" y1="125" x2="445" y2="125" stroke="#334155" stroke-width="1.4"/>
+  <line x1="235" y1="20" x2="235" y2="225" stroke="#334155" stroke-width="1.4"/>
+  <polygon points="445,125 435,121 435,129" fill="#334155"/>
+  <polygon points="235,20 231,30 239,30" fill="#334155"/>
+  <text x="448" y="129" font-size="12" fill="#334155">x</text>
+  <text x="240" y="30" font-size="12" fill="#334155">y</text>
+  <!-- y = x^3 : concave down left, inflection at origin, concave up right -->
+  <path d="M109,207 L127,177 L145,155 L172,135 L199,127 L235,125 L271,123 L298,115 L325,95 L343,73 L361,43"
+        fill="none" stroke="#0ea5e9" stroke-width="2.2"/>
+  <!-- tangent at the origin: y = 0 (the x-axis) -->
+  <line x1="120" y1="125" x2="360" y2="125" stroke="#f59e0b" stroke-width="1.6" stroke-dasharray="6 3"/>
+  <text x="330" y="118" font-size="11" fill="#b45309">tangent at inflection</text>
+  <!-- tangent at x = 1 : y = 3x - 2 -->
+  <line x1="235" y1="185" x2="355" y2="65" stroke="#a855f7" stroke-width="1.6"/>
+  <text x="300" y="55" font-size="11" fill="#7e22ce">tangent, curve above it</text>
+  <!-- inflection point -->
+  <circle cx="235" cy="125" r="4" fill="#0f172a"/>
+  <text x="242" y="140" font-size="12" fill="#0f172a">inflection</text>
+  <text x="120" y="215" font-size="11" fill="#dc2626">f″ &lt; 0 concave down</text>
+  <text x="330" y="200" font-size="11" fill="#16a34a">f″ &gt; 0 concave up</text>
+  <text x="60" y="240" font-size="11" fill="#475569">y = x³: the curve crosses its own tangent at the inflection point, where f″ = 0 and changes sign.</text>
+</svg>

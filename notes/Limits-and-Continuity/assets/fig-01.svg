@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 240" width="460" height="240" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="460" height="240" fill="#ffffff"/>
+  <!-- axes -->
+  <line x1="40" y1="200" x2="430" y2="200" stroke="#334155" stroke-width="1.5"/>
+  <line x1="240" y1="20" x2="240" y2="220" stroke="#334155" stroke-width="1.5"/>
+  <polygon points="430,200 420,196 420,204" fill="#334155"/>
+  <polygon points="240,20 236,30 244,30" fill="#334155"/>
+  <text x="432" y="214" font-size="13" fill="#334155">x</text>
+  <text x="246" y="30" font-size="13" fill="#334155">y</text>
+  <!-- a and a±delta band -->
+  <rect x="196" y="24" width="88" height="176" fill="#93c5fd" fill-opacity="0.18"/>
+  <line x1="196" y1="24" x2="196" y2="200" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="284" y1="24" x2="284" y2="200" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="240" cy="200" r="3" fill="#0f172a"/>
+  <text x="234" y="216" font-size="12" fill="#0f172a">a</text>
+  <text x="188" y="216" font-size="11" fill="#2563eb">a−δ</text>
+  <text x="286" y="216" font-size="11" fill="#2563eb">a+δ</text>
+  <text x="150" y="40" font-size="11" fill="#2563eb">δ-band</text>
+  <!-- L and epsilon band -->
+  <rect x="40" y="96" width="390" height="48" fill="#fca5a5" fill-opacity="0.20"/>
+  <line x1="40" y1="96" x2="430" y2="96" stroke="#ef4444" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="40" y1="144" x2="430" y2="144" stroke="#ef4444" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="240" cy="120" r="3.5" fill="#dc2626"/>
+  <text x="246" y="124" font-size="12" fill="#dc2626">L</text>
+  <text x="46" y="92" font-size="11" fill="#dc2626">L+ε</text>
+  <text x="46" y="160" font-size="11" fill="#dc2626">L−ε</text>
+  <text x="352" y="70" font-size="11" fill="#dc2626">ε-band</text>
+  <!-- curve with a hole at a -->
+  <path d="M60,168 C120,150 170,132 196,124 C214,118 226,121 236,120"
+        fill="none" stroke="#0ea5e9" stroke-width="2.2"/>
+  <path d="M244,120 C258,119 280,116 320,104 C360,92 400,74 424,58"
+        fill="none" stroke="#0ea5e9" stroke-width="2.2"/>
+  <circle cx="240" cy="120" r="4" fill="#ffffff" stroke="#dc2626" stroke-width="2"/>
+  <text x="150" y="234" font-size="11.5" fill="#475569">Keep x in the δ-band (x≠a) ⇒ f(x) stays in the ε-band ⇒ lim = L</text>
+</svg>

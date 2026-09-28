@@ -1,155 +1,116 @@
-# Maths_JEEAd_notes
+# Maths_JEEAd_notes — an Obsidian vault
 
-Hand-crafted, well-ordered math study notes — authored in **Markdown** — that
-walk a student from board-level basics to **JEE Advanced and Olympiad
-mathematics**: every formula *derived from reasoning*, every answer
-numerically verified.
+Hand-crafted, first-principles maths study notes that walk a student from
+board-level basics to **JEE Advanced and Olympiad mathematics** — every formula
+*derived from reasoning*, every answer *numerically verified*.
 
-Each module is one folder under `notes/` with **one chapter folder per
-chapter** (all of a chapter's content inside), an Olympiad paper with full
-solutions, diagrams, and a one-page well-ordered theory reference. The four
-existing modules additionally ship a frozen standalone HTML mindmap in
-`published/` (the legacy one-file distribution).
+The whole repository **is an [Obsidian](https://obsidian.md) vault** (git-enabled):
+one Markdown note per module, native Obsidian callouts, YAML frontmatter,
+`[[Wikilinks]]`, and Dataview dashboards. Math is real LaTeX (`$…$`, `$$…$$`,
+rendered by Obsidian's built-in MathJax).
 
-[![verify](https://img.shields.io/github/actions/workflow/status/SurajGupta2009/Maths_JEEAd_notes/verify.yml?branch=main&style=flat-square&label=verify)](https://github.com/SurajGupta2009/Maths_JEEAd_notes/actions/workflows/verify.yml)
+## Open it in Obsidian
 
-## Modules
+1. Clone / open this folder as a vault: **Obsidian → Open folder as vault** →
+   select `Maths_JEEAd_notes`.
+2. When prompted, **install the community plugins** listed in
+   `.obsidian/community-plugins.json` (**Dataview**, **Templater**,
+   **Excalidraw**) — Settings → Community plugins → Turn off restricted mode →
+   Browse. The dashboards in [[Home]] need Dataview.
+3. Start at **[[Home]]** (or open `Home.md`), then explore the Graph view.
 
-| Module | Status | Chapters | Practice Qs | Paper Qs | Notes | One-file HTML |
-|---|---|---|---|---|---|---|
-| **PnC** · Permutations & Combinations | ✅ complete | 6 | 47 (P1–P8 per chapter) | 40 (A–G + stretch) | [notes](notes/PnC/README.md) | [open map](published/PnC/pnc-mindmap.html) |
-| **Complex Numbers** | ✅ complete | 6 | 50 (P1–P51, continuous) | 38 (A–H) | [notes](notes/Complex-Numbers/README.md) | [open map](published/Complex-Numbers/complex-numbers-mindmap.html) |
-| **Binomial Theorem** | ✅ complete | 6 | 47 (P1–P47, continuous) | 38 (A–H) | [notes](notes/Binomial-Theorem/README.md) | [open map](published/Binomial-Theorem/binomial-theorem-mindmap.html) |
-| **Conic Sections** | ✅ complete | 6 | 48 (P1–P48, continuous) | 38 (A–H) | [notes](notes/Conic-Sections/README.md) | [open map](published/Conic-Sections/conic-sections-mindmap.html) |
+> The core plugins (graph, backlinks, tags, properties, templates, callouts,
+> MathJax) are already enabled — no install needed.
 
-## Repo structure
+## Vault structure
 
 ```
 Maths_JEEAd_notes/
-├── notes/                     # ★ canonical Markdown notes — one folder per module
-│   ├── README.md              # index of all modules
-│   └── <Module-Slug>/
-│       ├── README.md                  # module index / course map
-│       ├── 00-WELL-ORDERED-THEORY.md  # one-page theory reference (hand-written)
-│       ├── 01-<chapter-slug>/         # one folder per chapter —
-│       │   └── README.md              #   ALL of the chapter's content lives here
-│       ├── … 02-… 03-… 04-… 05-… 06-…
-│       ├── olympiad-paper.md          # 30+ Q, sections A–H, answer lines
-│       ├── olympiad-paper-solutions.md
-│       ├── <slug>-complete.md         # GENERATED single-file snapshot (never edit)
-│       └── assets/fig-XX.svg          # the module's diagrams
-├── published/                 # legacy standalone HTML mindmaps (frozen)
-│   └── <Module-Slug>/
-│       ├── <slug>-mindmap.html        # one standalone expandable course file
-│       └── assets/notes.css
-├── docs/                      # course reference docs
-│   ├── ROADMAP.md                            # basics → JEE Main → JEE Adv → Olympiad
-│   ├── JEE-ADVANCED-OLYMPIAD-COVERAGE.md     # per-topic coverage checklist
-│   ├── FORMATTING-GUIDE.md                   # formatting & pipeline conventions
-│   └── DIAGRAMS.md                           # SVG + Mermaid diagram catalog
-├── templates/
-│   ├── CHECKLIST.md               # the 10-step new-module procedure
-│   ├── markdown/                  # skeletons for module index, chapter, paper, …
-│   └── html/                      # legacy HTML skeletons (reference only)
-├── tools/
-│   ├── verify-md.py               # Markdown quality gate (math, blocks, image links)
-│   ├── build-complete.py          # notes/ → <slug>-complete.md snapshots
-│   ├── convert_to_md.py           # legacy re-export: published/ → notes/
-│   ├── build-mindmap.py           # legacy: source HTML → published/ mindmaps
-│   ├── verify-math.py             # HTML tag + MathJax delimiter quality gate
-│   ├── verify-mindmap.py          # published-map integrity checks
-│   └── mindmap-overrides.json     # per-module label pins & CLI aliases
-└── README.md · CONTRIBUTING.md (the notes standard) · AGENTS.md · .gitignore
+├── Home.md                      # ★ vault entry point (Dataview dashboards)
+├── .obsidian/                   # vault config, enabled plugins, CSS snippet
+├── notes/                       # ★ the course — one folder per module
+│   └── <Module>/
+│       ├── <Module>.md              # complete notes: 6 chapters + theory appendix
+│       ├── <Module> — Paper.md      # Olympiad paper (sections A–G / A–H / A–I)
+│       ├── <Module> — Solutions.md  # full worked solutions
+│       └── assets/fig-XX.svg        # the module's diagrams
+├── docs/                        # ROADMAP · coverage · formatting · diagrams
+├── templates/markdown/          # skeletons for a new module (Templater-ready)
+├── tools/                       # pure-Python stdlib gates (see below)
+└── README.md · CONTRIBUTING.md · AGENTS.md
 ```
 
-## Quick start
+Each module is **three notes**. The complete-notes file holds **six chapters**
+(`# Chapter 1`…`# Chapter 6`) following one arc: **foundations → machinery → core
+→ applications → frontier → synthesis**, plus a theory appendix.
 
-- **Read a module (Markdown, canonical):** open
-  `notes/<Module>/README.md` — the chapter folders, paper and solutions are
-  linked from there. Everything renders natively on GitHub (MathJax + Mermaid).
-- **One-file offline mode (legacy HTML):** open a map from `published/` in a
-  browser — e.g. `published/PnC/pnc-mindmap.html`. Internet is required for
-  the MathJax CDN (everything else works offline).
-- To check tooling: Python 3, stdlib only.
+## Modules
 
-## The notes standard (how notes are written)
+All 18 modules are complete: **108 chapters** and **756 paper questions**, each
+module climbing board basics → JEE Main → JEE Advanced → Olympiad frontier.
 
-The rules for writing and maintaining JEE Advanced + Olympiad notes are
-defined in [CONTRIBUTING.md](CONTRIBUTING.md) — in short:
+| Module | Folder | Chapters | Paper Qs | Sections | `[!example]` | Index |
+|---|---|---|---|---|---|---|
+| **PnC** · Permutations & Combinations | `notes/PnC` | 6 | 50 | A–I | 12 | [[PnC]] |
+| **Complex Numbers** | `notes/Complex-Numbers` | 6 | 48 | A–I | 9 | [[Complex-Numbers]] |
+| **Binomial Theorem** | `notes/Binomial-Theorem` | 6 | 48 | A–I | 10 | [[Binomial-Theorem]] |
+| **Conic Sections** | `notes/Conic-Sections` | 6 | 48 | A–I | 14 | [[Conic-Sections]] |
+| **Limits & Continuity** | `notes/Limits-and-Continuity` | 6 | 39 | A–H | 2 | [[Limits-and-Continuity]] |
+| **Differentiation & Methods** | `notes/Differentiation-and-Methods` | 6 | 38 | A–H | 3 | [[Differentiation-and-Methods]] |
+| **Applications of Derivatives** | `notes/Applications-of-Derivatives` | 6 | 46 | A–H | 7 | [[Applications-of-Derivatives]] |
+| **Integration** | `notes/Integration` | 6 | 46 | A–H | 7 | [[Integration]] |
+| **Differential Equations** | `notes/Differential-Equations` | 6 | 41 | A–H | 5 | [[Differential-Equations]] |
+| **Coordinate Geometry — Lines & Circles** | `notes/Coordinate-Geometry-Lines-and-Circles` | 6 | 46 | A–H | 7 | [[Coordinate-Geometry-Lines-and-Circles]] |
+| **3D Geometry** | `notes/3D-Geometry` | 6 | 46 | A–H | 8 | [[3D-Geometry]] |
+| **Vectors** | `notes/Vectors` | 6 | 46 | A–H | 8 | [[Vectors]] |
+| **Matrices & Determinants** | `notes/Matrices-and-Determinants` | 6 | 36 | A–G | 4 | [[Matrices-and-Determinants]] |
+| **Quadratic Equations** | `notes/Quadratic-Equations` | 6 | 34 | A–H | 5 | [[Quadratic-Equations]] |
+| **Inequalities** | `notes/Inequalities` | 6 | 36 | A–G | 6 | [[Inequalities]] |
+| **Sequences & Series** | `notes/Sequences-and-Series` | 6 | 34 | A–G | 5 | [[Sequences-and-Series]] |
+| **Trigonometry** | `notes/Trigonometry` | 6 | 36 | A–G | 4 | [[Trigonometry]] |
+| **Probability** | `notes/Probability` | 6 | 38 | A–G | 6 | [[Probability]] |
 
-- **Scope ladder** — every module is well-ordered
-  *board basics → JEE Main → JEE Advanced → Olympiad frontier* in the same
-  six-chapter arc (foundations → machinery → core → applications → frontier
-  → synthesis).
-- **First principles** — every formula is derived, never memorized; every
-  counting claim carries a small-case check ($n=3,4$); both languages are
-  given where a topic has two (algebra ↔ geometry).
-- **Fixed vocabularies** — callout taxonomy (⛁ First Principles · 💡 Key Idea
-  · ⚠ Common Trap · ★ Olympiad Extension · …), question formats
-  (`S#`/`P#`/`Q#` with difficulty tags), continuous per-module numbering.
-- **Correctness** — real TeX math only (`$…$`, `$$…$$`); every paper answer
-  numerically verified in pure Python before solutions are written; balanced
-  delimiters and resolving image links (gated by CI).
+`[!example]` counts the **Olympiad Extension** callouts — the frontier material
+that sits beyond the JEE Advanced syllabus.
 
-## Reference docs
+## The notes standard (short version)
 
-- [docs/ROADMAP.md](docs/ROADMAP.md) — the full theory roadmap per module,
-  with Mermaid diagrams
-- [docs/JEE-ADVANCED-OLYMPIAD-COVERAGE.md](docs/JEE-ADVANCED-OLYMPIAD-COVERAGE.md) —
-  detailed checklist proving coverage for every chapter
-- [docs/FORMATTING-GUIDE.md](docs/FORMATTING-GUIDE.md) — formatting and
-  pipeline conventions
-- [docs/DIAGRAMS.md](docs/DIAGRAMS.md) — diagram catalog (decision tree,
-  circular, Pascal, stars & bars, reflection, Young, Burnside, complex plane,
-  conic reflection, …)
+Every module is well-ordered **board basics → JEE Main → JEE Advanced →
+Olympiad frontier**, and:
 
-## Tooling
+- **First principles** — every formula is derived, never memorised; counting
+  claims carry a small-case check ($n=3,4$).
+- **Callouts** (Obsidian callout types): `[!abstract]` First Principles ·
+  `[!tip]` Key Idea · `[!warning]` Common Trap · `[!example]` Olympiad
+  Extension · `[!note]`/`[!info]` formulas · `[!quote]` named results.
+- **Questions** — `S#` worked example, `P#` practice (woven between theory),
+  `Q#` paper (sections A–G/A–H/A–I, 34–50 questions, answers in `<details>`
+  blocks). PnC keeps its own format: difficulty tags instead of JEE tiers, and
+  answers collected in an Answer Key table.
+- **Numbering** — continuous per module (except PnC, which numbers `P1…Pn`
+  within each chapter); paper `Q1…Qn` continuous across the lettered sections.
+
+The full rules live in [CONTRIBUTING.md](CONTRIBUTING.md); the machine-checkable
+invariants for AI agents are in [AGENTS.md](AGENTS.md).
+
+## Tooling (Python 3, stdlib only)
 
 ```bash
-# Markdown notes — the daily gates:
-python3 tools/verify-md.py                  # every notes/**/*.md must PASS
-python3 tools/build-complete.py all         # regenerate <slug>-complete.md snapshots
-git diff --exit-code -- 'notes/*-complete.md'
-
-# legacy published maps — must never drift:
-python3 tools/verify-math.py                # every *.html — all PASS
-python3 tools/verify-mindmap.py all         # published-map integrity
-python3 tools/build-mindmap.py all          # source-less maps are safe no-ops
+python3 tools/verify-md.py          # frontmatter, math balance, blocks, image links
+python3 tools/verify-structure.py   # 6 chapters/module, unique names, P/S numbering
 ```
 
-`<slug>-complete.md` is the single-file snapshot of a module (course map →
-chapters → paper → solutions); CI regenerates it and fails if it is stale.
-The standalone maps in `published/` are frozen: CSS embedded, SVG IDs
-namespaced, every node expandable, no links to deleted source pages.
+CI (`.github/workflows/verify.yml`) runs both on every push/PR to `main`.
+Both currently pass: **66/66 Markdown files PASS**, **STRUCTURE PASS**.
 
-## Planned modules (roadmap)
+## Status
 
-Ordered draft — **curation of the final list and order is on hold for review**.
-Proposed folder slugs follow the naming rule in the notes standard
-(kebab-case under `notes/`).
-
-| # | Module | Proposed folder |
-|---|---|---|
-| 1 | Quadratic Equations | `notes/Quadratic-Equations/` |
-| 2 | Inequalities | `notes/Inequalities/` |
-| 3 | Trigonometry | `notes/Trigonometry/` |
-| 4 | Sequences & Series | `notes/Sequences-and-Series/` |
-| 5 | Limits & Continuity | `notes/Limits-and-Continuity/` |
-| 6 | Differentiation | `notes/Differentiation/` |
-| 7 | Applications of Derivatives | `notes/Applications-of-Derivatives/` |
-| 8 | Integration | `notes/Integration/` |
-| 9 | Differential Equations | `notes/Differential-Equations/` |
-| 10 | Coordinate Geometry — Lines & Circles | `notes/Coordinate-Geometry-Lines-and-Circles/` |
-| 11 | Conic Sections | `notes/Conic-Sections/` |
-| 12 | 3D Geometry | `notes/3D-Geometry/` |
-| 13 | Vectors | `notes/Vectors/` |
-| 14 | Matrices & Determinants | `notes/Matrices-and-Determinants/` |
-| 15 | Probability | `notes/Probability/` |
+**Complete.** All 18 modules are written from basics to the Olympiad frontier,
+with a paper and full solutions each. [[ROADMAP]] tracks the syllabus coverage;
+[docs/JEE-ADVANCED-OLYMPIAD-COVERAGE.md](docs/JEE-ADVANCED-OLYMPIAD-COVERAGE.md)
+is the detailed per-chapter checklist.
 
 ## Contributing
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) (the notes standard) — module anatomy,
-the scope ladder, callout/question/numbering rules, correctness and verify
-commands. AI agents: read [AGENTS.md](AGENTS.md). When adding a module, follow
-[templates/CHECKLIST.md](templates/CHECKLIST.md) end to end and open a PR —
-do not push to `main`.
+Follow [CONTRIBUTING.md](CONTRIBUTING.md) and the skeletons in
+`templates/markdown/`, run the two gates, and open a PR — never push to `main`.

@@ -1,0 +1,11 @@
+{
+  "theme": "obsidian",
+  "cssTheme": "",
+  "accentColor": "#7c5cff",
+  "baseFontSize": 16,
+  "interfaceFontFamily": "Inter,Segoe UI,Helvetica,Arial,sans-serif",
+  "textFontFamily": "Inter,Segoe UI,Helvetica,Arial,sans-serif",
+  "monospaceFontFamily": "JetBrains Mono,Fira Code,Consolas,monospace",
+  "showViewHeader": true,
+  "showRibbon": true
+}

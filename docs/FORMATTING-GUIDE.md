@@ -1,280 +1,150 @@
-# Formatting Guide — Markdown Notes
+---
+title: "Formatting Guide — Obsidian Vault"
+aliases: ["Formatting Guide", "Conventions"]
+module: "docs"
+type: guide
+tags: [formatting, conventions]
+created: 2026-09-27
+---
 
-The notes in `notes/` are the **canonical, hand-authored Markdown** of the
-course (one folder per chapter per module). This document describes the
-formatting conventions they follow, and the legacy pipeline that originally
-converted the HTML mindmaps into this Markdown.
+# Formatting Guide — the Obsidian vault
 
-## Pipelines
+The notes are **authored directly in Markdown** inside an Obsidian vault. This
+document is the formatting reference: frontmatter, callouts, math, links,
+collapsible answers, diagrams, and the quality gates.
 
+## Frontmatter (every note)
+
+```yaml
+---
+title: "Chapter 2 — Permutations"
+aliases: ["Permutations", "Ch 2 — Permutations"]
+module: "PnC"
+module_title: "PnC"
+chapter: 2
+level: machinery
+tags: [pnc, chapter, machinery]
+created: 2026-09-27
+---
 ```
-NEW MODULES (the current workflow — Markdown is authored directly):
 
-  templates/markdown/*.md
-    ↓ you, following CONTRIBUTING.md + templates/CHECKLIST.md
-  notes/<Module>/NN-<chapter-slug>/README.md  (chapter folders)
-    ↓ tools/build-complete.py
-  notes/<Module>/<slug>-complete.md           (single-file snapshot)
+- `level` ∈ `foundations | machinery | core | applications | frontier | synthesis`.
+- Module notes (`<Module>.md`) use `type: index`; the reference/paper/solutions
+  notes use `type: reference | paper | solutions`.
 
-LEGACY RE-EXPORT (only if a published map is ever corrected):
+## Math
 
-  published/<Module>/*-mindmap.html
-    ↓ tools/convert_to_md.py
-  notes/<Module>/…                            (chapter folders, paper, solutions, assets)
-```
-
-### Tool: `tools/convert_to_md.py` (legacy re-export)
-
-- **Input**: `published/PnC/pnc-mindmap.html`, `published/Complex-Numbers/complex-numbers-mindmap.html`, `published/Binomial-Theorem/binomial-theorem-mindmap.html`, `published/Conic-Sections/conic-sections-mindmap.html`
-- **Output**: `notes/<Module>/01-<chapter-slug>/README.md` … `06-…/README.md`
-  (one folder per chapter), `olympiad-paper.md`, `olympiad-paper-solutions.md`,
-  module `README.md`, and the index at `notes/README.md`
-- **Assets**: Extracts inline SVG → `assets/fig-XX.svg`, preserves original
-  captions; chapter folders reference `../assets/…`
-- The single-file `<slug>-complete.md` snapshot is produced by
-  `tools/build-complete.py` from the canonical Markdown — not by the converter
-
-### Math Handling
-
-- **Inline**: `<span class="math">\(...\)</span>` → `$...$`
-- **Display**: `<div class="math">\[...\]</div>` or `$$...$$` → `$$...$$`
-- **Balance**: Verified via `tools/verify-math.py` — every `$` and `$$` must be paired, no bad delimiters
-- **Example**:
+- **Inline**: `$…$`. **Display**: `$$…$$`. Rendered by Obsidian's built-in
+  MathJax (same LaTeX as GitHub).
+- Real math only — never fake prose math with Unicode glyphs (`x²`, `√`, `≤`).
+- Example:
   ```md
   The binomial coefficient is $\binom{n}{k} = \frac{n!}{k!(n-k)!}$
 
   $$\sum_{k=0}^n \binom{n}{k} = 2^n$$
   ```
 
-### Structure Mapping
+## Callouts (fixed Obsidian types)
 
-| HTML | Markdown |
-|------|----------|
-| `mm-ch` (chapter) | `notes/<Module>/NN-<chapter-slug>/README.md` with `# Chapter N — Title` |
-| `mm-sec` (section) | `### 1.2 Section Title` |
-| `mm-sub` (subtopic) | `#### Subtopic Title` |
-| `mm-node box-first` | `> **⛁ First Principles — ...**` (blockquote) |
-| `mm-node box-idea` | `> **💡 Key Idea — ...**` |
-| `mm-node box-warn` | `> **⚠ Common Trap — ...**` |
-| `mm-node box-note` | `> **📌 Note — ...**` |
-| `mm-node box-olympiad` | `> **★ Olympiad Extension — ...**` |
-| `mm-node box-exam` | `> **🏛 Exam flavor — ...**` |
-| `q` (question) | `#### **S1**[JEE Main][solved]...` + `<details><summary>Answer + Reasoning</summary>` |
-| `figure` | `![caption](assets/fig-XX.svg)` |
-| `table` | GFM table |
-| `formula` | `$$...$$` block |
-
-### Diagram Handling
-
-#### 1. SVG Preservation
-
-Every `<figure>` with inline SVG is extracted:
-
-```python
-svg_content = extract_svg(figure_html)
-save to assets/fig-02.svg
-markdown: ![Fig caption](assets/fig-02.svg)
-```
-
-- IDs are namespaced to avoid collisions
-- Original captions preserved
-- Works offline (no external deps)
-
-#### 2. Mermaid Augmentation
-
-For key concepts, Mermaid flowcharts are **added** alongside SVG for GitHub rendering:
-
-**Product Rule — Decision Tree**:
-```mermaid
-flowchart TD
-    Start --> Red
-    Start --> Blue
-    Start --> Black
-    Red --> RB["red·bold"]
-    Red --> RI["red·ital"]
-    Blue --> BB["blue·bold"]
-    Blue --> BI["blue·ital"]
-    Black --> KB["blk·bold"]
-    Black --> KI["blk·ital"]
-```
-
-**Circular Permutations**:
-```mermaid
-flowchart LR
-    A[ABC] -- rotate --> B[BCA]
-    B -- rotate --> C[CAB]
-    A -- n rotations --> Same{Same necklace}
-    Same --> Count[(n-1)!]
-```
-
-**Pascal's Triangle & Hockey-Stick**:
-```mermaid
-flowchart TD
-    A["C(3,0)"] --> D["C(4,0)"]
-    B["C(3,1)"] --> D
-    B --> E["C(4,1)"]
-    C["C(3,2)"] --> E
-    C --> F["C(4,2)"]
-    F --> G["Sum diagonal = C(n+1,k+1)"]
-```
-
-**Stars and Bars**:
-```mermaid
-flowchart LR
-    A["***|*|******"] --> B["3 balls in box1, 1 in box2, 6 in box3"]
-    B --> C["n stars, k-1 bars"]
-    C --> D["C(n+k-1,k-1)"]
-```
-
-**Reflection Principle (Catalan)**:
-```mermaid
-flowchart TD
-    Good["Good path: never above y=x"] --> CountGood["C(2n,n) - C(2n,n+1)"]
-    Bad["Bad path: crosses y=x+1"] --> Reflect["Reflect up to first crossing"]
-    Reflect --> BadCount["Bijection to paths from (-1,1) to (n,n)"]
-    BadCount --> CountBad["C(2n,n-1)"]
-```
-
-**Young Diagram Conjugation**:
-```mermaid
-flowchart LR
-    A["Partition 5+3+2+1<br>XXXXX<br>XXX<br>XX<br>X"] -- transpose --> B["Conjugate 4+3+2+1+1<br>XXXX<br>XXX<br>XX<br>X<br>X"]
-```
-
-**Complex Plane Loci**:
-```mermaid
-flowchart TD
-    A["|z - z0| = r"] --> B["Circle center z0 radius r"]
-    C["|z - a| = |z - b|"] --> D["Perp bisector of ab"]
-    E["Re z = c"] --> F["Vertical line x=c"]
-    G["|z-a|+|z-b|=2k"] --> H["Ellipse foci a,b"]
-```
-
-**Conic Reflection**:
-```mermaid
-flowchart TD
-    P["Parabola y^2=4ax"] --> R1["Parallel rays -> focus"]
-    E["Ellipse x^2/a^2+y^2/b^2=1"] --> R2["Focus -> other focus"]
-    H["Hyperbola x^2/a^2-y^2/b^2=1"] --> R3["Focus -> away from other focus"]
-```
-
-### Question Format
-
-**JEE Main / Advanced / Olympiad tags preserved**:
+Body lines of a callout are `>`-prefixed lines under the `> [!type] Title` line.
 
 ```md
-#### **S1**[JEE Main][solved][product + cases]How many 4-digit numbers...
+> [!abstract] First Principles — why the product rule is true
+> Count choice-sequences $(c_1,\dots,c_k)$. Fix $c_1$: the rest is
+> $n_2\cdots n_k$ ways; $n_1$ disjoint families → $n_1(n_2\cdots n_k)$.
 
+> [!tip] Key Idea — the rule of roles
+> Labeled roles make different paths automatically different outcomes.
+
+> [!warning] Common Trap — "3 choices, then 3 choices" is not always 9
+> Fails when different paths land on the same object (overcounting).
+
+> [!example] Olympiad Extension — counting twice is a proof technique
+> …
+
+> [!info] Formula box
+> $\binom{n+k-1}{k-1}$ — stars and bars.
+
+> [!quote] Vandermonde's identity
+> $\sum_k \binom{r}{k}\binom{s}{n-k} = \binom{r+s}{n}$.
+```
+
+Type map: First Principles → `[!abstract]`, Key Idea → `[!tip]`, Common Trap →
+`[!warning]`, Olympiad Extension → `[!example]`, formula box → `[!info]`, named
+result/identity → `[!quote]`, checklist → `[!success]`, bridge → `[!info]`.
+The CSS snippet `.obsidian/snippets/maths-vault.css` tints these.
+
+## Links & navigation
+
+- Internal links are `[[Wikilinks]]`. Every chapter note carries a navigation
+  callout at the top:
+  ```md
+  > [!info] Navigation
+  > 📖 [[PnC|PnC]] · ⬅ [[01-counting-basics|Chapter 1]] · [[03-combinations|Chapter 3]] ➡ · 📝 [[PnC — Paper|Olympiad Paper]] · ✅ [[PnC — Solutions|Solutions]]
+  ```
+- Note names are globally unique, so bare `[[note-name]]` resolves.
+
+## Collapsible answers
+
+```md
 <details>
 <summary>Answer + Reasoning</summary>
 
-Solution & reasoning...
+Solution & reasoning…
 
 **Answer: 112** ✓
 
 </details>
 ```
 
-- `S` = solved example (in chapter)
-- `P` = practice (end of section)
-- `A`–`H` = Olympiad paper (40 questions)
-- Tags: `[JEE Main]`, `[JEE Adv]`, `[Olympiad]`, `[solved]`, `[practice]`, topic tags
+Keep `<details>`/`<summary>` pairs balanced (the gate checks this).
 
-### Ordering Principles
+## Diagrams
 
-1. **Topological**: Foundations → tools → applications → frontier
-2. **Difficulty**: Board-level → JEE Main (1-step) → JEE Adv (2-step, casework) → Olympiad (bijection, double counting, generating functions)
-3. **First Principles First**: Every chapter starts with *why* before *what*
-4. **Small-Case Habit**: Every counting claim verified at $n=3,4$ (explicit listing)
-5. **Two Languages**: Algebra ↔ Geometry translation emphasized (complex numbers, conics)
+- **SVG** in the module's `assets/`, referenced as
+  `![caption](assets/fig-XX.svg)` (renders inline on GitHub and in Obsidian).
+- **Mermaid** flowcharts for key ideas (native in both):
+  ````md
+  ```mermaid
+  flowchart TD
+    A[Product rule] --> B[leaves = n1·n2·…·nk]
+  ```
+  ````
 
-### File Organization
+## Tables
+
+GitHub Flavored Markdown tables.
+
+## File organization
 
 ```
-notes/                            # ★ canonical Markdown notes (hand-authored)
-├── README.md                     # Index of all modules
-├── PnC/
-│   ├── README.md                 # Module index / course map
-│   ├── 00-WELL-ORDERED-THEORY.md # Hand-written one-page theory reference
-│   ├── 01-counting-basics/
-│   │   └── README.md             # ALL of chapter 1's content lives in its folder
-│   ├── 02-permutations/
-│   ├── 03-combinations/
-│   ├── 04-binomial-coefficients-and-identities/
-│   ├── 05-advanced-methods/
-│   ├── 06-olympiad-theory/
-│   ├── olympiad-paper.md         # 40 Q paper
-│   ├── olympiad-paper-solutions.md
-│   ├── pnc-complete.md           # GENERATED single-file snapshot (never edit)
-│   └── assets/
-│       ├── fig-02.svg            # Product rule tree
-│       ├── fig-03.svg            # Circular permutations
-│       └── ...
-├── Complex-Numbers/
-├── Binomial-Theorem/
-└── Conic-Sections/
-
-published/                        # legacy standalone HTML mindmaps (frozen)
-├── PnC/
-│   ├── pnc-mindmap.html          # one standalone expandable course file
-│   └── assets/notes.css
-├── Complex-Numbers/
-├── Binomial-Theorem/
-└── Conic-Sections/
-
-docs/                             # ROADMAP.md · FORMATTING-GUIDE.md · DIAGRAMS.md
-                                  # JEE-ADVANCED-OLYMPIAD-COVERAGE.md
+notes/<Module>/
+├── <Module>.md            # complete notes: course map + 6 chapters + theory appendix
+├── <Module> — Paper.md    # Olympiad paper (A–G / A–H / A–I)
+├── <Module> — Solutions.md
+└── assets/fig-XX.svg
 ```
 
-### Quality Gates
+## Dataview dashboards
+
+`[[Home]]` lists the modules (there is one complete note per module):
+
+```dataview
+LIST
+FROM "notes"
+WHERE type = "notes"
+SORT file.name ASC
+```
+
+Requires the **Dataview** community plugin.
+
+## Quality gates
 
 ```bash
-# Markdown notes (the daily gates)
-python3 tools/verify-md.py        # math balance, block balance, image links
-python3 tools/build-complete.py all
-git diff --exit-code -- 'notes/*-complete.md'
-
-# Published HTML must never drift
-python3 tools/verify-math.py
-python3 tools/verify-mindmap.py all
-```
-
-### GitHub Rendering
-
-- Math: GitHub natively renders `$...$` and `$$...$$` via MathJax
-- Mermaid: GitHub natively renders ```mermaid blocks
-- SVG: GitHub renders `![](assets/fig-XX.svg)` inline
-- Details: `<details><summary>` collapsible for solutions (keeps notes clean)
-
-### Example Polished Section
-
-```md
-### 1.2 The Product (Multiplication) Rule
-
-**Statement.** If a task is carried out in $k$ successive steps, and step $i$ offers $n_i$ choices *regardless of earlier choices*, then total ways = $n_1 n_2 \cdots n_k$.
-
-> **⛁ First Principles — why the rule is true**
-> Count choice-sequences $(c_1,\dots,c_k)$. Fix $c_1$: remaining $k-1$ steps in $n_2\cdots n_k$ ways (induction). $n_1$ choices for $c_1$, disjoint families → total $n_1(n_2\cdots n_k)$. The rule is partitioning by first coordinate.
-
-**Fig 1.1 — Product rule as counting leaves**
-
-![Fig 1.1](assets/fig-02.svg)
-
-```mermaid
-flowchart TD
-    Start --> Red
-    Start --> Blue
-    Red --> RB["red·bold"]
-    Red --> RI["red·ital"]
-```
-
-> **⚠ Common Trap — 3 choices then 3 choices ≠ 9 always**
-> Fails when different paths land on same object (overcounting). Fix: canonical order or divide by symmetry, check exact symmetry.
-
-> **💡 Key Idea — rule of roles**
-> Labeled roles make paths distinct. Unordered → impose canonical order or divide by symmetry size.
+python3 tools/verify-md.py          # frontmatter, math balance, blocks, image links
+python3 tools/verify-structure.py   # 3 notes/module, 6 chapters + appendix, paper<->solutions
 ```
 
 ---
 
-*All markdown files preserve the original HTML's First Principles derivation style, mistake checklists, and small-case verification habit — the core of JEE Advanced & Olympiad preparation.*
+*This is the vault formatting standard. See [CONTRIBUTING.md](../CONTRIBUTING.md) for the full authoring rules and [DIAGRAMS.md](DIAGRAMS.md) for the diagram catalog.*
