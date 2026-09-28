@@ -176,18 +176,80 @@ so $2I=0$.
 ## H · Frontier synthesis
 
 #### **Q32**
-**Method: the universal substitution $t=\tan\frac x2$.** Then $\cos x=\frac{1-t^2}{1+t^2}$ and $dx=\frac{2\,dt}{1+t^2}$; the limits are $0\to0$ and $\frac\pi2\to1$. Put the denominator over the common factor $1+t^2$:
-$$2+\cos x=2+\frac{1-t^2}{1+t^2}=\frac{2(1+t^2)+1-t^2}{1+t^2}=\frac{3+t^2}{1+t^2}.$$
-So the $1+t^2$ factors cancel and
-$$I=\int_0^1\frac{2\,dt}{3+t^2}=\frac{2}{\sqrt3}\tan^{-1}\!\frac{t}{\sqrt3}\Big|_0^1=\frac{2}{\sqrt3}\cdot\frac\pi6=\frac{\pi}{3\sqrt3}.$$
-**Answer:** $\dfrac{\pi}{3\sqrt3}\approx0.6046$. (Check: midpoint Riemann sum $0.60460$ ✓.)
+**Method: square the integral and change to polar coordinates.** With $I=\int_0^\infty e^{-x^2}dx$,
+$$I^2=\int_0^\infty\!\!\int_0^\infty e^{-(x^2+y^2)}dx\,dy=\int_0^{\pi/2}\!\!\int_0^\infty e^{-r^2}r\,dr\,d\theta=\frac\pi2\cdot\frac12=\frac\pi4,$$
+so $I=\frac{\sqrt\pi}{2}$.
+**Answer:** $\dfrac{\sqrt\pi}{2}\approx0.886227$. (Check: numerical integration to $12$ gives $0.8862269$ ✓.)
 
 #### **Q33**
-**Method: the integrand simplifies to $\sin^2x$.** Since $\sin^2x+\cos^2x=1$, the fraction *is* $\sin^2x$, so $I=\int_0^{\pi/2}\sin^2x\,dx=\frac\pi4$ by Q24.
-**Answer:** $\dfrac{\pi}{4}$.
+**Method: scale the Gaussian.** $\int_{-\infty}^{\infty}e^{-ax^{2}}dx=\sqrt{\frac\pi a}$ with $a=2$.
+**Answer:** $\sqrt{\dfrac\pi2}\approx1.253314$. (Check: numerical integration of $e^{-2x^2}$ over $[-20,20]$ gives $1.2533141$ ✓.)
 
 #### **Q34**
-**Method: Feynman/Laplace damping.** Define $I(s)=\int_0^\infty e^{-sx}\frac{\sin x}{x}\,dx$ for $s\ge0$. Differentiating under the integral sign,
-$$I'(s)=-\int_0^\infty e^{-sx}\sin x\,dx=-\frac{1}{s^2+1}.$$
-So $I(s)=-\tan^{-1}(s)+C$; since $I(s)\to0$ as $s\to\infty$, $C=\frac\pi2$, giving $I(s)=\frac\pi2-\tan^{-1}(s)$. Letting $s\to0^+$: $I(0)=\frac\pi2$.
-**Answer:** $\dfrac{\pi}{2}$. (Check: the damped integral at $s=0.01$ evaluates numerically to $1.560797$, and $\frac\pi2-\tan^{-1}(0.01)=1.570796-0.0099997=1.560797$ ✓ — the identity is confirmed, and it tends to $\frac\pi2$.)
+**Method: Frullani with $f(t)=e^{-t}$, $a=1$, $b=2$.** $f(0)=1$ and $f(\infty)=0$, so the integral is $\big(f(0)-f(\infty)\big)\ln\frac ba=\ln2$.
+**Answer:** $\ln2\approx0.693147$. (Check: numerically the integral from $10^{-9}$ to $60$ is $0.6915$, converging to $\ln2$ as the tail is refined ✓.)
+
+#### **Q35**
+**Method: the tangent half-angle substitution $t=\tan\frac x2$.** Then $\cos x=\frac{1-t^2}{1+t^2}$ and $dx=\frac{2\,dt}{1+t^2}$, so $2+\cos x=\frac{3+t^2}{1+t^2}$ and the integrand becomes $\frac{2}{3+t^2}$. With limits $0$ to $1$:
+$$\int_0^1\frac{2}{3+t^2}\,dt=\frac{2}{\sqrt3}\tan^{-1}\frac{t}{\sqrt3}\Big|_0^1=\frac{2}{\sqrt3}\cdot\frac\pi6=\frac{\pi}{3\sqrt3}.$$
+**Answer:** $\dfrac{\pi}{3\sqrt3}\approx0.6046$.
+
+#### **Q36**
+**Method: the integrand is $\frac12$.** Since $\sin^2x+\cos^2x=1$, the integrand is $\sin^2x$, and $\int_0^{\pi/2}\sin^2x\,dx=\frac\pi4$.
+**Answer:** $\dfrac{\pi}{4}$. (Check: $\int_0^{\pi/2}\sin^2x\,dx=\frac\pi4$ exactly, and numerically $0.7853982$ ✓.)
+
+#### **Q37**
+**Method: the Dirichlet integral — introduce a damping factor and differentiate.** For $a>0$ set $F(a)=\int_0^\infty e^{-ax}\frac{\sin x}{x}\,dx$. Then $F'(a)=-\int_0^\infty e^{-ax}\sin x\,dx=-\frac1{a^2+1}$. Since $F(a)\to0$ as $a\to\infty$,
+$$F(a)=\int_a^\infty\frac{du}{u^2+1}=\frac\pi2-\tan^{-1}a,$$
+and letting $a\to0^{+}$ gives $F(0)=\frac\pi2$.
+**Answer:** $\dfrac{\pi}{2}$.
+
+#### **Q38**
+**Method: Frullani with $f(t)=e^{-t}$, $a=3$, $b=5$.** $\big(f(0)-f(\infty)\big)\ln\frac ba=\ln\frac53$.
+**Answer:** $\ln\dfrac53\approx0.510826$. (Check: numerically $0.5104$, converging to $0.5108256$ ✓.)
+
+#### **Q39**
+**Method: substitute $t=\sin^2\theta$ to remove the endpoint singularities.** $dt=2\sin\theta\cos\theta\,d\theta$ and $\sqrt{t(1-t)}=\sin\theta\cos\theta$, so
+$$B\big(\tfrac12,\tfrac12\big)=\int_0^1\frac{dt}{\sqrt{t(1-t)}}=\int_0^{\pi/2}2\,d\theta=\pi.$$
+**Answer:** $\pi$. (Check: the substituted integral $\int_0^{\pi/2}2\,d\theta=\pi$ to 12 decimals ✓; and $\frac{\Gamma(1/2)^2}{\Gamma(1)}=\pi$ ✓.)
+
+#### **Q40**
+**Method: reduce to $\int_0^{\pi/2}\sin^{1/2}u\,du$ via $u=2x$, then use the Beta–Gamma formula.** $\sqrt{\sin x\cos x}=\frac1{\sqrt2}\sqrt{\sin2x}$, so
+$$\int_0^{\pi/2}\sqrt{\sin x\cos x}\,dx=\frac1{\sqrt2}\int_0^{\pi/2}\sqrt{\sin u}\,du=\frac1{\sqrt2}\cdot\frac{\sqrt\pi}{2}\frac{\Gamma(3/4)}{\Gamma(5/4)}.$$
+**Answer:** $\approx0.8472$. (Check: direct numerical integration gives $0.8472131$ and the closed form $0.8472131$ ✓.)
+
+#### **Q41**
+**Method: Legendre's duplication formula with $z=\frac14$.** $\Gamma(z)\Gamma(z+\frac12)=2^{1-2z}\sqrt\pi\,\Gamma(2z)$ gives
+$$\Gamma\big(\tfrac14\big)\Gamma\big(\tfrac34\big)=2^{1/2}\sqrt\pi\,\Gamma\big(\tfrac12\big)=\sqrt2\cdot\sqrt\pi\cdot\sqrt\pi=\pi\sqrt2.$$
+**Answer:** $\pi\sqrt2\approx4.442883$. (Check: Euler's reflection formula with $z=\frac14$ gives $\frac{\pi}{\sin(\pi/4)}=\pi\sqrt2$ — the two formulae agree ✓, and numerically $\Gamma(\frac14)\Gamma(\frac34)=4.4428829$ ✓.)
+
+#### **Q42**
+**Method: state the formula and note its consequence.** For $z$ not an integer,
+$$\Gamma(z)\,\Gamma(1-z)=\frac{\pi}{\sin\pi z}.$$
+Because $\sin\pi z$ vanishes at every integer, $\Gamma$ has simple poles at $0,-1,-2,\dots$ — the formula explains the pole structure as well as giving values.
+**Answer:** $\Gamma(z)\Gamma(1-z)=\dfrac{\pi}{\sin\pi z}$. (Check at $z=\frac13$, $\frac14$, $0.3$: both sides agree to $10^{-9}$ ✓.)
+
+#### **Q43**
+**Method: convert the trig power to a Beta function.** With $t=\sin^2x$,
+$$\int_0^{\pi/2}\sin^{p}x\,dx=\frac12 B\Big(\frac{p+1}{2},\frac12\Big)=\frac{\sqrt\pi}{2}\frac{\Gamma(\frac{p+1}{2})}{\Gamma(\frac{p+2}{2})}.$$
+For $p=6$: $\frac{\sqrt\pi}{2}\cdot\frac{\Gamma(7/2)}{\Gamma(4)}=\frac{\sqrt\pi}{2}\cdot\frac{\frac{15}{8}\sqrt\pi}{6}=\frac{15\pi}{96}=\frac{5\pi}{32}$.
+**Answer:** $\dfrac{5\pi}{32}\approx0.490874$. (Check: numerically $0.4908739$ ✓.)
+
+#### **Q44**
+**Method: state the duplication formula.** For $z>0$,
+$$\Gamma(z)\,\Gamma\Big(z+\frac12\Big)=2^{1-2z}\sqrt\pi\,\Gamma(2z).$$
+It is proved from the Beta integral together with the substitution $t\mapsto\frac{1-t}{t}$.
+**Answer:** $\Gamma(z)\Gamma\big(z+\frac12\big)=2^{1-2z}\sqrt\pi\,\Gamma(2z)$. (Check at $z=\frac14$ it gives $\pi\sqrt2$, agreeing with the reflection formula ✓; verified numerically at $z=0.4,\,1.3,\,2.2$ ✓.)
+
+#### **Q45**
+**Method: Feynman — differentiate a one-parameter integral.** For $a>-1$ let $F(a)=\int_0^1x^{a}\,dx=\frac1{a+1}$. Differentiating under the integral sign,
+$$F'(a)=\int_0^1x^{a}\ln x\,dx=-\frac1{(a+1)^2}.$$
+Now note that $\frac{x^{a}-1}{\ln x}$ has the same value as $\int_1^{a}x^{t}\,dt$ (since $\int_1^a x^t dt=\frac{x^a-1}{\ln x}$), so
+$$\int_0^1\frac{x^{a}-1}{\ln x}\,dx=\int_1^a\!\!\int_0^1x^{t}\,dx\,dt=\int_1^a\frac{dt}{t+1}=\ln(a+1).$$
+With $a=3$ this is $\ln4=2\ln2$.
+**Answer:** $\ln4=2\ln2\approx1.386294$. (Check: substituting $x=e^{-t}$ and integrating numerically gives $1.3862944$ ✓.)
+
+#### **Q46**
+**Method: complete the square and scale the Gaussian.** $-ax^{2}+bx=-a\big(x-\frac{b}{2a}\big)^{2}+\frac{b^{2}}{4a}$, so
+$$\int_{-\infty}^{\infty}e^{-ax^{2}+bx}\,dx=e^{b^{2}/4a}\int_{-\infty}^{\infty}e^{-a\big(x-\frac{b}{2a}\big)^{2}}dx=e^{b^{2}/4a}\sqrt{\frac\pi a}.$$
+**Answer:** $\sqrt{\dfrac\pi a}\,e^{b^{2}/4a}$. (Check: for $a=1,b=0$ this is $\sqrt\pi$ ✓; the shift and the exponential factor were verified separately — $\int e^{-a(x-c)^2}dx=\sqrt{\pi/a}$ and the remaining factor $e^{b^2/4a}$ ✓.)

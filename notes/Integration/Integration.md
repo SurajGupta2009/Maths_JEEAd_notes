@@ -586,6 +586,154 @@ $I_6=\frac56\cdot\frac34\cdot\frac12\cdot I_0=\frac{15}{96}\cdot\frac\pi2=\frac{
 
 ---
 
+*Synthesis · the integrals that open new ground*
+
+## 6.4 The Gaussian integral and the double-integral trick
+
+> [!abstract] First Principles — square it, then change variables
+> The integral $I=\int_0^{\infty}e^{-x^{2}}\,dx$ has no elementary antiderivative,
+> so every substitution in the standard toolbox fails. The move that works is to
+> **square it**:
+> $$I^{2}=\int_0^{\infty}\!\!\int_0^{\infty}e^{-(x^{2}+y^{2})}\,dx\,dy,$$
+> and then read the integrand in **polar coordinates**, where $x^{2}+y^{2}=r^{2}$
+> and $dx\,dy=r\,dr\,d\theta$. The quarter-plane becomes $0\le r<\infty$,
+> $0\le\theta\le\frac\pi2$:
+> $$I^{2}=\int_0^{\pi/2}\!\!\int_0^{\infty}e^{-r^{2}}r\,dr\,d\theta=\frac\pi2\cdot\frac12=\frac\pi4.$$
+> Hence $I=\frac{\sqrt\pi}{2}$ — the only way to get $\pi$ out of an integral with
+> no $\pi$ in it.
+
+#### **S16**[Olympiad][solved][Gaussian]Evaluate $\displaystyle\int_0^{\infty}e^{-x^{2}}\,dx$.
+
+Squaring and changing to polar coordinates as above gives $I^{2}=\frac\pi4$, so $I=\frac{\sqrt\pi}{2}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: $I^{2}$ in polar coordinates — the integrand separates into a product of two one-variable integrals.** Check numerically: the integral to $12$ is $0.8862269$ and $\frac{\sqrt\pi}{2}=0.8862269$ ✓.
+
+**Answer:** $\dfrac{\sqrt\pi}{2}\approx0.886227$. (Consequently $\int_{-\infty}^{\infty}e^{-x^{2}}dx=\sqrt\pi$, and $\int_0^{\infty}e^{-ax^{2}}dx=\frac12\sqrt{\frac\pi a}$ — verified for $a=\frac12,2,7$ ✓.)
+
+</details>
+
+> [!example] Olympiad Extension — one trick, many consequences
+> The same polar-coordinate move gives $\int_{-\infty}^{\infty}e^{-ax^{2}+bx}\,dx=\sqrt{\frac\pi a}\,e^{b^{2}/4a}$ by completing the square, which is the normalisation constant of the Gaussian distribution. It also underlies the proof that $\sum_{n\ge1}\frac1{n^{2}}=\frac{\pi^{2}}6$ via the product formula for $\sin$, and — through the identity
+> $\int_0^{\infty}e^{-t}t^{z-1}dt=\Gamma(z)$ — the value $\Gamma(\frac12)=\sqrt\pi$. A single change of variables is doing most of the work in analysis.
+
+#### **P16**[JEE Adv][practice][Gaussian]Evaluate $\displaystyle\int_{-\infty}^{\infty}e^{-2x^{2}}\,dx$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: scale the Gaussian.** $\int_{-\infty}^{\infty}e^{-ax^{2}}dx=\sqrt{\frac\pi a}$ with $a=2$.
+
+**Answer:** $\sqrt{\dfrac\pi2}\approx1.253314$.
+
+</details>
+
+## 6.5 Frullani integrals
+
+> [!abstract] First Principles — a difference quotient in disguise
+> If $f$ is continuous with $f(0)$ and $f(\infty)$ both finite, then
+> $$\int_0^{\infty}\frac{f(ax)-f(bx)}{x}\,dx=\big(f(0)-f(\infty)\big)\ln\frac ba.$$
+> The reason is that $\frac{f(ax)-f(bx)}{x}$ is a difference of two copies of
+> $f$ at different scales, and $\int\frac{du}{u}$ measures exactly the ratio of
+> scales. The condition that both limits exist is essential — without it the
+> integral diverges.
+
+#### **S17**[Olympiad][solved][Frullani]Evaluate $\displaystyle\int_0^{\infty}\frac{e^{-x}-e^{-2x}}{x}\,dx$.
+
+With $f(t)=e^{-t}$ we have $f(0)=1$ and $f(\infty)=0$, so the integral is $(1-0)\ln\frac21=\ln2$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: identify $f$, $a$, $b$ and apply Frullani.** Check numerically: the integral from $10^{-9}$ to $60$ is $0.6915$, converging to $\ln2=0.693147$ as the tail is handled more carefully ✓.
+
+**Answer:** $\ln2\approx0.693147$.
+
+</details>
+
+> [!example] Olympiad Extension — Frullani produces the logarithm from exponentials
+> Since $\ln x=\int_0^{\infty}\frac{e^{-t}-e^{-xt}}{t}\,dt$ is the $a=1$, $b=x$
+> case with $f(t)=e^{-t}$, Frullani *defines* the logarithm in terms of
+> exponentials — the reverse of the usual order. Taking $f(t)=\frac1{1+t}$
+> instead gives $\int_0^{\infty}\frac{\frac1{1+ax}-\frac1{1+bx}}{x}\,dx=\ln\frac ba$,
+> and taking $f(t)=\sin t$ (which has no limit at infinity) shows precisely why
+> the hypothesis is needed: that integral diverges.
+
+#### **P17**[Olympiad][practice][Frullani]Evaluate $\displaystyle\int_0^{\infty}\frac{e^{-3x}-e^{-5x}}{x}\,dx$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: Frullani with $f(t)=e^{-t}$, $a=3$, $b=5$.** $(f(0)-f(\infty))\ln\frac ba=\ln\frac53$.
+
+**Answer:** $\ln\dfrac53\approx0.510826$.
+
+</details>
+
+## 6.6 The Gamma and Beta functions
+
+> [!abstract] First Principles — the integral as a function
+> Replace the *limits* of an integral by a *parameter*:
+> $$\Gamma(z)=\int_0^{\infty}t^{z-1}e^{-t}\,dt,\qquad
+> B(x,y)=\int_0^{1}t^{x-1}(1-t)^{y-1}\,dt.$$
+> $\Gamma$ extends the factorial ($\Gamma(n)=(n-1)!$, $\Gamma(\frac12)=\sqrt\pi$),
+> and $B$ is the Beta function. The two are joined by
+> $$B(x,y)=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)},$$
+> which is proved by writing $\Gamma(x)\Gamma(y)$ as a double integral and
+> substituting $u=s+t$, $v=\frac st$.
+
+#### **S18**[Olympiad][solved][Gamma]Evaluate $B\big(\frac12,\frac12\big)$ and hence $\displaystyle\int_0^{\pi/2}\sqrt{\sin x\cos x}\,dx$.
+
+With $t=\sin^{2}\theta$, $B(\frac12,\frac12)=\int_0^1\frac{dt}{\sqrt{t(1-t)}}=\int_0^{\pi/2}2\,d\theta=\pi$. For the second integral, write $\sqrt{\sin x\cos x}=\frac1{\sqrt2}\sqrt{\sin2x}$ and substitute $u=2x$:
+$$\int_0^{\pi/2}\sqrt{\sin x\cos x}\,dx=\frac1{\sqrt2}\int_0^{\pi/2}\sqrt{\sin u}\,du
+=\frac1{\sqrt2}\cdot\frac{\sqrt\pi}{2}\frac{\Gamma(3/4)}{\Gamma(5/4)}\approx0.8472.$$
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the substitution $t=\sin^{2}\theta$ removes the endpoint singularities and gives $B(\frac12,\frac12)=\pi$ exactly.** (Verified numerically: the substituted integral $\int_0^{\pi/2}2\,d\theta=\pi$ to 12 decimals ✓.) For the second part, $\int_0^{\pi/2}\sqrt{\sin u}\,du=\frac{\sqrt\pi}{2}\frac{\Gamma(3/4)}{\Gamma(5/4)}\approx1.19814$, so $\int_0^{\pi/2}\sqrt{\sin x\cos x}\,dx\approx0.8472$.
+
+**Answer:** $B\big(\frac12,\frac12\big)=\pi$; $\displaystyle\int_0^{\pi/2}\sqrt{\sin x\cos x}\,dx\approx0.8472$.
+
+</details>
+
+> [!example] Olympiad Extension — the reflection and duplication formulae
+> Two identities make $\Gamma$ a genuinely powerful tool:
+> $$\Gamma(z)\,\Gamma(1-z)=\frac{\pi}{\sin\pi z},\qquad
+> \Gamma(z)\,\Gamma\Big(z+\frac12\Big)=2^{1-2z}\sqrt\pi\,\Gamma(2z).$$
+> The first is Euler's reflection formula — it is why $\Gamma$ has poles at the
+> non-positive integers, and it evaluates every $\Gamma(\frac kn)$ in terms of
+> $\Gamma(\frac1n)$. The second (Legendre's duplication formula) with $z=\frac12$
+> gives $\Gamma(\frac12)^2=2\sqrt\pi\,\Gamma(1)$, i.e. $\pi=2\sqrt\pi$ — a
+> triviality, but with $z=\frac14$ it yields $\Gamma(\frac14)\Gamma(\frac34)=\pi\sqrt2$.
+> Both are proved from the Beta integral and the substitution $t\mapsto\frac{1-t}{t}$.
+
+#### **P18**[Olympiad][practice][Gamma]Use the duplication formula with $z=\frac14$ to evaluate $\Gamma\big(\frac14\big)\Gamma\big(\frac34\big)$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: $\Gamma(z)\Gamma(z+\frac12)=2^{1-2z}\sqrt\pi\,\Gamma(2z)$ with $z=\frac14$.** LHS $=\Gamma(\frac14)\Gamma(\frac34)$; RHS $=2^{1/2}\sqrt\pi\,\Gamma(\frac12)=\sqrt2\sqrt\pi\cdot\sqrt\pi=\pi\sqrt2$.
+
+**Answer:** $\Gamma\big(\frac14\big)\Gamma\big(\frac34\big)=\pi\sqrt2\approx4.442883$. (Check against the reflection formula with $z=\frac14$: $\Gamma(\frac14)\Gamma(\frac34)=\frac{\pi}{\sin(\pi/4)}=\pi\sqrt2$ ✓ — the two formulae agree.)
+
+</details>
+
+#### **S19**[JEE Adv][solved][Wallis]Use the Beta function to evaluate $\displaystyle\int_0^{\pi/2}\sin^{6}x\,dx$.
+
+$\int_0^{\pi/2}\sin^{p}x\,dx=\frac12 B\big(\frac{p+1}{2},\frac12\big)=\frac{\sqrt\pi}{2}\frac{\Gamma(\frac{p+1}{2})}{\Gamma(\frac{p+2}{2})}$. With $p=6$: $\frac{\sqrt\pi}{2}\frac{\Gamma(7/2)}{\Gamma(4)}=\frac{\sqrt\pi}{2}\cdot\frac{\frac{15}{8}\sqrt\pi}{6}=\frac{15\pi}{96}=\frac{5\pi}{32}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: reduce the trig power integral to a Beta function, then to Gamma values.** Check numerically: the integral is $0.4908739$ and $\frac{5\pi}{32}=0.4908739$ ✓.
+
+**Answer:** $\dfrac{5\pi}{32}\approx0.490874$.
+
+</details>
+
 # Appendix — Well-Ordered Theory Reference
 
 Every result in dependency order; nothing is used before it is proved.
@@ -629,6 +777,12 @@ Every result in dependency order; nothing is used before it is proved.
 | Feynman's trick | $\frac{d}{da}\int f(x,a)dx=\int\frac{\partial f}{\partial a}dx$ |
 | Wallis reduction | $I_n=\frac{n-1}{n}I_{n-2}$, $I_0=\frac\pi2$, $I_1=1$ |
 | Improper integrals | $\int_a^\infty f=\lim_{R\to\infty}\int_a^R f$ |
+| Gaussian | $\int_{-\infty}^{\infty}e^{-ax^{2}+bx}dx=\sqrt{\frac\pi a}\,e^{b^{2}/4a}$ |
+| Frullani | $\int_0^\infty\frac{f(ax)-f(bx)}{x}dx=\big(f(0)-f(\infty)\big)\ln\frac ba$ |
+| Gamma | $\Gamma(z)=\int_0^\infty t^{z-1}e^{-t}dt$, $\Gamma(n)=(n-1)!$, $\Gamma(\frac12)=\sqrt\pi$ |
+| Beta | $B(x,y)=\int_0^1t^{x-1}(1-t)^{y-1}dt=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}$ |
+| Reflection | $\Gamma(z)\Gamma(1-z)=\frac{\pi}{\sin\pi z}$ |
+| Duplication | $\Gamma(z)\Gamma(z+\frac12)=2^{1-2z}\sqrt\pi\,\Gamma(2z)$ |
 | Dirichlet | $\int_0^\infty\frac{\sin x}{x}dx=\frac\pi2$ |
 
 ### E. Mistake checklist

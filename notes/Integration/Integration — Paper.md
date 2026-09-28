@@ -147,7 +147,7 @@ created: 2026-09-27
 
 ---
 
-## G · Improper integrals & Olympiad techniques (Q27–Q31)
+## G · Improper integrals & Olympiad techniques (Q27–Q34)
 
 #### **Q27**[JEE Adv][improper]Evaluate $\int_0^\infty e^{-x}\,dx$.
 
@@ -169,21 +169,69 @@ created: 2026-09-27
 
 **Answer:** $0$
 
+#### **Q32**[Olympiad][Gaussian]Evaluate $\displaystyle\int_0^{\infty}e^{-x^{2}}\,dx$.
+
+**Answer:** $\dfrac{\sqrt\pi}{2}\approx0.886227$
+
+#### **Q33**[JEE Adv][Gaussian]Evaluate $\displaystyle\int_{-\infty}^{\infty}e^{-2x^{2}}\,dx$.
+
+**Answer:** $\sqrt{\dfrac\pi2}\approx1.253314$
+
+#### **Q34**[Olympiad][Frullani]Evaluate $\displaystyle\int_0^{\infty}\frac{e^{-x}-e^{-2x}}{x}\,dx$.
+
+**Answer:** $\ln2\approx0.693147$
+
 ---
 
-## H · Frontier synthesis (Q32–Q34)
+## H · Frontier synthesis (Q35–Q46)
 
-#### **Q32**[Olympiad][t-substitution]Evaluate $\int_0^{\pi/2}\dfrac{dx}{2+\cos x}$.
+#### **Q35**[Olympiad][t-substitution]Evaluate $\int_0^{\pi/2}\dfrac{dx}{2+\cos x}$.
 
 **Answer:** $\dfrac{\pi}{3\sqrt3}\approx0.6046$
 
-#### **Q33**[Olympiad][King]Evaluate $\int_0^{\pi/2}\dfrac{\sin^2x}{\sin^2x+\cos^2x}\,dx$.
+#### **Q36**[Olympiad][King]Evaluate $\int_0^{\pi/2}\dfrac{\sin^2x}{\sin^2x+\cos^2x}\,dx$.
 
 **Answer:** $\dfrac{\pi}{4}$
 
-#### **Q34**[Olympiad][Dirichlet]Evaluate $\int_0^\infty\dfrac{\sin x}{x}\,dx$.
+#### **Q37**[Olympiad][Dirichlet]Evaluate $\int_0^\infty\dfrac{\sin x}{x}\,dx$.
 
 **Answer:** $\dfrac{\pi}{2}$
+
+#### **Q38**[Olympiad][Frullani]Evaluate $\displaystyle\int_0^{\infty}\frac{e^{-3x}-e^{-5x}}{x}\,dx$.
+
+**Answer:** $\ln\dfrac53\approx0.510826$
+
+#### **Q39**[Olympiad][Beta]Evaluate $B\big(\frac12,\frac12\big)$.
+
+**Answer:** $\pi$ (substitute $t=\sin^{2}\theta$, giving $\int_0^{\pi/2}2\,d\theta$)
+
+#### **Q40**[Olympiad][Beta]Evaluate $\displaystyle\int_0^{\pi/2}\sqrt{\sin x\cos x}\,dx$.
+
+**Answer:** $\dfrac1{\sqrt2}\cdot\dfrac{\sqrt\pi}{2}\dfrac{\Gamma(3/4)}{\Gamma(5/4)}\approx0.8472$
+
+#### **Q41**[Olympiad][Gamma]Use the duplication formula with $z=\frac14$ to evaluate $\Gamma\big(\frac14\big)\Gamma\big(\frac34\big)$.
+
+**Answer:** $2^{1/2}\sqrt\pi\,\Gamma(\frac12)=\pi\sqrt2\approx4.442883$
+
+#### **Q42**[Olympiad][Gamma]State Euler's reflection formula for $\Gamma$.
+
+**Answer:** $\Gamma(z)\Gamma(1-z)=\dfrac{\pi}{\sin\pi z}$
+
+#### **Q43**[Olympiad][Gamma]Use the Beta function to evaluate $\displaystyle\int_0^{\pi/2}\sin^{6}x\,dx$.
+
+**Answer:** $\frac12 B(\frac72,\frac12)=\dfrac{\sqrt\pi}{2}\dfrac{\Gamma(7/2)}{\Gamma(4)}=\dfrac{5\pi}{32}$
+
+#### **Q44**[Olympiad][Gamma]State Legendre's duplication formula for $\Gamma$.
+
+**Answer:** $\Gamma(z)\Gamma\big(z+\frac12\big)=2^{1-2z}\sqrt\pi\,\Gamma(2z)$
+
+#### **Q45**[Olympiad][Feynman]Evaluate $\displaystyle\int_0^1\frac{x^{3}-1}{\ln x}\,dx$ by differentiating $\int_0^1x^{a}\,dx$ with respect to $a$.
+
+**Answer:** $\displaystyle\int_0^1\frac{x^{a}-1}{\ln x}\,dx=\ln(a+1)$, so with $a=3$ the value is $\ln4=2\ln2\approx1.386294$
+
+#### **Q46**[Olympiad][Gaussian]State the general Gaussian integral $\displaystyle\int_{-\infty}^{\infty}e^{-ax^{2}+bx}\,dx$ for $a>0$.
+
+**Answer:** $\sqrt{\dfrac\pi a}\,e^{b^{2}/4a}$
 
 ---
 
@@ -195,3 +243,9 @@ created: 2026-09-27
 > - Reach for King's property or an even/odd symmetry before grinding out
 >   algebra — symmetry is almost always the intended shortcut.
 > - Check any answer by differentiating it.
+> - If no elementary antiderivative exists, try squaring the integral and
+>   changing to polar coordinates.
+> - A difference of two scaled copies of one function divided by $x$ is a
+>   Frullani integral: $\big(f(0)-f(\infty)\big)\ln\frac ba$.
+> - A power of $\sin$ or $\cos$ over $[0,\frac\pi2]$ is a Beta function in
+>   disguise — convert first, then use $\Gamma$.
