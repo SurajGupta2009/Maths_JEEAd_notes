@@ -147,7 +147,7 @@ created: 2026-09-27
 
 ---
 
-## G · Optimisation (Q27–Q30)
+## G · Optimisation (Q27–Q33)
 
 #### **Q27**[JEE Main][optimisation]Find two positive numbers with sum $20$ whose product is maximum.
 
@@ -165,25 +165,73 @@ created: 2026-09-27
 
 **Answer:** $2ab$
 
+#### **Q31**[JEE Adv][optimisation]Minimise $x+\dfrac1x$ for $x>0$.
+
+**Answer:** minimum $2$ at $x=1$
+
+#### **Q32**[JEE Main][optimisation]Among all rectangles of fixed perimeter $p$, find the one of greatest area.
+
+**Answer:** the square of side $\frac p4$, area $\dfrac{p^{2}}{16}$
+
+#### **Q33**[JEE Adv][supporting line]Find the supporting line of $f(x)=x^{2}$ at $a=3$, and use it to prove $x^{2}\ge6x-9$.
+
+**Answer:** $y=6x-9$; equality only at $x=3$, since $x^{2}-(6x-9)=(x-3)^{2}\ge0$
+
 ---
 
-## H · Olympiad frontier (Q31–Q32)
+## H · Olympiad frontier (Q34–Q46)
 
-#### **Q31**[Olympiad][Jensen]For $a,b,c>0$, prove $\dfrac{e^a+e^b+e^c}{3}\ge e^{(a+b+c)/3}$.
+#### **Q34**[Olympiad][Jensen]For $a,b,c>0$, prove $\dfrac{e^a+e^b+e^c}{3}\ge e^{(a+b+c)/3}$.
 
-**Answer:** Jensen with $f(x)=e^x$ ($f''>0$), weights $1/3$; equality iff $a=b=c$
+**Answer:** Jensen with $f(x)=e^{x}$ ($f''>0$), weights $\frac13$; equality iff $a=b=c$
 
-#### **Q32**[Olympiad][constraint]Find the minimum of $x^2+y^2+z^2$ subject to $x+y+z=3$ ($x,y,z\in\mathbb R$).
+#### **Q35**[Olympiad][constraint]Find the minimum of $x^{2}+y^{2}+z^{2}$ subject to $x+y+z=3$ ($x,y,z\in\mathbb R$).
 
 **Answer:** $3$ at $x=y=z=1$
 
-#### **Q33**[Olympiad][AM-GM]Using calculus, prove $\dfrac{x+y+z}{3}\ge\sqrt[3]{xyz}$ for $x,y,z>0$, and state when equality holds.
+#### **Q36**[Olympiad][AM-GM]Using calculus, prove $\dfrac{x+y+z}{3}\ge\sqrt[3]{xyz}$ for $x,y,z>0$, and state when equality holds.
 
 **Answer:** Jensen / one-variable reduction; equality iff $x=y=z$
 
-#### **Q34**[Olympiad][envelope]Show that every line $y=mx+\dfrac{a}{m}$ ($m\ne0$) touches the parabola $y^2=4ax$, and find the point of contact.
+#### **Q37**[Olympiad][envelope]Show that every line $y=mx+\dfrac{a}{m}$ ($m\ne0$) touches the parabola $y^{2}=4ax$, and find the point of contact.
 
-**Answer:** contact at $\left(\dfrac{a}{m^2},\dfrac{2a}{m}\right)$; the envelope is $y^2=4ax$
+**Answer:** contact at $\left(\dfrac{a}{m^{2}},\dfrac{2a}{m}\right)$; the envelope is $y^{2}=4ax$
+
+#### **Q38**[Olympiad][Young]Use Young's inequality to prove that for $a,b>0$, $\sqrt{ab}\le\dfrac{a+b}{2}$.
+
+**Answer:** Young with $p=q=2$ on $\sqrt a,\sqrt b$: $\sqrt a\,\sqrt b\le\frac a2+\frac b2$
+
+#### **Q39**[Olympiad][Young]State Young's inequality for conjugate exponents $p,q>1$ with $\frac1p+\frac1q=1$, and give the equality condition.
+
+**Answer:** $ab\le\dfrac{a^{p}}{p}+\dfrac{b^{q}}{q}$, equality iff $a^{p-1}=b$
+
+#### **Q40**[Olympiad][Cauchy]Prove $a^{2}+b^{2}\ge2ab$ and state when equality holds.
+
+**Answer:** $\frac{a^{2}+b^{2}}2-ab=\frac{(a-b)^{2}}2\ge0$; equality iff $a=b$
+
+#### **Q41**[Olympiad][envelope]Show that the tangents to $y^{2}=4ax$ at two points whose tangents are perpendicular meet on the directrix.
+
+**Answer:** tangents $y=mx+\frac am$ and $y=-\frac xm-am$ meet at $x=-a$ — the directrix
+
+#### **Q42**[Olympiad][director circle]Perpendicular tangents to the ellipse $\dfrac{x^{2}}{25}+\dfrac{y^{2}}{9}=1$ meet at $P$. Find $|OP|$ where $O$ is the centre.
+
+**Answer:** $|OP|=\sqrt{25+9}=\sqrt{34}\approx5.831$
+
+#### **Q43**[Olympiad][director circle]Two perpendicular tangents to the circle $x^{2}+y^{2}=R^{2}$ meet at $P$. Find $|OP|$.
+
+**Answer:** $|OP|=\sqrt2\,R$
+
+#### **Q44**[Olympiad][symmetric]For $x,y>0$ with $x+y=10$, find the minimum of $\frac1x+\frac1y$ and of $x^{2}+y^{2}$.
+
+**Answer:** $\min\big(\frac1x+\frac1y\big)=\dfrac25$ and $\min(x^{2}+y^{2})=50$, both at $x=y=5$
+
+#### **Q45**[Olympiad][symmetric]For $x,y>0$ with $x+y=6$, find the **maximum** of $x^{3}+y^{3}$.
+
+**Answer:** supremum $216$ (as $x\to0^{+}$, $y\to6$) — no interior maximum, since $x^{3}+y^{3}=216-18xy$ decreases as $xy$ grows
+
+#### **Q46**[Olympiad][inequality]For $x,y,z>0$ with $x+y+z=1$, prove $x^{2}+y^{2}+z^{2}\ge\dfrac13$.
+
+**Answer:** $x^{2}+y^{2}+z^{2}=\frac13+\sum\big(x-\frac13\big)^{2}\ge\frac13$; equality at $x=y=z=\frac13$
 
 ---
 
@@ -191,4 +239,9 @@ created: 2026-09-27
 > - Differentiate the **relation** in a related-rates problem, then substitute.
 > - Always run a *test* (first or second derivative) on a critical point — $f'=0$ alone proves nothing.
 > - In any absolute-extremum problem, evaluate the endpoints as well as the critical points.
-> - For a symmetric optimisation, reduce to one variable by fixing a partial sum; then justify.
+> - Check feasibility before trusting $A'=0$: a critical point with a negative
+>   height or an impossible side length is not admissible.
+> - For a symmetric optimisation, reduce to one variable by fixing a partial sum;
+>   then justify — and check whether the extremum is at $x=y$ or at the boundary.
+> - Convexity gives a free inequality: the tangent line is a global lower bound.
+> - To find a locus from a family of curves, solve $F=0$ and $\partial F/\partial t=0$.

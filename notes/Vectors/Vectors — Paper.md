@@ -163,7 +163,7 @@ created: 2026-09-27
 
 ---
 
-## G · Applications (Q31–Q32)
+## G · Applications & synthesis (Q31–Q36)
 
 #### **Q31**[JEE Main][work]Find the work done by $\mathbf F=(3,4,5)$ over a displacement $(1,0,2)$.
 
@@ -173,17 +173,65 @@ created: 2026-09-27
 
 **Answer:** $5$
 
+#### **Q33**[JEE Adv][Lagrange]Verify Lagrange's identity for $\mathbf a=(3,-1,2)$ and $\mathbf b=(1,4,-2)$.
+
+**Answer:** $\lvert\mathbf a\times\mathbf b\rvert^{2}=269$, $(\mathbf a\cdot\mathbf b)^{2}=25$, $\lvert\mathbf a\rvert^{2}\lvert\mathbf b\rvert^{2}=294$; $269+25=294$ ✓
+
+#### **Q34**[JEE Adv][Lagrange]If $\lvert\mathbf a\rvert=\lvert\mathbf b\rvert=1$ and $\mathbf a\cdot\mathbf b=\frac12$, find $\lvert\mathbf a\times\mathbf b\rvert$.
+
+**Answer:** $\dfrac{\sqrt3}{2}$
+
+#### **Q35**[Olympiad][vector area]Show that the four vector areas of the faces of a tetrahedron sum to $\mathbf 0$.
+
+**Answer:** with consistently oriented outward normals, $\sum\frac12(\mathbf q-\mathbf p)\times(\mathbf r-\mathbf p)=\mathbf0$ over the four faces
+
+#### **Q36**[JEE Adv][tetrahedron]Find the centroid of the tetrahedron with vertices $(0,0,0)$, $(1,0,0)$, $(0,2,0)$, $(0,0,3)$.
+
+**Answer:** $\left(\dfrac14,\dfrac12,\dfrac34\right)$
+
 ---
 
-## H · Olympiad frontier (Q33–Q34)
+## H · Olympiad frontier (Q37–Q46)
 
-#### **Q33**[Olympiad][Jacobi]Verify Jacobi's identity $\mathbf a\times(\mathbf b\times\mathbf c)+\mathbf b\times(\mathbf c\times\mathbf a)+\mathbf c\times(\mathbf a\times\mathbf b)=\mathbf 0$ for $\mathbf a=(7,8,9)$, $\mathbf b=(1,2,3)$, $\mathbf c=(4,5,6)$.
+#### **Q37**[Olympiad][Jacobi]Verify Jacobi's identity $\mathbf a\times(\mathbf b\times\mathbf c)+\mathbf b\times(\mathbf c\times\mathbf a)+\mathbf c\times(\mathbf a\times\mathbf b)=\mathbf 0$ for $\mathbf a=(7,8,9)$, $\mathbf b=(1,2,3)$, $\mathbf c=(4,5,6)$.
 
 **Answer:** the sum is $\mathbf 0$
 
-#### **Q34**[Olympiad][median]Prove that the medians of a triangle are concurrent and that the centroid divides each median in the ratio $2:1$.
+#### **Q38**[Olympiad][median]Prove that the medians of a triangle are concurrent and that the centroid divides each median in the ratio $2:1$.
 
 **Answer:** concurrent at $\frac{\mathbf b+\mathbf c}{3}$ with $A$ at the origin; ratio $2:1$
+
+#### **Q39**[Olympiad][barycentric]In triangle $A(0,0)$, $B(4,0)$, $C(0,3)$, find the barycentric coordinates of $P(1,1)$.
+
+**Answer:** $(5,3,4)$ up to scale, so $[PBC]:[PCA]:[PAB]=5:3:4$
+
+#### **Q40**[Olympiad][barycentric]A point $P$ has barycentric coordinates $(2,5,3)$ relative to triangle $ABC$. What fraction of $[ABC]$ is $[PAB]$?
+
+**Answer:** $\dfrac{3}{10}$
+
+#### **Q41**[Olympiad][Ceva]In triangle $ABC$, $X\in BC$ with $BX:XC=2:1$, $Y\in CA$ with $CY:YA=3:1$, $Z\in AB$ with $AZ:ZB=1:6$. Show the cevians are concurrent.
+
+**Answer:** $xyz=2\cdot3\cdot\frac16=1$, so Ceva applies — concurrent
+
+#### **Q42**[Olympiad][Routh]For $A(0,0)$, $B(5,0)$, $C(1,4)$ and $x=2$, $y=\frac12$, $z=3$, find $\frac{[PQR]}{[ABC]}$ where $PQR$ is bounded by the three cevians.
+
+**Answer:** $\dfrac{(3-1)^{2}}{(1+2+1)(\frac12+\frac12+1)(6+3+1)}=\dfrac{1}{20}$
+
+#### **Q43**[Olympiad][Euler line]Prove that the circumcentre $O$, the centroid $G$ and the orthocentre $H$ of a triangle are collinear, and find $OG:GH$.
+
+**Answer:** collinear (the **Euler line**); $OG:GH=1:2$
+
+#### **Q44**[Olympiad][Euler line]A triangle has circumcentre at the origin, with $A=(2,0,0)$, $B=(0,2,0)$ and $C=(1,1,\sqrt2)$. Find its orthocentre.
+
+**Answer:** $H=A+B+C=(3,3,\sqrt2)$
+
+#### **Q45**[Olympiad][non-associative]Show that $(\mathbf a\times\mathbf b)\times\mathbf c\ne\mathbf a\times(\mathbf b\times\mathbf c)$ for $\mathbf a=(7,8,9)$, $\mathbf b=(1,2,3)$, $\mathbf c=(4,5,6)$.
+
+**Answer:** not equal — the cross product is not associative
+
+#### **Q46**[Olympiad][midpoint]Show that the diagonals of a parallelogram bisect each other.
+
+**Answer:** vertices $0,\mathbf a,\mathbf b,\mathbf a+\mathbf b$; both diagonals share the midpoint $\frac{\mathbf a+\mathbf b}{2}$
 
 ---
 
@@ -195,4 +243,8 @@ created: 2026-09-27
 >   for the cross product or the scalar triple.
 > - For a distance, ask whether it is point-to-point, point-to-line,
 >   point-to-plane, line-to-line (parallel) or skew — each has its own formula.
+> - Translate the circumcentre to the origin before any Euler-line problem: with
+>   $\lvert A\rvert=\lvert B\rvert=\lvert C\rvert$ the orthocentre becomes $A+B+C$.
+> - In any area-ratio problem, write the point in barycentric form first — the
+>   coefficients *are* the ratios.
 > - Check every identity on a concrete triple of vectors before trusting it.

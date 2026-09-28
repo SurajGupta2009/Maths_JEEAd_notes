@@ -659,6 +659,169 @@ $f'=1-\dfrac1{x^2}=0\Rightarrow x=1$; $f''=\dfrac2{x^3}>0$ so it is a minimum. $
 
 ---
 
+*Synthesis · convexity as an inequality engine, envelopes, and symmetry*
+
+## 6.5 The tangent-line method: one convexity, many inequalities
+
+> [!abstract] First Principles — the supporting line
+> If $f$ is convex ($f''>0$) and differentiable at $a$, then for **every** $x$
+> $$f(x)\;\ge\;f(a)+f'(a)(x-a).$$
+> The line on the right is the **supporting line** (the tangent) at $a$: it lies
+> below the graph everywhere. Everything in this section is obtained by choosing
+> $f$ and $a$ cleverly — no diagrams, no case analysis.
+
+#### **S16**[JEE Adv][solved][supporting line]Find the supporting line of $f(x)=x^{2}$ at $a=3$ and use it to prove $x^{2}\ge6x-9$.
+
+$f'(x)=2x$, so the supporting line at $a=3$ is $y=f(3)+f'(3)(x-3)=9+6(x-3)=6x-9$. Since $f''(x)=2>0$, $f$ is convex and $f(x)\ge6x-9$ for all $x$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: convexity gives the tangent as a global lower bound.** Check: $x^{2}-(6x-9)=(x-3)^{2}\ge0$ ✓, with equality exactly at $x=3$ — the tangency point.
+
+**Answer:** $x^{2}\ge6x-9$, equality only at $x=3$.
+
+</details>
+
+> [!example] Olympiad Extension — Young, Cauchy and AM–GM are all the same line
+> - **$f(x)=\ln x$ (concave) at $a=1$:** $\ln x\le x-1$. Averaging over $n$
+>   positive numbers gives $\big(\prod x_i\big)^{1/n}\le\frac1n\sum x_i$ — **AM–GM**.
+> - **$f(x)=\frac{x^{p}}{p}$, $p>1$, at $a=b^{q-1}$ where $q=\frac{p}{p-1}$:** the
+>   supporting line gives $bx\le\frac{x^{p}}{p}+\frac{b^{q}}{q}$ — **Young's
+>   inequality**. Renaming the variables,
+>   $$ab\;\le\;\frac{a^{p}}{p}+\frac{b^{q}}{q}\qquad\Big(\frac1p+\frac1q=1\Big),$$
+>   with equality exactly when $a^{p-1}=b$.
+> - **$p=q=2$:** $2ab\le a^{2}+b^{2}$, and summing over components gives
+>   **Cauchy–Schwarz**.
+>
+> Three famous inequalities, one mechanism. The supporting line is the
+> highest-leverage single idea in olympiad inequalities.
+
+#### **P16**[Olympiad][practice][Young]Use Young's inequality to prove that for $a,b>0$, $a^{1/2}b^{1/2}\le\frac{a+b}{2}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: Young with $p=q=2$.** $ab\le\frac{a^{2}+b^{2}}{2}$ is not what we want; instead apply Young with the *variables* $\sqrt a,\sqrt b$: $\sqrt a\sqrt b\le\frac{a}{2}+\frac{b}{2}$.
+
+**Answer:** $\sqrt{ab}\le\dfrac{a+b}{2}$ — AM–GM for two numbers, as a special case of Young.
+
+</details>
+
+#### **S17**[JEE Adv][solved][Cauchy]Prove $a^{2}+b^{2}\ge2ab$ and identify the equality case.
+
+$\frac{a^{2}+b^{2}}2-\sqrt{a^{2}b^{2}}=\frac{(a-b)^{2}}2\ge0$; equivalently $2ab\le a^{2}+b^{2}$ with equality iff $a=b$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: complete the square, or read it as Young with $p=q=2$.** Check: the difference is $\frac12(a-b)^{2}\ge0$ ✓.
+
+**Answer:** $a^{2}+b^{2}\ge2ab$, equality iff $a=b$.
+
+</details>
+
+## 6.6 Loci from envelopes: perpendicular tangents
+
+> [!abstract] First Principles — the envelope condition
+> The envelope of a one-parameter family $F(x,y,t)=0$ is found by solving $F=0$
+> and $\partial F/\partial t=0$ together. Geometrically, the envelope is tangent
+> to **every** member of the family. Two classical loci drop straight out of
+> this: ask where two *perpendicular* members meet.
+
+#### **S18**[Olympiad][solved][envelope]Show that the tangents to the parabola $y^{2}=4ax$ at two points whose tangents are perpendicular meet on the directrix $x=-a$.
+
+The tangent with slope $m$ is $y=mx+\frac{a}{m}$ (it touches at $\big(\frac a{m^{2}},\frac{2a}{m}\big)$). A perpendicular tangent has slope $-\frac1m$, namely $y=-\frac xm-am$. Solving simultaneously: $mx+\frac am=-\frac xm-am$, so $x\big(m+\frac1m\big)=-a\big(m+\frac1m\big)$ and $x=-a$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: write both tangents, eliminate $m$.** Check: the discriminant of $y=mx+a/m$ against $y^{2}=4ax$ is $(2a-4a)^{2}-4m^{2}\cdot\frac{a^{2}}{m^{2}}=4a^{2}-4a^{2}=0$, so each line really is a tangent ✓.
+
+**Answer:** the locus is $x=-a$, the **directrix**.
+
+</details>
+
+> [!example] Olympiad Extension — the director circle
+> For the ellipse $\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1$ the tangent at parameter
+> $t$ is $\frac{x\cos t}{a}+\frac{y\sin t}{b}=1$, whose normal direction is
+> $\big(\frac{\cos t}{a},\frac{\sin t}{b}\big)$. Two tangents are perpendicular
+> exactly when these normal directions are orthogonal, and solving the two
+> linear equations for their intersection gives
+> $$x^{2}+y^{2}=a^{2}+b^{2}$$
+> — the **director circle**. When $a=b$ the ellipse is a circle and the director
+> circle is concentric with radius $\sqrt2\,a$: perpendicular tangents to a
+> circle of radius $R$ meet at distance $\sqrt2 R$ from the centre.
+
+#### **P17**[Olympiad][practice][director circle]Perpendicular tangents to the ellipse $\frac{x^{2}}{25}+\frac{y^{2}}{9}=1$ meet at $P$. Find $|OP|$ where $O$ is the centre.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: $P$ lies on the director circle $x^{2}+y^{2}=a^{2}+b^{2}$.** With $a=5$, $b=3$: $|OP|^{2}=25+9=34$.
+
+**Answer:** $|OP|=\sqrt{34}\approx5.831$. (Check: for a specific pair of perpendicular tangents the intersection satisfied $x^{2}+y^{2}=34$ exactly ✓.)
+
+</details>
+
+#### **S19**[Olympiad][solved][director circle]Two perpendicular tangents to the circle $x^{2}+y^{2}=R^{2}$ meet at $P$. Find $|OP|$.
+
+The tangent at angle $t$ is $x\cos t+y\sin t=R$; the perpendicular one is $x\cos(t+\frac\pi2)+y\sin(t+\frac\pi2)=R$. Solving, the intersection has $\lvert OP\rvert^{2}=2R^{2}$ — this is the $a=b$ case of the director circle.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: solve the two linear equations, or note the right triangle formed by the two radii to the contact points and the two tangent segments.** Check with $R=1$, $t=0.7$: the intersection gave $|OP|^{2}=2$ ✓.
+
+**Answer:** $|OP|=\sqrt2\,R$.
+
+</details>
+
+## 6.7 Symmetric functions of two variables and the "two equal" principle
+
+> [!abstract] First Principles — reduce to one variable
+> Let $f(x,y)$ be symmetric with $x+y=t$ fixed, and set $s=xy$. Every symmetric
+> polynomial in $x,y$ can be rewritten in terms of $t$ and $s$ alone. Since
+> $$0<s\le\frac{t^{2}}4,$$
+> with equality **iff** $x=y=\frac t2$, the question "where is $f$ extremal?"
+> becomes "is $f$ increasing or decreasing in $s$?" — a one-variable question.
+
+> [!example] Olympiad Extension — the direction matters, and it is checkable
+> With $x+y=t$ and $s=xy$:
+> - $x^{2}+y^{2}=t^{2}-2s$ — **decreasing** in $s$, so it is *minimised* at $x=y$.
+> - $\frac1x+\frac1y=\frac{t}{s}$ — decreasing in $s$, so *minimised* at $x=y$.
+> - $x^{3}+y^{3}=t^{3}-3ts$ — decreasing in $s$, so *maximised* at the boundary
+>   $s\to0$, **not** at $x=y$.
+> - $xy=s$ — increasing in $s$, so *maximised* at $x=y$.
+>
+> So "symmetric ⟹ extremum at $x=y$" is **false in general**: the sign of
+> $\partial f/\partial s$ decides. This is exactly the trap that makes students
+> lose marks on symmetric-optimisation problems.
+
+#### **S20**[Olympiad][solved][symmetric]For $x,y>0$ with $x+y=10$, find the minimum of $\frac1x+\frac1y$ and of $x^{2}+y^{2}$.
+
+$\frac1x+\frac1y=\frac{x+y}{xy}=\frac{10}{xy}$, which is smallest when $xy$ is largest, i.e. at $x=y=5$: value $\frac{10}{25}=\frac25$. And $x^{2}+y^{2}=100-2xy$ is smallest at the same point: $100-50=50$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: rewrite in terms of $t=x+y$ and $s=xy$, then use $s\le\frac{t^{2}}4$.** Both expressions decrease in $s$, and $s$ is maximised at $x=y$.
+
+**Answer:** $\min\big(\frac1x+\frac1y\big)=\dfrac25$ and $\min(x^{2}+y^{2})=50$, both at $x=y=5$.
+
+</details>
+
+#### **P18**[Olympiad][practice][symmetric]For $x,y>0$ with $x+y=6$, find the **maximum** of $x^{3}+y^{3}$ and state where it is attained.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: $x^{3}+y^{3}=(x+y)^{3}-3xy(x+y)=216-18xy$, which decreases as $xy$ grows.** So the maximum is at the smallest possible $xy$, i.e. as one of $x,y\to0$: the supremum is $216$, not attained inside the domain.
+
+**Answer:** supremum $216$ (approached as $x\to0^{+}$, $y\to6$); there is **no** interior maximum — a useful counterexample to "symmetric means $x=y$".
+
+</details>
+
 # Appendix — Well-Ordered Theory Reference
 
 Every result in dependency order; nothing is used before it is proved.
@@ -694,6 +857,12 @@ Every result in dependency order; nothing is used before it is proved.
 | Convex | $f''>0$ $\Rightarrow$ curve above its tangents, bowl upward |
 | Concave | $f''<0$ $\Rightarrow$ curve below its tangents |
 | Inflection point | $f''$ changes sign at $c$ (not merely $f''(c)=0$) |
+| Supporting line | convex $f$: $f(x)\ge f(a)+f'(a)(x-a)$ for all $x$ |
+| Young | $ab\le\frac{a^{p}}p+\frac{b^{q}}q$, $\frac1p+\frac1q=1$; equality iff $a^{p-1}=b$ |
+| Envelope of $F(x,y,t)=0$ | solve $F=0$ and $\partial F/\partial t=0$ together |
+| Director circle (ellipse) | perpendicular tangents meet on $x^{2}+y^{2}=a^{2}+b^{2}$ |
+| Directrix (parabola) | perpendicular tangents to $y^{2}=4ax$ meet on $x=-a$ |
+| Two-equal principle | with $x+y=t$, $s=xy\in(0,t^{2}/4]$; the sign of $\partial f/\partial s$ decides where $f$ is extremal |
 | Sketch order | domain, intercepts, symmetry, asymptotes, $f'$, $f''$ |
 
 ### D. Frontier

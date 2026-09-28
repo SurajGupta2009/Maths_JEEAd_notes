@@ -518,6 +518,148 @@ Take $A$ at the origin, $\mathbf b,\mathbf c$ as the position vectors of $B,C$. 
 
 ---
 
+*Synthesis · the identities that turn geometry into algebra*
+
+## 6.4 Lagrange's identity and vector trigonometry
+
+> [!abstract] First Principles — the identity behind the trigonometry
+> For any two vectors,
+> $$\lvert\mathbf a\times\mathbf b\rvert^{2}+(\mathbf a\cdot\mathbf b)^{2}=\lvert\mathbf a\rvert^{2}\lvert\mathbf b\rvert^{2}.$$
+> This is **Lagrange's identity**, and it is the vector statement that
+> $\sin^{2}\theta+\cos^{2}\theta=1$. Everything in this section is a corollary.
+
+#### **S14**[JEE Adv][solved][Lagrange]Verify Lagrange's identity for $\mathbf a=(3,-1,2)$ and $\mathbf b=(1,4,-2)$, and use it to find the angle between them.
+
+$\mathbf a\times\mathbf b=(-1\cdot(-2)-2\cdot4,\;2\cdot1-3\cdot(-2),\;3\cdot4-(-1)\cdot1)=(2-8,\;2+6,\;12+1)=(-6,8,13)$, so $\lvert\mathbf a\times\mathbf b\rvert^{2}=36+64+169=269$. Also $\mathbf a\cdot\mathbf b=3-4-4=-5$, $\lvert\mathbf a\rvert^{2}=14$, $\lvert\mathbf b\rvert^{2}=21$. Then $269+25=294=14\cdot21$ ✓. Hence $\cos\theta=\frac{-5}{\sqrt{14\cdot21}}=\frac{-5}{7\sqrt6}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: compute both products and check the identity, then read the cosine off the dot product.** $\sin^{2}\theta=\frac{269}{294}$ and $\cos^{2}\theta=\frac{25}{294}$, which sum to $1$ ✓.
+
+**Answer:** identity holds ($269+25=294$); $\cos\theta=\dfrac{-5}{7\sqrt6}$, so $\theta\approx106.79^{\circ}$.
+
+</details>
+
+> [!example] Olympiad Extension — the cosine rule is a vector identity
+> With $\mathbf c=\mathbf a-\mathbf b$, expand $\lvert\mathbf c\rvert^{2}$:
+> $$\lvert\mathbf a-\mathbf b\rvert^{2}=\lvert\mathbf a\rvert^{2}+\lvert\mathbf b\rvert^{2}-2\lvert\mathbf a\rvert\lvert\mathbf b\rvert\cos\theta,$$
+> which is the cosine rule. Similarly the **area** of the triangle on
+> $\mathbf a,\mathbf b$ is $\frac12\lvert\mathbf a\times\mathbf b\rvert=\frac12\lvert\mathbf a\rvert\lvert\mathbf b\rvert\sin\theta$. So both the cosine rule and the
+> area formula are the same computation done with the two products — no diagram,
+> no case analysis on whether the angle is obtuse.
+
+#### **P12**[JEE Adv][practice][Lagrange]Use Lagrange's identity to show that if $\lvert\mathbf a\rvert=\lvert\mathbf b\rvert=1$ and $\mathbf a\cdot\mathbf b=\frac12$, then $\lvert\mathbf a\times\mathbf b\rvert=\frac{\sqrt3}{2}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: rearrange the identity.** $\lvert\mathbf a\times\mathbf b\rvert^{2}=1-\frac14=\frac34$.
+
+**Answer:** $\lvert\mathbf a\times\mathbf b\rvert=\dfrac{\sqrt3}{2}$.
+
+</details>
+
+## 6.5 Barycentric coordinates and area ratios
+
+> [!abstract] First Principles — barycentric coordinates
+> Any point $P$ in the plane of $A,B,C$ can be written
+> $$P=\frac{\lambda_{1}A+\lambda_{2}B+\lambda_{3}C}{\lambda_{1}+\lambda_{2}+\lambda_{3}},$$
+> and the coefficients are not arbitrary bookkeeping: they are **area ratios**,
+> $$\frac{[PBC]}{[ABC]}=\frac{\lambda_{1}}{\lambda_{1}+\lambda_{2}+\lambda_{3}},\qquad\frac{[PCA]}{[ABC]}=\frac{\lambda_{2}}{S},\qquad\frac{[PAB]}{[ABC]}=\frac{\lambda_{3}}{S},$$
+> where $S=\lambda_{1}+\lambda_{2}+\lambda_{3}$ and $[XYZ]$ denotes area. The
+> centroid is $(1,1,1)$; the vertices are $(1,0,0),(0,1,0),(0,0,1)$.
+
+#### **S15**[Olympiad][solved][barycentric]In triangle $A(0,0)$, $B(4,0)$, $C(0,3)$, find the barycentric coordinates of $P(1,1)$ and verify the area-ratio statement.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: solve $P=\frac{\lambda_1A+\lambda_2B+\lambda_3C}{S}$ and compare with areas.** With $A=(0,0)$, $P=(1,1)$: from the $x$-coordinate $1=\frac{4\lambda_2}{S}$ and the $y$-coordinate $1=\frac{3\lambda_3}{S}$, so $\lambda_2=\frac S4$, $\lambda_3=\frac S3$, and $\lambda_1=S-\frac S4-\frac S3=\frac{5S}{12}$. Taking $S=12$: $(\lambda_1,\lambda_2,\lambda_3)=(5,3,4)$. Areas: $[ABC]=6$, $[PBC]=\frac12\lvert(4,0)-(1,1)\times(0,3)-(1,1)\rvert=\frac12\lvert(3,-1)\times(-1,2)\rvert=\frac12\cdot5=2.5=\frac5{12}\cdot6$ ✓.
+
+**Answer:** $(5,3,4)$ (up to scale); $[PBC]:[PCA]:[PAB]=5:3:4$.
+
+</details>
+
+#### **P13**[Olympiad][practice][barycentric]A point $P$ has barycentric coordinates $(2,5,3)$ relative to triangle $ABC$. What fraction of $[ABC]$ is $[PAB]$?
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the third coefficient governs the area opposite $C$.** $S=10$, so $\frac{[PAB]}{[ABC]}=\frac{3}{10}$.
+
+**Answer:** $\dfrac{3}{10}$.
+
+</details>
+
+> [!example] Olympiad Extension — Ceva and Routh from barycentrics
+> Put $X\in BC$ with $BX:XC=x:1$, and similarly $CY:YA=y:1$, $AZ:ZB=z:1$.
+> Then $X=\frac{B+xC}{1+x}$, so the line $AX$ has barycentric equation
+> $z\,$— more usefully, the three cevians $AX,BY,CZ$ are concurrent **iff**
+> $xyz=1$ — **Ceva's theorem**. When $xyz\ne1$ the three lines bound a small
+> triangle, and **Routh's theorem** gives its area:
+> $$\frac{[PQR]}{[ABC]}=\frac{(xyz-1)^{2}}{(xy+x+1)(yz+y+1)(zx+z+1)}.$$
+> Note that $x=y=z=1$ (the medians) makes the numerator vanish, as it must.
+
+#### **S16**[Olympiad][solved][Ceva]In triangle $ABC$, $X\in BC$ with $BX:XC=2:1$, $Y\in CA$ with $CY:YA=3:1$ and $Z\in AB$ with $AZ:ZB=1:6$. Show the cevians are concurrent.
+
+Here $x=2$, $y=3$, $z=\frac16$, so $xyz=2\cdot3\cdot\frac16=1$. By Ceva the cevians $AX,BY,CZ$ are concurrent.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: check the product $xyz$.** $2\cdot3\cdot\frac16=1$ ✓. (Direct check: with $A=(0,0)$, $B=(4,0)$, $C=(1,3)$, the intersection of $AX$ and $BY$ lies on $CZ$ to machine precision.)
+
+**Answer:** concurrent (Ceva, $xyz=1$).
+
+</details>
+
+#### **P14**[Olympiad][practice][Routh]For $A(0,0)$, $B(5,0)$, $C(1,4)$ and $x=2$, $y=\frac12$, $z=3$, find $\frac{[PQR]}{[ABC]}$ where $PQR$ is the triangle bounded by the three cevians.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: Routh's formula.** $xyz=3$, so $\frac{[PQR]}{[ABC]}=\frac{(3-1)^{2}}{(1+2+1)(\frac12+\frac12+1)(6+3+1)}=\frac{4}{4\cdot2\cdot10}=\frac1{20}$.
+
+**Answer:** $\dfrac{1}{20}=0.05$.
+
+</details>
+
+## 6.6 The Euler line
+
+> [!example] Olympiad Extension — one line, one proof
+> The circumcentre $O$, the centroid $G$ and the orthocentre $H$ of a triangle
+> are **collinear**, and $OG:GH=1:2$. The whole theorem is two lines of vectors:
+> translate so that $O$ is the origin. Then $\lvert A\rvert=\lvert B\rvert=\lvert C\rvert=R$, and
+> $$H=A+B+C$$
+> is the orthocentre, because $(H-A)\cdot(C-B)=(B+C)\cdot(C-B)=\lvert C\rvert^{2}-\lvert B\rvert^{2}=0$, so $AH\perp BC$ — and similarly for the other two altitudes. But
+> $G=\frac{A+B+C}{3}=\frac H3$, so $O,G,H$ are collinear with $G$ one third of the
+> way from $O$ to $H$: $OG:GH=1:2$.
+
+#### **S17**[Olympiad][solved][Euler line]Prove that $O$, $G$, $H$ are collinear and that $OG:GH=1:2$.
+
+Take $O$ as the origin, so $\lvert A\rvert=\lvert B\rvert=\lvert C\rvert=R$. Set $H=A+B+C$. Then $(H-A)\cdot(C-B)=(B+C)\cdot(C-B)=\lvert C\rvert^{2}-\lvert B\rvert^{2}=0$, so $AH\perp BC$; the same calculation with the other pairs gives $BH\perp CA$ and $CH\perp AB$. Hence $H$ is the orthocentre. Since $G=\frac{A+B+C}{3}=\frac{H}{3}$, the point $G$ lies on $OH$ with $OG:GH=1:2$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: translate the circumcentre to the origin — the single move that makes the proof two lines long.** Check on a concrete triangle: with $A,B,C$ random and $O$ the circumcentre, $H=A+B+C-2O$ in general coordinates, and $(H-A)\cdot(C-B)=0$, $(H-B)\cdot(C-A)=0$, $G-O=\frac13(H-O)$, and $OG:GH=\frac12$ exactly ✓ (verified on 8 random triangles).
+
+**Answer:** $O,G,H$ collinear; $OG:GH=1:2$. In general coordinates $H=A+B+C-2O$.
+
+</details>
+
+#### **P15**[Olympiad][practice][Euler line]A triangle has circumcentre at the origin, with $A=(2,0,0)$, $B=(0,2,0)$ and $C$ on the sphere of radius $2$ with $C=(1,1,\sqrt2)$. Find its orthocentre.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: with $O$ at the origin, $H=A+B+C$.** $H=(2,0,0)+(0,2,0)+(1,1,\sqrt2)=(3,3,\sqrt2)$.
+
+**Answer:** $H=(3,3,\sqrt2)$. (Check: $\lvert A\rvert=\lvert B\rvert=\lvert C\rvert=2$ ✓, so $O$ really is the circumcentre; and $(H-A)\cdot(C-B)=(1,3,\sqrt2)\cdot(1,-1,\sqrt2)=1-3+2=0$ ✓.)
+
+</details>
+
 # Appendix — Well-Ordered Theory Reference
 
 Every result in dependency order; nothing is used before it is proved.
@@ -555,6 +697,10 @@ Every result in dependency order; nothing is used before it is proved.
 | Tetrahedron volume | $\frac16\big\lvert[(\mathbf b-\mathbf a)\,(\mathbf c-\mathbf a)\,(\mathbf d-\mathbf a)]\big\rvert$ |
 | Coplanarity | the triple product of the edge vectors is $0$ |
 | Vector area | $\frac12(\mathbf b-\mathbf a)\times(\mathbf c-\mathbf a)$ |
+| Barycentric coordinates | $P=\frac{\lambda_1A+\lambda_2B+\lambda_3C}{S}$, area ratios $\lambda_i/S$ |
+| Ceva | $AX,BY,CZ$ concurrent iff $\frac{BX}{XC}\cdot\frac{CY}{YA}\cdot\frac{AZ}{ZB}=1$ |
+| Routh | $\frac{[PQR]}{[ABC]}=\frac{(xyz-1)^{2}}{(xy+x+1)(yz+y+1)(zx+z+1)}$ |
+| Euler line | $O,G,H$ collinear with $OG:GH=1:2$; $H=A+B+C$ when $O$ is the origin |
 
 ### D. Lines and planes
 
