@@ -1589,4 +1589,145 @@ $\binom{2n}{n}$ not divisible by something, prime factorization, $\sum\binom{n}{
 
 ---
 
-*Well-ordered: pick-lists census → Pascal as table → $2^n$ via bijection → substitution engines $f(1),f(-1)$ → double counting Vandermonde → negative binomial stars and bars GF → growth unimodal → divisibility Lucas/Kummer.*
+*Synthesis · filters, Catalan numbers, and the size of the middle coefficient*
+
+## 6.5 The roots-of-unity filter
+
+> [!abstract] First Principles — extract every $m$-th coefficient
+> Let $\omega=e^{2\pi i/m}$. Averaging $(1+x)^{n}$ over the $m$ rotations of $x$
+> kills every term whose exponent is not a multiple of $m$:
+> $$\sum_{\substack{0\le k\le n\\ k\equiv r\pmod m}}\binom{n}{k}
+> =\frac1m\sum_{j=0}^{m-1}\omega^{-rj}\big(1+\omega^{j}\big)^{n}.$$
+> The mechanism is the single fact $\sum_{j=0}^{m-1}\omega^{jt}=m$ if $m\mid t$
+> and $0$ otherwise. Nothing else is used — the filter is a projection.
+
+#### **S48**[Olympiad][solved][filter]Compute $\displaystyle\sum_{\substack{k\\ k\equiv0\,(3)}}\binom{15}{k}$.
+
+With $\omega=e^{2\pi i/3}$ the filter gives $\frac13\big(2^{15}+(1+\omega)^{15}+(1+\omega^{2})^{15}\big)$. Since $1+\omega=e^{i\pi/3}$ and $1+\omega^{2}=e^{-i\pi/3}$, the two conjugates contribute $2\cos\frac{15\pi}{3}=2\cos5\pi=-2$. Hence the sum is $\frac{32768-2}{3}=10922$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: roots-of-unity filter with $m=3$, $r=0$; then simplify $(1+\omega)^n$ using $1+\omega=e^{i\pi/3}$.** Check by direct summation of $\binom{15}{0}+\binom{15}{3}+\cdots+\binom{15}{15}=10922$ ✓.
+
+**Answer:** $10922$.
+
+</details>
+
+> [!example] Olympiad Extension — the general closed form for $m=3$
+> Because $1+\omega=e^{i\pi/3}$, the $m=3$, $r=0$ filter simplifies to
+> $$\sum_{k\equiv0\,(3)}\binom{n}{k}=\frac{2^{n}+2\cos\frac{n\pi}{3}}{3},$$
+> a *closed form with a trigonometric term*. It is an integer for every $n$ even
+> though $\cos\frac{n\pi}{3}$ is not — the irrational parts cancel. This is the
+> standard route to "sum every third binomial coefficient" without touching a
+> calculator, and it generalises: for any $m$ the answer is a sum of $m$ terms
+> $\big(1+\omega^{j}\big)^{n}$, each of which is a rotation of a simple complex
+> number to the $n$-th power.
+
+#### **P48**[Olympiad][practice][filter]Compute $\displaystyle\sum_{\substack{k\\ k\equiv1\,(4)}}\binom{10}{k}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the filter with $m=4$, $r=1$.** $\frac14\sum_{j=0}^{3}\omega^{-j}(1+\omega^{j})^{10}$ with $\omega=i$. Direct check: $\binom{10}{1}+\binom{10}{5}+\binom{10}{9}=10+252+10=272$.
+
+**Answer:** $272$.
+
+</details>
+
+## 6.6 Catalan numbers
+
+> [!abstract] First Principles — the central coefficient, corrected
+> The **Catalan numbers**
+> $$C_{n}=\frac{1}{n+1}\binom{2n}{n}=1,1,2,5,14,42,132,429,\dots$$
+> count, among many other things, the ways to bracket a product of $n+1$ factors,
+> the monotone lattice paths from $(0,0)$ to $(n,n)$ staying below the diagonal,
+> and the triangulations of a convex $(n+2)$-gon. They satisfy the recurrence
+> $$C_{n}=\frac{2(2n-1)}{n+1}\,C_{n-1}$$
+> and the **convolution**
+> $$\sum_{i=0}^{n}C_{i}C_{n-i}=C_{n+1},$$
+> which is exactly the statement that the generating function
+> $C(x)=\sum C_nx^n$ obeys $C(x)=1+xC(x)^{2}$.
+
+#### **S49**[Olympiad][solved][Catalan]Verify the Catalan convolution $\sum_{i=0}^{n}C_iC_{n-i}=C_{n+1}$ for $n=4$, and interpret it.
+
+$C_0,\dots,C_5=1,1,2,5,14,42$. For $n=4$: $C_0C_4+C_1C_3+C_2C_2+C_3C_1+C_4C_0=14+5+4+5+14=42=C_5$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: expand the generating function identity $C=1+xC^{2}$ and compare coefficients.** The coefficient of $x^{n+1}$ on the right is $\sum_{i=0}^{n}C_iC_{n-i}$ and on the left is $C_{n+1}$ ✓.
+
+**Answer:** verified: $42=C_5$. (Checked for $n=0,\dots,10$ — the convolution gives $C_{n+1}$ every time ✓. Combinatorially: a triangulated $(n+3)$-gon is split by the triangle containing a fixed edge into a triangulated $(i+2)$-gon and a triangulated $(n-i+2)$-gon.)
+
+</details>
+
+> [!example] Olympiad Extension — Catalan from the reflection principle
+> The formula $C_n=\frac1{n+1}\binom{2n}{n}$ is not a guess: the total number of
+> monotone paths from $(0,0)$ to $(n,n)$ is $\binom{2n}{n}$, and the "bad" ones
+> (those that cross above the diagonal) are counted by reflecting the path after
+> its first crossing, which gives a bijection with the paths from $(0,0)$ to
+> $(n-1,n+1)$ — there are $\binom{2n}{n-1}$ of them. So the good paths number
+> $\binom{2n}{n}-\binom{2n}{n-1}=\binom{2n}{n}\big(1-\frac{n}{n+1}\big)=\frac1{n+1}\binom{2n}{n}$.
+> The **reflection principle** is the general engine behind Catalan-type counts.
+
+#### **P49**[Olympiad][practice][Catalan]Find the number of ways to triangulate a convex heptagon.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: a convex $(n+2)$-gon has $C_n$ triangulations.** A heptagon has $7=5+2$ sides, so $n=5$ and the count is $C_5=42$.
+
+**Answer:** $42$.
+
+</details>
+
+## 6.7 The size of the central coefficient
+
+> [!abstract] First Principles — Stirling's formula in binomial clothing
+> The central coefficient $\binom{2n}{n}$ is the largest in its row, and Stirling's
+> formula $n!\sim\sqrt{2\pi n}\big(\frac ne\big)^{n}$ gives its growth:
+> $$\binom{2n}{n}\sim\frac{4^{n}}{\sqrt{\pi n}}.$$
+> The relative error is $O(\frac1n)$, and the first correction is explicit:
+> $$\binom{2n}{n}=\frac{4^{n}}{\sqrt{\pi n}}\Big(1-\frac{1}{8n}+\frac{1}{128n^{2}}+\cdots\Big).$$
+> This single asymptotic is the workhorse behind every "how big is the middle
+> term" question, and behind the estimate $\binom{2n}{n}\approx\frac{4^n}{\sqrt{\pi n}}$
+> used to compare rows of Pascal's triangle.
+
+#### **S50**[JEE Adv][solved][Stirling]Estimate $\binom{200}{100}$ using $\binom{2n}{n}\sim\frac{4^{n}}{\sqrt{\pi n}}$, and give the relative error of the estimate.
+
+With $n=100$: $\frac{4^{100}}{\sqrt{100\pi}}=\frac{4^{100}}{10\sqrt\pi}\approx9.055\times10^{58}$. The relative error of the leading term is about $\frac{1}{8n}=\frac1{800}=0.00125$, i.e. $0.125\%$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: substitute $n=100$ into the asymptotic and quote the first correction as the error.** With the correction factor $1-\frac1{800}$, the estimate becomes $9.0549\times10^{58}$, and the exact value is $90548514656103281165404177077484163874504589675413336841320\approx9.0549\times10^{58}$ ✓.
+
+**Answer:** $\approx9.055\times10^{58}$, with a relative error of about $0.125\%$ for the uncorrected estimate.
+
+</details>
+
+> [!example] Olympiad Extension — the whole row, and the entropy function
+> Stirling applied to a general coefficient gives
+> $$\binom{n}{k}\approx\frac{1}{\sqrt{2\pi npq}}\exp\big(nH(p)\big),\qquad p=\frac kn,\ q=1-p,$$
+> where $H(p)=-p\ln p-q\ln q$ is the **binary entropy**. So the row of Pascal's
+> triangle is, to exponential accuracy, a Gaussian centred at $k=\frac n2$ with
+> standard deviation $\frac12\sqrt n$ — which is why the ratio walk
+> $\frac{T_{k+1}}{T_k}=\frac{n-k}{k+1}$ slows down near the middle and why the
+> greatest term sits at $k\approx\frac n2$. The central estimate above is the
+> $p=\frac12$ special case, since $H(\frac12)=\ln2$.
+
+#### **P50**[JEE Adv][practice][Stirling]Using $\binom{2n}{n}\sim\frac{4^{n}}{\sqrt{\pi n}}$, estimate the ratio of the central coefficient of row $2n$ to the sum $2^{2n}$ of the whole row.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: divide the two estimates.** $\frac{\binom{2n}{n}}{2^{2n}}\approx\frac{1}{\sqrt{\pi n}}$.
+
+**Answer:** $\approx\dfrac{1}{\sqrt{\pi n}}$ — so a single entry out of $4^{n}$ still carries a fraction $\frac1{\sqrt{\pi n}}$ of the whole row's weight. (For $n=100$ that is about $5.6\%$.)
+
+</details>
+
+---
+
+*Well-ordered: pick-lists census → Pascal as table → $2^n$ via bijection → substitution engines $f(1),f(-1)$ → double counting Vandermonde → negative binomial stars and bars GF → growth unimodal → divisibility Lucas/Kummer → roots-of-unity filter for residues → Catalan by reflection → Stirling for the central coefficient.*

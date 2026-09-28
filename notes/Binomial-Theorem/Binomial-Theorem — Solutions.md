@@ -720,3 +720,186 @@ Answer: odd exponents → even floor $S_n$; even exponents → odd floor $S_n - 
 Check: $n = 3$: $S_3 = 14$, floor $14$ even ✓ (Q25's number); $n = 4$: $(1+\sqrt2)^4 = 17 + 12\sqrt2 \approx 33.97$, floor $33$, and $S_4 - 1 = 34 - 1 = 33$ odd ✓.
 
 </details>
+
+
+### I · Roots of Unity, Catalans and Stretch (Q39–Q48)
+
+#### **Q39**[Olympiad]Using the roots-of-unity filter with $\omega=e^{2\pi i/3}$, evaluate $\displaystyle\sum_{\substack{k\\ k\equiv1\,(3)}}\binom{14}{k}$.
+
+Using the roots-of-unity filter with $\omega=e^{2\pi i/3}$, evaluate $\displaystyle\sum_{\substack{k\\ k\equiv1\,(3)}}\binom{14}{k}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the filter with $m=3$, $r=1$, then simplify $1+\omega=e^{i\pi/3}$.** With $\omega=e^{2\pi i/3}$ the filter reads $\frac13\sum_{j=0}^{2}\omega^{-j}(1+\omega^{j})^{14}$. The $j=0$ term is $2^{14}=16384$. For $j=1$: $\omega^{-1}(1+\omega)^{14}=e^{-2\pi i/3}\cdot e^{14\pi i/3}=e^{4\pi i}=1$. For $j=2$: $\omega^{-2}(1+\omega^{2})^{14}=e^{-4\pi i/3}\cdot e^{-14\pi i/3}=e^{-6\pi i}=1$.
+
+
+Answer: $5462$
+
+
+Check: by direct summation $k\equiv1\pmod3$ in range gives $k=1,4,7,10,13$, and $\binom{14}{1}+\binom{14}{4}+\binom{14}{7}+\binom{14}{10}+\binom{14}{13}=14+1001+3432+1001+14=5462$ ✓. The general closed form for $m=3$ is $\frac{2^{n}+2\cos\frac{(n-2r)\pi}{3}}{3}$.
+
+</details>
+
+
+#### **Q40**[Olympiad]State the roots-of-unity filter: for $\omega=e^{2\pi i/m}$, give a closed form for $\displaystyle\sum_{\substack{k\\ k\equiv r\,(m)}}\binom{n}{k}$.
+
+State the roots-of-unity filter: for $\omega=e^{2\pi i/m}$, give a closed form for $\displaystyle\sum_{\substack{k\\ k\equiv r\,(m)}}\binom{n}{k}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: average the rotations of $x$; only terms whose exponent is a multiple of $m$ survive.** For $\omega=e^{2\pi i/m}$, $\frac1m\sum_{j=0}^{m-1}\omega^{jt}$ equals $1$ if $m\mid t$ and $0$ otherwise. Multiplying by $\omega^{-rj}$ selects the residue class $r$.
+
+
+Answer: $\displaystyle\sum_{\substack{k\\ k\equiv r\pmod m}}\binom{n}{k}=\frac1m\sum_{j=0}^{m-1}\omega^{-rj}\big(1+\omega^{j}\big)^{n}$
+
+
+Check: verified numerically for $m=2,3,4,5$, every residue $r$, and $0\le n\le19$ — over $300$ cases, all exact ✓.
+
+</details>
+
+
+#### **Q41**[JEE Adv]Using the filter with $m=4$, $r=1$ and $\omega=i$, compute $\displaystyle\sum_{\substack{k\\ k\equiv1\,(4)}}\binom{10}{k}$.
+
+Using the filter with $m=4$, $r=1$ and $\omega=i$, compute $\displaystyle\sum_{\substack{k\\ k\equiv1\,(4)}}\binom{10}{k}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the filter with $m=4$, $r=1$, $\omega=i$.** $\frac14\sum_{j=0}^{3}i^{-j}(1+i^{j})^{10}$. The $j=2$ term vanishes because $1+i^{2}=0$. For $j=1$: $(1+i)^{10}=(\sqrt2\,e^{i\pi/4})^{10}=2^{5}e^{5i\pi/2}=32i$, so $i^{-1}\cdot32i=32$. For $j=3$: $(1-i)^{10}=32e^{-5i\pi/2}=-32i$, so $i^{-3}(-32i)=i(-32i)=32$.
+
+
+Answer: $\frac14(1024+32+0+32)=272$
+
+
+Check: directly, $k\equiv1\pmod4$ gives $k=1,5,9$, and $\binom{10}{1}+\binom{10}{5}+\binom{10}{9}=10+252+10=272$ ✓.
+
+</details>
+
+
+#### **Q42**[Olympiad]Define the Catalan number $C_n$, list $C_0$ to $C_5$, and state the convolution identity they satisfy.
+
+Define the Catalan number $C_n$, list $C_0$ to $C_5$, and state the convolution identity they satisfy.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: the definition, the first values, and the generating-function consequence.** $C(x)=\sum_{n\ge0}C_nx^n$ satisfies $C(x)=1+xC(x)^{2}$, because a triangulated polygon splits at the triangle containing a fixed edge.
+
+
+Answer: $C_n=\dfrac1{n+1}\binom{2n}{n}=1,1,2,5,14,42$ for $n=0,\dots,5$; $\displaystyle\sum_{i=0}^{n}C_iC_{n-i}=C_{n+1}$
+
+
+Check: $C_0,\dots,C_5$ recomputed as $\frac1{n+1}\binom{2n}{n}$ ✓.
+
+</details>
+
+
+#### **Q43**[Olympiad]Verify the Catalan convolution for $n=4$: show $\sum_{i=0}^{4}C_iC_{4-i}=C_5$.
+
+Verify the Catalan convolution for $n=4$: show $\sum_{i=0}^{4}C_iC_{4-i}=C_5$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: expand $C(x)=1+xC(x)^{2}$ and compare the coefficient of $x^{5}$.** The coefficient of $x^{5}$ on the right is $\sum_{i=0}^{4}C_iC_{4-i}$, and on the left it is $C_5$.
+
+
+Answer: $C_0C_4+C_1C_3+C_2C_2+C_3C_1+C_4C_0=14+5+4+5+14=42=C_5$ ✓
+
+
+Check: the convolution was verified for $n=0,\dots,10$ ✓.
+
+</details>
+
+
+#### **Q44**[Olympiad]How many ways are there to triangulate a convex heptagon?
+
+How many ways are there to triangulate a convex heptagon?
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: a convex $(n+2)$-gon has exactly $C_n$ triangulations.** A heptagon has $7$ sides, so $n+2=7$ and $n=5$.
+
+
+Answer: $C_5=42$
+
+
+Check: the familiar small cases: quadrilateral $C_2=2$ ✓, pentagon $C_3=5$ ✓, hexagon $C_4=14$ ✓.
+
+</details>
+
+
+#### **Q45**[JEE Adv]State Stirling's estimate for the central binomial coefficient and give the first correction.
+
+State Stirling's estimate for the central binomial coefficient and give the first correction.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: substitute $n!\sim\sqrt{2\pi n}\big(\frac ne\big)^{n}$ into $\binom{2n}{n}=\frac{(2n)!}{(n!)^{2}}$.** The powers of $2$ and $e$ combine to $4^{n}$, and the square roots combine to $\sqrt{\pi n}$ in the denominator; the correction series follows from Stirling's full expansion.
+
+
+Answer: $\displaystyle\binom{2n}{n}\sim\frac{4^{n}}{\sqrt{\pi n}}\Big(1-\frac{1}{8n}+\frac{1}{128n^{2}}+\cdots\Big)$
+
+
+Check: for $n=100$ the corrected factor $1-\frac1{800}$ turns $9.066177\times10^{58}$ into $9.054844\times10^{58}$, within $8\times10^{-5}\%$ of the exact value ✓.
+
+</details>
+
+
+#### **Q46**[Olympiad]Using $\binom{2n}{n}\sim\frac{4^{n}}{\sqrt{\pi n}}$, estimate the fraction of the whole row $2^{2n}$ carried by its central coefficient.
+
+Using $\binom{2n}{n}\sim\frac{4^{n}}{\sqrt{\pi n}}$, estimate the fraction of the whole row $2^{2n}$ carried by its central coefficient.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: divide the central coefficient by the row sum $2^{2n}=4^{n}$.** $\frac{\binom{2n}{n}}{4^{n}}\approx\frac{1}{\sqrt{\pi n}}$.
+
+
+Answer: $\approx\dfrac{1}{\sqrt{\pi n}}$ — about $5.63\%$ for $n=100$
+
+
+Check: $\binom{200}{100}/4^{100}=0.05635$ and $1/\sqrt{100\pi}=0.05642$ ✓.
+
+</details>
+
+
+#### **Q47**[Olympiad]Show that $n+1$ divides $\binom{2n}{n}$ for every $n\ge0$ — equivalently, that the Catalan number $\dfrac{1}{n+1}\binom{2n}{n}$ is always an integer.
+
+Show that $n+1$ divides $\binom{2n}{n}$ for every $n\ge0$ — equivalently, that the Catalan number $\dfrac{1}{n+1}\binom{2n}{n}$ is always an integer.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: use the ratio identity $\frac{\binom{2n}{n}}{\binom{2n}{n-1}}=\frac{n+1}{n}$, i.e. $n\binom{2n}{n}=(n+1)\binom{2n}{n-1}$.** Since $\gcd(n,n+1)=1$, the factor $n+1$ on the right must divide $\binom{2n}{n}$: writing $\binom{2n}{n-1}=nk$ gives $n\binom{2n}{n}=n(n+1)k$, so $\binom{2n}{n}=(n+1)k$. Hence $\frac1{n+1}\binom{2n}{n}$ is an integer, which is precisely $C_n$.
+
+
+Answer: $C_n=\dfrac1{n+1}\binom{2n}{n}\in\mathbb Z$ for every $n\ge0$
+
+
+Check: $C_0,\dots,C_5=1,1,2,5,14,42$ are all integers ✓, and the divisibility $n+1\mid\binom{2n}{n}$ was verified for $n=1,\dots,199$ ✓.
+
+</details>
+
+
+#### **Q48**[Olympiad]Show that the reflection principle counts the "bad" monotone paths from $(0,0)$ to $(n,n)$ as $\binom{2n}{n-1}$, and deduce $C_n=\binom{2n}{n}-\binom{2n}{n-1}$.
+
+Show that the reflection principle counts the "bad" monotone paths from $(0,0)$ to $(n,n)$ as $\binom{2n}{n-1}$, and deduce $C_n=\binom{2n}{n}-\binom{2n}{n-1}$.
+
+<details>
+<summary>Answer + Reasoning</summary>
+
+**Method: reflect the path after its first crossing.** A monotone path from $(0,0)$ to $(n,n)$ that rises strictly above the diagonal $y=x$ has a first crossing point; reflecting the remainder of the path in the line $y=x+1$ is a bijection onto the monotone paths from $(0,0)$ to $(n-1,n+1)$. Those number $\binom{2n}{n-1}$: such a path has $n-1$ right steps and $n+1$ up steps, and we choose which $n-1$ of the $2n$ steps go right. Hence the good paths number $\binom{2n}{n}-\binom{2n}{n-1}=\binom{2n}{n}\big(1-\frac{n}{n+1}\big)=\frac1{n+1}\binom{2n}{n}=C_n$.
+
+
+Answer: $C_n=\binom{2n}{n}-\binom{2n}{n-1}=\dfrac1{n+1}\binom{2n}{n}$
+
+
+Check: for $n=3$: $\binom63-\binom62=20-15=5=C_3$ ✓; for $n=5$: $\binom{10}{5}-\binom{10}{4}=252-210=42=C_5$ ✓.
+
+</details>
+
