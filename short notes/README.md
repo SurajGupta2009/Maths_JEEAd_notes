@@ -23,8 +23,8 @@ exactly one chapter.
 | 1 | **Sets, Relations & Functions** (`01-sets-relations-functions`) | Sets, Relations and Functions | ✅ **delivered** — 12 JEE + 6 Olympiad sheets |
 | 2 | **Exponents & Logarithms** (`02-exponents-logarithms`) | Algebra (logarithms and their properties) | ✅ **delivered** — 9 JEE + 3 Olympiad sheets |
 | 3 | **Trigonometric Identities & Equations** (`03-trigonometric-identities-equations`) | Trigonometry | ✅ **delivered** — 10 JEE + 6 Olympiad sheets |
-| 4 | Inverse Trigonometric Functions (`04-inverse-trigonometric-functions`) | Trigonometry | ⏳ pending |
-| 5 | Complex Numbers (`05-complex-numbers`) | Algebra (complex numbers, FTA) | ⏳ pending |
+| 4 | **Inverse Trigonometric Functions** (`04-inverse-trigonometric-functions`) | Trigonometry | ✅ **delivered** — 13 JEE + 6 Olympiad sheets |
+| 5 | **Complex Numbers** (`05-complex-numbers`) | Algebra (complex numbers, FTA) | ✅ **delivered** — 18 JEE + 11 Olympiad sheets |
 | 6 | Quadratic Equations (`06-quadratic-equations`) | Algebra (quadratics with real coefficients) | ⏳ pending |
 | 7 | Sequences & Series (`07-sequences-and-series`) | Algebra (AP, GP, AM, GM, special sums) | ⏳ pending |
 | 8 | Permutations & Combinations (`08-permutations-and-combinations`) | Algebra (P&C) | ⏳ pending |
