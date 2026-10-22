@@ -563,7 +563,7 @@ def draw_sheet(fm: dict, page: Page, chapter_slug: str, part_label: str,
     f1 = get_font(HAND, 38)
     d.text((MARGIN, 3316), foot_l, font=f1, fill=INK_FAINT)
     d.text((PAGE_W // 2 - 40, 3316), foot_c, font=f1, fill=INK_FAINT)
-    d.text((PAGE_W - MARGIN - _measure(foot_r, HAND, 38), 3316), foot_r,
+    d.text((PAGE_W - MARGIN - _measure(foot_r, HAND, 38) - 6, 3316), foot_r,
            font=f1, fill=INK_FAINT)
 
     for item in page.items:

@@ -1,0 +1,153 @@
+{
+  "chapter": "03-trigonometric-identities-equations",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Trigonometry \u2014 Ratios, the Unit Circle, Fundamental Identities",
+        "plain_title": "Trigonometry \u2014 Ratios, the Unit Circle, Fundamental Identities",
+        "subtitle": "Trigonometry \u2014 Ratios, the Unit Circle, Fundamental Identities",
+        "bookmark": "JEE 1 \u2014 Trigonometry \u2014 Ratios, the Unit Circle, Fundamental Identities"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Trigonometry \u2014 Ratios, the Unit Circle, Fundamental Identities (cont.)",
+        "plain_title": "Trigonometry \u2014 Ratios, the Unit Circle, Fundamental Identities (cont.)",
+        "subtitle": "Trigonometry \u2014 Ratios, the Unit Circle, Fundamental Identities",
+        "bookmark": "JEE 2 \u2014 Trigonometry \u2014 Ratios, the Unit Circle, Fundamental Identities (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Signs by Quadrant, Allied Angles, Standard Values (cont.)",
+        "plain_title": "Signs by Quadrant, Allied Angles, Standard Values (cont.)",
+        "subtitle": "Signs by Quadrant, Allied Angles, Standard Values",
+        "bookmark": "JEE 3 \u2014 Signs by Quadrant, Allied Angles, Standard Values (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Compound Angles \u2014 the Four Formulae and How to Own Them (cont.)",
+        "plain_title": "Compound Angles \u2014 the Four Formulae and How to Own Them (cont.)",
+        "subtitle": "Compound Angles \u2014 the Four Formulae and How to Own Them",
+        "bookmark": "JEE 4 \u2014 Compound Angles \u2014 the Four Formulae and How to Own Them (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Multiple & Submultiple Angles \u2014 Double, Triple, Half, Power Reduction (cont.)",
+        "plain_title": "Multiple & Submultiple Angles \u2014 Double, Triple, Half, Power Reduction (cont.)",
+        "subtitle": "Multiple & Submultiple Angles \u2014 Double, Triple, Half, Power Reduction",
+        "bookmark": "JEE 5 \u2014 Multiple & Submultiple Angles \u2014 Double, Triple, Half, Power Reduction (cont.)"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Transformation Formulae \u2014 Products \u2194 Sums (cont.)",
+        "plain_title": "Transformation Formulae \u2014 Products \u2194 Sums (cont.)",
+        "subtitle": "Transformation Formulae \u2014 Products \u2194 Sums",
+        "bookmark": "JEE 6 \u2014 Transformation Formulae \u2014 Products \u2194 Sums (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Trigonometric Equations I \u2014 Principal and General Solutions (cont.)",
+        "plain_title": "Trigonometric Equations I \u2014 Principal and General Solutions (cont.)",
+        "subtitle": "Trigonometric Equations I \u2014 Principal and General Solutions",
+        "bookmark": "JEE 7 \u2014 Trigonometric Equations I \u2014 Principal and General Solutions (cont.)"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Method 2 \u2014 the harmonic form $a \\sin x + b \\cos x = c$",
+        "plain_title": "Method 2 \u2014 the harmonic form a sin x + b cos x = c",
+        "subtitle": "Trigonometric Equations II \u2014 Factorise, Combine, Filter",
+        "bookmark": "JEE 8 \u2014 Method 2 \u2014 the harmonic form a sin x + b cos x = c"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Conditional Identities \u2014 When $A + B + C = \\pi$ (cont.)",
+        "plain_title": "Conditional Identities \u2014 When A + B + C = pi (cont.)",
+        "subtitle": "Conditional Identities \u2014 When $A + B + C = \\pi$",
+        "bookmark": "JEE 9 \u2014 Conditional Identities \u2014 When A + B + C = pi (cont.)"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Chapter Recap \u2014 Identities & Equations Toolkit",
+        "plain_title": "Chapter Recap \u2014 Identities & Equations Toolkit",
+        "subtitle": "Chapter Recap \u2014 Identities & Equations Toolkit",
+        "bookmark": "JEE 10 \u2014 Chapter Recap \u2014 Identities & Equations Toolkit"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Olympiad Extensions \u2014 the Weierstrass Substitution",
+        "plain_title": "Olympiad Extensions \u2014 the Weierstrass Substitution",
+        "subtitle": "Olympiad Extensions \u2014 the Weierstrass Substitution",
+        "bookmark": "OLY 1 \u2014 Olympiad Extensions \u2014 the Weierstrass Substitution"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Assumptions & conventions",
+        "plain_title": "Assumptions & conventions",
+        "subtitle": "Olympiad Extensions \u2014 the Weierstrass Substitution",
+        "bookmark": "OLY 2 \u2014 Assumptions & conventions"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Olympiad Extensions \u2014 Products of Sines & Cosines from Roots of Unity (cont.)",
+        "plain_title": "Olympiad Extensions \u2014 Products of Sines & Cosines from Roots of Unity (cont.)",
+        "subtitle": "Olympiad Extensions \u2014 Products of Sines & Cosines from Roots of Unity",
+        "bookmark": "OLY 3 \u2014 Olympiad Extensions \u2014 Products of Sines & Cosines from Roots of Unity (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Olympiad Extensions \u2014 Trig Series (Telescoping) and Square Sums (cont.)",
+        "plain_title": "Olympiad Extensions \u2014 Trig Series (Telescoping) and Square Sums (cont.)",
+        "subtitle": "Olympiad Extensions \u2014 Trig Series (Telescoping) and Square Sums",
+        "bookmark": "OLY 4 \u2014 Olympiad Extensions \u2014 Trig Series (Telescoping) and Square Sums (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "The four triangle formulae",
+        "plain_title": "The four triangle formulae",
+        "subtitle": "Specialised Toolkit \u2014 Triangle Formulae & Derived Special Values",
+        "bookmark": "OLY 5 \u2014 The four triangle formulae"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Specialised Toolkit \u2014 Triangle Formulae & Derived Special Values (cont.)",
+        "plain_title": "Specialised Toolkit \u2014 Triangle Formulae & Derived Special Values (cont.)",
+        "subtitle": "Specialised Toolkit \u2014 Triangle Formulae & Derived Special Values",
+        "bookmark": "OLY 6 \u2014 Specialised Toolkit \u2014 Triangle Formulae & Derived Special Values (cont.)"
+      }
+    ]
+  }
+}

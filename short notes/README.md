@@ -21,8 +21,8 @@ exactly one chapter.
 | # | Chapter (slug) | Official unit(s) | Status |
 |---|---|---|---|
 | 1 | **Sets, Relations & Functions** (`01-sets-relations-functions`) | Sets, Relations and Functions | ✅ **delivered** — 12 JEE + 6 Olympiad sheets |
-| 2 | Exponents & Logarithms (`02-exponents-logarithms`) | Algebra (logarithms and their properties) | ⏳ pending |
-| 3 | Trigonometric Identities & Equations (`03-trigonometric-identities-equations`) | Trigonometry | ⏳ pending |
+| 2 | **Exponents & Logarithms** (`02-exponents-logarithms`) | Algebra (logarithms and their properties) | ✅ **delivered** — 9 JEE + 3 Olympiad sheets |
+| 3 | **Trigonometric Identities & Equations** (`03-trigonometric-identities-equations`) | Trigonometry | ✅ **delivered** — 10 JEE + 6 Olympiad sheets |
 | 4 | Inverse Trigonometric Functions (`04-inverse-trigonometric-functions`) | Trigonometry | ⏳ pending |
 | 5 | Complex Numbers (`05-complex-numbers`) | Algebra (complex numbers, FTA) | ⏳ pending |
 | 6 | Quadratic Equations (`06-quadratic-equations`) | Algebra (quadratics with real coefficients) | ⏳ pending |
@@ -43,11 +43,13 @@ exactly one chapter.
 | 21 | Definite Integration & Areas (`21-definite-integration-and-areas`) | Integral Calculus (limit of sums, FTC, properties, area) | ⏳ pending |
 | 22 | Differential Equations (`22-differential-equations`) | Integral Calculus (formation, homogeneous 1st order, separation, linear 1st order) | ⏳ pending |
 
-Chapters 2–22 are **pending** — they will be authored one by one in exactly the
-Chapter-1 format. Repo vault notes (`notes/`) are the primary source wherever
-they cover a chapter (they cover 15 of these + extra olympiad machinery);
-missing coverage is authored from the official syllabus and disclosed per
-chapter in that chapter's `SOURCE-AUDIT.md`.
+Chapters 4–22 are **pending** — they will be authored one by one in exactly
+the Chapter-1 format. Repo vault notes (`notes/`) are the primary source
+wherever they cover a chapter (they cover 15 of these + extra olympiad
+machinery); missing coverage is authored from the official syllabus and
+disclosed per chapter in that chapter's `SOURCE-AUDIT.md`. Chapter 2 had **no**
+vault source module (disclosed in its SOURCE-AUDIT); chapter 3 drew on
+`notes/Trigonometry/`.
 
 ## Per-chapter deliverables (as in Chapter 1)
 

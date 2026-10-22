@@ -322,6 +322,10 @@ def graph(spec: dict, width_px: int) -> Image.Image:
         gy = [v for v in range(int(np.floor(yr[0])), int(np.ceil(yr[1])) + 1)]
     ax.set_xticks(gx)
     ax.set_yticks(gy)
+    if spec.get("xticklabels"):
+        ax.set_xticklabels(spec["xticklabels"], fontsize=11.5)
+    if spec.get("yticklabels"):
+        ax.set_yticklabels(spec["yticklabels"], fontsize=11.5)
     ax.tick_params(labelsize=11.5, colors=NAVY)
     ax.grid(True, color="#E3E9F2", lw=0.9)
     for s in ax.spines.values():
@@ -344,6 +348,9 @@ def graph(spec: dict, width_px: int) -> Image.Image:
         xs = np.linspace(c.get("from", xr[0]), c.get("to", xr[1]), int(c.get("n", 600)))
         with np.errstate(all="ignore"):
             ys = _eval_expr(c["expr"], xs)
+            clip = c.get("clip")
+            if clip is not None:
+                ys = np.where(np.abs(ys) > float(clip), np.nan, ys)
         col = c.get("color", TEAL)
         ax.plot(xs, ys, color=col, lw=c.get("lw", 2.8), ls=c.get("ls", "-"),
                 label=c.get("label", None))
@@ -377,6 +384,57 @@ def graph(spec: dict, width_px: int) -> Image.Image:
         ax.set_title(spec["title"], fontsize=12, color=TEAL, pad=12, weight="bold")
     return _fig_to_img(fig, width_px)
 
+
+
+
+# ---------------------------------------------------------------- unit circle
+def unitcircle(spec: dict, width_px: int) -> Image.Image:
+    from matplotlib.patches import Circle
+    fig, ax = _mkfig(width_px, int(width_px * 0.92))
+    ax.set_xlim(-2.05, 2.05)
+    ax.set_ylim(-1.95, 2.25)
+    ax.set_aspect("equal")
+    ax.axis("off")
+
+    th = np.deg2rad(spec.get("angle_deg", 38))
+    ax.add_patch(Circle((0, 0), 1, fill=False, color=TEAL, lw=3.0, zorder=3))
+    ax.annotate("", xy=(2.0, 0), xytext=(-2.0, 0),
+                arrowprops=dict(arrowstyle="-|>", color=GRAY, lw=1.7))
+    ax.annotate("", xy=(0, 2.15), xytext=(0, -1.9),
+                arrowprops=dict(arrowstyle="-|>", color=GRAY, lw=1.7))
+    ax.text(1.95, -0.22, "x", fontsize=13, color=NAVY, weight="bold", style="italic")
+    ax.text(0.14, 2.08, "y", fontsize=13, color=NAVY, weight="bold", style="italic")
+    ax.text(-0.22, -0.30, "O", fontsize=12.5, color=NAVY, weight="bold",
+            ha="right", va="top")
+
+    cx, cy = np.cos(th), np.sin(th)
+    ax.plot([0, cx], [0, cy], color=NAVY, lw=2.8, zorder=4)
+    ax.plot([cx], [cy], "o", color=RED, markersize=10, zorder=5)
+    ax.plot([cx, cx], [0, cy], color=GRAY, lw=1.6, ls=(0, (4, 3)), zorder=2)
+    ax.plot([0, cx], [cy, cy], color=GRAY, lw=1.6, ls=(0, (4, 3)), zorder=2)
+    ax.text(cx / 2 + 0.10, -0.30, spec.get("cos_label", r"$\cos\theta$"),
+            fontsize=12, color=NAVY, ha="center", weight="bold")
+    ax.text(-0.22, cy / 2, spec.get("sin_label", r"$\sin\theta$"), fontsize=12,
+            color=NAVY, ha="right", weight="bold")
+    arc = np.linspace(0, th, 60)
+    ax.plot(0.32 * np.cos(arc), 0.32 * np.sin(arc), color=RED, lw=2.0)
+    ax.text(0.42 * np.cos(th / 2), 0.42 * np.sin(th / 2) - 0.03,
+            spec.get("angle_label", r"$\theta$"), fontsize=13, color=RED,
+            weight="bold", ha="center")
+    ax.text(cx + 0.12, cy + 0.12,
+            spec.get("point_label", r"$P(\cos\theta,\;\sin\theta)$"),
+            fontsize=12, color=NAVY, weight="bold")
+
+    if spec.get("quadrants", True):
+        pos = {"I": (1.32, 1.32), "II": (-1.32, 1.32), "III": (-1.32, -1.32),
+               "IV": (1.32, -1.32)}
+        for q, (qx, qy) in pos.items():
+            ax.text(qx, qy, q, fontsize=14, color=TEAL, weight="bold",
+                    ha="center", va="center",
+                    bbox=dict(boxstyle="round,pad=0.18", fc="#EAF4F4", ec=TEAL, lw=1.2))
+    if spec.get("title"):
+        ax.set_title(spec["title"], fontsize=12, color=TEAL, pad=10, weight="bold")
+    return _fig_to_img(fig, width_px)
 
 # ---------------------------------------------------------------- blocks (partition)
 def blocks(spec: dict, width_px: int) -> Image.Image:
@@ -416,6 +474,7 @@ def blocks(spec: dict, width_px: int) -> Image.Image:
 BUILDERS = {
     "venn2": venn2, "venn3": venn3, "numberline": numberline,
     "mapping": mapping, "compose": compose, "graph": graph, "blocks": blocks,
+    "unitcircle": unitcircle,
 }
 
 

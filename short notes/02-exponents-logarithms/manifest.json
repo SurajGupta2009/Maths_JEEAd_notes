@@ -1,0 +1,117 @@
+{
+  "chapter": "02-exponents-logarithms",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Exponents \u2014 Laws, Domains, Conventions",
+        "plain_title": "Exponents \u2014 Laws, Domains, Conventions",
+        "subtitle": "Exponents \u2014 Laws, Domains, Conventions",
+        "bookmark": "JEE 1 \u2014 Exponents \u2014 Laws, Domains, Conventions"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Exponents \u2014 Laws, Domains, Conventions (cont.)",
+        "plain_title": "Exponents \u2014 Laws, Domains, Conventions (cont.)",
+        "subtitle": "Exponents \u2014 Laws, Domains, Conventions",
+        "bookmark": "JEE 2 \u2014 Exponents \u2014 Laws, Domains, Conventions (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Standard applications",
+        "plain_title": "Standard applications",
+        "subtitle": "The Exponential Function $a^{x}$ \u2014 Shape, Monotonicity, $e$",
+        "bookmark": "JEE 3 \u2014 Standard applications"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Logarithms \u2014 Definition, Laws, Derivations (cont.)",
+        "plain_title": "Logarithms \u2014 Definition, Laws, Derivations (cont.)",
+        "subtitle": "Logarithms \u2014 Definition, Laws, Derivations",
+        "bookmark": "JEE 4 \u2014 Logarithms \u2014 Definition, Laws, Derivations (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Logarithms in Action \u2014 Simplification, Signs, Comparisons (cont.)",
+        "plain_title": "Logarithms in Action \u2014 Simplification, Signs, Comparisons (cont.)",
+        "subtitle": "Logarithms in Action \u2014 Simplification, Signs, Comparisons",
+        "bookmark": "JEE 5 \u2014 Logarithms in Action \u2014 Simplification, Signs, Comparisons (cont.)"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Exponential & Logarithmic Equations \u2014 Methods with Domain Checks (cont.)",
+        "plain_title": "Exponential & Logarithmic Equations \u2014 Methods with Domain Checks (cont.)",
+        "subtitle": "Exponential & Logarithmic Equations \u2014 Methods with Domain Checks",
+        "bookmark": "JEE 6 \u2014 Exponential & Logarithmic Equations \u2014 Methods with Domain Checks (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Standard Applications \u2014 Inequalities, Digits, Growth, Parameters (cont.)",
+        "plain_title": "Standard Applications \u2014 Inequalities, Digits, Growth, Parameters (cont.)",
+        "subtitle": "Standard Applications \u2014 Inequalities, Digits, Growth, Parameters",
+        "bookmark": "JEE 7 \u2014 Standard Applications \u2014 Inequalities, Digits, Growth, Parameters (cont.)"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Standard Applications \u2014 Inequalities, Digits, Growth, Parameters (cont.)",
+        "plain_title": "Standard Applications \u2014 Inequalities, Digits, Growth, Parameters (cont.)",
+        "subtitle": "Standard Applications \u2014 Inequalities, Digits, Growth, Parameters",
+        "bookmark": "JEE 8 \u2014 Standard Applications \u2014 Inequalities, Digits, Growth, Parameters (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Chapter Recap \u2014 Exponents & Logarithms Toolkit (cont.)",
+        "plain_title": "Chapter Recap \u2014 Exponents & Logarithms Toolkit (cont.)",
+        "subtitle": "Chapter Recap \u2014 Exponents & Logarithms Toolkit",
+        "bookmark": "JEE 9 \u2014 Chapter Recap \u2014 Exponents & Logarithms Toolkit (cont.)"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Olympiad Extensions \u2014 $x^{y} = y^{x}$, Multi-Base Logs, Towers",
+        "plain_title": "Olympiad Extensions \u2014 x^{y} = y^{x}, Multi-Base Logs, Towers",
+        "subtitle": "Olympiad Extensions \u2014 $x^{y} = y^{x}$, Multi-Base Logs, Towers",
+        "bookmark": "OLY 1 \u2014 Olympiad Extensions \u2014 x^{y} = y^{x}, Multi-Base Logs, Towers"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Olympiad Extensions \u2014 $x^{y} = y^{x}$, Multi-Base Logs, Towers (cont.)",
+        "plain_title": "Olympiad Extensions \u2014 x^{y} = y^{x}, Multi-Base Logs, Towers (cont.)",
+        "subtitle": "Olympiad Extensions \u2014 $x^{y} = y^{x}$, Multi-Base Logs, Towers",
+        "bookmark": "OLY 2 \u2014 Olympiad Extensions \u2014 x^{y} = y^{x}, Multi-Base Logs, Towers (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Olympiad Extensions \u2014 Growth Hierarchy, Digits, Legendre's Formula (cont.)",
+        "plain_title": "Olympiad Extensions \u2014 Growth Hierarchy, Digits, Legendre's Formula (cont.)",
+        "subtitle": "Olympiad Extensions \u2014 Growth Hierarchy, Digits, Legendre's Formula",
+        "bookmark": "OLY 3 \u2014 Olympiad Extensions \u2014 Growth Hierarchy, Digits, Legendre's Formula (cont.)"
+      }
+    ]
+  }
+}
