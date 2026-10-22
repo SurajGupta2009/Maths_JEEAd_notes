@@ -1,0 +1,63 @@
+{
+  "chapter": "09-binomial-theorem",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Binomial Theorem \u2014 What (a+b)\u207f Counts, the General Term, Middle Terms",
+        "plain_title": "Binomial Theorem \u2014 What (a+b)\u207f Counts, the General Term, Middle Terms",
+        "subtitle": "Binomial Theorem \u2014 What (a+b)\u207f Counts, the General Term, Middle Terms",
+        "bookmark": "JEE 1 \u2014 Binomial Theorem \u2014 What (a+b)\u207f Counts, the General Term, Middle Terms"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients",
+        "plain_title": "Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients",
+        "subtitle": "Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients",
+        "bookmark": "JEE 2 \u2014 Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction (cont.)",
+        "plain_title": "Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction (cont.)",
+        "subtitle": "Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction",
+        "bookmark": "JEE 3 \u2014 Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve (cont.)",
+        "plain_title": "Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve (cont.)",
+        "subtitle": "Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve",
+        "bookmark": "JEE 4 \u2014 Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve (cont.)"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Extension \u2014 The General Binomial Series: Negative and Fractional Indices, Validity, Approximation",
+        "plain_title": "Extension \u2014 The General Binomial Series: Negative and Fractional Indices, Validity, Approximation",
+        "subtitle": "Extension \u2014 The General Binomial Series: Negative and Fractional Indices, Validity, Approximation",
+        "bookmark": "OLY 1 \u2014 Extension \u2014 The General Binomial Series: Negative and Fractional Indices, Validity, Approximation"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Extension \u2014 Divisibility, Prime Rows, Lucas, and Finite Differences (cont.)",
+        "plain_title": "Extension \u2014 Divisibility, Prime Rows, Lucas, and Finite Differences (cont.)",
+        "subtitle": "Extension \u2014 Divisibility, Prime Rows, Lucas, and Finite Differences",
+        "bookmark": "OLY 2 \u2014 Extension \u2014 Divisibility, Prime Rows, Lucas, and Finite Differences (cont.)"
+      }
+    ]
+  }
+}

@@ -50,11 +50,13 @@ Print-ready handwritten-style summary sheets live in [`short notes/`](short%20no
 
 - **Complete: Chapter 1 — Sets, Relations & Functions** → [`short notes/01-sets-relations-functions/`](short%20notes/01-sets-relations-functions/README.md) (12 JEE sheets + 6 Olympiad extension sheets)
 - **Complete: Chapter 2 — Exponents & Logarithms** → [`short notes/02-exponents-logarithms/`](short%20notes/02-exponents-logarithms/README.md) (9 JEE + 3 Olympiad sheets)
-- **Complete: Chapter 3 — Trigonometric Identities & Equations** → [`short notes/03-trigonometric-identities-equations/`](short%20notes/03-trigonometric-identities-equations/README.md) (10 JEE + 6 Olympiad sheets)
+- **Complete: Chapter 3 — Trigonometric Identities & Equations** → [`short notes/03-trigonometric-identities-equations/`](short%20notes/03-trigonometric-identities-equations/README.md) (11 JEE + 6 Olympiad sheets)
 - **Complete: Chapter 4 — Inverse Trigonometric Functions** → [`short notes/04-inverse-trigonometric-functions/`](short%20notes/04-inverse-trigonometric-functions/README.md) (13 JEE + 6 Olympiad sheets)
 - **Complete: Chapter 5 — Complex Numbers** → [`short notes/05-complex-numbers/`](short%20notes/05-complex-numbers/README.md) (18 JEE + 11 Olympiad sheets)
 - **Complete: Chapter 6 — Quadratic Equations** → [`short notes/06-quadratic-equations/`](short%20notes/06-quadratic-equations/README.md) (8 JEE + 3 Olympiad sheets)
 - **Complete: Chapter 7 — Sequences & Series** → [`short notes/07-sequences-and-series/`](short%20notes/07-sequences-and-series/README.md) (5 JEE + 3 Olympiad sheets)
+- **Complete: Chapter 8 — Permutations & Combinations** → [`short notes/08-permutations-and-combinations/`](short%20notes/08-permutations-and-combinations/README.md) (7 JEE + 3 Olympiad sheets)
+- **Complete: Chapter 9 — Binomial Theorem** → [`short notes/09-binomial-theorem/`](short%20notes/09-binomial-theorem/README.md) (4 JEE + 2 Olympiad sheets)
 - The [`short notes/README.md`](short%20notes/README.md) master list tracks the planned 22-chapter build and which vault modules supply the prose.
 
 ## Modules
