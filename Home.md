@@ -28,11 +28,13 @@ is *derived*, never memorised; every paper answer is *numerically verified*.
 >   `[!tip]` = Key Idea, `[!warning]` = Common Trap, `[!example]` = Olympiad
 >   Extension, `[!note]`/`[!info]`/`[!quote]` = formulas & named results.
 > - **Short notes** — handwritten-style sheet sets per chapter under
->   `short notes/` (Chapters 1–5 complete: [[short notes/01-sets-relations-functions/README|Sets, Relations & Functions]],
+>   `short notes/` (Chapters 1–7 complete: [[short notes/01-sets-relations-functions/README|Sets, Relations & Functions]],
 >   [[short notes/02-exponents-logarithms/README|Exponents & Logarithms]],
 >   [[short notes/03-trigonometric-identities-equations/README|Trigonometric Identities & Equations]],
 >   [[short notes/04-inverse-trigonometric-functions/README|Inverse Trigonometric Functions]],
->   [[short notes/05-complex-numbers/README|Complex Numbers]];
+>   [[short notes/05-complex-numbers/README|Complex Numbers]],
+>   [[short notes/06-quadratic-equations/README|Quadratic Equations]],
+>   [[short notes/07-sequences-and-series/README|Sequences & Series]];
 >   see [[short notes/README]] for the build tracker).
 > - **Math is real LaTeX** — `$…$` inline, `$$…$$` display (renders via
 >   Obsidian's built-in MathJax).
