@@ -44,6 +44,13 @@ Each module is **three notes**. The complete-notes file holds **six chapters**
 (`# Chapter 1`…`# Chapter 6`) following one arc: **foundations → machinery → core
 → applications → frontier → synthesis**, plus a theory appendix.
 
+## Handwritten short notes (visual sheets)
+
+Print-ready handwritten-style summary sheets live in [`short notes/`](short%20notes/README.md), organised per chapter with independently numbered `JEE/` and `Olympiad/` parts, a gallery `index.html`, and ZIP/PDF exports.
+
+- **Complete: Chapter 1 — Sets, Relations & Functions** → [`short notes/01-sets-relations-functions/`](short%20notes/01-sets-relations-functions/README.md) (12 JEE sheets + 6 Olympiad extension sheets)
+- The [`short notes/README.md`](short%20notes/README.md) master list tracks the planned 22-chapter build and which vault modules supply the prose.
+
 ## Modules
 
 All 18 modules are complete: **108 chapters** and **756 paper questions**, each
