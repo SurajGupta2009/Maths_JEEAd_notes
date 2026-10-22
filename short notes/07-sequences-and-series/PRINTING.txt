@@ -1,0 +1,29 @@
+PRINTING THE SHEETS — Chapter 7: Sequences & Series
+=====================================================
+
+Sheets are 2480 x 3508 px portrait PNGs with nominal 300 DPI metadata
+(A4 aspect). Print one sheet per page.
+
+From the PDFs (recommended)
+---------------------------
+  exports/07-sequences-and-series-combined.pdf   (both parts, JEE first)
+  exports/07-sequences-and-series-JEE.pdf        (Part I only)
+  exports/07-sequences-and-series-Olympiad-extensions.pdf (Part II only)
+
+  Paper size: A4, portrait, one sheet per page.
+  Scaling: "Fit" / "Fit to printable area" — NOT "Fill", NOT "Actual size",
+           NOT "Crop". Choose "Auto portrait/landscape" or force Portrait.
+
+From the PNGs
+-------------
+  exports/07-sequences-and-series-combined-sheets.zip
+  (or -JEE-sheets.zip / -Olympiad-sheets.zip for one part)
+
+  Print order: JEE/01.png ... JEE/05.png, then Olympiad/01.png ... 03.png.
+  In the print dialog: A4 portrait, one page per sheet, scale to fit
+  printable area (do not crop; the sheets carry their own ~10 mm safe margins).
+
+Bookmarks
+---------
+  Each PDF has outline bookmarks per part and per sheet title;
+  the combined PDF lists Part I (JEE) before Part II (extensions).

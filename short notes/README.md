@@ -25,8 +25,8 @@ exactly one chapter.
 | 3 | **Trigonometric Identities & Equations** (`03-trigonometric-identities-equations`) | Trigonometry | ✅ **delivered** — 10 JEE + 6 Olympiad sheets |
 | 4 | **Inverse Trigonometric Functions** (`04-inverse-trigonometric-functions`) | Trigonometry | ✅ **delivered** — 13 JEE + 6 Olympiad sheets |
 | 5 | **Complex Numbers** (`05-complex-numbers`) | Algebra (complex numbers, FTA) | ✅ **delivered** — 18 JEE + 11 Olympiad sheets |
-| 6 | Quadratic Equations (`06-quadratic-equations`) | Algebra (quadratics with real coefficients) | ⏳ pending |
-| 7 | Sequences & Series (`07-sequences-and-series`) | Algebra (AP, GP, AM, GM, special sums) | ⏳ pending |
+| 6 | **Quadratic Equations** (`06-quadratic-equations`) | Algebra (quadratics with real coefficients) | ✅ **delivered** — 8 JEE + 3 Olympiad sheets |
+| 7 | **Sequences & Series** (`07-sequences-and-series`) | Algebra (AP, GP, AM, GM, special sums) | ✅ **delivered** — 5 JEE + 3 Olympiad sheets |
 | 8 | Permutations & Combinations (`08-permutations-and-combinations`) | Algebra (P&C) | ⏳ pending |
 | 9 | Binomial Theorem (`09-binomial-theorem`) | Algebra (binomial theorem, positive integral index) | ⏳ pending |
 | 10 | Matrices & Determinants (`10-matrices-and-determinants`) | Matrices | ⏳ pending |
