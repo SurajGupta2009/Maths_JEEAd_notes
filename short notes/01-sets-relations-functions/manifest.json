@@ -1,0 +1,171 @@
+{
+  "chapter": "01-sets-relations-functions",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Sets \u2014 Language, Representation, Subsets",
+        "plain_title": "Sets \u2014 Language, Representation, Subsets",
+        "subtitle": "Sets \u2014 Language, Representation, Subsets",
+        "bookmark": "JEE 1 \u2014 Sets \u2014 Language, Representation, Subsets"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Sets \u2014 Language, Representation, Subsets (cont.)",
+        "plain_title": "Sets \u2014 Language, Representation, Subsets (cont.)",
+        "subtitle": "Sets \u2014 Language, Representation, Subsets",
+        "bookmark": "JEE 2 \u2014 Sets \u2014 Language, Representation, Subsets (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "The algebraic laws (all provable by element-chasing)",
+        "plain_title": "The algebraic laws (all provable by element-chasing)",
+        "subtitle": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan",
+        "bookmark": "JEE 3 \u2014 The algebraic laws (all provable by element-chasing)"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)",
+        "plain_title": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)",
+        "subtitle": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan",
+        "bookmark": "JEE 4 \u2014 Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Cartesian Products & Relations \u2014 Definitions, Types, Counting (cont.)",
+        "plain_title": "Cartesian Products & Relations \u2014 Definitions, Types, Counting (cont.)",
+        "subtitle": "Cartesian Products & Relations \u2014 Definitions, Types, Counting",
+        "bookmark": "JEE 5 \u2014 Cartesian Products & Relations \u2014 Definitions, Types, Counting (cont.)"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)",
+        "plain_title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)",
+        "subtitle": "Equivalence Relations & Partitions \u2014 with JEE-style Counting",
+        "bookmark": "JEE 6 \u2014 Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Functions \u2014 Definition, Domain, Range, Image & Preimage (cont.)",
+        "plain_title": "Functions \u2014 Definition, Domain, Range, Image & Preimage (cont.)",
+        "subtitle": "Functions \u2014 Definition, Domain, Range, Image & Preimage",
+        "bookmark": "JEE 7 \u2014 Functions \u2014 Definition, Domain, Range, Image & Preimage (cont.)"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Functions \u2014 Definition, Domain, Range, Image & Preimage (cont.)",
+        "plain_title": "Functions \u2014 Definition, Domain, Range, Image & Preimage (cont.)",
+        "subtitle": "Functions \u2014 Definition, Domain, Range, Image & Preimage",
+        "bookmark": "JEE 8 \u2014 Functions \u2014 Definition, Domain, Range, Image & Preimage (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Graph transformations (one picture, many curves)",
+        "plain_title": "Graph transformations (one picture, many curves)",
+        "subtitle": "Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x}",
+        "bookmark": "JEE 9 \u2014 Graph transformations (one picture, many curves)"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet (cont.)",
+        "plain_title": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet (cont.)",
+        "subtitle": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet",
+        "bookmark": "JEE 10 \u2014 One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Composition & Inverse Functions \u2014 and the Chapter Recap (cont.)",
+        "plain_title": "Composition & Inverse Functions \u2014 and the Chapter Recap (cont.)",
+        "subtitle": "Composition & Inverse Functions \u2014 and the Chapter Recap",
+        "bookmark": "JEE 11 \u2014 Composition & Inverse Functions \u2014 and the Chapter Recap (cont.)"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "Chapter recap \u2014 the whole sheet in one place",
+        "plain_title": "Chapter recap \u2014 the whole sheet in one place",
+        "subtitle": "Composition & Inverse Functions \u2014 and the Chapter Recap",
+        "bookmark": "JEE 12 \u2014 Chapter recap \u2014 the whole sheet in one place"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Counting Relations & Functions \u2014 Rigorous Catalogue",
+        "plain_title": "Counting Relations & Functions \u2014 Rigorous Catalogue",
+        "subtitle": "Counting Relations & Functions \u2014 Rigorous Catalogue",
+        "bookmark": "OLY 1 \u2014 Counting Relations & Functions \u2014 Rigorous Catalogue"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Counting Relations & Functions \u2014 Rigorous Catalogue (cont.)",
+        "plain_title": "Counting Relations & Functions \u2014 Rigorous Catalogue (cont.)",
+        "subtitle": "Counting Relations & Functions \u2014 Rigorous Catalogue",
+        "bookmark": "OLY 2 \u2014 Counting Relations & Functions \u2014 Rigorous Catalogue (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)",
+        "plain_title": "Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)",
+        "subtitle": "Functional Equations \u2014 Cauchy, Pexider, Involutions",
+        "bookmark": "OLY 3 \u2014 Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)",
+        "plain_title": "Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)",
+        "subtitle": "Functional Equations \u2014 Cauchy, Pexider, Involutions",
+        "bookmark": "OLY 4 \u2014 Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Floor identities and equations",
+        "plain_title": "Floor identities and equations",
+        "subtitle": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets",
+        "bookmark": "OLY 5 \u2014 Floor identities and equations"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets (cont.)",
+        "plain_title": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets (cont.)",
+        "subtitle": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets",
+        "bookmark": "OLY 6 \u2014 Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets (cont.)"
+      }
+    ]
+  }
+}

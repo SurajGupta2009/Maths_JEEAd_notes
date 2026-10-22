@@ -27,6 +27,9 @@ is *derived*, never memorised; every paper answer is *numerically verified*.
 > - **Callouts** carry the pedagogy: `[!abstract]` = First Principles,
 >   `[!tip]` = Key Idea, `[!warning]` = Common Trap, `[!example]` = Olympiad
 >   Extension, `[!note]`/`[!info]`/`[!quote]` = formulas & named results.
+> - **Short notes** — handwritten-style sheet sets per chapter under
+>   `short notes/` (Chapter 1 complete: [[short notes/01-sets-relations-functions/README|Sets, Relations & Functions]];
+>   see [[short notes/README]] for the build tracker).
 > - **Math is real LaTeX** — `$…$` inline, `$$…$$` display (renders via
 >   Obsidian's built-in MathJax).
 > - **Dataview** powers the dashboard below (install the *Dataview* community

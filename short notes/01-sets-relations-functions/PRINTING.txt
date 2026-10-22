@@ -1,0 +1,32 @@
+PRINTING — Short Notes: 01-sets-relations-functions
+===================================================
+
+Sheet size: A4 portrait (210 x 297 mm). Every PNG is exactly 2480 x 3508 px
+at nominal 300 DPI = one A4 page.
+
+RECOMMENDED (bookmarked PDFs, one sheet per page)
+  - Combined (JEE first, then Olympiad):
+      exports/01-sets-relations-functions-combined.pdf
+  - JEE only:          exports/01-sets-relations-functions-JEE.pdf
+  - Extensions only:   exports/01-sets-relations-functions-Olympiad-extensions.pdf
+
+Print settings (any viewer: Adobe Reader, Preview, Chrome, evince):
+  - Paper size: A4, orientation: PORTRAIT
+  - Scaling: "Fit" / "Fit to page" / "Shrink oversized pages"
+    -> NOT "Fill", NOT "Actual size", NOT "Crop", NOT "Poster"
+  - One sheet per page (do not impose multiple sheets per side)
+  - Colour printing recommended (yellow key results / red traps carry meaning);
+    greyscale remains fully readable
+  - Bookmarks in the PDFs give the sheet order; print in document order
+
+FROM THE PNGs DIRECTLY
+  ZIPs: exports/01-sets-relations-functions-combined-sheets.zip (JEE first),
+  -JEE-sheets.zip, -Olympiad-sheets.zip. Each PNG is one page: load 01.png,
+  02.png, ... in numeric order (JEE/ folder before Olympiad/ in the combined
+  zip), print with "Fit to page". Do not let the printer driver crop to
+  printable area at 100% without "fit" - the sheets carry 10 mm safe margins,
+  but "Fill" will still crop them.
+
+REBUILDING FROM SOURCE
+  python3 scripts/render.py && python3 scripts/export.py
+  (see README.md; editable sources are in content/)
