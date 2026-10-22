@@ -4,7 +4,7 @@ Print-ready explanatory sheet set for the JEE Advanced Mathematics chapter **Tri
 
 ## Parts and sheets
 
-- **`JEE/` — Part I (JEE Main + Advanced core): 10 sheets** (`01.png`…`10.png`), independently numbered with visible part/page labels.
+- **`JEE/` — Part I (JEE Main + Advanced core): 11 sheets** (`01.png`…`11.png`), independently numbered with visible part/page labels.
 - **`Olympiad/` — Part II (extensions): 6 sheets** (`01.png`…`06.png`), independently numbered, each with a status banner.
 - PNG specs: 2480×3508 px portrait, nominal 300 DPI metadata, ~10 mm safe margins, one sheet = one A4 page when printed **Fit**.
 

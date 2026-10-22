@@ -87,10 +87,19 @@
         "no": 10,
         "file": "JEE/10.png",
         "id": "JEE-10",
-        "title": "Chapter Recap \u2014 Identities & Equations Toolkit",
-        "plain_title": "Chapter Recap \u2014 Identities & Equations Toolkit",
+        "title": "Conditional Identities \u2014 When $A + B + C = \\pi$ (cont.)",
+        "plain_title": "Conditional Identities \u2014 When A + B + C = pi (cont.)",
+        "subtitle": "Conditional Identities \u2014 When $A + B + C = \\pi$",
+        "bookmark": "JEE 10 \u2014 Conditional Identities \u2014 When A + B + C = pi (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Chapter Recap \u2014 Identities & Equations Toolkit (cont.)",
+        "plain_title": "Chapter Recap \u2014 Identities & Equations Toolkit (cont.)",
         "subtitle": "Chapter Recap \u2014 Identities & Equations Toolkit",
-        "bookmark": "JEE 10 \u2014 Chapter Recap \u2014 Identities & Equations Toolkit"
+        "bookmark": "JEE 11 \u2014 Chapter Recap \u2014 Identities & Equations Toolkit (cont.)"
       }
     ],
     "olympiad": [
