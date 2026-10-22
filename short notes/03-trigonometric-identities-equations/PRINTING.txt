@@ -1,0 +1,30 @@
+PRINTING — Chapter 3: Trigonometric Identities & Equations
+=========================================================
+
+Sheet geometry
+--------------
+- Source PNGs: 2480 x 3508 px, portrait, nominal 300 DPI
+  (A4 width at 300 DPI; "one sheet = one page").
+- Safe margins ~10 mm; no ink outside them (verified by scripts/check.py).
+
+Print settings (any common PDF/print dialog)
+-------------------------------------------
+- Paper size: A4 portrait (210 x 297 mm).
+- Orientation: Portrait (do NOT auto-rotate to landscape).
+- Scaling: FIT / "Fit to page" / "Shrink to fit".
+  Do NOT use Fill, Crop, Actual size, or "100%".
+  At Fit, a sheet fills A4 at ~300 DPI equivalent.
+- One sheet per page. The PDFs in exports/ are already
+  one-sheet-per-page A4 with bookmarks; print them directly.
+- Margins: standard printer margins are fine (the file already
+  carries ~10 mm of internal margin). "Borderless" is optional.
+- Colour: the sheets are colour-coded (navy prose, teal headings,
+  yellow key results, red warnings). Print in colour for the full
+  effect; in greyscale the red/yellow boxes still read as shaded panels.
+
+Which file to print
+-------------------
+- Both parts, JEE first: exports/03-trigonometric-identities-equations-combined.pdf
+- Part I only (JEE):       exports/03-trigonometric-identities-equations-JEE.pdf
+- Part II only (extensions): exports/03-trigonometric-identities-equations-Olympiad-extensions.pdf
+- The PNG ZIPs are for screen use / re-layout; each PNG is one sheet.

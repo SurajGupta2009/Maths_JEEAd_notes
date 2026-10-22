@@ -49,6 +49,8 @@ Each module is **three notes**. The complete-notes file holds **six chapters**
 Print-ready handwritten-style summary sheets live in [`short notes/`](short%20notes/README.md), organised per chapter with independently numbered `JEE/` and `Olympiad/` parts, a gallery `index.html`, and ZIP/PDF exports.
 
 - **Complete: Chapter 1 — Sets, Relations & Functions** → [`short notes/01-sets-relations-functions/`](short%20notes/01-sets-relations-functions/README.md) (12 JEE sheets + 6 Olympiad extension sheets)
+- **Complete: Chapter 2 — Exponents & Logarithms** → [`short notes/02-exponents-logarithms/`](short%20notes/02-exponents-logarithms/README.md) (9 JEE + 3 Olympiad sheets)
+- **Complete: Chapter 3 — Trigonometric Identities & Equations** → [`short notes/03-trigonometric-identities-equations/`](short%20notes/03-trigonometric-identities-equations/README.md) (10 JEE + 6 Olympiad sheets)
 - The [`short notes/README.md`](short%20notes/README.md) master list tracks the planned 22-chapter build and which vault modules supply the prose.
 
 ## Modules
