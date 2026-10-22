@@ -374,8 +374,42 @@ class BlockRenderer:
         for child in block.items:
             heights.append(self.render(child, inner_w).height)
         label_h = 58
-        title_h = 62 if block.title else 0
         gap = 14
+        # wrap the box title to the inner width (no clipping)
+        title_lines = []          # list of (line_runs, line_height)
+        if block.title:
+            probe = Drawer(Image.new("RGBA", (8, 8)))
+            runs = _parse_inline_runs(block.title, size=44, color=style["title_col"],
+                                      bold=True)
+            tokens = []
+            for r in runs:
+                if r.kind == "math":
+                    tokens.append(r)
+                else:
+                    for tok in re.split(r"(\s+)", r.text):
+                        if tok:
+                            tokens.append(Run(r.kind, tok, bold=r.bold, color=r.color,
+                                              font_name=r.font_name, size=r.size))
+            cur, curw = [], 0.0
+            for t in tokens:
+                if t.text.isspace() and not cur:
+                    continue
+                w, h = probe.measure_run(t)
+                if cur and curw + w > inner_w:
+                    title_lines.append(cur)
+                    cur, curw = ([], 0.0) if t.text.isspace() else ([t], float(w))
+                else:
+                    cur.append(t)
+                    curw += w
+            if cur:
+                title_lines.append(cur)
+        def _line_h(ln):
+            mh = 0
+            for t in ln:
+                _, th = probe.measure_run(t)
+                mh = max(mh, th)
+            return max(56, mh + 10)
+        title_h = sum(_line_h(ln) for ln in title_lines) if title_lines else 0
         body_h = sum(heights) + gap * max(len(heights) - 1, 0)
         total = BOX_PAD + label_h + title_h + body_h + BOX_PAD
         img = Image.new("RGBA", (width, total), (0, 0, 0, 0))
@@ -386,15 +420,15 @@ class BlockRenderer:
         d.text((BOX_PAD + 14, BOX_PAD - 6), style["label"],
                font=get_font(HAND_BOLD, 38), fill=style["label_col"])
         y = BOX_PAD + label_h
-        if block.title:
+        if title_lines:
             drawer = Drawer(img)
-            runs = _parse_inline_runs(block.title, size=44, color=style["title_col"],
-                                      bold=True)
-            cx = BOX_PAD + 14
-            cy = y - 2
-            for r in runs:
-                cx, _ = drawer.draw_run((cx, cy), r)
-            y += title_h
+            for ln in title_lines:
+                lh = _line_h(ln)
+                cx = BOX_PAD + 14
+                cy = y - 2
+                for r in ln:
+                    cx, _ = drawer.draw_run((cx, cy), r)
+                y += lh
         for child, h in zip(block.items, heights):
             sub = self.render(child, inner_w)
             img.alpha_composite(sub, (BOX_PAD + 14, y))

@@ -1,0 +1,270 @@
+{
+  "chapter": "05-complex-numbers",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages",
+        "plain_title": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages",
+        "subtitle": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages",
+        "bookmark": "JEE 1 \u2014 Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages (cont.)",
+        "plain_title": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages (cont.)",
+        "subtitle": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages",
+        "bookmark": "JEE 2 \u2014 Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
+        "plain_title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
+        "subtitle": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate",
+        "bookmark": "JEE 3 \u2014 Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
+        "plain_title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
+        "subtitle": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate",
+        "bookmark": "JEE 4 \u2014 Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)",
+        "plain_title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)",
+        "subtitle": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From",
+        "bookmark": "JEE 5 \u2014 De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)",
+        "plain_title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)",
+        "subtitle": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From",
+        "bookmark": "JEE 6 \u2014 De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula (cont.)",
+        "plain_title": "n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula (cont.)",
+        "subtitle": "n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula",
+        "bookmark": "JEE 7 \u2014 n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula (cont.)"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
+        "plain_title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
+        "subtitle": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums",
+        "bookmark": "JEE 8 \u2014 Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
+        "plain_title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
+        "subtitle": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums",
+        "bookmark": "JEE 9 \u2014 Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
+        "plain_title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
+        "subtitle": "Product Formulas and the Roots-of-Unity Filter",
+        "bookmark": "JEE 10 \u2014 Product Formulas and the Roots-of-Unity Filter (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
+        "plain_title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
+        "subtitle": "Product Formulas and the Roots-of-Unity Filter",
+        "bookmark": "JEE 11 \u2014 Product Formulas and the Roots-of-Unity Filter (cont.)"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)",
+        "plain_title": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)",
+        "subtitle": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline",
+        "bookmark": "JEE 12 \u2014 Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
+        "plain_title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
+        "subtitle": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions",
+        "bookmark": "JEE 13 \u2014 Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
+        "plain_title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
+        "subtitle": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions",
+        "bookmark": "JEE 14 \u2014 Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Ellipses \u2014 |z \u2212 A| + |z \u2212 B| = 2a\u2080",
+        "plain_title": "Ellipses \u2014 |z \u2212 A| + |z \u2212 B| = 2a\u2080",
+        "subtitle": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case",
+        "bookmark": "JEE 15 \u2014 Ellipses \u2014 |z \u2212 A| + |z \u2212 B| = 2a\u2080"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
+        "plain_title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
+        "subtitle": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions",
+        "bookmark": "JEE 16 \u2014 Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
+        "plain_title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
+        "subtitle": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions",
+        "bookmark": "JEE 17 \u2014 Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "Strategy card \u2014 the order that avoids every trap",
+        "plain_title": "Strategy card \u2014 the order that avoids every trap",
+        "subtitle": "Recap Toolkit \u2014 The Whole Chapter on One Sheet",
+        "bookmark": "JEE 18 \u2014 Strategy card \u2014 the order that avoids every trap"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Extension \u2014 The Rotation Engine: Equilateral Condition, Tests, Area, Circumcenter",
+        "plain_title": "Extension \u2014 The Rotation Engine: Equilateral Condition, Tests, Area, Circumcenter",
+        "subtitle": "Extension \u2014 The Rotation Engine: Equilateral Condition, Tests, Area, Circumcenter",
+        "bookmark": "OLY 1 \u2014 Extension \u2014 The Rotation Engine: Equilateral Condition, Tests, Area, Circumcenter"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Extension \u2014 The Rotation Engine: Equilateral Condition, Tests, Area, Circumcenter (cont.)",
+        "plain_title": "Extension \u2014 The Rotation Engine: Equilateral Condition, Tests, Area, Circumcenter (cont.)",
+        "subtitle": "Extension \u2014 The Rotation Engine: Equilateral Condition, Tests, Area, Circumcenter",
+        "bookmark": "OLY 2 \u2014 Extension \u2014 The Rotation Engine: Equilateral Condition, Tests, Area, Circumcenter (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)",
+        "plain_title": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)",
+        "subtitle": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion",
+        "bookmark": "OLY 3 \u2014 Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)",
+        "plain_title": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)",
+        "subtitle": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion",
+        "bookmark": "OLY 4 \u2014 Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Napoleon's Theorem \u2014 equilaterals erected on the sides",
+        "plain_title": "Napoleon's Theorem \u2014 equilaterals erected on the sides",
+        "subtitle": "Extension \u2014 Van Aubel and Napoleon: Squares and Equilaterals on the Sides",
+        "bookmark": "OLY 5 \u2014 Napoleon's Theorem \u2014 equilaterals erected on the sides"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)",
+        "plain_title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)",
+        "subtitle": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z",
+        "bookmark": "OLY 6 \u2014 Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "Olympiad/07.png",
+        "id": "OLY-07",
+        "title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)",
+        "plain_title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)",
+        "subtitle": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z",
+        "bookmark": "OLY 7 \u2014 Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)"
+      },
+      {
+        "no": 8,
+        "file": "Olympiad/08.png",
+        "id": "OLY-08",
+        "title": "Mechanism 1: square, then re-index",
+        "plain_title": "Mechanism 1: square, then re-index",
+        "subtitle": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4",
+        "bookmark": "OLY 8 \u2014 Mechanism 1: square, then re-index"
+      },
+      {
+        "no": 9,
+        "file": "Olympiad/09.png",
+        "id": "OLY-09",
+        "title": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4 (cont.)",
+        "plain_title": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4 (cont.)",
+        "subtitle": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4",
+        "bookmark": "OLY 9 \u2014 Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4 (cont.)"
+      },
+      {
+        "no": 10,
+        "file": "Olympiad/10.png",
+        "id": "OLY-10",
+        "title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)",
+        "plain_title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)",
+        "subtitle": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems",
+        "bookmark": "OLY 10 \u2014 Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "Olympiad/11.png",
+        "id": "OLY-11",
+        "title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)",
+        "plain_title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)",
+        "subtitle": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems",
+        "bookmark": "OLY 11 \u2014 Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)"
+      }
+    ]
+  }
+}

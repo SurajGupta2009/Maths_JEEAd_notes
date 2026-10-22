@@ -279,6 +279,8 @@ def compose(spec: dict, width_px: int) -> Image.Image:
 _SAFE_FUNCS = {
     "sin": np.sin, "cos": np.cos, "tan": np.tan, "exp": np.exp,
     "log": np.log, "sqrt": np.sqrt, "abs": np.abs, "floor": np.floor,
+    "asin": np.arcsin, "acos": np.arccos, "atan": np.arctan,
+    "arcsin": np.arcsin, "arccos": np.arccos, "arctan": np.arctan,
     "pi": np.pi, "e": np.e,
 }
 
