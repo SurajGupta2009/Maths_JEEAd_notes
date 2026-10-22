@@ -1,0 +1,99 @@
+{
+  "chapter": "08-permutations-and-combinations",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Permutations & Combinations \u2014 The Two Rules, the Complement, and What Counting Means",
+        "plain_title": "Permutations & Combinations \u2014 The Two Rules, the Complement, and What Counting Means",
+        "subtitle": "Permutations & Combinations \u2014 The Two Rules, the Complement, and What Counting Means",
+        "bookmark": "JEE 1 \u2014 Permutations & Combinations \u2014 The Two Rules, the Complement, and What Counting Means"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects",
+        "plain_title": "Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects",
+        "subtitle": "Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects",
+        "bookmark": "JEE 2 \u2014 Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "The three restriction methods (linear arrangements)",
+        "plain_title": "The three restriction methods (linear arrangements)",
+        "subtitle": "Circular Permutations and Restriction Methods \u2014 Bundle, Gap, Relative Order",
+        "bookmark": "JEE 3 \u2014 The three restriction methods (linear arrangements)"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections (cont.)",
+        "plain_title": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections (cont.)",
+        "subtitle": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections",
+        "bookmark": "JEE 4 \u2014 Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Stars and Bars, Compositions, Multisets, and Bounded Distributions (cont.)",
+        "plain_title": "Stars and Bars, Compositions, Multisets, and Bounded Distributions (cont.)",
+        "subtitle": "Stars and Bars, Compositions, Multisets, and Bounded Distributions",
+        "bookmark": "JEE 5 \u2014 Stars and Bars, Compositions, Multisets, and Bounded Distributions (cont.)"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things (cont.)",
+        "plain_title": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things (cont.)",
+        "subtitle": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things",
+        "bookmark": "JEE 6 \u2014 Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Pigeonhole, Recurrence Counting, and the Chapter Recap (cont.)",
+        "plain_title": "Pigeonhole, Recurrence Counting, and the Chapter Recap (cont.)",
+        "subtitle": "Pigeonhole, Recurrence Counting, and the Chapter Recap",
+        "bookmark": "JEE 7 \u2014 Pigeonhole, Recurrence Counting, and the Chapter Recap (cont.)"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Extension \u2014 Lattice Paths, Reflection, Catalan Numbers, and the Ballot Theorem",
+        "plain_title": "Extension \u2014 Lattice Paths, Reflection, Catalan Numbers, and the Ballot Theorem",
+        "subtitle": "Extension \u2014 Lattice Paths, Reflection, Catalan Numbers, and the Ballot Theorem",
+        "bookmark": "OLY 1 \u2014 Extension \u2014 Lattice Paths, Reflection, Catalan Numbers, and the Ballot Theorem"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Extension \u2014 Burnside's Lemma and P\u00f3lya Enumeration: Counting Up to Symmetry (cont.)",
+        "plain_title": "Extension \u2014 Burnside's Lemma and P\u00f3lya Enumeration: Counting Up to Symmetry (cont.)",
+        "subtitle": "Extension \u2014 Burnside's Lemma and P\u00f3lya Enumeration: Counting Up to Symmetry",
+        "bookmark": "OLY 2 \u2014 Extension \u2014 Burnside's Lemma and P\u00f3lya Enumeration: Counting Up to Symmetry (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families (cont.)",
+        "plain_title": "Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families (cont.)",
+        "subtitle": "Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families",
+        "bookmark": "OLY 3 \u2014 Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families (cont.)"
+      }
+    ]
+  }
+}

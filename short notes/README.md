@@ -27,8 +27,8 @@ exactly one chapter.
 | 5 | **Complex Numbers** (`05-complex-numbers`) | Algebra (complex numbers, FTA) | ✅ **delivered** — 18 JEE + 11 Olympiad sheets |
 | 6 | **Quadratic Equations** (`06-quadratic-equations`) | Algebra (quadratics with real coefficients) | ✅ **delivered** — 8 JEE + 3 Olympiad sheets |
 | 7 | **Sequences & Series** (`07-sequences-and-series`) | Algebra (AP, GP, AM, GM, special sums) | ✅ **delivered** — 5 JEE + 3 Olympiad sheets |
-| 8 | Permutations & Combinations (`08-permutations-and-combinations`) | Algebra (P&C) | ⏳ pending |
-| 9 | Binomial Theorem (`09-binomial-theorem`) | Algebra (binomial theorem, positive integral index) | ⏳ pending |
+| 8 | **Permutations & Combinations** (`08-permutations-and-combinations`) | Algebra (P&C) | ✅ **delivered** — 7 JEE + 3 Olympiad sheets |
+| 9 | **Binomial Theorem** (`09-binomial-theorem`) | Algebra (binomial theorem, positive integral index) | ✅ **delivered** — 4 JEE + 2 Olympiad sheets |
 | 10 | Matrices & Determinants (`10-matrices-and-determinants`) | Matrices | ⏳ pending |
 | 11 | Probability & Statistics (`11-probability-and-statistics`) | Probability and Statistics | ⏳ pending |
 | 12 | Straight Lines & Locus (`12-straight-lines-and-locus`) | Analytical Geometry 2D (lines, triangle centres, locus) | ⏳ pending |
