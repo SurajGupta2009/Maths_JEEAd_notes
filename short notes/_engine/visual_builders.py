@@ -153,6 +153,112 @@ def geometry(spec: dict, width_px: int) -> Image.Image:
     return _fig_to_img(fig, width_px)
 
 
+def vector3d(spec: dict, width_px: int) -> Image.Image:
+    """Editable three-dimensional vectors, polygons and parallelepipeds."""
+    from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+
+    fig, base = _mkfig(width_px, int(width_px * spec.get("ratio", 0.70)))
+    base.remove()
+    ax = fig.add_axes([0.01, 0.01, 0.98, 0.91], projection="3d")
+    ax.set_proj_type(spec.get("projection", "ortho"))
+    ax.view_init(elev=spec.get("elev", 22), azim=spec.get("azim", -55))
+    ax.set_axis_off()
+
+    def vec(value):
+        return np.array(value, dtype=float)
+
+    def label(at, text, el, default_color=NAVY):
+        if not text:
+            return
+        at = vec(at) + vec(el.get("offset", [0, 0, 0]))
+        ax.text(*at, text, fontsize=el.get("fontsize", spec.get("label_fontsize", 11)),
+                color=el.get("label_color", default_color), weight="bold",
+                ha=el.get("ha", "center"), va=el.get("va", "center"), zorder=20)
+
+    def arrow(a, b, el):
+        a, b = vec(a), vec(b)
+        d = b - a
+        if np.allclose(d, 0):
+            raise ValueError("vector3d arrow endpoints must be distinct")
+        col = el.get("color", TEAL)
+        ax.quiver(*a, *d, color=col, lw=el.get("lw", 2.5),
+                  arrow_length_ratio=el.get("arrow_ratio", 0.11),
+                  normalize=False, zorder=el.get("z", 5))
+        label(el.get("label_at", (a + b) / 2), el.get("label"), el, col)
+
+    def box_vertices(el):
+        o, u, v, w = (vec(el.get("origin", [0, 0, 0])), vec(el["u"]),
+                      vec(el["v"]), vec(el["w"]))
+        return np.array([o, o+u, o+v, o+w, o+u+v, o+u+w, o+v+w, o+u+v+w])
+
+    for el in spec.get("elements", []):
+        kind = el.get("kind")
+        col = el.get("color", TEAL)
+        lw = el.get("lw", 2.2)
+        if kind == "arrow":
+            arrow(el["a"], el["b"], el)
+        elif kind == "segment":
+            a, b = vec(el["a"]), vec(el["b"])
+            ax.plot(*np.array([a, b]).T, color=col, lw=lw,
+                    ls=el.get("ls", "-"), zorder=el.get("z", 4))
+            label(el.get("label_at", (a+b)/2), el.get("label"), el, col)
+        elif kind == "point":
+            p = vec(el["at"])
+            ax.scatter(*p, s=el.get("size", 42), color=col,
+                       edgecolor="white", linewidth=0.7, depthshade=False, zorder=10)
+            label(p, el.get("label"), el, el.get("label_color", NAVY))
+        elif kind == "polygon":
+            points = [vec(p) for p in el["points"]]
+            poly = Poly3DCollection([points], facecolors=el.get("fill", "#DCEFED"),
+                                    edgecolors=col, linewidths=lw,
+                                    alpha=el.get("alpha", 0.30), zorder=el.get("z", 2))
+            ax.add_collection3d(poly)
+            if el.get("label"):
+                label(el.get("label_at", np.mean(points, axis=0)), el["label"], el, col)
+        elif kind == "parallelepiped":
+            p = box_vertices(el)
+            faces = [[p[i] for i in face] for face in
+                     [(0, 1, 4, 2), (0, 1, 5, 3), (0, 2, 6, 3),
+                      (1, 4, 7, 5), (2, 4, 7, 6), (3, 5, 7, 6)]]
+            poly = Poly3DCollection(faces, facecolors=el.get("fill", "#DCEFED"),
+                                    edgecolors=col, linewidths=lw,
+                                    alpha=el.get("alpha", 0.18), zorder=2)
+            ax.add_collection3d(poly)
+            edges = [(0, 1), (0, 2), (0, 3), (1, 4), (1, 5), (2, 4),
+                     (2, 6), (3, 5), (3, 6), (4, 7), (5, 7), (6, 7)]
+            for i, j in edges:
+                ax.plot(*np.array([p[i], p[j]]).T, color=col, lw=lw,
+                        ls=el.get("ls", "-"), alpha=el.get("edge_alpha", 0.85), zorder=4)
+            if el.get("label"):
+                label(el.get("label_at", np.mean(p, axis=0)), el["label"], el, col)
+        elif kind == "text":
+            label(el["at"], el.get("text", ""), el, el.get("color", NAVY))
+        else:
+            raise ValueError(f"unknown vector3d element: {kind}")
+
+    xr = spec.get("xrange", [-0.5, 4.5])
+    yr = spec.get("yrange", [-0.5, 4.5])
+    zr = spec.get("zrange", [-0.5, 3.5])
+    ax.set_xlim(*xr); ax.set_ylim(*yr); ax.set_zlim(*zr)
+    ax.set_box_aspect(spec.get("box_aspect", [1.2, 1.1, 0.85]), zoom=spec.get("zoom", 1.22))
+    if spec.get("axes", True):
+        origin = vec(spec.get("axis_origin", [0, 0, 0]))
+        for axis, bounds, name, col in [(0, xr, "x", NAVY), (1, yr, "y", NAVY), (2, zr, "z", NAVY)]:
+            start = origin.copy(); end = origin.copy()
+            start[axis], end[axis] = bounds
+            if bounds[0] * bounds[1] < 0:
+                neg = origin.copy(); neg[axis] = bounds[0]
+                ax.plot(*np.array([neg, origin]).T, color=GRAY, lw=1.0, alpha=0.65)
+            arrow(origin, end, {"color": GRAY, "lw": 1.2, "arrow_ratio": 0.055})
+            label(end, name, {"offset": [0.10 if axis == 0 else 0,
+                                         0.10 if axis == 1 else 0,
+                                         0.12 if axis == 2 else 0],
+                              "fontsize": 10}, GRAY)
+    if spec.get("title"):
+        ax.set_title(spec["title"], fontsize=12.5, color=TEAL, pad=8, weight="bold")
+    return _fig_to_img(fig, width_px)
+
+
 def bars(spec: dict, width_px: int) -> Image.Image:
     fig, ax = _mkfig(width_px, int(width_px * spec.get("ratio", 0.56)))
     labels, values = spec.get("labels", []), spec.get("values", [])
@@ -367,6 +473,7 @@ def with_caption(img: Image.Image, spec: dict) -> Image.Image:
 
 VISUAL_BUILDERS = {
     "geometry": geometry,
+    "vector3d": vector3d,
     "bars": bars,
     "tree": tree,
     "flow": flow,

@@ -1,0 +1,279 @@
+{
+  "chapter": "15-vectors",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Vector Language \u2014 Components, Magnitude and Direction",
+        "plain_title": "Vector Language \u2014 Components, Magnitude and Direction",
+        "subtitle": "Vector Language \u2014 Components, Magnitude and Direction",
+        "bookmark": "JEE 1 \u2014 Vector Language \u2014 Components, Magnitude and Direction"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Vector Language \u2014 Components, Magnitude and Direction (cont.)",
+        "plain_title": "Vector Language \u2014 Components, Magnitude and Direction (cont.)",
+        "subtitle": "Vector Language \u2014 Components, Magnitude and Direction",
+        "bookmark": "JEE 2 \u2014 Vector Language \u2014 Components, Magnitude and Direction (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Addition, Scalar Multiplication and Linear Combinations",
+        "plain_title": "Addition, Scalar Multiplication and Linear Combinations",
+        "subtitle": "Addition, Scalar Multiplication and Linear Combinations",
+        "bookmark": "JEE 3 \u2014 Addition, Scalar Multiplication and Linear Combinations"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Addition, Scalar Multiplication and Linear Combinations (cont.)",
+        "plain_title": "Addition, Scalar Multiplication and Linear Combinations (cont.)",
+        "subtitle": "Addition, Scalar Multiplication and Linear Combinations",
+        "bookmark": "JEE 4 \u2014 Addition, Scalar Multiplication and Linear Combinations (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Points, Section Formula and Centroids",
+        "plain_title": "Points, Section Formula and Centroids",
+        "subtitle": "Points, Section Formula and Centroids",
+        "bookmark": "JEE 5 \u2014 Points, Section Formula and Centroids"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Points, Section Formula and Centroids (cont.)",
+        "plain_title": "Points, Section Formula and Centroids (cont.)",
+        "subtitle": "Points, Section Formula and Centroids",
+        "bookmark": "JEE 6 \u2014 Points, Section Formula and Centroids (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "The Dot Product \u2014 Angles and Perpendicularity",
+        "plain_title": "The Dot Product \u2014 Angles and Perpendicularity",
+        "subtitle": "The Dot Product \u2014 Angles and Perpendicularity",
+        "bookmark": "JEE 7 \u2014 The Dot Product \u2014 Angles and Perpendicularity"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "The Dot Product \u2014 Angles and Perpendicularity (cont.)",
+        "plain_title": "The Dot Product \u2014 Angles and Perpendicularity (cont.)",
+        "subtitle": "The Dot Product \u2014 Angles and Perpendicularity",
+        "bookmark": "JEE 8 \u2014 The Dot Product \u2014 Angles and Perpendicularity (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Projection, Resolution and Dot-Product Applications",
+        "plain_title": "Projection, Resolution and Dot-Product Applications",
+        "subtitle": "Projection, Resolution and Dot-Product Applications",
+        "bookmark": "JEE 9 \u2014 Projection, Resolution and Dot-Product Applications"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Projection, Resolution and Dot-Product Applications (cont.)",
+        "plain_title": "Projection, Resolution and Dot-Product Applications (cont.)",
+        "subtitle": "Projection, Resolution and Dot-Product Applications",
+        "bookmark": "JEE 10 \u2014 Projection, Resolution and Dot-Product Applications (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "The Cross Product \u2014 Normal Direction and Area",
+        "plain_title": "The Cross Product \u2014 Normal Direction and Area",
+        "subtitle": "The Cross Product \u2014 Normal Direction and Area",
+        "bookmark": "JEE 11 \u2014 The Cross Product \u2014 Normal Direction and Area"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "The Cross Product \u2014 Normal Direction and Area (cont.)",
+        "plain_title": "The Cross Product \u2014 Normal Direction and Area (cont.)",
+        "subtitle": "The Cross Product \u2014 Normal Direction and Area",
+        "bookmark": "JEE 12 \u2014 The Cross Product \u2014 Normal Direction and Area (cont.)"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Areas and Vector Geometry",
+        "plain_title": "Areas and Vector Geometry",
+        "subtitle": "Areas and Vector Geometry",
+        "bookmark": "JEE 13 \u2014 Areas and Vector Geometry"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Cross products prove area ratios without coordinates",
+        "plain_title": "Cross products prove area ratios without coordinates",
+        "subtitle": "Areas and Vector Geometry",
+        "bookmark": "JEE 14 \u2014 Cross products prove area ratios without coordinates"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "The Scalar Triple Product \u2014 Volume and Coplanarity",
+        "plain_title": "The Scalar Triple Product \u2014 Volume and Coplanarity",
+        "subtitle": "The Scalar Triple Product \u2014 Volume and Coplanarity",
+        "bookmark": "JEE 15 \u2014 The Scalar Triple Product \u2014 Volume and Coplanarity"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "The Scalar Triple Product \u2014 Volume and Coplanarity (cont.)",
+        "plain_title": "The Scalar Triple Product \u2014 Volume and Coplanarity (cont.)",
+        "subtitle": "The Scalar Triple Product \u2014 Volume and Coplanarity",
+        "bookmark": "JEE 16 \u2014 The Scalar Triple Product \u2014 Volume and Coplanarity (cont.)"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Tetrahedra and Mixed Vector Strategy",
+        "plain_title": "Tetrahedra and Mixed Vector Strategy",
+        "subtitle": "Tetrahedra and Mixed Vector Strategy",
+        "bookmark": "JEE 17 \u2014 Tetrahedra and Mixed Vector Strategy"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "A parameter problem can be one determinant",
+        "plain_title": "A parameter problem can be one determinant",
+        "subtitle": "Tetrahedra and Mixed Vector Strategy",
+        "bookmark": "JEE 18 \u2014 A parameter problem can be one determinant"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "Visual Vector Lab",
+        "plain_title": "Visual Vector Lab",
+        "subtitle": "Visual Vector Lab",
+        "bookmark": "JEE 19 \u2014 Visual Vector Lab"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "Projection and rejection make a right triangle",
+        "plain_title": "Projection and rejection make a right triangle",
+        "subtitle": "Visual Vector Lab",
+        "bookmark": "JEE 20 \u2014 Projection and rejection make a right triangle"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
+        "title": "One parallelogram checks dot, cross and angle",
+        "plain_title": "One parallelogram checks dot, cross and angle",
+        "subtitle": "Visual Vector Lab",
+        "bookmark": "JEE 21 \u2014 One parallelogram checks dot, cross and angle"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "A triple product splits into base and height",
+        "plain_title": "A triple product splits into base and height",
+        "subtitle": "Visual Vector Lab",
+        "bookmark": "JEE 22 \u2014 A triple product splits into base and height"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "Zero volume is visible dependence",
+        "plain_title": "Zero volume is visible dependence",
+        "subtitle": "Visual Vector Lab",
+        "bookmark": "JEE 23 \u2014 Zero volume is visible dependence"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "Let the picture choose the product",
+        "plain_title": "Let the picture choose the product",
+        "subtitle": "Visual Vector Lab",
+        "bookmark": "JEE 24 \u2014 Let the picture choose the product"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Extension I \u2014 Vector Triple Products and Jacobi",
+        "plain_title": "Extension I \u2014 Vector Triple Products and Jacobi",
+        "subtitle": "Extension I \u2014 Vector Triple Products and Jacobi",
+        "bookmark": "OLY 1 \u2014 Extension I \u2014 Vector Triple Products and Jacobi"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Extension I \u2014 Vector Triple Products and Jacobi (cont.)",
+        "plain_title": "Extension I \u2014 Vector Triple Products and Jacobi (cont.)",
+        "subtitle": "Extension I \u2014 Vector Triple Products and Jacobi",
+        "bookmark": "OLY 2 \u2014 Extension I \u2014 Vector Triple Products and Jacobi (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Extension II \u2014 Barycentric Coordinates, Ceva and Routh",
+        "plain_title": "Extension II \u2014 Barycentric Coordinates, Ceva and Routh",
+        "subtitle": "Extension II \u2014 Barycentric Coordinates, Ceva and Routh",
+        "bookmark": "OLY 3 \u2014 Extension II \u2014 Barycentric Coordinates, Ceva and Routh"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Routh measures the triangle bounded by three cevians",
+        "plain_title": "Routh measures the triangle bounded by three cevians",
+        "subtitle": "Extension II \u2014 Barycentric Coordinates, Ceva and Routh",
+        "bookmark": "OLY 4 \u2014 Routh measures the triangle bounded by three cevians"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Extension III \u2014 Vector Proofs and the Euler Line",
+        "plain_title": "Extension III \u2014 Vector Proofs and the Euler Line",
+        "subtitle": "Extension III \u2014 Vector Proofs and the Euler Line",
+        "bookmark": "OLY 5 \u2014 Extension III \u2014 Vector Proofs and the Euler Line"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Extension III \u2014 Vector Proofs and the Euler Line (cont.)",
+        "plain_title": "Extension III \u2014 Vector Proofs and the Euler Line (cont.)",
+        "subtitle": "Extension III \u2014 Vector Proofs and the Euler Line",
+        "bookmark": "OLY 6 \u2014 Extension III \u2014 Vector Proofs and the Euler Line (cont.)"
+      }
+    ]
+  }
+}
