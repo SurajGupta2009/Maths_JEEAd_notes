@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Independent numeric verification of Chapter 9 (Binomial Theorem) claims."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 import math
 from fractions import Fraction as F
 
@@ -157,6 +163,9 @@ for n in range(1, 8):
     for x in (0, 2, -3):
         v = sum((-1) ** k * C(n, k) * (x + k) ** n for k in range(n + 1))
         chk(v == (-1) ** n * math.factorial(n), f"finite diff n={n} x={x}")
+
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    chk(_condition, f"visual lesson: {_name}")
 
 print(f"{N[0] - len(FAILS)}/{N[0]} checks passed")
 if FAILS:

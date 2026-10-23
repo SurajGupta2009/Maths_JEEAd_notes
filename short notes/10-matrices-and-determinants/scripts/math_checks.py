@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Independent exact/numeric checks for the worked claims in chapter 10."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 from fractions import Fraction as F
 import itertools
 import math
@@ -84,4 +90,7 @@ ck(det(V)==(5-2)*(9-2)*(9-5)==84, "Vandermonde example")
 # trace cyclicity / rank-nullity elementary example
 ck(det([[1,0,1],[0,1,2],[3,4,10]])==-1, "Schur complement example")
 ck(sum(mm(A,B)[i][i] for i in range(2))==sum(mm(B,A)[i][i] for i in range(2))==69, "trace cyclic")
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    ck(_condition, f"visual lesson: {_name}")
+
 print(f"Matrices & Determinants: {checks}/{checks} checks PASS")

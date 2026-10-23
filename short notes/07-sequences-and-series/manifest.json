@@ -15,46 +15,118 @@
         "no": 2,
         "file": "JEE/02.png",
         "id": "JEE-02",
-        "title": "Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum (cont.)",
-        "plain_title": "Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum (cont.)",
-        "subtitle": "Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum",
-        "bookmark": "JEE 2 \u2014 Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum (cont.)"
+        "title": "Sequences and Series \u2014 Arithmetic Progressions: Add the Same Amount Every Time (cont.)",
+        "plain_title": "Sequences and Series \u2014 Arithmetic Progressions: Add the Same Amount Every Time (cont.)",
+        "subtitle": "Sequences and Series \u2014 Arithmetic Progressions: Add the Same Amount Every Time",
+        "bookmark": "JEE 2 \u2014 Sequences and Series \u2014 Arithmetic Progressions: Add the Same Amount Every Time (cont.)"
       },
       {
         "no": 3,
         "file": "JEE/03.png",
         "id": "JEE-03",
-        "title": "AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums (cont.)",
-        "plain_title": "AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums (cont.)",
-        "subtitle": "AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums",
-        "bookmark": "JEE 3 \u2014 AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums (cont.)"
+        "title": "Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum",
+        "plain_title": "Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum",
+        "subtitle": "Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum",
+        "bookmark": "JEE 3 \u2014 Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum"
       },
       {
         "no": 4,
         "file": "JEE/04.png",
         "id": "JEE-04",
-        "title": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications)",
-        "plain_title": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications)",
-        "subtitle": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications)",
-        "bookmark": "JEE 4 \u2014 Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications)"
+        "title": "Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum (cont.)",
+        "plain_title": "Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum (cont.)",
+        "subtitle": "Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum",
+        "bookmark": "JEE 4 \u2014 Geometric Progressions \u2014 Multiply by the Same Amount, and the Infinite Sum (cont.)"
       },
       {
         "no": 5,
         "file": "JEE/05.png",
         "id": "JEE-05",
-        "title": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications) (cont.)",
-        "plain_title": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications) (cont.)",
-        "subtitle": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications)",
-        "bookmark": "JEE 5 \u2014 Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications) (cont.)"
+        "title": "AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums",
+        "plain_title": "AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums",
+        "subtitle": "AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums",
+        "bookmark": "JEE 5 \u2014 AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums"
       },
       {
         "no": 6,
         "file": "JEE/06.png",
         "id": "JEE-06",
+        "title": "AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums (cont.)",
+        "plain_title": "AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums (cont.)",
+        "subtitle": "AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums",
+        "bookmark": "JEE 6 \u2014 AM\u2013GM and the Special Sums \u03a3k, \u03a3k\u00b2, \u03a3k\u00b3 \u2014 The Syllabus Power Sums (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications)",
+        "plain_title": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications)",
+        "subtitle": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications)",
+        "bookmark": "JEE 7 \u2014 Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications)"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Engine 2: the method of differences (telescoping)",
+        "plain_title": "Engine 2: the method of differences (telescoping)",
+        "subtitle": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications)",
+        "bookmark": "JEE 8 \u2014 Engine 2: the method of differences (telescoping)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series",
+        "plain_title": "Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series",
+        "subtitle": "Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series",
+        "bookmark": "JEE 9 \u2014 Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
         "title": "Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series (cont.)",
         "plain_title": "Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series (cont.)",
         "subtitle": "Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series",
-        "bookmark": "JEE 6 \u2014 Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series (cont.)"
+        "bookmark": "JEE 10 \u2014 Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Visual Sequences Lab \u2014 Growth, Partial Sums and Cancellation",
+        "plain_title": "Visual Sequences Lab \u2014 Growth, Partial Sums and Cancellation",
+        "subtitle": "Visual Sequences Lab \u2014 Growth, Partial Sums and Cancellation",
+        "bookmark": "JEE 11 \u2014 Visual Sequences Lab \u2014 Growth, Partial Sums and Cancellation"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "Partial sums reveal the arithmetic structure",
+        "plain_title": "Partial sums reveal the arithmetic structure",
+        "subtitle": "Visual Sequences Lab \u2014 Growth, Partial Sums and Cancellation",
+        "bookmark": "JEE 12 \u2014 Partial sums reveal the arithmetic structure"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "AM\u2013GM has a visible equality point",
+        "plain_title": "AM\u2013GM has a visible equality point",
+        "subtitle": "Visual Sequences Lab \u2014 Growth, Partial Sums and Cancellation",
+        "bookmark": "JEE 13 \u2014 AM\u2013GM has a visible equality point"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Telescoping means preserving the uncancelled boundary",
+        "plain_title": "Telescoping means preserving the uncancelled boundary",
+        "subtitle": "Visual Sequences Lab \u2014 Growth, Partial Sums and Cancellation",
+        "bookmark": "JEE 14 \u2014 Telescoping means preserving the uncancelled boundary"
       }
     ],
     "olympiad": [
@@ -71,19 +143,46 @@
         "no": 2,
         "file": "Olympiad/02.png",
         "id": "OLY-02",
-        "title": "First- and second-order recurrences",
-        "plain_title": "First- and second-order recurrences",
-        "subtitle": "Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions",
-        "bookmark": "OLY 2 \u2014 First- and second-order recurrences"
+        "title": "Extension \u2014 Harmonic Progressions and the A \u2265 G \u2265 H Chain (cont.)",
+        "plain_title": "Extension \u2014 Harmonic Progressions and the A \u2265 G \u2265 H Chain (cont.)",
+        "subtitle": "Extension \u2014 Harmonic Progressions and the A \u2265 G \u2265 H Chain",
+        "bookmark": "OLY 2 \u2014 Extension \u2014 Harmonic Progressions and the A \u2265 G \u2265 H Chain (cont.)"
       },
       {
         "no": 3,
         "file": "Olympiad/03.png",
         "id": "OLY-03",
-        "title": "Products telescope too",
-        "plain_title": "Products telescope too",
+        "title": "Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions",
+        "plain_title": "Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions",
+        "subtitle": "Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions",
+        "bookmark": "OLY 3 \u2014 Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions (cont.)",
+        "plain_title": "Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions (cont.)",
+        "subtitle": "Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions",
+        "bookmark": "OLY 4 \u2014 Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Extension \u2014 Telescoping Products, Wallis, Stolz\u2013Ces\u00e0ro, and Asymptotics",
+        "plain_title": "Extension \u2014 Telescoping Products, Wallis, Stolz\u2013Ces\u00e0ro, and Asymptotics",
         "subtitle": "Extension \u2014 Telescoping Products, Wallis, Stolz\u2013Ces\u00e0ro, and Asymptotics",
-        "bookmark": "OLY 3 \u2014 Products telescope too"
+        "bookmark": "OLY 5 \u2014 Extension \u2014 Telescoping Products, Wallis, Stolz\u2013Ces\u00e0ro, and Asymptotics"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Asymptotics: when the honest answer is a growth rate",
+        "plain_title": "Asymptotics: when the honest answer is a growth rate",
+        "subtitle": "Extension \u2014 Telescoping Products, Wallis, Stolz\u2013Ces\u00e0ro, and Asymptotics",
+        "bookmark": "OLY 6 \u2014 Asymptotics: when the honest answer is a growth rate"
       }
     ]
   }

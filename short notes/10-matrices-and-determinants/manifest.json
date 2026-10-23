@@ -15,28 +15,109 @@
         "no": 2,
         "file": "JEE/02.png",
         "id": "JEE-02",
-        "title": "Determinants \u2014 Cofactors & Rules (cont.)",
-        "plain_title": "Determinants \u2014 Cofactors & Rules (cont.)",
-        "subtitle": "Determinants \u2014 Cofactors & Rules",
-        "bookmark": "JEE 2 \u2014 Determinants \u2014 Cofactors & Rules (cont.)"
+        "title": "Named structures",
+        "plain_title": "Named structures",
+        "subtitle": "Matrix Language \u2014 Shapes, Operations, Transpose",
+        "bookmark": "JEE 2 \u2014 Named structures"
       },
       {
         "no": 3,
         "file": "JEE/03.png",
         "id": "JEE-03",
-        "title": "Adjoint & Inverse \u2014 The Reversible Case (cont.)",
-        "plain_title": "Adjoint & Inverse \u2014 The Reversible Case (cont.)",
-        "subtitle": "Adjoint & Inverse \u2014 The Reversible Case",
-        "bookmark": "JEE 3 \u2014 Adjoint & Inverse \u2014 The Reversible Case (cont.)"
+        "title": "Determinants \u2014 Cofactors & Rules",
+        "plain_title": "Determinants \u2014 Cofactors & Rules",
+        "subtitle": "Determinants \u2014 Cofactors & Rules",
+        "bookmark": "JEE 3 \u2014 Determinants \u2014 Cofactors & Rules"
       },
       {
         "no": 4,
         "file": "JEE/04.png",
         "id": "JEE-04",
+        "title": "Determinants \u2014 Cofactors & Rules (cont.)",
+        "plain_title": "Determinants \u2014 Cofactors & Rules (cont.)",
+        "subtitle": "Determinants \u2014 Cofactors & Rules",
+        "bookmark": "JEE 4 \u2014 Determinants \u2014 Cofactors & Rules (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Adjoint & Inverse \u2014 The Reversible Case",
+        "plain_title": "Adjoint & Inverse \u2014 The Reversible Case",
+        "subtitle": "Adjoint & Inverse \u2014 The Reversible Case",
+        "bookmark": "JEE 5 \u2014 Adjoint & Inverse \u2014 The Reversible Case"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Linear Systems \u2014 Cramer & Consistency",
+        "plain_title": "Linear Systems \u2014 Cramer & Consistency",
+        "subtitle": "Linear Systems \u2014 Cramer & Consistency",
+        "bookmark": "JEE 6 \u2014 Linear Systems \u2014 Cramer & Consistency"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
         "title": "Linear Systems \u2014 Cramer & Consistency (cont.)",
         "plain_title": "Linear Systems \u2014 Cramer & Consistency (cont.)",
         "subtitle": "Linear Systems \u2014 Cramer & Consistency",
-        "bookmark": "JEE 4 \u2014 Linear Systems \u2014 Cramer & Consistency (cont.)"
+        "bookmark": "JEE 7 \u2014 Linear Systems \u2014 Cramer & Consistency (cont.)"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Special Matrices \u2014 Symmetry, Orthogonality, Structure",
+        "plain_title": "Special Matrices \u2014 Symmetry, Orthogonality, Structure",
+        "subtitle": "Special Matrices \u2014 Symmetry, Orthogonality, Structure",
+        "bookmark": "JEE 8 \u2014 Special Matrices \u2014 Symmetry, Orthogonality, Structure"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Special Matrices \u2014 Symmetry, Orthogonality, Structure (cont.)",
+        "plain_title": "Special Matrices \u2014 Symmetry, Orthogonality, Structure (cont.)",
+        "subtitle": "Special Matrices \u2014 Symmetry, Orthogonality, Structure",
+        "bookmark": "JEE 9 \u2014 Special Matrices \u2014 Symmetry, Orthogonality, Structure (cont.)"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Visual Matrix Lab \u2014 Transformations, Determinants and Linear Systems",
+        "plain_title": "Visual Matrix Lab \u2014 Transformations, Determinants and Linear Systems",
+        "subtitle": "Visual Matrix Lab \u2014 Transformations, Determinants and Linear Systems",
+        "bookmark": "JEE 10 \u2014 Visual Matrix Lab \u2014 Transformations, Determinants and Linear Systems"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Determinant sign records orientation",
+        "plain_title": "Determinant sign records orientation",
+        "subtitle": "Visual Matrix Lab \u2014 Transformations, Determinants and Linear Systems",
+        "bookmark": "JEE 11 \u2014 Determinant sign records orientation"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "A two-variable system is an intersection problem",
+        "plain_title": "A two-variable system is an intersection problem",
+        "subtitle": "Visual Matrix Lab \u2014 Transformations, Determinants and Linear Systems",
+        "bookmark": "JEE 12 \u2014 A two-variable system is an intersection problem"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Matrix strategy: structure before arithmetic",
+        "plain_title": "Matrix strategy: structure before arithmetic",
+        "subtitle": "Visual Matrix Lab \u2014 Transformations, Determinants and Linear Systems",
+        "bookmark": "JEE 13 \u2014 Matrix strategy: structure before arithmetic"
       }
     ],
     "olympiad": [
@@ -53,10 +134,28 @@
         "no": 2,
         "file": "Olympiad/02.png",
         "id": "OLY-02",
-        "title": "Determinant Geometry \u2014 Bounds and Updates (cont.)",
-        "plain_title": "Determinant Geometry \u2014 Bounds and Updates (cont.)",
+        "title": "Determinant Geometry \u2014 Bounds and Updates",
+        "plain_title": "Determinant Geometry \u2014 Bounds and Updates",
         "subtitle": "Determinant Geometry \u2014 Bounds and Updates",
-        "bookmark": "OLY 2 \u2014 Determinant Geometry \u2014 Bounds and Updates (cont.)"
+        "bookmark": "OLY 2 \u2014 Determinant Geometry \u2014 Bounds and Updates"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Trace, Rank\u2013Nullity, Block Structure",
+        "plain_title": "Trace, Rank\u2013Nullity, Block Structure",
+        "subtitle": "Trace, Rank\u2013Nullity, Block Structure",
+        "bookmark": "OLY 3 \u2014 Trace, Rank\u2013Nullity, Block Structure"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Boundary reminder",
+        "plain_title": "Boundary reminder",
+        "subtitle": "Trace, Rank\u2013Nullity, Block Structure",
+        "bookmark": "OLY 4 \u2014 Boundary reminder"
       }
     ]
   }

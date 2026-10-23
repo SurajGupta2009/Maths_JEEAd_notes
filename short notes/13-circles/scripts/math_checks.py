@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Exact and numerical checks for Chapter 13 circle geometry."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 from fractions import Fraction as F
 from math import cos, sin, pi, sqrt, isclose
 
@@ -97,4 +103,7 @@ ck(off_foot[0]+off_foot[1]!=4, "off-circle feet not collinear")
 ck(F(5)*F(5)==F(3)*F(3)+F(4)*F(4), "Ptolemy rectangle / Pythagoras")
 # Source-paper data are impossible: a triangle with sides 3,4,7 is degenerate.
 ck(F(3)+F(4)==F(7), "source diagonal equals adjacent side sum")
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    ck(_condition, f"visual lesson: {_name}")
+
 print(f"Circles: {checks}/{checks} checks PASS")

@@ -15,55 +15,145 @@
         "no": 2,
         "file": "JEE/02.png",
         "id": "JEE-02",
-        "title": "Coordinates \u2014 Displacement, Section, Translation (cont.)",
-        "plain_title": "Coordinates \u2014 Displacement, Section, Translation (cont.)",
+        "title": "Shift the origin, not the geometry",
+        "plain_title": "Shift the origin, not the geometry",
         "subtitle": "Coordinates \u2014 Displacement, Section, Translation",
-        "bookmark": "JEE 2 \u2014 Coordinates \u2014 Displacement, Section, Translation (cont.)"
+        "bookmark": "JEE 2 \u2014 Shift the origin, not the geometry"
       },
       {
         "no": 3,
         "file": "JEE/03.png",
         "id": "JEE-03",
-        "title": "Angles, Parallelism, Perpendicularity, Distance (cont.)",
-        "plain_title": "Angles, Parallelism, Perpendicularity, Distance (cont.)",
-        "subtitle": "Angles, Parallelism, Perpendicularity, Distance",
-        "bookmark": "JEE 3 \u2014 Angles, Parallelism, Perpendicularity, Distance (cont.)"
+        "title": "The Straight Line \u2014 Slope and Equations",
+        "plain_title": "The Straight Line \u2014 Slope and Equations",
+        "subtitle": "The Straight Line \u2014 Slope and Equations",
+        "bookmark": "JEE 3 \u2014 The Straight Line \u2014 Slope and Equations"
       },
       {
         "no": 4,
         "file": "JEE/04.png",
         "id": "JEE-04",
-        "title": "Pencils, Concurrency and Angle Bisectors (cont.)",
-        "plain_title": "Pencils, Concurrency and Angle Bisectors (cont.)",
-        "subtitle": "Pencils, Concurrency and Angle Bisectors",
-        "bookmark": "JEE 4 \u2014 Pencils, Concurrency and Angle Bisectors (cont.)"
+        "title": "Angles, Parallelism, Perpendicularity, Distance",
+        "plain_title": "Angles, Parallelism, Perpendicularity, Distance",
+        "subtitle": "Angles, Parallelism, Perpendicularity, Distance",
+        "bookmark": "JEE 4 \u2014 Angles, Parallelism, Perpendicularity, Distance"
       },
       {
         "no": 5,
         "file": "JEE/05.png",
         "id": "JEE-05",
-        "title": "Triangle Centres in Coordinates (cont.)",
-        "plain_title": "Triangle Centres in Coordinates (cont.)",
-        "subtitle": "Triangle Centres in Coordinates",
-        "bookmark": "JEE 5 \u2014 Triangle Centres in Coordinates (cont.)"
+        "title": "Angles, Parallelism, Perpendicularity, Distance (cont.)",
+        "plain_title": "Angles, Parallelism, Perpendicularity, Distance (cont.)",
+        "subtitle": "Angles, Parallelism, Perpendicularity, Distance",
+        "bookmark": "JEE 5 \u2014 Angles, Parallelism, Perpendicularity, Distance (cont.)"
       },
       {
         "no": 6,
         "file": "JEE/06.png",
         "id": "JEE-06",
-        "title": "Locus \u2014 Translate the Condition, Then Verify (cont.)",
-        "plain_title": "Locus \u2014 Translate the Condition, Then Verify (cont.)",
-        "subtitle": "Locus \u2014 Translate the Condition, Then Verify",
-        "bookmark": "JEE 6 \u2014 Locus \u2014 Translate the Condition, Then Verify (cont.)"
+        "title": "Pencils, Concurrency and Angle Bisectors",
+        "plain_title": "Pencils, Concurrency and Angle Bisectors",
+        "subtitle": "Pencils, Concurrency and Angle Bisectors",
+        "bookmark": "JEE 6 \u2014 Pencils, Concurrency and Angle Bisectors"
       },
       {
         "no": 7,
         "file": "JEE/07.png",
         "id": "JEE-07",
-        "title": "Pairs of Lines and a Coordinate Toolkit (cont.)",
-        "plain_title": "Pairs of Lines and a Coordinate Toolkit (cont.)",
+        "title": "Pencils, Concurrency and Angle Bisectors (cont.)",
+        "plain_title": "Pencils, Concurrency and Angle Bisectors (cont.)",
+        "subtitle": "Pencils, Concurrency and Angle Bisectors",
+        "bookmark": "JEE 7 \u2014 Pencils, Concurrency and Angle Bisectors (cont.)"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Triangle Centres in Coordinates",
+        "plain_title": "Triangle Centres in Coordinates",
+        "subtitle": "Triangle Centres in Coordinates",
+        "bookmark": "JEE 8 \u2014 Triangle Centres in Coordinates"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Triangle Centres in Coordinates (cont.)",
+        "plain_title": "Triangle Centres in Coordinates (cont.)",
+        "subtitle": "Triangle Centres in Coordinates",
+        "bookmark": "JEE 9 \u2014 Triangle Centres in Coordinates (cont.)"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Locus \u2014 Translate the Condition, Then Verify",
+        "plain_title": "Locus \u2014 Translate the Condition, Then Verify",
+        "subtitle": "Locus \u2014 Translate the Condition, Then Verify",
+        "bookmark": "JEE 10 \u2014 Locus \u2014 Translate the Condition, Then Verify"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Locus \u2014 Translate the Condition, Then Verify (cont.)",
+        "plain_title": "Locus \u2014 Translate the Condition, Then Verify (cont.)",
+        "subtitle": "Locus \u2014 Translate the Condition, Then Verify",
+        "bookmark": "JEE 11 \u2014 Locus \u2014 Translate the Condition, Then Verify (cont.)"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "Pairs of Lines and a Coordinate Toolkit",
+        "plain_title": "Pairs of Lines and a Coordinate Toolkit",
         "subtitle": "Pairs of Lines and a Coordinate Toolkit",
-        "bookmark": "JEE 7 \u2014 Pairs of Lines and a Coordinate Toolkit (cont.)"
+        "bookmark": "JEE 12 \u2014 Pairs of Lines and a Coordinate Toolkit"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Visual Coordinate-Geometry Lab \u2014 Lines, Distances, Centres and Loci",
+        "plain_title": "Visual Coordinate-Geometry Lab \u2014 Lines, Distances, Centres and Loci",
+        "subtitle": "Visual Coordinate-Geometry Lab \u2014 Lines, Distances, Centres and Loci",
+        "bookmark": "JEE 13 \u2014 Visual Coordinate-Geometry Lab \u2014 Lines, Distances, Centres and Loci"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "A pencil of lines shares one point",
+        "plain_title": "A pencil of lines shares one point",
+        "subtitle": "Visual Coordinate-Geometry Lab \u2014 Lines, Distances, Centres and Loci",
+        "bookmark": "JEE 14 \u2014 A pencil of lines shares one point"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Triangle centres are coordinate averages or intersections",
+        "plain_title": "Triangle centres are coordinate averages or intersections",
+        "subtitle": "Visual Coordinate-Geometry Lab \u2014 Lines, Distances, Centres and Loci",
+        "bookmark": "JEE 15 \u2014 Triangle centres are coordinate averages or intersections"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "A locus must include construction and verification",
+        "plain_title": "A locus must include construction and verification",
+        "subtitle": "Visual Coordinate-Geometry Lab \u2014 Lines, Distances, Centres and Loci",
+        "bookmark": "JEE 16 \u2014 A locus must include construction and verification"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Coordinate-geometry workflow",
+        "plain_title": "Coordinate-geometry workflow",
+        "subtitle": "Visual Coordinate-Geometry Lab \u2014 Lines, Distances, Centres and Loci",
+        "bookmark": "JEE 17 \u2014 Coordinate-geometry workflow"
       }
     ],
     "olympiad": [
@@ -80,10 +170,19 @@
         "no": 2,
         "file": "Olympiad/02.png",
         "id": "OLY-02",
-        "title": "Nine-Point Circle: Coordinates (cont.)",
-        "plain_title": "Nine-Point Circle: Coordinates (cont.)",
+        "title": "Nine-Point Circle: Coordinates",
+        "plain_title": "Nine-Point Circle: Coordinates",
         "subtitle": "Nine-Point Circle: Coordinates",
-        "bookmark": "OLY 2 \u2014 Nine-Point Circle: Coordinates (cont.)"
+        "bookmark": "OLY 2 \u2014 Nine-Point Circle: Coordinates"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Loci Beyond the First Examples",
+        "plain_title": "Loci Beyond the First Examples",
+        "subtitle": "Loci Beyond the First Examples",
+        "bookmark": "OLY 3 \u2014 Loci Beyond the First Examples"
       }
     ]
   }

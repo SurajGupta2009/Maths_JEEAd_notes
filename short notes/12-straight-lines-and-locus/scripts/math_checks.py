@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Exact/rational checks for Chapter 12 coordinate geometry."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 from fractions import Fraction as F
 from math import isclose, sqrt
 
@@ -88,4 +94,7 @@ points=[(F(2),F(0)),(F(5,2),F(3,2)),(F(1,2),F(3,2)),
         (F(2),F(2)),(F(2,5),F(6,5)),(F(1),F(0)),
         (F(1,2),F(1,2)),(F(5,2),F(1,2)),(F(1),F(2))]
 ck(all(dist2(Q,N)==F(5,4) for Q in points), "nine point circle sample")
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    ck(_condition, f"visual lesson: {_name}")
+
 print(f"Straight Lines & Locus: {checks}/{checks} checks PASS")

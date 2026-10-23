@@ -15,109 +15,244 @@
         "no": 2,
         "file": "JEE/02.png",
         "id": "JEE-02",
-        "title": "Inverse Trigonometric Functions \u2014 Why Branches, the Six Principal Inverses (cont.)",
-        "plain_title": "Inverse Trigonometric Functions \u2014 Why Branches, the Six Principal Inverses (cont.)",
+        "title": "Graphs: domain on the x-axis, branch on the y-axis",
+        "plain_title": "Graphs: domain on the x-axis, branch on the y-axis",
         "subtitle": "Inverse Trigonometric Functions \u2014 Why Branches, the Six Principal Inverses",
-        "bookmark": "JEE 2 \u2014 Inverse Trigonometric Functions \u2014 Why Branches, the Six Principal Inverses (cont.)"
+        "bookmark": "JEE 2 \u2014 Graphs: domain on the x-axis, branch on the y-axis"
       },
       {
         "no": 3,
         "file": "JEE/03.png",
         "id": "JEE-03",
-        "title": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch",
-        "plain_title": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch",
-        "subtitle": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch",
-        "bookmark": "JEE 3 \u2014 sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch"
+        "title": "Inverse Trigonometric Functions \u2014 Why Branches, the Six Principal Inverses (cont.)",
+        "plain_title": "Inverse Trigonometric Functions \u2014 Why Branches, the Six Principal Inverses (cont.)",
+        "subtitle": "Inverse Trigonometric Functions \u2014 Why Branches, the Six Principal Inverses",
+        "bookmark": "JEE 3 \u2014 Inverse Trigonometric Functions \u2014 Why Branches, the Six Principal Inverses (cont.)"
       },
       {
         "no": 4,
         "file": "JEE/04.png",
         "id": "JEE-04",
-        "title": "The reverse compositions: trig of an inverse",
-        "plain_title": "The reverse compositions: trig of an inverse",
-        "subtitle": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch",
-        "bookmark": "JEE 4 \u2014 The reverse compositions: trig of an inverse"
+        "title": "Standard values (the x-values worth instant recall)",
+        "plain_title": "Standard values (the x-values worth instant recall)",
+        "subtitle": "Inverse Trigonometric Functions \u2014 Why Branches, the Six Principal Inverses",
+        "bookmark": "JEE 4 \u2014 Standard values (the x-values worth instant recall)"
       },
       {
         "no": 5,
         "file": "JEE/05.png",
         "id": "JEE-05",
-        "title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions",
-        "plain_title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions",
-        "subtitle": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions",
-        "bookmark": "JEE 5 \u2014 tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions"
+        "title": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch",
+        "plain_title": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch",
+        "subtitle": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch",
+        "bookmark": "JEE 5 \u2014 sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch"
       },
       {
         "no": 6,
         "file": "JEE/06.png",
         "id": "JEE-06",
-        "title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)",
-        "plain_title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)",
-        "subtitle": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions",
-        "bookmark": "JEE 6 \u2014 tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)"
+        "title": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch (cont.)",
+        "plain_title": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch (cont.)",
+        "subtitle": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch",
+        "bookmark": "JEE 6 \u2014 sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch (cont.)"
       },
       {
         "no": 7,
         "file": "JEE/07.png",
         "id": "JEE-07",
-        "title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)",
-        "plain_title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)",
-        "subtitle": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions",
-        "bookmark": "JEE 7 \u2014 tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)"
+        "title": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch (cont.)",
+        "plain_title": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch (cont.)",
+        "subtitle": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch",
+        "bookmark": "JEE 7 \u2014 sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch (cont.)"
       },
       {
         "no": 8,
         "file": "JEE/08.png",
         "id": "JEE-08",
-        "title": "cos\u207b\u00b9x \u00b1 cos\u207b\u00b9y",
-        "plain_title": "cos\u207b\u00b9x \u00b1 cos\u207b\u00b9y",
-        "subtitle": "sin\u207b\u00b9 and cos\u207b\u00b9 Addition Formulas + the Simplification Toolkit",
-        "bookmark": "JEE 8 \u2014 cos\u207b\u00b9x \u00b1 cos\u207b\u00b9y"
+        "title": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch (cont.)",
+        "plain_title": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch (cont.)",
+        "subtitle": "sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch",
+        "bookmark": "JEE 8 \u2014 sin\u207b\u00b9(sin x) and Companions \u2014 Reading Angles Off the Branch (cont.)"
       },
       {
         "no": 9,
         "file": "JEE/09.png",
         "id": "JEE-09",
-        "title": "sin\u207b\u00b9 and cos\u207b\u00b9 Addition Formulas + the Simplification Toolkit (cont.)",
-        "plain_title": "sin\u207b\u00b9 and cos\u207b\u00b9 Addition Formulas + the Simplification Toolkit (cont.)",
-        "subtitle": "sin\u207b\u00b9 and cos\u207b\u00b9 Addition Formulas + the Simplification Toolkit",
-        "bookmark": "JEE 9 \u2014 sin\u207b\u00b9 and cos\u207b\u00b9 Addition Formulas + the Simplification Toolkit (cont.)"
+        "title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions",
+        "plain_title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions",
+        "subtitle": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions",
+        "bookmark": "JEE 9 \u2014 tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions"
       },
       {
         "no": 10,
         "file": "JEE/10.png",
         "id": "JEE-10",
-        "title": "Worked set \u2014 the canonical exam types",
-        "plain_title": "Worked set \u2014 the canonical exam types",
-        "subtitle": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second",
-        "bookmark": "JEE 10 \u2014 Worked set \u2014 the canonical exam types"
+        "title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)",
+        "plain_title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)",
+        "subtitle": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions",
+        "bookmark": "JEE 10 \u2014 tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)"
       },
       {
         "no": 11,
         "file": "JEE/11.png",
         "id": "JEE-11",
-        "title": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second (cont.)",
-        "plain_title": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second (cont.)",
-        "subtitle": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second",
-        "bookmark": "JEE 11 \u2014 Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second (cont.)"
+        "title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)",
+        "plain_title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)",
+        "subtitle": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions",
+        "bookmark": "JEE 11 \u2014 tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)"
       },
       {
         "no": 12,
         "file": "JEE/12.png",
         "id": "JEE-12",
-        "title": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page (cont.)",
-        "plain_title": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page (cont.)",
-        "subtitle": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page",
-        "bookmark": "JEE 12 \u2014 Recap Toolkit \u2014 Every Formula of the Chapter on One Page (cont.)"
+        "title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)",
+        "plain_title": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)",
+        "subtitle": "tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions",
+        "bookmark": "JEE 12 \u2014 tan\u207b\u00b9 Addition Formulas \u2014 With Their Branch Conditions (cont.)"
       },
       {
         "no": 13,
         "file": "JEE/13.png",
         "id": "JEE-13",
-        "title": "Where this toolkit reappears (forward map, not spoilers)",
-        "plain_title": "Where this toolkit reappears (forward map, not spoilers)",
+        "title": "sin\u207b\u00b9 and cos\u207b\u00b9 Addition Formulas + the Simplification Toolkit",
+        "plain_title": "sin\u207b\u00b9 and cos\u207b\u00b9 Addition Formulas + the Simplification Toolkit",
+        "subtitle": "sin\u207b\u00b9 and cos\u207b\u00b9 Addition Formulas + the Simplification Toolkit",
+        "bookmark": "JEE 13 \u2014 sin\u207b\u00b9 and cos\u207b\u00b9 Addition Formulas + the Simplification Toolkit"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "cos\u207b\u00b9x \u00b1 cos\u207b\u00b9y",
+        "plain_title": "cos\u207b\u00b9x \u00b1 cos\u207b\u00b9y",
+        "subtitle": "sin\u207b\u00b9 and cos\u207b\u00b9 Addition Formulas + the Simplification Toolkit",
+        "bookmark": "JEE 14 \u2014 cos\u207b\u00b9x \u00b1 cos\u207b\u00b9y"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "The simplification toolkit \u2014 patterns that actually appear",
+        "plain_title": "The simplification toolkit \u2014 patterns that actually appear",
+        "subtitle": "sin\u207b\u00b9 and cos\u207b\u00b9 Addition Formulas + the Simplification Toolkit",
+        "bookmark": "JEE 15 \u2014 The simplification toolkit \u2014 patterns that actually appear"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second",
+        "plain_title": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second",
+        "subtitle": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second",
+        "bookmark": "JEE 16 \u2014 Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second (cont.)",
+        "plain_title": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second (cont.)",
+        "subtitle": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second",
+        "bookmark": "JEE 17 \u2014 Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second (cont.)"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second (cont.)",
+        "plain_title": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second (cont.)",
+        "subtitle": "Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second",
+        "bookmark": "JEE 18 \u2014 Equations, Inequalities and Parameters \u2014 Domain First, Injectivity Second (cont.)"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page",
+        "plain_title": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page",
         "subtitle": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page",
-        "bookmark": "JEE 13 \u2014 Where this toolkit reappears (forward map, not spoilers)"
+        "bookmark": "JEE 19 \u2014 Recap Toolkit \u2014 Every Formula of the Chapter on One Page"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page (cont.)",
+        "plain_title": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page (cont.)",
+        "subtitle": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page",
+        "bookmark": "JEE 20 \u2014 Recap Toolkit \u2014 Every Formula of the Chapter on One Page (cont.)"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
+        "title": "Strategy card \u2014 the order of operations that avoids every trap",
+        "plain_title": "Strategy card \u2014 the order of operations that avoids every trap",
+        "subtitle": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page",
+        "bookmark": "JEE 21 \u2014 Strategy card \u2014 the order of operations that avoids every trap"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page (cont.)",
+        "plain_title": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page (cont.)",
+        "subtitle": "Recap Toolkit \u2014 Every Formula of the Chapter on One Page",
+        "bookmark": "JEE 22 \u2014 Recap Toolkit \u2014 Every Formula of the Chapter on One Page (cont.)"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "Visual Inverse-Trigonometry Lab \u2014 Branches, Graphs and Safe Identities",
+        "plain_title": "Visual Inverse-Trigonometry Lab \u2014 Branches, Graphs and Safe Identities",
+        "subtitle": "Visual Inverse-Trigonometry Lab \u2014 Branches, Graphs and Safe Identities",
+        "bookmark": "JEE 23 \u2014 Visual Inverse-Trigonometry Lab \u2014 Branches, Graphs and Safe Identities"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "Arcsine returns an angle, not a general solution",
+        "plain_title": "Arcsine returns an angle, not a general solution",
+        "subtitle": "Visual Inverse-Trigonometry Lab \u2014 Branches, Graphs and Safe Identities",
+        "bookmark": "JEE 24 \u2014 Arcsine returns an angle, not a general solution"
+      },
+      {
+        "no": 25,
+        "file": "JEE/25.png",
+        "id": "JEE-25",
+        "title": "Arctangent has horizontal asymptotes",
+        "plain_title": "Arctangent has horizontal asymptotes",
+        "subtitle": "Visual Inverse-Trigonometry Lab \u2014 Branches, Graphs and Safe Identities",
+        "bookmark": "JEE 25 \u2014 Arctangent has horizontal asymptotes"
+      },
+      {
+        "no": 26,
+        "file": "JEE/26.png",
+        "id": "JEE-26",
+        "title": "Composition with sine creates a sawtooth",
+        "plain_title": "Composition with sine creates a sawtooth",
+        "subtitle": "Visual Inverse-Trigonometry Lab \u2014 Branches, Graphs and Safe Identities",
+        "bookmark": "JEE 26 \u2014 Composition with sine creates a sawtooth"
+      },
+      {
+        "no": 27,
+        "file": "JEE/27.png",
+        "id": "JEE-27",
+        "title": "A safe identity workflow",
+        "plain_title": "A safe identity workflow",
+        "subtitle": "Visual Inverse-Trigonometry Lab \u2014 Branches, Graphs and Safe Identities",
+        "bookmark": "JEE 27 \u2014 A safe identity workflow"
+      },
+      {
+        "no": 28,
+        "file": "JEE/28.png",
+        "id": "JEE-28",
+        "title": "Worked synthesis: choose the angle before using the identity",
+        "plain_title": "Worked synthesis: choose the angle before using the identity",
+        "subtitle": "Visual Inverse-Trigonometry Lab \u2014 Branches, Graphs and Safe Identities",
+        "bookmark": "JEE 28 \u2014 Worked synthesis: choose the angle before using the identity"
       }
     ],
     "olympiad": [
@@ -134,46 +269,73 @@
         "no": 2,
         "file": "Olympiad/02.png",
         "id": "OLY-02",
-        "title": "Sibling composites worth owning",
-        "plain_title": "Sibling composites worth owning",
+        "title": "Extension \u2014 Piecewise Masters: f(x) = sin\u207b\u00b9(sin x) + cos\u207b\u00b9(cos x) and Siblings (cont.)",
+        "plain_title": "Extension \u2014 Piecewise Masters: f(x) = sin\u207b\u00b9(sin x) + cos\u207b\u00b9(cos x) and Siblings (cont.)",
         "subtitle": "Extension \u2014 Piecewise Masters: f(x) = sin\u207b\u00b9(sin x) + cos\u207b\u00b9(cos x) and Siblings",
-        "bookmark": "OLY 2 \u2014 Sibling composites worth owning"
+        "bookmark": "OLY 2 \u2014 Extension \u2014 Piecewise Masters: f(x) = sin\u207b\u00b9(sin x) + cos\u207b\u00b9(cos x) and Siblings (cont.)"
       },
       {
         "no": 3,
         "file": "Olympiad/03.png",
         "id": "OLY-03",
-        "title": "Extension \u2014 Telescoping Arctan Series and Sums",
-        "plain_title": "Extension \u2014 Telescoping Arctan Series and Sums",
-        "subtitle": "Extension \u2014 Telescoping Arctan Series and Sums",
-        "bookmark": "OLY 3 \u2014 Extension \u2014 Telescoping Arctan Series and Sums"
+        "title": "Extension \u2014 Piecewise Masters: f(x) = sin\u207b\u00b9(sin x) + cos\u207b\u00b9(cos x) and Siblings (cont.)",
+        "plain_title": "Extension \u2014 Piecewise Masters: f(x) = sin\u207b\u00b9(sin x) + cos\u207b\u00b9(cos x) and Siblings (cont.)",
+        "subtitle": "Extension \u2014 Piecewise Masters: f(x) = sin\u207b\u00b9(sin x) + cos\u207b\u00b9(cos x) and Siblings",
+        "bookmark": "OLY 3 \u2014 Extension \u2014 Piecewise Masters: f(x) = sin\u207b\u00b9(sin x) + cos\u207b\u00b9(cos x) and Siblings (cont.)"
       },
       {
         "no": 4,
         "file": "Olympiad/04.png",
         "id": "OLY-04",
-        "title": "Worked variants \u2014 the same engine, different residues",
-        "plain_title": "Worked variants \u2014 the same engine, different residues",
+        "title": "Extension \u2014 Telescoping Arctan Series and Sums",
+        "plain_title": "Extension \u2014 Telescoping Arctan Series and Sums",
         "subtitle": "Extension \u2014 Telescoping Arctan Series and Sums",
-        "bookmark": "OLY 4 \u2014 Worked variants \u2014 the same engine, different residues"
+        "bookmark": "OLY 4 \u2014 Extension \u2014 Telescoping Arctan Series and Sums"
       },
       {
         "no": 5,
         "file": "Olympiad/05.png",
         "id": "OLY-05",
-        "title": "Extension \u2014 Hidden-Structure Identities and Constraint Problems",
-        "plain_title": "Extension \u2014 Hidden-Structure Identities and Constraint Problems",
-        "subtitle": "Extension \u2014 Hidden-Structure Identities and Constraint Problems",
-        "bookmark": "OLY 5 \u2014 Extension \u2014 Hidden-Structure Identities and Constraint Problems"
+        "title": "Extension \u2014 Telescoping Arctan Series and Sums (cont.)",
+        "plain_title": "Extension \u2014 Telescoping Arctan Series and Sums (cont.)",
+        "subtitle": "Extension \u2014 Telescoping Arctan Series and Sums",
+        "bookmark": "OLY 5 \u2014 Extension \u2014 Telescoping Arctan Series and Sums (cont.)"
       },
       {
         "no": 6,
         "file": "Olympiad/06.png",
         "id": "OLY-06",
-        "title": "Nested and mixed constraint problems",
-        "plain_title": "Nested and mixed constraint problems",
+        "title": "Extension \u2014 Telescoping Arctan Series and Sums (cont.)",
+        "plain_title": "Extension \u2014 Telescoping Arctan Series and Sums (cont.)",
+        "subtitle": "Extension \u2014 Telescoping Arctan Series and Sums",
+        "bookmark": "OLY 6 \u2014 Extension \u2014 Telescoping Arctan Series and Sums (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "Olympiad/07.png",
+        "id": "OLY-07",
+        "title": "Extension \u2014 Hidden-Structure Identities and Constraint Problems",
+        "plain_title": "Extension \u2014 Hidden-Structure Identities and Constraint Problems",
         "subtitle": "Extension \u2014 Hidden-Structure Identities and Constraint Problems",
-        "bookmark": "OLY 6 \u2014 Nested and mixed constraint problems"
+        "bookmark": "OLY 7 \u2014 Extension \u2014 Hidden-Structure Identities and Constraint Problems"
+      },
+      {
+        "no": 8,
+        "file": "Olympiad/08.png",
+        "id": "OLY-08",
+        "title": "Extension \u2014 Hidden-Structure Identities and Constraint Problems (cont.)",
+        "plain_title": "Extension \u2014 Hidden-Structure Identities and Constraint Problems (cont.)",
+        "subtitle": "Extension \u2014 Hidden-Structure Identities and Constraint Problems",
+        "bookmark": "OLY 8 \u2014 Extension \u2014 Hidden-Structure Identities and Constraint Problems (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "Olympiad/09.png",
+        "id": "OLY-09",
+        "title": "Extension \u2014 Hidden-Structure Identities and Constraint Problems (cont.)",
+        "plain_title": "Extension \u2014 Hidden-Structure Identities and Constraint Problems (cont.)",
+        "subtitle": "Extension \u2014 Hidden-Structure Identities and Constraint Problems",
+        "bookmark": "OLY 9 \u2014 Extension \u2014 Hidden-Structure Identities and Constraint Problems (cont.)"
       }
     ]
   }

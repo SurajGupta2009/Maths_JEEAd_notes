@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Independent numeric verification of Chapter 6 (Quadratic Equations) claims."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 import math
 from fractions import Fraction as F
 
@@ -188,6 +194,9 @@ while len(chain) < 4:
 for a, b in chain[1:]:
     chk((a * a + b * b) % (a * b + 1) == 0 and (a * a + b * b) // (a * b + 1) == 9, f"k=9 chain pair {(a, b)}")
 chk(chain[1:] == [(3, 27), (27, 240), (240, 2133)], "k=9 chain values")
+
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    chk(_condition, f"visual lesson: {_name}")
 
 print(f"{N[0] - len(FAILS)}/{N[0]} checks passed")
 if FAILS:

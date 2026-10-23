@@ -15,37 +15,127 @@
         "no": 2,
         "file": "JEE/02.png",
         "id": "JEE-02",
-        "title": "Addition Rule, Counting, Conditional Probability (cont.)",
-        "plain_title": "Addition Rule, Counting, Conditional Probability (cont.)",
+        "title": "Addition Rule, Counting, Conditional Probability",
+        "plain_title": "Addition Rule, Counting, Conditional Probability",
         "subtitle": "Addition Rule, Counting, Conditional Probability",
-        "bookmark": "JEE 2 \u2014 Addition Rule, Counting, Conditional Probability (cont.)"
+        "bookmark": "JEE 2 \u2014 Addition Rule, Counting, Conditional Probability"
       },
       {
         "no": 3,
         "file": "JEE/03.png",
         "id": "JEE-03",
-        "title": "Linear changes and indicators",
-        "plain_title": "Linear changes and indicators",
-        "subtitle": "Random Variables \u2014 Mean and Variance",
-        "bookmark": "JEE 3 \u2014 Linear changes and indicators"
+        "title": "Addition Rule, Counting, Conditional Probability (cont.)",
+        "plain_title": "Addition Rule, Counting, Conditional Probability (cont.)",
+        "subtitle": "Addition Rule, Counting, Conditional Probability",
+        "bookmark": "JEE 3 \u2014 Addition Rule, Counting, Conditional Probability (cont.)"
       },
       {
         "no": 4,
         "file": "JEE/04.png",
         "id": "JEE-04",
-        "title": "Descriptive Statistics I \u2014 Centre & Deviation (cont.)",
-        "plain_title": "Descriptive Statistics I \u2014 Centre & Deviation (cont.)",
-        "subtitle": "Descriptive Statistics I \u2014 Centre & Deviation",
-        "bookmark": "JEE 4 \u2014 Descriptive Statistics I \u2014 Centre & Deviation (cont.)"
+        "title": "Independence, Total Probability, Bayes",
+        "plain_title": "Independence, Total Probability, Bayes",
+        "subtitle": "Independence, Total Probability, Bayes",
+        "bookmark": "JEE 4 \u2014 Independence, Total Probability, Bayes"
       },
       {
         "no": 5,
         "file": "JEE/05.png",
         "id": "JEE-05",
+        "title": "Random Variables \u2014 Mean and Variance",
+        "plain_title": "Random Variables \u2014 Mean and Variance",
+        "subtitle": "Random Variables \u2014 Mean and Variance",
+        "bookmark": "JEE 5 \u2014 Random Variables \u2014 Mean and Variance"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Binomial and Geometric Models",
+        "plain_title": "Binomial and Geometric Models",
+        "subtitle": "Binomial and Geometric Models",
+        "bookmark": "JEE 6 \u2014 Binomial and Geometric Models"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Descriptive Statistics I \u2014 Centre & Deviation",
+        "plain_title": "Descriptive Statistics I \u2014 Centre & Deviation",
+        "subtitle": "Descriptive Statistics I \u2014 Centre & Deviation",
+        "bookmark": "JEE 7 \u2014 Descriptive Statistics I \u2014 Centre & Deviation"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Descriptive Statistics I \u2014 Centre & Deviation (cont.)",
+        "plain_title": "Descriptive Statistics I \u2014 Centre & Deviation (cont.)",
+        "subtitle": "Descriptive Statistics I \u2014 Centre & Deviation",
+        "bookmark": "JEE 8 \u2014 Descriptive Statistics I \u2014 Centre & Deviation (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Descriptive Statistics II \u2014 Spread & Grouping",
+        "plain_title": "Descriptive Statistics II \u2014 Spread & Grouping",
+        "subtitle": "Descriptive Statistics II \u2014 Spread & Grouping",
+        "bookmark": "JEE 9 \u2014 Descriptive Statistics II \u2014 Spread & Grouping"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
         "title": "Descriptive Statistics II \u2014 Spread & Grouping (cont.)",
         "plain_title": "Descriptive Statistics II \u2014 Spread & Grouping (cont.)",
         "subtitle": "Descriptive Statistics II \u2014 Spread & Grouping",
-        "bookmark": "JEE 5 \u2014 Descriptive Statistics II \u2014 Spread & Grouping (cont.)"
+        "bookmark": "JEE 10 \u2014 Descriptive Statistics II \u2014 Spread & Grouping (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Probability and Statistics \u2014 Mixed Strategy, Assumptions",
+        "plain_title": "Probability and Statistics \u2014 Mixed Strategy, Assumptions",
+        "subtitle": "Probability and Statistics \u2014 Mixed Strategy, Assumptions",
+        "bookmark": "JEE 11 \u2014 Probability and Statistics \u2014 Mixed Strategy, Assumptions"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "Visual Probability and Statistics Lab \u2014 Trees, Distributions and Spread",
+        "plain_title": "Visual Probability and Statistics Lab \u2014 Trees, Distributions and Spread",
+        "subtitle": "Visual Probability and Statistics Lab \u2014 Trees, Distributions and Spread",
+        "bookmark": "JEE 12 \u2014 Visual Probability and Statistics Lab \u2014 Trees, Distributions and Spread"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "A distribution lists every value and its probability",
+        "plain_title": "A distribution lists every value and its probability",
+        "subtitle": "Visual Probability and Statistics Lab \u2014 Trees, Distributions and Spread",
+        "bookmark": "JEE 13 \u2014 A distribution lists every value and its probability"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Mean locates; variance measures squared spread",
+        "plain_title": "Mean locates; variance measures squared spread",
+        "subtitle": "Visual Probability and Statistics Lab \u2014 Trees, Distributions and Spread",
+        "bookmark": "JEE 14 \u2014 Mean locates; variance measures squared spread"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "One workflow for probability and statistics",
+        "plain_title": "One workflow for probability and statistics",
+        "subtitle": "Visual Probability and Statistics Lab \u2014 Trees, Distributions and Spread",
+        "bookmark": "JEE 15 \u2014 One workflow for probability and statistics"
       }
     ],
     "olympiad": [
@@ -62,10 +152,28 @@
         "no": 2,
         "file": "Olympiad/02.png",
         "id": "OLY-02",
-        "title": "Gambler's Ruin, Derangements, Averaging (cont.)",
-        "plain_title": "Gambler's Ruin, Derangements, Averaging (cont.)",
+        "title": "Recursions, Memorylessness, Coupon Collector",
+        "plain_title": "Recursions, Memorylessness, Coupon Collector",
+        "subtitle": "Recursions, Memorylessness, Coupon Collector",
+        "bookmark": "OLY 2 \u2014 Recursions, Memorylessness, Coupon Collector"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Gambler's Ruin, Derangements, Averaging",
+        "plain_title": "Gambler's Ruin, Derangements, Averaging",
         "subtitle": "Gambler's Ruin, Derangements, Averaging",
-        "bookmark": "OLY 2 \u2014 Gambler's Ruin, Derangements, Averaging (cont.)"
+        "bookmark": "OLY 3 \u2014 Gambler's Ruin, Derangements, Averaging"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Why averaging helps",
+        "plain_title": "Why averaging helps",
+        "subtitle": "Gambler's Ruin, Derangements, Averaging",
+        "bookmark": "OLY 4 \u2014 Why averaging helps"
       }
     ]
   }

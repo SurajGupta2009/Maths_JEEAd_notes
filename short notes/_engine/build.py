@@ -59,7 +59,7 @@ def render(chapter_slug: str):
         if outdir.exists():
             shutil.rmtree(outdir)
         outdir.mkdir(parents=True, exist_ok=True)
-        # flow ALL blocks of the part continuously (pages cross file boundaries)
+        # Render every lesson in one reading stream; lessons start on fresh sheets.
         combined = []          # (fm, block, is_first_of_file)
         for unit_no, sheet in enumerate(group, start=1):
             fm = sheet["fm"]

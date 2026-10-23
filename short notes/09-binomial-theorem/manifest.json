@@ -15,28 +15,91 @@
         "no": 2,
         "file": "JEE/02.png",
         "id": "JEE-02",
-        "title": "Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients",
-        "plain_title": "Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients",
-        "subtitle": "Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients",
-        "bookmark": "JEE 2 \u2014 Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients"
+        "title": "Binomial Theorem \u2014 What (a+b)\u207f Counts, the General Term, Middle Terms (cont.)",
+        "plain_title": "Binomial Theorem \u2014 What (a+b)\u207f Counts, the General Term, Middle Terms (cont.)",
+        "subtitle": "Binomial Theorem \u2014 What (a+b)\u207f Counts, the General Term, Middle Terms",
+        "bookmark": "JEE 2 \u2014 Binomial Theorem \u2014 What (a+b)\u207f Counts, the General Term, Middle Terms (cont.)"
       },
       {
         "no": 3,
         "file": "JEE/03.png",
         "id": "JEE-03",
-        "title": "Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction (cont.)",
-        "plain_title": "Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction (cont.)",
-        "subtitle": "Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction",
-        "bookmark": "JEE 3 \u2014 Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction (cont.)"
+        "title": "Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients",
+        "plain_title": "Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients",
+        "subtitle": "Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients",
+        "bookmark": "JEE 3 \u2014 Coefficient Machinery \u2014 Multinomials, Counting Terms, Greatest Coefficients"
       },
       {
         "no": 4,
         "file": "JEE/04.png",
         "id": "JEE-04",
+        "title": "Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction",
+        "plain_title": "Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction",
+        "subtitle": "Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction",
+        "bookmark": "JEE 4 \u2014 Three Identity Engines \u2014 Substitution, Calculus, and Coefficient Extraction"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve",
+        "plain_title": "Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve",
+        "subtitle": "Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve",
+        "bookmark": "JEE 5 \u2014 Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
         "title": "Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve (cont.)",
         "plain_title": "Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve (cont.)",
         "subtitle": "Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve",
-        "bookmark": "JEE 4 \u2014 Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve (cont.)"
+        "bookmark": "JEE 6 \u2014 Greatest Terms, Truncation Inequalities, and the Binomial as a Sieve (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Visual Binomial Lab \u2014 Pascal Rows, Term Tracking and Greatest Terms",
+        "plain_title": "Visual Binomial Lab \u2014 Pascal Rows, Term Tracking and Greatest Terms",
+        "subtitle": "Visual Binomial Lab \u2014 Pascal Rows, Term Tracking and Greatest Terms",
+        "bookmark": "JEE 7 \u2014 Visual Binomial Lab \u2014 Pascal Rows, Term Tracking and Greatest Terms"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Track every factor in the general term",
+        "plain_title": "Track every factor in the general term",
+        "subtitle": "Visual Binomial Lab \u2014 Pascal Rows, Term Tracking and Greatest Terms",
+        "bookmark": "JEE 8 \u2014 Track every factor in the general term"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Greatest numerical terms come from consecutive ratios",
+        "plain_title": "Greatest numerical terms come from consecutive ratios",
+        "subtitle": "Visual Binomial Lab \u2014 Pascal Rows, Term Tracking and Greatest Terms",
+        "bookmark": "JEE 9 \u2014 Greatest numerical terms come from consecutive ratios"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Read the ratio across one",
+        "plain_title": "Read the ratio across one",
+        "subtitle": "Visual Binomial Lab \u2014 Pascal Rows, Term Tracking and Greatest Terms",
+        "bookmark": "JEE 10 \u2014 Read the ratio across one"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Choose the right binomial operation",
+        "plain_title": "Choose the right binomial operation",
+        "subtitle": "Visual Binomial Lab \u2014 Pascal Rows, Term Tracking and Greatest Terms",
+        "bookmark": "JEE 11 \u2014 Choose the right binomial operation"
       }
     ],
     "olympiad": [
@@ -53,10 +116,19 @@
         "no": 2,
         "file": "Olympiad/02.png",
         "id": "OLY-02",
-        "title": "Extension \u2014 Divisibility, Prime Rows, Lucas, and Finite Differences (cont.)",
-        "plain_title": "Extension \u2014 Divisibility, Prime Rows, Lucas, and Finite Differences (cont.)",
+        "title": "Extension \u2014 The General Binomial Series: Negative and Fractional Indices, Validity, Approximation (cont.)",
+        "plain_title": "Extension \u2014 The General Binomial Series: Negative and Fractional Indices, Validity, Approximation (cont.)",
+        "subtitle": "Extension \u2014 The General Binomial Series: Negative and Fractional Indices, Validity, Approximation",
+        "bookmark": "OLY 2 \u2014 Extension \u2014 The General Binomial Series: Negative and Fractional Indices, Validity, Approximation (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Extension \u2014 Divisibility, Prime Rows, Lucas, and Finite Differences",
+        "plain_title": "Extension \u2014 Divisibility, Prime Rows, Lucas, and Finite Differences",
         "subtitle": "Extension \u2014 Divisibility, Prime Rows, Lucas, and Finite Differences",
-        "bookmark": "OLY 2 \u2014 Extension \u2014 Divisibility, Prime Rows, Lucas, and Finite Differences (cont.)"
+        "bookmark": "OLY 3 \u2014 Extension \u2014 Divisibility, Prime Rows, Lucas, and Finite Differences"
       }
     ]
   }

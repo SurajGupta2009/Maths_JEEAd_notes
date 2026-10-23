@@ -1,52 +1,66 @@
 # Chapter 3 — Trigonometric Identities & Equations (handwritten-style short notes)
 
-Print-ready explanatory sheet set for the JEE Advanced Mathematics chapter **Trigonometric Identities & Equations** (syllabus sentence: "Trigonometric functions. General solution of trigonometric equations. Identities."). Dense teacher-style notes — intuition, derivations, formulas, applications, assumptions and common mistakes together — not a formula sheet.
+Handwritten-style, teacher-style explanatory notes generated from editable Markdown. This expanded edition includes a dedicated visual-methods lesson and uses one continuous top-to-bottom reading stream on every sheet.
 
-## Parts and sheets
+## Current edition
 
-- **`JEE/` — Part I (JEE Main + Advanced core): 11 sheets** (`01.png`…`11.png`), independently numbered with visible part/page labels.
-- **`Olympiad/` — Part II (extensions): 6 sheets** (`01.png`…`06.png`), independently numbered, each with a status banner.
-- PNG specs: 2480×3508 px portrait, nominal 300 DPI metadata, ~10 mm safe margins, one sheet = one A4 page when printed **Fit**.
+- **Part I — JEE Main + Advanced:** 23 sheets across 10 source lessons in `JEE/`.
+- **Part II — Olympiad / extensions:** 8 sheets across 4 source lessons in `Olympiad/`.
+- **Visual expansion:** `jee-90-visual-methods.md` adds 4 editable figures; the chapter has 9 diagram blocks in total.
+- **Page geometry:** 2480×3508 px A4 portrait PNGs at nominal 300 DPI, with ink kept inside the safe margins.
 
-## Deliverables
+## Downloads
 
-| File | What |
+| Artifact | File |
 |---|---|
-| `exports/03-trigonometric-identities-equations-JEE-sheets.zip` | Part I PNGs |
-| `exports/03-trigonometric-identities-equations-Olympiad-sheets.zip` | Part II PNGs |
-| `exports/03-trigonometric-identities-equations-combined-sheets.zip` | all 16 PNGs, JEE first |
-| `exports/03-trigonometric-identities-equations-JEE.pdf` | bookmarked A4 PDF, Part I |
-| `exports/03-trigonometric-identities-equations-Olympiad-extensions.pdf` | bookmarked A4 PDF, Part II |
-| `exports/03-trigonometric-identities-equations-combined.pdf` | bookmarked A4 PDF, JEE first |
-| `index.html` | gallery (open in a browser) |
+| Combined PNG ZIP (JEE first) | [`exports/03-trigonometric-identities-equations-combined-sheets.zip`](exports/03-trigonometric-identities-equations-combined-sheets.zip) |
+| JEE PNG ZIP | [`exports/03-trigonometric-identities-equations-JEE-sheets.zip`](exports/03-trigonometric-identities-equations-JEE-sheets.zip) |
+| Olympiad PNG ZIP | [`exports/03-trigonometric-identities-equations-Olympiad-sheets.zip`](exports/03-trigonometric-identities-equations-Olympiad-sheets.zip) |
+| Combined bookmarked PDF (JEE first) | [`exports/03-trigonometric-identities-equations-combined.pdf`](exports/03-trigonometric-identities-equations-combined.pdf) |
+| JEE bookmarked PDF | [`exports/03-trigonometric-identities-equations-JEE.pdf`](exports/03-trigonometric-identities-equations-JEE.pdf) |
+| Olympiad bookmarked PDF | [`exports/03-trigonometric-identities-equations-Olympiad-extensions.pdf`](exports/03-trigonometric-identities-equations-Olympiad-extensions.pdf) |
+| Browser gallery | [`index.html`](index.html) |
 
-## Content map (sheet → topic)
+## Source lessons and page ranges
 
-**Part I.** 01 six ratios, unit-circle definition, Pythagorean/reciprocal identities, domains & ranges · 02 quadrant signs, allied angles (rotation derivation), standard values, periods · 03 compound angles with the $\cos(A-B)$ chord derivation and the $a\sin x + b\cos x$ bound · 04 double/triple/half angles, power reduction, quadrant-resolved radicals · 05 product↔sum transformation formulae · 06 general solutions (unit-circle derivation, $(-1)^{n}$ explained), solution counting · 07 equation methods: factorise-not-divide, harmonic form + compatibility, polynomial-in-ratio, squaring + filtering · 08 conditional identities $A+B+C=\pi$ with worked $\tan 20^{\circ}\tan 40^{\circ}\tan 80^{\circ} = \sqrt{3}$ · 09–10 recap toolkit, assumptions, trap sweep.
+### Part I — JEE
 
-**Part II (extensions — see SCOPE.md).** 01 Weierstrass substitution $t = \tan\frac{A}{2}$ with the $A = \pi$ blind spot · 02 products of sines/cosines from roots of unity · 03 telescoping trig series and square sums $\sum \cot^{2}, \sum \csc^{2}$ · 04–05 triangle toolkit (sine/cosine rules, $\Delta$, $R$, $r$) + derived special values $\sin 18^{\circ}, \cos 36^{\circ}$ — **explicitly labelled** as outside the current Advanced syllabus sentence.
+- `jee-01.md` — Trigonometry — Ratios, the Unit Circle, Fundamental Identities (**JEE 1–2**).
+- `jee-02.md` — Signs by Quadrant, Allied Angles, Standard Values (**JEE 3–5**).
+- `jee-03.md` — Compound Angles — the Four Formulae and How to Own Them (**JEE 6–7**).
+- `jee-04.md` — Multiple & Submultiple Angles — Double, Triple, Half, Power Reduction (**JEE 8–9**).
+- `jee-05.md` — Transformation Formulae — Products ↔ Sums (**JEE 10–11**).
+- `jee-06.md` — Trigonometric Equations I — Principal and General Solutions (**JEE 12–13**).
+- `jee-07.md` — Trigonometric Equations II — Factorise, Combine, Filter (**JEE 14–15**).
+- `jee-08.md` — Conditional Identities — When $A + B + C = \pi$ (**JEE 16–17**).
+- `jee-09.md` — Chapter Recap — Identities & Equations Toolkit (**JEE 18–19**).
+- `jee-90-visual-methods.md` — Visual Trigonometry Lab — Unit Circle, Graphs and General Solutions (**JEE 20–23**).
 
-## What was verified (not a claim of exhaustive mathematical verification)
+### Part II — Olympiad / extensions
 
-- **Independent numeric checks** — `scripts/math_checks.py`: **194/194 PASS** (Pythagorean/reciprocal identities at random angles, every compound/multiple/half-angle identity, transformation formulae, general-solution families at $n = -3\ldots3$, every equation worked example re-substituted, conditional identities on several triangles, $\tan 20^{\circ}\tan 40^{\circ}\tan 80^{\circ} = \sqrt{3}$, Weierstrass conversions, roots-of-unity products $n = 5, 6, 7$, $\sum \cot^{2}/\csc^{2}$ for $n = 3\ldots7$, series closed forms, $\sin 18^{\circ}/\cos 36^{\circ}$, triangle worked example including $R$, $r$, $\tan\frac{A}{2}$ cross-check).
-- **Automated render checks** — `scripts/check.py`: formula parsing, font/glyph coverage, sheet size/DPI/margin ink scans, numbering, ZIP/PDF integrity + bookmarks, gallery links.
-- **Visual** — all 16 sheets reviewed at contact-sheet resolution; every diagram (unit circle ×2, sin/cos waves, general-solution wave, solution number line) inspected at full resolution; label collisions found in review were corrected and re-rendered.
+- `olympiad-01.md` — Olympiad Extensions — the Weierstrass Substitution (**Olympiad 1–2**).
+- `olympiad-02.md` — Olympiad Extensions — Products of Sines & Cosines from Roots of Unity (**Olympiad 3–4**).
+- `olympiad-03.md` — Olympiad Extensions — Trig Series (Telescoping) and Square Sums (**Olympiad 5–6**).
+- `olympiad-04.md` — Specialised Toolkit — Triangle Formulae & Derived Special Values (**Olympiad 7–8**).
 
-## Rebuild
+## Editable sources and visual builders
+
+Every sheet is authored in `content/*.md` using frontmatter, prose, display mathematics, callout boxes, JSON diagram specifications, and optional `<!-- pagebreak -->` markers. Lessons start on fresh sheets; long lessons continue automatically without shrinking or clipping prose. Figures remain editable in the source rather than being external screenshots.
+
+## Reproducible build and verification
 
 ```bash
-python3 scripts/render.py    # content/*.md -> JEE/, Olympiad/ PNGs
-python3 scripts/export.py    # ZIPs + PDFs + index.html
-python3 scripts/check.py     # reproducible deliverable checks
-python3 scripts/math_checks.py
+python3 -m pip install -r ../_engine/requirements.txt  # once
+python3 scripts/render.py       # Markdown -> PNG sheets + manifest.json
+python3 scripts/export.py       # 3 ZIPs + 3 bookmarked PDFs + gallery
+python3 scripts/math_checks.py  # independent exact/numeric worked-example checks
+python3 scripts/check.py        # formula, font, PNG, manifest, export and link gates
 ```
 
-Requires the shared engine in `../_engine/` (see `../_engine/requirements.txt`). Sources are editable in `content/*.md`.
+The mathematical suites include targeted checks for the visual-methods examples. The delivery suite checks formula parsing, glyph fallback, A4 dimensions and DPI, complete safe-border ink scans, manifest ordering, ZIP integrity, PDF page counts and bookmarks, documentation, and local gallery links. These reproducible checks supplement—rather than claim to replace—mathematical and visual review.
 
-## Printing
+## Reading order, scope and printing
 
-A4 portrait, one sheet per page, **Fit** (not Fill/Crop) — see `PRINTING.txt`.
+Follow the `LESSON n / total` ribbons and read straight down each sheet, then continue on the next sheet. Continuation sheets retain the lesson title and add `(cont.)`. See [`SCOPE.md`](SCOPE.md) for syllabus/extension boundaries, [`SOURCE-AUDIT.md`](SOURCE-AUDIT.md) for source and convention notes, and [`PRINTING.txt`](PRINTING.txt) for A4 **Fit** printing instructions.
 
-## Reading order
-
-Follow the `LESSON n / total` ribbons; read down the left column, then down the right column, and continue to the next sheet. This sequence follows the chapter’s prerequisite path.
+Body and heading handwriting uses **Kalam** with DejaVu fallback; mathematics uses matplotlib mathtext. Fonts and their libre licences are in `../_assets/fonts/` and the shared asset documentation.

@@ -15,55 +15,145 @@
         "no": 2,
         "file": "JEE/02.png",
         "id": "JEE-02",
-        "title": "Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects",
-        "plain_title": "Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects",
-        "subtitle": "Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects",
-        "bookmark": "JEE 2 \u2014 Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects"
+        "title": "Permutations & Combinations \u2014 The Two Rules, the Complement, and What Counting Means (cont.)",
+        "plain_title": "Permutations & Combinations \u2014 The Two Rules, the Complement, and What Counting Means (cont.)",
+        "subtitle": "Permutations & Combinations \u2014 The Two Rules, the Complement, and What Counting Means",
+        "bookmark": "JEE 2 \u2014 Permutations & Combinations \u2014 The Two Rules, the Complement, and What Counting Means (cont.)"
       },
       {
         "no": 3,
         "file": "JEE/03.png",
         "id": "JEE-03",
-        "title": "The three restriction methods (linear arrangements)",
-        "plain_title": "The three restriction methods (linear arrangements)",
-        "subtitle": "Circular Permutations and Restriction Methods \u2014 Bundle, Gap, Relative Order",
-        "bookmark": "JEE 3 \u2014 The three restriction methods (linear arrangements)"
+        "title": "Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects",
+        "plain_title": "Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects",
+        "subtitle": "Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects",
+        "bookmark": "JEE 3 \u2014 Permutations \u2014 nPr, Factorials, and Arrangements with Identical Objects"
       },
       {
         "no": 4,
         "file": "JEE/04.png",
         "id": "JEE-04",
-        "title": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections (cont.)",
-        "plain_title": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections (cont.)",
-        "subtitle": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections",
-        "bookmark": "JEE 4 \u2014 Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections (cont.)"
+        "title": "Circular Permutations and Restriction Methods \u2014 Bundle, Gap, Relative Order",
+        "plain_title": "Circular Permutations and Restriction Methods \u2014 Bundle, Gap, Relative Order",
+        "subtitle": "Circular Permutations and Restriction Methods \u2014 Bundle, Gap, Relative Order",
+        "bookmark": "JEE 4 \u2014 Circular Permutations and Restriction Methods \u2014 Bundle, Gap, Relative Order"
       },
       {
         "no": 5,
         "file": "JEE/05.png",
         "id": "JEE-05",
-        "title": "Stars and Bars, Compositions, Multisets, and Bounded Distributions (cont.)",
-        "plain_title": "Stars and Bars, Compositions, Multisets, and Bounded Distributions (cont.)",
-        "subtitle": "Stars and Bars, Compositions, Multisets, and Bounded Distributions",
-        "bookmark": "JEE 5 \u2014 Stars and Bars, Compositions, Multisets, and Bounded Distributions (cont.)"
+        "title": "Circular Permutations and Restriction Methods \u2014 Bundle, Gap, Relative Order (cont.)",
+        "plain_title": "Circular Permutations and Restriction Methods \u2014 Bundle, Gap, Relative Order (cont.)",
+        "subtitle": "Circular Permutations and Restriction Methods \u2014 Bundle, Gap, Relative Order",
+        "bookmark": "JEE 5 \u2014 Circular Permutations and Restriction Methods \u2014 Bundle, Gap, Relative Order (cont.)"
       },
       {
         "no": 6,
         "file": "JEE/06.png",
         "id": "JEE-06",
-        "title": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things (cont.)",
-        "plain_title": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things (cont.)",
-        "subtitle": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things",
-        "bookmark": "JEE 6 \u2014 Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things (cont.)"
+        "title": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections",
+        "plain_title": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections",
+        "subtitle": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections",
+        "bookmark": "JEE 6 \u2014 Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections"
       },
       {
         "no": 7,
         "file": "JEE/07.png",
         "id": "JEE-07",
+        "title": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections (cont.)",
+        "plain_title": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections (cont.)",
+        "subtitle": "Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections",
+        "bookmark": "JEE 7 \u2014 Combinations \u2014 nCr, Pascal, Hockey-Stick, and Restricted Selections (cont.)"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Stars and Bars, Compositions, Multisets, and Bounded Distributions",
+        "plain_title": "Stars and Bars, Compositions, Multisets, and Bounded Distributions",
+        "subtitle": "Stars and Bars, Compositions, Multisets, and Bounded Distributions",
+        "bookmark": "JEE 8 \u2014 Stars and Bars, Compositions, Multisets, and Bounded Distributions"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things'",
+        "plain_title": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things'",
+        "subtitle": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things'",
+        "bookmark": "JEE 9 \u2014 Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things'"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things' (cont.)",
+        "plain_title": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things' (cont.)",
+        "subtitle": "Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things'",
+        "bookmark": "JEE 10 \u2014 Inclusion\u2013Exclusion and Derangements \u2014 Counting 'None of the Bad Things' (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Pigeonhole, Recurrence Counting, and the Chapter Recap",
+        "plain_title": "Pigeonhole, Recurrence Counting, and the Chapter Recap",
+        "subtitle": "Pigeonhole, Recurrence Counting, and the Chapter Recap",
+        "bookmark": "JEE 11 \u2014 Pigeonhole, Recurrence Counting, and the Chapter Recap"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
         "title": "Pigeonhole, Recurrence Counting, and the Chapter Recap (cont.)",
         "plain_title": "Pigeonhole, Recurrence Counting, and the Chapter Recap (cont.)",
         "subtitle": "Pigeonhole, Recurrence Counting, and the Chapter Recap",
-        "bookmark": "JEE 7 \u2014 Pigeonhole, Recurrence Counting, and the Chapter Recap (cont.)"
+        "bookmark": "JEE 12 \u2014 Pigeonhole, Recurrence Counting, and the Chapter Recap (cont.)"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Visual Counting Lab \u2014 Decisions, Paths, Distributions and Overlap",
+        "plain_title": "Visual Counting Lab \u2014 Decisions, Paths, Distributions and Overlap",
+        "subtitle": "Visual Counting Lab \u2014 Decisions, Paths, Distributions and Overlap",
+        "bookmark": "JEE 13 \u2014 Visual Counting Lab \u2014 Decisions, Paths, Distributions and Overlap"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Lattice paths encode a word with identical letters",
+        "plain_title": "Lattice paths encode a word with identical letters",
+        "subtitle": "Visual Counting Lab \u2014 Decisions, Paths, Distributions and Overlap",
+        "bookmark": "JEE 14 \u2014 Lattice paths encode a word with identical letters"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Stars and bars count nonnegative distributions",
+        "plain_title": "Stars and bars count nonnegative distributions",
+        "subtitle": "Visual Counting Lab \u2014 Decisions, Paths, Distributions and Overlap",
+        "bookmark": "JEE 15 \u2014 Stars and bars count nonnegative distributions"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Inclusion\u2013exclusion repairs double counting",
+        "plain_title": "Inclusion\u2013exclusion repairs double counting",
+        "subtitle": "Visual Counting Lab \u2014 Decisions, Paths, Distributions and Overlap",
+        "bookmark": "JEE 16 \u2014 Inclusion\u2013exclusion repairs double counting"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "A counting workflow",
+        "plain_title": "A counting workflow",
+        "subtitle": "Visual Counting Lab \u2014 Decisions, Paths, Distributions and Overlap",
+        "bookmark": "JEE 17 \u2014 A counting workflow"
       }
     ],
     "olympiad": [
@@ -80,19 +170,28 @@
         "no": 2,
         "file": "Olympiad/02.png",
         "id": "OLY-02",
-        "title": "Extension \u2014 Burnside's Lemma and P\u00f3lya Enumeration: Counting Up to Symmetry (cont.)",
-        "plain_title": "Extension \u2014 Burnside's Lemma and P\u00f3lya Enumeration: Counting Up to Symmetry (cont.)",
+        "title": "Extension \u2014 Burnside's Lemma and P\u00f3lya Enumeration: Counting Up to Symmetry",
+        "plain_title": "Extension \u2014 Burnside's Lemma and P\u00f3lya Enumeration: Counting Up to Symmetry",
         "subtitle": "Extension \u2014 Burnside's Lemma and P\u00f3lya Enumeration: Counting Up to Symmetry",
-        "bookmark": "OLY 2 \u2014 Extension \u2014 Burnside's Lemma and P\u00f3lya Enumeration: Counting Up to Symmetry (cont.)"
+        "bookmark": "OLY 2 \u2014 Extension \u2014 Burnside's Lemma and P\u00f3lya Enumeration: Counting Up to Symmetry"
       },
       {
         "no": 3,
         "file": "Olympiad/03.png",
         "id": "OLY-03",
+        "title": "Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families",
+        "plain_title": "Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families",
+        "subtitle": "Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families",
+        "bookmark": "OLY 3 \u2014 Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
         "title": "Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families (cont.)",
         "plain_title": "Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families (cont.)",
         "subtitle": "Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families",
-        "bookmark": "OLY 3 \u2014 Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families (cont.)"
+        "bookmark": "OLY 4 \u2014 Extension \u2014 Partitions, Stirling Numbers, and Extremal Set Families (cont.)"
       }
     ]
   }

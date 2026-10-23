@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Independent numeric verification of Chapter 8 (Permutations & Combinations) claims."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 import math
 from fractions import Fraction as F
 from itertools import permutations, combinations, product as iproduct
@@ -204,6 +210,9 @@ for n, k in [(6, 2), (7, 3), (8, 3)]:
     ekr_max(n, k)
 # Sperner middle layer
 chk(C(6, 3) == 20, "Sperner bound n=6")
+
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    chk(_condition, f"visual lesson: {_name}")
 
 print(f"{N[0] - len(FAILS)}/{N[0]} checks passed")
 if FAILS:
