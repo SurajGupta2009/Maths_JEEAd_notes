@@ -57,9 +57,59 @@ def geometry(spec: dict, width_px: int) -> Image.Image:
                 t = el.get("label_pos", 0.5)
                 q = a + t * direction
                 ax.text(q[0] + el.get("dx", 0.12), q[1] + el.get("dy", 0.16),
-                        el["label"], fontsize=el.get("fontsize", 11.5), color=col,
+                        el["label"], fontsize=el.get("fontsize", spec.get("label_fontsize", 11.5)), color=col,
                         ha=el.get("ha", "left"), va=el.get("va", "bottom"),
                         weight="bold", zorder=z + 1)
+        elif kind in ("ellipse", "parabola", "hyperbola", "rectangular"):
+            centre = np.array(el.get("centre", el.get("center", [0, 0])), dtype=float)
+            if kind == "ellipse":
+                t = np.linspace(0, 2 * np.pi, 600)
+                x = el["a"] * np.cos(t) + centre[0]
+                y = el["b"] * np.sin(t) + centre[1]
+                if el.get("fill"):
+                    ax.fill(x, y, color=el["fill"], alpha=el.get("alpha", 0.25),
+                            zorder=max(z - 1, 0))
+                ax.plot(x, y, color=col, lw=lw, ls=ls, zorder=z)
+            elif kind == "parabola":
+                lo, hi = el.get("trange", [-2.5, 2.5])
+                t = np.linspace(lo, hi, 500)
+                a = el["a"]
+                x0, y0 = a * t * t, 2 * a * t
+                orientation = el.get("orientation", "right")
+                if orientation == "left":
+                    x0 = -x0
+                elif orientation == "up":
+                    x0, y0 = y0, x0
+                elif orientation == "down":
+                    x0, y0 = y0, -x0
+                elif orientation != "right":
+                    raise ValueError(f"unknown parabola orientation: {orientation}")
+                ax.plot(x0 + centre[0], y0 + centre[1], color=col, lw=lw, ls=ls, zorder=z)
+            elif kind == "hyperbola":
+                umax = el.get("umax", 1.15)
+                u = np.linspace(-umax, umax, 400)
+                a, b = el["a"], el["b"]
+                for branch in el.get("branches", [-1, 1]):
+                    x0, y0 = branch * a * np.cosh(u), b * np.sinh(u)
+                    if el.get("orientation", "horizontal") == "vertical":
+                        x0, y0 = b * np.sinh(u), branch * a * np.cosh(u)
+                    ax.plot(x0 + centre[0], y0 + centre[1], color=col, lw=lw, ls=ls, zorder=z)
+            else:
+                lo, hi = el.get("trange", [0.35, 3.0])
+                t = np.linspace(lo, hi, 400)
+                c = el["c"]
+                product_sign = el.get("product_sign", 1)
+                for branch in el.get("branches", [-1, 1]):
+                    x0 = branch * c * t
+                    y0 = product_sign * branch * c / t
+                    ax.plot(x0 + centre[0], y0 + centre[1], color=col, lw=lw, ls=ls, zorder=z)
+        elif kind == "text":
+            x, y = el["at"]
+            ax.text(x, y, el.get("text", el.get("label", "")),
+                    fontsize=el.get("fontsize", spec.get("label_fontsize", 11.5)), color=el.get("color", NAVY),
+                    ha=el.get("ha", "left"), va=el.get("va", "bottom"),
+                    rotation=el.get("rotation", 0), weight=el.get("weight", "bold"),
+                    zorder=z + 3)
         elif kind == "point":
             x, y = el["at"]
             ax.plot([x], [y], "o", ms=el.get("size", 8),
@@ -67,7 +117,7 @@ def geometry(spec: dict, width_px: int) -> Image.Image:
                     markeredgewidth=1.8, zorder=z + 2)
             if el.get("label"):
                 ax.text(x + el.get("dx", 0.14), y + el.get("dy", 0.16), el["label"],
-                        fontsize=el.get("fontsize", 11.5),
+                        fontsize=el.get("fontsize", spec.get("label_fontsize", 11.5)),
                         color=el.get("label_color", NAVY),
                         ha=el.get("ha", "left"), va=el.get("va", "bottom"),
                         weight="bold", zorder=z + 3)
@@ -80,7 +130,7 @@ def geometry(spec: dict, width_px: int) -> Image.Image:
                 angle = np.deg2rad(el.get("label_angle", 45))
                 ax.text(centre[0] + el["r"] * np.cos(angle) + el.get("dx", 0),
                         centre[1] + el["r"] * np.sin(angle) + el.get("dy", 0),
-                        el["label"], fontsize=el.get("fontsize", 11.5), color=col,
+                        el["label"], fontsize=el.get("fontsize", spec.get("label_fontsize", 11.5)), color=col,
                         weight="bold", ha=el.get("ha", "left"),
                         va=el.get("va", "bottom"))
         elif kind == "polygon":
@@ -94,7 +144,7 @@ def geometry(spec: dict, width_px: int) -> Image.Image:
             if el.get("label"):
                 ax.text((a[0] + b[0]) / 2 + el.get("dx", 0.1),
                         (a[1] + b[1]) / 2 + el.get("dy", 0.1), el["label"],
-                        fontsize=el.get("fontsize", 11.5), color=col,
+                        fontsize=el.get("fontsize", spec.get("label_fontsize", 11.5)), color=col,
                         ha=el.get("ha", "left"), weight="bold")
         else:
             raise ValueError(f"unknown geometry element: {kind}")

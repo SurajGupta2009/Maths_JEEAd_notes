@@ -123,6 +123,18 @@ def checks_for(slug: str):
         add("radical axis subtraction", F2(0, 0)-F1(0, 0) == 9 and all(close(F2(Fraction(9, 8), y)-F1(Fraction(9, 8), y), 0) for y in [-2, 0, 3]))
         add("radical axis intersections", all(close(F1(Fraction(9, 8), y), 0) and close(F2(Fraction(9, 8), y), 0) for y in [-math.sqrt(9-Fraction(81, 64)), math.sqrt(9-Fraction(81, 64))]))
         add("two-circle distance classification", abs(3-4) < 4 < 3+4)
+    elif n == 14:
+        P, Q, F, T = (8, 8), (.5, -2), (2, 0), (-2, 3)
+        add("visual parabola focal chord and directrix", P[1]**2 == 8*P[0] and close(Q[1]**2, 8*Q[0]) and close((P[0]-F[0])*(Q[1]-F[1]), (P[1]-F[1])*(Q[0]-F[0])) and 2*T[1]-T[0]-8 == 0 and T[1]+2*T[0]+1 == 0 and T[0] == -2 and .5*(-2) == -1)
+        q = (2*math.sqrt(2), 2*math.sqrt(2)); p = (2*math.sqrt(2), 3/math.sqrt(2)); intercept = 4*math.sqrt(2)
+        add("visual auxiliary circle squash and common tangent intercept", close(q[0]**2+q[1]**2, 16) and close(p[0]**2/16+p[1]**2/9, 1) and close(p[0], q[0]) and close(p[1], .75*q[1]) and close(intercept+0, 4*math.sqrt(2)) and close(3*intercept, 12*math.sqrt(2)))
+        P = (2.5, 1.5*math.sqrt(3)); Q = (65/14, -9*math.sqrt(3)/14); F = (4, 0)
+        dist = lambda A, B: math.hypot(A[0]-B[0], A[1]-B[1])
+        add("visual exact ellipse focal chord", close(P[0]**2/25+P[1]**2/9, 1) and close(Q[0]**2/25+Q[1]**2/9, 1) and close(dist(P, F), 3) and close(dist(Q, F), 9/7) and close((P[0]-4)*(Q[1]), (P[1])*(Q[0]-4)) and close(1/3+7/9, 10/9))
+        R = (-10/3, -4)
+        add("visual asymptote-parallel single intersection", close(R[0]**2/4-R[1]**2/9, 1) and close(R[1], 1.5*R[0]+1) and close(R[1]-1.5*R[0], 1))
+        P, Q, R = (4, 3), (4, 0), (0, 3)
+        add("visual pole-polar and chord of contact", all(close(X[0]**2/16+X[1]**2/9, 1) and close(3*X[0]+4*X[1], 12) for X in [Q, R]) and P[0] == Q[0] and P[1] == R[1])
     else:
         raise ValueError(f"no visual checks registered for {slug}")
     return out

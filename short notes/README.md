@@ -18,7 +18,7 @@ Algebra, Matrices, Probability & Statistics, Trigonometry, Analytical Geometry
 22 study chapters in prerequisite order. Every official bullet maps into
 exactly one chapter.
 
-For the 2026 second-pass coverage and page-flow review of delivered chapters 1–13, see [`REVIEW-AND-REORDER-AUDIT.md`](REVIEW-AND-REORDER-AUDIT.md).
+For the 2026 second-pass coverage and page-flow review of delivered chapters 1–13, see [`REVIEW-AND-REORDER-AUDIT.md`](REVIEW-AND-REORDER-AUDIT.md). For the complete Chapter 14–22 request queue and current status, see [`CHAPTER-QUEUE.md`](CHAPTER-QUEUE.md).
 
 | # | Chapter (slug) | Official unit(s) | Status |
 |---|---|---|---|
@@ -35,7 +35,7 @@ For the 2026 second-pass coverage and page-flow review of delivered chapters 1�
 | 11 | **Probability & Statistics** (`11-probability-and-statistics`) | Probability and Statistics | ✅ **delivered** — 15 JEE + 4 Olympiad sheets |
 | 12 | **Straight Lines & Locus** (`12-straight-lines-and-locus`) | Analytical Geometry 2D (lines, triangle centres, locus tools) | ✅ **delivered** — 17 JEE + 3 Olympiad sheets |
 | 13 | **Circles** (`13-circles`) | Analytical Geometry 2D (circle) | ✅ **delivered** — 15 JEE + 4 Olympiad sheets |
-| 14 | Conic Sections (`14-conic-sections`) | Analytical Geometry 2D (parabola, ellipse, hyperbola) | ⏳ pending |
+| 14 | **Conic Sections** (`14-conic-sections`) | Analytical Geometry 2D (parabola, ellipse, hyperbola) | ✅ **delivered** — 29 JEE + 6 Olympiad sheets |
 | 15 | Vectors (`15-vectors`) | Vectors | ⏳ pending |
 | 16 | Three-Dimensional Geometry (`16-three-dimensional-geometry`) | Analytical Geometry 3D | ⏳ pending |
 | 17 | Limits & Continuity (`17-limits-and-continuity`) | Differential Calculus (limits, continuity, L'Hospital, IVT) | ⏳ pending |
@@ -45,13 +45,13 @@ For the 2026 second-pass coverage and page-flow review of delivered chapters 1�
 | 21 | Definite Integration & Areas (`21-definite-integration-and-areas`) | Integral Calculus (limit of sums, FTC, properties, area) | ⏳ pending |
 | 22 | Differential Equations (`22-differential-equations`) | Integral Calculus (formation, homogeneous 1st order, separation, linear 1st order) | ⏳ pending |
 
-Chapters 14–22 are **pending**. Chapters 1–13 are delivered in the expanded,
-single-stream format: **253 JEE + 81 Olympiad = 334 sheets**. Repo vault notes (`notes/`) are the primary source
+Chapters 15–22 are **pending**. Chapters 1–14 are delivered in the expanded,
+single-stream format: **282 JEE + 87 Olympiad = 369 sheets**. Repo vault notes (`notes/`) are the primary source
 wherever they cover a chapter; source coverage and missing material are
 documented chapter by chapter in each `SOURCE-AUDIT.md`. Chapters 12–13 draw
-on `notes/Coordinate-Geometry-Lines-and-Circles/`; Chapter 3 draws on
-`notes/Trigonometry/`. Chapter 2 has **no** vault source module (disclosed in
-its audit).
+on `notes/Coordinate-Geometry-Lines-and-Circles/`; Chapter 14 draws on
+`notes/Conic-Sections/`; Chapter 3 draws on `notes/Trigonometry/`. Chapter 2
+has **no** vault source module (disclosed in its audit).
 
 ## Per-chapter deliverables (as in Chapter 1)
 
