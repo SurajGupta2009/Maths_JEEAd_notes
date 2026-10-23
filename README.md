@@ -57,6 +57,8 @@ Print-ready handwritten-style summary sheets live in [`short notes/`](short%20no
 - **Complete: Chapter 7 — Sequences & Series** → [`short notes/07-sequences-and-series/`](short%20notes/07-sequences-and-series/README.md) (5 JEE + 3 Olympiad sheets)
 - **Complete: Chapter 8 — Permutations & Combinations** → [`short notes/08-permutations-and-combinations/`](short%20notes/08-permutations-and-combinations/README.md) (7 JEE + 3 Olympiad sheets)
 - **Complete: Chapter 9 — Binomial Theorem** → [`short notes/09-binomial-theorem/`](short%20notes/09-binomial-theorem/README.md) (4 JEE + 2 Olympiad sheets)
+- **Complete: Chapter 10 — Matrices & Determinants** → [`short notes/10-matrices-and-determinants/`](short%20notes/10-matrices-and-determinants/README.md) (4 JEE + 2 Olympiad sheets)
+- **Complete: Chapter 11 — Probability & Statistics** → [`short notes/11-probability-and-statistics/`](short%20notes/11-probability-and-statistics/README.md) (5 JEE + 2 Olympiad sheets)
 - The [`short notes/README.md`](short%20notes/README.md) master list tracks the planned 22-chapter build and which vault modules supply the prose.
 
 ## Modules

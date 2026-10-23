@@ -1,0 +1,15 @@
+PRINTING — Chapter 11: Probability & Statistics
+=================================================
+
+Sheets: 2480 × 3508 px portrait, nominal 300 DPI, A4 aspect. Print exactly
+one PNG sheet on each A4 portrait page.
+
+Recommended: use exports/11-probability-and-statistics-combined.pdf
+(JEE sheets first, followed by Olympiad extensions). Separate PDFs:
+  exports/11-probability-and-statistics-JEE.pdf
+  exports/11-probability-and-statistics-Olympiad-extensions.pdf
+
+Print settings: A4, Portrait, one page per sheet, scaling “Fit” or “Fit to
+printable area”. Do NOT use Fill, Crop, or Actual Size if it clips the margins.
+The PNG ZIPs are named *-JEE-sheets.zip, *-Olympiad-sheets.zip, and
+*-combined-sheets.zip. PDFs contain bookmarks by part and sheet.

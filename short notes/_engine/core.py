@@ -150,6 +150,87 @@ def rgb_hex(c: tuple) -> str:
 _math_cache: dict[tuple, Image.Image] = {}
 
 
+
+# ---- matrices (mathtext has no array environments) -------------------------
+import re as _re
+
+_MAT_RE = _re.compile(r"\\begin\{(pmatrix|bmatrix|vmatrix|matrix)\}(.*?)\\end\{\1\}", _re.S)
+
+
+def _matrix_image(kind: str, body: str, pt: float, color: str) -> Image.Image:
+    rows = [r.split("&") for r in body.split(r"\\") if r.strip() or "&" in r]
+    ncol = max(len(r) for r in rows)
+    cells = []
+    for r in rows:
+        r = r + [""] * (ncol - len(r))
+        cells.append([math_image(c.strip(), pt=pt, color=color) if c.strip()
+                      else Image.new("RGBA", (2, 2), (0, 0, 0, 0)) for c in r])
+    scale = pt * PX_PER_PT
+    pad_x, pad_y = int(scale * 0.42), int(scale * 0.20)
+    col_w = [max(cells[i][j].width for i in range(len(rows))) for j in range(ncol)]
+    row_h = [max(cells[i][j].height for j in range(ncol)) for i in range(len(rows))]
+    grid_w = sum(col_w) + pad_x * (ncol + 1)
+    grid_h = sum(row_h) + pad_y * (len(rows) + 1)
+    brack_w = 0 if kind == "matrix" else int(scale * 0.55)
+    img = Image.new("RGBA", (grid_w + 2 * brack_w, grid_h), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(img)
+    rgb = tuple(int(color[i:i + 2], 16) for i in (1, 3, 5)) + (255,)
+    y = pad_y
+    for i in range(len(rows)):
+        x = brack_w + pad_x
+        for j in range(ncol):
+            c = cells[i][j]
+            if c.width > 2:
+                img.alpha_composite(c, (x + (col_w[j] - c.width) // 2,
+                                        y + (row_h[i] - c.height) // 2))
+            x += col_w[j] + pad_x
+        y += row_h[i] + pad_y
+    lw = max(3, int(scale * 0.09))
+    if kind in ("pmatrix", "bmatrix", "vmatrix"):
+        for side in (0, 1):
+            bx = lw if side == 0 else img.width - lw
+            if kind == "vmatrix":
+                draw.line([(bx, 2), (bx, img.height - 3)], fill=rgb, width=lw)
+            elif kind == "bmatrix":
+                draw.line([(bx, 2), (bx, img.height - 3)], fill=rgb, width=lw)
+                ex = bx + (brack_w * 0.55 if side == 0 else -brack_w * 0.55)
+                draw.line([(bx, 2), (ex, 2)], fill=rgb, width=lw)
+                draw.line([(bx, img.height - 3), (ex, img.height - 3)], fill=rgb, width=lw)
+            else:  # pmatrix: stretched parenthesis glyph
+                ch = "(" if side == 0 else ")"
+                f = get_font(FALLBACK, 100)
+                tmp = Image.new("RGBA", (60, 100), (0, 0, 0, 0))
+                ImageDraw.Draw(tmp).text((0, -12), ch, font=f, fill=rgb)
+                tmp = tmp.crop(tmp.getbbox())
+                tmp = tmp.resize((brack_w, img.height), Image.LANCZOS)
+                img.alpha_composite(tmp, (0 if side == 0 else img.width - brack_w, 0))
+    return img
+
+
+def _math_with_matrices(body: str, pt: float, color: str, display: bool) -> Image.Image:
+    parts, pos = [], 0
+    for m in _MAT_RE.finditer(body):
+        if m.start() > pos and body[pos:m.start()].strip(" ,"):
+            parts.append(math_image(body[pos:m.start()], pt=pt, color=color, display=display))
+        elif m.start() > pos:
+            parts.append(math_image(body[pos:m.start()], pt=pt, color=color, display=display))
+        parts.append(_matrix_image(m.group(1), m.group(2), pt, color))
+        pos = m.end()
+    if pos < len(body) and body[pos:].strip():
+        parts.append(math_image(body[pos:], pt=pt, color=color, display=display))
+    if not parts:
+        return Image.new("RGBA", (2, 2), (0, 0, 0, 0))
+    if len(parts) == 1:
+        return parts[0]
+    h = max(p.height for p in parts)
+    img = Image.new("RGBA", (sum(p.width for p in parts), h), (0, 0, 0, 0))
+    x = 0
+    for p in parts:
+        img.alpha_composite(p, (x, (h - p.height) // 2))
+        x += p.width
+    return img
+
+
 def math_image(tex: str, pt: float = 11.5, color: str = "#16295C",
                display: bool = False) -> Image.Image:
     """Render LaTeX-ish math via matplotlib mathtext to a tight RGBA image."""
@@ -165,6 +246,8 @@ def math_image(tex: str, pt: float = 11.5, color: str = "#16295C",
         body = body[1:]
     while body.endswith("$"):
         body = body[:-1]
+    if "\\begin{" in body:
+        return _math_with_matrices(body, pt, color, display)
     body = "$" + body.strip() + "$"
 
     fig = plt.figure(figsize=(1, 1), dpi=DPI)
@@ -201,6 +284,18 @@ def math_check(tex: str, pt: float = 11.5) -> bool:
     from matplotlib import mathtext
 
     body = tex.strip()
+    if "\\begin{" in body:
+        inner = body.strip("$")
+        pos = 0
+        for m in _MAT_RE.finditer(inner):
+            if inner[pos:m.start()].strip(" ,") and not math_check(inner[pos:m.start()], pt):
+                return False
+            for row in m.group(2).split(r"\\"):
+                for cell in row.split("&"):
+                    if cell.strip() and not math_check(cell.strip(), pt):
+                        return False
+            pos = m.end()
+        return math_check(inner[pos:], pt) if inner[pos:].strip(" ,") else True
     if not body.startswith("$"):
         body = "$" + body + "$"
     try:
