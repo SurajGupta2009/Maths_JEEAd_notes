@@ -1,0 +1,324 @@
+{
+  "chapter": "14-conic-sections",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "The Conic Family \u2014 Focus, Directrix and Eccentricity",
+        "plain_title": "The Conic Family \u2014 Focus, Directrix and Eccentricity",
+        "subtitle": "The Conic Family \u2014 Focus, Directrix and Eccentricity",
+        "bookmark": "JEE 1 \u2014 The Conic Family \u2014 Focus, Directrix and Eccentricity"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "The Conic Family \u2014 Focus, Directrix and Eccentricity (cont.)",
+        "plain_title": "The Conic Family \u2014 Focus, Directrix and Eccentricity (cont.)",
+        "subtitle": "The Conic Family \u2014 Focus, Directrix and Eccentricity",
+        "bookmark": "JEE 2 \u2014 The Conic Family \u2014 Focus, Directrix and Eccentricity (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "The Conic Family \u2014 Focus, Directrix and Eccentricity (cont.)",
+        "plain_title": "The Conic Family \u2014 Focus, Directrix and Eccentricity (cont.)",
+        "subtitle": "The Conic Family \u2014 Focus, Directrix and Eccentricity",
+        "bookmark": "JEE 3 \u2014 The Conic Family \u2014 Focus, Directrix and Eccentricity (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Parabola \u2014 Anatomy, Parameters and Focal Chords",
+        "plain_title": "Parabola \u2014 Anatomy, Parameters and Focal Chords",
+        "subtitle": "Parabola \u2014 Anatomy, Parameters and Focal Chords",
+        "bookmark": "JEE 4 \u2014 Parabola \u2014 Anatomy, Parameters and Focal Chords"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Parabola \u2014 Anatomy, Parameters and Focal Chords (cont.)",
+        "plain_title": "Parabola \u2014 Anatomy, Parameters and Focal Chords (cont.)",
+        "subtitle": "Parabola \u2014 Anatomy, Parameters and Focal Chords",
+        "bookmark": "JEE 5 \u2014 Parabola \u2014 Anatomy, Parameters and Focal Chords (cont.)"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Parabola \u2014 Anatomy, Parameters and Focal Chords (cont.)",
+        "plain_title": "Parabola \u2014 Anatomy, Parameters and Focal Chords (cont.)",
+        "subtitle": "Parabola \u2014 Anatomy, Parameters and Focal Chords",
+        "bookmark": "JEE 6 \u2014 Parabola \u2014 Anatomy, Parameters and Focal Chords (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Parabola \u2014 Tangents, Normals and Reflection",
+        "plain_title": "Parabola \u2014 Tangents, Normals and Reflection",
+        "subtitle": "Parabola \u2014 Tangents, Normals and Reflection",
+        "bookmark": "JEE 7 \u2014 Parabola \u2014 Tangents, Normals and Reflection"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Parabola \u2014 Tangents, Normals and Reflection (cont.)",
+        "plain_title": "Parabola \u2014 Tangents, Normals and Reflection (cont.)",
+        "subtitle": "Parabola \u2014 Tangents, Normals and Reflection",
+        "bookmark": "JEE 8 \u2014 Parabola \u2014 Tangents, Normals and Reflection (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Parabola \u2014 Tangents, Normals and Reflection (cont.)",
+        "plain_title": "Parabola \u2014 Tangents, Normals and Reflection (cont.)",
+        "subtitle": "Parabola \u2014 Tangents, Normals and Reflection",
+        "bookmark": "JEE 9 \u2014 Parabola \u2014 Tangents, Normals and Reflection (cont.)"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Ellipse \u2014 Focal Geometry and the Eccentric Angle",
+        "plain_title": "Ellipse \u2014 Focal Geometry and the Eccentric Angle",
+        "subtitle": "Ellipse \u2014 Focal Geometry and the Eccentric Angle",
+        "bookmark": "JEE 10 \u2014 Ellipse \u2014 Focal Geometry and the Eccentric Angle"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Ellipse \u2014 Focal Geometry and the Eccentric Angle (cont.)",
+        "plain_title": "Ellipse \u2014 Focal Geometry and the Eccentric Angle (cont.)",
+        "subtitle": "Ellipse \u2014 Focal Geometry and the Eccentric Angle",
+        "bookmark": "JEE 11 \u2014 Ellipse \u2014 Focal Geometry and the Eccentric Angle (cont.)"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "Ellipse \u2014 Tangents, Focal Chords and Director Circle",
+        "plain_title": "Ellipse \u2014 Tangents, Focal Chords and Director Circle",
+        "subtitle": "Ellipse \u2014 Tangents, Focal Chords and Director Circle",
+        "bookmark": "JEE 12 \u2014 Ellipse \u2014 Tangents, Focal Chords and Director Circle"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Ellipse \u2014 Tangents, Focal Chords and Director Circle (cont.)",
+        "plain_title": "Ellipse \u2014 Tangents, Focal Chords and Director Circle (cont.)",
+        "subtitle": "Ellipse \u2014 Tangents, Focal Chords and Director Circle",
+        "bookmark": "JEE 13 \u2014 Ellipse \u2014 Tangents, Focal Chords and Director Circle (cont.)"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Reflection explains the foci",
+        "plain_title": "Reflection explains the foci",
+        "subtitle": "Ellipse \u2014 Tangents, Focal Chords and Director Circle",
+        "bookmark": "JEE 14 \u2014 Reflection explains the foci"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Hyperbola \u2014 Branches, Asymptotes and Conjugate",
+        "plain_title": "Hyperbola \u2014 Branches, Asymptotes and Conjugate",
+        "subtitle": "Hyperbola \u2014 Branches, Asymptotes and Conjugate",
+        "bookmark": "JEE 15 \u2014 Hyperbola \u2014 Branches, Asymptotes and Conjugate"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Hyperbola \u2014 Branches, Asymptotes and Conjugate (cont.)",
+        "plain_title": "Hyperbola \u2014 Branches, Asymptotes and Conjugate (cont.)",
+        "subtitle": "Hyperbola \u2014 Branches, Asymptotes and Conjugate",
+        "bookmark": "JEE 16 \u2014 Hyperbola \u2014 Branches, Asymptotes and Conjugate (cont.)"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Hyperbola \u2014 Branches, Asymptotes and Conjugate (cont.)",
+        "plain_title": "Hyperbola \u2014 Branches, Asymptotes and Conjugate (cont.)",
+        "subtitle": "Hyperbola \u2014 Branches, Asymptotes and Conjugate",
+        "bookmark": "JEE 17 \u2014 Hyperbola \u2014 Branches, Asymptotes and Conjugate (cont.)"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "Hyperbola \u2014 Tangents, Normals and the Rectangular Form",
+        "plain_title": "Hyperbola \u2014 Tangents, Normals and the Rectangular Form",
+        "subtitle": "Hyperbola \u2014 Tangents, Normals and the Rectangular Form",
+        "bookmark": "JEE 18 \u2014 Hyperbola \u2014 Tangents, Normals and the Rectangular Form"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "Hyperbola \u2014 Tangents, Normals and the Rectangular Form (cont.)",
+        "plain_title": "Hyperbola \u2014 Tangents, Normals and the Rectangular Form (cont.)",
+        "subtitle": "Hyperbola \u2014 Tangents, Normals and the Rectangular Form",
+        "bookmark": "JEE 19 \u2014 Hyperbola \u2014 Tangents, Normals and the Rectangular Form (cont.)"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "The Unified Toolkit \u2014 Tangents, Contacts and Midpoint Chords",
+        "plain_title": "The Unified Toolkit \u2014 Tangents, Contacts and Midpoint Chords",
+        "subtitle": "The Unified Toolkit \u2014 Tangents, Contacts and Midpoint Chords",
+        "bookmark": "JEE 20 \u2014 The Unified Toolkit \u2014 Tangents, Contacts and Midpoint Chords"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
+        "title": "The Unified Toolkit \u2014 Tangents, Contacts and Midpoint Chords (cont.)",
+        "plain_title": "The Unified Toolkit \u2014 Tangents, Contacts and Midpoint Chords (cont.)",
+        "subtitle": "The Unified Toolkit \u2014 Tangents, Contacts and Midpoint Chords",
+        "bookmark": "JEE 21 \u2014 The Unified Toolkit \u2014 Tangents, Contacts and Midpoint Chords (cont.)"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "Pole, Polar and Mixed Conic Strategy",
+        "plain_title": "Pole, Polar and Mixed Conic Strategy",
+        "subtitle": "Pole, Polar and Mixed Conic Strategy",
+        "bookmark": "JEE 22 \u2014 Pole, Polar and Mixed Conic Strategy"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "Pole, Polar and Mixed Conic Strategy (cont.)",
+        "plain_title": "Pole, Polar and Mixed Conic Strategy (cont.)",
+        "subtitle": "Pole, Polar and Mixed Conic Strategy",
+        "bookmark": "JEE 23 \u2014 Pole, Polar and Mixed Conic Strategy (cont.)"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "Visual Conic Lab \u2014 Focal Chords, Parameters, Asymptotes and Polars",
+        "plain_title": "Visual Conic Lab \u2014 Focal Chords, Parameters, Asymptotes and Polars",
+        "subtitle": "Visual Conic Lab \u2014 Focal Chords, Parameters, Asymptotes and Polars",
+        "bookmark": "JEE 24 \u2014 Visual Conic Lab \u2014 Focal Chords, Parameters, Asymptotes and Polars"
+      },
+      {
+        "no": 25,
+        "file": "JEE/25.png",
+        "id": "JEE-25",
+        "title": "The eccentric angle is seen on the auxiliary circle",
+        "plain_title": "The eccentric angle is seen on the auxiliary circle",
+        "subtitle": "Visual Conic Lab \u2014 Focal Chords, Parameters, Asymptotes and Polars",
+        "bookmark": "JEE 25 \u2014 The eccentric angle is seen on the auxiliary circle"
+      },
+      {
+        "no": 26,
+        "file": "JEE/26.png",
+        "id": "JEE-26",
+        "title": "A focal chord can be checked exactly, not approximately",
+        "plain_title": "A focal chord can be checked exactly, not approximately",
+        "subtitle": "Visual Conic Lab \u2014 Focal Chords, Parameters, Asymptotes and Polars",
+        "bookmark": "JEE 26 \u2014 A focal chord can be checked exactly, not approximately"
+      },
+      {
+        "no": 27,
+        "file": "JEE/27.png",
+        "id": "JEE-27",
+        "title": "Parallel to an asymptote means one finite intersection",
+        "plain_title": "Parallel to an asymptote means one finite intersection",
+        "subtitle": "Visual Conic Lab \u2014 Focal Chords, Parameters, Asymptotes and Polars",
+        "bookmark": "JEE 27 \u2014 Parallel to an asymptote means one finite intersection"
+      },
+      {
+        "no": 28,
+        "file": "JEE/28.png",
+        "id": "JEE-28",
+        "title": "Pole and polar preserve incidence",
+        "plain_title": "Pole and polar preserve incidence",
+        "subtitle": "Visual Conic Lab \u2014 Focal Chords, Parameters, Asymptotes and Polars",
+        "bookmark": "JEE 28 \u2014 Pole and polar preserve incidence"
+      },
+      {
+        "no": 29,
+        "file": "JEE/29.png",
+        "id": "JEE-29",
+        "title": "Visual conic strategy",
+        "plain_title": "Visual conic strategy",
+        "subtitle": "Visual Conic Lab \u2014 Focal Chords, Parameters, Asymptotes and Polars",
+        "bookmark": "JEE 29 \u2014 Visual conic strategy"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Extension I \u2014 Reflection Properties and Confocal Conics",
+        "plain_title": "Extension I \u2014 Reflection Properties and Confocal Conics",
+        "subtitle": "Extension I \u2014 Reflection Properties and Confocal Conics",
+        "bookmark": "OLY 1 \u2014 Extension I \u2014 Reflection Properties and Confocal Conics"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Extension I \u2014 Reflection Properties and Confocal Conics (cont.)",
+        "plain_title": "Extension I \u2014 Reflection Properties and Confocal Conics (cont.)",
+        "subtitle": "Extension I \u2014 Reflection Properties and Confocal Conics",
+        "bookmark": "OLY 2 \u2014 Extension I \u2014 Reflection Properties and Confocal Conics (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Extension II \u2014 Rectangular Hyperbola and Triangle Geometry",
+        "plain_title": "Extension II \u2014 Rectangular Hyperbola and Triangle Geometry",
+        "subtitle": "Extension II \u2014 Rectangular Hyperbola and Triangle Geometry",
+        "bookmark": "OLY 3 \u2014 Extension II \u2014 Rectangular Hyperbola and Triangle Geometry"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Extension II \u2014 Rectangular Hyperbola and Triangle Geometry (cont.)",
+        "plain_title": "Extension II \u2014 Rectangular Hyperbola and Triangle Geometry (cont.)",
+        "subtitle": "Extension II \u2014 Rectangular Hyperbola and Triangle Geometry",
+        "bookmark": "OLY 4 \u2014 Extension II \u2014 Rectangular Hyperbola and Triangle Geometry (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Extension III \u2014 The General Second-Degree Conic",
+        "plain_title": "Extension III \u2014 The General Second-Degree Conic",
+        "subtitle": "Extension III \u2014 The General Second-Degree Conic",
+        "bookmark": "OLY 5 \u2014 Extension III \u2014 The General Second-Degree Conic"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Extension III \u2014 The General Second-Degree Conic (cont.)",
+        "plain_title": "Extension III \u2014 The General Second-Degree Conic (cont.)",
+        "subtitle": "Extension III \u2014 The General Second-Degree Conic",
+        "bookmark": "OLY 6 \u2014 Extension III \u2014 The General Second-Degree Conic (cont.)"
+      }
+    ]
+  }
+}
