@@ -154,7 +154,7 @@ def geometry(spec: dict, width_px: int) -> Image.Image:
 
 
 def vector3d(spec: dict, width_px: int) -> Image.Image:
-    """Editable three-dimensional vectors, polygons and parallelepipeds."""
+    """Editable 3D vectors, planes, spheres, circles and parallelepipeds."""
     from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
     fig, base = _mkfig(width_px, int(width_px * spec.get("ratio", 0.70)))
@@ -231,6 +231,61 @@ def vector3d(spec: dict, width_px: int) -> Image.Image:
                         ls=el.get("ls", "-"), alpha=el.get("edge_alpha", 0.85), zorder=4)
             if el.get("label"):
                 label(el.get("label_at", np.mean(p, axis=0)), el["label"], el, col)
+        elif kind == "plane":
+            c = vec(el.get("centre", [0, 0, 0]))
+            u, v = vec(el["u"]), vec(el["v"])
+            points = [c-u-v, c+u-v, c+u+v, c-u+v]
+            poly = Poly3DCollection([points], facecolors=el.get("fill", "#DCEFED"),
+                                    edgecolors=col, linewidths=lw,
+                                    alpha=el.get("alpha", 0.20), zorder=el.get("z", 2))
+            ax.add_collection3d(poly)
+            if el.get("label"):
+                label(el.get("label_at", c), el["label"], el, col)
+        elif kind == "sphere":
+            c = vec(el.get("centre", [0, 0, 0]))
+            radius = float(el["r"])
+            if radius <= 0:
+                raise ValueError("vector3d sphere radius must be positive")
+            us = np.linspace(0, 2*np.pi, el.get("longitude_steps", 32))
+            vs = np.linspace(0, np.pi, el.get("latitude_steps", 18))
+            xs = c[0] + radius*np.outer(np.cos(us), np.sin(vs))
+            ys = c[1] + radius*np.outer(np.sin(us), np.sin(vs))
+            zs = c[2] + radius*np.outer(np.ones_like(us), np.cos(vs))
+            ax.plot_surface(xs, ys, zs, color=el.get("fill", "#DCEFED"),
+                            alpha=el.get("alpha", 0.12), linewidth=0,
+                            antialiased=True, shade=False, zorder=el.get("z", 1))
+            if el.get("wireframe", True):
+                ax.plot_wireframe(xs, ys, zs, rstride=el.get("rstride", 3),
+                                  cstride=el.get("cstride", 4), color=col,
+                                  lw=el.get("wire_lw", 0.45),
+                                  alpha=el.get("wire_alpha", 0.35), zorder=el.get("z", 1))
+            if el.get("label"):
+                label(el.get("label_at", c+np.array([0, 0, radius])), el["label"], el, col)
+        elif kind == "circle3d":
+            c = vec(el.get("centre", [0, 0, 0]))
+            radius = float(el["r"])
+            if radius <= 0:
+                raise ValueError("vector3d circle radius must be positive")
+            if "u" in el and "v" in el:
+                u, v = vec(el["u"]), vec(el["v"])
+                u = u/np.linalg.norm(u)
+                v = v/np.linalg.norm(v)
+                if not np.isclose(np.dot(u, v), 0):
+                    raise ValueError("vector3d circle basis vectors must be perpendicular")
+            else:
+                normal = vec(el.get("normal", [0, 0, 1]))
+                normal = normal/np.linalg.norm(normal)
+                helper = np.array([1.0, 0, 0]) if abs(normal[0]) < 0.8 else np.array([0.0, 1.0, 0])
+                u = np.cross(normal, helper); u = u/np.linalg.norm(u)
+                v = np.cross(normal, u)
+            ts = np.linspace(np.deg2rad(el.get("tstart", 0)),
+                             np.deg2rad(el.get("tend", 360)), el.get("steps", 100))
+            points = c + radius*(np.outer(np.cos(ts), u)+np.outer(np.sin(ts), v))
+            ax.plot(*points.T, color=col, lw=lw, ls=el.get("ls", "-"),
+                    alpha=el.get("line_alpha", 1.0), zorder=el.get("z", 6))
+            if el.get("label"):
+                tm = np.deg2rad(el.get("label_angle", (el.get("tstart", 0)+el.get("tend", 360))/2))
+                label(el.get("label_at", c+radius*(np.cos(tm)*u+np.sin(tm)*v)), el["label"], el, col)
         elif kind == "text":
             label(el["at"], el.get("text", ""), el, el.get("color", NAVY))
         else:
