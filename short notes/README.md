@@ -29,8 +29,8 @@ exactly one chapter.
 | 7 | **Sequences & Series** (`07-sequences-and-series`) | Algebra (AP, GP, AM, GM, special sums) | ✅ **delivered** — 5 JEE + 3 Olympiad sheets |
 | 8 | **Permutations & Combinations** (`08-permutations-and-combinations`) | Algebra (P&C) | ✅ **delivered** — 7 JEE + 3 Olympiad sheets |
 | 9 | **Binomial Theorem** (`09-binomial-theorem`) | Algebra (binomial theorem, positive integral index) | ✅ **delivered** — 4 JEE + 2 Olympiad sheets |
-| 10 | Matrices & Determinants (`10-matrices-and-determinants`) | Matrices | ⏳ pending |
-| 11 | Probability & Statistics (`11-probability-and-statistics`) | Probability and Statistics | ⏳ pending |
+| 10 | **Matrices & Determinants** (`10-matrices-and-determinants`) | Matrices | ✅ **delivered** — 4 JEE + 2 Olympiad sheets |
+| 11 | **Probability & Statistics** (`11-probability-and-statistics`) | Probability and Statistics | ✅ **delivered** — 5 JEE + 2 Olympiad sheets |
 | 12 | Straight Lines & Locus (`12-straight-lines-and-locus`) | Analytical Geometry 2D (lines, triangle centres, locus) | ⏳ pending |
 | 13 | Circles (`13-circles`) | Analytical Geometry 2D (circle) | ⏳ pending |
 | 14 | Conic Sections (`14-conic-sections`) | Analytical Geometry 2D (parabola, ellipse, hyperbola) | ⏳ pending |
@@ -43,7 +43,7 @@ exactly one chapter.
 | 21 | Definite Integration & Areas (`21-definite-integration-and-areas`) | Integral Calculus (limit of sums, FTC, properties, area) | ⏳ pending |
 | 22 | Differential Equations (`22-differential-equations`) | Integral Calculus (formation, homogeneous 1st order, separation, linear 1st order) | ⏳ pending |
 
-Chapters 4–22 are **pending** — they will be authored one by one in exactly
+Chapters 12–22 are **pending** — they will be authored one by one in exactly
 the Chapter-1 format. Repo vault notes (`notes/`) are the primary source
 wherever they cover a chapter (they cover 15 of these + extra olympiad
 machinery); missing coverage is authored from the official syllabus and

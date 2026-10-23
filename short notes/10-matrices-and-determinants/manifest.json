@@ -1,0 +1,63 @@
+{
+  "chapter": "10-matrices-and-determinants",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Matrix Language \u2014 Shapes, Operations, Transpose",
+        "plain_title": "Matrix Language \u2014 Shapes, Operations, Transpose",
+        "subtitle": "Matrix Language \u2014 Shapes, Operations, Transpose",
+        "bookmark": "JEE 1 \u2014 Matrix Language \u2014 Shapes, Operations, Transpose"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Determinants \u2014 Cofactors & Rules (cont.)",
+        "plain_title": "Determinants \u2014 Cofactors & Rules (cont.)",
+        "subtitle": "Determinants \u2014 Cofactors & Rules",
+        "bookmark": "JEE 2 \u2014 Determinants \u2014 Cofactors & Rules (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Adjoint & Inverse \u2014 The Reversible Case (cont.)",
+        "plain_title": "Adjoint & Inverse \u2014 The Reversible Case (cont.)",
+        "subtitle": "Adjoint & Inverse \u2014 The Reversible Case",
+        "bookmark": "JEE 3 \u2014 Adjoint & Inverse \u2014 The Reversible Case (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Linear Systems \u2014 Cramer & Consistency (cont.)",
+        "plain_title": "Linear Systems \u2014 Cramer & Consistency (cont.)",
+        "subtitle": "Linear Systems \u2014 Cramer & Consistency",
+        "bookmark": "JEE 4 \u2014 Linear Systems \u2014 Cramer & Consistency (cont.)"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Cayley\u2013Hamilton \u2014 Reduce Every Power",
+        "plain_title": "Cayley\u2013Hamilton \u2014 Reduce Every Power",
+        "subtitle": "Cayley\u2013Hamilton \u2014 Reduce Every Power",
+        "bookmark": "OLY 1 \u2014 Cayley\u2013Hamilton \u2014 Reduce Every Power"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Determinant Geometry \u2014 Bounds and Updates (cont.)",
+        "plain_title": "Determinant Geometry \u2014 Bounds and Updates (cont.)",
+        "subtitle": "Determinant Geometry \u2014 Bounds and Updates",
+        "bookmark": "OLY 2 \u2014 Determinant Geometry \u2014 Bounds and Updates (cont.)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "chapter": "11-probability-and-statistics",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Probability Foundations \u2014 Spaces, Events, Complements",
+        "plain_title": "Probability Foundations \u2014 Spaces, Events, Complements",
+        "subtitle": "Probability Foundations \u2014 Spaces, Events, Complements",
+        "bookmark": "JEE 1 \u2014 Probability Foundations \u2014 Spaces, Events, Complements"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Addition Rule, Counting, Conditional Probability (cont.)",
+        "plain_title": "Addition Rule, Counting, Conditional Probability (cont.)",
+        "subtitle": "Addition Rule, Counting, Conditional Probability",
+        "bookmark": "JEE 2 \u2014 Addition Rule, Counting, Conditional Probability (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Random Variables \u2014 Mean and Variance (cont.)",
+        "plain_title": "Random Variables \u2014 Mean and Variance (cont.)",
+        "subtitle": "Random Variables \u2014 Mean and Variance",
+        "bookmark": "JEE 3 \u2014 Random Variables \u2014 Mean and Variance (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Descriptive Statistics I \u2014 Centre & Deviation (cont.)",
+        "plain_title": "Descriptive Statistics I \u2014 Centre & Deviation (cont.)",
+        "subtitle": "Descriptive Statistics I \u2014 Centre & Deviation",
+        "bookmark": "JEE 4 \u2014 Descriptive Statistics I \u2014 Centre & Deviation (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Descriptive Statistics II \u2014 Spread & Grouping (cont.)",
+        "plain_title": "Descriptive Statistics II \u2014 Spread & Grouping (cont.)",
+        "subtitle": "Descriptive Statistics II \u2014 Spread & Grouping",
+        "bookmark": "JEE 5 \u2014 Descriptive Statistics II \u2014 Spread & Grouping (cont.)"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Geometric Probability, Ballot, Birthday",
+        "plain_title": "Geometric Probability, Ballot, Birthday",
+        "subtitle": "Geometric Probability, Ballot, Birthday",
+        "bookmark": "OLY 1 \u2014 Geometric Probability, Ballot, Birthday"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Gambler's Ruin, Derangements, Averaging (cont.)",
+        "plain_title": "Gambler's Ruin, Derangements, Averaging (cont.)",
+        "subtitle": "Gambler's Ruin, Derangements, Averaging",
+        "bookmark": "OLY 2 \u2014 Gambler's Ruin, Derangements, Averaging (cont.)"
+      }
+    ]
+  }
+}
