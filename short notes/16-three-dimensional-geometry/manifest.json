@@ -1,0 +1,351 @@
+{
+  "chapter": "16-three-dimensional-geometry",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Coordinates and Direction in Space",
+        "plain_title": "Coordinates and Direction in Space",
+        "subtitle": "Coordinates and Direction in Space",
+        "bookmark": "JEE 1 \u2014 Coordinates and Direction in Space"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Coordinates and Direction in Space (cont.)",
+        "plain_title": "Coordinates and Direction in Space (cont.)",
+        "subtitle": "Coordinates and Direction in Space",
+        "bookmark": "JEE 2 \u2014 Coordinates and Direction in Space (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Lines in Space \u2014 Vector and Cartesian Forms",
+        "plain_title": "Lines in Space \u2014 Vector and Cartesian Forms",
+        "subtitle": "Lines in Space \u2014 Vector and Cartesian Forms",
+        "bookmark": "JEE 3 \u2014 Lines in Space \u2014 Vector and Cartesian Forms"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Lines in Space \u2014 Vector and Cartesian Forms (cont.)",
+        "plain_title": "Lines in Space \u2014 Vector and Cartesian Forms (cont.)",
+        "subtitle": "Lines in Space \u2014 Vector and Cartesian Forms",
+        "bookmark": "JEE 4 \u2014 Lines in Space \u2014 Vector and Cartesian Forms (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Lines in Space \u2014 Vector and Cartesian Forms (cont.)",
+        "plain_title": "Lines in Space \u2014 Vector and Cartesian Forms (cont.)",
+        "subtitle": "Lines in Space \u2014 Vector and Cartesian Forms",
+        "bookmark": "JEE 5 \u2014 Lines in Space \u2014 Vector and Cartesian Forms (cont.)"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Line Relationships \u2014 Angles, Intersection and Coplanarity",
+        "plain_title": "Line Relationships \u2014 Angles, Intersection and Coplanarity",
+        "subtitle": "Line Relationships \u2014 Angles, Intersection and Coplanarity",
+        "bookmark": "JEE 6 \u2014 Line Relationships \u2014 Angles, Intersection and Coplanarity"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Line Relationships \u2014 Angles, Intersection and Coplanarity (cont.)",
+        "plain_title": "Line Relationships \u2014 Angles, Intersection and Coplanarity (cont.)",
+        "subtitle": "Line Relationships \u2014 Angles, Intersection and Coplanarity",
+        "bookmark": "JEE 7 \u2014 Line Relationships \u2014 Angles, Intersection and Coplanarity (cont.)"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Foot, Image and Distance to a Line",
+        "plain_title": "Foot, Image and Distance to a Line",
+        "subtitle": "Foot, Image and Distance to a Line",
+        "bookmark": "JEE 8 \u2014 Foot, Image and Distance to a Line"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Foot, Image and Distance to a Line (cont.)",
+        "plain_title": "Foot, Image and Distance to a Line (cont.)",
+        "subtitle": "Foot, Image and Distance to a Line",
+        "bookmark": "JEE 9 \u2014 Foot, Image and Distance to a Line (cont.)"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Skew Lines and the Common Perpendicular",
+        "plain_title": "Skew Lines and the Common Perpendicular",
+        "subtitle": "Skew Lines and the Common Perpendicular",
+        "bookmark": "JEE 10 \u2014 Skew Lines and the Common Perpendicular"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Skew Lines and the Common Perpendicular (cont.)",
+        "plain_title": "Skew Lines and the Common Perpendicular (cont.)",
+        "subtitle": "Skew Lines and the Common Perpendicular",
+        "bookmark": "JEE 11 \u2014 Skew Lines and the Common Perpendicular (cont.)"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "Planes \u2014 Normal, Intercept and Three-Point Forms",
+        "plain_title": "Planes \u2014 Normal, Intercept and Three-Point Forms",
+        "subtitle": "Planes \u2014 Normal, Intercept and Three-Point Forms",
+        "bookmark": "JEE 12 \u2014 Planes \u2014 Normal, Intercept and Three-Point Forms"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Planes \u2014 Normal, Intercept and Three-Point Forms (cont.)",
+        "plain_title": "Planes \u2014 Normal, Intercept and Three-Point Forms (cont.)",
+        "subtitle": "Planes \u2014 Normal, Intercept and Three-Point Forms",
+        "bookmark": "JEE 13 \u2014 Planes \u2014 Normal, Intercept and Three-Point Forms (cont.)"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Angles Between Lines and Planes",
+        "plain_title": "Angles Between Lines and Planes",
+        "subtitle": "Angles Between Lines and Planes",
+        "bookmark": "JEE 14 \u2014 Angles Between Lines and Planes"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Angles Between Lines and Planes (cont.)",
+        "plain_title": "Angles Between Lines and Planes (cont.)",
+        "subtitle": "Angles Between Lines and Planes",
+        "bookmark": "JEE 15 \u2014 Angles Between Lines and Planes (cont.)"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Plane Distances, Feet and Reflections",
+        "plain_title": "Plane Distances, Feet and Reflections",
+        "subtitle": "Plane Distances, Feet and Reflections",
+        "bookmark": "JEE 16 \u2014 Plane Distances, Feet and Reflections"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Plane Distances, Feet and Reflections (cont.)",
+        "plain_title": "Plane Distances, Feet and Reflections (cont.)",
+        "subtitle": "Plane Distances, Feet and Reflections",
+        "bookmark": "JEE 17 \u2014 Plane Distances, Feet and Reflections (cont.)"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "Pencils, Bisector Planes and Mixed Strategy",
+        "plain_title": "Pencils, Bisector Planes and Mixed Strategy",
+        "subtitle": "Pencils, Bisector Planes and Mixed Strategy",
+        "bookmark": "JEE 18 \u2014 Pencils, Bisector Planes and Mixed Strategy"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "Pencils, Bisector Planes and Mixed Strategy (cont.)",
+        "plain_title": "Pencils, Bisector Planes and Mixed Strategy (cont.)",
+        "subtitle": "Pencils, Bisector Planes and Mixed Strategy",
+        "bookmark": "JEE 19 \u2014 Pencils, Bisector Planes and Mixed Strategy (cont.)"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "Visual 3D Geometry Lab",
+        "plain_title": "Visual 3D Geometry Lab",
+        "subtitle": "Visual 3D Geometry Lab",
+        "bookmark": "JEE 20 \u2014 Visual 3D Geometry Lab"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
+        "title": "Two planes reveal their intersection direction",
+        "plain_title": "Two planes reveal their intersection direction",
+        "subtitle": "Visual 3D Geometry Lab",
+        "bookmark": "JEE 21 \u2014 Two planes reveal their intersection direction"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "A perpendicular foot creates a reflection",
+        "plain_title": "A perpendicular foot creates a reflection",
+        "subtitle": "Visual 3D Geometry Lab",
+        "bookmark": "JEE 22 \u2014 A perpendicular foot creates a reflection"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "Skew distance is the gap along a common normal",
+        "plain_title": "Skew distance is the gap along a common normal",
+        "subtitle": "Visual 3D Geometry Lab",
+        "bookmark": "JEE 23 \u2014 Skew distance is the gap along a common normal"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "A plane reflection follows its normal",
+        "plain_title": "A plane reflection follows its normal",
+        "subtitle": "Visual 3D Geometry Lab",
+        "bookmark": "JEE 24 \u2014 A plane reflection follows its normal"
+      },
+      {
+        "no": 25,
+        "file": "JEE/25.png",
+        "id": "JEE-25",
+        "title": "Let the geometry choose the formula",
+        "plain_title": "Let the geometry choose the formula",
+        "subtitle": "Visual 3D Geometry Lab",
+        "bookmark": "JEE 25 \u2014 Let the geometry choose the formula"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Extension I \u2014 Sphere Foundations",
+        "plain_title": "Extension I \u2014 Sphere Foundations",
+        "subtitle": "Extension I \u2014 Sphere Foundations",
+        "bookmark": "OLY 1 \u2014 Extension I \u2014 Sphere Foundations"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Extension I \u2014 Sphere Foundations (cont.)",
+        "plain_title": "Extension I \u2014 Sphere Foundations (cont.)",
+        "subtitle": "Extension I \u2014 Sphere Foundations",
+        "bookmark": "OLY 2 \u2014 Extension I \u2014 Sphere Foundations (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Extension I \u2014 Sphere Foundations (cont.)",
+        "plain_title": "Extension I \u2014 Sphere Foundations (cont.)",
+        "subtitle": "Extension I \u2014 Sphere Foundations",
+        "bookmark": "OLY 3 \u2014 Extension I \u2014 Sphere Foundations (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Extension II \u2014 Sphere Sections and Tangent Planes",
+        "plain_title": "Extension II \u2014 Sphere Sections and Tangent Planes",
+        "subtitle": "Extension II \u2014 Sphere Sections and Tangent Planes",
+        "bookmark": "OLY 4 \u2014 Extension II \u2014 Sphere Sections and Tangent Planes"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Extension II \u2014 Sphere Sections and Tangent Planes (cont.)",
+        "plain_title": "Extension II \u2014 Sphere Sections and Tangent Planes (cont.)",
+        "subtitle": "Extension II \u2014 Sphere Sections and Tangent Planes",
+        "bookmark": "OLY 5 \u2014 Extension II \u2014 Sphere Sections and Tangent Planes (cont.)"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Extension III \u2014 Radical Planes, Polars and Orthogonality",
+        "plain_title": "Extension III \u2014 Radical Planes, Polars and Orthogonality",
+        "subtitle": "Extension III \u2014 Radical Planes, Polars and Orthogonality",
+        "bookmark": "OLY 6 \u2014 Extension III \u2014 Radical Planes, Polars and Orthogonality"
+      },
+      {
+        "no": 7,
+        "file": "Olympiad/07.png",
+        "id": "OLY-07",
+        "title": "Extension III \u2014 Radical Planes, Polars and Orthogonality (cont.)",
+        "plain_title": "Extension III \u2014 Radical Planes, Polars and Orthogonality (cont.)",
+        "subtitle": "Extension III \u2014 Radical Planes, Polars and Orthogonality",
+        "bookmark": "OLY 7 \u2014 Extension III \u2014 Radical Planes, Polars and Orthogonality (cont.)"
+      },
+      {
+        "no": 8,
+        "file": "Olympiad/08.png",
+        "id": "OLY-08",
+        "title": "Extension III \u2014 Radical Planes, Polars and Orthogonality (cont.)",
+        "plain_title": "Extension III \u2014 Radical Planes, Polars and Orthogonality (cont.)",
+        "subtitle": "Extension III \u2014 Radical Planes, Polars and Orthogonality",
+        "bookmark": "OLY 8 \u2014 Extension III \u2014 Radical Planes, Polars and Orthogonality (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "Olympiad/09.png",
+        "id": "OLY-09",
+        "title": "Extension IV \u2014 Inspheres and the Monge Point",
+        "plain_title": "Extension IV \u2014 Inspheres and the Monge Point",
+        "subtitle": "Extension IV \u2014 Inspheres and the Monge Point",
+        "bookmark": "OLY 9 \u2014 Extension IV \u2014 Inspheres and the Monge Point"
+      },
+      {
+        "no": 10,
+        "file": "Olympiad/10.png",
+        "id": "OLY-10",
+        "title": "Extension IV \u2014 Inspheres and the Monge Point (cont.)",
+        "plain_title": "Extension IV \u2014 Inspheres and the Monge Point (cont.)",
+        "subtitle": "Extension IV \u2014 Inspheres and the Monge Point",
+        "bookmark": "OLY 10 \u2014 Extension IV \u2014 Inspheres and the Monge Point (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "Olympiad/11.png",
+        "id": "OLY-11",
+        "title": "Extension IV \u2014 Inspheres and the Monge Point (cont.)",
+        "plain_title": "Extension IV \u2014 Inspheres and the Monge Point (cont.)",
+        "subtitle": "Extension IV \u2014 Inspheres and the Monge Point",
+        "bookmark": "OLY 11 \u2014 Extension IV \u2014 Inspheres and the Monge Point (cont.)"
+      },
+      {
+        "no": 12,
+        "file": "Olympiad/12.png",
+        "id": "OLY-12",
+        "title": "Extension V \u2014 Spherical Geometry & Tetrahedra",
+        "plain_title": "Extension V \u2014 Spherical Geometry & Tetrahedra",
+        "subtitle": "Extension V \u2014 Spherical Geometry & Tetrahedra",
+        "bookmark": "OLY 12 \u2014 Extension V \u2014 Spherical Geometry & Tetrahedra"
+      },
+      {
+        "no": 13,
+        "file": "Olympiad/13.png",
+        "id": "OLY-13",
+        "title": "Extension V \u2014 Spherical Geometry & Tetrahedra (cont.)",
+        "plain_title": "Extension V \u2014 Spherical Geometry & Tetrahedra (cont.)",
+        "subtitle": "Extension V \u2014 Spherical Geometry & Tetrahedra",
+        "bookmark": "OLY 13 \u2014 Extension V \u2014 Spherical Geometry & Tetrahedra (cont.)"
+      }
+    ]
+  }
+}
