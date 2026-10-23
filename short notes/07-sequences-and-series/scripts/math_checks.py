@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Independent numeric verification of Chapter 7 (Sequences & Series) claims."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 import math
 from fractions import Fraction as F
 
@@ -157,6 +163,9 @@ chk(close(seq[10], 4.5699, 2e-3), "a_10 = 4.5699")
 chk(abs(seq[2000] / math.sqrt(4000) - 1) < 0.02, "a_n ~ sqrt(2n) at n=2000")
 # remainder diverges like (1/2) ln n: a_n^2 - 2n grows unbounded but sublinear
 chk(seq[2000] ** 2 - 4000 > seq[100] ** 2 - 200, "a_n^2 - 2n grows (log divergence)")
+
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    chk(_condition, f"visual lesson: {_name}")
 
 print(f"{N[0] - len(FAILS)}/{N[0]} checks passed")
 if FAILS:

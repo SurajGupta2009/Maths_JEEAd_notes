@@ -18,23 +18,23 @@ Algebra, Matrices, Probability & Statistics, Trigonometry, Analytical Geometry
 22 study chapters in prerequisite order. Every official bullet maps into
 exactly one chapter.
 
-For the 2026 second-pass coverage and page-flow review of delivered chapters 1–11, see [`REVIEW-AND-REORDER-AUDIT.md`](REVIEW-AND-REORDER-AUDIT.md).
+For the 2026 second-pass coverage and page-flow review of delivered chapters 1–13, see [`REVIEW-AND-REORDER-AUDIT.md`](REVIEW-AND-REORDER-AUDIT.md).
 
 | # | Chapter (slug) | Official unit(s) | Status |
 |---|---|---|---|
-| 1 | **Sets, Relations & Functions** (`01-sets-relations-functions`) | Sets, Relations and Functions | ✅ **delivered** — 12 JEE + 6 Olympiad sheets |
-| 2 | **Exponents & Logarithms** (`02-exponents-logarithms`) | Algebra (logarithms and their properties) | ✅ **delivered** — 9 JEE + 3 Olympiad sheets |
-| 3 | **Trigonometric Identities & Equations** (`03-trigonometric-identities-equations`) | Trigonometry | ✅ **delivered** — 11 JEE + 6 Olympiad sheets |
-| 4 | **Inverse Trigonometric Functions** (`04-inverse-trigonometric-functions`) | Trigonometry | ✅ **delivered** — 13 JEE + 6 Olympiad sheets |
-| 5 | **Complex Numbers** (`05-complex-numbers`) | Algebra (complex numbers, FTA) | ✅ **delivered** — 19 JEE + 11 Olympiad sheets |
-| 6 | **Quadratic Equations** (`06-quadratic-equations`) | Algebra (quadratics with real coefficients) | ✅ **delivered** — 8 JEE + 3 Olympiad sheets |
-| 7 | **Sequences & Series** (`07-sequences-and-series`) | Algebra (AP, GP, AM, GM, special sums) | ✅ **delivered** — 6 JEE + 3 Olympiad sheets |
-| 8 | **Permutations & Combinations** (`08-permutations-and-combinations`) | Algebra (P&C) | ✅ **delivered** — 7 JEE + 3 Olympiad sheets |
-| 9 | **Binomial Theorem** (`09-binomial-theorem`) | Algebra (binomial theorem, positive integral index) | ✅ **delivered** — 4 JEE + 2 Olympiad sheets |
-| 10 | **Matrices & Determinants** (`10-matrices-and-determinants`) | Matrices | ✅ **delivered** — 4 JEE + 2 Olympiad sheets |
-| 11 | **Probability & Statistics** (`11-probability-and-statistics`) | Probability and Statistics | ✅ **delivered** — 5 JEE + 2 Olympiad sheets |
-| 12 | **Straight Lines & Locus** (`12-straight-lines-and-locus`) | Analytical Geometry 2D (lines, triangle centres, locus tools) | ✅ **delivered** — 7 JEE + 2 Olympiad sheets |
-| 13 | **Circles** (`13-circles`) | Analytical Geometry 2D (circle) | ✅ **delivered** — 5 JEE + 2 Olympiad sheets |
+| 1 | **Sets, Relations & Functions** (`01-sets-relations-functions`) | Sets, Relations and Functions | ✅ **delivered** — 26 JEE + 9 Olympiad sheets |
+| 2 | **Exponents & Logarithms** (`02-exponents-logarithms`) | Algebra (logarithms and their properties) | ✅ **delivered** — 20 JEE + 4 Olympiad sheets |
+| 3 | **Trigonometric Identities & Equations** (`03-trigonometric-identities-equations`) | Trigonometry | ✅ **delivered** — 23 JEE + 8 Olympiad sheets |
+| 4 | **Inverse Trigonometric Functions** (`04-inverse-trigonometric-functions`) | Trigonometry | ✅ **delivered** — 28 JEE + 9 Olympiad sheets |
+| 5 | **Complex Numbers** (`05-complex-numbers`) | Algebra (complex numbers, FTA) | ✅ **delivered** — 36 JEE + 17 Olympiad sheets |
+| 6 | **Quadratic Equations** (`06-quadratic-equations`) | Algebra (quadratics with real coefficients) | ✅ **delivered** — 18 JEE + 6 Olympiad sheets |
+| 7 | **Sequences & Series** (`07-sequences-and-series`) | Algebra (AP, GP, AM, GM, special sums) | ✅ **delivered** — 14 JEE + 6 Olympiad sheets |
+| 8 | **Permutations & Combinations** (`08-permutations-and-combinations`) | Algebra (P&C) | ✅ **delivered** — 17 JEE + 4 Olympiad sheets |
+| 9 | **Binomial Theorem** (`09-binomial-theorem`) | Algebra (binomial theorem, positive integral index) | ✅ **delivered** — 11 JEE + 3 Olympiad sheets |
+| 10 | **Matrices & Determinants** (`10-matrices-and-determinants`) | Matrices | ✅ **delivered** — 13 JEE + 4 Olympiad sheets |
+| 11 | **Probability & Statistics** (`11-probability-and-statistics`) | Probability and Statistics | ✅ **delivered** — 15 JEE + 4 Olympiad sheets |
+| 12 | **Straight Lines & Locus** (`12-straight-lines-and-locus`) | Analytical Geometry 2D (lines, triangle centres, locus tools) | ✅ **delivered** — 17 JEE + 3 Olympiad sheets |
+| 13 | **Circles** (`13-circles`) | Analytical Geometry 2D (circle) | ✅ **delivered** — 15 JEE + 4 Olympiad sheets |
 | 14 | Conic Sections (`14-conic-sections`) | Analytical Geometry 2D (parabola, ellipse, hyperbola) | ⏳ pending |
 | 15 | Vectors (`15-vectors`) | Vectors | ⏳ pending |
 | 16 | Three-Dimensional Geometry (`16-three-dimensional-geometry`) | Analytical Geometry 3D | ⏳ pending |
@@ -45,8 +45,8 @@ For the 2026 second-pass coverage and page-flow review of delivered chapters 1�
 | 21 | Definite Integration & Areas (`21-definite-integration-and-areas`) | Integral Calculus (limit of sums, FTC, properties, area) | ⏳ pending |
 | 22 | Differential Equations (`22-differential-equations`) | Integral Calculus (formation, homogeneous 1st order, separation, linear 1st order) | ⏳ pending |
 
-Chapters 14–22 are **pending**. Chapters 12 and 13 have now been authored in
-the Chapter-1 format. Repo vault notes (`notes/`) are the primary source
+Chapters 14–22 are **pending**. Chapters 1–13 are delivered in the expanded,
+single-stream format: **253 JEE + 81 Olympiad = 334 sheets**. Repo vault notes (`notes/`) are the primary source
 wherever they cover a chapter; source coverage and missing material are
 documented chapter by chapter in each `SOURCE-AUDIT.md`. Chapters 12–13 draw
 on `notes/Coordinate-Geometry-Lines-and-Circles/`; Chapter 3 draws on
@@ -62,7 +62,7 @@ extensions, combined — JEE first) · `index.html` gallery · `README.md` ·
 · `scripts/` render/export/check + mathematical checks.
 
 Format: 2480×3508 px @ 300 DPI, 10 mm safe margins, faintly ruled paper,
-handwriting body ≈ 11.5 pt; navy prose · teal headings/explanations · yellow
+handwriting body ≈ 12 pt; navy prose · teal headings/explanations · yellow
 key results · red common traps; properly typeset math; programmatically drawn
 diagrams with labelled axes/asymptotes/regions. Printing: A4 portrait, one
 sheet per page, **Fit** (not Fill/Crop).

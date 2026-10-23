@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Independent numeric verification of Chapter 2 (Exponents & Logarithms) claims."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 import math
 
 FAILS = []
@@ -130,6 +136,9 @@ t2 = math.log(2) / k
 chk(close(math.exp(k * t2), 2.0), "doubling time")
 chk(math.log(100) * 200 > math.log(200) * 100, "100^n vs n^100 at n=200 (n^100 wins at n=50)")
 chk(close(math.log(100) * 100, math.log(100) * 100), "100^100 = 100^100 crossover")
+
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    chk(_condition, f"visual lesson: {_name}")
 
 print(f"Chapter 2 math checks: {N[0] - len(FAILS)}/{N[0]} PASS", "FAILURES:", len(FAILS))
 if FAILS:

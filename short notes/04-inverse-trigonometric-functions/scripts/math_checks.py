@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Independent numeric verification of Chapter 4 (Inverse Trigonometric Functions) claims."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 import math
 
 FAILS = []
@@ -224,6 +230,9 @@ chk(math.atan(0.5 - 1) < math.atan(0.5), "atan(x-1) < atan x")
 # --- sin^{-1} x + cos^{-1} y = pi/2 only when x=y ---
 chk(close(math.asin(0.3) + math.acos(0.3), pi/2), "complement same arg")
 chk(not close(math.asin(0.3) + math.acos(0.4), pi/2), "complement differs on different args")
+
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    chk(_condition, f"visual lesson: {_name}")
 
 print(f"Chapter 4 math_checks: {N[0] - len(FAILS)}/{N[0]} PASS")
 if FAILS:

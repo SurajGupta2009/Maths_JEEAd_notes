@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Independent numeric verification of Chapter 3 (Trig Identities & Equations) claims."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 import math
 
 FAILS = []
@@ -181,6 +187,9 @@ chk(close(Rcirc, 7 / math.sqrt(3)), "circumradius")
 r = D / s
 chk(close(r, math.sqrt(3)), "inradius r = sqrt3")
 chk(close(math.tan(R(30)), r / (s - 7)), "tan(A/2) = r/(s-a)")
+
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    chk(_condition, f"visual lesson: {_name}")
 
 print(f"Chapter 3 math checks: {N[0] - len(FAILS)}/{N[0]} PASS", "FAILURES:", len(FAILS))
 if FAILS:

@@ -15,100 +15,226 @@
         "no": 2,
         "file": "JEE/02.png",
         "id": "JEE-02",
-        "title": "Sets \u2014 Language, Representation, Subsets (cont.)",
-        "plain_title": "Sets \u2014 Language, Representation, Subsets (cont.)",
+        "title": "Subsets and the power set",
+        "plain_title": "Subsets and the power set",
         "subtitle": "Sets \u2014 Language, Representation, Subsets",
-        "bookmark": "JEE 2 \u2014 Sets \u2014 Language, Representation, Subsets (cont.)"
+        "bookmark": "JEE 2 \u2014 Subsets and the power set"
       },
       {
         "no": 3,
         "file": "JEE/03.png",
         "id": "JEE-03",
-        "title": "The algebraic laws (all provable by element-chasing)",
-        "plain_title": "The algebraic laws (all provable by element-chasing)",
-        "subtitle": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan",
-        "bookmark": "JEE 3 \u2014 The algebraic laws (all provable by element-chasing)"
+        "title": "Sets \u2014 Language, Representation, Subsets (cont.)",
+        "plain_title": "Sets \u2014 Language, Representation, Subsets (cont.)",
+        "subtitle": "Sets \u2014 Language, Representation, Subsets",
+        "bookmark": "JEE 3 \u2014 Sets \u2014 Language, Representation, Subsets (cont.)"
       },
       {
         "no": 4,
         "file": "JEE/04.png",
         "id": "JEE-04",
-        "title": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)",
-        "plain_title": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)",
+        "title": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan",
+        "plain_title": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan",
         "subtitle": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan",
-        "bookmark": "JEE 4 \u2014 Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)"
+        "bookmark": "JEE 4 \u2014 Operations on Sets \u2014 Union, Intersection, Difference, De Morgan"
       },
       {
         "no": 5,
         "file": "JEE/05.png",
         "id": "JEE-05",
-        "title": "Cartesian Products & Relations \u2014 Definitions, Types, Counting (cont.)",
-        "plain_title": "Cartesian Products & Relations \u2014 Definitions, Types, Counting (cont.)",
-        "subtitle": "Cartesian Products & Relations \u2014 Definitions, Types, Counting",
-        "bookmark": "JEE 5 \u2014 Cartesian Products & Relations \u2014 Definitions, Types, Counting (cont.)"
+        "title": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)",
+        "plain_title": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)",
+        "subtitle": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan",
+        "bookmark": "JEE 5 \u2014 Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)"
       },
       {
         "no": 6,
         "file": "JEE/06.png",
         "id": "JEE-06",
-        "title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)",
-        "plain_title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)",
-        "subtitle": "Equivalence Relations & Partitions \u2014 with JEE-style Counting",
-        "bookmark": "JEE 6 \u2014 Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)"
+        "title": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)",
+        "plain_title": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)",
+        "subtitle": "Operations on Sets \u2014 Union, Intersection, Difference, De Morgan",
+        "bookmark": "JEE 6 \u2014 Operations on Sets \u2014 Union, Intersection, Difference, De Morgan (cont.)"
       },
       {
         "no": 7,
         "file": "JEE/07.png",
         "id": "JEE-07",
-        "title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)",
-        "plain_title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)",
-        "subtitle": "Equivalence Relations & Partitions \u2014 with JEE-style Counting",
-        "bookmark": "JEE 7 \u2014 Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)"
+        "title": "Cartesian Products & Relations \u2014 Definitions, Types, Counting",
+        "plain_title": "Cartesian Products & Relations \u2014 Definitions, Types, Counting",
+        "subtitle": "Cartesian Products & Relations \u2014 Definitions, Types, Counting",
+        "bookmark": "JEE 7 \u2014 Cartesian Products & Relations \u2014 Definitions, Types, Counting"
       },
       {
         "no": 8,
         "file": "JEE/08.png",
         "id": "JEE-08",
-        "title": "Finding ranges (the four techniques)",
-        "plain_title": "Finding ranges (the four techniques)",
-        "subtitle": "Functions \u2014 Definition, Domain, Range, Image & Preimage",
-        "bookmark": "JEE 8 \u2014 Finding ranges (the four techniques)"
+        "title": "Cartesian Products & Relations \u2014 Definitions, Types, Counting (cont.)",
+        "plain_title": "Cartesian Products & Relations \u2014 Definitions, Types, Counting (cont.)",
+        "subtitle": "Cartesian Products & Relations \u2014 Definitions, Types, Counting",
+        "bookmark": "JEE 8 \u2014 Cartesian Products & Relations \u2014 Definitions, Types, Counting (cont.)"
       },
       {
         "no": 9,
         "file": "JEE/09.png",
         "id": "JEE-09",
-        "title": "Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x}",
-        "plain_title": "Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x}",
-        "subtitle": "Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x}",
-        "bookmark": "JEE 9 \u2014 Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x}"
+        "title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting",
+        "plain_title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting",
+        "subtitle": "Equivalence Relations & Partitions \u2014 with JEE-style Counting",
+        "bookmark": "JEE 9 \u2014 Equivalence Relations & Partitions \u2014 with JEE-style Counting"
       },
       {
         "no": 10,
         "file": "JEE/10.png",
         "id": "JEE-10",
-        "title": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet",
-        "plain_title": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet",
-        "subtitle": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet",
-        "bookmark": "JEE 10 \u2014 One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet"
+        "title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)",
+        "plain_title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)",
+        "subtitle": "Equivalence Relations & Partitions \u2014 with JEE-style Counting",
+        "bookmark": "JEE 10 \u2014 Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)"
       },
       {
         "no": 11,
         "file": "JEE/11.png",
         "id": "JEE-11",
-        "title": "Periodic functions",
-        "plain_title": "Periodic functions",
-        "subtitle": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet",
-        "bookmark": "JEE 11 \u2014 Periodic functions"
+        "title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)",
+        "plain_title": "Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)",
+        "subtitle": "Equivalence Relations & Partitions \u2014 with JEE-style Counting",
+        "bookmark": "JEE 11 \u2014 Equivalence Relations & Partitions \u2014 with JEE-style Counting (cont.)"
       },
       {
         "no": 12,
         "file": "JEE/12.png",
         "id": "JEE-12",
+        "title": "Functions \u2014 Definition, Domain, Range, Image & Preimage",
+        "plain_title": "Functions \u2014 Definition, Domain, Range, Image & Preimage",
+        "subtitle": "Functions \u2014 Definition, Domain, Range, Image & Preimage",
+        "bookmark": "JEE 12 \u2014 Functions \u2014 Definition, Domain, Range, Image & Preimage"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Finding ranges (the four techniques)",
+        "plain_title": "Finding ranges (the four techniques)",
+        "subtitle": "Functions \u2014 Definition, Domain, Range, Image & Preimage",
+        "bookmark": "JEE 13 \u2014 Finding ranges (the four techniques)"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Functions \u2014 Definition, Domain, Range, Image & Preimage (cont.)",
+        "plain_title": "Functions \u2014 Definition, Domain, Range, Image & Preimage (cont.)",
+        "subtitle": "Functions \u2014 Definition, Domain, Range, Image & Preimage",
+        "bookmark": "JEE 14 \u2014 Functions \u2014 Definition, Domain, Range, Image & Preimage (cont.)"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x}",
+        "plain_title": "Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x}",
+        "subtitle": "Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x}",
+        "bookmark": "JEE 15 \u2014 Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x}"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x} (cont.)",
+        "plain_title": "Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x} (cont.)",
+        "subtitle": "Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x}",
+        "bookmark": "JEE 16 \u2014 Special Functions & Graph Transformations \u2014 |x|, sgn, [x], {x} (cont.)"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet",
+        "plain_title": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet",
+        "subtitle": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet",
+        "bookmark": "JEE 17 \u2014 One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "Even and odd functions",
+        "plain_title": "Even and odd functions",
+        "subtitle": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet",
+        "bookmark": "JEE 18 \u2014 Even and odd functions"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet (cont.)",
+        "plain_title": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet (cont.)",
+        "subtitle": "One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet",
+        "bookmark": "JEE 19 \u2014 One-one, Onto, Even / Odd, Periodic \u2014 the Classification Sheet (cont.)"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "Composition & Inverse Functions \u2014 and the Chapter Recap",
+        "plain_title": "Composition & Inverse Functions \u2014 and the Chapter Recap",
+        "subtitle": "Composition & Inverse Functions \u2014 and the Chapter Recap",
+        "bookmark": "JEE 20 \u2014 Composition & Inverse Functions \u2014 and the Chapter Recap"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
         "title": "Composition & Inverse Functions \u2014 and the Chapter Recap (cont.)",
         "plain_title": "Composition & Inverse Functions \u2014 and the Chapter Recap (cont.)",
         "subtitle": "Composition & Inverse Functions \u2014 and the Chapter Recap",
-        "bookmark": "JEE 12 \u2014 Composition & Inverse Functions \u2014 and the Chapter Recap (cont.)"
+        "bookmark": "JEE 21 \u2014 Composition & Inverse Functions \u2014 and the Chapter Recap (cont.)"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "Visual Function Lab \u2014 Domain, Range, Graph Tests and Inverses",
+        "plain_title": "Visual Function Lab \u2014 Domain, Range, Graph Tests and Inverses",
+        "subtitle": "Visual Function Lab \u2014 Domain, Range, Graph Tests and Inverses",
+        "bookmark": "JEE 22 \u2014 Visual Function Lab \u2014 Domain, Range, Graph Tests and Inverses"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "A domain-and-range example drawn before algebra",
+        "plain_title": "A domain-and-range example drawn before algebra",
+        "subtitle": "Visual Function Lab \u2014 Domain, Range, Graph Tests and Inverses",
+        "bookmark": "JEE 23 \u2014 A domain-and-range example drawn before algebra"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "Inverse graphs interchange the coordinates",
+        "plain_title": "Inverse graphs interchange the coordinates",
+        "subtitle": "Visual Function Lab \u2014 Domain, Range, Graph Tests and Inverses",
+        "bookmark": "JEE 24 \u2014 Inverse graphs interchange the coordinates"
+      },
+      {
+        "no": 25,
+        "file": "JEE/25.png",
+        "id": "JEE-25",
+        "title": "A reusable composition check",
+        "plain_title": "A reusable composition check",
+        "subtitle": "Visual Function Lab \u2014 Domain, Range, Graph Tests and Inverses",
+        "bookmark": "JEE 25 \u2014 A reusable composition check"
+      },
+      {
+        "no": 26,
+        "file": "JEE/26.png",
+        "id": "JEE-26",
+        "title": "Worked synthesis: composition, range and inversion",
+        "plain_title": "Worked synthesis: composition, range and inversion",
+        "subtitle": "Visual Function Lab \u2014 Domain, Range, Graph Tests and Inverses",
+        "bookmark": "JEE 26 \u2014 Worked synthesis: composition, range and inversion"
       }
     ],
     "olympiad": [
@@ -125,46 +251,73 @@
         "no": 2,
         "file": "Olympiad/02.png",
         "id": "OLY-02",
-        "title": "Counting Relations & Functions \u2014 Rigorous Catalogue (cont.)",
-        "plain_title": "Counting Relations & Functions \u2014 Rigorous Catalogue (cont.)",
+        "title": "Bell numbers by listings (do this in solutions)",
+        "plain_title": "Bell numbers by listings (do this in solutions)",
         "subtitle": "Counting Relations & Functions \u2014 Rigorous Catalogue",
-        "bookmark": "OLY 2 \u2014 Counting Relations & Functions \u2014 Rigorous Catalogue (cont.)"
+        "bookmark": "OLY 2 \u2014 Bell numbers by listings (do this in solutions)"
       },
       {
         "no": 3,
         "file": "Olympiad/03.png",
         "id": "OLY-03",
-        "title": "Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)",
-        "plain_title": "Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)",
-        "subtitle": "Functional Equations \u2014 Cauchy, Pexider, Involutions",
-        "bookmark": "OLY 3 \u2014 Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)"
+        "title": "Counting Relations & Functions \u2014 Rigorous Catalogue (cont.)",
+        "plain_title": "Counting Relations & Functions \u2014 Rigorous Catalogue (cont.)",
+        "subtitle": "Counting Relations & Functions \u2014 Rigorous Catalogue",
+        "bookmark": "OLY 3 \u2014 Counting Relations & Functions \u2014 Rigorous Catalogue (cont.)"
       },
       {
         "no": 4,
         "file": "Olympiad/04.png",
         "id": "OLY-04",
-        "title": "Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)",
-        "plain_title": "Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)",
+        "title": "Functional Equations \u2014 Cauchy, Pexider, Involutions",
+        "plain_title": "Functional Equations \u2014 Cauchy, Pexider, Involutions",
         "subtitle": "Functional Equations \u2014 Cauchy, Pexider, Involutions",
-        "bookmark": "OLY 4 \u2014 Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)"
+        "bookmark": "OLY 4 \u2014 Functional Equations \u2014 Cauchy, Pexider, Involutions"
       },
       {
         "no": 5,
         "file": "Olympiad/05.png",
         "id": "OLY-05",
-        "title": "Floor identities and equations",
-        "plain_title": "Floor identities and equations",
-        "subtitle": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets",
-        "bookmark": "OLY 5 \u2014 Floor identities and equations"
+        "title": "The multiplicative cousins",
+        "plain_title": "The multiplicative cousins",
+        "subtitle": "Functional Equations \u2014 Cauchy, Pexider, Involutions",
+        "bookmark": "OLY 5 \u2014 The multiplicative cousins"
       },
       {
         "no": 6,
         "file": "Olympiad/06.png",
         "id": "OLY-06",
+        "title": "Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)",
+        "plain_title": "Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)",
+        "subtitle": "Functional Equations \u2014 Cauchy, Pexider, Involutions",
+        "bookmark": "OLY 6 \u2014 Functional Equations \u2014 Cauchy, Pexider, Involutions (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "Olympiad/07.png",
+        "id": "OLY-07",
+        "title": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets",
+        "plain_title": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets",
+        "subtitle": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets",
+        "bookmark": "OLY 7 \u2014 Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets"
+      },
+      {
+        "no": 8,
+        "file": "Olympiad/08.png",
+        "id": "OLY-08",
         "title": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets (cont.)",
         "plain_title": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets (cont.)",
         "subtitle": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets",
-        "bookmark": "OLY 6 \u2014 Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets (cont.)"
+        "bookmark": "OLY 8 \u2014 Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "Olympiad/09.png",
+        "id": "OLY-09",
+        "title": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets (cont.)",
+        "plain_title": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets (cont.)",
+        "subtitle": "Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets",
+        "bookmark": "OLY 9 \u2014 Floor Toolkit & Fixed-Point Counting \u2014 Hermite, Equations, Involution Sets (cont.)"
       }
     ]
   }

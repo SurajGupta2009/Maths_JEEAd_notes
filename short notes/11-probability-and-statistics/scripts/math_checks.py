@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Independent numeric/exact checks for probability and descriptive statistics."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 from fractions import Fraction as F
 from itertools import product
 from math import comb, factorial, sqrt
@@ -100,4 +106,7 @@ p=F(3,5); q=1-p; N=10
 u=[(1-(q/p)**i)/(1-(q/p)**N) for i in range(N+1)]
 ck(u[0]==0 and u[N]==1 and all(abs(p*u[i+1]+q*u[i-1]-u[i])<1e-12 for i in range(1,N)), "biased ruin recurrence")
 ck((1-(F(2,3))**5)/(1-(F(2,3))**10)==F(51273,58025), "biased ruin exact value")
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    ck(_condition, f"visual lesson: {_name}")
+
 print(f"Probability & Statistics: {checks}/{checks} checks PASS")

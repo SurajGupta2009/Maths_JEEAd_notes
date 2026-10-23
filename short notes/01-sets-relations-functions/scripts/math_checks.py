@@ -9,6 +9,10 @@ and worked examples quoted on the sheets.
 from itertools import product, combinations
 from math import comb, floor
 import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
 
 PASS = 0
 FAIL = 0
@@ -245,6 +249,9 @@ inside = all(sqrt(2) - 1e-9 <= abs(x) < sqrt(3) + 1e-9 for x in sol2)
 covers = all(any(abs(x - t) < 1e-3 for x in sol2) or abs(abs(t) - sqrt(2)) < 1e-9
              for t in [sqrt(2), 1.5, -1.5, -sqrt(2), 1.73])
 check("sheet: floor(x^2)=2 grid matches |x| in [sqrt2, sqrt3)", inside and covers)
+
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    check(f"visual lesson: {_name}", _condition)
 
 print(f"\n{PASS} passed, {FAIL} failed")
 sys.exit(1 if FAIL else 0)

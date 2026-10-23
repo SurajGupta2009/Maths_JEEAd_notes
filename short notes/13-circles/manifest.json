@@ -15,37 +15,127 @@
         "no": 2,
         "file": "JEE/02.png",
         "id": "JEE-02",
-        "title": "Determine a Circle and Parametrize It (cont.)",
-        "plain_title": "Determine a Circle and Parametrize It (cont.)",
+        "title": "Determine a Circle and Parametrize It",
+        "plain_title": "Determine a Circle and Parametrize It",
         "subtitle": "Determine a Circle and Parametrize It",
-        "bookmark": "JEE 2 \u2014 Determine a Circle and Parametrize It (cont.)"
+        "bookmark": "JEE 2 \u2014 Determine a Circle and Parametrize It"
       },
       {
         "no": 3,
         "file": "JEE/03.png",
         "id": "JEE-03",
-        "title": "Tangent and Normal at a Point (cont.)",
-        "plain_title": "Tangent and Normal at a Point (cont.)",
-        "subtitle": "Tangent and Normal at a Point",
-        "bookmark": "JEE 3 \u2014 Tangent and Normal at a Point (cont.)"
+        "title": "Determine a Circle and Parametrize It (cont.)",
+        "plain_title": "Determine a Circle and Parametrize It (cont.)",
+        "subtitle": "Determine a Circle and Parametrize It",
+        "bookmark": "JEE 3 \u2014 Determine a Circle and Parametrize It (cont.)"
       },
       {
         "no": 4,
         "file": "JEE/04.png",
         "id": "JEE-04",
-        "title": "Power, Tangent Length and Chord of Contact (cont.)",
-        "plain_title": "Power, Tangent Length and Chord of Contact (cont.)",
-        "subtitle": "Power, Tangent Length and Chord of Contact",
-        "bookmark": "JEE 4 \u2014 Power, Tangent Length and Chord of Contact (cont.)"
+        "title": "A Line Meets a Circle \u2014 Chords and Position",
+        "plain_title": "A Line Meets a Circle \u2014 Chords and Position",
+        "subtitle": "A Line Meets a Circle \u2014 Chords and Position",
+        "bookmark": "JEE 4 \u2014 A Line Meets a Circle \u2014 Chords and Position"
       },
       {
         "no": 5,
         "file": "JEE/05.png",
         "id": "JEE-05",
-        "title": "Efficient order of attack",
-        "plain_title": "Efficient order of attack",
+        "title": "Solve the intersection only after classifying it",
+        "plain_title": "Solve the intersection only after classifying it",
+        "subtitle": "A Line Meets a Circle \u2014 Chords and Position",
+        "bookmark": "JEE 5 \u2014 Solve the intersection only after classifying it"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Tangent and Normal at a Point",
+        "plain_title": "Tangent and Normal at a Point",
+        "subtitle": "Tangent and Normal at a Point",
+        "bookmark": "JEE 6 \u2014 Tangent and Normal at a Point"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Tangent and Normal at a Point (cont.)",
+        "plain_title": "Tangent and Normal at a Point (cont.)",
+        "subtitle": "Tangent and Normal at a Point",
+        "bookmark": "JEE 7 \u2014 Tangent and Normal at a Point (cont.)"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Power, Tangent Length and Chord of Contact",
+        "plain_title": "Power, Tangent Length and Chord of Contact",
+        "subtitle": "Power, Tangent Length and Chord of Contact",
+        "bookmark": "JEE 8 \u2014 Power, Tangent Length and Chord of Contact"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Radical Axis \u2014 Equal Power, Common Chord",
+        "plain_title": "Radical Axis \u2014 Equal Power, Common Chord",
+        "subtitle": "Radical Axis \u2014 Equal Power, Common Chord",
+        "bookmark": "JEE 9 \u2014 Radical Axis \u2014 Equal Power, Common Chord"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Two-Circle Position and Circle Strategy",
+        "plain_title": "Two-Circle Position and Circle Strategy",
         "subtitle": "Two-Circle Position and Circle Strategy",
-        "bookmark": "JEE 5 \u2014 Efficient order of attack"
+        "bookmark": "JEE 10 \u2014 Two-Circle Position and Circle Strategy"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Visual Circle Lab \u2014 Chords, Tangents, Power and Radical Axes",
+        "plain_title": "Visual Circle Lab \u2014 Chords, Tangents, Power and Radical Axes",
+        "subtitle": "Visual Circle Lab \u2014 Chords, Tangents, Power and Radical Axes",
+        "bookmark": "JEE 11 \u2014 Visual Circle Lab \u2014 Chords, Tangents, Power and Radical Axes"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "The tangent is perpendicular to the radius",
+        "plain_title": "The tangent is perpendicular to the radius",
+        "subtitle": "Visual Circle Lab \u2014 Chords, Tangents, Power and Radical Axes",
+        "bookmark": "JEE 12 \u2014 The tangent is perpendicular to the radius"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Power of a point unifies secants and tangents",
+        "plain_title": "Power of a point unifies secants and tangents",
+        "subtitle": "Visual Circle Lab \u2014 Chords, Tangents, Power and Radical Axes",
+        "bookmark": "JEE 13 \u2014 Power of a point unifies secants and tangents"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Radical axis: equal power, common chord",
+        "plain_title": "Radical axis: equal power, common chord",
+        "subtitle": "Visual Circle Lab \u2014 Chords, Tangents, Power and Radical Axes",
+        "bookmark": "JEE 14 \u2014 Radical axis: equal power, common chord"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Circle strategy",
+        "plain_title": "Circle strategy",
+        "subtitle": "Visual Circle Lab \u2014 Chords, Tangents, Power and Radical Axes",
+        "bookmark": "JEE 15 \u2014 Circle strategy"
       }
     ],
     "olympiad": [
@@ -62,10 +152,28 @@
         "no": 2,
         "file": "Olympiad/02.png",
         "id": "OLY-02",
+        "title": "Inversion and Distance-Ratio Circles",
+        "plain_title": "Inversion and Distance-Ratio Circles",
+        "subtitle": "Inversion and Distance-Ratio Circles",
+        "bookmark": "OLY 2 \u2014 Inversion and Distance-Ratio Circles"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
         "title": "Simson Line and Ptolemy",
         "plain_title": "Simson Line and Ptolemy",
         "subtitle": "Simson Line and Ptolemy",
-        "bookmark": "OLY 2 \u2014 Simson Line and Ptolemy"
+        "bookmark": "OLY 3 \u2014 Simson Line and Ptolemy"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Simson Line and Ptolemy (cont.)",
+        "plain_title": "Simson Line and Ptolemy (cont.)",
+        "subtitle": "Simson Line and Ptolemy",
+        "bookmark": "OLY 4 \u2014 Simson Line and Ptolemy (cont.)"
       }
     ]
   }

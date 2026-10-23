@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Independent numeric verification of Chapter 5 (Complex Numbers) claims."""
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_engine"))
+from visual_math_checks import checks_for
+
 import cmath
 import math
 from itertools import product
@@ -312,6 +318,9 @@ chk(ds[0] + ds[1] > ds[2] + 1e-6, "Pompeiu non-degenerate off circle")
 chk(close(ds[0], 1.4142135623730951, 1e-9), "Pompeiu example smallest distance sqrt2")
 chk(close(ds[1], 2.5035872647924866, 1e-9), "Pompeiu example middle ~2.5036")
 chk(close(ds[2], 3.1196235041377793, 1e-9), "Pompeiu example largest ~3.1196")
+
+for _name, _condition in checks_for(Path(__file__).resolve().parents[1].name):
+    chk(_condition, f"visual lesson: {_name}")
 
 print(f"Chapter 5 math_checks: {N[0] - len(FAILS)}/{N[0]} PASS")
 if FAILS:

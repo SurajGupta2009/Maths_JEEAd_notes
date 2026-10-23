@@ -1,7 +1,7 @@
-# Chapters 1–11 — completeness and reading-order review
+# Chapters 1–13 — completeness and reading-order review
 
 **Review pass:** 2026-10-23. This report records a second-pass cross-check of
-all eleven existing short-note sets against the official JEE Advanced 2026
+all thirteen existing short-note sets against the official JEE Advanced 2026
 syllabus items assigned to these chapters, their chapter `SCOPE.md` /
 `SOURCE-AUDIT.md`, source-note coverage, and the rendered page order. The Part I
 sheets are labelled for JEE Main + Advanced, but this pass is not a separate,
@@ -24,6 +24,8 @@ for Main-specific changes.
 | 9 Binomial Theorem | Mapped coverage present | Positive-integral-index theorem, terms/coefficient work and standard derivable applications. General/negative index remains clearly Part II. |
 | 10 Matrices & Determinants | Mapped coverage present | Matrix algebra, determinants through order 3, adjoint/inverse, and Cramer's rule for 2/3 unknowns. Matrix-array rendering was tested. |
 | 11 Probability & Statistics | Mapped coverage present; statistics source gap remains disclosed | Probability/Bayes/random-variable mean and variance plus grouped/ungrouped mean, median, mode, mean deviation, variance and SD. The repository has no dedicated descriptive-statistics source chapter; the authored treatment and grouped-data estimation assumptions are disclosed. |
+| 12 Straight Lines & Locus | Mapped coverage present | Cartesian coordinates, distance/section tools, slope and line equations, angles, perpendicular distance, concurrency, triangle centres and locus methods. |
+| 13 Circles | Mapped coverage present | Circle equations, parametric form, intersections, tangents/normals, power of a point, radical axes and two-circle geometry. |
 
 “Mapped coverage present” means the stated official chapter bullets have
 corresponding authored material and were checked against the chapter scope map;
@@ -33,17 +35,17 @@ numerical checks, not proof verification.
 
 ## IOQM / RMO boundary
 
-The Part II material in these eleven JEE chapters supplies topic-linked
+The Part II material in these thirteen JEE chapters supplies topic-linked
 Olympiad extensions (for example, functional equations/floor tools, trig
 identities, complex geometry, Vieta jumping, recurrences, Catalan/Burnside,
 Lucas/Kummer, determinant structure and probability recurrences). It is **not a
-complete IOQM course**: the first eleven JEE chapters do not include dedicated
+complete IOQM course**: the first thirteen JEE chapters do not include dedicated
 number theory or Euclidean-geometry chapters, and IOQM problems are not bounded
 by this repository's chapter list. No extension is claimed to be impossible
 in JEE. A future IOQM-completeness pass must span the remaining syllabus areas
 and include a separate number-theory/geometry coverage map.
 
-## Reading-order redesign applied to all 11
+## Reading-order and visual expansion applied to all 13
 
 The authored concept order in the source files already follows the prerequisite
 chain shown in each chapter's scope; where the audit identified a syllabus
@@ -51,20 +53,24 @@ omission, it was added rather than hiding the gap. The rendered sheets were
 hard to navigate because the reader had no explicit column order and adjacent
 source lessons could meet without a visible boundary. The shared renderer now:
 
-1. prints a plain-language reading instruction on **every page**: read down
-   the left column, then down the right, then continue to the next sheet;
-2. inserts a numbered **LESSON n / total** ribbon at every editable lesson
-   boundary, retaining the authored prerequisite order;
-3. uses compact, numbered lesson markers so source boundaries are visible
-   without repeating long lesson titles; and
-4. preserves the existing section-heading / worked-example / derivation / trap
-   order and keeps a section heading with the block it introduces.
+1. removes the former two-column reading split and lays every block out in one
+   natural top-to-bottom stream across the page;
+2. starts each editable lesson on a fresh sheet and prints a numbered
+   **LESSON n / total** ribbon, retaining the authored prerequisite order;
+3. labels continuation sheets with `(cont.)`, preserves section-heading /
+   worked-example / derivation / trap order, and keeps headings with the block
+   they introduce; and
+4. adds a visual-methods lesson to every chapter: **59 new editable figures**
+   across the 13 sets, with graphs, geometric constructions, trees and workflow
+   diagrams supplementing the existing explanations.
 
-This is a navigational and page-flow redesign, not a claim that the mathematical
-content has been rewritten from scratch. Per-chapter source audits remain the
-record of source review, corrections, and assumptions. All 11 sets are
-re-rendered and their manifests, galleries, ZIPs and PDFs regenerated from the
-editable content after this redesign.
+The expanded edition contains **253 JEE + 81 Olympiad = 334 sheets**. Coverage,
+not a fixed page quota, determines pagination. Per-chapter source audits remain
+the record of source review, corrections, and assumptions; numerical suites are
+targeted checks rather than proof verification. All 13 sets and their manifests,
+galleries, ZIPs and bookmarked PDFs are regenerated from the editable content.
+Every rendered sheet was reviewed in the full-edition contact-sheet sweep, and
+all 59 added diagrams were independently rendered during visual QA.
 
 ## Syllabus references
 

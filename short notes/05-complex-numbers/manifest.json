@@ -15,163 +15,316 @@
         "no": 2,
         "file": "JEE/02.png",
         "id": "JEE-02",
-        "title": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages (cont.)",
-        "plain_title": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages (cont.)",
+        "title": "The plane: complex numbers are vectors",
+        "plain_title": "The plane: complex numbers are vectors",
         "subtitle": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages",
-        "bookmark": "JEE 2 \u2014 Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages (cont.)"
+        "bookmark": "JEE 2 \u2014 The plane: complex numbers are vectors"
       },
       {
         "no": 3,
         "file": "JEE/03.png",
         "id": "JEE-03",
-        "title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
-        "plain_title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
-        "subtitle": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate",
-        "bookmark": "JEE 3 \u2014 Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)"
+        "title": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages (cont.)",
+        "plain_title": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages (cont.)",
+        "subtitle": "Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages",
+        "bookmark": "JEE 3 \u2014 Complex Numbers \u2014 Arithmetic, Conjugate, Modulus, the Two Languages (cont.)"
       },
       {
         "no": 4,
         "file": "JEE/04.png",
         "id": "JEE-04",
-        "title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
-        "plain_title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
+        "title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate",
+        "plain_title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate",
         "subtitle": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate",
-        "bookmark": "JEE 4 \u2014 Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)"
+        "bookmark": "JEE 4 \u2014 Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate"
       },
       {
         "no": 5,
         "file": "JEE/05.png",
         "id": "JEE-05",
-        "title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)",
-        "plain_title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)",
-        "subtitle": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From",
-        "bookmark": "JEE 5 \u2014 De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)"
+        "title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
+        "plain_title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
+        "subtitle": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate",
+        "bookmark": "JEE 5 \u2014 Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)"
       },
       {
         "no": 6,
         "file": "JEE/06.png",
         "id": "JEE-06",
-        "title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)",
-        "plain_title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)",
-        "subtitle": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From",
-        "bookmark": "JEE 6 \u2014 De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)"
+        "title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
+        "plain_title": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)",
+        "subtitle": "Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate",
+        "bookmark": "JEE 6 \u2014 Argument and Polar Form \u2014 Multiplication is Stretch \u00d7 Rotate (cont.)"
       },
       {
         "no": 7,
         "file": "JEE/07.png",
         "id": "JEE-07",
-        "title": "n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula (cont.)",
-        "plain_title": "n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula (cont.)",
-        "subtitle": "n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula",
-        "bookmark": "JEE 7 \u2014 n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula (cont.)"
+        "title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From",
+        "plain_title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From",
+        "subtitle": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From",
+        "bookmark": "JEE 7 \u2014 De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From"
       },
       {
         "no": 8,
         "file": "JEE/08.png",
         "id": "JEE-08",
-        "title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
-        "plain_title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
-        "subtitle": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums",
-        "bookmark": "JEE 8 \u2014 Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)"
+        "title": "Euler form",
+        "plain_title": "Euler form",
+        "subtitle": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From",
+        "bookmark": "JEE 8 \u2014 Euler form"
       },
       {
         "no": 9,
         "file": "JEE/09.png",
         "id": "JEE-09",
-        "title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
-        "plain_title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
-        "subtitle": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums",
-        "bookmark": "JEE 9 \u2014 Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)"
+        "title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)",
+        "plain_title": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)",
+        "subtitle": "De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From",
+        "bookmark": "JEE 9 \u2014 De Moivre and Euler \u2014 Powers, Roots, and Where Trig Identities Come From (cont.)"
       },
       {
         "no": 10,
         "file": "JEE/10.png",
         "id": "JEE-10",
-        "title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
-        "plain_title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
-        "subtitle": "Product Formulas and the Roots-of-Unity Filter",
-        "bookmark": "JEE 10 \u2014 Product Formulas and the Roots-of-Unity Filter (cont.)"
+        "title": "n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula",
+        "plain_title": "n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula",
+        "subtitle": "n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula",
+        "bookmark": "JEE 10 \u2014 n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula"
       },
       {
         "no": 11,
         "file": "JEE/11.png",
         "id": "JEE-11",
-        "title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
-        "plain_title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
-        "subtitle": "Product Formulas and the Roots-of-Unity Filter",
-        "bookmark": "JEE 11 \u2014 Product Formulas and the Roots-of-Unity Filter (cont.)"
+        "title": "Square roots of an arbitrary complex number \u2014 the explicit formula",
+        "plain_title": "Square roots of an arbitrary complex number \u2014 the explicit formula",
+        "subtitle": "n-th Roots \u2014 Exactly n, Regular Polygons; the Square-Root Formula",
+        "bookmark": "JEE 11 \u2014 Square roots of an arbitrary complex number \u2014 the explicit formula"
       },
       {
         "no": 12,
         "file": "JEE/12.png",
         "id": "JEE-12",
-        "title": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)",
-        "plain_title": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)",
-        "subtitle": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline",
-        "bookmark": "JEE 12 \u2014 Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)"
+        "title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums",
+        "plain_title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums",
+        "subtitle": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums",
+        "bookmark": "JEE 12 \u2014 Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums"
       },
       {
         "no": 13,
         "file": "JEE/13.png",
         "id": "JEE-13",
-        "title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
-        "plain_title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
-        "subtitle": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions",
-        "bookmark": "JEE 13 \u2014 Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)"
+        "title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
+        "plain_title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
+        "subtitle": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums",
+        "bookmark": "JEE 13 \u2014 Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)"
       },
       {
         "no": 14,
         "file": "JEE/14.png",
         "id": "JEE-14",
-        "title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
-        "plain_title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
-        "subtitle": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions",
-        "bookmark": "JEE 14 \u2014 Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)"
+        "title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
+        "plain_title": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)",
+        "subtitle": "Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums",
+        "bookmark": "JEE 14 \u2014 Roots of Unity \u2014 The \u03c9 Toolkit and Vanishing Sums (cont.)"
       },
       {
         "no": 15,
         "file": "JEE/15.png",
         "id": "JEE-15",
-        "title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
-        "plain_title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
-        "subtitle": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case",
-        "bookmark": "JEE 15 \u2014 Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)"
+        "title": "Product Formulas and the Roots-of-Unity Filter",
+        "plain_title": "Product Formulas and the Roots-of-Unity Filter",
+        "subtitle": "Product Formulas and the Roots-of-Unity Filter",
+        "bookmark": "JEE 15 \u2014 Product Formulas and the Roots-of-Unity Filter"
       },
       {
         "no": 16,
         "file": "JEE/16.png",
         "id": "JEE-16",
-        "title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
-        "plain_title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
-        "subtitle": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case",
-        "bookmark": "JEE 16 \u2014 Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)"
+        "title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
+        "plain_title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
+        "subtitle": "Product Formulas and the Roots-of-Unity Filter",
+        "bookmark": "JEE 16 \u2014 Product Formulas and the Roots-of-Unity Filter (cont.)"
       },
       {
         "no": 17,
         "file": "JEE/17.png",
         "id": "JEE-17",
-        "title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
-        "plain_title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
-        "subtitle": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions",
-        "bookmark": "JEE 17 \u2014 Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)"
+        "title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
+        "plain_title": "Product Formulas and the Roots-of-Unity Filter (cont.)",
+        "subtitle": "Product Formulas and the Roots-of-Unity Filter",
+        "bookmark": "JEE 17 \u2014 Product Formulas and the Roots-of-Unity Filter (cont.)"
       },
       {
         "no": 18,
         "file": "JEE/18.png",
         "id": "JEE-18",
-        "title": "Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)",
-        "plain_title": "Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)",
-        "subtitle": "Recap Toolkit \u2014 The Whole Chapter on One Sheet",
-        "bookmark": "JEE 18 \u2014 Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)"
+        "title": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline",
+        "plain_title": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline",
+        "subtitle": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline",
+        "bookmark": "JEE 18 \u2014 Equations in z and z\u0304 \u2014 Two Methods, One Discipline"
       },
       {
         "no": 19,
         "file": "JEE/19.png",
         "id": "JEE-19",
-        "title": "Where this toolkit reappears",
-        "plain_title": "Where this toolkit reappears",
+        "title": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)",
+        "plain_title": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)",
+        "subtitle": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline",
+        "bookmark": "JEE 19 \u2014 Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)",
+        "plain_title": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)",
+        "subtitle": "Equations in z and z\u0304 \u2014 Two Methods, One Discipline",
+        "bookmark": "JEE 20 \u2014 Equations in z and z\u0304 \u2014 Two Methods, One Discipline (cont.)"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
+        "title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions",
+        "plain_title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions",
+        "subtitle": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions",
+        "bookmark": "JEE 21 \u2014 Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
+        "plain_title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
+        "subtitle": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions",
+        "bookmark": "JEE 22 \u2014 Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
+        "plain_title": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)",
+        "subtitle": "Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions",
+        "bookmark": "JEE 23 \u2014 Loci I \u2014 Modulus Conditions: Circles, Bisectors, Apollonius, Regions (cont.)"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case",
+        "plain_title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case",
+        "subtitle": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case",
+        "bookmark": "JEE 24 \u2014 Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case"
+      },
+      {
+        "no": 25,
+        "file": "JEE/25.png",
+        "id": "JEE-25",
+        "title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
+        "plain_title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
+        "subtitle": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case",
+        "bookmark": "JEE 25 \u2014 Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)"
+      },
+      {
+        "no": 26,
+        "file": "JEE/26.png",
+        "id": "JEE-26",
+        "title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
+        "plain_title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
+        "subtitle": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case",
+        "bookmark": "JEE 26 \u2014 Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)"
+      },
+      {
+        "no": 27,
+        "file": "JEE/27.png",
+        "id": "JEE-27",
+        "title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions",
+        "plain_title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions",
+        "subtitle": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions",
+        "bookmark": "JEE 27 \u2014 Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions"
+      },
+      {
+        "no": 28,
+        "file": "JEE/28.png",
+        "id": "JEE-28",
+        "title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
+        "plain_title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
+        "subtitle": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions",
+        "bookmark": "JEE 28 \u2014 Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)"
+      },
+      {
+        "no": 29,
+        "file": "JEE/29.png",
+        "id": "JEE-29",
+        "title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
+        "plain_title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
+        "subtitle": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions",
+        "bookmark": "JEE 29 \u2014 Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)"
+      },
+      {
+        "no": 30,
+        "file": "JEE/30.png",
+        "id": "JEE-30",
+        "title": "Recap Toolkit \u2014 The Whole Chapter on One Sheet",
+        "plain_title": "Recap Toolkit \u2014 The Whole Chapter on One Sheet",
         "subtitle": "Recap Toolkit \u2014 The Whole Chapter on One Sheet",
-        "bookmark": "JEE 19 \u2014 Where this toolkit reappears"
+        "bookmark": "JEE 30 \u2014 Recap Toolkit \u2014 The Whole Chapter on One Sheet"
+      },
+      {
+        "no": 31,
+        "file": "JEE/31.png",
+        "id": "JEE-31",
+        "title": "Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)",
+        "plain_title": "Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)",
+        "subtitle": "Recap Toolkit \u2014 The Whole Chapter on One Sheet",
+        "bookmark": "JEE 31 \u2014 Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)"
+      },
+      {
+        "no": 32,
+        "file": "JEE/32.png",
+        "id": "JEE-32",
+        "title": "Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)",
+        "plain_title": "Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)",
+        "subtitle": "Recap Toolkit \u2014 The Whole Chapter on One Sheet",
+        "bookmark": "JEE 32 \u2014 Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)"
+      },
+      {
+        "no": 33,
+        "file": "JEE/33.png",
+        "id": "JEE-33",
+        "title": "Visual Complex-Number Lab \u2014 Argand Plane, Roots and Transformations",
+        "plain_title": "Visual Complex-Number Lab \u2014 Argand Plane, Roots and Transformations",
+        "subtitle": "Visual Complex-Number Lab \u2014 Argand Plane, Roots and Transformations",
+        "bookmark": "JEE 33 \u2014 Visual Complex-Number Lab \u2014 Argand Plane, Roots and Transformations"
+      },
+      {
+        "no": 34,
+        "file": "JEE/34.png",
+        "id": "JEE-34",
+        "title": "Roots of unity are equally spaced",
+        "plain_title": "Roots of unity are equally spaced",
+        "subtitle": "Visual Complex-Number Lab \u2014 Argand Plane, Roots and Transformations",
+        "bookmark": "JEE 34 \u2014 Roots of unity are equally spaced"
+      },
+      {
+        "no": 35,
+        "file": "JEE/35.png",
+        "id": "JEE-35",
+        "title": "Multiplication rotates and scales",
+        "plain_title": "Multiplication rotates and scales",
+        "subtitle": "Visual Complex-Number Lab \u2014 Argand Plane, Roots and Transformations",
+        "bookmark": "JEE 35 \u2014 Multiplication rotates and scales"
+      },
+      {
+        "no": 36,
+        "file": "JEE/36.png",
+        "id": "JEE-36",
+        "title": "Transformations and equations: a reliable order",
+        "plain_title": "Transformations and equations: a reliable order",
+        "subtitle": "Visual Complex-Number Lab \u2014 Argand Plane, Roots and Transformations",
+        "bookmark": "JEE 36 \u2014 Transformations and equations: a reliable order"
       }
     ],
     "olympiad": [
@@ -197,10 +350,10 @@
         "no": 3,
         "file": "Olympiad/03.png",
         "id": "OLY-03",
-        "title": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)",
-        "plain_title": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)",
+        "title": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion",
+        "plain_title": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion",
         "subtitle": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion",
-        "bookmark": "OLY 3 \u2014 Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)"
+        "bookmark": "OLY 3 \u2014 Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion"
       },
       {
         "no": 4,
@@ -215,64 +368,118 @@
         "no": 5,
         "file": "Olympiad/05.png",
         "id": "OLY-05",
-        "title": "Napoleon's Theorem \u2014 equilaterals erected on the sides",
-        "plain_title": "Napoleon's Theorem \u2014 equilaterals erected on the sides",
-        "subtitle": "Extension \u2014 Van Aubel and Napoleon: Squares and Equilaterals on the Sides",
-        "bookmark": "OLY 5 \u2014 Napoleon's Theorem \u2014 equilaterals erected on the sides"
+        "title": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)",
+        "plain_title": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)",
+        "subtitle": "Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion",
+        "bookmark": "OLY 5 \u2014 Extension \u2014 Ptolemy from One Identity; Distance Theorems by Expansion (cont.)"
       },
       {
         "no": 6,
         "file": "Olympiad/06.png",
         "id": "OLY-06",
-        "title": "Leibniz \u2014 distance sums are minimised at the centroid",
-        "plain_title": "Leibniz \u2014 distance sums are minimised at the centroid",
-        "subtitle": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z",
-        "bookmark": "OLY 6 \u2014 Leibniz \u2014 distance sums are minimised at the centroid"
+        "title": "Extension \u2014 Van Aubel and Napoleon: Squares and Equilaterals on the Sides",
+        "plain_title": "Extension \u2014 Van Aubel and Napoleon: Squares and Equilaterals on the Sides",
+        "subtitle": "Extension \u2014 Van Aubel and Napoleon: Squares and Equilaterals on the Sides",
+        "bookmark": "OLY 6 \u2014 Extension \u2014 Van Aubel and Napoleon: Squares and Equilaterals on the Sides"
       },
       {
         "no": 7,
         "file": "Olympiad/07.png",
         "id": "OLY-07",
-        "title": "Joukowski \u2014 w = z + 1/z collapses circles to segments",
-        "plain_title": "Joukowski \u2014 w = z + 1/z collapses circles to segments",
-        "subtitle": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z",
-        "bookmark": "OLY 7 \u2014 Joukowski \u2014 w = z + 1/z collapses circles to segments"
+        "title": "Napoleon's Theorem \u2014 equilaterals erected on the sides",
+        "plain_title": "Napoleon's Theorem \u2014 equilaterals erected on the sides",
+        "subtitle": "Extension \u2014 Van Aubel and Napoleon: Squares and Equilaterals on the Sides",
+        "bookmark": "OLY 7 \u2014 Napoleon's Theorem \u2014 equilaterals erected on the sides"
       },
       {
         "no": 8,
         "file": "Olympiad/08.png",
         "id": "OLY-08",
-        "title": "The object and its closed form",
-        "plain_title": "The object and its closed form",
-        "subtitle": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4",
-        "bookmark": "OLY 8 \u2014 The object and its closed form"
+        "title": "Extension \u2014 Van Aubel and Napoleon: Squares and Equilaterals on the Sides (cont.)",
+        "plain_title": "Extension \u2014 Van Aubel and Napoleon: Squares and Equilaterals on the Sides (cont.)",
+        "subtitle": "Extension \u2014 Van Aubel and Napoleon: Squares and Equilaterals on the Sides",
+        "bookmark": "OLY 8 \u2014 Extension \u2014 Van Aubel and Napoleon: Squares and Equilaterals on the Sides (cont.)"
       },
       {
         "no": 9,
         "file": "Olympiad/09.png",
         "id": "OLY-09",
-        "title": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4 (cont.)",
-        "plain_title": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4 (cont.)",
-        "subtitle": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4",
-        "bookmark": "OLY 9 \u2014 Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4 (cont.)"
+        "title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z",
+        "plain_title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z",
+        "subtitle": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z",
+        "bookmark": "OLY 9 \u2014 Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z"
       },
       {
         "no": 10,
         "file": "Olympiad/10.png",
         "id": "OLY-10",
-        "title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)",
-        "plain_title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)",
-        "subtitle": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems",
-        "bookmark": "OLY 10 \u2014 Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)"
+        "title": "Unit-circle configurations \u2014 z\u0304 = 1/z is the entry ticket",
+        "plain_title": "Unit-circle configurations \u2014 z\u0304 = 1/z is the entry ticket",
+        "subtitle": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z",
+        "bookmark": "OLY 10 \u2014 Unit-circle configurations \u2014 z\u0304 = 1/z is the entry ticket"
       },
       {
         "no": 11,
         "file": "Olympiad/11.png",
         "id": "OLY-11",
+        "title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)",
+        "plain_title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)",
+        "subtitle": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z",
+        "bookmark": "OLY 11 \u2014 Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)"
+      },
+      {
+        "no": 12,
+        "file": "Olympiad/12.png",
+        "id": "OLY-12",
+        "title": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4",
+        "plain_title": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4",
+        "subtitle": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4",
+        "bookmark": "OLY 12 \u2014 Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4"
+      },
+      {
+        "no": 13,
+        "file": "Olympiad/13.png",
+        "id": "OLY-13",
+        "title": "Mechanism 2: the phase, case by case",
+        "plain_title": "Mechanism 2: the phase, case by case",
+        "subtitle": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4",
+        "bookmark": "OLY 13 \u2014 Mechanism 2: the phase, case by case"
+      },
+      {
+        "no": 14,
+        "file": "Olympiad/14.png",
+        "id": "OLY-14",
+        "title": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4 (cont.)",
+        "plain_title": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4 (cont.)",
+        "subtitle": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4",
+        "bookmark": "OLY 14 \u2014 Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4 (cont.)"
+      },
+      {
+        "no": 15,
+        "file": "Olympiad/15.png",
+        "id": "OLY-15",
+        "title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems",
+        "plain_title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems",
+        "subtitle": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems",
+        "bookmark": "OLY 15 \u2014 Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems"
+      },
+      {
+        "no": 16,
+        "file": "Olympiad/16.png",
+        "id": "OLY-16",
         "title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)",
         "plain_title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)",
         "subtitle": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems",
-        "bookmark": "OLY 11 \u2014 Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)"
+        "bookmark": "OLY 16 \u2014 Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)"
+      },
+      {
+        "no": 17,
+        "file": "Olympiad/17.png",
+        "id": "OLY-17",
+        "title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)",
+        "plain_title": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)",
+        "subtitle": "Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems",
+        "bookmark": "OLY 17 \u2014 Extension \u2014 Gauss\u2013Lucas, Marden, Pompeiu: Structure Theorems (cont.)"
       }
     ]
   }

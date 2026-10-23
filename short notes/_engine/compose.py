@@ -4,16 +4,17 @@ Content DSL (see chapter README):
   --- yaml frontmatter: id, part ('jee'|'olympiad'), title ---
   ## Section heading        -> teal section band (also becomes sheet title when
                                it opens a new sheet)
-  ### Subheading            -> in-column teal heading
+  ### Subheading            -> in-stream teal heading
   prose paragraphs with inline $math$ and **bold**
   - bullets / 1. numbered items
-  $$ display math $$        -> centred; auto-shrinks to fit the column
+  $$ display math $$        -> centred; auto-shrinks to fit the text measure
   :::key|warn|intuition|derive|example|app|assume [title="..."]  ... :::
-  :::diagram {json spec} :::   (add "wide": true in the spec to span both columns)
+  :::diagram {json spec} :::   (large centred editable figure)
+  <!-- pagebreak -->          (explicit new sheet when authoring requires it)
 
-Layout: two text columns (1060 px each) on a 2480x3508 canvas. Content is
-auto-paginated: when the current sheet is full, a new sheet is started at the
-next block boundary — prose is never shrunk or cut, the set expands instead.
+Layout: one continuous 2040 px notebook measure on a 2480x3508 canvas.
+Content auto-paginates at block boundaries and lessons start on fresh sheets;
+prose is never shrunk or cut, so the set expands instead.
 """
 from __future__ import annotations
 
@@ -31,17 +32,15 @@ from diagrams import build_diagram
 
 PAGE_W, PAGE_H = 2480, 3508
 MARGIN = 120
-COL_W = 1060
-COL_GAP = 120
-COL0_X = MARGIN
-COL1_X = MARGIN + COL_W + COL_GAP          # 1300
-FULL_W = PAGE_W - 2 * MARGIN               # 2240
+CONTENT_X = 220
+FULL_W = 2040
+DIAGRAM_W = 1560
 CONTENT_TOP = 300
 CONTENT_BOTTOM = 3280
 ITEM_GAP = 26
-LINE_H = 66
-BODY = 48
-BODY_PT = BODY / PX_PER_PT                 # 11.52 pt
+LINE_H = 72
+BODY = 50
+BODY_PT = BODY / PX_PER_PT                 # 12 pt
 DISPLAY = 54
 BOX_PAD = 26
 
@@ -109,9 +108,18 @@ def parse_content(src: str):
         i = 1
         while i < len(lines) and lines[i].strip() != "---":
             k, _, v = lines[i].partition(":")
-            v = v.strip().strip('"').strip("'")
+            v = v.strip()
+            if len(v) >= 2 and v[0] == v[-1] and v[0] in ('\"', "'"):
+                v = v[1:-1]
             if v.startswith("[") and v.endswith("]"):
-                v = [x.strip().strip('"').strip("'") for x in v[1:-1].split(",") if x.strip()]
+                items = []
+                for x in v[1:-1].split(","):
+                    x = x.strip()
+                    if len(x) >= 2 and x[0] == x[-1] and x[0] in ('\"', "'"):
+                        x = x[1:-1]
+                    if x:
+                        items.append(x)
+                v = items
             fm[k.strip()] = v
             i += 1
         i += 1
@@ -158,6 +166,11 @@ def parse_content(src: str):
                     out.append(Block("box", items=inner, title=title,
                                      text=name))
                 continue
+            if line.strip() == "<!-- pagebreak -->":
+                flush_para()
+                out.append(Block("pagebreak"))
+                i += 1
+                continue
             if line.startswith("$$") and line.strip().endswith("$$") and len(line.strip()) > 4:
                 flush_para()
                 out.append(Block("display", text=line.strip()[2:-2].strip()))
@@ -171,7 +184,8 @@ def parse_content(src: str):
                     body.append(lines[i])
                     i += 1
                 i += 1
-                out.append(Block("display", text="\n".join(body)))
+                # Mathtext displays are single-line: source newlines are whitespace.
+                out.append(Block("display", text=" ".join(body)))
                 continue
             if line.startswith("## "):
                 flush_para()
@@ -224,7 +238,7 @@ class BlockRenderer:
         cur_w = 0
         for run in runs:
             if run.kind == "math":
-                img = math_image(run.text, pt=BODY_PT, color=_hex(run.color))
+                img = math_image(run.text, pt=run.size / PX_PER_PT, color=_hex(run.color))
                 w = img.width + 6
                 if cur_w + w > width and lines[-1]:
                     lines.append([])
@@ -235,6 +249,12 @@ class BlockRenderer:
             tokens = re.findall(r"\s*\S+\s*|\s+", run.text)
             for tok in tokens:
                 drawer_font = HAND_BOLD if run.bold else HAND
+                if (tok.strip() and tok.lstrip()[0] in ".,;:!?%)]}"
+                        and lines[-1] and not tok[0].isspace()):
+                    lines[-1].append(Run("text", tok, bold=run.bold, color=run.color,
+                                         size=run.size, font_name=run.font_name))
+                    cur_w += int(_measure(tok, drawer_font, run.size)) + 2
+                    continue
                 w = int(_measure(tok, drawer_font, run.size)) + 2
                 if cur_w + w > width and lines[-1] and tok.strip():
                     lines.append([])
@@ -289,6 +309,8 @@ class BlockRenderer:
 
     def render(self, block: Block, width: int) -> Image.Image:
         k = block.kind
+        if k == "pagebreak":
+            return Image.new("RGBA", (width, 1), (0, 0, 0, 0))
         if k in ("para",):
             h = self._estimate_para(block.text, width)
             img = Image.new("RGBA", (width, h), (0, 0, 0, 0))
@@ -469,87 +491,56 @@ class Page:
 
 
 def paginate(blocks: list[Block], br: BlockRenderer) -> tuple[list[Page], list[str]]:
-    """Render all blocks, then flow them into pages. Prose is never cut: an
-    overflowing block starts a new page. Section headings are kept with their
-    first following block (no orphan headings)."""
+    """Render into one natural top-to-bottom reading stream."""
     rendered: list[tuple[Block, Image.Image]] = []
     errors = []
     for b in blocks:
-        w = FULL_W if b.wide else COL_W
-        if b.kind == "diagram":
-            w = FULL_W if b.spec.get("wide", False) else COL_W
-            b.wide = bool(b.spec.get("wide", False))
+        w = DIAGRAM_W if b.kind == "diagram" else FULL_W
+        if b.kind == "diagram" and b.spec.get("wide", False):
+            w = FULL_W
         im = br.render(b, w)
-        if im.height > (CONTENT_BOTTOM - CONTENT_TOP):
-            errors.append(f"block taller than a whole column: {b.kind} {b.text[:40]}")
+        if im.height > CONTENT_BOTTOM - CONTENT_TOP:
+            errors.append(f"block taller than one sheet: {b.kind} {b.text[:40]}")
         rendered.append((b, im))
 
     pages: list[Page] = []
     cur = Page()
-    y0 = y1 = CONTENT_TOP
-    col = 0
+    y = CONTENT_TOP
 
     def new_page():
-        nonlocal cur, y0, y1, col
+        nonlocal cur, y
         if cur.items:
             pages.append(cur)
         cur = Page()
-        y0 = y1 = CONTENT_TOP
-        col = 0
+        y = CONTENT_TOP
 
     idx = 0
     while idx < len(rendered):
         b, im = rendered[idx]
-        # orphan-heading rule: a head2 must stay with the first block after it
+        if b.kind == "pagebreak":
+            new_page()
+            idx += 1
+            continue
+        if b.kind == "lesson" and cur.items:
+            new_page()
         extra_h = 0
         if b.kind in ("head2", "lesson") and idx + 1 < len(rendered):
             nb, nim = rendered[idx + 1]
-            if not (nb.wide or nim.width == FULL_W):
+            if nb.kind != "pagebreak":
                 extra_h = nim.height + ITEM_GAP
-
-        if b.wide or im.width == FULL_W:
-            cut = max(y0, y1) + 14
-            if cut + im.height + extra_h > CONTENT_BOTTOM or \
-                    (cut > CONTENT_TOP + 14 and col == 0 and y1 == CONTENT_TOP):
-                new_page()
-                cut = CONTENT_TOP + 14
-            cur.items.append((b, im, cut))
-            y0 = y1 = cut + im.height + ITEM_GAP
-            col = 0
-            idx += 1
-            continue
-
         need = im.height + extra_h
-        placed = False
-        for attempt in (0, 1):
-            y = y0 if col == 0 else y1
-            if y + need <= CONTENT_BOTTOM:
-                cur.items.append((b, im, y, col))
-                if col == 0:
-                    y0 = y + im.height + ITEM_GAP
-                else:
-                    y1 = y + im.height + ITEM_GAP
-                placed = True
-                break
-            if col == 0:
-                col = 1
-        if placed:
-            idx += 1
-            continue
-        new_page()
-        if im.height + extra_h > CONTENT_BOTTOM - CONTENT_TOP:
+        if y + need > CONTENT_BOTTOM and cur.items:
+            new_page()
+        if y + im.height > CONTENT_BOTTOM:
             errors.append(f"block too tall even alone: {b.kind} {b.text[:40]}")
             idx += 1
             continue
-        cur.items.append((b, im, CONTENT_TOP, 0))
-        y0 = CONTENT_TOP + im.height + ITEM_GAP
-        col = 0
+        cur.items.append((b, im, y))
+        y += im.height + ITEM_GAP
         idx += 1
-
     if cur.items:
         pages.append(cur)
 
-    # page titles: prefer a leading section heading, else "(cont.)"
     base = ""
     for pg in pages:
         first = pg.items[0][0]
@@ -564,6 +555,25 @@ def paginate(blocks: list[Block], br: BlockRenderer) -> tuple[list[Page], list[s
 # --------------------------------------------------------------------------
 # Sheet drawing (header/footer/background + paste pre-rendered blocks)
 # --------------------------------------------------------------------------
+def fit_header_title(title: str, avail: float) -> tuple[str, int]:
+    """Fit a running title without chopping characters or hiding the badge.
+
+    Only an actually over-wide title is shortened. The old implementation could
+    remove the final character pair merely to reserve room for an ellipsis and
+    then omit that ellipsis when the untouched title already fitted.
+    """
+    tsize = 62
+    while _measure(title, HAND_BOLD, tsize) > avail and tsize > 42:
+        tsize -= 4
+    if _measure(title, HAND_BOLD, tsize) <= avail:
+        return title, tsize
+    shortened = title
+    while (_measure(shortened + "…", HAND_BOLD, tsize) > avail
+           and len(shortened) > 8):
+        shortened = shortened[:-1]
+    return shortened.rstrip() + "…", tsize
+
+
 def draw_sheet(fm: dict, page: Page, chapter_slug: str, part_label: str,
                sheet_no: int, sheet_total: int,
                page_id: str = "") -> Image.Image:
@@ -576,14 +586,7 @@ def draw_sheet(fm: dict, page: Page, chapter_slug: str, part_label: str,
     chip = f"{part_label}  ·  SHEET {sheet_no} / {sheet_total}"
     cw = _measure(chip, HAND_BOLD, 38) + 48
     avail = PAGE_W - 2 * MARGIN - cw - 60
-    tsize = 62
-    while _measure(title, HAND_BOLD, tsize) > avail and tsize > 42:
-        tsize -= 4
-    while _measure(title + "…", HAND_BOLD, tsize) > avail and len(title) > 8:
-        title = title[:-2]
-    if _measure(title + "…", HAND_BOLD, tsize) <= avail and \
-            _measure(page.title or fm.get("title", ""), HAND_BOLD, tsize) > avail:
-        title = title.rstrip() + "…"
+    title, tsize = fit_header_title(title, avail)
     drawer = Drawer(img)
     cx = MARGIN
     for r in _parse_inline_runs(title, size=tsize, color=TEAL, bold=True):
@@ -592,7 +595,7 @@ def draw_sheet(fm: dict, page: Page, chapter_slug: str, part_label: str,
                         radius=16, fill=TEAL_BG, outline=TEAL, width=3)
     d.text((PAGE_W - MARGIN - cw + 24, 148), chip,
            font=get_font(HAND_BOLD, 38), fill=TEAL)
-    route = "READ IN ORDER: top to bottom in the left column, then top to bottom in the right column; then next sheet."
+    route = "NOTEBOOK FLOW: read straight down the page, then continue on the next sheet."
     d.text((MARGIN, 218), route, font=get_font(HAND_BOLD, 27), fill=TEAL)
     d.line([MARGIN, 268, PAGE_W - MARGIN, 268], fill=TEAL, width=4)
     d.line([MARGIN, 280, PAGE_W - MARGIN, 280], fill=(176, 214, 212), width=2)
@@ -609,20 +612,12 @@ def draw_sheet(fm: dict, page: Page, chapter_slug: str, part_label: str,
     d.text((PAGE_W - MARGIN - _measure(foot_r, HAND, 38) - 6, 3316), foot_r,
            font=f1, fill=INK_FAINT)
 
-    for item in page.items:
-        if len(item) == 4:
-            b, im, y, col = item
-            x = COL0_X if col == 0 else COL1_X
-            if im.mode == "RGBA":
-                img.paste(im, (x, y), im)
-            else:
-                img.paste(im.convert("RGB"), (x, y))
+    for b, im, y in page.items:
+        x = CONTENT_X + (FULL_W - im.width) // 2
+        if im.mode == "RGBA":
+            img.paste(im, (x, y), im)
         else:
-            b, im, ycut = item
-            if im.mode == "RGBA":
-                img.paste(im, (MARGIN, ycut), im)
-            else:
-                img.paste(im.convert("RGB"), (MARGIN, ycut))
+            img.paste(im.convert("RGB"), (x, y))
     return img
 
 

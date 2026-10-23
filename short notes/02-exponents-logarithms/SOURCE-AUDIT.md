@@ -31,5 +31,5 @@ The vault cannot supply prose for this chapter. What is written in `content/` is
 
 - `scripts/math_checks.py` — 163/163 numeric checks PASS (laws, parity, every worked example re-substituted, log identities at random bases, digit counts, comparisons, parametrisation, Legendre, harmonic bounds).
 - `scripts/check.py` — deliverable/render checks PASS (formula parsing, fonts, margins, ZIP/PDF integrity, gallery links).
-- Visual: all 12 sheets reviewed at contact resolution; both diagrams (exponential family, log curves) inspected at full resolution and label positions corrected.
+- Visual: all 24 sheets reviewed at contact-sheet resolution; both diagrams (exponential family, log curves) inspected at full resolution and label positions corrected.
 - No claim of exhaustive mathematical verification beyond the above is made.

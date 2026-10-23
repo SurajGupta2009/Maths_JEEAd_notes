@@ -24,55 +24,145 @@
         "no": 3,
         "file": "JEE/03.png",
         "id": "JEE-03",
-        "title": "Forming an equation from its roots",
-        "plain_title": "Forming an equation from its roots",
+        "title": "Vieta's Relations and Symmetric Functions \u2014 Never Solve for the Roots",
+        "plain_title": "Vieta's Relations and Symmetric Functions \u2014 Never Solve for the Roots",
         "subtitle": "Vieta's Relations and Symmetric Functions \u2014 Never Solve for the Roots",
-        "bookmark": "JEE 3 \u2014 Forming an equation from its roots"
+        "bookmark": "JEE 3 \u2014 Vieta's Relations and Symmetric Functions \u2014 Never Solve for the Roots"
       },
       {
         "no": 4,
         "file": "JEE/04.png",
         "id": "JEE-04",
-        "title": "The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign (cont.)",
-        "plain_title": "The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign (cont.)",
-        "subtitle": "The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign",
-        "bookmark": "JEE 4 \u2014 The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign (cont.)"
+        "title": "Forming an equation from its roots",
+        "plain_title": "Forming an equation from its roots",
+        "subtitle": "Vieta's Relations and Symmetric Functions \u2014 Never Solve for the Roots",
+        "bookmark": "JEE 4 \u2014 Forming an equation from its roots"
       },
       {
         "no": 5,
         "file": "JEE/05.png",
         "id": "JEE-05",
-        "title": "Location of Roots \u2014 Pinning Roots into Intervals Without Solving (cont.)",
-        "plain_title": "Location of Roots \u2014 Pinning Roots into Intervals Without Solving (cont.)",
-        "subtitle": "Location of Roots \u2014 Pinning Roots into Intervals Without Solving",
-        "bookmark": "JEE 5 \u2014 Location of Roots \u2014 Pinning Roots into Intervals Without Solving (cont.)"
+        "title": "The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign",
+        "plain_title": "The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign",
+        "subtitle": "The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign",
+        "bookmark": "JEE 5 \u2014 The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign"
       },
       {
         "no": 6,
         "file": "JEE/06.png",
         "id": "JEE-06",
-        "title": "Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify (cont.)",
-        "plain_title": "Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify (cont.)",
-        "subtitle": "Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify",
-        "bookmark": "JEE 6 \u2014 Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify (cont.)"
+        "title": "The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign (cont.)",
+        "plain_title": "The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign (cont.)",
+        "subtitle": "The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign",
+        "bookmark": "JEE 6 \u2014 The Quadratic Expression \u2014 Sign, Vertex, Range, and When It Never Changes Sign (cont.)"
       },
       {
         "no": 7,
         "file": "JEE/07.png",
         "id": "JEE-07",
-        "title": "Transformed roots",
-        "plain_title": "Transformed roots",
-        "subtitle": "Common Roots and Transformed Equations \u2014 Putting Quadratics Together",
-        "bookmark": "JEE 7 \u2014 Transformed roots"
+        "title": "Location of Roots \u2014 Pinning Roots into Intervals Without Solving",
+        "plain_title": "Location of Roots \u2014 Pinning Roots into Intervals Without Solving",
+        "subtitle": "Location of Roots \u2014 Pinning Roots into Intervals Without Solving",
+        "bookmark": "JEE 7 \u2014 Location of Roots \u2014 Pinning Roots into Intervals Without Solving"
       },
       {
         "no": 8,
         "file": "JEE/08.png",
         "id": "JEE-08",
+        "title": "Location of Roots \u2014 Pinning Roots into Intervals Without Solving (cont.)",
+        "plain_title": "Location of Roots \u2014 Pinning Roots into Intervals Without Solving (cont.)",
+        "subtitle": "Location of Roots \u2014 Pinning Roots into Intervals Without Solving",
+        "bookmark": "JEE 8 \u2014 Location of Roots \u2014 Pinning Roots into Intervals Without Solving (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify",
+        "plain_title": "Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify",
+        "subtitle": "Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify",
+        "bookmark": "JEE 9 \u2014 Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify (cont.)",
+        "plain_title": "Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify (cont.)",
+        "subtitle": "Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify",
+        "bookmark": "JEE 10 \u2014 Equations Reducible to Quadratics \u2014 One Substitution Away, Then Verify (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Common Roots and Transformed Equations \u2014 Putting Quadratics Together",
+        "plain_title": "Common Roots and Transformed Equations \u2014 Putting Quadratics Together",
+        "subtitle": "Common Roots and Transformed Equations \u2014 Putting Quadratics Together",
+        "bookmark": "JEE 11 \u2014 Common Roots and Transformed Equations \u2014 Putting Quadratics Together"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "Common Roots and Transformed Equations \u2014 Putting Quadratics Together (cont.)",
+        "plain_title": "Common Roots and Transformed Equations \u2014 Putting Quadratics Together (cont.)",
+        "subtitle": "Common Roots and Transformed Equations \u2014 Putting Quadratics Together",
+        "bookmark": "JEE 12 \u2014 Common Roots and Transformed Equations \u2014 Putting Quadratics Together (cont.)"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Parameter Problems and the Recap Toolkit \u2014 The JEE Question Shapes",
+        "plain_title": "Parameter Problems and the Recap Toolkit \u2014 The JEE Question Shapes",
+        "subtitle": "Parameter Problems and the Recap Toolkit \u2014 The JEE Question Shapes",
+        "bookmark": "JEE 13 \u2014 Parameter Problems and the Recap Toolkit \u2014 The JEE Question Shapes"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
         "title": "Parameter Problems and the Recap Toolkit \u2014 The JEE Question Shapes (cont.)",
         "plain_title": "Parameter Problems and the Recap Toolkit \u2014 The JEE Question Shapes (cont.)",
         "subtitle": "Parameter Problems and the Recap Toolkit \u2014 The JEE Question Shapes",
-        "bookmark": "JEE 8 \u2014 Parameter Problems and the Recap Toolkit \u2014 The JEE Question Shapes (cont.)"
+        "bookmark": "JEE 14 \u2014 Parameter Problems and the Recap Toolkit \u2014 The JEE Question Shapes (cont.)"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Visual Quadratic Lab \u2014 Discriminant, Vertex and Root Location",
+        "plain_title": "Visual Quadratic Lab \u2014 Discriminant, Vertex and Root Location",
+        "subtitle": "Visual Quadratic Lab \u2014 Discriminant, Vertex and Root Location",
+        "bookmark": "JEE 15 \u2014 Visual Quadratic Lab \u2014 Discriminant, Vertex and Root Location"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "The vertex gives the extreme value",
+        "plain_title": "The vertex gives the extreme value",
+        "subtitle": "Visual Quadratic Lab \u2014 Discriminant, Vertex and Root Location",
+        "bookmark": "JEE 16 \u2014 The vertex gives the extreme value"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Root location is a sign-and-axis problem",
+        "plain_title": "Root location is a sign-and-axis problem",
+        "subtitle": "Visual Quadratic Lab \u2014 Discriminant, Vertex and Root Location",
+        "bookmark": "JEE 17 \u2014 Root location is a sign-and-axis problem"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "A worked parameter filter",
+        "plain_title": "A worked parameter filter",
+        "subtitle": "Visual Quadratic Lab \u2014 Discriminant, Vertex and Root Location",
+        "bookmark": "JEE 18 \u2014 A worked parameter filter"
       }
     ],
     "olympiad": [
@@ -89,19 +179,46 @@
         "no": 2,
         "file": "Olympiad/02.png",
         "id": "OLY-02",
-        "title": "Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics (cont.)",
-        "plain_title": "Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics (cont.)",
-        "subtitle": "Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics",
-        "bookmark": "OLY 2 \u2014 Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics (cont.)"
+        "title": "Extension \u2014 Newton's Sums, Power Sums, and the Fibonacci\u2013Lucas Machine (cont.)",
+        "plain_title": "Extension \u2014 Newton's Sums, Power Sums, and the Fibonacci\u2013Lucas Machine (cont.)",
+        "subtitle": "Extension \u2014 Newton's Sums, Power Sums, and the Fibonacci\u2013Lucas Machine",
+        "bookmark": "OLY 2 \u2014 Extension \u2014 Newton's Sums, Power Sums, and the Fibonacci\u2013Lucas Machine (cont.)"
       },
       {
         "no": 3,
         "file": "Olympiad/03.png",
         "id": "OLY-03",
+        "title": "Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics",
+        "plain_title": "Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics",
+        "subtitle": "Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics",
+        "bookmark": "OLY 3 \u2014 Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics (cont.)",
+        "plain_title": "Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics (cont.)",
+        "subtitle": "Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics",
+        "bookmark": "OLY 4 \u2014 Extension \u2014 The Discriminant as an Invariant, Rational Roots, and Solving Cubics by Quadratics (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Extension \u2014 Vieta Jumping: Descent Built on the Quadratic Formula (IMO 1988/6)",
+        "plain_title": "Extension \u2014 Vieta Jumping: Descent Built on the Quadratic Formula (IMO 1988/6)",
+        "subtitle": "Extension \u2014 Vieta Jumping: Descent Built on the Quadratic Formula (IMO 1988/6)",
+        "bookmark": "OLY 5 \u2014 Extension \u2014 Vieta Jumping: Descent Built on the Quadratic Formula (IMO 1988/6)"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
         "title": "Extension \u2014 Vieta Jumping: Descent Built on the Quadratic Formula (IMO 1988/6) (cont.)",
         "plain_title": "Extension \u2014 Vieta Jumping: Descent Built on the Quadratic Formula (IMO 1988/6) (cont.)",
         "subtitle": "Extension \u2014 Vieta Jumping: Descent Built on the Quadratic Formula (IMO 1988/6)",
-        "bookmark": "OLY 3 \u2014 Extension \u2014 Vieta Jumping: Descent Built on the Quadratic Formula (IMO 1988/6) (cont.)"
+        "bookmark": "OLY 6 \u2014 Extension \u2014 Vieta Jumping: Descent Built on the Quadratic Formula (IMO 1988/6) (cont.)"
       }
     ]
   }

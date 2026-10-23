@@ -180,18 +180,21 @@ def numberline(spec: dict, width_px: int) -> Image.Image:
             ax.plot([b], [y], "o" if item.get("closed_b", True) else "o",
                     markersize=11, markerfacecolor=col if item.get("closed_b", True) else "white",
                     markeredgecolor=col, zorder=3)
-            ax.text((a + b) / 2, y + 0.34, item.get("label", ""),
-                    fontsize=11.5, color=col, ha="center", va="bottom", weight="bold")
+            ax.text(item.get("label_x", (a + b) / 2), item.get("label_y", y + 0.34),
+                    item.get("label", ""), fontsize=11.5, color=col,
+                    ha="center", va="bottom", weight="bold")
         elif kind == "points":
             for x in item["xs"]:
                 ax.plot([x], [y], "o", markersize=11, markerfacecolor=col,
                         markeredgecolor=col, zorder=3)
-            ax.text(np.mean(item["xs"]) if item["xs"] else 0, y + 0.34, item.get("label", ""),
+            ax.text(item.get("label_x", np.mean(item["xs"]) if item["xs"] else 0),
+                    item.get("label_y", y + 0.34), item.get("label", ""),
                     fontsize=11.5, color=col, ha="center", va="bottom", weight="bold")
     if spec.get("xlabel"):
         ax.text(hi - 0.2, -0.95, spec["xlabel"], fontsize=11, color=GRAY, ha="right")
     if spec.get("title"):
         ax.set_title(spec["title"], fontsize=12, color=TEAL, pad=10, weight="bold")
+    ax.set_xticks([])
     ax.set_yticks([])
     for s in ["top", "right", "left"]:
         ax.spines[s].set_visible(False)
@@ -339,8 +342,9 @@ def graph(spec: dict, width_px: int) -> Image.Image:
     for v in spec.get("vlines", []):   # vertical asymptote
         x = v["x"]
         ax.axvline(x, color=RED, lw=1.8, ls=(0, (6, 5)))
-        ax.text(x, yr[1] - 0.25, v.get("label", ""), fontsize=11, color=RED,
-                ha="center", va="top")
+        ax.text(x + v.get("dx", 0), yr[1] - 0.25 + v.get("dy", 0),
+                v.get("label", ""), fontsize=11, color=RED,
+                ha=v.get("ha", "center"), va=v.get("va", "top"))
     for h in spec.get("hlines", []):   # horizontal asymptote
         y = h["y"]
         ax.axhline(y, color=RED, lw=1.8, ls=(0, (6, 5)))
@@ -359,8 +363,10 @@ def graph(spec: dict, width_px: int) -> Image.Image:
         if c.get("label"):
             idx = int(len(xs) * c.get("labpos", 0.82))
             if np.isfinite(ys[idx]):
-                ax.text(xs[idx], ys[idx], " " + c["label"], fontsize=12.5,
-                        color=col, ha="left", va="center", weight="bold")
+                ax.text(xs[idx] + c.get("label_dx", 0),
+                        ys[idx] + c.get("label_dy", 0), " " + c["label"],
+                        fontsize=12.5, color=col, ha=c.get("label_ha", "left"),
+                        va=c.get("label_va", "center"), weight="bold")
     for p in spec.get("points", []):
         ax.plot([p["x"]], [p["y"]], "o", color=p.get("color", NAVY), markersize=9,
                 markerfacecolor=p.get("face", p.get("color", NAVY)))
@@ -484,6 +490,12 @@ def build_diagram(spec: dict | str, width_px: int) -> Image.Image:
     if isinstance(spec, str):
         spec = json.loads(spec)
     t = spec["type"]
-    if t not in BUILDERS:
-        raise ValueError(f"unknown diagram type: {t}")
-    return BUILDERS[t](spec, width_px)
+    if t in BUILDERS:
+        img = BUILDERS[t](spec, width_px)
+    else:
+        from visual_builders import VISUAL_BUILDERS
+        if t not in VISUAL_BUILDERS:
+            raise ValueError(f"unknown diagram type: {t}")
+        img = VISUAL_BUILDERS[t](spec, width_px)
+    from visual_builders import with_caption
+    return with_caption(img, spec)

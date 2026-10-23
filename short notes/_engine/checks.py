@@ -12,7 +12,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from compose import parse_content
+from compose import MARGIN, _measure, fit_header_title, parse_content
 from core import (FALLBACK, HAND, HAND_BOLD, has_glyph, math_check,
                   missing_glyphs, split_runs)
 
@@ -38,18 +38,15 @@ def check_png(path: Path):
     dpi = img.info.get("dpi")
     if not dpi or abs(dpi[0] - 300) > 1 or abs(dpi[1] - 300) > 1:
         bad(f"{path.name}: dpi {dpi} != (300, 300)")
-    # ink must stay inside safe margins
-    rgb = img.convert("RGB")
-    px = rgb.load()
-    step = 3
-    for y in range(0, PAGE_H, step):
-        for x in range(0, PAGE_W, step):
-            if SAFE <= x <= PAGE_W - SAFE and SAFE <= y <= PAGE_H - SAFE:
-                continue
-            r, g, b = px[x, y]
-            if min(r, g, b) < 200:  # anything darker than faint rules
-                bad(f"{path.name}: ink outside safe margin at ({x},{y}) rgb={(r,g,b)}")
-                return
+    # NumPy scans every border pixel. The boundary pixel itself is allowed.
+    import numpy as np
+    rgb = np.asarray(img.convert("RGB"))
+    border = np.concatenate((rgb[:SAFE].reshape(-1, 3), rgb[-(SAFE - 1):].reshape(-1, 3),
+                             rgb[SAFE:-SAFE, :SAFE].reshape(-1, 3),
+                             rgb[SAFE:-SAFE, -(SAFE - 1):].reshape(-1, 3)), axis=0)
+    if np.any(border.min(axis=1) < 200):
+        bad(f"{path.name}: ink outside the 10 mm safe margin")
+        return
     ok(f"{path.name}: 2480x3508 @300dpi, ink inside 10mm margins")
 
 
@@ -105,6 +102,35 @@ def check_content_fonts_math(content_dir: Path):
             bad(f"math parse failed: {m[:60]}")
     else:
         ok(f"math parse OK ({len(maths)} inline/display formulas)")
+
+
+def check_header_titles(man: dict):
+    labels = {
+        "jee": "PART I — JEE MAIN + ADVANCED",
+        "olympiad": "PART II — OLYMPIAD / EXTENSIONS",
+    }
+    count = shortened_count = 0
+    before = len(PROBLEMS)
+    for part, entries in man["parts"].items():
+        total = len(entries)
+        for entry in entries:
+            original = entry["title"]
+            chip = f"{labels[part]}  ·  SHEET {entry['no']} / {total}"
+            badge_width = _measure(chip, HAND_BOLD, 38) + 48
+            avail = PAGE_W - 2 * MARGIN - badge_width - 60
+            fitted, size = fit_header_title(original, avail)
+            if _measure(fitted, HAND_BOLD, size) > avail:
+                bad(f"{entry['file']}: running header does not fit its badge")
+            if fitted != original:
+                shortened_count += 1
+                if _measure(original, HAND_BOLD, size) <= avail:
+                    bad(f"{entry['file']}: running header shortened despite fitting")
+                if not fitted.endswith("…"):
+                    bad(f"{entry['file']}: shortened running header lacks an ellipsis")
+            count += 1
+    if len(PROBLEMS) == before:
+        ok(f"running headers fit without unintended truncation ({count} sheets; "
+           f"{shortened_count} intentionally ellipsized)")
 
 
 def check_manifest(cdir: Path, man: dict):
@@ -210,6 +236,11 @@ def check_docs(cdir: Path):
             bad(f"{p.name}: missing frontmatter")
         if src.count(":::") % 2 != 0:
             bad(f"{p.name}: unbalanced ::: fences")
+    readme = (cdir / "README.md").read_text(encoding="utf-8")
+    if re.search(r"left column|right column|two (?:text )?columns", readme, re.I):
+        bad("README.md still contains superseded column-based reading instructions")
+    else:
+        ok("notebook-flow documentation contains no column-based reading instructions")
     ok("deliverable files + content fences OK")
 
 
@@ -220,6 +251,7 @@ def main():
 
     check_docs(cdir)
     check_content_fonts_math(cdir / "content")
+    check_header_titles(man)
     for folder in ("JEE", "Olympiad"):
         for p in sorted((cdir / folder).glob("*.png")):
             check_png(p)
