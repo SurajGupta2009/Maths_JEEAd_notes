@@ -46,3 +46,7 @@ Requires the shared engine in `../_engine/` (see `../_engine/requirements.txt`).
 ## Printing
 
 A4 portrait, one sheet per page, **Fit** (not Fill/Crop) — see `PRINTING.txt`.
+
+## Reading order
+
+Follow the `LESSON n / total` ribbons; read down the left column, then down the right column, and continue to the next sheet. This sequence follows the chapter’s prerequisite path.

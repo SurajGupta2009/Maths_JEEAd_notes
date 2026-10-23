@@ -319,12 +319,22 @@ class BlockRenderer:
                 self._draw_paragraph(img, 56, y, it, width - 56)
                 y += parts[idx] + 8
             return img
-        if k == "head3":
-            img = Image.new("RGBA", (width, 84), (0, 0, 0, 0))
+        if k in ("head3", "lesson"):
+            size = 36 if k == "lesson" else 54
+            runs = _parse_inline_runs(block.text, size=size, color=TEAL, bold=True)
+            lines = self._lines_from_runs(runs, width - 18)
+            line_h = 44 if k == "lesson" else 66
+            height = len(lines) * line_h + 14
+            img = Image.new("RGBA", (width, height), (0, 0, 0, 0))
             d = Drawer(img)
-            d.draw_run((0, 4), Run("text", block.text, bold=True, color=TEAL, size=54))
+            y = 2
+            for line in lines:
+                x = 0
+                for run in line:
+                    x, _ = d.draw_run((x, y), run)
+                y += line_h
             dr = ImageDraw.Draw(img)
-            dr.line([0, 76, min(width, 700), 76], fill=TEAL, width=3)
+            dr.line([0, height - 6, min(width, 360 if k == "lesson" else 700), height - 6], fill=TEAL, width=3)
             return img
         if k == "box":
             return self._render_box(block, width)
@@ -492,7 +502,7 @@ def paginate(blocks: list[Block], br: BlockRenderer) -> tuple[list[Page], list[s
         b, im = rendered[idx]
         # orphan-heading rule: a head2 must stay with the first block after it
         extra_h = 0
-        if b.kind == "head2" and idx + 1 < len(rendered):
+        if b.kind in ("head2", "lesson") and idx + 1 < len(rendered):
             nb, nim = rendered[idx + 1]
             if not (nb.wide or nim.width == FULL_W):
                 extra_h = nim.height + ITEM_GAP
@@ -555,7 +565,7 @@ def paginate(blocks: list[Block], br: BlockRenderer) -> tuple[list[Page], list[s
 # Sheet drawing (header/footer/background + paste pre-rendered blocks)
 # --------------------------------------------------------------------------
 def draw_sheet(fm: dict, page: Page, chapter_slug: str, part_label: str,
-               sheet_no: int, sheet_total: int, show_legend: bool,
+               sheet_no: int, sheet_total: int,
                page_id: str = "") -> Image.Image:
     img = Image.new("RGB", (PAGE_W, PAGE_H), WHITE)
     d = ImageDraw.Draw(img)
@@ -582,9 +592,8 @@ def draw_sheet(fm: dict, page: Page, chapter_slug: str, part_label: str,
                         radius=16, fill=TEAL_BG, outline=TEAL, width=3)
     d.text((PAGE_W - MARGIN - cw + 24, 148), chip,
            font=get_font(HAND_BOLD, 38), fill=TEAL)
-    if show_legend:
-        leg = "colour key: navy = prose · teal = headings · yellow = key results · red = common traps"
-        d.text((MARGIN, 218), leg, font=get_font(HAND, 34), fill=INK_FAINT)
+    route = "READ IN ORDER: top to bottom in the left column, then top to bottom in the right column; then next sheet."
+    d.text((MARGIN, 218), route, font=get_font(HAND_BOLD, 27), fill=TEAL)
     d.line([MARGIN, 268, PAGE_W - MARGIN, 268], fill=TEAL, width=4)
     d.line([MARGIN, 280, PAGE_W - MARGIN, 280], fill=(176, 214, 212), width=2)
 
@@ -622,6 +631,6 @@ def compose_sheet(fm, blocks, chapter_slug, part_label, sheet_no, sheet_total):
     br = BlockRenderer()
     pages, errors = paginate(blocks, br)
     img = draw_sheet(fm, pages[0], chapter_slug, part_label, sheet_no,
-                     sheet_total, show_legend=(sheet_no == 1))
+                     sheet_total)
     return type("R", (), dict(image=img, free_col0=0, free_col1=0,
                               overflow=errors, math_bad=br.math_bad))()

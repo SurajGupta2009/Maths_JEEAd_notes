@@ -33,8 +33,13 @@ ellipse axes R ± 1/R); Gauss sums G(2..12) against the closed form;
 Gauss–Lucas critical points of z(z−2)(z−1−2i) = 1+i, 1+i/3 (inside the
 root triangle); Pompeiu distance triples at two points.
 
-## Corrections to the source (do not reproduce these source defects)
+## Corrections to the source and completeness pass
 
+- **Official-syllabus omission found in the prior sheet set:** although the
+  scope/audit had named the Fundamental Theorem of Algebra, the theorem
+  statement was absent from the rendered JEE content. Added it to JEE-07 as
+  a statement-only result, including the nonconstant-polynomial hypothesis
+  and multiplicity conclusion; no proof is implied.
 - **Arg of a quotient trap**: the source's method "arg(z₁/z₂) = arg z₁ −
   arg z₂" is only true mod 2π; with z₁ = 1, z₂ = −1 the naive difference is
   −π while Arg(1/(−1)) = π. The sheets state the congruence and the

@@ -15,7 +15,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from compose import compose_sheet, parse_content, FULL_W, PAGE_H, PAGE_W
+from compose import Block, compose_sheet, parse_content, FULL_W, PAGE_H, PAGE_W
 from core import DPI
 
 PART_LABELS = {
@@ -61,9 +61,15 @@ def render(chapter_slug: str):
         outdir.mkdir(parents=True, exist_ok=True)
         # flow ALL blocks of the part continuously (pages cross file boundaries)
         combined = []          # (fm, block, is_first_of_file)
-        for sheet in group:
+        for unit_no, sheet in enumerate(group, start=1):
+            fm = sheet["fm"]
+            # Keep source-unit transitions visible in the reading stream. These
+            # ribbons make a page that contains adjacent lessons navigable,
+            # without reducing or rearranging the authored prose.
+            label = f"LESSON {unit_no:02d} / {len(group):02d}"
+            combined.append((fm, Block("lesson", text=label), True))
             for j, b in enumerate(sheet["blocks"]):
-                combined.append((sheet["fm"], b, j == 0))
+                combined.append((fm, b, j == 0))
         br = BlockRenderer()
         pages, errors = paginate([b for _, b, _ in combined], br)
         problems += [f"{part}: {e}" for e in errors]
@@ -88,7 +94,7 @@ def render(chapter_slug: str):
             pg.title = title
             pid = f"{'JEE' if part == 'jee' else 'OLY'}-{k:02d}"
             img = draw_sheet(fm, pg, chapter_slug, PART_LABELS[part], k, n,
-                             show_legend=(k == 1), page_id=pid)
+                             page_id=pid)
             name = f"{k:02d}.png"
             out = outdir / name
             img.save(out, dpi=(DPI, DPI))

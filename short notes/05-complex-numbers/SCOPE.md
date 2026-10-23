@@ -1,11 +1,14 @@
 # Scope — Chapter 5: Complex Numbers and Quadratic Equations (Complex Numbers strand)
 
-## In Part I (JEE core) — 18 sheets
+## In Part I (JEE core) — 19 sheets
 
 - **Algebra of ℂ**: why `i` is forced; conjugate, modulus, real/imaginary
   part as coordinates; division by multiplying by the conjugate; ℂ as a
   field; `z = x + iy` vs `z = r(cosθ + isinθ)` as two languages; conjugation
   is reflection, multiplication by `i` is a 90° rotation.
+- **Fundamental Theorem of Algebra (statement only)**: every nonconstant
+  complex polynomial has a complex root, hence factors into linear factors
+  over ℂ counting multiplicity. No proof is claimed.
 - **Argument**: principal value `Arg z ∈ (−π, π]`, the four-quadrant
   conventions (with the atan(y/x) quadrant correction), arg of products and
   quotients (mod 2π caveats and the classic `z₁ = 1, z₂ = −1` trap),

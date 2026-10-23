@@ -5,7 +5,7 @@ by the shared `_engine` renderer (`scripts/render.py`).
 
 ## Layout
 
-- **Part I — JEE (Main + Advanced): `JEE/`** — 18 sheets.
+- **Part I — JEE (Main + Advanced): `JEE/`** — 19 sheets.
   Why `i` exists and what it forces; conjugate/division/field facts; `z` and
   `z̄` as two coordinates; modulus and argument (all four quadrant
   conventions, the |Arg| ≤ π convention); the two languages (polar =
@@ -49,3 +49,7 @@ hit a target.
 python3 scripts/render.py && python3 scripts/export.py && python3 scripts/check.py
 python3 scripts/math_checks.py
 ```
+
+## Reading order
+
+Follow the `LESSON n / total` ribbons; read down the left column, then down the right column, and continue to the next sheet. This sequence follows the chapter’s prerequisite path.
