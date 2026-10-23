@@ -1,0 +1,15 @@
+PRINTING — Chapter 12: Straight Lines & Locus
+=================================================
+
+Sheets: 2480 × 3508 px portrait, nominal 300 DPI, A4 aspect. Print one PNG
+sheet on each A4 portrait page.
+
+Recommended: exports/12-straight-lines-and-locus-combined.pdf (JEE first,
+then Olympiad extensions). Separate PDFs:
+  exports/12-straight-lines-and-locus-JEE.pdf
+  exports/12-straight-lines-and-locus-Olympiad-extensions.pdf
+
+Print A4 portrait, one sheet per page, scaling Fit or Fit to printable area.
+Do not use Fill, Crop, or Actual Size if it clips the margins. PNG ZIPs are
+*-JEE-sheets.zip, *-Olympiad-sheets.zip and *-combined-sheets.zip. PDFs carry
+bookmarks by sheet.

@@ -54,23 +54,44 @@ def check_png(path: Path):
 
 
 def check_content_fonts_math(content_dir: Path):
-    texts: list[str] = []
+    texts: list[tuple[str, str]] = []
+    maths: list[str] = []
+
+    def add_text(kind: str, text: str):
+        if not isinstance(text, str) or not text:
+            return
+        texts.append((kind, text))
+        if kind == "display":
+            # parse_content stores display-math bodies without the surrounding $$
+            maths.append(text)
+        else:
+            # Strip any display blocks first so their doubled dollar delimiters
+            # cannot pair with inline math in a neighbouring paragraph.
+            inline_source = re.sub(r"\$\$.*?\$\$", " ", text, flags=re.S)
+            maths.extend(re.findall(r"\$([^$]+)\$", inline_source))
+
     for p in sorted(content_dir.glob("*.md")):
         src = p.read_text(encoding="utf-8")
         fm, blocks = parse_content(src)
         stack = list(blocks)
         while stack:
             b = stack.pop()
-            texts.append(b.text)
-            texts.extend(b.items if isinstance(b.items, list) and
-                         all(isinstance(x, str) for x in b.items) else [])
+            add_text(b.kind, b.text)
+            if isinstance(b.items, list) and all(isinstance(x, str) for x in b.items):
+                for item in b.items:
+                    add_text("inline", item)
             stack.extend(b.blocks)
             if b.kind == "box":
                 stack.extend(b.items)
-    blob = "\n".join(t for t in texts if isinstance(t, str))
-    # non-inline plain text pieces (strip math and ** markers for glyph check)
-    plain = re.sub(r"\$[^$]*\$", " ", blob)
-    plain = plain.replace("**", "")
+
+    # Non-math plain text for font coverage (display formulas are excluded).
+    plain_parts = []
+    for kind, text in texts:
+        if kind == "display":
+            continue
+        piece = re.sub(r"\$[^$]*\$", " ", text).replace("**", "")
+        plain_parts.append(piece)
+    plain = "\n".join(plain_parts)
     miss = missing_glyphs(HAND, plain) | missing_glyphs(HAND_BOLD, plain)
     # fallback must cover everything missing from handwriting fonts
     uncovered = {ch for ch in miss if not has_glyph(FALLBACK, ch)}
@@ -78,8 +99,6 @@ def check_content_fonts_math(content_dir: Path):
         bad(f"uncovered glyphs even after fallback: {sorted(uncovered)}")
     else:
         ok(f"font coverage OK (fallback covers {len(miss)} non-handwritten glyphs)")
-    # math parse
-    maths = re.findall(r"\$([^$]+)\$", blob)
     badmath = [m for m in maths if not math_check(m)]
     if badmath:
         for m in badmath:

@@ -59,6 +59,8 @@ Print-ready handwritten-style summary sheets live in [`short notes/`](short%20no
 - **Complete: Chapter 9 — Binomial Theorem** → [`short notes/09-binomial-theorem/`](short%20notes/09-binomial-theorem/README.md) (4 JEE + 2 Olympiad sheets)
 - **Complete: Chapter 10 — Matrices & Determinants** → [`short notes/10-matrices-and-determinants/`](short%20notes/10-matrices-and-determinants/README.md) (4 JEE + 2 Olympiad sheets)
 - **Complete: Chapter 11 — Probability & Statistics** → [`short notes/11-probability-and-statistics/`](short%20notes/11-probability-and-statistics/README.md) (5 JEE + 2 Olympiad sheets)
+- **Complete: Chapter 12 — Straight Lines & Locus** → [`short notes/12-straight-lines-and-locus/`](short%20notes/12-straight-lines-and-locus/README.md) (7 JEE + 2 Olympiad sheets)
+- **Complete: Chapter 13 — Circles** → [`short notes/13-circles/`](short%20notes/13-circles/README.md) (5 JEE + 2 Olympiad sheets)
 - The [`short notes/README.md`](short%20notes/README.md) master list tracks the planned 22-chapter build and which vault modules supply the prose.
 - **Second-pass coverage and reading-order review (Chapters 1–11)** → [`short notes/REVIEW-AND-REORDER-AUDIT.md`](short%20notes/REVIEW-AND-REORDER-AUDIT.md)
 

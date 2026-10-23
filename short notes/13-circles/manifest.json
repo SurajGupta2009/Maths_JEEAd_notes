@@ -1,0 +1,72 @@
+{
+  "chapter": "13-circles",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Circle \u2014 Definition, Forms, Reality Check",
+        "plain_title": "Circle \u2014 Definition, Forms, Reality Check",
+        "subtitle": "Circle \u2014 Definition, Forms, Reality Check",
+        "bookmark": "JEE 1 \u2014 Circle \u2014 Definition, Forms, Reality Check"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Determine a Circle and Parametrize It (cont.)",
+        "plain_title": "Determine a Circle and Parametrize It (cont.)",
+        "subtitle": "Determine a Circle and Parametrize It",
+        "bookmark": "JEE 2 \u2014 Determine a Circle and Parametrize It (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Tangent and Normal at a Point (cont.)",
+        "plain_title": "Tangent and Normal at a Point (cont.)",
+        "subtitle": "Tangent and Normal at a Point",
+        "bookmark": "JEE 3 \u2014 Tangent and Normal at a Point (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Power, Tangent Length and Chord of Contact (cont.)",
+        "plain_title": "Power, Tangent Length and Chord of Contact (cont.)",
+        "subtitle": "Power, Tangent Length and Chord of Contact",
+        "bookmark": "JEE 4 \u2014 Power, Tangent Length and Chord of Contact (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Efficient order of attack",
+        "plain_title": "Efficient order of attack",
+        "subtitle": "Two-Circle Position and Circle Strategy",
+        "bookmark": "JEE 5 \u2014 Efficient order of attack"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Coaxal Families and Radical Centre",
+        "plain_title": "Coaxal Families and Radical Centre",
+        "subtitle": "Coaxal Families and Radical Centre",
+        "bookmark": "OLY 1 \u2014 Coaxal Families and Radical Centre"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Simson Line and Ptolemy",
+        "plain_title": "Simson Line and Ptolemy",
+        "subtitle": "Simson Line and Ptolemy",
+        "bookmark": "OLY 2 \u2014 Simson Line and Ptolemy"
+      }
+    ]
+  }
+}

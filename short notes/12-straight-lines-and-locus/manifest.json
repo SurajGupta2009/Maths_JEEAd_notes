@@ -1,0 +1,90 @@
+{
+  "chapter": "12-straight-lines-and-locus",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Coordinates \u2014 Displacement, Section, Translation",
+        "plain_title": "Coordinates \u2014 Displacement, Section, Translation",
+        "subtitle": "Coordinates \u2014 Displacement, Section, Translation",
+        "bookmark": "JEE 1 \u2014 Coordinates \u2014 Displacement, Section, Translation"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Coordinates \u2014 Displacement, Section, Translation (cont.)",
+        "plain_title": "Coordinates \u2014 Displacement, Section, Translation (cont.)",
+        "subtitle": "Coordinates \u2014 Displacement, Section, Translation",
+        "bookmark": "JEE 2 \u2014 Coordinates \u2014 Displacement, Section, Translation (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Angles, Parallelism, Perpendicularity, Distance (cont.)",
+        "plain_title": "Angles, Parallelism, Perpendicularity, Distance (cont.)",
+        "subtitle": "Angles, Parallelism, Perpendicularity, Distance",
+        "bookmark": "JEE 3 \u2014 Angles, Parallelism, Perpendicularity, Distance (cont.)"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Pencils, Concurrency and Angle Bisectors (cont.)",
+        "plain_title": "Pencils, Concurrency and Angle Bisectors (cont.)",
+        "subtitle": "Pencils, Concurrency and Angle Bisectors",
+        "bookmark": "JEE 4 \u2014 Pencils, Concurrency and Angle Bisectors (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Triangle Centres in Coordinates (cont.)",
+        "plain_title": "Triangle Centres in Coordinates (cont.)",
+        "subtitle": "Triangle Centres in Coordinates",
+        "bookmark": "JEE 5 \u2014 Triangle Centres in Coordinates (cont.)"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Locus \u2014 Translate the Condition, Then Verify (cont.)",
+        "plain_title": "Locus \u2014 Translate the Condition, Then Verify (cont.)",
+        "subtitle": "Locus \u2014 Translate the Condition, Then Verify",
+        "bookmark": "JEE 6 \u2014 Locus \u2014 Translate the Condition, Then Verify (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Pairs of Lines and a Coordinate Toolkit (cont.)",
+        "plain_title": "Pairs of Lines and a Coordinate Toolkit (cont.)",
+        "subtitle": "Pairs of Lines and a Coordinate Toolkit",
+        "bookmark": "JEE 7 \u2014 Pairs of Lines and a Coordinate Toolkit (cont.)"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Euler Line \u2014 Three Centres, One Ratio",
+        "plain_title": "Euler Line \u2014 Three Centres, One Ratio",
+        "subtitle": "Euler Line \u2014 Three Centres, One Ratio",
+        "bookmark": "OLY 1 \u2014 Euler Line \u2014 Three Centres, One Ratio"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Nine-Point Circle: Coordinates (cont.)",
+        "plain_title": "Nine-Point Circle: Coordinates (cont.)",
+        "subtitle": "Nine-Point Circle: Coordinates",
+        "bookmark": "OLY 2 \u2014 Nine-Point Circle: Coordinates (cont.)"
+      }
+    ]
+  }
+}
