@@ -18,15 +18,17 @@ Algebra, Matrices, Probability & Statistics, Trigonometry, Analytical Geometry
 22 study chapters in prerequisite order. Every official bullet maps into
 exactly one chapter.
 
+For the 2026 second-pass coverage and page-flow review of delivered chapters 1–11, see [`REVIEW-AND-REORDER-AUDIT.md`](REVIEW-AND-REORDER-AUDIT.md).
+
 | # | Chapter (slug) | Official unit(s) | Status |
 |---|---|---|---|
 | 1 | **Sets, Relations & Functions** (`01-sets-relations-functions`) | Sets, Relations and Functions | ✅ **delivered** — 12 JEE + 6 Olympiad sheets |
 | 2 | **Exponents & Logarithms** (`02-exponents-logarithms`) | Algebra (logarithms and their properties) | ✅ **delivered** — 9 JEE + 3 Olympiad sheets |
 | 3 | **Trigonometric Identities & Equations** (`03-trigonometric-identities-equations`) | Trigonometry | ✅ **delivered** — 11 JEE + 6 Olympiad sheets |
 | 4 | **Inverse Trigonometric Functions** (`04-inverse-trigonometric-functions`) | Trigonometry | ✅ **delivered** — 13 JEE + 6 Olympiad sheets |
-| 5 | **Complex Numbers** (`05-complex-numbers`) | Algebra (complex numbers, FTA) | ✅ **delivered** — 18 JEE + 11 Olympiad sheets |
+| 5 | **Complex Numbers** (`05-complex-numbers`) | Algebra (complex numbers, FTA) | ✅ **delivered** — 19 JEE + 11 Olympiad sheets |
 | 6 | **Quadratic Equations** (`06-quadratic-equations`) | Algebra (quadratics with real coefficients) | ✅ **delivered** — 8 JEE + 3 Olympiad sheets |
-| 7 | **Sequences & Series** (`07-sequences-and-series`) | Algebra (AP, GP, AM, GM, special sums) | ✅ **delivered** — 5 JEE + 3 Olympiad sheets |
+| 7 | **Sequences & Series** (`07-sequences-and-series`) | Algebra (AP, GP, AM, GM, special sums) | ✅ **delivered** — 6 JEE + 3 Olympiad sheets |
 | 8 | **Permutations & Combinations** (`08-permutations-and-combinations`) | Algebra (P&C) | ✅ **delivered** — 7 JEE + 3 Olympiad sheets |
 | 9 | **Binomial Theorem** (`09-binomial-theorem`) | Algebra (binomial theorem, positive integral index) | ✅ **delivered** — 4 JEE + 2 Olympiad sheets |
 | 10 | **Matrices & Determinants** (`10-matrices-and-determinants`) | Matrices | ✅ **delivered** — 4 JEE + 2 Olympiad sheets |

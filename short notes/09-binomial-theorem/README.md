@@ -45,3 +45,7 @@ sets the page count — nothing was trimmed to hit a target.
 python3 scripts/render.py && python3 scripts/export.py && python3 scripts/check.py
 python3 scripts/math_checks.py
 ```
+
+## Reading order
+
+Follow the `LESSON n / total` ribbons; read down the left column, then down the right column, and continue to the next sheet. This sequence follows the chapter’s prerequisite path.

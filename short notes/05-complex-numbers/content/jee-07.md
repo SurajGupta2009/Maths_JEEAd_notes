@@ -46,6 +46,10 @@ Worked: $x^{2} - 4x + 13 = 0$: $\Delta = -36$, roots $2 \pm 3i$: $|z_{1} - z_{2}
 
 :::derive title="Why conjugate roots — one line"
 Complex roots of a real polynomial come in conjugate pairs because conjugating $p(z) = 0$ (legal: conjugation respects sums and products, $\bar 1 = 1$) gives $p(\bar z) = 0$. So $\bar z_{1}$ is a root whenever $z_{1}$ is; for a quadratic the two roots are exactly $\{z_{1}, \bar z_{1}\}$ (distinct when $\Delta \neq 0$). The same argument locks every degree: real polynomials have conjugate-symmetric root sets — Vieta's real coefficients are the algebraic shadow of the reflection symmetry.
+
+:::key title="Fundamental Theorem of Algebra — statement required"
+Every nonconstant polynomial with complex coefficients has at least one complex root. Consequently a degree-$n$ polynomial factors over $\mathbb{C}$ into $n$ linear factors, roots counted with multiplicity. JEE requires the statement, not its proof; this theorem does not assert that a real-coefficient polynomial has a real root.
+:::
 :::
 
 :::assume title="Scope and conventions"

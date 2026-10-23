@@ -9,7 +9,7 @@ concept-by-concept; nothing is claimed to "never appear in JEE" — Part II
 items are *added theory* beyond the syllabus lines, while AGP/telescoping
 are *derivations from* syllabus results and are marked as such.
 
-## In Part I (JEE core) — 5 sheets
+## In Part I (JEE core) — 6 sheets
 
 - AP: definition, $a_{n} = a + (n-1)d$, $S_{n} = \frac{n}{2}(2a + (n-1)d)
   = \frac{n}{2}(a + \ell)$ (derived by pairing), index identities

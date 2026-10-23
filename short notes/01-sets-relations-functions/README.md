@@ -114,3 +114,7 @@ Body/heading handwriting: **Kalam** (OFL, via Fontsource; TTFs in
 for symbols Kalam lacks ($\varnothing$, arrows). Math: matplotlib mathtext
 (DejaVu/CM glyphs). Both fonts are libre; keep the OFL attribution when
 redistributing.
+
+## Reading order
+
+Follow the `LESSON n / total` ribbons; read down the left column, then down the right column, and continue to the next sheet. This sequence follows the chapter’s prerequisite path.

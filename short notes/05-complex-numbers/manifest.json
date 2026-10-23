@@ -132,19 +132,19 @@
         "no": 15,
         "file": "JEE/15.png",
         "id": "JEE-15",
-        "title": "Ellipses \u2014 |z \u2212 A| + |z \u2212 B| = 2a\u2080",
-        "plain_title": "Ellipses \u2014 |z \u2212 A| + |z \u2212 B| = 2a\u2080",
+        "title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
+        "plain_title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
         "subtitle": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case",
-        "bookmark": "JEE 15 \u2014 Ellipses \u2014 |z \u2212 A| + |z \u2212 B| = 2a\u2080"
+        "bookmark": "JEE 15 \u2014 Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)"
       },
       {
         "no": 16,
         "file": "JEE/16.png",
         "id": "JEE-16",
-        "title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
-        "plain_title": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)",
-        "subtitle": "Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions",
-        "bookmark": "JEE 16 \u2014 Optimization \u2014 Triangle Inequality with Equality Conditions, Chords, Regions (cont.)"
+        "title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
+        "plain_title": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)",
+        "subtitle": "Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case",
+        "bookmark": "JEE 16 \u2014 Loci II \u2014 Argument Conditions: Arcs of Circles; the Ellipse Case (cont.)"
       },
       {
         "no": 17,
@@ -159,10 +159,19 @@
         "no": 18,
         "file": "JEE/18.png",
         "id": "JEE-18",
-        "title": "Strategy card \u2014 the order that avoids every trap",
-        "plain_title": "Strategy card \u2014 the order that avoids every trap",
+        "title": "Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)",
+        "plain_title": "Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)",
         "subtitle": "Recap Toolkit \u2014 The Whole Chapter on One Sheet",
-        "bookmark": "JEE 18 \u2014 Strategy card \u2014 the order that avoids every trap"
+        "bookmark": "JEE 18 \u2014 Recap Toolkit \u2014 The Whole Chapter on One Sheet (cont.)"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "Where this toolkit reappears",
+        "plain_title": "Where this toolkit reappears",
+        "subtitle": "Recap Toolkit \u2014 The Whole Chapter on One Sheet",
+        "bookmark": "JEE 19 \u2014 Where this toolkit reappears"
       }
     ],
     "olympiad": [
@@ -215,28 +224,28 @@
         "no": 6,
         "file": "Olympiad/06.png",
         "id": "OLY-06",
-        "title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)",
-        "plain_title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)",
+        "title": "Leibniz \u2014 distance sums are minimised at the centroid",
+        "plain_title": "Leibniz \u2014 distance sums are minimised at the centroid",
         "subtitle": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z",
-        "bookmark": "OLY 6 \u2014 Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)"
+        "bookmark": "OLY 6 \u2014 Leibniz \u2014 distance sums are minimised at the centroid"
       },
       {
         "no": 7,
         "file": "Olympiad/07.png",
         "id": "OLY-07",
-        "title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)",
-        "plain_title": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)",
+        "title": "Joukowski \u2014 w = z + 1/z collapses circles to segments",
+        "plain_title": "Joukowski \u2014 w = z + 1/z collapses circles to segments",
         "subtitle": "Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z",
-        "bookmark": "OLY 7 \u2014 Extension \u2014 Centroid Sums, Unit-Circle Configurations, w = z + 1/z (cont.)"
+        "bookmark": "OLY 7 \u2014 Joukowski \u2014 w = z + 1/z collapses circles to segments"
       },
       {
         "no": 8,
         "file": "Olympiad/08.png",
         "id": "OLY-08",
-        "title": "Mechanism 1: square, then re-index",
-        "plain_title": "Mechanism 1: square, then re-index",
+        "title": "The object and its closed form",
+        "plain_title": "The object and its closed form",
         "subtitle": "Extension \u2014 The Quadratic Gauss Sum: Squaring, Filtering, Phase Mod 4",
-        "bookmark": "OLY 8 \u2014 Mechanism 1: square, then re-index"
+        "bookmark": "OLY 8 \u2014 The object and its closed form"
       },
       {
         "no": 9,

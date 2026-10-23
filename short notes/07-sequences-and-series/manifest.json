@@ -42,10 +42,19 @@
         "no": 5,
         "file": "JEE/05.png",
         "id": "JEE-05",
-        "title": "Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series",
-        "plain_title": "Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series",
+        "title": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications) (cont.)",
+        "plain_title": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications) (cont.)",
+        "subtitle": "Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications)",
+        "bookmark": "JEE 5 \u2014 Arithmetico-Geometric Sums and Telescoping \u2014 The Two Summation Engines (Derivable Applications) (cont.)"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series (cont.)",
+        "plain_title": "Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series (cont.)",
         "subtitle": "Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series",
-        "bookmark": "JEE 5 \u2014 Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series"
+        "bookmark": "JEE 6 \u2014 Mixed Problem Shapes and the Recap Toolkit \u2014 Sequences & Series (cont.)"
       }
     ],
     "olympiad": [
@@ -62,19 +71,19 @@
         "no": 2,
         "file": "Olympiad/02.png",
         "id": "OLY-02",
-        "title": "Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions (cont.)",
-        "plain_title": "Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions (cont.)",
+        "title": "First- and second-order recurrences",
+        "plain_title": "First- and second-order recurrences",
         "subtitle": "Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions",
-        "bookmark": "OLY 2 \u2014 Extension \u2014 Recurrences, Characteristic Equations, and Generating Functions (cont.)"
+        "bookmark": "OLY 2 \u2014 First- and second-order recurrences"
       },
       {
         "no": 3,
         "file": "Olympiad/03.png",
         "id": "OLY-03",
-        "title": "Stolz\u2013Ces\u00e0ro: l'H\u00f4pital for sequences",
-        "plain_title": "Stolz\u2013Ces\u00e0ro: l'H\u00f4pital for sequences",
+        "title": "Products telescope too",
+        "plain_title": "Products telescope too",
         "subtitle": "Extension \u2014 Telescoping Products, Wallis, Stolz\u2013Ces\u00e0ro, and Asymptotics",
-        "bookmark": "OLY 3 \u2014 Stolz\u2013Ces\u00e0ro: l'H\u00f4pital for sequences"
+        "bookmark": "OLY 3 \u2014 Products telescope too"
       }
     ]
   }
