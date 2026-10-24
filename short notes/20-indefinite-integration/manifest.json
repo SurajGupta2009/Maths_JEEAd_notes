@@ -1,0 +1,369 @@
+{
+  "chapter": "20-indefinite-integration",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Antiderivatives, Constants and the Standard Library",
+        "plain_title": "Antiderivatives, Constants and the Standard Library",
+        "subtitle": "Antiderivatives, Constants and the Standard Library",
+        "bookmark": "JEE 1 \u2014 Antiderivatives, Constants and the Standard Library"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Antiderivatives, Constants and the Standard Library (cont.)",
+        "plain_title": "Antiderivatives, Constants and the Standard Library (cont.)",
+        "subtitle": "Antiderivatives, Constants and the Standard Library",
+        "bookmark": "JEE 2 \u2014 Antiderivatives, Constants and the Standard Library (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Substitution \u2014 Reverse the Chain Rule",
+        "plain_title": "Substitution \u2014 Reverse the Chain Rule",
+        "subtitle": "Substitution \u2014 Reverse the Chain Rule",
+        "bookmark": "JEE 3 \u2014 Substitution \u2014 Reverse the Chain Rule"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Substitution \u2014 Reverse the Chain Rule (cont.)",
+        "plain_title": "Substitution \u2014 Reverse the Chain Rule (cont.)",
+        "subtitle": "Substitution \u2014 Reverse the Chain Rule",
+        "bookmark": "JEE 4 \u2014 Substitution \u2014 Reverse the Chain Rule (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Logarithmic Substitution and Trigonometric Integrals",
+        "plain_title": "Logarithmic Substitution and Trigonometric Integrals",
+        "subtitle": "Logarithmic Substitution and Trigonometric Integrals",
+        "bookmark": "JEE 5 \u2014 Logarithmic Substitution and Trigonometric Integrals"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Secant and cosecant use a multiplier that creates $u'/u$",
+        "plain_title": "Secant and cosecant use a multiplier that creates u'/u",
+        "subtitle": "Logarithmic Substitution and Trigonometric Integrals",
+        "bookmark": "JEE 6 \u2014 Secant and cosecant use a multiplier that creates u'/u"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Algebra and Trigonometric Preparation",
+        "plain_title": "Algebra and Trigonometric Preparation",
+        "subtitle": "Algebra and Trigonometric Preparation",
+        "bookmark": "JEE 7 \u2014 Algebra and Trigonometric Preparation"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Algebra and Trigonometric Preparation (cont.)",
+        "plain_title": "Algebra and Trigonometric Preparation (cont.)",
+        "subtitle": "Algebra and Trigonometric Preparation",
+        "bookmark": "JEE 8 \u2014 Algebra and Trigonometric Preparation (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Inverse-Trigonometric Standard Forms",
+        "plain_title": "Inverse-Trigonometric Standard Forms",
+        "subtitle": "Inverse-Trigonometric Standard Forms",
+        "bookmark": "JEE 9 \u2014 Inverse-Trigonometric Standard Forms"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Scaling must be handled before quoting the formula",
+        "plain_title": "Scaling must be handled before quoting the formula",
+        "subtitle": "Inverse-Trigonometric Standard Forms",
+        "bookmark": "JEE 10 \u2014 Scaling must be handled before quoting the formula"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Difference-of-Squares and Radical Standard Forms",
+        "plain_title": "Difference-of-Squares and Radical Standard Forms",
+        "subtitle": "Difference-of-Squares and Radical Standard Forms",
+        "bookmark": "JEE 11 \u2014 Difference-of-Squares and Radical Standard Forms"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "Difference-of-Squares and Radical Standard Forms (cont.)",
+        "plain_title": "Difference-of-Squares and Radical Standard Forms (cont.)",
+        "subtitle": "Difference-of-Squares and Radical Standard Forms",
+        "bookmark": "JEE 12 \u2014 Difference-of-Squares and Radical Standard Forms (cont.)"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Integration by Parts \u2014 Polynomial, Logarithm and Inverse",
+        "plain_title": "Integration by Parts \u2014 Polynomial, Logarithm and Inverse",
+        "subtitle": "Integration by Parts \u2014 Polynomial, Logarithm and Inverse",
+        "bookmark": "JEE 13 \u2014 Integration by Parts \u2014 Polynomial, Logarithm and Inverse"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Repeated parts can be organised as a polynomial recurrence",
+        "plain_title": "Repeated parts can be organised as a polynomial recurrence",
+        "subtitle": "Integration by Parts \u2014 Polynomial, Logarithm and Inverse",
+        "bookmark": "JEE 14 \u2014 Repeated parts can be organised as a polynomial recurrence"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Integration by Parts \u2014 Cyclic and Algebraic Products",
+        "plain_title": "Integration by Parts \u2014 Cyclic and Algebraic Products",
+        "subtitle": "Integration by Parts \u2014 Cyclic and Algebraic Products",
+        "bookmark": "JEE 15 \u2014 Integration by Parts \u2014 Cyclic and Algebraic Products"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Integration by Parts \u2014 Cyclic and Algebraic Products (cont.)",
+        "plain_title": "Integration by Parts \u2014 Cyclic and Algebraic Products (cont.)",
+        "subtitle": "Integration by Parts \u2014 Cyclic and Algebraic Products",
+        "bookmark": "JEE 16 \u2014 Integration by Parts \u2014 Cyclic and Algebraic Products (cont.)"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Partial Fractions \u2014 Division and Linear Factors",
+        "plain_title": "Partial Fractions \u2014 Division and Linear Factors",
+        "subtitle": "Partial Fractions \u2014 Division and Linear Factors",
+        "bookmark": "JEE 17 \u2014 Partial Fractions \u2014 Division and Linear Factors"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "Distinct linear factors produce logarithms",
+        "plain_title": "Distinct linear factors produce logarithms",
+        "subtitle": "Partial Fractions \u2014 Division and Linear Factors",
+        "bookmark": "JEE 18 \u2014 Distinct linear factors produce logarithms"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "Partial Fractions \u2014 Quadratics and the P8 Correction",
+        "plain_title": "Partial Fractions \u2014 Quadratics and the P8 Correction",
+        "subtitle": "Partial Fractions \u2014 Quadratics and the P8 Correction",
+        "bookmark": "JEE 19 \u2014 Partial Fractions \u2014 Quadratics and the P8 Correction"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "Partial Fractions \u2014 Quadratics and the P8 Correction (cont.)",
+        "plain_title": "Partial Fractions \u2014 Quadratics and the P8 Correction (cont.)",
+        "subtitle": "Partial Fractions \u2014 Quadratics and the P8 Correction",
+        "bookmark": "JEE 20 \u2014 Partial Fractions \u2014 Quadratics and the P8 Correction (cont.)"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
+        "title": "The Half-Angle Substitution",
+        "plain_title": "The Half-Angle Substitution",
+        "subtitle": "The Half-Angle Substitution",
+        "bookmark": "JEE 21 \u2014 The Half-Angle Substitution"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "The Half-Angle Substitution (cont.)",
+        "plain_title": "The Half-Angle Substitution (cont.)",
+        "subtitle": "The Half-Angle Substitution",
+        "bookmark": "JEE 22 \u2014 The Half-Angle Substitution (cont.)"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "Method Selection, Equivalent Answers and Final Verification",
+        "plain_title": "Method Selection, Equivalent Answers and Final Verification",
+        "subtitle": "Method Selection, Equivalent Answers and Final Verification",
+        "bookmark": "JEE 23 \u2014 Method Selection, Equivalent Answers and Final Verification"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "Three short choices show the difference",
+        "plain_title": "Three short choices show the difference",
+        "subtitle": "Method Selection, Equivalent Answers and Final Verification",
+        "bookmark": "JEE 24 \u2014 Three short choices show the difference"
+      },
+      {
+        "no": 25,
+        "file": "JEE/25.png",
+        "id": "JEE-25",
+        "title": "Visual Lab \u2014 Six Ways to See an Antiderivative",
+        "plain_title": "Visual Lab \u2014 Six Ways to See an Antiderivative",
+        "subtitle": "Visual Lab \u2014 Six Ways to See an Antiderivative",
+        "bookmark": "JEE 25 \u2014 Visual Lab \u2014 Six Ways to See an Antiderivative"
+      },
+      {
+        "no": 26,
+        "file": "JEE/26.png",
+        "id": "JEE-26",
+        "title": "Lab 2 \u2014 Logarithm branches and their slopes",
+        "plain_title": "Lab 2 \u2014 Logarithm branches and their slopes",
+        "subtitle": "Visual Lab \u2014 Six Ways to See an Antiderivative",
+        "bookmark": "JEE 26 \u2014 Lab 2 \u2014 Logarithm branches and their slopes"
+      },
+      {
+        "no": 27,
+        "file": "JEE/27.png",
+        "id": "JEE-27",
+        "title": "Lab 3 \u2014 By parts produces a function whose slope is ln x",
+        "plain_title": "Lab 3 \u2014 By parts produces a function whose slope is ln x",
+        "subtitle": "Visual Lab \u2014 Six Ways to See an Antiderivative",
+        "bookmark": "JEE 27 \u2014 Lab 3 \u2014 By parts produces a function whose slope is ln x"
+      },
+      {
+        "no": 28,
+        "file": "JEE/28.png",
+        "id": "JEE-28",
+        "title": "Lab 4 \u2014 Partial fractions make a logarithm increase",
+        "plain_title": "Lab 4 \u2014 Partial fractions make a logarithm increase",
+        "subtitle": "Visual Lab \u2014 Six Ways to See an Antiderivative",
+        "bookmark": "JEE 28 \u2014 Lab 4 \u2014 Partial fractions make a logarithm increase"
+      },
+      {
+        "no": 29,
+        "file": "JEE/29.png",
+        "id": "JEE-29",
+        "title": "Lab 5 \u2014 Equivalent answers are vertical translates",
+        "plain_title": "Lab 5 \u2014 Equivalent answers are vertical translates",
+        "subtitle": "Visual Lab \u2014 Six Ways to See an Antiderivative",
+        "bookmark": "JEE 29 \u2014 Lab 5 \u2014 Equivalent answers are vertical translates"
+      },
+      {
+        "no": 30,
+        "file": "JEE/30.png",
+        "id": "JEE-30",
+        "title": "Lab 6 \u2014 Half-angle antiderivatives have branches",
+        "plain_title": "Lab 6 \u2014 Half-angle antiderivatives have branches",
+        "subtitle": "Visual Lab \u2014 Six Ways to See an Antiderivative",
+        "bookmark": "JEE 30 \u2014 Lab 6 \u2014 Half-angle antiderivatives have branches"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Extension I \u2014 Euler Substitution for Radicals",
+        "plain_title": "Extension I \u2014 Euler Substitution for Radicals",
+        "subtitle": "Extension I \u2014 Euler Substitution for Radicals",
+        "bookmark": "OLY 1 \u2014 Extension I \u2014 Euler Substitution for Radicals"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Extension I \u2014 Euler Substitution for Radicals (cont.)",
+        "plain_title": "Extension I \u2014 Euler Substitution for Radicals (cont.)",
+        "subtitle": "Extension I \u2014 Euler Substitution for Radicals",
+        "bookmark": "OLY 2 \u2014 Extension I \u2014 Euler Substitution for Radicals (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Extension II \u2014 Reduction Formulae and Recurrence",
+        "plain_title": "Extension II \u2014 Reduction Formulae and Recurrence",
+        "subtitle": "Extension II \u2014 Reduction Formulae and Recurrence",
+        "bookmark": "OLY 3 \u2014 Extension II \u2014 Reduction Formulae and Recurrence"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Trigonometric powers step down by two",
+        "plain_title": "Trigonometric powers step down by two",
+        "subtitle": "Extension II \u2014 Reduction Formulae and Recurrence",
+        "bookmark": "OLY 4 \u2014 Trigonometric powers step down by two"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Extension III \u2014 Parameter Differentiation",
+        "plain_title": "Extension III \u2014 Parameter Differentiation",
+        "subtitle": "Extension III \u2014 Parameter Differentiation",
+        "bookmark": "OLY 5 \u2014 Extension III \u2014 Parameter Differentiation"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Extension III \u2014 Parameter Differentiation (cont.)",
+        "plain_title": "Extension III \u2014 Parameter Differentiation (cont.)",
+        "subtitle": "Extension III \u2014 Parameter Differentiation",
+        "bookmark": "OLY 6 \u2014 Extension III \u2014 Parameter Differentiation (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "Olympiad/07.png",
+        "id": "OLY-07",
+        "title": "Extension IV \u2014 Non-Elementary Antiderivatives",
+        "plain_title": "Extension IV \u2014 Non-Elementary Antiderivatives",
+        "subtitle": "Extension IV \u2014 Non-Elementary Antiderivatives",
+        "bookmark": "OLY 7 \u2014 Extension IV \u2014 Non-Elementary Antiderivatives"
+      },
+      {
+        "no": 8,
+        "file": "Olympiad/08.png",
+        "id": "OLY-08",
+        "title": "Extension IV \u2014 Non-Elementary Antiderivatives (cont.)",
+        "plain_title": "Extension IV \u2014 Non-Elementary Antiderivatives (cont.)",
+        "subtitle": "Extension IV \u2014 Non-Elementary Antiderivatives",
+        "bookmark": "OLY 8 \u2014 Extension IV \u2014 Non-Elementary Antiderivatives (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "Olympiad/09.png",
+        "id": "OLY-09",
+        "title": "Extension V \u2014 Complexification and Ansatz",
+        "plain_title": "Extension V \u2014 Complexification and Ansatz",
+        "subtitle": "Extension V \u2014 Complexification and Ansatz",
+        "bookmark": "OLY 9 \u2014 Extension V \u2014 Complexification and Ansatz"
+      },
+      {
+        "no": 10,
+        "file": "Olympiad/10.png",
+        "id": "OLY-10",
+        "title": "Extension V \u2014 Complexification and Ansatz (cont.)",
+        "plain_title": "Extension V \u2014 Complexification and Ansatz (cont.)",
+        "subtitle": "Extension V \u2014 Complexification and Ansatz",
+        "bookmark": "OLY 10 \u2014 Extension V \u2014 Complexification and Ansatz (cont.)"
+      }
+    ]
+  }
+}
