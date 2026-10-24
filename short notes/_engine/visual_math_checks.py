@@ -212,6 +212,18 @@ def checks_for(slug: str):
         add("visual variable-power tangent", xx(1) == 1 and close((xx(1+1e-6)-xx(1-1e-6))/(2e-6), 1, 1e-6))
         slope = lambda t: 3*t/2
         add("visual parametric first and second derivatives", slope(1) == 3/2 and slope(2) == 3 and close((slope(1+1e-6)-slope(1-1e-6))/((1+1e-6)**2-(1-1e-6)**2), 3/4) and close(8, 3*4-4))
+    elif n == 19:
+        add("visual physical ladder and signed rate", 5**2+12**2 == 169 and close(math.hypot(5-0, 0-12), 13) and close(-(5/12)*.5, -5/24))
+        add("visual angle tangent slopes", close(math.degrees(math.atan(abs((2-3)/(1+2*3)))), 8.130102354155978) and 2*3 != -1)
+        tangent = 5+(25.4-25)/10
+        add("visual magnified linearisation gap", close(tangent, 5.04) and close(tangent-math.sqrt(25.4), .00015873265833921124) and tangent > math.sqrt(25.4))
+        cubic = lambda x: x**3-3*x
+        add("visual three exact cubic roots", all(close(cubic(x), 0) for x in [-math.sqrt(3), 0, math.sqrt(3)]) and cubic(-1) == 2 and cubic(1) == -2)
+        add("visual short-interval absolute candidates", cubic(0) == 0 and cubic(1) == -2 and cubic(2) == 2 and max(cubic(x) for x in [0, 1, 2]) == 2)
+        c = 2+math.pi/2
+        r, R = 10/(4+math.pi), 10/(2+math.pi)
+        A = lambda x: 10*x-c*x*x
+        add("visual feasible window and positive semicircle endpoint", 0 < r < R and close(5-r*(1+math.pi/2), r) and close(A(r), 50/(4+math.pi)) and close(A(R), math.pi*R*R/2) and A(r) > A(R) > 0)
     else:
         raise ValueError(f"no visual checks registered for {slug}")
     return out

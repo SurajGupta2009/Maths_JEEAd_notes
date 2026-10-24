@@ -1,0 +1,351 @@
+{
+  "chapter": "19-applications-of-derivatives",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Rates of Change and Related Rates",
+        "plain_title": "Rates of Change and Related Rates",
+        "subtitle": "Rates of Change and Related Rates",
+        "bookmark": "JEE 1 \u2014 Rates of Change and Related Rates"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Rates of Change and Related Rates (cont.)",
+        "plain_title": "Rates of Change and Related Rates (cont.)",
+        "subtitle": "Rates of Change and Related Rates",
+        "bookmark": "JEE 2 \u2014 Rates of Change and Related Rates (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Tangents, Normals and Angles Between Curves",
+        "plain_title": "Tangents, Normals and Angles Between Curves",
+        "subtitle": "Tangents, Normals and Angles Between Curves",
+        "bookmark": "JEE 3 \u2014 Tangents, Normals and Angles Between Curves"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Tangents, Normals and Angles Between Curves (cont.)",
+        "plain_title": "Tangents, Normals and Angles Between Curves (cont.)",
+        "subtitle": "Tangents, Normals and Angles Between Curves",
+        "bookmark": "JEE 4 \u2014 Tangents, Normals and Angles Between Curves (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Tangent Lengths, Differentials and Approximation",
+        "plain_title": "Tangent Lengths, Differentials and Approximation",
+        "subtitle": "Tangent Lengths, Differentials and Approximation",
+        "bookmark": "JEE 5 \u2014 Tangent Lengths, Differentials and Approximation"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Tangent Lengths, Differentials and Approximation (cont.)",
+        "plain_title": "Tangent Lengths, Differentials and Approximation (cont.)",
+        "subtitle": "Tangent Lengths, Differentials and Approximation",
+        "bookmark": "JEE 6 \u2014 Tangent Lengths, Differentials and Approximation (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Monotonicity \u2014 Read the Sign of the Derivative",
+        "plain_title": "Monotonicity \u2014 Read the Sign of the Derivative",
+        "subtitle": "Monotonicity \u2014 Read the Sign of the Derivative",
+        "bookmark": "JEE 7 \u2014 Monotonicity \u2014 Read the Sign of the Derivative"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Monotonicity \u2014 Read the Sign of the Derivative (cont.)",
+        "plain_title": "Monotonicity \u2014 Read the Sign of the Derivative (cont.)",
+        "subtitle": "Monotonicity \u2014 Read the Sign of the Derivative",
+        "bookmark": "JEE 8 \u2014 Monotonicity \u2014 Read the Sign of the Derivative (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Root Counting with Monotone Branches",
+        "plain_title": "Root Counting with Monotone Branches",
+        "subtitle": "Root Counting with Monotone Branches",
+        "bookmark": "JEE 9 \u2014 Root Counting with Monotone Branches"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Root Counting with Monotone Branches (cont.)",
+        "plain_title": "Root Counting with Monotone Branches (cont.)",
+        "subtitle": "Root Counting with Monotone Branches",
+        "bookmark": "JEE 10 \u2014 Root Counting with Monotone Branches (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Local Maxima and Minima",
+        "plain_title": "Local Maxima and Minima",
+        "subtitle": "Local Maxima and Minima",
+        "bookmark": "JEE 11 \u2014 Local Maxima and Minima"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "Local Maxima and Minima (cont.)",
+        "plain_title": "Local Maxima and Minima (cont.)",
+        "subtitle": "Local Maxima and Minima",
+        "bookmark": "JEE 12 \u2014 Local Maxima and Minima (cont.)"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Absolute Extrema \u2014 Closed Intervals and Endpoints",
+        "plain_title": "Absolute Extrema \u2014 Closed Intervals and Endpoints",
+        "subtitle": "Absolute Extrema \u2014 Closed Intervals and Endpoints",
+        "bookmark": "JEE 13 \u2014 Absolute Extrema \u2014 Closed Intervals and Endpoints"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Absolute Extrema \u2014 Closed Intervals and Endpoints (cont.)",
+        "plain_title": "Absolute Extrema \u2014 Closed Intervals and Endpoints (cont.)",
+        "subtitle": "Absolute Extrema \u2014 Closed Intervals and Endpoints",
+        "bookmark": "JEE 14 \u2014 Absolute Extrema \u2014 Closed Intervals and Endpoints (cont.)"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Convexity, Concavity and Inflection",
+        "plain_title": "Convexity, Concavity and Inflection",
+        "subtitle": "Convexity, Concavity and Inflection",
+        "bookmark": "JEE 15 \u2014 Convexity, Concavity and Inflection"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Convexity, Concavity and Inflection (cont.)",
+        "plain_title": "Convexity, Concavity and Inflection (cont.)",
+        "subtitle": "Convexity, Concavity and Inflection",
+        "bookmark": "JEE 16 \u2014 Convexity, Concavity and Inflection (cont.)"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Curve Sketching as a Synthesis",
+        "plain_title": "Curve Sketching as a Synthesis",
+        "subtitle": "Curve Sketching as a Synthesis",
+        "bookmark": "JEE 17 \u2014 Curve Sketching as a Synthesis"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "Curve Sketching as a Synthesis (cont.)",
+        "plain_title": "Curve Sketching as a Synthesis (cont.)",
+        "subtitle": "Curve Sketching as a Synthesis",
+        "bookmark": "JEE 18 \u2014 Curve Sketching as a Synthesis (cont.)"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "Feasible Optimisation \u2014 Standard Models",
+        "plain_title": "Feasible Optimisation \u2014 Standard Models",
+        "subtitle": "Feasible Optimisation \u2014 Standard Models",
+        "bookmark": "JEE 19 \u2014 Feasible Optimisation \u2014 Standard Models"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "Feasible Optimisation \u2014 Standard Models (cont.)",
+        "plain_title": "Feasible Optimisation \u2014 Standard Models (cont.)",
+        "subtitle": "Feasible Optimisation \u2014 Standard Models",
+        "bookmark": "JEE 20 \u2014 Feasible Optimisation \u2014 Standard Models (cont.)"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
+        "title": "Model Audits \u2014 Ellipse and Rectangle-with-Semicircle",
+        "plain_title": "Model Audits \u2014 Ellipse and Rectangle-with-Semicircle",
+        "subtitle": "Model Audits \u2014 Ellipse and Rectangle-with-Semicircle",
+        "bookmark": "JEE 21 \u2014 Model Audits \u2014 Ellipse and Rectangle-with-Semicircle"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "Model Audits \u2014 Ellipse and Rectangle-with-Semicircle (cont.)",
+        "plain_title": "Model Audits \u2014 Ellipse and Rectangle-with-Semicircle (cont.)",
+        "subtitle": "Model Audits \u2014 Ellipse and Rectangle-with-Semicircle",
+        "bookmark": "JEE 22 \u2014 Model Audits \u2014 Ellipse and Rectangle-with-Semicircle (cont.)"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "Visual Lab \u2014 Six Derivative Applications",
+        "plain_title": "Visual Lab \u2014 Six Derivative Applications",
+        "subtitle": "Visual Lab \u2014 Six Derivative Applications",
+        "bookmark": "JEE 23 \u2014 Visual Lab \u2014 Six Derivative Applications"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "Lab 2 \u2014 Angle between curves is angle between tangents",
+        "plain_title": "Lab 2 \u2014 Angle between curves is angle between tangents",
+        "subtitle": "Visual Lab \u2014 Six Derivative Applications",
+        "bookmark": "JEE 24 \u2014 Lab 2 \u2014 Angle between curves is angle between tangents"
+      },
+      {
+        "no": 25,
+        "file": "JEE/25.png",
+        "id": "JEE-25",
+        "title": "Lab 3 \u2014 Linear approximation has a visible error under magnification",
+        "plain_title": "Lab 3 \u2014 Linear approximation has a visible error under magnification",
+        "subtitle": "Visual Lab \u2014 Six Derivative Applications",
+        "bookmark": "JEE 25 \u2014 Lab 3 \u2014 Linear approximation has a visible error under magnification"
+      },
+      {
+        "no": 26,
+        "file": "JEE/26.png",
+        "id": "JEE-26",
+        "title": "Lab 4 \u2014 Three monotone branches give exactly three roots",
+        "plain_title": "Lab 4 \u2014 Three monotone branches give exactly three roots",
+        "subtitle": "Visual Lab \u2014 Six Derivative Applications",
+        "bookmark": "JEE 26 \u2014 Lab 4 \u2014 Three monotone branches give exactly three roots"
+      },
+      {
+        "no": 27,
+        "file": "JEE/27.png",
+        "id": "JEE-27",
+        "title": "Lab 5 \u2014 Absolute extrema include both endpoints",
+        "plain_title": "Lab 5 \u2014 Absolute extrema include both endpoints",
+        "subtitle": "Visual Lab \u2014 Six Derivative Applications",
+        "bookmark": "JEE 27 \u2014 Lab 5 \u2014 Absolute extrema include both endpoints"
+      },
+      {
+        "no": 28,
+        "file": "JEE/28.png",
+        "id": "JEE-28",
+        "title": "Lab 6 \u2014 The corrected window optimum is feasible",
+        "plain_title": "Lab 6 \u2014 The corrected window optimum is feasible",
+        "subtitle": "Visual Lab \u2014 Six Derivative Applications",
+        "bookmark": "JEE 28 \u2014 Lab 6 \u2014 The corrected window optimum is feasible"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Extension I \u2014 Supporting Lines, Jensen and a Cosine Bound",
+        "plain_title": "Extension I \u2014 Supporting Lines, Jensen and a Cosine Bound",
+        "subtitle": "Extension I \u2014 Supporting Lines, Jensen and a Cosine Bound",
+        "bookmark": "OLY 1 \u2014 Extension I \u2014 Supporting Lines, Jensen and a Cosine Bound"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Extension I \u2014 Supporting Lines, Jensen and a Cosine Bound (cont.)",
+        "plain_title": "Extension I \u2014 Supporting Lines, Jensen and a Cosine Bound (cont.)",
+        "subtitle": "Extension I \u2014 Supporting Lines, Jensen and a Cosine Bound",
+        "bookmark": "OLY 2 \u2014 Extension I \u2014 Supporting Lines, Jensen and a Cosine Bound (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Extension II \u2014 Young, Cauchy and AM\u2013GM",
+        "plain_title": "Extension II \u2014 Young, Cauchy and AM\u2013GM",
+        "subtitle": "Extension II \u2014 Young, Cauchy and AM\u2013GM",
+        "bookmark": "OLY 3 \u2014 Extension II \u2014 Young, Cauchy and AM\u2013GM"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Extension II \u2014 Young, Cauchy and AM\u2013GM (cont.)",
+        "plain_title": "Extension II \u2014 Young, Cauchy and AM\u2013GM (cont.)",
+        "subtitle": "Extension II \u2014 Young, Cauchy and AM\u2013GM",
+        "bookmark": "OLY 4 \u2014 Extension II \u2014 Young, Cauchy and AM\u2013GM (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Extension III \u2014 Envelopes and the Parabola Directrix",
+        "plain_title": "Extension III \u2014 Envelopes and the Parabola Directrix",
+        "subtitle": "Extension III \u2014 Envelopes and the Parabola Directrix",
+        "bookmark": "OLY 5 \u2014 Extension III \u2014 Envelopes and the Parabola Directrix"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Extension III \u2014 Envelopes and the Parabola Directrix (cont.)",
+        "plain_title": "Extension III \u2014 Envelopes and the Parabola Directrix (cont.)",
+        "subtitle": "Extension III \u2014 Envelopes and the Parabola Directrix",
+        "bookmark": "OLY 6 \u2014 Extension III \u2014 Envelopes and the Parabola Directrix (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "Olympiad/07.png",
+        "id": "OLY-07",
+        "title": "Extension IV \u2014 Director Circles and Lagrange Multipliers",
+        "plain_title": "Extension IV \u2014 Director Circles and Lagrange Multipliers",
+        "subtitle": "Extension IV \u2014 Director Circles and Lagrange Multipliers",
+        "bookmark": "OLY 7 \u2014 Extension IV \u2014 Director Circles and Lagrange Multipliers"
+      },
+      {
+        "no": 8,
+        "file": "Olympiad/08.png",
+        "id": "OLY-08",
+        "title": "Extension IV \u2014 Director Circles and Lagrange Multipliers (cont.)",
+        "plain_title": "Extension IV \u2014 Director Circles and Lagrange Multipliers (cont.)",
+        "subtitle": "Extension IV \u2014 Director Circles and Lagrange Multipliers",
+        "bookmark": "OLY 8 \u2014 Extension IV \u2014 Director Circles and Lagrange Multipliers (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "Olympiad/09.png",
+        "id": "OLY-09",
+        "title": "Extension V \u2014 Symmetric Optimisation and Its Frontier",
+        "plain_title": "Extension V \u2014 Symmetric Optimisation and Its Frontier",
+        "subtitle": "Extension V \u2014 Symmetric Optimisation and Its Frontier",
+        "bookmark": "OLY 9 \u2014 Extension V \u2014 Symmetric Optimisation and Its Frontier"
+      },
+      {
+        "no": 10,
+        "file": "Olympiad/10.png",
+        "id": "OLY-10",
+        "title": "Extension V \u2014 Symmetric Optimisation and Its Frontier (cont.)",
+        "plain_title": "Extension V \u2014 Symmetric Optimisation and Its Frontier (cont.)",
+        "subtitle": "Extension V \u2014 Symmetric Optimisation and Its Frontier",
+        "bookmark": "OLY 10 \u2014 Extension V \u2014 Symmetric Optimisation and Its Frontier (cont.)"
+      }
+    ]
+  }
+}
