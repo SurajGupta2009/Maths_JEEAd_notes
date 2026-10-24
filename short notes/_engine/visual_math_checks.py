@@ -224,6 +224,19 @@ def checks_for(slug: str):
         r, R = 10/(4+math.pi), 10/(2+math.pi)
         A = lambda x: 10*x-c*x*x
         add("visual feasible window and positive semicircle endpoint", 0 < r < R and close(5-r*(1+math.pi/2), r) and close(A(r), 50/(4+math.pi)) and close(A(R), math.pi*R*R/2) and A(r) > A(R) > 0)
+    elif n == 20:
+        add("visual antiderivative family and parallel tangents", close((1+2)-(1+0), 2) and close((1+0)-(1-2), 2) and all(close((1+h)**2+c-(1+c), 2*h+h*h) for c in [-2, 0, 2] for h in [.01, .2]))
+        x = -2
+        add("visual absolute logarithm branches", close(math.log(abs(x)), math.log(2)) and close((-1)/(-x), 1/x) and close(1/2, .5))
+        add("visual by-parts slopes at one and e", close(math.log(1), 0) and close(math.log(math.e), 1) and close(math.e*math.log(math.e)-math.e, 0) and 1*math.log(1)-1 == -1)
+        f = lambda x: 1/((x+1)*(x+2))
+        add("visual partial-fraction anchors and slopes", close(math.log(.5), -0.6931471805599453) and close(math.log(2/3), -0.4054651081081644) and close(f(0), .5) and close(f(1), 1/6))
+        A = lambda x: .5*math.sin(x)**2
+        B = lambda x: -.5*math.cos(x)**2
+        C = lambda x: -.25*math.cos(2*x)
+        add("visual equivalent-answer vertical shifts", all(close(A(x)-B(x), .5) and close(A(x)-C(x), .25) for x in [-1, .2, 1.4]))
+        Fhalf = lambda x: 2/math.sqrt(3)*math.atan(math.tan(x/2)/math.sqrt(3))
+        add("visual half-angle branch and anchor", close(Fhalf(0), 0) and close(Fhalf(math.pi/2), math.pi/(3*math.sqrt(3))) and close(1/(2+math.cos(0)), 1/3) and close(1/(2+math.cos(math.pi/2)), .5))
     else:
         raise ValueError(f"no visual checks registered for {slug}")
     return out
