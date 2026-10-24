@@ -1,0 +1,324 @@
+{
+  "chapter": "17-limits-and-continuity",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "The Meaning of a Limit \u2014 Approach and \u03b5\u2013\u03b4",
+        "plain_title": "The Meaning of a Limit \u2014 Approach and \u03b5\u2013\u03b4",
+        "subtitle": "The Meaning of a Limit \u2014 Approach and \u03b5\u2013\u03b4",
+        "bookmark": "JEE 1 \u2014 The Meaning of a Limit \u2014 Approach and \u03b5\u2013\u03b4"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "The Meaning of a Limit \u2014 Approach and \u03b5\u2013\u03b4 (cont.)",
+        "plain_title": "The Meaning of a Limit \u2014 Approach and \u03b5\u2013\u03b4 (cont.)",
+        "subtitle": "The Meaning of a Limit \u2014 Approach and \u03b5\u2013\u03b4",
+        "bookmark": "JEE 2 \u2014 The Meaning of a Limit \u2014 Approach and \u03b5\u2013\u03b4 (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Algebraic Limits \u2014 Laws, Factoring and Rationalising",
+        "plain_title": "Algebraic Limits \u2014 Laws, Factoring and Rationalising",
+        "subtitle": "Algebraic Limits \u2014 Laws, Factoring and Rationalising",
+        "bookmark": "JEE 3 \u2014 Algebraic Limits \u2014 Laws, Factoring and Rationalising"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Algebraic Limits \u2014 Laws, Factoring and Rationalising (cont.)",
+        "plain_title": "Algebraic Limits \u2014 Laws, Factoring and Rationalising (cont.)",
+        "subtitle": "Algebraic Limits \u2014 Laws, Factoring and Rationalising",
+        "bookmark": "JEE 4 \u2014 Algebraic Limits \u2014 Laws, Factoring and Rationalising (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Squeeze and Trigonometric Limits",
+        "plain_title": "Squeeze and Trigonometric Limits",
+        "subtitle": "Squeeze and Trigonometric Limits",
+        "bookmark": "JEE 5 \u2014 Squeeze and Trigonometric Limits"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Squeeze and Trigonometric Limits (cont.)",
+        "plain_title": "Squeeze and Trigonometric Limits (cont.)",
+        "subtitle": "Squeeze and Trigonometric Limits",
+        "bookmark": "JEE 6 \u2014 Squeeze and Trigonometric Limits (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Exponential, Logarithmic and Power Limits",
+        "plain_title": "Exponential, Logarithmic and Power Limits",
+        "subtitle": "Exponential, Logarithmic and Power Limits",
+        "bookmark": "JEE 7 \u2014 Exponential, Logarithmic and Power Limits"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Exponential, Logarithmic and Power Limits (cont.)",
+        "plain_title": "Exponential, Logarithmic and Power Limits (cont.)",
+        "subtitle": "Exponential, Logarithmic and Power Limits",
+        "bookmark": "JEE 8 \u2014 Exponential, Logarithmic and Power Limits (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Limits at Infinity, Growth and Asymptotes",
+        "plain_title": "Limits at Infinity, Growth and Asymptotes",
+        "subtitle": "Limits at Infinity, Growth and Asymptotes",
+        "bookmark": "JEE 9 \u2014 Limits at Infinity, Growth and Asymptotes"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Limits at Infinity, Growth and Asymptotes (cont.)",
+        "plain_title": "Limits at Infinity, Growth and Asymptotes (cont.)",
+        "subtitle": "Limits at Infinity, Growth and Asymptotes",
+        "bookmark": "JEE 10 \u2014 Limits at Infinity, Growth and Asymptotes (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "L'H\u00f4pital's Rule and Indeterminate Forms",
+        "plain_title": "L'H\u00f4pital's Rule and Indeterminate Forms",
+        "subtitle": "L'H\u00f4pital's Rule and Indeterminate Forms",
+        "bookmark": "JEE 11 \u2014 L'H\u00f4pital's Rule and Indeterminate Forms"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "L'H\u00f4pital's Rule and Indeterminate Forms (cont.)",
+        "plain_title": "L'H\u00f4pital's Rule and Indeterminate Forms (cont.)",
+        "subtitle": "L'H\u00f4pital's Rule and Indeterminate Forms",
+        "bookmark": "JEE 12 \u2014 L'H\u00f4pital's Rule and Indeterminate Forms (cont.)"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Continuity \u2014 When the Limit Equals the Value",
+        "plain_title": "Continuity \u2014 When the Limit Equals the Value",
+        "subtitle": "Continuity \u2014 When the Limit Equals the Value",
+        "bookmark": "JEE 13 \u2014 Continuity \u2014 When the Limit Equals the Value"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Algebra and composition preserve continuity on their domains",
+        "plain_title": "Algebra and composition preserve continuity on their domains",
+        "subtitle": "Continuity \u2014 When the Limit Equals the Value",
+        "bookmark": "JEE 14 \u2014 Algebra and composition preserve continuity on their domains"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "The Intermediate Value Theorem and Roots",
+        "plain_title": "The Intermediate Value Theorem and Roots",
+        "subtitle": "The Intermediate Value Theorem and Roots",
+        "bookmark": "JEE 15 \u2014 The Intermediate Value Theorem and Roots"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Build an auxiliary function for existence questions",
+        "plain_title": "Build an auxiliary function for existence questions",
+        "subtitle": "The Intermediate Value Theorem and Roots",
+        "bookmark": "JEE 16 \u2014 Build an auxiliary function for existence questions"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Mixed Limit and Continuity Strategy",
+        "plain_title": "Mixed Limit and Continuity Strategy",
+        "subtitle": "Mixed Limit and Continuity Strategy",
+        "bookmark": "JEE 17 \u2014 Mixed Limit and Continuity Strategy"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "Choose the smallest sufficient method",
+        "plain_title": "Choose the smallest sufficient method",
+        "subtitle": "Mixed Limit and Continuity Strategy",
+        "bookmark": "JEE 18 \u2014 Choose the smallest sufficient method"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "Mixed Limit and Continuity Strategy (cont.)",
+        "plain_title": "Mixed Limit and Continuity Strategy (cont.)",
+        "subtitle": "Mixed Limit and Continuity Strategy",
+        "bookmark": "JEE 19 \u2014 Mixed Limit and Continuity Strategy (cont.)"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "Visual Limits and Continuity Lab",
+        "plain_title": "Visual Limits and Continuity Lab",
+        "subtitle": "Visual Limits and Continuity Lab",
+        "bookmark": "JEE 20 \u2014 Visual Limits and Continuity Lab"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
+        "title": "Squeeze makes oscillation irrelevant",
+        "plain_title": "Squeeze makes oscillation irrelevant",
+        "subtitle": "Visual Limits and Continuity Lab",
+        "bookmark": "JEE 21 \u2014 Squeeze makes oscillation irrelevant"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "A standard trigonometric limit has a visible target",
+        "plain_title": "A standard trigonometric limit has a visible target",
+        "subtitle": "Visual Limits and Continuity Lab",
+        "bookmark": "JEE 22 \u2014 A standard trigonometric limit has a visible target"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "A base approaching 1 can still have a nontrivial limit",
+        "plain_title": "A base approaching 1 can still have a nontrivial limit",
+        "subtitle": "Visual Limits and Continuity Lab",
+        "bookmark": "JEE 23 \u2014 A base approaching 1 can still have a nontrivial limit"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "Continuity needs the left, right and value to meet",
+        "plain_title": "Continuity needs the left, right and value to meet",
+        "subtitle": "Visual Limits and Continuity Lab",
+        "bookmark": "JEE 24 \u2014 Continuity needs the left, right and value to meet"
+      },
+      {
+        "no": 25,
+        "file": "JEE/25.png",
+        "id": "JEE-25",
+        "title": "IVT turns opposite endpoint heights into a crossing",
+        "plain_title": "IVT turns opposite endpoint heights into a crossing",
+        "subtitle": "Visual Limits and Continuity Lab",
+        "bookmark": "JEE 25 \u2014 IVT turns opposite endpoint heights into a crossing"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Extension I \u2014 Sequential Criteria and Nonexistence",
+        "plain_title": "Extension I \u2014 Sequential Criteria and Nonexistence",
+        "subtitle": "Extension I \u2014 Sequential Criteria and Nonexistence",
+        "bookmark": "OLY 1 \u2014 Extension I \u2014 Sequential Criteria and Nonexistence"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Extension I \u2014 Sequential Criteria and Nonexistence (cont.)",
+        "plain_title": "Extension I \u2014 Sequential Criteria and Nonexistence (cont.)",
+        "subtitle": "Extension I \u2014 Sequential Criteria and Nonexistence",
+        "bookmark": "OLY 2 \u2014 Extension I \u2014 Sequential Criteria and Nonexistence (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Extension II \u2014 Stolz\u2013Ces\u00e0ro and Recursive Sequences",
+        "plain_title": "Extension II \u2014 Stolz\u2013Ces\u00e0ro and Recursive Sequences",
+        "subtitle": "Extension II \u2014 Stolz\u2013Ces\u00e0ro and Recursive Sequences",
+        "bookmark": "OLY 3 \u2014 Extension II \u2014 Stolz\u2013Ces\u00e0ro and Recursive Sequences"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Extension II \u2014 Stolz\u2013Ces\u00e0ro and Recursive Sequences (cont.)",
+        "plain_title": "Extension II \u2014 Stolz\u2013Ces\u00e0ro and Recursive Sequences (cont.)",
+        "subtitle": "Extension II \u2014 Stolz\u2013Ces\u00e0ro and Recursive Sequences",
+        "bookmark": "OLY 4 \u2014 Extension II \u2014 Stolz\u2013Ces\u00e0ro and Recursive Sequences (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Extension III \u2014 Limits of Sums and Products",
+        "plain_title": "Extension III \u2014 Limits of Sums and Products",
+        "subtitle": "Extension III \u2014 Limits of Sums and Products",
+        "bookmark": "OLY 5 \u2014 Extension III \u2014 Limits of Sums and Products"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Extension III \u2014 Limits of Sums and Products (cont.)",
+        "plain_title": "Extension III \u2014 Limits of Sums and Products (cont.)",
+        "subtitle": "Extension III \u2014 Limits of Sums and Products",
+        "bookmark": "OLY 6 \u2014 Extension III \u2014 Limits of Sums and Products (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "Olympiad/07.png",
+        "id": "OLY-07",
+        "title": "Extension IV \u2014 Stirling, Harmonic Limits and Rates",
+        "plain_title": "Extension IV \u2014 Stirling, Harmonic Limits and Rates",
+        "subtitle": "Extension IV \u2014 Stirling, Harmonic Limits and Rates",
+        "bookmark": "OLY 7 \u2014 Extension IV \u2014 Stirling, Harmonic Limits and Rates"
+      },
+      {
+        "no": 8,
+        "file": "Olympiad/08.png",
+        "id": "OLY-08",
+        "title": "Extension IV \u2014 Stirling, Harmonic Limits and Rates (cont.)",
+        "plain_title": "Extension IV \u2014 Stirling, Harmonic Limits and Rates (cont.)",
+        "subtitle": "Extension IV \u2014 Stirling, Harmonic Limits and Rates",
+        "bookmark": "OLY 8 \u2014 Extension IV \u2014 Stirling, Harmonic Limits and Rates (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "Olympiad/09.png",
+        "id": "OLY-09",
+        "title": "Extension V \u2014 Functional Equations and IVT",
+        "plain_title": "Extension V \u2014 Functional Equations and IVT",
+        "subtitle": "Extension V \u2014 Functional Equations and IVT",
+        "bookmark": "OLY 9 \u2014 Extension V \u2014 Functional Equations and IVT"
+      },
+      {
+        "no": 10,
+        "file": "Olympiad/10.png",
+        "id": "OLY-10",
+        "title": "Extension V \u2014 Functional Equations and IVT (cont.)",
+        "plain_title": "Extension V \u2014 Functional Equations and IVT (cont.)",
+        "subtitle": "Extension V \u2014 Functional Equations and IVT",
+        "bookmark": "OLY 10 \u2014 Extension V \u2014 Functional Equations and IVT (cont.)"
+      }
+    ]
+  }
+}
