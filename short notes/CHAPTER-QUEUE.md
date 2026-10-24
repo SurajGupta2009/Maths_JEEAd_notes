@@ -1,15 +1,15 @@
 # Short-Notes Chapter Queue — Chapters 14–22
 
-This is the complete remaining-chapter list at the start of the Chapter 14 pass on 2026-10-23. Chapters 14, 15, 16 and 17 are now delivered; the other five chapters remain pending.
+This is the complete remaining-chapter list at the start of the Chapter 14 pass on 2026-10-23. Chapters 14, 15, 16, 17 and 18 are now delivered; the other four chapters remain pending.
 
-| Order at request | Chapter | Planned slug | Status after the Chapter 17 pass |
+| Order at request | Chapter | Planned slug | Status after the Chapter 18 pass |
 |---|---|---|---|
 | 1 | **Conic Sections — parabola, ellipse, hyperbola** | `14-conic-sections` | ✅ **delivered** — 29 JEE + 6 extension sheets |
 | 2 | **Vectors** | `15-vectors` | ✅ **delivered** — 24 JEE + 6 extension sheets |
 | 3 | **Three-Dimensional Geometry** | `16-three-dimensional-geometry` | ✅ **delivered** — 25 JEE + 13 extension sheets |
 | 4 | **Limits & Continuity** | `17-limits-and-continuity` | ✅ **delivered** — 25 JEE + 10 extension sheets |
-| 5 | Differentiability & Methods | `18-differentiability-and-methods` | ⏳ pending — next chapter |
-| 6 | Applications of Derivatives | `19-applications-of-derivatives` | ⏳ pending |
+| 5 | **Differentiability & Methods** | `18-differentiability-and-methods` | ✅ **delivered** — 24 JEE + 10 extension sheets |
+| 6 | Applications of Derivatives | `19-applications-of-derivatives` | ⏳ pending — next chapter |
 | 7 | Indefinite Integration | `20-indefinite-integration` | ⏳ pending |
 | 8 | Definite Integration & Areas | `21-definite-integration-and-areas` | ⏳ pending |
 | 9 | Differential Equations | `22-differential-equations` | ⏳ pending |
@@ -21,5 +21,7 @@ Chapter 15 deliverables: [`15-vectors/README.md`](15-vectors/README.md), [`SCOPE
 Chapter 16 deliverables: [`16-three-dimensional-geometry/README.md`](16-three-dimensional-geometry/README.md), [`SCOPE.md`](16-three-dimensional-geometry/SCOPE.md), [`SOURCE-AUDIT.md`](16-three-dimensional-geometry/SOURCE-AUDIT.md), editable content, 38 PNGs, three ZIPs, three bookmarked PDFs, manifest and gallery.
 
 Chapter 17 deliverables: [`17-limits-and-continuity/README.md`](17-limits-and-continuity/README.md), [`SCOPE.md`](17-limits-and-continuity/SCOPE.md), [`SOURCE-AUDIT.md`](17-limits-and-continuity/SOURCE-AUDIT.md), editable content, 35 PNGs, three ZIPs, three bookmarked PDFs, manifest and gallery.
+
+Chapter 18 deliverables: [`18-differentiability-and-methods/README.md`](18-differentiability-and-methods/README.md), [`SCOPE.md`](18-differentiability-and-methods/SCOPE.md), [`SOURCE-AUDIT.md`](18-differentiability-and-methods/SOURCE-AUDIT.md), editable content, 34 PNGs, three ZIPs, three bookmarked PDFs, manifest and gallery.
 
 The full 22-chapter mapping to the official JEE Advanced units remains in [`README.md`](README.md).

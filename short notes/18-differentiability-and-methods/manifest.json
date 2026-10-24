@@ -1,0 +1,315 @@
+{
+  "chapter": "18-differentiability-and-methods",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "The Derivative from First Principles",
+        "plain_title": "The Derivative from First Principles",
+        "subtitle": "The Derivative from First Principles",
+        "bookmark": "JEE 1 \u2014 The Derivative from First Principles"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Differentiability forces continuity, but not conversely",
+        "plain_title": "Differentiability forces continuity, but not conversely",
+        "subtitle": "The Derivative from First Principles",
+        "bookmark": "JEE 2 \u2014 Differentiability forces continuity, but not conversely"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "One-Sided Derivatives and Piecewise Differentiability",
+        "plain_title": "One-Sided Derivatives and Piecewise Differentiability",
+        "subtitle": "One-Sided Derivatives and Piecewise Differentiability",
+        "bookmark": "JEE 3 \u2014 One-Sided Derivatives and Piecewise Differentiability"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "One-Sided Derivatives and Piecewise Differentiability (cont.)",
+        "plain_title": "One-Sided Derivatives and Piecewise Differentiability (cont.)",
+        "subtitle": "One-Sided Derivatives and Piecewise Differentiability",
+        "bookmark": "JEE 4 \u2014 One-Sided Derivatives and Piecewise Differentiability (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "The Algebra of Derivatives",
+        "plain_title": "The Algebra of Derivatives",
+        "subtitle": "The Algebra of Derivatives",
+        "bookmark": "JEE 5 \u2014 The Algebra of Derivatives"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "The Algebra of Derivatives (cont.)",
+        "plain_title": "The Algebra of Derivatives (cont.)",
+        "subtitle": "The Algebra of Derivatives",
+        "bookmark": "JEE 6 \u2014 The Algebra of Derivatives (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "The Chain Rule and Standard Functions",
+        "plain_title": "The Chain Rule and Standard Functions",
+        "subtitle": "The Chain Rule and Standard Functions",
+        "bookmark": "JEE 7 \u2014 The Chain Rule and Standard Functions"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "The Chain Rule and Standard Functions (cont.)",
+        "plain_title": "The Chain Rule and Standard Functions (cont.)",
+        "subtitle": "The Chain Rule and Standard Functions",
+        "bookmark": "JEE 8 \u2014 The Chain Rule and Standard Functions (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Inverse Functions and Inverse Trigonometric Derivatives",
+        "plain_title": "Inverse Functions and Inverse Trigonometric Derivatives",
+        "subtitle": "Inverse Functions and Inverse Trigonometric Derivatives",
+        "bookmark": "JEE 9 \u2014 Inverse Functions and Inverse Trigonometric Derivatives"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Inverse Functions and Inverse Trigonometric Derivatives (cont.)",
+        "plain_title": "Inverse Functions and Inverse Trigonometric Derivatives (cont.)",
+        "subtitle": "Inverse Functions and Inverse Trigonometric Derivatives",
+        "bookmark": "JEE 10 \u2014 Inverse Functions and Inverse Trigonometric Derivatives (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Implicit Differentiation",
+        "plain_title": "Implicit Differentiation",
+        "subtitle": "Implicit Differentiation",
+        "bookmark": "JEE 11 \u2014 Implicit Differentiation"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "Implicit Differentiation (cont.)",
+        "plain_title": "Implicit Differentiation (cont.)",
+        "subtitle": "Implicit Differentiation",
+        "bookmark": "JEE 12 \u2014 Implicit Differentiation (cont.)"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Logarithmic Differentiation",
+        "plain_title": "Logarithmic Differentiation",
+        "subtitle": "Logarithmic Differentiation",
+        "bookmark": "JEE 13 \u2014 Logarithmic Differentiation"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Logarithmic Differentiation (cont.)",
+        "plain_title": "Logarithmic Differentiation (cont.)",
+        "subtitle": "Logarithmic Differentiation",
+        "bookmark": "JEE 14 \u2014 Logarithmic Differentiation (cont.)"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Parametric Differentiation",
+        "plain_title": "Parametric Differentiation",
+        "subtitle": "Parametric Differentiation",
+        "bookmark": "JEE 15 \u2014 Parametric Differentiation"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Parametric Differentiation (cont.)",
+        "plain_title": "Parametric Differentiation (cont.)",
+        "subtitle": "Parametric Differentiation",
+        "bookmark": "JEE 16 \u2014 Parametric Differentiation (cont.)"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Higher Derivatives and Method Selection",
+        "plain_title": "Higher Derivatives and Method Selection",
+        "subtitle": "Higher Derivatives and Method Selection",
+        "bookmark": "JEE 17 \u2014 Higher Derivatives and Method Selection"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "Higher Derivatives and Method Selection (cont.)",
+        "plain_title": "Higher Derivatives and Method Selection (cont.)",
+        "subtitle": "Higher Derivatives and Method Selection",
+        "bookmark": "JEE 18 \u2014 Higher Derivatives and Method Selection (cont.)"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "Visual Differentiation Methods Lab",
+        "plain_title": "Visual Differentiation Methods Lab",
+        "subtitle": "Visual Differentiation Methods Lab",
+        "bookmark": "JEE 19 \u2014 Visual Differentiation Methods Lab"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "A differentiable piecewise join matches value and slope",
+        "plain_title": "A differentiable piecewise join matches value and slope",
+        "subtitle": "Visual Differentiation Methods Lab",
+        "bookmark": "JEE 20 \u2014 A differentiable piecewise join matches value and slope"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
+        "title": "Chain rule scales the slope at the origin",
+        "plain_title": "Chain rule scales the slope at the origin",
+        "subtitle": "Visual Differentiation Methods Lab",
+        "bookmark": "JEE 21 \u2014 Chain rule scales the slope at the origin"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "Implicit and parametric methods agree on an ellipse",
+        "plain_title": "Implicit and parametric methods agree on an ellipse",
+        "subtitle": "Visual Differentiation Methods Lab",
+        "bookmark": "JEE 22 \u2014 Implicit and parametric methods agree on an ellipse"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "Logarithmic differentiation finds the tangent to x^x",
+        "plain_title": "Logarithmic differentiation finds the tangent to x^x",
+        "subtitle": "Visual Differentiation Methods Lab",
+        "bookmark": "JEE 23 \u2014 Logarithmic differentiation finds the tangent to x^x"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "A second parametric derivative needs one more division",
+        "plain_title": "A second parametric derivative needs one more division",
+        "subtitle": "Visual Differentiation Methods Lab",
+        "bookmark": "JEE 24 \u2014 A second parametric derivative needs one more division"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Extension I \u2014 Higher Derivatives and Leibniz's Rule",
+        "plain_title": "Extension I \u2014 Higher Derivatives and Leibniz's Rule",
+        "subtitle": "Extension I \u2014 Higher Derivatives and Leibniz's Rule",
+        "bookmark": "OLY 1 \u2014 Extension I \u2014 Higher Derivatives and Leibniz's Rule"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Extension I \u2014 Higher Derivatives and Leibniz's Rule (cont.)",
+        "plain_title": "Extension I \u2014 Higher Derivatives and Leibniz's Rule (cont.)",
+        "subtitle": "Extension I \u2014 Higher Derivatives and Leibniz's Rule",
+        "bookmark": "OLY 2 \u2014 Extension I \u2014 Higher Derivatives and Leibniz's Rule (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Extension II \u2014 Advanced Closed Forms and Identities",
+        "plain_title": "Extension II \u2014 Advanced Closed Forms and Identities",
+        "subtitle": "Extension II \u2014 Advanced Closed Forms and Identities",
+        "bookmark": "OLY 3 \u2014 Extension II \u2014 Advanced Closed Forms and Identities"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Extension II \u2014 Advanced Closed Forms and Identities (cont.)",
+        "plain_title": "Extension II \u2014 Advanced Closed Forms and Identities (cont.)",
+        "subtitle": "Extension II \u2014 Advanced Closed Forms and Identities",
+        "bookmark": "OLY 4 \u2014 Extension II \u2014 Advanced Closed Forms and Identities (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Extension III \u2014 Functional Equations by Differentiation",
+        "plain_title": "Extension III \u2014 Functional Equations by Differentiation",
+        "subtitle": "Extension III \u2014 Functional Equations by Differentiation",
+        "bookmark": "OLY 5 \u2014 Extension III \u2014 Functional Equations by Differentiation"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Extension III \u2014 Functional Equations by Differentiation (cont.)",
+        "plain_title": "Extension III \u2014 Functional Equations by Differentiation (cont.)",
+        "subtitle": "Extension III \u2014 Functional Equations by Differentiation",
+        "bookmark": "OLY 6 \u2014 Extension III \u2014 Functional Equations by Differentiation (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "Olympiad/07.png",
+        "id": "OLY-07",
+        "title": "Extension IV \u2014 Discontinuous Derivatives and Darboux",
+        "plain_title": "Extension IV \u2014 Discontinuous Derivatives and Darboux",
+        "subtitle": "Extension IV \u2014 Discontinuous Derivatives and Darboux",
+        "bookmark": "OLY 7 \u2014 Extension IV \u2014 Discontinuous Derivatives and Darboux"
+      },
+      {
+        "no": 8,
+        "file": "Olympiad/08.png",
+        "id": "OLY-08",
+        "title": "Extension IV \u2014 Discontinuous Derivatives and Darboux (cont.)",
+        "plain_title": "Extension IV \u2014 Discontinuous Derivatives and Darboux (cont.)",
+        "subtitle": "Extension IV \u2014 Discontinuous Derivatives and Darboux",
+        "bookmark": "OLY 8 \u2014 Extension IV \u2014 Discontinuous Derivatives and Darboux (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "Olympiad/09.png",
+        "id": "OLY-09",
+        "title": "Extension V \u2014 Rolle, Mean Value and Derivative Inequalities",
+        "plain_title": "Extension V \u2014 Rolle, Mean Value and Derivative Inequalities",
+        "subtitle": "Extension V \u2014 Rolle, Mean Value and Derivative Inequalities",
+        "bookmark": "OLY 9 \u2014 Extension V \u2014 Rolle, Mean Value and Derivative Inequalities"
+      },
+      {
+        "no": 10,
+        "file": "Olympiad/10.png",
+        "id": "OLY-10",
+        "title": "Extension V \u2014 Rolle, Mean Value and Derivative Inequalities (cont.)",
+        "plain_title": "Extension V \u2014 Rolle, Mean Value and Derivative Inequalities (cont.)",
+        "subtitle": "Extension V \u2014 Rolle, Mean Value and Derivative Inequalities",
+        "bookmark": "OLY 10 \u2014 Extension V \u2014 Rolle, Mean Value and Derivative Inequalities (cont.)"
+      }
+    ]
+  }
+}
