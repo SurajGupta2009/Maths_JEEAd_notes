@@ -199,6 +199,19 @@ def checks_for(slug: str):
         add("visual continuous piecewise join", close(left(-1e-7), 2, 1e-6) and close(right(1e-7), 2, 1e-6))
         g = lambda x: math.cos(x)-x
         add("visual IVT endpoint signs and root", g(0) == 1 and close(g(math.pi/2), -math.pi/2) and close(g(.7390851332151607), 0))
+    elif n == 18:
+        secant = lambda h: (1/(1+h)-1)/h
+        add("visual reciprocal secants and tangent", close(secant(1), -1/2) and close(secant(1/2), -2/3) and close(secant(1e-7), -1, 1e-6))
+        left = lambda x: x*x
+        right = lambda x: 2*x-1
+        add("visual differentiable piecewise join", left(1) == right(1) == 1 and close((left(1-1e-7)-1)/(-1e-7), 2, 1e-6) and close((right(1+1e-7)-1)/1e-7, 2, 1e-6))
+        add("visual chain-rule frequency scaling", close(math.sin(3*1e-7)/1e-7, 3, 1e-6) and close(math.sin(1e-7)/1e-7, 1, 1e-6))
+        x, y = math.sqrt(2), 1/math.sqrt(2)
+        add("visual ellipse implicit-parametric agreement", close(x*x/4+y*y, 1) and close(-x/(4*y), -1/2) and close(-(1/2)/math.tan(math.pi/4), -1/2) and close(y, -x/2+math.sqrt(2)))
+        xx = lambda x: math.exp(x*math.log(x))
+        add("visual variable-power tangent", xx(1) == 1 and close((xx(1+1e-6)-xx(1-1e-6))/(2e-6), 1, 1e-6))
+        slope = lambda t: 3*t/2
+        add("visual parametric first and second derivatives", slope(1) == 3/2 and slope(2) == 3 and close((slope(1+1e-6)-slope(1-1e-6))/((1+1e-6)**2-(1-1e-6)**2), 3/4) and close(8, 3*4-4))
     else:
         raise ValueError(f"no visual checks registered for {slug}")
     return out
