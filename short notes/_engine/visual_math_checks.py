@@ -184,6 +184,21 @@ def checks_for(slug: str):
         P, F, I = (1, 1, 1), (0, 0, 0), (-1, -1, -1)
         add("visual plane foot reflection and parallel distance", addv(P, I) == F and close(math.sqrt(3), abs(3)/math.sqrt(3)) and dot(sub(P, F), (1, 1, 1)) == 3)
         add("visual summary angle and distance normalization", close(math.degrees(math.asin(11/29)), 22.2909703748) and close(math.sqrt(1-(11/29)**2), 12*math.sqrt(5)/29) and close(abs(-3)/math.sqrt(29), 3/math.sqrt(29)))
+    elif n == 17:
+        q = lambda x: (x*x-1)/(x-1)
+        add("visual removable hole and separate value", close(q(1.001), 2.001) and q(1.001) != 3)
+        f = lambda x: x*x*math.sin(1/x)
+        add("visual squeeze touches upper bound", close(f(2/(5*math.pi)), (2/(5*math.pi))**2))
+        add("visual squeeze zero sequence", close(f(1/math.pi), 0) and all(abs(f(x)) <= x*x for x in [-.4, -.07, .03, .2, .45]))
+        trig = lambda x: math.sin(5*x)/(3*x)
+        add("visual trigonometric target", close(trig(.1), 1.5980851286806768) and close(trig(1e-7), 5/3, 1e-6))
+        exp_curve = lambda x: math.exp(x*math.log1p(3/x))
+        add("visual exponential asymptote samples", close(exp_curve(10), 1.3**10) and close(exp_curve(30), 1.1**30) and exp_curve(10) < exp_curve(30) < math.e**3)
+        left = lambda x: math.sin(2*x)/x
+        right = lambda x: math.expm1(2*x)/x
+        add("visual continuous piecewise join", close(left(-1e-7), 2, 1e-6) and close(right(1e-7), 2, 1e-6))
+        g = lambda x: math.cos(x)-x
+        add("visual IVT endpoint signs and root", g(0) == 1 and close(g(math.pi/2), -math.pi/2) and close(g(.7390851332151607), 0))
     else:
         raise ValueError(f"no visual checks registered for {slug}")
     return out
