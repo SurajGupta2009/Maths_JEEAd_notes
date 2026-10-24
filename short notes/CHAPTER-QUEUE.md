@@ -1,8 +1,8 @@
 # Short-Notes Chapter Queue — Chapters 14–22
 
-This is the complete remaining-chapter list at the start of the Chapter 14 pass on 2026-10-23. Chapters 14, 15, 16, 17, 18, 19 and 20 are now delivered; the other two chapters remain pending.
+This is the complete remaining-chapter list at the start of the Chapter 14 pass on 2026-10-23. Chapters 14, 15, 16, 17, 18, 19, 20 and 21 are now delivered; only Chapter 22 remains pending.
 
-| Order at request | Chapter | Planned slug | Status after the Chapter 20 pass |
+| Order at request | Chapter | Planned slug | Status after the Chapter 21 pass |
 |---|---|---|---|
 | 1 | **Conic Sections — parabola, ellipse, hyperbola** | `14-conic-sections` | ✅ **delivered** — 29 JEE + 6 extension sheets |
 | 2 | **Vectors** | `15-vectors` | ✅ **delivered** — 24 JEE + 6 extension sheets |
@@ -11,8 +11,8 @@ This is the complete remaining-chapter list at the start of the Chapter 14 pass 
 | 5 | **Differentiability & Methods** | `18-differentiability-and-methods` | ✅ **delivered** — 24 JEE + 10 extension sheets |
 | 6 | **Applications of Derivatives** | `19-applications-of-derivatives` | ✅ **delivered** — 28 JEE + 10 extension sheets |
 | 7 | **Indefinite Integration** | `20-indefinite-integration` | ✅ **delivered** — 30 JEE + 10 extension sheets |
-| 8 | Definite Integration & Areas | `21-definite-integration-and-areas` | ⏳ pending — next chapter |
-| 9 | Differential Equations | `22-differential-equations` | ⏳ pending |
+| 8 | **Definite Integration & Areas** | `21-definite-integration-and-areas` | ✅ **delivered** — 28 JEE + 14 extension sheets |
+| 9 | Differential Equations | `22-differential-equations` | ⏳ pending — next chapter |
 
 Chapter 14 deliverables: [`14-conic-sections/README.md`](14-conic-sections/README.md), [`SCOPE.md`](14-conic-sections/SCOPE.md), [`SOURCE-AUDIT.md`](14-conic-sections/SOURCE-AUDIT.md), editable content, 35 PNGs, three ZIPs, three bookmarked PDFs, manifest and gallery.
 
@@ -27,5 +27,7 @@ Chapter 18 deliverables: [`18-differentiability-and-methods/README.md`](18-diffe
 Chapter 19 deliverables: [`19-applications-of-derivatives/README.md`](19-applications-of-derivatives/README.md), [`SCOPE.md`](19-applications-of-derivatives/SCOPE.md), [`SOURCE-AUDIT.md`](19-applications-of-derivatives/SOURCE-AUDIT.md), editable content, 38 PNGs, three ZIPs, three bookmarked PDFs, manifest and gallery.
 
 Chapter 20 deliverables: [`20-indefinite-integration/README.md`](20-indefinite-integration/README.md), [`SCOPE.md`](20-indefinite-integration/SCOPE.md), [`SOURCE-AUDIT.md`](20-indefinite-integration/SOURCE-AUDIT.md), editable content, 40 PNGs, three ZIPs, three bookmarked PDFs, manifest and gallery.
+
+Chapter 21 deliverables: [`21-definite-integration-and-areas/README.md`](21-definite-integration-and-areas/README.md), [`SCOPE.md`](21-definite-integration-and-areas/SCOPE.md), [`SOURCE-AUDIT.md`](21-definite-integration-and-areas/SOURCE-AUDIT.md), editable content, 42 PNGs, three ZIPs, three bookmarked PDFs, manifest and gallery.
 
 The full 22-chapter mapping to the official JEE Advanced units remains in [`README.md`](README.md).

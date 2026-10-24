@@ -42,16 +42,16 @@ For the 2026 second-pass coverage and page-flow review of delivered chapters 1�
 | 18 | **Differentiability & Methods** (`18-differentiability-and-methods`) | Differential Calculus (derivatives, chain rule, implicit) | ✅ **delivered** — 24 JEE + 10 Olympiad sheets |
 | 19 | **Applications of Derivatives** (`19-applications-of-derivatives`) | Differential Calculus (tangents, monotonicity, extrema, Rolle, LMVT) | ✅ **delivered** — 28 JEE + 10 Olympiad sheets |
 | 20 | **Indefinite Integration** (`20-indefinite-integration`) | Integral Calculus (indefinite integrals, substitution, parts, partial fractions) | ✅ **delivered** — 30 JEE + 10 Olympiad sheets |
-| 21 | Definite Integration & Areas (`21-definite-integration-and-areas`) | Integral Calculus (limit of sums, FTC, properties, area) | ⏳ pending — next chapter |
-| 22 | Differential Equations (`22-differential-equations`) | Integral Calculus (formation, homogeneous 1st order, separation, linear 1st order) | ⏳ pending |
+| 21 | **Definite Integration & Areas** (`21-definite-integration-and-areas`) | Integral Calculus (limit of sums, FTC, properties, area) | ✅ **delivered** — 28 JEE + 14 Olympiad sheets |
+| 22 | Differential Equations (`22-differential-equations`) | Integral Calculus (formation, homogeneous 1st order, separation, linear 1st order) | ⏳ pending — next chapter |
 
-Chapters 21–22 are **pending**. Chapters 1–20 are delivered in the expanded,
-single-stream format: **438 JEE + 146 Olympiad = 584 sheets**. Repo vault notes (`notes/`) are the primary source
+Chapter 22 is **pending**. Chapters 1–21 are delivered in the expanded,
+single-stream format: **466 JEE + 160 Olympiad = 626 sheets**. Repo vault notes (`notes/`) are the primary source
 wherever they cover a chapter; source coverage and missing material are
 documented chapter by chapter in each `SOURCE-AUDIT.md`. Chapters 12–13 draw
 on `notes/Coordinate-Geometry-Lines-and-Circles/`; Chapter 14 draws on
 `notes/Conic-Sections/`; Chapter 15 draws on `notes/Vectors/`; Chapter 16 draws
-on `notes/3D-Geometry/`; Chapter 17 draws on `notes/Limits-and-Continuity/`; Chapter 18 draws on `notes/Differentiation-and-Methods/`; Chapter 19 draws on `notes/Applications-of-Derivatives/`; Chapter 20 draws on `notes/Integration/`; Chapter 3 draws on `notes/Trigonometry/`. Chapter 2
+on `notes/3D-Geometry/`; Chapter 17 draws on `notes/Limits-and-Continuity/`; Chapter 18 draws on `notes/Differentiation-and-Methods/`; Chapter 19 draws on `notes/Applications-of-Derivatives/`; Chapters 20–21 draw on `notes/Integration/`; Chapter 3 draws on `notes/Trigonometry/`. Chapter 2
 has **no** vault source module (disclosed in its audit).
 
 ## Per-chapter deliverables (as in Chapter 1)

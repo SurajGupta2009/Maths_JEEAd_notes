@@ -1,0 +1,387 @@
+{
+  "chapter": "21-definite-integration-and-areas",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Definite Integrals as Limits of Riemann Sums",
+        "plain_title": "Definite Integrals as Limits of Riemann Sums",
+        "subtitle": "Definite Integrals as Limits of Riemann Sums",
+        "bookmark": "JEE 1 \u2014 Definite Integrals as Limits of Riemann Sums"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Definite Integrals as Limits of Riemann Sums (cont.)",
+        "plain_title": "Definite Integrals as Limits of Riemann Sums (cont.)",
+        "subtitle": "Definite Integrals as Limits of Riemann Sums",
+        "bookmark": "JEE 2 \u2014 Definite Integrals as Limits of Riemann Sums (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "The Fundamental Theorem of Calculus",
+        "plain_title": "The Fundamental Theorem of Calculus",
+        "subtitle": "The Fundamental Theorem of Calculus",
+        "bookmark": "JEE 3 \u2014 The Fundamental Theorem of Calculus"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "The Fundamental Theorem of Calculus (cont.)",
+        "plain_title": "The Fundamental Theorem of Calculus (cont.)",
+        "subtitle": "The Fundamental Theorem of Calculus",
+        "bookmark": "JEE 4 \u2014 The Fundamental Theorem of Calculus (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Definite Substitution \u2014 Change the Limits",
+        "plain_title": "Definite Substitution \u2014 Change the Limits",
+        "subtitle": "Definite Substitution \u2014 Change the Limits",
+        "bookmark": "JEE 5 \u2014 Definite Substitution \u2014 Change the Limits"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Definite Substitution \u2014 Change the Limits (cont.)",
+        "plain_title": "Definite Substitution \u2014 Change the Limits (cont.)",
+        "subtitle": "Definite Substitution \u2014 Change the Limits",
+        "bookmark": "JEE 6 \u2014 Definite Substitution \u2014 Change the Limits (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Definite By Parts, Partial Fractions and Half-Angle",
+        "plain_title": "Definite By Parts, Partial Fractions and Half-Angle",
+        "subtitle": "Definite By Parts, Partial Fractions and Half-Angle",
+        "bookmark": "JEE 7 \u2014 Definite By Parts, Partial Fractions and Half-Angle"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Definite By Parts, Partial Fractions and Half-Angle (cont.)",
+        "plain_title": "Definite By Parts, Partial Fractions and Half-Angle (cont.)",
+        "subtitle": "Definite By Parts, Partial Fractions and Half-Angle",
+        "bookmark": "JEE 8 \u2014 Definite By Parts, Partial Fractions and Half-Angle (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Definite-Integral Properties and Symmetry",
+        "plain_title": "Definite-Integral Properties and Symmetry",
+        "subtitle": "Definite-Integral Properties and Symmetry",
+        "bookmark": "JEE 9 \u2014 Definite-Integral Properties and Symmetry"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Definite-Integral Properties and Symmetry (cont.)",
+        "plain_title": "Definite-Integral Properties and Symmetry (cont.)",
+        "subtitle": "Definite-Integral Properties and Symmetry",
+        "bookmark": "JEE 10 \u2014 Definite-Integral Properties and Symmetry (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "King's Property and Reflection Symmetry",
+        "plain_title": "King's Property and Reflection Symmetry",
+        "subtitle": "King's Property and Reflection Symmetry",
+        "bookmark": "JEE 11 \u2014 King's Property and Reflection Symmetry"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "King's Property and Reflection Symmetry (cont.)",
+        "plain_title": "King's Property and Reflection Symmetry (cont.)",
+        "subtitle": "King's Property and Reflection Symmetry",
+        "bookmark": "JEE 12 \u2014 King's Property and Reflection Symmetry (cont.)"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Improper Integrals I \u2014 Infinite Intervals",
+        "plain_title": "Improper Integrals I \u2014 Infinite Intervals",
+        "subtitle": "Improper Integrals I \u2014 Infinite Intervals",
+        "bookmark": "JEE 13 \u2014 Improper Integrals I \u2014 Infinite Intervals"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Improper Integrals I \u2014 Infinite Intervals (cont.)",
+        "plain_title": "Improper Integrals I \u2014 Infinite Intervals (cont.)",
+        "subtitle": "Improper Integrals I \u2014 Infinite Intervals",
+        "bookmark": "JEE 14 \u2014 Improper Integrals I \u2014 Infinite Intervals (cont.)"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Improper Integrals II \u2014 Singular Endpoints and Logarithms",
+        "plain_title": "Improper Integrals II \u2014 Singular Endpoints and Logarithms",
+        "subtitle": "Improper Integrals II \u2014 Singular Endpoints and Logarithms",
+        "bookmark": "JEE 15 \u2014 Improper Integrals II \u2014 Singular Endpoints and Logarithms"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Improper Integrals II \u2014 Singular Endpoints and Logarithms (cont.)",
+        "plain_title": "Improper Integrals II \u2014 Singular Endpoints and Logarithms (cont.)",
+        "subtitle": "Improper Integrals II \u2014 Singular Endpoints and Logarithms",
+        "bookmark": "JEE 16 \u2014 Improper Integrals II \u2014 Singular Endpoints and Logarithms (cont.)"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Inversion and Absolute versus Conditional Convergence",
+        "plain_title": "Inversion and Absolute versus Conditional Convergence",
+        "subtitle": "Inversion and Absolute versus Conditional Convergence",
+        "bookmark": "JEE 17 \u2014 Inversion and Absolute versus Conditional Convergence"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "Inversion and Absolute versus Conditional Convergence (cont.)",
+        "plain_title": "Inversion and Absolute versus Conditional Convergence (cont.)",
+        "subtitle": "Inversion and Absolute versus Conditional Convergence",
+        "bookmark": "JEE 18 \u2014 Inversion and Absolute versus Conditional Convergence (cont.)"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "Area I \u2014 Vertical Slices and Total Area",
+        "plain_title": "Area I \u2014 Vertical Slices and Total Area",
+        "subtitle": "Area I \u2014 Vertical Slices and Total Area",
+        "bookmark": "JEE 19 \u2014 Area I \u2014 Vertical Slices and Total Area"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "Area I \u2014 Vertical Slices and Total Area (cont.)",
+        "plain_title": "Area I \u2014 Vertical Slices and Total Area (cont.)",
+        "subtitle": "Area I \u2014 Vertical Slices and Total Area",
+        "bookmark": "JEE 20 \u2014 Area I \u2014 Vertical Slices and Total Area (cont.)"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
+        "title": "Area II \u2014 Split Slices, Horizontal Strips and Ellipses",
+        "plain_title": "Area II \u2014 Split Slices, Horizontal Strips and Ellipses",
+        "subtitle": "Area II \u2014 Split Slices, Horizontal Strips and Ellipses",
+        "bookmark": "JEE 21 \u2014 Area II \u2014 Split Slices, Horizontal Strips and Ellipses"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "Area II \u2014 Split Slices, Horizontal Strips and Ellipses (cont.)",
+        "plain_title": "Area II \u2014 Split Slices, Horizontal Strips and Ellipses (cont.)",
+        "subtitle": "Area II \u2014 Split Slices, Horizontal Strips and Ellipses",
+        "bookmark": "JEE 22 \u2014 Area II \u2014 Split Slices, Horizontal Strips and Ellipses (cont.)"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "Visual Lab 1 \u2014 Right-Endpoint Rectangles",
+        "plain_title": "Visual Lab 1 \u2014 Right-Endpoint Rectangles",
+        "subtitle": "Visual Lab 1 \u2014 Right-Endpoint Rectangles",
+        "bookmark": "JEE 23 \u2014 Visual Lab 1 \u2014 Right-Endpoint Rectangles"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "Visual Lab 2 \u2014 Accumulated Area and Its Derivative",
+        "plain_title": "Visual Lab 2 \u2014 Accumulated Area and Its Derivative",
+        "subtitle": "Visual Lab 2 \u2014 Accumulated Area and Its Derivative",
+        "bookmark": "JEE 24 \u2014 Visual Lab 2 \u2014 Accumulated Area and Its Derivative"
+      },
+      {
+        "no": 25,
+        "file": "JEE/25.png",
+        "id": "JEE-25",
+        "title": "Visual Lab 3 \u2014 King's Reflection",
+        "plain_title": "Visual Lab 3 \u2014 King's Reflection",
+        "subtitle": "Visual Lab 3 \u2014 King's Reflection",
+        "bookmark": "JEE 25 \u2014 Visual Lab 3 \u2014 King's Reflection"
+      },
+      {
+        "no": 26,
+        "file": "JEE/26.png",
+        "id": "JEE-26",
+        "title": "Visual Lab 4 \u2014 An Infinite Tail with Finite Area",
+        "plain_title": "Visual Lab 4 \u2014 An Infinite Tail with Finite Area",
+        "subtitle": "Visual Lab 4 \u2014 An Infinite Tail with Finite Area",
+        "bookmark": "JEE 26 \u2014 Visual Lab 4 \u2014 An Infinite Tail with Finite Area"
+      },
+      {
+        "no": 27,
+        "file": "JEE/27.png",
+        "id": "JEE-27",
+        "title": "Visual Lab 5 \u2014 Signed Area versus Total Area",
+        "plain_title": "Visual Lab 5 \u2014 Signed Area versus Total Area",
+        "subtitle": "Visual Lab 5 \u2014 Signed Area versus Total Area",
+        "bookmark": "JEE 27 \u2014 Visual Lab 5 \u2014 Signed Area versus Total Area"
+      },
+      {
+        "no": 28,
+        "file": "JEE/28.png",
+        "id": "JEE-28",
+        "title": "Visual Lab 6 \u2014 Area between Sine and Cosine",
+        "plain_title": "Visual Lab 6 \u2014 Area between Sine and Cosine",
+        "subtitle": "Visual Lab 6 \u2014 Area between Sine and Cosine",
+        "bookmark": "JEE 28 \u2014 Visual Lab 6 \u2014 Area between Sine and Cosine"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Wallis Reduction and the Wallis Product",
+        "plain_title": "Wallis Reduction and the Wallis Product",
+        "subtitle": "Wallis Reduction and the Wallis Product",
+        "bookmark": "OLY 1 \u2014 Wallis Reduction and the Wallis Product"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Wallis Reduction and the Wallis Product (cont.)",
+        "plain_title": "Wallis Reduction and the Wallis Product (cont.)",
+        "subtitle": "Wallis Reduction and the Wallis Product",
+        "bookmark": "OLY 2 \u2014 Wallis Reduction and the Wallis Product (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Beta and Gamma Functions, Reflection and Duplication",
+        "plain_title": "Beta and Gamma Functions, Reflection and Duplication",
+        "subtitle": "Beta and Gamma Functions, Reflection and Duplication",
+        "bookmark": "OLY 3 \u2014 Beta and Gamma Functions, Reflection and Duplication"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Q42 and Q44: reflection and duplication",
+        "plain_title": "Q42 and Q44: reflection and duplication",
+        "subtitle": "Beta and Gamma Functions, Reflection and Duplication",
+        "bookmark": "OLY 4 \u2014 Q42 and Q44: reflection and duplication"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "The Gaussian Integral, Scaling and Its Cosine Transform",
+        "plain_title": "The Gaussian Integral, Scaling and Its Cosine Transform",
+        "subtitle": "The Gaussian Integral, Scaling and Its Cosine Transform",
+        "bookmark": "OLY 5 \u2014 The Gaussian Integral, Scaling and Its Cosine Transform"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "The Gaussian Integral, Scaling and Its Cosine Transform (cont.)",
+        "plain_title": "The Gaussian Integral, Scaling and Its Cosine Transform (cont.)",
+        "subtitle": "The Gaussian Integral, Scaling and Its Cosine Transform",
+        "bookmark": "OLY 6 \u2014 The Gaussian Integral, Scaling and Its Cosine Transform (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "Olympiad/07.png",
+        "id": "OLY-07",
+        "title": "Frullani Integrals and the Sine-Difference Correction",
+        "plain_title": "Frullani Integrals and the Sine-Difference Correction",
+        "subtitle": "Frullani Integrals and the Sine-Difference Correction",
+        "bookmark": "OLY 7 \u2014 Frullani Integrals and the Sine-Difference Correction"
+      },
+      {
+        "no": 8,
+        "file": "Olympiad/08.png",
+        "id": "OLY-08",
+        "title": "Frullani Integrals and the Sine-Difference Correction (cont.)",
+        "plain_title": "Frullani Integrals and the Sine-Difference Correction (cont.)",
+        "subtitle": "Frullani Integrals and the Sine-Difference Correction",
+        "bookmark": "OLY 8 \u2014 Frullani Integrals and the Sine-Difference Correction (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "Olympiad/09.png",
+        "id": "OLY-09",
+        "title": "Feynman Differentiation under the Integral Sign",
+        "plain_title": "Feynman Differentiation under the Integral Sign",
+        "subtitle": "Feynman Differentiation under the Integral Sign",
+        "bookmark": "OLY 9 \u2014 Feynman Differentiation under the Integral Sign"
+      },
+      {
+        "no": 10,
+        "file": "Olympiad/10.png",
+        "id": "OLY-10",
+        "title": "Q45's source representation needs a corrected lower limit",
+        "plain_title": "Q45's source representation needs a corrected lower limit",
+        "subtitle": "Feynman Differentiation under the Integral Sign",
+        "bookmark": "OLY 10 \u2014 Q45's source representation needs a corrected lower limit"
+      },
+      {
+        "no": 11,
+        "file": "Olympiad/11.png",
+        "id": "OLY-11",
+        "title": "Q37 \u2014 The Dirichlet Integral, Conditional but Exact",
+        "plain_title": "Q37 \u2014 The Dirichlet Integral, Conditional but Exact",
+        "subtitle": "Q37 \u2014 The Dirichlet Integral, Conditional but Exact",
+        "bookmark": "OLY 11 \u2014 Q37 \u2014 The Dirichlet Integral, Conditional but Exact"
+      },
+      {
+        "no": 12,
+        "file": "Olympiad/12.png",
+        "id": "OLY-12",
+        "title": "Q37 \u2014 The Dirichlet Integral, Conditional but Exact (cont.)",
+        "plain_title": "Q37 \u2014 The Dirichlet Integral, Conditional but Exact (cont.)",
+        "subtitle": "Q37 \u2014 The Dirichlet Integral, Conditional but Exact",
+        "bookmark": "OLY 12 \u2014 Q37 \u2014 The Dirichlet Integral, Conditional but Exact (cont.)"
+      },
+      {
+        "no": 13,
+        "file": "Olympiad/13.png",
+        "id": "OLY-13",
+        "title": "Additional Special Values and Logarithmic Trigonometry",
+        "plain_title": "Additional Special Values and Logarithmic Trigonometry",
+        "subtitle": "Additional Special Values and Logarithmic Trigonometry",
+        "bookmark": "OLY 13 \u2014 Additional Special Values and Logarithmic Trigonometry"
+      },
+      {
+        "no": 14,
+        "file": "Olympiad/14.png",
+        "id": "OLY-14",
+        "title": "Additional Special Values and Logarithmic Trigonometry (cont.)",
+        "plain_title": "Additional Special Values and Logarithmic Trigonometry (cont.)",
+        "subtitle": "Additional Special Values and Logarithmic Trigonometry",
+        "bookmark": "OLY 14 \u2014 Additional Special Values and Logarithmic Trigonometry (cont.)"
+      }
+    ]
+  }
+}
