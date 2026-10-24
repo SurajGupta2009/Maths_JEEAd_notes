@@ -350,6 +350,27 @@ def graph(spec: dict, width_px: int) -> Image.Image:
         ax.axhline(y, color=RED, lw=1.8, ls=(0, (6, 5)))
         ax.text(xr[1] - 0.15, y, h.get("label", ""), fontsize=11, color=RED,
                 ha="right", va="bottom")
+    # Optional editable area primitives. They are drawn before curves so the
+    # mathematical boundaries remain crisp; existing specs are unaffected.
+    for rect in spec.get("rectangles", []):
+        from matplotlib.patches import Rectangle
+        patch = Rectangle((rect["x"], rect.get("y0", 0)), rect["width"], rect["height"],
+                          facecolor=rect.get("color", "#F6C445"),
+                          edgecolor=rect.get("edge", GOLD),
+                          alpha=rect.get("alpha", 0.28), lw=rect.get("lw", 1.4),
+                          zorder=rect.get("zorder", 0.7))
+        ax.add_patch(patch)
+    for fill in spec.get("fills", []):
+        xs = np.linspace(fill["from"], fill["to"], int(fill.get("n", 600)))
+        with np.errstate(all="ignore"):
+            raw_y1 = fill.get("y1", 0)
+            raw_y2 = fill["y2"]
+            y1 = (_eval_expr(raw_y1, xs) if isinstance(raw_y1, str)
+                  else np.full_like(xs, float(raw_y1)))
+            y2 = (_eval_expr(raw_y2, xs) if isinstance(raw_y2, str)
+                  else np.full_like(xs, float(raw_y2)))
+        ax.fill_between(xs, y1, y2, color=fill.get("color", "#F6C445"),
+                        alpha=fill.get("alpha", 0.24), zorder=fill.get("zorder", 0.6))
     for c in spec.get("curves", []):
         xs = np.linspace(c.get("from", xr[0]), c.get("to", xr[1]), int(c.get("n", 600)))
         with np.errstate(all="ignore"):

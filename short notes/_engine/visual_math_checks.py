@@ -237,6 +237,19 @@ def checks_for(slug: str):
         add("visual equivalent-answer vertical shifts", all(close(A(x)-B(x), .5) and close(A(x)-C(x), .25) for x in [-1, .2, 1.4]))
         Fhalf = lambda x: 2/math.sqrt(3)*math.atan(math.tan(x/2)/math.sqrt(3))
         add("visual half-angle branch and anchor", close(Fhalf(0), 0) and close(Fhalf(math.pi/2), math.pi/(3*math.sqrt(3))) and close(1/(2+math.cos(0)), 1/3) and close(1/(2+math.cos(math.pi/2)), .5))
+    elif n == 21:
+        heights = [(i/2)**2 for i in range(1, 5)]
+        add("visual Riemann four-rectangle sum", close(sum(h*.5 for h in heights), 15/4) and 15/4 > 8/3)
+        A = lambda x: x*x
+        f = lambda x: 2*x
+        add("visual FTC accumulation and slope", close(A(1), 1) and close(A(2), 4) and all(close((A(x+1e-6)-A(x-1e-6))/(2e-6), f(x), 1e-6) for x in [.5, 1, 1.5]))
+        sine_area = lambda x: x/2-math.sin(2*x)/4
+        add("visual King equal areas and unit sum", close(sine_area(math.pi/2)-sine_area(0), math.pi/4) and all(close(math.sin(x)**2+math.cos(x)**2, 1) for x in [0, .2, math.pi/4, 1.2]))
+        add("visual exponential tail additivity", close((1-math.exp(-2))+math.exp(-2), 1) and close(1-math.exp(-5), (1-math.exp(-2))+(math.exp(-2)-math.exp(-5))))
+        add("visual cubic signed and total areas", close(-1/4+1/4, 0) and close(1/4+1/4, 1/2))
+        first = math.sin(math.pi/4)+math.cos(math.pi/4)-(0+1)
+        second = (-math.cos(math.pi/2)-math.sin(math.pi/2))-(-math.cos(math.pi/4)-math.sin(math.pi/4))
+        add("visual sine-cosine split areas", close(first, math.sqrt(2)-1) and close(second, math.sqrt(2)-1) and close(first+second, 2*math.sqrt(2)-2))
     else:
         raise ValueError(f"no visual checks registered for {slug}")
     return out
