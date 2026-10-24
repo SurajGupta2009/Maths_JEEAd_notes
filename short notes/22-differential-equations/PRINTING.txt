@@ -1,0 +1,16 @@
+PRINTING — Chapter 22: Differential Equations
+============================================
+
+Sheets: 2480 × 3508 px portrait, nominal 300 DPI, A4 aspect. Print one PNG
+sheet on each A4 portrait page.
+
+Recommended: exports/22-differential-equations-combined.pdf
+(30 JEE sheets first, then 12 Olympiad/extension sheets). Separate PDFs:
+  exports/22-differential-equations-JEE.pdf
+  exports/22-differential-equations-Olympiad-extensions.pdf
+
+Print A4 portrait, one sheet per page, scaling Fit or Fit to printable area.
+Do not use Fill, Crop, or Actual Size if it clips the margins. PNG ZIPs are
+*-JEE-sheets.zip, *-Olympiad-sheets.zip and *-combined-sheets.zip. PDFs carry
+bookmarks by sheet. Read straight down each sheet and follow the lesson,
+section and continuation ribbons; there are no column-based reading steps.

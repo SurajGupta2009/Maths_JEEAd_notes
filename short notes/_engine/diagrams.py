@@ -288,10 +288,12 @@ _SAFE_FUNCS = {
 }
 
 
-def _eval_expr(expr: str, x: np.ndarray) -> np.ndarray:
-    """Evaluate a restricted arithmetic expression in x."""
+def _eval_expr(expr: str, x: np.ndarray, y: np.ndarray | None = None) -> np.ndarray:
+    """Evaluate a restricted arithmetic expression in x and, optionally, y."""
     allowed = {k: v for k, v in _SAFE_FUNCS.items()}
     allowed["x"] = x
+    if y is not None:
+        allowed["y"] = y
     tree = ast.parse(expr, mode="eval")
     for node in ast.walk(tree):
         if not isinstance(node, (ast.Expression, ast.BinOp, ast.UnaryOp, ast.Call,
@@ -350,6 +352,36 @@ def graph(spec: dict, width_px: int) -> Image.Image:
         ax.axhline(y, color=RED, lw=1.8, ls=(0, (6, 5)))
         ax.text(xr[1] - 0.15, y, h.get("label", ""), fontsize=11, color=RED,
                 ha="right", va="bottom")
+    # Editable slope fields: short, unarrowed line elements centred on a grid.
+    # Invalid/infinite slopes are omitted, so domain boundaries remain visible.
+    for field in spec.get("slope_fields", []):
+        from matplotlib.collections import LineCollection
+        fx0, fx1 = field.get("xrange", xr)
+        fy0, fy1 = field.get("yrange", yr)
+        nx, ny = int(field.get("nx", 17)), int(field.get("ny", 13))
+        gx, gy = np.linspace(fx0, fx1, nx), np.linspace(fy0, fy1, ny)
+        X, Y = np.meshgrid(gx, gy)
+        with np.errstate(all="ignore"):
+            slopes = _eval_expr(field["expr"], X, Y)
+        finite = np.isfinite(slopes)
+        if "max_slope" in field:
+            finite &= np.abs(slopes) <= float(field["max_slope"])
+        spacing = min((fx1 - fx0) / max(nx - 1, 1),
+                      (fy1 - fy0) / max(ny - 1, 1))
+        length = float(field.get("length", 0.34 * spacing))
+        angles = np.arctan(slopes)
+        dx, dy = 0.5 * length * np.cos(angles), 0.5 * length * np.sin(angles)
+        segments = [
+            [(float(x - ddx), float(y - ddy)),
+             (float(x + ddx), float(y + ddy))]
+            for x, y, ddx, ddy, keep in zip(
+                X.ravel(), Y.ravel(), dx.ravel(), dy.ravel(), finite.ravel())
+            if keep
+        ]
+        ax.add_collection(LineCollection(
+            segments, colors=field.get("color", GRAY),
+            linewidths=field.get("lw", 1.15), alpha=field.get("alpha", 0.42),
+            zorder=field.get("zorder", 0.35), capstyle="round"))
     # Optional editable area primitives. They are drawn before curves so the
     # mathematical boundaries remain crisp; existing specs are unaffected.
     for rect in spec.get("rectangles", []):
