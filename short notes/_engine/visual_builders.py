@@ -485,10 +485,14 @@ def table(spec: dict, width_px: int) -> Image.Image:
         text = cell.get_text()
         available = cell.get_window_extent(renderer=renderer).width - 18
         size = text.get_fontsize()
+        min_size = float(spec.get("min_fontsize", 7.5))
         while (text.get_text() and
-               text.get_window_extent(renderer=renderer).width > available and size > 7.5):
+               text.get_window_extent(renderer=renderer).width > available and size > min_size):
             size -= 0.5
             text.set_fontsize(size)
+        if (spec.get("strict_fit") and text.get_text() and
+                text.get_window_extent(renderer=renderer).width > available + 1):
+            raise ValueError(f"table cell does not fit at {size}pt: {text.get_text()}")
     if spec.get("title"):
         ax.set_title(spec["title"], fontsize=12.5, color=TEAL, pad=10, weight="bold")
     return _fig_to_img(fig, width_px)

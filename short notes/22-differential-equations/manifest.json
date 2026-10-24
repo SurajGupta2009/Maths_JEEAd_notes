@@ -1,0 +1,387 @@
+{
+  "chapter": "22-differential-equations",
+  "parts": {
+    "jee": [
+      {
+        "no": 1,
+        "file": "JEE/01.png",
+        "id": "JEE-01",
+        "title": "Terminology, Verification and Solution Intervals",
+        "plain_title": "Terminology, Verification and Solution Intervals",
+        "subtitle": "Terminology, Verification and Solution Intervals",
+        "bookmark": "JEE 1 \u2014 Terminology, Verification and Solution Intervals"
+      },
+      {
+        "no": 2,
+        "file": "JEE/02.png",
+        "id": "JEE-02",
+        "title": "Terminology, Verification and Solution Intervals (cont.)",
+        "plain_title": "Terminology, Verification and Solution Intervals (cont.)",
+        "subtitle": "Terminology, Verification and Solution Intervals",
+        "bookmark": "JEE 2 \u2014 Terminology, Verification and Solution Intervals (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "JEE/03.png",
+        "id": "JEE-03",
+        "title": "Formation \u2014 Eliminate Every Arbitrary Constant",
+        "plain_title": "Formation \u2014 Eliminate Every Arbitrary Constant",
+        "subtitle": "Formation \u2014 Eliminate Every Arbitrary Constant",
+        "bookmark": "JEE 3 \u2014 Formation \u2014 Eliminate Every Arbitrary Constant"
+      },
+      {
+        "no": 4,
+        "file": "JEE/04.png",
+        "id": "JEE-04",
+        "title": "Formation \u2014 Eliminate Every Arbitrary Constant (cont.)",
+        "plain_title": "Formation \u2014 Eliminate Every Arbitrary Constant (cont.)",
+        "subtitle": "Formation \u2014 Eliminate Every Arbitrary Constant",
+        "bookmark": "JEE 4 \u2014 Formation \u2014 Eliminate Every Arbitrary Constant (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "JEE/05.png",
+        "id": "JEE-05",
+        "title": "Variables Separable \u2014 Integrate, Then Apply the IVP",
+        "plain_title": "Variables Separable \u2014 Integrate, Then Apply the IVP",
+        "subtitle": "Variables Separable \u2014 Integrate, Then Apply the IVP",
+        "bookmark": "JEE 5 \u2014 Variables Separable \u2014 Integrate, Then Apply the IVP"
+      },
+      {
+        "no": 6,
+        "file": "JEE/06.png",
+        "id": "JEE-06",
+        "title": "Variables Separable \u2014 Integrate, Then Apply the IVP (cont.)",
+        "plain_title": "Variables Separable \u2014 Integrate, Then Apply the IVP (cont.)",
+        "subtitle": "Variables Separable \u2014 Integrate, Then Apply the IVP",
+        "bookmark": "JEE 6 \u2014 Variables Separable \u2014 Integrate, Then Apply the IVP (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "JEE/07.png",
+        "id": "JEE-07",
+        "title": "Homogeneous First-Order Equations",
+        "plain_title": "Homogeneous First-Order Equations",
+        "subtitle": "Homogeneous First-Order Equations",
+        "bookmark": "JEE 7 \u2014 Homogeneous First-Order Equations"
+      },
+      {
+        "no": 8,
+        "file": "JEE/08.png",
+        "id": "JEE-08",
+        "title": "Homogeneous First-Order Equations (cont.)",
+        "plain_title": "Homogeneous First-Order Equations (cont.)",
+        "subtitle": "Homogeneous First-Order Equations",
+        "bookmark": "JEE 8 \u2014 Homogeneous First-Order Equations (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "JEE/09.png",
+        "id": "JEE-09",
+        "title": "Linear First-Order Equations \u2014 Integrating Factors",
+        "plain_title": "Linear First-Order Equations \u2014 Integrating Factors",
+        "subtitle": "Linear First-Order Equations \u2014 Integrating Factors",
+        "bookmark": "JEE 9 \u2014 Linear First-Order Equations \u2014 Integrating Factors"
+      },
+      {
+        "no": 10,
+        "file": "JEE/10.png",
+        "id": "JEE-10",
+        "title": "Linear First-Order Equations \u2014 Integrating Factors (cont.)",
+        "plain_title": "Linear First-Order Equations \u2014 Integrating Factors (cont.)",
+        "subtitle": "Linear First-Order Equations \u2014 Integrating Factors",
+        "bookmark": "JEE 10 \u2014 Linear First-Order Equations \u2014 Integrating Factors (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "JEE/11.png",
+        "id": "JEE-11",
+        "title": "Bernoulli Equations and Trigonometric Forcing",
+        "plain_title": "Bernoulli Equations and Trigonometric Forcing",
+        "subtitle": "Bernoulli Equations and Trigonometric Forcing",
+        "bookmark": "JEE 11 \u2014 Bernoulli Equations and Trigonometric Forcing"
+      },
+      {
+        "no": 12,
+        "file": "JEE/12.png",
+        "id": "JEE-12",
+        "title": "A sine forcing term needs both sine and cosine",
+        "plain_title": "A sine forcing term needs both sine and cosine",
+        "subtitle": "Bernoulli Equations and Trigonometric Forcing",
+        "bookmark": "JEE 12 \u2014 A sine forcing term needs both sine and cosine"
+      },
+      {
+        "no": 13,
+        "file": "JEE/13.png",
+        "id": "JEE-13",
+        "title": "Exact Equations and Potential Functions",
+        "plain_title": "Exact Equations and Potential Functions",
+        "subtitle": "Exact Equations and Potential Functions",
+        "bookmark": "JEE 13 \u2014 Exact Equations and Potential Functions"
+      },
+      {
+        "no": 14,
+        "file": "JEE/14.png",
+        "id": "JEE-14",
+        "title": "Exact Equations and Potential Functions (cont.)",
+        "plain_title": "Exact Equations and Potential Functions (cont.)",
+        "subtitle": "Exact Equations and Potential Functions",
+        "bookmark": "JEE 14 \u2014 Exact Equations and Potential Functions (cont.)"
+      },
+      {
+        "no": 15,
+        "file": "JEE/15.png",
+        "id": "JEE-15",
+        "title": "Orthogonal Trajectories \u2014 Replace Slope Correctly",
+        "plain_title": "Orthogonal Trajectories \u2014 Replace Slope Correctly",
+        "subtitle": "Orthogonal Trajectories \u2014 Replace Slope Correctly",
+        "bookmark": "JEE 15 \u2014 Orthogonal Trajectories \u2014 Replace Slope Correctly"
+      },
+      {
+        "no": 16,
+        "file": "JEE/16.png",
+        "id": "JEE-16",
+        "title": "Orthogonal Trajectories \u2014 Replace Slope Correctly (cont.)",
+        "plain_title": "Orthogonal Trajectories \u2014 Replace Slope Correctly (cont.)",
+        "subtitle": "Orthogonal Trajectories \u2014 Replace Slope Correctly",
+        "bookmark": "JEE 16 \u2014 Orthogonal Trajectories \u2014 Replace Slope Correctly (cont.)"
+      },
+      {
+        "no": 17,
+        "file": "JEE/17.png",
+        "id": "JEE-17",
+        "title": "Constant-Coefficient Second-Order Equations",
+        "plain_title": "Constant-Coefficient Second-Order Equations",
+        "subtitle": "Constant-Coefficient Second-Order Equations",
+        "bookmark": "JEE 17 \u2014 Constant-Coefficient Second-Order Equations"
+      },
+      {
+        "no": 18,
+        "file": "JEE/18.png",
+        "id": "JEE-18",
+        "title": "Constant-Coefficient Second-Order Equations (cont.)",
+        "plain_title": "Constant-Coefficient Second-Order Equations (cont.)",
+        "subtitle": "Constant-Coefficient Second-Order Equations",
+        "bookmark": "JEE 18 \u2014 Constant-Coefficient Second-Order Equations (cont.)"
+      },
+      {
+        "no": 19,
+        "file": "JEE/19.png",
+        "id": "JEE-19",
+        "title": "Cauchy\u2013Euler Equations \u2014 Trial Powers",
+        "plain_title": "Cauchy\u2013Euler Equations \u2014 Trial Powers",
+        "subtitle": "Cauchy\u2013Euler Equations \u2014 Trial Powers",
+        "bookmark": "JEE 19 \u2014 Cauchy\u2013Euler Equations \u2014 Trial Powers"
+      },
+      {
+        "no": 20,
+        "file": "JEE/20.png",
+        "id": "JEE-20",
+        "title": "Cauchy\u2013Euler Equations \u2014 Trial Powers (cont.)",
+        "plain_title": "Cauchy\u2013Euler Equations \u2014 Trial Powers (cont.)",
+        "subtitle": "Cauchy\u2013Euler Equations \u2014 Trial Powers",
+        "bookmark": "JEE 20 \u2014 Cauchy\u2013Euler Equations \u2014 Trial Powers (cont.)"
+      },
+      {
+        "no": 21,
+        "file": "JEE/21.png",
+        "id": "JEE-21",
+        "title": "Growth, Cooling and Reduction for Autonomous Equations",
+        "plain_title": "Growth, Cooling and Reduction for Autonomous Equations",
+        "subtitle": "Growth, Cooling and Reduction for Autonomous Equations",
+        "bookmark": "JEE 21 \u2014 Growth, Cooling and Reduction for Autonomous Equations"
+      },
+      {
+        "no": 22,
+        "file": "JEE/22.png",
+        "id": "JEE-22",
+        "title": "Growth, Cooling and Reduction for Autonomous Equations (cont.)",
+        "plain_title": "Growth, Cooling and Reduction for Autonomous Equations (cont.)",
+        "subtitle": "Growth, Cooling and Reduction for Autonomous Equations",
+        "bookmark": "JEE 22 \u2014 Growth, Cooling and Reduction for Autonomous Equations (cont.)"
+      },
+      {
+        "no": 23,
+        "file": "JEE/23.png",
+        "id": "JEE-23",
+        "title": "Damping \u2014 Under, Critical and Over",
+        "plain_title": "Damping \u2014 Under, Critical and Over",
+        "subtitle": "Damping \u2014 Under, Critical and Over",
+        "bookmark": "JEE 23 \u2014 Damping \u2014 Under, Critical and Over"
+      },
+      {
+        "no": 24,
+        "file": "JEE/24.png",
+        "id": "JEE-24",
+        "title": "Damping \u2014 Under, Critical and Over (cont.)",
+        "plain_title": "Damping \u2014 Under, Critical and Over (cont.)",
+        "subtitle": "Damping \u2014 Under, Critical and Over",
+        "bookmark": "JEE 24 \u2014 Damping \u2014 Under, Critical and Over (cont.)"
+      },
+      {
+        "no": 25,
+        "file": "JEE/25.png",
+        "id": "JEE-25",
+        "title": "Visual Lab 1 \u2014 A Real Slope Field and Its Branches",
+        "plain_title": "Visual Lab 1 \u2014 A Real Slope Field and Its Branches",
+        "subtitle": "Visual Lab 1 \u2014 A Real Slope Field and Its Branches",
+        "bookmark": "JEE 25 \u2014 Visual Lab 1 \u2014 A Real Slope Field and Its Branches"
+      },
+      {
+        "no": 26,
+        "file": "JEE/26.png",
+        "id": "JEE-26",
+        "title": "Visual Lab 2 \u2014 A Linear Field and the IVP Curve",
+        "plain_title": "Visual Lab 2 \u2014 A Linear Field and the IVP Curve",
+        "subtitle": "Visual Lab 2 \u2014 A Linear Field and the IVP Curve",
+        "bookmark": "JEE 26 \u2014 Visual Lab 2 \u2014 A Linear Field and the IVP Curve"
+      },
+      {
+        "no": 27,
+        "file": "JEE/27.png",
+        "id": "JEE-27",
+        "title": "Visual Lab 3 \u2014 Parabolas Meeting Ellipses at Right Angles",
+        "plain_title": "Visual Lab 3 \u2014 Parabolas Meeting Ellipses at Right Angles",
+        "subtitle": "Visual Lab 3 \u2014 Parabolas Meeting Ellipses at Right Angles",
+        "bookmark": "JEE 27 \u2014 Visual Lab 3 \u2014 Parabolas Meeting Ellipses at Right Angles"
+      },
+      {
+        "no": 28,
+        "file": "JEE/28.png",
+        "id": "JEE-28",
+        "title": "Visual Lab 4 \u2014 Damped Oscillation and Its Envelope",
+        "plain_title": "Visual Lab 4 \u2014 Damped Oscillation and Its Envelope",
+        "subtitle": "Visual Lab 4 \u2014 Damped Oscillation and Its Envelope",
+        "bookmark": "JEE 28 \u2014 Visual Lab 4 \u2014 Damped Oscillation and Its Envelope"
+      },
+      {
+        "no": 29,
+        "file": "JEE/29.png",
+        "id": "JEE-29",
+        "title": "Visual Lab 5 \u2014 One IVP, Infinitely Many Departures",
+        "plain_title": "Visual Lab 5 \u2014 One IVP, Infinitely Many Departures",
+        "subtitle": "Visual Lab 5 \u2014 One IVP, Infinitely Many Departures",
+        "bookmark": "JEE 29 \u2014 Visual Lab 5 \u2014 One IVP, Infinitely Many Departures"
+      },
+      {
+        "no": 30,
+        "file": "JEE/30.png",
+        "id": "JEE-30",
+        "title": "Visual Lab 6 \u2014 Clairaut Tangents and Their Envelope",
+        "plain_title": "Visual Lab 6 \u2014 Clairaut Tangents and Their Envelope",
+        "subtitle": "Visual Lab 6 \u2014 Clairaut Tangents and Their Envelope",
+        "bookmark": "JEE 30 \u2014 Visual Lab 6 \u2014 Clairaut Tangents and Their Envelope"
+      }
+    ],
+    "olympiad": [
+      {
+        "no": 1,
+        "file": "Olympiad/01.png",
+        "id": "OLY-01",
+        "title": "Extension I \u2014 Reduction of Order and Wronskians",
+        "plain_title": "Extension I \u2014 Reduction of Order and Wronskians",
+        "subtitle": "Extension I \u2014 Reduction of Order and Wronskians",
+        "bookmark": "OLY 1 \u2014 Extension I \u2014 Reduction of Order and Wronskians"
+      },
+      {
+        "no": 2,
+        "file": "Olympiad/02.png",
+        "id": "OLY-02",
+        "title": "Extension I \u2014 Reduction of Order and Wronskians (cont.)",
+        "plain_title": "Extension I \u2014 Reduction of Order and Wronskians (cont.)",
+        "subtitle": "Extension I \u2014 Reduction of Order and Wronskians",
+        "bookmark": "OLY 2 \u2014 Extension I \u2014 Reduction of Order and Wronskians (cont.)"
+      },
+      {
+        "no": 3,
+        "file": "Olympiad/03.png",
+        "id": "OLY-03",
+        "title": "Extension II \u2014 Clairaut Equations and Singular Envelopes",
+        "plain_title": "Extension II \u2014 Clairaut Equations and Singular Envelopes",
+        "subtitle": "Extension II \u2014 Clairaut Equations and Singular Envelopes",
+        "bookmark": "OLY 3 \u2014 Extension II \u2014 Clairaut Equations and Singular Envelopes"
+      },
+      {
+        "no": 4,
+        "file": "Olympiad/04.png",
+        "id": "OLY-04",
+        "title": "Extension II \u2014 Clairaut Equations and Singular Envelopes (cont.)",
+        "plain_title": "Extension II \u2014 Clairaut Equations and Singular Envelopes (cont.)",
+        "subtitle": "Extension II \u2014 Clairaut Equations and Singular Envelopes",
+        "bookmark": "OLY 4 \u2014 Extension II \u2014 Clairaut Equations and Singular Envelopes (cont.)"
+      },
+      {
+        "no": 5,
+        "file": "Olympiad/05.png",
+        "id": "OLY-05",
+        "title": "Extension III \u2014 Existence, Uniqueness and Delayed Solutions",
+        "plain_title": "Extension III \u2014 Existence, Uniqueness and Delayed Solutions",
+        "subtitle": "Extension III \u2014 Existence, Uniqueness and Delayed Solutions",
+        "bookmark": "OLY 5 \u2014 Extension III \u2014 Existence, Uniqueness and Delayed Solutions"
+      },
+      {
+        "no": 6,
+        "file": "Olympiad/06.png",
+        "id": "OLY-06",
+        "title": "Extension III \u2014 Existence, Uniqueness and Delayed Solutions (cont.)",
+        "plain_title": "Extension III \u2014 Existence, Uniqueness and Delayed Solutions (cont.)",
+        "subtitle": "Extension III \u2014 Existence, Uniqueness and Delayed Solutions",
+        "bookmark": "OLY 6 \u2014 Extension III \u2014 Existence, Uniqueness and Delayed Solutions (cont.)"
+      },
+      {
+        "no": 7,
+        "file": "Olympiad/07.png",
+        "id": "OLY-07",
+        "title": "Extension IV \u2014 Lagrange's Equation and Q38",
+        "plain_title": "Extension IV \u2014 Lagrange's Equation and Q38",
+        "subtitle": "Extension IV \u2014 Lagrange's Equation and Q38",
+        "bookmark": "OLY 7 \u2014 Extension IV \u2014 Lagrange's Equation and Q38"
+      },
+      {
+        "no": 8,
+        "file": "Olympiad/08.png",
+        "id": "OLY-08",
+        "title": "Extension IV \u2014 Lagrange's Equation and Q38 (cont.)",
+        "plain_title": "Extension IV \u2014 Lagrange's Equation and Q38 (cont.)",
+        "subtitle": "Extension IV \u2014 Lagrange's Equation and Q38",
+        "bookmark": "OLY 8 \u2014 Extension IV \u2014 Lagrange's Equation and Q38 (cont.)"
+      },
+      {
+        "no": 9,
+        "file": "Olympiad/09.png",
+        "id": "OLY-09",
+        "title": "Extension V \u2014 Riccati Equations from a Known Solution",
+        "plain_title": "Extension V \u2014 Riccati Equations from a Known Solution",
+        "subtitle": "Extension V \u2014 Riccati Equations from a Known Solution",
+        "bookmark": "OLY 9 \u2014 Extension V \u2014 Riccati Equations from a Known Solution"
+      },
+      {
+        "no": 10,
+        "file": "Olympiad/10.png",
+        "id": "OLY-10",
+        "title": "Extension V \u2014 Riccati Equations from a Known Solution (cont.)",
+        "plain_title": "Extension V \u2014 Riccati Equations from a Known Solution (cont.)",
+        "subtitle": "Extension V \u2014 Riccati Equations from a Known Solution",
+        "bookmark": "OLY 10 \u2014 Extension V \u2014 Riccati Equations from a Known Solution (cont.)"
+      },
+      {
+        "no": 11,
+        "file": "Olympiad/11.png",
+        "id": "OLY-11",
+        "title": "Extension VI \u2014 Nonhomogeneous Second-Order Linear Equations",
+        "plain_title": "Extension VI \u2014 Nonhomogeneous Second-Order Linear Equations",
+        "subtitle": "Extension VI \u2014 Nonhomogeneous Second-Order Linear Equations",
+        "bookmark": "OLY 11 \u2014 Extension VI \u2014 Nonhomogeneous Second-Order Linear Equations"
+      },
+      {
+        "no": 12,
+        "file": "Olympiad/12.png",
+        "id": "OLY-12",
+        "title": "Extension VI \u2014 Nonhomogeneous Second-Order Linear Equations (cont.)",
+        "plain_title": "Extension VI \u2014 Nonhomogeneous Second-Order Linear Equations (cont.)",
+        "subtitle": "Extension VI \u2014 Nonhomogeneous Second-Order Linear Equations",
+        "bookmark": "OLY 12 \u2014 Extension VI \u2014 Nonhomogeneous Second-Order Linear Equations (cont.)"
+      }
+    ]
+  }
+}
